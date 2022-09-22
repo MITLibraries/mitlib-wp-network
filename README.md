@@ -138,6 +138,20 @@ In some circumstances, you may need to specify port numbers as part of the site 
 * Environment variables are managed with [Dotenv](https://github.com/vlucas/phpdotenv).
 * Enhanced security (separated web root and secure passwords with [wp-password-bcrypt](https://github.com/roots/wp-password-bcrypt))
 
+## Required environment and secrets
+
+### Environment variables
+
+This section TBD (see legacy section below)
+
+### Github secrets
+
+For our CI workflow, we have defined the following variables. All values are available in our shared LastPass account.
+
+- `DEPLOY_SSH_KNOWN_HOSTS` The known_hosts file to allow GitHubs' CI to trust the Pantheon git server.
+- `DEPLOY_SSH_PRIVATE_KEY` The private key (with blank passphrase) used to connect to Pantheon's git server. The public key is added to your personal settings within Pantheon.
+- `PANTHEON_REPOSITORY` The SSH-format address of the git repository in Pantheon.
+
 ---
 **The sections below were included in the original Readme, and I'm not sure whether they are still useful in this context.**
 
