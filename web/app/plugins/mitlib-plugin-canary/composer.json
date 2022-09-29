@@ -1,0 +1,13 @@
+{
+    "name": "mitlibraries/mitlib-plugin-canary",
+    "description": "A WordPress plugin that detects when a site is using plugins that are not listed in the official directory",
+    "type": "wordpress-plugin",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Matt Bernhardt",
+            "email": "mjbernha@mit.edu"
+        }
+    ],
+    "require": {}
+}

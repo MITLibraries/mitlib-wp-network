@@ -1,64 +1,137 @@
-# Composer-enabled WordPress template
+# MIT Libraries WordPress Network
+
+## Pantheon template
 
 [![Early Access](https://img.shields.io/badge/Pantheon-Early%20Access-yellow?logo=pantheon&color=FFDC28)](https://pantheon.io/docs/oss-support-levels#early-access)
 
-This is Pantheon's recommended starting point for forking new [WordPress](https://wordpress.org) upstreams that work with the Platform's Integrated Composer build process.
+This application was created using Pantheon's [Composer-enabled WordPress template](https://github.com/pantheon-systems/wordpress-composer-managed). After creation, the application is owned and developed by the staff of the MIT Libraries.
 
-Unlike with other Pantheon upstreams, the WordPress core install, which you are unlikely to adjust while building sites, is not in the main branch of the repository. Instead, it is referenced as dependencies within [Roots/Bedrock](https://roots.io/bedrock/) that are installed by [Composer](https://getcomposer.org).
+## Developing this application
 
-## Early Access software
+### Prerequisites
 
-A product in Early Access denotes a new project or feature set that is in development and available for a limited audience. Some features are stable, but the product is only partially complete and development is still in progress. For more information on support for Early Access projects, refer to our [documentation](https://pantheon.io/docs/guides/support/early-access/).
+To contribute to this application, please make sure your local environment includes the following:
 
-Want to participate in the Early Access program? [Fill out this request form.](https://docs.google.com/forms/d/e/1FAIpQLSe5WvxnzA7_U7B4clhhIYsPxI7DXkmQC-Y8J6pXmrbHYPzviw/viewform?usp=sf_link)
+* [Terminus](https://pantheon.io/docs/terminus) for managing Pantheon infrastructure from the command line.
+* [Composer](https://getcomposer.org) for managing third-party plugins and themes within WordPress, and tooling outside of WordPress.
+* _(Pending) [Lando](https://lando.dev/) or [Localdev](https://pantheon.io/product/localdev) for running a local copy of this application._
 
-## Powered by Bedrock
+### Branch names
 
-<p align="left">
-  <a href="https://roots.io/bedrock/">
-    <img alt="Bedrock" src="https://cdn.roots.io/app/uploads/logo-bedrock.svg" height="50">
-  </a>
-</p>
+Pantheon imposes [restrictions on branch names](https://pantheon.io/docs/guides/multidev/create-multidev), including a length limit and some reserved words. **The easiest convention is to name your branch after its Jira ticket, which sets up the following relationships:**
 
+| Resource      | Value                                                                         |
+|-------------- |-----------------------------------------------------------------------------  |
+| Ticket        | [ENGX-201](https://mitlibraries.atlassian.net/browse/ENGX-201)                |
+| Git branch    | [engx-201](https://github.com/MITLibraries/mitlib-wp-network/tree/engx-201)   |
+| Multidev URL  | https://**engx-201**-mitlib-wp-network.pantheonsite.io/                       |
 
-[Bedrock](https://roots.io/bedrock/) is a modern WordPress stack that helps you get started with the best development tools and project structure.
+### Git remotes
 
-Much of the philosophy behind Bedrock is inspired by the [Twelve-Factor App](http://12factor.net/) methodology including the [WordPress specific version](https://roots.io/twelve-factor-wordpress/).
+Contributing to this project involves working with two separate git servers:
 
-## Features
+* We use this Github repository for pull requests, to facilitate [code review](https://mitlibraries.github.io/guides/collaboration/code_review.html).
 
-- Better folder structure
-- Dependency management with [Composer](https://getcomposer.org)
-- Easy WordPress configuration with environment specific files
-- Environment variables with [Dotenv](https://github.com/vlucas/phpdotenv)
-- Autoloader for mu-plugins (use regular plugins as mu-plugins)
-- Enhanced security (separated web root and secure passwords with [wp-password-bcrypt](https://github.com/roots/wp-password-bcrypt))
+* We push code to Pantheon's git server in order to set up review applications (known as [Multidev](https://pantheon.io/docs/guides/multidev) environments in Pantheon's vocabulary), and push code to the dev->test->live pipeline. Feature branches get deployed to Multidev environments, while the `master` branch gets deployed to the Dev environment for subsequent promotion to the Test and Live environments.
 
-## How to use this project
-There are two main ways to interact with this project template. **Using the Pantheon-maintained WordPress Composer Managed upstream** or **forking this repository to create a custom upstream.**
+### Common workflows
 
-### Using the Pantheon WordPress Composer Managed upstream (recommended)
+While many of the processes for contributing to this application are similar to other projects (see the [Workflows](https://mitlibraries.github.io/guides/basics/github.html#workflows) section of our developer documentation for more information), there are some app-specific steps that need to be followed.
 
-1. Use Terminus to create a site from the Pantheon upstream:
+#### Creating a new Multidev environment
+
+Terminus is the tool used to manage Pantheon infrastructure.
+
+* Push the branch to Pantheon's git server:
+
+  ```bash
+  git push pantheon engx-201
+  ```
+
+  _You can find the git address to use for the `pantheon` remote on the application dashboard within Pantheon._
+
+* Create a Multidev environment that corresponds with that branch, based on the current Dev environment:
+
+  ```bash
+  terminus multidev:create mitlib-wp-network.dev engx-201
+  ```
+
+The new `engx-201` Multidev environment will be available at https://engx-201-mitlib-wp-network.pantheonsite.io/, but it
+will have no contents. See the next section for copying database and file content between environments.
+
+More information about Multidev, and tools to manage them, can be found at:
+* [Multidev documentation](https://pantheon.io/docs/guides/multidev)
+* [Creating via the Pantheon dashboard](https://pantheon.io/docs/guides/multidev/create-multidev)
+* [More about the multidev:create command](https://pantheon.io/docs/terminus/commands/multidev-create)
+
+#### Deleting a Multidev environment
+
+This section TBD
+
+#### Copying web content between environments
+
+This workflow gets followed when initially setting up a new Multidev environment, as well as when pushing content up or
+down the Dev -> Test -> Live pipeline.
+
+* Copy a site's database and user-contributed files using the `env:clone-content` command:
+
+  ```bash
+  terminus env:clone-content mitlib-wp-network.dev engx-201
+  ```
+
+* Update database values to match the target environment using the [search-replace](https://developer.wordpress.org/cli/commands/search-replace/) command in the WP CLI:
+
+  ```bash
+  terminus remote:wp mitlib-wp-network.engx-201 -- search-replace \
+    dev-mitlib-wp-network.sites.presalesexamples.com engx-201-mitlib-wp-network.sites.presalesexamples.com \
+    --url=dev-mitlib-wp-network.sites.presalesexamples.com \
+    --network
+  ```
+
+#### Managing third-party plugins and themes
+
+Composer is PHP's tool for dependency management, and can be used to install and manage third-party libraries like
+WordPress plugins and themes. For example, to add the [Hello Dolly](https://wordpress.org/plugins/hello-dolly/) plugin you would use a command like:
+
+```bash
+composer require wpackagist-plugin/hello-dolly
 ```
-terminus site:create --org ORG --region REGION -- <site_name> <label> "WordPress (Composer Managed)"
+
+Checking for available updates, and then applying them, is handled similarly:
+
+```bash
+composer outdated
+composer update wpackagist-plugin/hello-dolly
 ```
-1. In the Dev environment, click **Visit Development Site** and follow the prompts to complete the CMS installation.
-2. [Clone the site locally](https://pantheon.io/docs/local-development#get-the-code) and run `composer install`.
 
-### Fork [this repository](https://github.com/pantheon-upstreams/wordpress-composer-managed) to create a custom upstream (advanced)
+**Please note:** If the resulting diff from a Composer workflow goes beyond `composer.json` and `composer.lock`, please
+double-check what is being changed. It is likely that something unexpected has happened; proceed with caution.
 
-**Note:** It's highly recommended that you use the Pantheon-maintained upstream in favor of creating and managing a custom upstream so you can be sure to receive the latest updates. Managing your own custom upstream means that you assume ownership of the upstream and all changes made to it and assumes that you will manage all updates to the upstream.
 
-1. Fork the [`pantheon-upstreams` version of this repository](https://github.com/pantheon-upstreams/wordpress-composer-managed) into your own (or your organization's) GitHub profile.
-2. Create a branch off of `main` called `master` and set this to the default branch for your custom upstream.
-3. [Add a new Custom Upstream](https://pantheon.io/docs/guides/custom-upstream/create-custom-upstream#connect-repository-to-pantheon) on the Pantheon Dashboard.
-4. Create a new WordPress site from the Upstream.
+#### Adding or updating locally-written code
 
-#### On the use of `master` for custom upstreams
-We acknowledge and apologize for the continued use of the `master` branch name. We understand that the use of the word `master` is offensive and hurtful to people in our community, and changing branch names to `main` has been on our roadmap for [a long time](https://discuss.pantheon.io/t/changing-primary-branch-name/1305). We strive to be an [inclusive platform](https://pantheon.io/docs/inclusive-language) and we know that until we are able to completely rename all of our `master` branch names to something less offensive, we still have work to do. Unfortunately in this context, at a platform level, the use of `master` is hard-coded as the expected default branch name and therefore, when creating custom upstreams off of this repository (which uses `main` by default), a `master` branch is necessary for the platform to recognize the upstream without errors or the assistance of Customer Support. We hope this is a temporary solution and that the platform-level changes can happen soon, and we appreciate your continued patience as we transition our default branch names. Alternately, you can use a [CI-based build workflow](https://pantheon.io/docs/guides/wordpress-composer/create-wp-site-composer-ci-auto-test) to automate pushing your code to `master` on the Pantheon side, but keep the `main` branch naming scheme (or any other branch name) in your custom upstream's repository.
+Locally-developed plugins and themes are, with rare exceptions, added directly to this repository.
 
-## Using Roots Bedrock
+* Theme are installed into `web/app/themes/`.
+* Plugins are installed into `web/app/plugins/`.
+* Must-use plugins are installed into `web/app/mu-plugins/`.
+
+##### Exceptions?
+
+The exception to the above involves packages that are used on multiple WordPress applications (not just multiple sites
+within this one network).
+
+### Related resources
+
+* [Bedrock](https://roots.io/bedrock/) is a modern WordPress stack that helps you get started with the best development tools and project structure.
+* [Twelve-factor WordPress](https://roots.io/twelve-factor-wordpress/) is a WordPress-specific edition of the [Twelve-Factor App](http://12factor.net/) methodology, which informed the creation of Bedrock.
+* [Composer](https://getcomposer.org) is used for dependency management within the repository.
+* [Terminus](https://pantheon.io/docs/terminus) is used for CLI access to the Pantheon platform.
+* Environment variables are managed with [Dotenv](https://github.com/vlucas/phpdotenv).
+* Enhanced security (separated web root and secure passwords with [wp-password-bcrypt](https://github.com/roots/wp-password-bcrypt))
+
+---
+**The sections below were included in the original Readme, and I'm not sure whether they are still useful in this context.**
 
 ### Environment Variables
 
@@ -82,57 +155,3 @@ Bedrock makes use of an `.env` file to store environment variables. Pantheon tak
 The `wp-config.php` file is located in the `web` directory. As with other WordPress sites on Pantheon, much of this is taken care of for you in `wp-config-pantheon.php`. Application-level configuration takes place in `config/application.php`. This can be referenced as a guide to understand how the constants are set up and how the `.env` files work, but modifying this file may result in merge conflicts and is not recommended. Any configuration changes should be made to your `wp-config.php` file directly.
 
 You can learn more about WordPress configuration with Bedrock in the [Bedrock Configuration docs](https://docs.roots.io/bedrock/master/configuration/).
-
-### Understanding the WordPress codebase
-
-Bedrock installs WordPress as a required package so updates can be managed by Composer. As such, the contents of the `wp-content` directory have been moved outside the WordPress codebase so changes can be made safely to files within those directories without conflicts.
-
-* Theme are installed into `web/app/themes/`.
-* Plugins are installed into `web/app/plugins`.
-* Must-use plugins are installed into `web/app/mu-plugins`.
-* The WordPress admin dashboard is available at `https://example.com/wp/wp-admin/`
-
-### Using Composer to manage plugins and themes
-
-[Packagist](https://packagist.org) is a repository of Composer packages that are available by default to projects managed by Composer. Packagist libraries receive updates from their source GitHub repositories automatically.
-
-[WPackagist](https://wpackagist.org) is a Packagist-like mirror of the WordPress.org [plugin](https://wordpress.org/plugins) and [theme](https://wordpress.org/themes) repositories and is included with Bedrock out of the box. 
-
-You may install packages from Packagist or WPackagist without any additional configuration using `composer upstream-require`.
-
-#### Requiring a package from Packagist
-
-Some WordPress developers push their packages to Packagist in addition to the WordPress plugin and theme repositories. In this way, it may be beneficial to pull those packages directly from Packagist to get the latest code directly from the source.
-
-```
-composer upstream-require yoast/wordpress-seo
-```
-
-Packages that are flagged as `wordpress-plugin`, `wordpress-theme` or `wordpress-muplugin` in their `composer.json` files will be installed automatically in the appropriate `web/app/` directory by Composer.
-
-#### Requiring a package from WPackagist
-
-For all other plugins and themes that are not managed on Packagist, you can use `composer upstream-require` as well, using `wpackagist-plugin` or `wpackagist-theme` as the vendor and the plugin or theme slug as the package name.
-
-```
-composer upstream-require wpackagist-theme/twentytwentytwo
-```
-
-```
-composer upstream-require wpackagist-plugin/advanced-custom-fields
-```
-
-## Contributing
-
-Contributions are welcome in the form of GitHub pull requests. However, the `pantheon-upstreams/wordpress-composer-managed` repository is a mirror that does not directly accept pull requests.
-
-Instead, to propose a change, please fork [pantheon-systems/wordpress-composer-managed](https://github.com/pantheon-systems/wordpress-composer-managed) and submit a PR to that repository.
-
-## Community
-
-There are large, thriving communities in both the Roots ecosystem and the Pantheon community that you can reach out to if you have any questions. 
-
-- Join the [Pantheon Community Slack](https://join.slack.com/t/pantheon-community/shared_invite/zt-1e1reft3q-UXHfFovNWlUkBxodEkExBQ) and check out the #wordpress and #composer-workflow channels
-- Join the Roots community on Discord by [sponsoring them on GitHub](https://github.com/sponsors/roots)
-- Participate on the [Roots Discourse](https://discourse.roots.io/) or the [Pantheon Community Forums](https://discuss.pantheon.io/).
-- Follow [@rootswp](https://twitter.com/rootswp) and [@getpantheon](https://twitter.com/getpantheon) on Twitter
