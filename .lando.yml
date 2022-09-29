@@ -1,0 +1,13 @@
+name: mitlib-wp-network
+recipe: pantheon
+config:
+  framework: wordpress_network
+  site: mitlib-wp-network
+  id: a43fbf9e-5069-4993-8c78-3561fb284d97
+tooling:
+  push: disabled
+  pull:
+    description: Pull should not ask about code
+    options:
+      code:
+        default: none

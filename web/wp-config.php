@@ -41,6 +41,9 @@ if ( ! empty( $_ENV['PANTHEON_ENVIRONMENT'] ) ) {
     case 'dev':
       define( 'DOMAIN_CURRENT_SITE', 'dev-mitlib-wp-network.sites.presalesexamples.com' );
       break;
+    case 'lando':
+      define( 'DOMAIN_CURRENT_SITE', 'mitlib-wp-network.lndo.site' );
+      break;
     default:
       # Catch-all to accommodate default naming for multi-dev environments.
       define( 'DOMAIN_CURRENT_SITE', $_ENV['PANTHEON_ENVIRONMENT'] . '-' . $_ENV['PANTHEON_SITE_NAME'] . '.sites.presalesexamples.com' );

@@ -14,7 +14,7 @@ To contribute to this application, please make sure your local environment inclu
 
 * [Terminus](https://pantheon.io/docs/terminus) for managing Pantheon infrastructure from the command line.
 * [Composer](https://getcomposer.org) for managing third-party plugins and themes within WordPress, and tooling outside of WordPress.
-* _(Pending) [Lando](https://lando.dev/) or [Localdev](https://pantheon.io/product/localdev) for running a local copy of this application._
+* [Lando](https://lando.dev/) for running a local copy of this application.
 
 ### Branch names
 
@@ -107,7 +107,6 @@ composer update wpackagist-plugin/hello-dolly
 **Please note:** If the resulting diff from a Composer workflow goes beyond `composer.json` and `composer.lock`, please
 double-check what is being changed. It is likely that something unexpected has happened; proceed with caution.
 
-
 #### Adding or updating locally-written code
 
 Locally-developed plugins and themes are, with rare exceptions, added directly to this repository.
@@ -116,10 +115,19 @@ Locally-developed plugins and themes are, with rare exceptions, added directly t
 * Plugins are installed into `web/app/plugins/`.
 * Must-use plugins are installed into `web/app/mu-plugins/`.
 
-##### Exceptions?
-
 The exception to the above involves packages that are used on multiple WordPress applications (not just multiple sites
-within this one network).
+within this one network). These packages should be maintained in a separate Github repository, and [loaded directly from that repo](https://getcomposer.org/doc/05-repositories.md#loading-a-package-from-a-vcs-repository) via Composer.
+
+#### Running locally with Lando
+
+* `lando start` will get your local containers running.
+* `lando pull` will prompt for the environment on Pantheon from which to grab the database and files. (Our default workflow is to not prompt for copying code directly from Pantheon)
+* `lando wp search-replace dev-mitlib-wp-network.sites.presalesexamples.com mitlib-wp-network.lndo.site --url=dev-mitlib-wp-network.sites.presalesexamples.com --network` will cleanup the database to work with our local site name. Note: `dev-mitlib...` would change to match whichever multidev you pulled data from in the previous step. This assumes `dev` but if you chose `engxhallo`, the prefix would change to `engxhallo-mitlib`. If the command finishes saying it made 0 replacements, it's likely you ran a command for replacing that didn't match the multidev you pulled from.
+* Access the site at: `https://mitlib-wp-network.lndo.site`
+
+You can completely start your local environment over with `lando destroy` - after which you should follow each step in the above process.
+
+In some circumstances, you may need to specify port numbers as part of the site address. When this happens, include the port number for the SSL port in order to log into the WP admin interface. The port number should be included in the `url` parameter when using the WordPress CLI, and also included in the `search-replace` command after copying content between environments.
 
 ### Related resources
 
