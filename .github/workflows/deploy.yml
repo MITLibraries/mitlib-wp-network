@@ -1,0 +1,37 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Configure git environment
+        run: |
+          git config user.name "MIT Libraries"
+          git config user.email engx-lib@mit.edu
+
+      - name: Install SSH key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.DEPLOY_SSH_PRIVATE_KEY }}
+          known_hosts: ${{ secrets.DEPLOY_SSH_KNOWN_HOSTS }}
+
+      - name: Add Pantheon remote
+        run: |
+          git remote add pantheon ${{ secrets.PANTHEON_REPOSITORY }}
+
+      - name: Fetch from Pantheon
+        run: |
+          git fetch pantheon
+
+      - name: Git push
+        run: |
+          git push pantheon master
