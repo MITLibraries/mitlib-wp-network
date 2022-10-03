@@ -1,0 +1,19 @@
+{
+    "active_plugins": "a:5:{i:0;s:33:\"classic-editor\/classic-editor.php\";i:1;s:35:\"classic-widgets\/classic-widgets.php\";i:2;s:45:\"mitlib-plugin-canary\/mitlib-plugin-canary.php\";i:3;s:17:\"wp-cfm\/wp-cfm.php\";i:4;s:35:\"wp-sentry-integration\/wp-sentry.php\";}",
+    "blog_charset": "UTF-8",
+    "blog_public": "1",
+    "blogdescription": "Pushed via git",
+    "blogname": "MIT Libraries Deployed",
+    "page_for_posts": "0",
+    "page_on_front": "4",
+    "sidebars_widgets": "a:4:{s:19:\"wp_inactive_widgets\";a:0:{}s:9:\"sidebar-1\";a:3:{i:0;s:7:\"block-2\";i:1;s:7:\"block-3\";i:2;s:7:\"block-4\";}s:9:\"sidebar-2\";a:2:{i:0;s:7:\"block-5\";i:1;s:7:\"block-6\";}s:13:\"array_version\";i:3;}",
+    "wpcfm_settings": "{\"bundles\":[{\"label\":\"site-parent\",\"name\":\"site_parent\",\"config\":[\"active_plugins\",\"blog_charset\",\"blog_public\",\"blogdescription\",\"blogname\",\"page_for_posts\",\"page_on_front\",\"sidebars_widgets\",\"wpcfm_settings\",\"tax\/category\",\"tax\/link_category\",\"tax\/nav_menu\",\"tax\/post_format\",\"tax\/post_tag\",\"tax\/wp_template_part_area\",\"tax\/wp_theme\"]}]}",
+    "tax\/category": "[{\"term_id\":1,\"name\":\"Uncategorized\",\"slug\":\"uncategorized\",\"description\":\"\",\"parent\":0}]",
+    "tax\/post_tag": "[]",
+    "tax\/nav_menu": "[]",
+    "tax\/link_category": "[]",
+    "tax\/post_format": "[]",
+    "tax\/wp_theme": "[{\"term_id\":2,\"name\":\"twentytwentytwo\",\"slug\":\"twentytwentytwo\",\"description\":\"\",\"parent\":0}]",
+    "tax\/wp_template_part_area": "[]",
+    ".label": "site-parent"
+}

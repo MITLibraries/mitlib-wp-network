@@ -45,6 +45,7 @@ if ( ! empty( $_ENV['PANTHEON_ENVIRONMENT'] ) ) {
       break;
     case 'lando':
       define( 'DOMAIN_CURRENT_SITE', 'mitlib-wp-network.lndo.site' );
+      define( 'WPCFM_CONFIG_DIR', '/app/web/private/config/dev/' );
       break;
     default:
       # Catch-all to accommodate default naming for multi-dev environments.

@@ -99,6 +99,7 @@
     "wpackagist-plugin/widget-css-classes": "1.5.4.1",
     "wpackagist-plugin/widget-importer-exporter": "^1.6",
     "wpackagist-plugin/wordpress-importer": "^0.8.0",
+    "wpackagist-plugin/wp-cfm": "^1.7",
     "wpackagist-plugin/wp-mail-smtp": "^3.6",
     "wpackagist-plugin/wp-native-php-sessions": "^1.2",
     "wpackagist-plugin/wp-security-audit-log": "4.4.2.1",
