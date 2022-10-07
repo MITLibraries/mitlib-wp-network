@@ -135,14 +135,20 @@ In some circumstances, you may need to specify port numbers as part of the site 
 * [Twelve-factor WordPress](https://roots.io/twelve-factor-wordpress/) is a WordPress-specific edition of the [Twelve-Factor App](http://12factor.net/) methodology, which informed the creation of Bedrock.
 * [Composer](https://getcomposer.org) is used for dependency management within the repository.
 * [Terminus](https://pantheon.io/docs/terminus) is used for CLI access to the Pantheon platform.
-* Environment variables are managed with [Dotenv](https://github.com/vlucas/phpdotenv).
 * Enhanced security (separated web root and secure passwords with [wp-password-bcrypt](https://github.com/roots/wp-password-bcrypt))
 
 ## Required environment and secrets
 
-### Environment variables
+We use the [Terminus Secrets Plugin](https://github.com/pantheon-systems/terminus-secrets-plugin) to manage environment variables within Pantheon. Please avoid using the phpdotenv library and `.env` files until [ENGX-209](https://mitlibraries.atlassian.net/browse/ENGX-209) is closed.
 
-This section TBD (see legacy section below)
+### Required Environment variables
+
+- `WPMS_SMTP_PASS` Password associated with the username in `WPMS_SMTP_USER`.
+- `WPMS_SMTP_USER` Username expected by the email server to send emails from WordPress. Associated with `WPMS_SMTP_PASS`.
+
+### Optional Environment variables
+
+- `SENTRY_DSN` Unique identifier for this project within Sentry.
 
 ### Github secrets
 
