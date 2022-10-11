@@ -4,8 +4,33 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2e9249138efa46b67bedb4e5351f6b3a",
+    "content-hash": "f1b7a66615d6ea18bafe5c7369e6c58e",
     "packages": [
+        {
+            "name": "ConnectThink/WP-SCSS",
+            "version": "2.4.1-beta2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/matt-bernhardt/WP-SCSS.git",
+                "reference": "40eb06df723be4832b2658c2f3046eeb5cce4b6a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/matt-bernhardt/WP-SCSS/zipball/40eb06df723be4832b2658c2f3046eeb5cce4b6a",
+                "reference": "40eb06df723be4832b2658c2f3046eeb5cce4b6a",
+                "shasum": ""
+            },
+            "type": "wordpress-plugin",
+            "description": "Compiles .scss files on your wordpress install using lefo's scssphp. Includes settings page for configuring directories, error reporting, compiling options, and auto enqueuing.",
+            "keywords": [
+                "plugin",
+                "wordpress"
+            ],
+            "support": {
+                "source": "https://github.com/matt-bernhardt/WP-SCSS/tree/2.4.1-beta2"
+            },
+            "time": "2022-10-18T23:27:41+00:00"
+        },
         {
             "name": "composer/installers",
             "version": "v2.2.0",
@@ -1885,6 +1910,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "connectthink/wp-scss": 10,
         "pantheon-upstreams/upstream-configuration": 20,
         "roave/security-advisories": 20
     },
