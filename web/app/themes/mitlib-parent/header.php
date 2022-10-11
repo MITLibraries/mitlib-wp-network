@@ -45,6 +45,6 @@ namespace Mitlib\Parent;
 			<?php get_template_part( 'inc/nav', 'smalldisplays' ); ?>
 		</header>
 		<?php
-			$pageRoot = get_root( $post );
-			$section = get_post( $pageRoot );
+			$page_root = get_root( $post );
+			$section = get_post( $page_root );
 		?>
