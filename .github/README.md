@@ -139,7 +139,9 @@ In some circumstances, you may need to specify port numbers as part of the site 
 
 ## Required environment and secrets
 
-We use the [Terminus Secrets Plugin](https://github.com/pantheon-systems/terminus-secrets-plugin) to manage environment variables within Pantheon. Please avoid using the phpdotenv library and `.env` files until [ENGX-209](https://mitlibraries.atlassian.net/browse/ENGX-209) is closed.
+We use the [Terminus Secrets Plugin](https://github.com/pantheon-systems/terminus-secrets-plugin) to manage environment variables within Pantheon. Please see the readme for that project for [installation](https://github.com/pantheon-systems/terminus-secrets-plugin#installation) and [usage](https://github.com/pantheon-systems/terminus-secrets-plugin#usage) instructions.
+
+Please avoid using the phpdotenv library and `.env` files until [ENGX-209](https://mitlibraries.atlassian.net/browse/ENGX-209) is closed.
 
 ### Required Environment variables
 
