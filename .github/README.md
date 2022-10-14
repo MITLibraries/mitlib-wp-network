@@ -163,6 +163,26 @@ You can completely start your local environment over with `lando destroy` - afte
 
 In some circumstances, you may need to specify port numbers as part of the site address. When this happens, include the port number for the SSL port in order to log into the WP admin interface. The port number should be included in the `url` parameter when using the WordPress CLI, and also included in the `search-replace` command after copying content between environments.
 
+##### Nginx configuration within Lando
+
+(Hopefully this section will not be needed for long)
+The nginx configuration needs to be tweaked in order for the network to function correctly. Without this adjustment, the public interface will be plauged by 404 errors on site assets, and accessing the dashboard for many sites will result in a redirect loop.
+
+To fix, there are two configuration files which need to be copied in place within the appserver and appserver_nginx container, and then the nginx service needs to be reloaded.
+
+**Please note** Connect to the containers using `docker exec` rather than `lando ssh`. Using `lando ssh` will re-initialize the container contents, overwriting these changes in the process.
+
+```
+$ docker exec -it mitlibwpnetwork_appserver_1 /bin/bash
+app$ cp config/lando/appserver.conf /opt/bitnami/nginx/conf/lando.conf
+app$ exit
+
+$ docker exec -it mitlibwpnetwork_appserver_nginx_1 /bin/bash
+app$ cp config/lando/appserver-nginx.conf /opt/bitnami/nginx/conf/server_blocks/lando.conf
+app$ /opt/bitnami/nginx/sbin/nginx -s reload
+app$ exit
+```
+
 ### Related resources
 
 * [Bedrock](https://roots.io/bedrock/) is a modern WordPress stack that helps you get started with the best development tools and project structure.
