@@ -1,0 +1,67 @@
+body {
+	color: $black;
+	font-family: $font-family-primary;
+	line-height: $line-height-primary;
+	//text-rendering: optimizeLegibility; // This is a performance drag, and causes blank text in older WebKit Windows browsers
+}
+
+h1 {
+	@include rem-first(font-size, 2.25);
+	font-weight: 400;
+}
+
+h2 {
+	@include rem-first(font-size, 1.825);
+	font-weight: 400;
+	@include bp-tablet--landscape {
+		font-size: 2.125em;
+	}
+	a {
+		font-weight: 400;
+	}
+}
+
+h3 {
+	font-size: 1.25em;
+	font-weight: 400;
+	@include bp-tablet--portrait {
+		font-size: 1.375em;
+	}
+	a {
+		font-weight: 400;
+	}
+}
+
+a {
+	color: $brand-primary;
+	text-decoration: none;
+	&:hover {
+		color: $brand-primary-accent;
+		text-decoration: underline;
+	}
+}
+
+.content a {
+	color: $brand-primary;
+	text-decoration: underline;
+	&:hover {
+		color: $brand-primary-accent;
+		text-decoration: none;
+	}
+}
+
+.caption {
+	color: #555;
+	font-size: 0.875em;
+	font-weight: 300;
+	@include bp-tablet--portrait {
+		font-size: 1.0625em;
+	}
+}
+
+.error-load {
+	font-size: 1em;
+	font-weight: 300;
+	margin: 1em auto;
+	text-align: center;
+}

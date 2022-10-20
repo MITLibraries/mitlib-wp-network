@@ -1,0 +1,556 @@
+body.user-is-tabbing *.nav-main {
+  .main-nav-link {
+	  &.no-underline {     
+      &:focus {
+        text-decoration: none;
+        color: $white;
+        background-color: $brand-secondary;
+      }
+    }
+    
+    &:focus {
+      @include bp-tablet--portrait {
+        background: $brand-secondary;
+      }    
+    }
+  }
+}
+
+.nav-main {
+  flex-wrap: wrap;
+  transform: translateY(-1000%);
+  z-index: map-get($zindex, dropdown);
+  @include hidden-visually; // hide behind hamburger on mobile
+
+  &.active { // show as dropdown on mobile
+    @include rem-first(font-size, 1);
+    @include rem-first--4-values(padding, 0, 0.5, 0.5, 0.5);
+    background: white;
+    box-shadow: 0 3px 3px $color-shadow;
+    height: auto;
+    flex: none;
+    position: absolute;
+    transform: translateY(2.8em); // Accounts for nav padding
+    top: 0;
+    width: 100%;
+
+    a {
+      width: 100%;
+
+      &:hover, 
+      &:focus {
+        color: #fff;
+      }
+    }
+  }
+
+  @include bp-tablet--landscape-below {
+    font-size: 0.9em;
+  }
+
+  @include bp-tablet--landscape-small-below {
+    font-size: 0.75em;
+  }
+
+  @include bp-tablet--portrait {
+    align-items: stretch;
+    height: auto;
+    flex-wrap: nowrap;
+    order: 3;
+    overflow: visible;
+    width: auto;
+    transform: translateY(0%);
+  }
+  
+  // small is chat and account icons
+  .small {
+    display: none;
+
+    @include bp-tablet--portrait {
+      display: block;
+      font-size: 0.75em;
+
+      a {
+        padding: 1rem 0.5rem 0.5rem 0.5rem;
+        align-items: center;
+        flex-direction: column;
+        text-transform: uppercase;
+      }
+
+      svg {
+        display: block;
+        fill: #fff;
+        margin-bottom: .4em;
+      }
+    }
+
+    @include bp-tablet--landscape-below {
+      font-size: 1em;
+
+      a {
+        text-transform: none;
+        padding-top: 2em;
+      }
+
+      svg {
+        display: none;
+      }
+    }
+  }
+  
+
+  .chat {
+    display: none;
+
+    @include bp-tablet--portrait {
+      display: block;
+
+      .links-sub {
+        @include rem-first(min-width, 9.375);
+        background: #f3f3f3;
+        flex-wrap: wrap;
+        width: auto;
+      }
+
+      .more {
+        @include rem-first(font-size, 0.75);
+        display: block;
+        text-align: center;
+        text-transform: none;
+        width: 100%;
+      }
+
+      .wrap-button-chat {
+        @include rem-first(min-height, 2.875);
+        @include rem-first--4-values(padding, 1, 0.5, 0, 0.5);
+        min-width: 100%;
+
+        #libchat_btn_widget {
+          border: 1px solid #666;
+        }
+      }
+    }
+  }
+
+  .nav-main-list {
+    display: block;
+
+    @include bp-tablet--portrait {
+      display: flex;
+      align-items: stretch;
+    }
+  }
+
+  // wrapper around the main nav links
+  .link-primary {
+    position: relative;
+    transition: background-color 0.3s;
+    width: 100%;
+
+    @include bp-tablet--portrait {
+      width: auto;
+    }
+
+    .links-sub {
+    /*  box-shadow: 0 0 2px #444;
+      max-height: 1000px;
+      opacity: 1;
+      overflow: visible;
+      transition: max-height 0.3s,
+                  margin 0.3s,
+                  opacity 0.3s,
+                  overflow 0.3s,
+                  padding-top 0.3s,
+                  padding-bottom 0.3s; */
+    }
+  }
+  
+  // reset h2 styles for nav link headers
+  .main-nav-header {
+    height: 100%;
+    font-size: 100%;
+    
+    //accessible menu opener buttons
+    button {
+      border: 0;
+      background: #fff;
+      background-image: none;
+      font-size: inherit;
+      padding: 0;
+    }
+
+  }
+
+  // actual main nav links
+  .main-nav-link {
+    @include rem-first(padding, 0.5);
+    display: block;
+    position: relative;
+
+    @include bp-tablet--portrait {
+      border-bottom: none;
+      color: #fff;
+      display: flex;
+      height: 100%;
+      padding-top: 2em;
+    }
+
+	  &.active {
+	  	background: lightgray;
+	  	box-shadow: 0 0 2px #444,
+                inset 1px 0 0 gray,
+                inset -1px 0 0 gray,
+                inset 0 1px 0 gray;
+	  }
+
+	  &.no-underline {     
+      &:hover {
+  			text-decoration: none;
+  			color: $white;
+        background-color: $brand-secondary;
+  		}
+		}
+    
+    &:hover {
+      @include bp-tablet--portrait {
+        background: $brand-secondary;
+      }    
+    }
+  }
+
+  // sub menu drop-down cols
+  .col-1 {
+    background: $white;
+  }
+
+  .col-2 {
+    border-left: 1px solid $black;
+    background: $white;
+  }
+
+  // wrapper for sub menus
+  .links-sub {
+    display: none;
+    left: 0;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 100%;
+    transition: max-height 0.3s,
+                margin 0.3s,
+                opacity 0.3s,
+                overflow 0.3s,
+                padding-top 0.3s,
+                padding-bottom 0.3s;
+    width: 31.75em;
+
+    &.push { // don't let menu overflow page width on right items
+      left: auto;
+      right: 0;
+    }
+  }
+
+  // show sub menu when main nav item is hovered or focused via open class
+  .link-primary.open {
+
+    .main-nav-link {
+      @include bp-tablet--portrait {
+        background: $brand-secondary;
+      }
+    }
+
+    .links-sub {
+      display: none;
+
+      @include bp-tablet--portrait {
+        display: flex;
+        box-shadow: 0 0 2px #444;
+        max-height: 1000px;
+        opacity: 1;
+        overflow: visible;
+      }
+    }
+  }
+  
+  .links-sub {
+   /* display: none;
+    left: 0;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 100%;
+    transition: max-height 0.3s,
+                margin 0.3s,
+                opacity 0.3s,
+                overflow 0.3s,
+                padding-top 0.3s,
+                padding-bottom 0.3s;
+    width: 31.75em;
+    */
+
+    a {
+      color: $brand-primary;
+      display: block;
+      font-weight: 600;
+      padding: 0.5em;
+
+      &:hover, 
+      &:focus {
+        background-color: $brand-secondary;
+        color: $white;
+        text-decoration: none;
+      }
+    }
+
+    [class*="col-"] {
+      width: 50%;
+    }
+
+    .about { // small text link descriptions
+      display: block;
+      font-size: 0.6875em;
+      font-weight: normal;
+    }
+
+    .bottom {
+      border-top: 1px solid $black;
+
+      &.extra {
+        span:first-of-type:after {
+          content: url(#{$imagesPath}/arrow-right-sfw.svg);
+          display: inline-block;
+          margin-left: 0.25em;
+        }
+      }
+
+      &:not(.extra):after {
+        content: url(#{$imagesPath}/arrow-right-sfw.svg);
+        display: inline-block;
+        margin-left: 0.25em;
+      }
+    }
+  }
+
+  // unused?
+  .bottom:not(.extra) span:not(:first-of-type):before {
+    color: $color-text-accent-primary;
+    content: '|';
+    display: inline-block;
+    margin-right: 4px;
+  }
+
+  // sub menu col headers
+  .heading-col {
+    @include rem-first--4-values(margin, 1, 0, 0.5, 0.5);
+    color: $black;
+    display: block;
+    font-size: 0.75em;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-bottom: 0;
+  }
+}
+
+// unused?
+.nav-page {
+  margin-bottom: 1rem !important;
+}
+
+// hide show if css transitions can't do it
+.no-csstransitions {
+
+  .link-primary {
+
+    .links-sub {
+      height: 0;
+      margin: 0;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 0;
+    }
+
+    &:hover .links-sub, 
+    &:focus .links-sub {
+        height: auto;
+        margin: auto;
+        overflow: visible;
+        @include rem-first(padding, 1);
+        width: 600px;
+    }
+  }
+}
+
+// secondary row-type nav? code seems to use only nav-second
+.nav-secondary {
+  border-bottom: 1px solid $color-secondary;
+  @include font-size(16px);
+  margin: 0 $margin-left;
+  z-index: map-get($zindex, dropdown);
+  @include bp-small {
+    background: $color-primary;
+    height: 0;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    &.active {
+      height: auto;
+      margin: 0;
+      overflow: visible;
+      padding: 0;
+    }
+  }
+  ul {
+    list-style: none;
+  }
+  .menu > ul {
+    > li {
+      display: inline-block;
+      position: relative;
+      @include bp-small {
+        display: block;
+      }
+      &:nth-child(n+4) {
+        // Push dropdowns right if li parents are too far right
+        ul {
+          right: 0;
+        }
+      }
+      &:hover {
+        background: $color-secondary;
+        box-shadow: 0 0 2px #444;
+        transition: background-color 0.3s;
+        @include bp-small {
+          background: none;
+          box-shadow: none;
+        }
+        // Show secondary menu items on hover
+        li {
+          background: $color-secondary;
+          border-top: 1px solid darken($color-secondary, 20%);
+          height: auto;
+          line-height: 1;
+          margin: auto;
+          opacity: 1;
+          overflow: visible;
+          width: 100%;
+          z-index: map-get($zindex, dropdown);
+          transition: opacity 0.3s;
+          @include bp-small {
+            display: none;
+          }
+          a {
+            display: block;
+            @include rem-first(padding, 1);
+          }
+        }
+      }
+      > a {
+        display: block;
+        @include rem-first(padding, 1);
+        @include bp-small {
+          color: white;
+        }
+      }
+      li {
+        // Hide secondary menu items
+        height: 0;
+        line-height: 0;
+        margin: 0;
+        opacity: 0;
+        overflow: hidden;
+        padding: 0;
+        position: relative;
+        width: 0;
+      }
+      // The dropdown
+      ul {
+        box-shadow: 0 1px 2px #444;
+        position: absolute;
+        @include rem-first(width, 20);
+      }
+    }
+  }
+}
+
+.nav-second>li>a:hover {
+	color: $brand-primary-accent !important;
+	text-decoration: underline;
+}
+
+// hide secondary nav mobile menu
+.mobile-display {
+	display: none;
+}
+
+// default hide mobile nav links
+.hide-mobile-nav-link {
+  display: none;
+}
+
+// main menu hamburger 
+.menu--toggle {
+  @include rem-first(min-width, 3.1875);
+  @include font-size(16px);
+  background: $black;
+  cursor: pointer;
+  fill: $blue-light;
+  order: 1;
+  width: 14.375%;
+  z-index: map-get($zindex, dropdown);
+
+  @include bp-tablet--portrait {
+    display: none;
+  }
+
+  svg {
+    display: block;
+    margin: 1em auto;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $brand-secondary;
+    background-image: none;
+  }
+}
+
+.no-flexbox {
+  .link-primary.chat:hover, 
+  .link-primary.chat:focus {
+
+    .links-sub {
+      display: block;
+
+      a {
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+}
+//
+// IE Fixes
+//
+.lte-ie9 {
+  .nav-main {
+    .links-sub {
+      display: none;
+    }
+  }
+}
+
+@media screen and (min-width: 568px) and (max-width: 700px) {
+	.link-primary {
+		.search-link {
+			padding-right: 2em;
+    }
+		.account-link {
+			padding-left: 1em;
+			padding-right: 1em;
+		}
+	}
+}
+

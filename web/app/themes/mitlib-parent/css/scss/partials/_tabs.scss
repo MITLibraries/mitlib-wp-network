@@ -1,0 +1,119 @@
+.tab {
+	flex-direction: column;
+	@include bp-tablet--portrait {
+		flex-direction: row;
+	}
+}
+.tabnav {
+	@include bp-tablet--portrait {
+		align-items: stretch;
+		border-bottom: 1px solid lighten($black, 60%);
+		display: flex;
+		margin-bottom: 1em;
+		li {
+			display: inline-block;
+			a {
+				color: lighten($black, 60%);
+			}
+			&:not(:first-of-type) {
+				margin-left: 1em;
+			}
+			&.active {
+				border-bottom: 4px solid #5889c2;
+				a {
+					color: $black;
+				}
+			}
+		}
+	}
+	.title-sub {
+		font-size: 0.75em;
+		font-weight: normal;
+	}
+	.title-tab {
+		@include bp-tablet--portrait {
+			display: inline-block;
+			font-size: 1.375em;
+			font-weight: 600;
+			padding: 1em 0;
+		}
+	}
+}
+
+
+/* ---- Responsive Styles ---- */
+
+@media screen and (max-width:570px) {
+
+	.tabnav {
+		display: inline;
+		width: 100%;
+		}
+	.tab1st {
+		float: left;
+		padding-bottom: 20px;
+	}
+	.tab2nd {
+		float: right;
+		padding-bottom: 20px;
+	}
+	.hidden-mobile {
+		display: none;
+	}
+	.tabcontent {
+		border-top: 1px solid #dedede;
+		padding-top: 20px;
+		clear: both;
+	}
+	.tabnav {
+			li {
+				display: inline-block;
+				a {
+					font-size: 16px;
+					padding: .5em 1em;
+					border-radius: 3px;
+					text-align: center;
+					text-decoration: none;
+					border: 1px solid #338bc5;
+					-webkit-transition: background .1s ease;
+					transition: background .1s ease;
+					margin: 0 15px;
+				}
+							&.active {
+								a {
+								background: #338bc5;
+								color: white;
+								border: 1px solid #338bc5;
+							}
+						}
+								a {
+									&:hover {
+									background: #338bc5;
+									color: white;
+									border: 1px solid #338bc5;
+							}
+						}
+				}
+		}
+}
+@media screen and (max-width:420px) {
+	.page-music {
+		.tabnav {
+			li {
+				a {
+				font-size: 11px;					
+				}
+			}
+		}
+	}	
+}
+
+@media screen and (max-width:320px) {
+	.tabnav {
+		li {
+			a {
+				font-size: 12px;
+			}
+		}
+	}
+}
