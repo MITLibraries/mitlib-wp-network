@@ -6,6 +6,8 @@
  * @since 0.0.1
  */
 
+namespace Mitlib\Parent;
+
 get_header();
 ?>
 

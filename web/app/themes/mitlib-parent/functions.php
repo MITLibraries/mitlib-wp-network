@@ -37,3 +37,76 @@ function setup_scss_folders()
     }
 }
 add_action('after_setup_theme', 'Mitlib\Parent\setup_scss_folders');
+
+// TODO: Make this happen on multidevs and dev tier, not test or live
+define('WP_SCSS_ALWAYS_RECOMPILE', true);
+
+/**
+ * Register and selectively enqueue the scripts and stylesheets needed for this
+ * page.
+ */
+function setup_scripts_styles()
+{
+    // This allows us to cache-bust these assets without needing to remember to
+    // increment the theme version here.
+    $theme_version = wp_get_theme()->get('Version');
+
+    // Deal with stylesheets.
+    wp_register_style('font-open-sans', '//fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,600,600italic,700,700italic', false, null, 'all');
+
+    wp_enqueue_style('parent-styles', get_stylesheet_uri());
+
+    wp_register_style('parent-global', get_template_directory_uri().'/css/build/global.css', array('parent-styles', 'font-open-sans'), $theme_version);
+
+    wp_enqueue_style('parent-global');
+
+    wp_register_style('parent-forms', get_template_directory_uri() . '/css/build/forms.css', array('parent-global'), $theme_version);
+
+    wp_register_style('parent-getit', get_template_directory_uri() . '/css/build/get-it.css', array('parent-global'), $theme_version);
+
+    wp_register_style('hours-mobile', get_template_directory_uri() . '/css/hours-mobile.css', false, null, 'all');
+
+    wp_register_style('hours-gldatepicker', get_template_directory_uri() . '/libs/datepicker/styles/glDatePicker.default.css', false, null, 'all');
+
+    wp_register_style('parent-hours', get_template_directory_uri() . '/css/build/hours.css', array('parent-global', 'hours-mobile', 'hours-gldatepicker'), $theme_version);
+
+    wp_register_style('bootstrapCSS', get_stylesheet_directory_uri() . '/css/bootstrap.css', 'false', '', false);
+
+    wp_register_style('jquery.smartmenus.bootstrap', '/css/bootstrap-css/jquery.smartmenus.bootstrap.js', false, false);
+
+    // Load the Internet Explorer-specific stylesheet
+    wp_enqueue_style('parent-ie', get_template_directory_uri() . '/css/ie.css', array('parent-style'), '20121010');
+    wp_style_add_data('parent-ie', 'conditional', 'lt IE 9');
+
+    // Deal with scripts.
+}
+add_action('wp_enqueue_scripts', 'Mitlib\Parent\setup_scripts_styles');
+
+/**
+ * The following functions get called in various places by theme templates.
+ */
+
+function get_root($post)
+{
+    $ar = get_post_ancestors($post);
+
+    $is_section = get_post_meta($post->ID, 'is_section', 1);
+
+    $count_ar = count($ar);
+
+    for ($i = 0; $i < $count_ar; $i++) {
+        $pid = $ar[ $i ];
+        $is_section = get_post_meta($pid, 'is_section', 1);
+        if ($is_section == 1) {
+            return $pid;
+        }
+    }
+
+    $max = count($ar) - 1;
+
+    if ($max == -1) {
+        return $post->ID;
+    } else {
+        return $ar[$max];
+    }
+}
