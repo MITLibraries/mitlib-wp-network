@@ -1,0 +1,122 @@
+.sidebar {
+	padding-right: 1%;
+	.widget {
+		border-top: 2px solid #ddd;
+		padding: 10px 0 20px;
+		font-size: 14px;
+		.widget-title {
+			color: #111;
+			@include font-size(16px);
+			line-height: 1.4;
+			font-weight: 600;
+			@include rem-first--4-values(margin, 0, 0, 0.667, 0);
+			@include rem-first(padding-top, 0);
+			@include rem-first(padding-bottom, 0);
+		}
+		ul li {
+			position:relative;
+			margin-bottom: 2px;
+			margin-left: 15px;
+		}
+		ul li:before {
+			position:absolute;
+			top: 4px;
+			left: -15px;
+			font-family:FontAwesome;
+			content:"\f138";
+			color: #338bc5;
+			font-size: 11px;
+		}
+	}
+	.connect-widget,
+	.connect-alt {
+		div span {
+			position:relative;
+			margin-bottom: 2px;
+			margin-left: 20px;
+			font-size: 14px;	
+		}		
+		div span.twitter-connect:before {
+			position:absolute;
+			top: 1px;
+			left: -20px;
+			font-family:FontAwesome;
+			content:"\f099" !important;
+			color: #338bc5;
+			font-size: 14px;
+		}
+		div span.fb-connect:before {
+			position:absolute;
+			top: 2px;
+			left: -20px;
+			font-family:FontAwesome;
+			content:"\f082" !important;
+			color: #338bc5;
+			font-size: 14px;
+		}
+		div span.email-connect:before {
+			position:absolute;
+			top: 3px;
+			left: -20px;
+			font-family:FontAwesome;
+			content:"\f003" !important;
+			color: #338bc5;
+			font-size: 14px;
+		}
+		div span.instagram-connect:before {
+			position:absolute;
+			top: 3px;
+			left: -20px;
+			font-family:FontAwesome;
+			content:"\f16d" !important;
+			color: #338bc5;
+			font-size: 1em;
+		}
+		div span.google-plus-connect:before {
+			position:absolute;
+			top: 3px;
+			left: -20px;
+			font-family:FontAwesome;
+			content:"\f0d5" !important;
+			color: #338bc5;
+			font-size: 1em;
+		}
+		div span.pinterest-connect:before {
+			position:absolute;
+			top: 3px;
+			left: -20px;
+			font-family:FontAwesome;
+			content:"\f0d2" !important;
+			color: #338bc5;
+			font-size: 1em;
+		}
+		div span.youtube-connect:before {
+			position:absolute;
+			top: 3px;
+			left: -20px;
+			font-family:FontAwesome;
+			content:"\f16a" !important;
+			color: #338bc5;
+			font-size: 1em;
+		}
+	}
+	.no-top-border {
+		border-top: none;
+	}
+	.collapse-top-margin {
+		margin-top: -30px;
+	}
+}
+
+.ie8 .sidebar .widget {
+	display: block; // Fixes <aside> element non-capatability
+}
+
+@media screen and (max-width:720px) {
+	.sidebar {
+		padding: 0 5%;
+		width: 100%;
+		margin-bottom: 50px;		
+	}
+}
+

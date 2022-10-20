@@ -1,0 +1,207 @@
+.header-main {
+	position: relative;
+	background: #000 url(#{$imagesPath}/vi-shape7-tp.png) no-repeat 0 65%;
+	@include span-12-12;
+
+	@include bp-tablet--portrait {
+		justify-content: space-between;
+		padding: 0 1em;
+	}
+
+	.name-site {
+		order: 2;
+		@include rem-first(min-width, 4.8125);
+		@include rem-first(padding-bottom, 0.4); // Matches mobile nav padding
+		@include rem-first(font-size, 0.9);
+		line-height: 1;
+
+		@include bp-tablet--portrait {
+			@include rem-first(max-width, 6.5);
+			margin-left: 1.5%;
+			padding: 0;
+		}
+
+		a {
+			display: block;
+			width: auto;
+		}
+	}
+
+	.logo-mit-lib {
+		fill: $color-text--light;
+		padding: 8px;
+
+		svg {
+			@include rem-first(max-height, 1.75);
+			height: auto;
+			width: 75px;
+
+			@include bp-tablet--portrait {
+				@include rem-first(max-height, 2.75);
+				width: 120px;
+			}
+		}
+		title {
+			color: #000;
+			background-color: #fff;
+		}
+
+		&:hover {
+  			background-color: $brand-secondary;
+		}
+		
+		&:focus {
+			background-color: $brand-secondary;
+		}
+	}
+
+	.link-account,
+	.link-site-search,
+	.link-contact {
+		align-self: flex-end;
+		display: flex;
+		flex-direction: column;
+		order: 1000; // make them last
+		@include rem-first(padding, 0.4); // Matches logo padding
+		color: $white;
+		text-transform: uppercase;
+		font-size: 0.75rem;
+		
+		&:hover,
+		&:focus {
+			background-color: $brand-secondary;
+		}
+
+		svg {
+			fill: #c8c8c8;
+			margin: 0 auto;
+			padding-bottom: 0.25em;
+			width: 2em;
+		}
+
+		i {
+			color: #c8c8c8;
+			text-align: center;
+			font-size: 14px;
+		}
+
+		@include bp-tablet--portrait {
+			display: none;
+		}
+	}
+
+	.link-site-search {
+		margin-left: auto;
+	}
+
+	.link-account {
+		margin-left: 0.6rem;
+		margin-right: 0.6rem;
+
+	}
+
+	.link-contact {
+		margin-right: auto;
+	}
+
+	.link-logo-mit {
+		display: none;
+		align-self: flex-end;
+		order: 4;
+		@include rem-first(padding-top, 2);
+		@include rem-first(padding-bottom, 0.5);
+		padding-left: 0.5em;
+		padding-right: 0.5em;
+		max-width: 59px;
+		@include rem-first(max-width, 3.6875);
+
+		@include bp-tablet--portrait {
+			display: block;
+		}
+
+		&:hover {
+			background-color: $brand-secondary;
+		}
+		
+		&:focus {
+			background-color: $brand-secondary;
+		}
+	}
+
+	.logo-mit {
+		display: block;
+		height: auto;
+		@include rem-first(max-height, 2.8125);
+		fill: #b9b7b6;
+
+		.color {
+			fill: #fff;
+		}
+	}
+}
+
+/* for skip-to-main-content link */
+#skip a { 
+	position:absolute; 
+	left:-10000px; 
+	top:auto; 
+	width:1px; 
+	height:1px; 
+	overflow:hidden;
+	background: #fff;
+	color: blue;
+	display: block;
+	padding: 10px;
+		&:focus {
+			position:static; 
+			width:auto; 
+			height:auto; 
+			}
+		} 
+
+.no-flexbox.flexboxlegacy {
+	.header-main {
+		.icon-account,
+		.icon-search {
+			@include bp-small {
+				@include rem-first(max-height, 1);
+				@include rem-first(max-width, 1);
+			}
+		}
+		.menu--toggle {
+			svg {
+				@include bp-small {
+					height: 100%;
+					padding: 1em;
+					width: auto;
+				}
+			}
+		}
+	}
+}
+
+.lte-ie9 {
+	.header-main {
+		height: 62px;
+		overflow: hidden;
+		* {
+			height: 62px;
+			overflow: hidden;
+		}
+		.name-site {
+			margin-left: 32px;
+			max-width: 103px;
+		}
+		.logo-mit {
+			margin-top: 24px;
+			margin-left: 40px;
+		}
+		.small {
+			@include rem-first(font-size, 0.625);
+			@include rem-first(padding-top, 1.625);
+			svg {
+				display: none;
+			}
+		}
+	}
+}
