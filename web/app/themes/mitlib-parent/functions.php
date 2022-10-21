@@ -105,7 +105,13 @@ function setup_scripts_styles()
 
     wp_register_script('hours-loader', get_template_directory_uri() . '/js/hours-loader.js', array( 'moment', 'underscore', 'polyfill' ), '1.10.0', true);
 
-    wp_register_script('hours-gldatepickerJS', get_template_directory_uri() . '/libs/datepicker/glDatePicker.min.js', false, null, true);
+
+    // These are used by the parent-hours bundle. Two wildcard dirctories are also enqueue directly.
+    wp_register_script('gldatepicker', get_template_directory_uri() . '/libs/datepicker/glDatePicker.min.js', array(), $theme_version, true);
+    wp_register_script('jquery-sticky', get_template_directory_uri() . '/js/sticky/jquery.sticky.js', array(), $theme_version, true);
+    wp_register_script('sticky-hours-menu', get_template_directory_uri() . '/js/sticky/sticky-hours.menu.js', array(), $theme_version, true);
+    wp_register_script('scrollstick', get_template_directory_uri() . '/js/sticky/scrollStick/hours.scrollStick.js', array(), $theme_version, true);
+    wp_register_script('jquery-cookie', get_template_directory_uri() . '/js/sticky/scrollStick/jquery.cookie.js', array(), $theme_version, true);
 
     // These are used by the parent-search bundle.
     wp_register_script('ga-discovery', get_template_directory_uri() . '/js/ga_discovery.js', array(), $theme_version, false);
@@ -120,7 +126,7 @@ function setup_scripts_styles()
     // Register the five compiled stylesheets.
     wp_register_script('homeJS', get_template_directory_uri() . '/js/build/home.min.js', array( 'jquery', 'modernizr', 'moment', 'underscore' ), $theme_version, true);
     wp_register_script('productionJS', get_template_directory_uri() . '/js/build/production.min.js', array( 'jquery', 'moment', 'underscore' ), $theme_version, true);
-    wp_register_script('hoursJS', get_template_directory_uri() . '/js/build/hours.min.js', array( 'jquery', 'productionJS', 'hours-gldatepickerJS' ), $theme_version, true);
+    wp_register_script('parent-hours', get_template_directory_uri() . '/js/make.datepicker.js', array( 'jquery', 'productionJS', 'gldatepicker', 'jquery-sticky', 'sticky-hours-menu', 'scrollstick', 'jquery-cookie' ), $theme_version, true);
     wp_register_script('parent-search', get_template_directory_uri() . '/js/search.js', array( 'jquery', 'modernizr', 'search-ie', 'ga-discovery' ), $theme_version, false);
     wp_register_script('parent-map', get_template_directory_uri() . '/js/map.js', array( 'jquery', 'infobox', 'googleMapsAPI' ), $theme_version, true);
 
@@ -146,7 +152,7 @@ function setup_scripts_styles()
 
     if (is_page('hours')) {
         wp_enqueue_style('hours');
-        wp_enqueue_script('hoursJS');
+        wp_enqueue_script('parent-hours');
     }
 
     if (is_page('locations')) {
