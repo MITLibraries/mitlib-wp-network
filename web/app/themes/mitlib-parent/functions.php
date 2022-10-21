@@ -107,6 +107,10 @@ function setup_scripts_styles()
 
     wp_register_script('hours-gldatepickerJS', get_template_directory_uri() . '/libs/datepicker/glDatePicker.min.js', false, null, true);
 
+    // These are used by the parent-search bundle.
+    wp_register_script('ga-discovery', get_template_directory_uri() . '/js/ga_discovery.js', array(), $theme_version, false);
+    wp_register_script('search-ie', get_template_directory_uri() . '/js/search-ie.js', array(), $theme_version, false);
+
     // These are used by the parent-map bundle.
     wp_register_script('googleMapsAPI', '//maps.googleapis.com/maps/api/js?key=AIzaSyDJg6fTKm3Pa_NfKEVAdyeRUbVs7zZm5Nw', array(), '1.7.0', true);
     wp_register_script('infobox', get_template_directory_uri() . '/libs/infobox/infobox.js', array( 'googleMapsAPI' ), '1.1.12', true);
@@ -117,7 +121,7 @@ function setup_scripts_styles()
     wp_register_script('homeJS', get_template_directory_uri() . '/js/build/home.min.js', array( 'jquery', 'modernizr', 'moment', 'underscore' ), $theme_version, true);
     wp_register_script('productionJS', get_template_directory_uri() . '/js/build/production.min.js', array( 'jquery', 'moment', 'underscore' ), $theme_version, true);
     wp_register_script('hoursJS', get_template_directory_uri() . '/js/build/hours.min.js', array( 'jquery', 'productionJS', 'hours-gldatepickerJS' ), $theme_version, true);
-    wp_register_script('searchJS', get_template_directory_uri() . '/js/build/search.min.js', array( 'jquery', 'modernizr' ), $theme_version, false);
+    wp_register_script('parent-search', get_template_directory_uri() . '/js/search.js', array( 'jquery', 'modernizr', 'search-ie', 'ga-discovery' ), $theme_version, false);
     wp_register_script('parent-map', get_template_directory_uri() . '/js/map.js', array( 'jquery', 'infobox', 'googleMapsAPI' ), $theme_version, true);
 
     /* All-site JS */
@@ -150,7 +154,7 @@ function setup_scripts_styles()
     }
 
     if (is_page('search')) {
-        wp_enqueue_script('searchJS');
+        wp_enqueue_script('parent-search');
     }
 
     if (is_page_template('nav-maine')) {
