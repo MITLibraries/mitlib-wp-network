@@ -42,6 +42,14 @@ add_action('after_setup_theme', 'Mitlib\Parent\setup_scss_folders');
 define('WP_SCSS_ALWAYS_RECOMPILE', true);
 
 /**
+ * Apply localization rules
+ */
+function apply_localization($file)
+{
+    wp_localize_script($file, 'mitlib', array('themeUrl' => get_template_directory_uri()));
+}
+
+/**
  * Register and selectively enqueue the scripts and stylesheets needed for this
  * page.
  */
@@ -143,6 +151,11 @@ function setup_scripts_styles()
     wp_register_script('parent-hours', get_template_directory_uri() . '/js/make.datepicker.js', array( 'jquery', 'productionJS', 'gldatepicker', 'jquery-sticky', 'sticky-hours-menu', 'scrollstick', 'jquery-cookie' ), $theme_version, true);
     wp_register_script('parent-search', get_template_directory_uri() . '/js/search.js', array( 'jquery', 'modernizr', 'search-ie', 'ga-discovery' ), $theme_version, false);
     wp_register_script('parent-map', get_template_directory_uri() . '/js/map.js', array( 'jquery', 'infobox', 'googleMapsAPI' ), $theme_version, true);
+
+    // Apply localization rules.
+    // - Replace mitlib.themeUrl with local path to theme.
+    $localized_files = array('fonts', 'guides-home', 'hours-home', 'map');
+    array_map('Mitlib\Parent\apply_localization', $localized_files);
 
     /* All-site JS */
     wp_enqueue_script('parent-core');
