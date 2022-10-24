@@ -95,6 +95,8 @@ function setup_scripts_styles()
 
     wp_register_script('jquery.smartmenus.bootstrap.min', '/js/bootstrap-js/jquery.smartmenus.bootstrap.min.js', array( 'jquery' ), true); // All the bootstrap javascript goodness.
 
+    wp_register_script('libchat', get_template_directory_uri() . '/js/libs/libchat.js', array(), $theme_version, true);
+
     wp_register_script('modernizr', get_template_directory_uri() . '/js/modernizr.js', array(), '2.8.1', false);
 
     wp_register_script('moment', get_template_directory_uri() . '/js/libs/moment.min.js', array(), '2.9.0', true);
@@ -103,7 +105,16 @@ function setup_scripts_styles()
 
     wp_register_script('polyfill', '//polyfill.io/v3/polyfill.js?version=3.52.1', array(), '3.52.1', true);
 
+    wp_register_script('twix', get_template_directory_uri() . '/js/libs/twix.js', array('moment'), $theme_version, true);
+
     wp_register_script('hours-loader', get_template_directory_uri() . '/js/hours-loader.js', array( 'moment', 'underscore', 'polyfill' ), '1.10.0', true);
+
+    // These are used by the parent-core bundle, which is loaded on every page.
+    wp_register_script('alerts', get_template_directory_uri() . '/js/alerts.js', array(), $theme_version, true);
+    wp_register_script('dev', get_template_directory_uri() . '/js/dev.js', array(), $theme_version, true);
+    wp_register_script('fonts', get_template_directory_uri() . '/js/fonts.js', array(), $theme_version, true);
+    wp_register_script('ga-links', get_template_directory_uri() . '/js/ga_links.js', array(), $theme_version, true);
+    wp_register_script('menu-toggle', get_template_directory_uri() . '/js/menu.toggle.js', array(), $theme_version, true);
 
     // These are used by the parent-home bundle.
     wp_register_script('guides-home', get_template_directory_uri() . '/js/guides-home.js', array(), $theme_version, true);
@@ -124,26 +135,19 @@ function setup_scripts_styles()
     wp_register_script('googleMapsAPI', '//maps.googleapis.com/maps/api/js?key=AIzaSyDJg6fTKm3Pa_NfKEVAdyeRUbVs7zZm5Nw', array(), '1.7.0', true);
     wp_register_script('infobox', get_template_directory_uri() . '/libs/infobox/infobox.js', array( 'googleMapsAPI' ), '1.1.12', true);
 
-    wp_register_script('privacyJS', get_template_directory_uri() . '/js/privacy-notice.js', array(), $theme_version, false);
+    wp_register_script('privacy', get_template_directory_uri() . '/js/privacy-notice.js', array(), $theme_version, false);
 
     // Register the five compiled stylesheets.
+    wp_register_script('parent-core', get_template_directory_uri() . '/js/core.js', array( 'jquery', 'libchat', 'moment', 'twix', 'underscore', 'hours-loader', 'modernizr', 'privacy', 'alerts', 'dev', 'fonts', 'ga-links', 'menu-toggle' ), $theme_version, true);
     wp_register_script('parent-home', get_template_directory_uri() . '/js/experts-home.js', array( 'jquery', 'modernizr', 'moment', 'underscore', 'guides-home', 'hours-home' ), $theme_version, true);
-    wp_register_script('productionJS', get_template_directory_uri() . '/js/build/production.min.js', array( 'jquery', 'moment', 'underscore' ), $theme_version, true);
     wp_register_script('parent-hours', get_template_directory_uri() . '/js/make.datepicker.js', array( 'jquery', 'productionJS', 'gldatepicker', 'jquery-sticky', 'sticky-hours-menu', 'scrollstick', 'jquery-cookie' ), $theme_version, true);
     wp_register_script('parent-search', get_template_directory_uri() . '/js/search.js', array( 'jquery', 'modernizr', 'search-ie', 'ga-discovery' ), $theme_version, false);
     wp_register_script('parent-map', get_template_directory_uri() . '/js/map.js', array( 'jquery', 'infobox', 'googleMapsAPI' ), $theme_version, true);
 
     /* All-site JS */
-    wp_enqueue_script('hours-loader');
-    wp_enqueue_script('modernizr');
-    wp_enqueue_script('privacyJS');
+    wp_enqueue_script('parent-core');
 
     /* Conditionally enqueue JS and CSS based on various criteria */
-
-    if (! is_front_page() || is_child_theme()) {
-        wp_enqueue_script('productionJS');
-    }
-
     if (is_front_page() && ! is_child_theme()) {
         wp_enqueue_script('parent-home');
         wp_enqueue_script('parent-search');
