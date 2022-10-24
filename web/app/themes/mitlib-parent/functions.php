@@ -105,6 +105,9 @@ function setup_scripts_styles()
 
     wp_register_script('hours-loader', get_template_directory_uri() . '/js/hours-loader.js', array( 'moment', 'underscore', 'polyfill' ), '1.10.0', true);
 
+    // These are used by the parent-home bundle.
+    wp_register_script('guides-home', get_template_directory_uri() . '/js/guides-home.js', array(), $theme_version, true);
+    wp_register_script('hours-home', get_template_directory_uri() . '/js/hours-home.js', array(), $theme_version, true);
 
     // These are used by the parent-hours bundle. Two wildcard dirctories are also enqueue directly.
     wp_register_script('gldatepicker', get_template_directory_uri() . '/libs/datepicker/glDatePicker.min.js', array(), $theme_version, true);
@@ -124,7 +127,7 @@ function setup_scripts_styles()
     wp_register_script('privacyJS', get_template_directory_uri() . '/js/privacy-notice.js', array(), $theme_version, false);
 
     // Register the five compiled stylesheets.
-    wp_register_script('homeJS', get_template_directory_uri() . '/js/build/home.min.js', array( 'jquery', 'modernizr', 'moment', 'underscore' ), $theme_version, true);
+    wp_register_script('parent-home', get_template_directory_uri() . '/js/experts-home.js', array( 'jquery', 'modernizr', 'moment', 'underscore', 'guides-home', 'hours-home' ), $theme_version, true);
     wp_register_script('productionJS', get_template_directory_uri() . '/js/build/production.min.js', array( 'jquery', 'moment', 'underscore' ), $theme_version, true);
     wp_register_script('parent-hours', get_template_directory_uri() . '/js/make.datepicker.js', array( 'jquery', 'productionJS', 'gldatepicker', 'jquery-sticky', 'sticky-hours-menu', 'scrollstick', 'jquery-cookie' ), $theme_version, true);
     wp_register_script('parent-search', get_template_directory_uri() . '/js/search.js', array( 'jquery', 'modernizr', 'search-ie', 'ga-discovery' ), $theme_version, false);
@@ -142,7 +145,8 @@ function setup_scripts_styles()
     }
 
     if (is_front_page() && ! is_child_theme()) {
-        wp_enqueue_script('homeJS');
+        wp_enqueue_script('parent-home');
+        wp_enqueue_script('parent-search');
     }
 
     if (is_page_template('page-authenticate.php') || is_page_template('page-forms.php') || is_page_template('page.php')) {
