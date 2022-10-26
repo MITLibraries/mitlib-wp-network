@@ -85,11 +85,11 @@
   "prefer-stable": true,
   "extra": {
     "installer-paths": {
-      "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
-      "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
-      "web/app/themes/{$name}/": ["type:wordpress-theme"]
+      "mjb/app/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
+      "mjb/app/plugins/{$name}/": ["type:wordpress-plugin"],
+      "mjb/app/themes/{$name}/": ["type:wordpress-theme"]
     },
-    "wordpress-install-dir": "web/wp",
+    "wordpress-install-dir": "mjb/wp",
     "build-env": {
       "install-cms": [
         "wp core install --title={site-name} --url={site-url} --admin_user={account-name} --admin_email={account-mail} --admin_password={account-pass}",

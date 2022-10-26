@@ -2,22 +2,22 @@
 # WordPress projects. Because .gitignore is specific to your site and its
 # deployment processes, you may need to uncomment, add, or remove rules.
 
-# The /web/app/ directory is used in favor of /wp-content in a traditional
+# The /mjb/app/ directory is used in favor of /wp-content in a traditional
 # WordPress project. This is where files are uploaded to, where plugins and
 # themes are installed and where other writeable directories are created.
 # Plugin, theme and mu-plugin paths are defined later and handled differently,
 # but in most cases, we don't want to version control anything in here.
 # It's unlikely that you would need to change any of these rules.
-web/app/upgrade
-web/app/uploads/*
-!web/app/uploads/.gitkeep
-web/app/cache/*
+mjb/app/upgrade
+mjb/app/uploads/*
+!mjb/app/uploads/.gitkeep
+mjb/app/cache/*
 
-# WordPress is installed in web/wp so that it can be fully managed by Composer.
+# WordPress is installed in mjb/wp so that it can be fully managed by Composer.
 # This ensures that the WordPress directory is clean and doesn't contain any
 # files other than those that come with the WordPress package.
-web/wp
-web/.htaccess
+mjb/wp
+mjb/.htaccess
 
 # Logfiles should always be ignored.
 *.log
@@ -49,57 +49,57 @@ wp-cli.local.yml
 # Ignore packages uploaded to mu-plugins by default. These area typically
 # managed by composer as wordpress-muplugins. If you have custom mu-plugins,
 # you will need to explicitly exclude them from this rule like this:
-# !web/app/mu-plugins/my-muplugin/
+# !mjb/app/mu-plugins/my-muplugin/
 # By default, individual mu-plugin files are not ignored, so any bare file in
 # mu-plugins is version controlled. Exceptions to this rule are made to specific
 # files managed by Composer.
-web/app/mu-plugins/*/
-!web/app/mu-plugins/mitlib-secrets-widget
+mjb/app/mu-plugins/*/
+!mjb/app/mu-plugins/mitlib-secrets-widget
 
 # Plugins
 # Ignore the plugins directory by default. WordPress plugins should be managed
 # by Composer, where we have more control over the version constraints of the
 # plugins. If you have custom plugins, you will need to explicitly exclude them
 # from this rule like this:
-# !web/app/plugins/my-plugin
-web/app/plugins/*
-!web/app/plugins/.gitkeep
-!web/app/plugins/mitlib-plugin-canary
+# !mjb/app/plugins/my-plugin
+mjb/app/plugins/*
+!mjb/app/plugins/.gitkeep
+!mjb/app/plugins/mitlib-plugin-canary
 
 # Themes
 # We don't ignore all themes by default as these are most commonly where a
 # bulk of a site's custom code may be. However, we do ignore all of the
 # twenty-* themes by default. Any other Composer-managed themes should be
 # added to this list.
-web/app/themes/twenty*
+mjb/app/themes/twenty*
 
 # Other WordPress files and directories
 # Any other files or directories that should not be version controlled go here.
 # A lot of stuff from the non-Composer-managed WordPress upstream is repeated
 # here.
-web/app/backups/
-web/app/backupwordpress-*/
-web/app/blogs.dir/
-web/app/backup-db/
-web/app/cache/
-web/app/managewp/backups/
-web/app/updraft/
-web/app/upgrade/
-web/app/advanced-cache.php
-web/app/wp-cache-config.php
-web/wp-config-local.php
+mjb/app/backups/
+mjb/app/backupwordpress-*/
+mjb/app/blogs.dir/
+mjb/app/backup-db/
+mjb/app/cache/
+mjb/app/managewp/backups/
+mjb/app/updraft/
+mjb/app/upgrade/
+mjb/app/advanced-cache.php
+mjb/app/wp-cache-config.php
+mjb/wp-config-local.php
 sitemap.xml
 sitemap.xml.gz
 
 # Private files
-# We want to ignore files inside web/private/ by default, but we don't want to
-# ignore the entire directory. The web/private/config directory is excluded from
+# We want to ignore files inside mjb/private/ by default, but we don't want to
+# ignore the entire directory. The mjb/private/config directory is excluded from
 # this rule because this may contain information that should be shared across
 # environments and is not considered sensitive data. However, that exclusion
 # should be removed if that is not the case.
-!web/private/
-web/private/*
-!web/private/config/
+!mjb/private/
+mjb/private/*
+!mjb/private/config/
 
 # Autoloader
 # This file loads the Composer autoloader and is moved to the root directory by
@@ -126,7 +126,7 @@ pantheon.upstream.yml
 *.tar
 *.zip
 *.tgz
-!web/wp/wp-includes/**/*.gz
+!mjb/wp/wp-includes/**/*.gz
 
 # Logs and databases #
 ######################
