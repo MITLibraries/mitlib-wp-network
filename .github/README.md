@@ -146,33 +146,15 @@ In some circumstances, you may need to specify port numbers as part of the site 
 * [Terminus](https://pantheon.io/docs/terminus) is used for CLI access to the Pantheon platform.
 * Enhanced security (separated web root and secure passwords with [wp-password-bcrypt](https://github.com/roots/wp-password-bcrypt))
 
-## Required environment and secrets
+## Environment variables and secrets
 
-We use the [Terminus Secrets Plugin](https://github.com/pantheon-systems/terminus-secrets-plugin) to manage environment variables within Pantheon. Please see the readme for that project for [installation](https://github.com/pantheon-systems/terminus-secrets-plugin#installation) and [usage](https://github.com/pantheon-systems/terminus-secrets-plugin#usage) instructions.
+This application uses a variety of ways to manage environment variables and secrets. All of these values are available within our shared LastPass account.
 
-Please avoid using the phpdotenv library and `.env` files until [ENGX-209](https://mitlibraries.atlassian.net/browse/ENGX-209) is closed.
+### Environment variables
 
-### Required Environment variables
+The [phpdotenv](https://github.com/vlucas/phpdotenv) library will load information from the `.env`, `.env.local`, and `.env.pantheon` files. The latter of these files is in version control, while `.env` and `.env.local` are ignored.
 
-- `WPMS_SMTP_PASS` Password associated with the username in `WPMS_SMTP_USER`.
-- `WPMS_SMTP_USER` Username expected by the email server to send emails from WordPress. Associated with `WPMS_SMTP_PASS`.
-
-### Optional Environment variables
-
-- `SENTRY_DSN` Unique identifier for this project within Sentry.
-
-### Github secrets
-
-For our CI workflow, we have defined the following variables. All values are available in our shared LastPass account.
-
-- `DEPLOY_SSH_KNOWN_HOSTS` The known_hosts file to allow GitHubs' CI to trust the Pantheon git server.
-- `DEPLOY_SSH_PRIVATE_KEY` The private key (with blank passphrase) used to connect to Pantheon's git server. The public key is added to your personal settings within Pantheon.
-- `PANTHEON_REPOSITORY` The SSH-format address of the git repository in Pantheon.
-
----
-**The sections below were included in the original Readme, and I'm not sure whether they are still useful in this context.**
-
-### Environment Variables
+Information in these files is loaded into [the `$_ENV` superglobal](https://www.php.net/manual/en/reserved.variables.environment.php).
 
 Bedrock makes use of an `.env` file to store environment variables. Pantheon takes care of many of these variabled in `.env.pantheon`. You may set your own environment variables in a new `.env` or environment variables that are local-only in `.env.local` using the `.env.example` as a guide. Wrap values that may contain non-alphanumeric characters with quotes, or they may be incorrectly parsed.
 
@@ -188,6 +170,32 @@ Bedrock makes use of an `.env` file to store environment variables. Pantheon tak
 - `AUTH_KEY`, `SECURE_AUTH_KEY`, `LOGGED_IN_KEY`, `NONCE_KEY`, `AUTH_SALT`, `SECURE_AUTH_SALT`, `LOGGED_IN_SALT`, `NONCE_SALT`
   - Generate with [wp-cli-dotenv-command](https://github.com/aaemnnosttv/wp-cli-dotenv-command)
   - Regenerate with [Bedrock's WordPress salts generator](https://roots.io/salts.html)
+
+### Application secrets
+
+For information that is too sensitive to be committed to version control, or managed via phpdotenv, we turn to the [Terminus Secrets Plugin](https://github.com/pantheon-systems/terminus-secrets-plugin). This tool allows us to populate secret values into the filesystem, which are read into WordPress constants within `/web/wp-config.php`.
+
+Please see the readme for that project for [installation](https://github.com/pantheon-systems/terminus-secrets-plugin#installation) and [usage](https://github.com/pantheon-systems/terminus-secrets-plugin#usage) instructions.
+
+#### Required Secrets
+
+- `WPMS_SMTP_PASS` Password associated with the username in `WPMS_SMTP_USER`.
+- `WPMS_SMTP_USER` Username expected by the email server to send emails from WordPress. Associated with `WPMS_SMTP_PASS`.
+
+#### Optional Secrets
+
+- `SENTRY_DSN` Unique identifier for this project within Sentry.
+
+### Github secrets
+
+In addition to secret values stored using Terminus, we also define certain values used by our CI workflow using Github secrets.
+
+- `DEPLOY_SSH_KNOWN_HOSTS` The known_hosts file to allow GitHubs' CI to trust the Pantheon git server.
+- `DEPLOY_SSH_PRIVATE_KEY` The private key (with blank passphrase) used to connect to Pantheon's git server. The public key is added to your personal settings within Pantheon.
+- `PANTHEON_REPOSITORY` The SSH-format address of the git repository in Pantheon.
+
+---
+**The sections below were included in the original Readme, and I'm not sure whether they are still useful in this context.**
 
 ### WordPress Config
 
