@@ -45,6 +45,10 @@
       "only": ["wpackagist-plugin/*", "wpackagist-theme/*"]
     },
     {
+      "type": "vcs",
+      "url": "https://github.com/matt-bernhardt/WP-SCSS"
+    },
+    {
         "type": "path",
         "url": "upstream-configuration"
     }
@@ -59,6 +63,7 @@
     "roots/wordpress": "6.0.3",
     "roots/wp-config": "1.0.0",
     "roots/wp-password-bcrypt": "1.1.0",
+    "connectthink/wp-scss": "^2.4@beta",
     "wpackagist-theme/twentytwentytwo": "^1.2",
     "pantheon-systems/pantheon-mu-plugin": "^1.0",
     "pantheon-upstreams/upstream-configuration": "dev-main",
