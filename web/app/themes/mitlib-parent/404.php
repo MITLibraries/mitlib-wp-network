@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying 404 error messages (page not foun).
+ * The template for displaying 404 error messages (page not found).
  *
  * @package MITlib_Parent
  * @since 0.0.1
