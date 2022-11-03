@@ -14,12 +14,12 @@ namespace Mitlib\Parent;
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-    <meta charset="<?php bloginfo('charset'); ?>" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="The libraries of the Massachusetts Institute of Technology - Search, Visit, Research, Explore" />
-    <link rel="icon" type="image/png" href="<?php echo esc_attr(get_template_directory_uri()); ?>/favicon.ico">
-    <title><?php wp_title('|', true, 'right'); ?></title>
-    <?php wp_head(); ?>
+	<meta charset="<?php bloginfo( 'charset' ); ?>" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="The libraries of the Massachusetts Institute of Technology - Search, Visit, Research, Explore" />
+	<link rel="icon" type="image/png" href="<?php echo esc_attr( get_template_directory_uri() ); ?>/favicon.ico">
+	<title><?php wp_title( '|', true, 'right' ); ?></title>
+	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-    <div class="wrap-page">
+	<div class="wrap-page">

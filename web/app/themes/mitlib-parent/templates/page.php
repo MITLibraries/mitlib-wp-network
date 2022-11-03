@@ -12,9 +12,9 @@ get_header();
 ?>
 
 <div id="content">
-    <?php the_title(); ?>
+	<?php the_title(); ?>
 
-    <?php the_content(); ?>
+	<?php the_content(); ?>
 </div>
 
 <?php get_footer(); ?>

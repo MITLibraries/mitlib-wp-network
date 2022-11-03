@@ -10,7 +10,7 @@ namespace Mitlib\Parent;
 
 ?>
 
-    </div><!-- End div.wrap-page from header.php -->
+	</div><!-- End div.wrap-page from header.php -->
 <?php wp_footer(); ?>
 </body>
 </html>
