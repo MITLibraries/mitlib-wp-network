@@ -118,6 +118,26 @@ Locally-developed plugins and themes are, with rare exceptions, added directly t
 The exception to the above involves packages that are used on multiple WordPress applications (not just multiple sites
 within this one network). These packages should be maintained in a separate Github repository, and [loaded directly from that repo](https://getcomposer.org/doc/05-repositories.md#loading-a-package-from-a-vcs-repository) via Composer.
 
+**A word about coding standards**
+
+We rely on [PHP CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) (PHPCS) to help us comply with the [WordPress Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/) - particularly the security-focused guidelines. To run PHPCS locally:
+
+```bash
+phpcs
+```
+
+Some problems flagged may be fixable automatically by running:
+
+```bash
+phpcbf
+```
+
+As part of the pull request process, a security- and syntax-focused check of the codebase is performed via:
+
+```bash
+composer test
+```
+
 #### Changing sites on the network
 
 In order for multisite networks to function correctly on Pantheon in subdirectory mode, we need to maintain symlnks in the `/web/` directory of this repository for each site. Without these symlinks, the sites themselves will be plagued with 404 errors due to missing site assets, while the site dashboards will be caught in a redirect loop.
