@@ -60,7 +60,6 @@
   <exclude-pattern>web/app/plugins/google-sitemap-generator</exclude-pattern>
   <exclude-pattern>web/app/plugins/lh-hsts</exclude-pattern>
   <exclude-pattern>web/app/plugins/media-library-assistant</exclude-pattern>
-  <exclude-pattern>web/app/plugins/mitlib-plugin-canary</exclude-pattern>
   <exclude-pattern>web/app/plugins/notification</exclude-pattern>
   <exclude-pattern>web/app/plugins/page-links-to</exclude-pattern>
   <exclude-pattern>web/app/plugins/pantheon-advanced-page-cache</exclude-pattern>
