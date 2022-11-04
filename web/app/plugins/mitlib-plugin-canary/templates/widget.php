@@ -43,33 +43,33 @@
 }
 </style>
 <p>The list below should include every registered plugin under this Wordpress site. Entries are color-coded according to the following key:</p>
-<p class="canary listed"><span class="symbol">&check;</span> Listed in the plugin directory, no update available</p>
-<p class="canary updated"><span class="symbol">&excl;</span> Update available in plugin directory</p>
-<p class="canary ghosted"><span class="symbol">&quest;</span> Not listed in plugin directory</p>
+<p class="canary listed"><span class="symbol">&#x2713;</span> Listed in the plugin directory, no update available</p>
+<p class="canary updated"><span class="symbol">&#x21;</span> Update available in plugin directory</p>
+<p class="canary ghosted"><span class="symbol">&#x3f;</span> Not listed in plugin directory</p>
 <hr>
 <h3>Plugin status</h3>
 <?php
-$allowed = Array( '&quest;', '', '' );
-foreach ( $plugin_data as $plugin => $value ) {
-	// Each loop through this code is for a single registered plugin.
+$allowed = array( '' );
+foreach ( $plugin_data as $package => $value ) {
+	// The default value is a question mark.
 	$class = 'ghosted';
-	$symbol = '&quest;';
+	$symbol = "\u{3f}";
 
 	// Does plugin have an update?
-	if ( array_key_exists( $plugin, $update_data->response ) ) {
+	if ( array_key_exists( $package, $update_data->response ) ) {
 		$class = 'updated';
-		$symbol = '&excl;';
+		$symbol = "\u{21}";
 	}
 
 	// Does plugin appear under no_updates?
-	if ( array_key_exists( $plugin, $update_data->no_update ) ) {
+	if ( array_key_exists( $package, $update_data->no_update ) ) {
 		$class = 'listed';
-		$symbol = '&check;';
+		$symbol = "\u{2713}";
 	}
 
 	echo '<p class="canary ' . esc_attr( $class ) . '">';
-	echo '    <span class="symbol">' . wp_kses( $symbol, $allowed ) . '</span>';
-	echo '    <a href="' . esc_url( $value['PluginURI'] ) . '">' . esc_html( $value['Name'] ) . '</a>';
+	echo '<span class="symbol">' . esc_html( $symbol ) . '</span>';
+	echo '<a href="' . esc_url( $value['PluginURI'] ) . '">' . esc_html( $value['Name'] ) . '</a>';
 	echo '</p>';
 }
 ?>

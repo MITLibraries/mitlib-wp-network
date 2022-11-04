@@ -24,7 +24,7 @@ class Plugin_Canary_Widget {
 	public static function init() {
 		if ( current_user_can( 'activate_plugins' ) ) {
 			wp_add_dashboard_widget(
-				self::WID, // A unique slug/ID
+				self::WID, // A unique slug/ID.
 				'Plugin canary', // Visible name for the widget.
 				array( 'mitlib\Plugin_Canary_Widget', 'widget' )  // Callback for the main widget content.
 			);
@@ -46,7 +46,7 @@ class Plugin_Canary_Widget {
 		}
 
 		// Use the template to render widget output.
-		require_once( 'widget.php' );
+		require_once( 'templates/widget.php' );
 
 		// Clean up.
 		$plugin_data = null;
