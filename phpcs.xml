@@ -9,6 +9,8 @@
   <arg name="extensions" value="php"/>
 
   <!-- Ignore WordPress and Composer dependencies -->
+  <exclude-pattern>config/</exclude-pattern>
+  <exclude-pattern>upstream-configuration/</exclude-pattern>
   <exclude-pattern>web/wp</exclude-pattern>
   <exclude-pattern>web/app/themes/twentytwentytwo/</exclude-pattern>
   <exclude-pattern>vendor/</exclude-pattern>
@@ -36,8 +38,49 @@
   <exclude-pattern>web/scholarly</exclude-pattern>
 
   <!-- Start Pantheon addition: Ignore plugins and quicksilver scripts -->
-  <exclude-pattern>web/app/mu-plugins/*</exclude-pattern>
-  <exclude-pattern>web/app/plugins/*</exclude-pattern>
+  <exclude-pattern>web/app/mu-plugins/bedrock-disallow-indexing</exclude-pattern>
+  <exclude-pattern>web/app/mu-plugins/mitlib-secrets-widget</exclude-pattern>
+  <exclude-pattern>web/app/mu-plugins/multisite-url-fixer</exclude-pattern>
+  <exclude-pattern>web/app/mu-plugins/pantheon-mu-plugin</exclude-pattern>
+  <exclude-pattern>web/app/mu-plugins/bedrock-autoloader.php</exclude-pattern>
+  <exclude-pattern>web/app/plugins/acf-image-crop-add-on</exclude-pattern>
+  <exclude-pattern>web/app/plugins/add-category-to-pages</exclude-pattern>
+  <exclude-pattern>web/app/plugins/addthis</exclude-pattern>
+  <exclude-pattern>web/app/plugins/akismet</exclude-pattern>
+  <exclude-pattern>web/app/plugins/antivirus</exclude-pattern>
+  <exclude-pattern>web/app/plugins/black-studio-tinymce-widget</exclude-pattern>
+  <exclude-pattern>web/app/plugins/cf7-conditional-fields</exclude-pattern>
+  <exclude-pattern>web/app/plugins/cf7-to-zapier</exclude-pattern>
+  <exclude-pattern>web/app/plugins/classic-editor</exclude-pattern>
+  <exclude-pattern>web/app/plugins/classic-widgets</exclude-pattern>
+  <exclude-pattern>web/app/plugins/contact-form-7</exclude-pattern>
+  <exclude-pattern>web/app/plugins/custom-post-type-ui</exclude-pattern>
+  <exclude-pattern>web/app/plugins/enable-media-replace</exclude-pattern>
+  <exclude-pattern>web/app/plugins/filter-page-by-template</exclude-pattern>
+  <exclude-pattern>web/app/plugins/google-sitemap-generator</exclude-pattern>
+  <exclude-pattern>web/app/plugins/lh-hsts</exclude-pattern>
+  <exclude-pattern>web/app/plugins/media-library-assistant</exclude-pattern>
+  <exclude-pattern>web/app/plugins/mitlib-plugin-canary</exclude-pattern>
+  <exclude-pattern>web/app/plugins/notification</exclude-pattern>
+  <exclude-pattern>web/app/plugins/page-links-to</exclude-pattern>
+  <exclude-pattern>web/app/plugins/pantheon-advanced-page-cache</exclude-pattern>
+  <exclude-pattern>web/app/plugins/redirection</exclude-pattern>
+  <exclude-pattern>web/app/plugins/seamless-sticky-custom-post-types</exclude-pattern>
+  <exclude-pattern>web/app/plugins/shortcode-variables</exclude-pattern>
+  <exclude-pattern>web/app/plugins/slideshow-gallery</exclude-pattern>
+  <exclude-pattern>web/app/plugins/tablepress</exclude-pattern>
+  <exclude-pattern>web/app/plugins/tinymce-advanced</exclude-pattern>
+  <exclude-pattern>web/app/plugins/ultimate-posts-widget</exclude-pattern>
+  <exclude-pattern>web/app/plugins/widget-context</exclude-pattern>
+  <exclude-pattern>web/app/plugins/widget-css-classes</exclude-pattern>
+  <exclude-pattern>web/app/plugins/widget-importer-exporter</exclude-pattern>
+  <exclude-pattern>web/app/plugins/wordpress-importer</exclude-pattern>
+  <exclude-pattern>web/app/plugins/wp-mail-smtp</exclude-pattern>
+  <exclude-pattern>web/app/plugins/wp-native-php-sessions</exclude-pattern>
+  <exclude-pattern>web/app/plugins/WP-SCSS</exclude-pattern>
+  <exclude-pattern>web/app/plugins/wp-security-audit-log</exclude-pattern>
+  <exclude-pattern>web/app/plugins/wp-sentry-integration</exclude-pattern>
+  <exclude-pattern>web/app/plugins/wpcf7-recaptcha</exclude-pattern>
   <exclude-pattern>web/private/*</exclude-pattern>
   <!-- End Pantheon addition -->
 
@@ -47,6 +90,6 @@
   <!-- Show sniff codes in all reports -->
   <arg value="ns"/>
 
-  <!-- Use PSR-2 as a base -->
-  <rule ref="PSR2"/>
+  <!-- Use WordPress Coding Standards as a base -->
+  <rule ref="WordPress"/>
 </ruleset>

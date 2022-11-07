@@ -12,7 +12,7 @@ get_header();
 ?>
 
 <div id="content">
-    <p>This is the home page template.</p>
+	<p>This is the home page template.</p>
 </div>
 
 <?php get_footer(); ?>

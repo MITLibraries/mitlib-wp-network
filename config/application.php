@@ -117,21 +117,6 @@ Config::define('DISALLOW_FILE_MODS', true);
 Config::define('WP_POST_REVISIONS', env('WP_POST_REVISIONS') ?: true);
 
 /**
- * Pantheon modifications
- */
-if (isset($_ENV['PANTHEON_ENVIRONMENT']) && $_ENV['PANTHEON_ENVIRONMENT'] != 'lando') {
-    Config::define('DB_HOST', $_ENV['DB_HOST'] . ':' . $_ENV['DB_PORT']);
-} else {
-    /**
-     * URLs
-     */
-    Config::define('WP_HOME', env('WP_HOME'));
-    Config::define('WP_SITEURL', env('WP_SITEURL'));
-    Config::define('DB_HOST', env('DB_HOST') ?: 'localhost');
-    Config::define('DISABLE_WP_CRON', env('DISABLE_WP_CRON') ?: false);
-}
-
-/**
  * Debugging Settings
  */
 Config::define('WP_DEBUG_DISPLAY', false);

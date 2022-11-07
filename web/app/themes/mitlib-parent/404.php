@@ -12,7 +12,8 @@ get_header();
 ?>
 
 <div id="content">
-    <h1>Page not found</h1>    
+	<h1>Page not found</h1>    
 </div>
 
-<?php get_footer();
+<?php
+get_footer();
