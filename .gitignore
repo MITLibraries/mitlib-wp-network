@@ -64,6 +64,7 @@ web/app/mu-plugins/*/
 # !web/app/plugins/my-plugin
 web/app/plugins/*
 !web/app/plugins/.gitkeep
+!web/app/plugins/Custom-Child-Theme-Post-Types
 !web/app/plugins/mitlib-plugin-canary
 
 # Themes
