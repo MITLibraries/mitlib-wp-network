@@ -1,15 +1,13 @@
 <?php
 /**
- * Plugin Name: MITlib Custom Child Theme Post Types
- * Plugin URI: https://github.com/MITLibraries/Custom-Child-Theme-Post-Types
+ * Plugin Name: MITlib Custom Post Types
  * Description: A plugin that adds custom post types for Exhibits theme
  * Version: 1.1.0
- * Author: Phillip Bruk for MIT Libraries
+ * Author: MIT Libraries
  * License: GPL2
  *
- * @package Custom Child Theme Post types
- * @author Phillip Bruk for MIT Libraries
- * @link https://github.com/MITLibraries/Custom-Child-Theme-Post-Types
+ * @package MITlib Custom Post Types
+ * @author MIT Libraries
  */
 
 if ( ! function_exists( 'exhibit_post_type' ) ) {
