@@ -2,7 +2,7 @@
 /**
  * Class that defines a "pending posts" dashboard widget.
  *
- * @package WP Pending Posts
+ * @package MITlib Pending Posts
  * @since 1.0.0
  */
 
@@ -23,7 +23,7 @@ class Pending_Posts_Widget {
 	 */
 	public static function init() {
 		wp_add_dashboard_widget(
-			self::WID, // A unique slug/ID
+			self::WID, // A unique slug/ID.
 			'Urgent and/or pending posts', // Visible name for the widget.
 			array( 'mitlib\Pending_Posts_Widget', 'widget' )  // Callback for the main widget content.
 		);
@@ -69,7 +69,7 @@ class Pending_Posts_Widget {
 		$pending = new \WP_Query( $args );
 
 		// Use the template to render widget output.
-		require_once( 'widget.php' );
+		require_once( 'templates/widget.php' );
 
 		// Reset post data.
 		$urgent = null;
