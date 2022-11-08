@@ -65,6 +65,7 @@ web/app/mu-plugins/*/
 web/app/plugins/*
 !web/app/plugins/.gitkeep
 !web/app/plugins/mitlib-analytics
+!web/app/plugins/mitlib-cf7-elements
 !web/app/plugins/mitlib-custom-post-types
 !web/app/plugins/mitlib-multisearch-widget
 !web/app/plugins/mitlib-plugin-canary
