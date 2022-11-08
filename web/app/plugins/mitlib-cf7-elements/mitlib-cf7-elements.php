@@ -1,31 +1,13 @@
 <?php
 /**
  * Plugin Name: MITlib CF7 Elements
- * Plugin URI: https://github.com/MITLibraries/mitlib-cf7-elements
  * Description: Adds custom form controls for CF7 needed by the MIT Libraries.
  * Version: 1.2.0-beta1
- * Author: Matt Bernhardt
- * Author URI: https://github.com/matt-bernhardt
+ * Author: MIT Libraries
  * License: GPL2
  *
  * @package MITlib CF7 Elements
- * @author Matt Bernhardt
- * @link https://github.com/MITLibraries/mitlib-cf7-elements
- */
-
-/**
- * MITlib CF7 Elements is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 2 of the License, or
- * any later version.
- *
- * MITlib CF7 Elements is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with MITlib CF7 Elements. If not, see https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html.
+ * @author MIT Libraries
  */
 
 // Don't call the file directly!
@@ -69,12 +51,13 @@ add_filter( 'wpcf7_validate_select_dlc*', 'identify_required', 20, 2 );
  * @param object $result A WPCF7_Validation object.
  * @param object $tag    A WPCF7_FormTag object.
  * @link https://contactform7.com/2015/03/28/custom-validation/
+ * @link https://wordpress.org/support/topic/dealing-with-nonces-inside-a-custom-validation-function/
  */
 function validate_dlc_filter( $result, $tag ) {
 	// Has the DLC name been set?
-    // phpcs:disable WordPress.Security.NonceVerification.Missing
+	// phpcs:disable WordPress.Security.NonceVerification.Missing -- CF7 does not use nonces by default.
 	if ( empty( $_POST['department'] ) || '' == sanitize_text_field( wp_unslash( $_POST['department'] ) ) ) {
-        // phpcs:enable
+		// phpcs:enable -- Begin scanning again.
 		$result->invalidate( $tag, 'Please specify your department, lab, or center.' );
 	}
 	return $result;
@@ -90,14 +73,15 @@ function validate_dlc_filter( $result, $tag ) {
  * @param object $tag    A WPCF7_FormTag object.
  * @link https://contactform7.com/2015/03/28/custom-validation/
  * @link https://wordpress.org/support/topic/protection-against-form-hijacking/
+ * @link https://wordpress.org/support/topic/dealing-with-nonces-inside-a-custom-validation-function/
  */
 function validate_options( $result, $tag ) {
 	// Check if the field value is not empty.
-    // phpcs:disable WordPress.Security.NonceVerification.Missing
+	// phpcs:disable WordPress.Security.NonceVerification.Missing -- CF7 does not use nonces by default.
 	if ( ! empty( $_POST[ $tag->name ] ) ) {
 		// Look up the received value in the array of expected values.
 		$value = sanitize_text_field( wp_unslash( $_POST[ $tag->name ] ) );
-        // phpcs:enable
+		// phpcs:enable -- Begin scanning again.
 		if ( ! in_array( $value, $tag->values ) ) {
 			$result->invalidate( $tag, 'Unexpected value received' );
 		}
