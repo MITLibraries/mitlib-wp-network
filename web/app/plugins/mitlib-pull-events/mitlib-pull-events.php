@@ -1,8 +1,8 @@
 <?php
 /*
-Plugin Name: Pull MIT Events
+Plugin Name: MITlib Pull Events
 Description: Pulls Events from calendar.mit.edu for the Libraries news site 
-Author: Hattie Llavina and Matt Bernhardt
+Author: MIT Libraries
 Version: 1.0.2
 */
 
