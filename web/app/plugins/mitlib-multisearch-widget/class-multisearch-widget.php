@@ -108,7 +108,7 @@ class Multisearch_Widget extends \WP_Widget {
 		// Second, we add this plugin's javascript.
 		wp_register_script(
 			'multisearch-js',
-			plugin_dir_url( __FILE__ ) . 'wp-multisearch-widget.js',
+			plugin_dir_url( __FILE__ ) . 'mitlib-multisearch-widget.js',
 			array( 'responsivetabs-js' ),
 			'1.4.1',
 			false
@@ -120,7 +120,7 @@ class Multisearch_Widget extends \WP_Widget {
 		wp_register_style( 'responsivetabs-css', plugin_dir_url( __FILE__ ) . 'libs/responsive-tabs.css', '', '1.6.1' );
 		wp_register_style(
 			'multisearch-tabs',
-			plugin_dir_url( __FILE__ ) . 'wp-multisearch-widget.css',
+			plugin_dir_url( __FILE__ ) . 'mitlib-multisearch-widget.css',
 			array( 'responsivetabs-css' ),
 			'1.3.0'
 		);
@@ -226,9 +226,7 @@ class Multisearch_Widget extends \WP_Widget {
 				id="<?php echo esc_attr( $this->get_field_id( 'banner_text' ) ); ?>"
 				type="text"
 				rows="5"
-				name="<?php echo esc_attr( $this->get_field_name( 'banner_text' ) ); ?>"><?php
-				echo esc_html( $banner_text );
-			?></textarea>
+				name="<?php echo esc_attr( $this->get_field_name( 'banner_text' ) ); ?>"><?php echo esc_html( $banner_text ); ?></textarea>
 		</p>
 		<p>Which set of search targets should be shown?</p>
 		<ul>

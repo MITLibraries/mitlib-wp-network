@@ -65,8 +65,8 @@ web/app/mu-plugins/*/
 web/app/plugins/*
 !web/app/plugins/.gitkeep
 !web/app/plugins/mitlib-custom-post-types
+!web/app/plugins/mitlib-multisearch-widget
 !web/app/plugins/mitlib-plugin-canary
-!web/app/plugins/wp-multisearch-widget
 
 # Themes
 # We don't ignore all themes by default as these are most commonly where a
