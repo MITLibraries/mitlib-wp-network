@@ -24,7 +24,7 @@ class Home_Page_News_Widget {
 	public static function init() {
 		if ( current_user_can( 'add_users' ) ) {
 			wp_add_dashboard_widget(
-				self::WID, // A unique slug/ID
+				self::WID, // A unique slug/ID.
 				__( 'Content published to home page', 'nouveau' ), // Visible name for the widget.
 				array( 'mitlib\Home_Page_News_Widget', 'widget' )  // Callback for the main widget content.
 			);
@@ -54,7 +54,7 @@ class Home_Page_News_Widget {
 
 		// If there are any posts, use the template. If not, a simple message.
 		if ( $home_page_posts->have_posts() ) {
-			require_once( 'widget.php' );
+			require_once( 'templates/widget.php' );
 		} else {
 			echo '<p>No content published to home page.</p>';
 		}

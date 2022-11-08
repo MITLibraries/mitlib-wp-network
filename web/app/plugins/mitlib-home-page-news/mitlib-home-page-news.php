@@ -1,16 +1,13 @@
 <?php
 /**
- * Plugin Name:   WP Home Page News
- * Plugin URI:    https://github.com/MITLibraries/wp-home-page-news
+ * Plugin Name:   MITlib Home Page News
  * Description:   Displays news selected for the home page in the dashboard
  * Version:       2.0.0
  * Author:        MIT Libraries
- * Author URI:    https://github.com/MITLibraries
  * Licence:       GPL2
  *
- * @package WP Home Page News
+ * @package MITlib Home Page News
  * @author MIT Libraries
- * @link https://github.com/MITLibraries/wp-home-page-news
  */
 
 namespace mitlib;
