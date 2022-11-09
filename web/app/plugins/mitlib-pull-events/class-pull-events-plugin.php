@@ -7,14 +7,21 @@
  */
 
 /**
- * Defines the plugin behavior.
+ * Class that includes all plugin behavior.
  */
 class Pull_Events_Plugin {
 
 
-
+	/**
+	 * This constructor method defines all actions that get taken by the
+	 * plugin, defining the dashboard, plugin settings structure, and
+	 * activation / deactivation hooks.
+	 *
+	 * The daily_event_pull is a new action defined in this plugin, which is
+	 * how new events should be harvested automatically every hour.
+	 */
 	public function __construct() {
-		// Hook into the admin menu
+		// Hook into the admin menu.
 		add_action( 'admin_menu', array( $this, 'create_plugin_settings_page' ) );
 
 		add_action( 'daily_event_pull', 'pull_events' );
@@ -28,17 +35,27 @@ class Pull_Events_Plugin {
 
 	}
 
-	function my_deactivation() {
+	/**
+	 * Upon plugin deactivation, delete the daily_event_pull action.
+	 */
+	public function my_deactivation() {
 		wp_clear_scheduled_hook( 'daily_event_pull' );
 	}
 
-	function my_activation() {
+	/**
+	 * Upon plugin activation, define the daily_event_pull action, to be
+	 * completed hourly.
+	 */
+	public function my_activation() {
 		wp_schedule_event( time(), 'hourly', 'daily_event_pull' );
 	}
 
-
+	/**
+	 * This creates the plugin settings page / dashboard, which is where all
+	 * operations are invoked and reported upon.
+	 */
 	public function create_plugin_settings_page() {
-		// Add the menu item and page
+		// Add the menu item and page.
 		$page_title = 'Pull Events Settings Page';
 		$menu_title = 'Pull MIT Events';
 		$capability = 'manage_options';
@@ -50,24 +67,42 @@ class Pull_Events_Plugin {
 		add_menu_page( $page_title, $menu_title, $capability, $slug, $callback, $icon, $position );
 	}
 
-
-
-	function setup_sections() {
+	/**
+	 * This defines the section which contains the plugin settings fields.
+	 * With only a single settings field in the plugin, this is a bit of
+	 * overkill, but necessary.
+	 */
+	public function setup_sections() {
 		add_settings_section( 'url_section', 'Configure Events Pull', false, 'pull_mit_events' );
 	}
 
+	/**
+	 * This defines the single configurable value needed by the plugin - the
+	 * URL to be polled to harvest event records.
+	 *
+	 * @link https://developer.wordpress.org/reference/functions/add_settings_field/
+	 */
 	public function setup_fields() {
 		add_settings_field( 'pull_url_field', 'Pull Events URL:', array( $this, 'field_callback' ), 'pull_mit_events', 'url_section' );
 	}
 
-
+	/**
+	 * Callback method to render the form field for the URL settings field.
+	 *
+	 * @param array $arguments See the Settings API documentation for info.
+	 */
 	public function field_callback( $arguments ) {
 		echo '<input name="pull_url_field" id="pull_url_field" type="text" size="100" value="' . esc_url( get_option( 'pull_url_field' ) ) . '" />';
 
 	}
-	/* Pulls events and either updates or inserts based on calendar ID field */
 
-	static function pull_events( $confirm = false ) {
+	/**
+	 * Pulls events and either updates or inserts based on calendar ID field
+	 *
+	 * @param boolean $confirm Flag to direct feedback to the user or to the
+	 *                         error log.
+	 */
+	public static function pull_events( $confirm = false ) {
 
 		/**
 		 * Before we do anything, make sure our timezone is set correctly based on
@@ -109,7 +144,7 @@ class Pull_Events_Plugin {
 				if ( isset( $val['event']['photo_url'] ) ) {
 					$photo_url = $val['event']['photo_url'];
 				}
-				$category = 43;  // all news
+				$category = 43;  // TODO: Make this user-configurable. This is the Category ID value in the News site for the "All News" value.
 
 				if ( isset( $calendar_id ) ) {
 
@@ -189,8 +224,15 @@ class Pull_Events_Plugin {
 		}
 	}
 
-
-	static function __update_post_meta( $post_id, $field_name, $value = '' ) {
+	/**
+	 * This stores the correct value for a post's meta field. The actual
+	 * action taken may be an update, creation, or deletion.
+	 *
+	 * @param integer $post_id the ID of the post being updated.
+	 * @param string  $field_name The field being updated for this post.
+	 * @param string  $value The new value for this field.
+	 */
+	public static function __update_post_meta( $post_id, $field_name, $value = '' ) {
 		if ( empty( $value ) or ! $value ) {
 			delete_post_meta( $post_id, $field_name );
 		} elseif ( ! get_post_meta( $post_id, $field_name ) ) {
@@ -200,8 +242,10 @@ class Pull_Events_Plugin {
 		}
 	}
 
-
-	function plugin_settings_page_content() {
+	/**
+	 * This renders the markup for the plugin dashboard / settings page.
+	 */
+	public function plugin_settings_page_content() {
 
 		if ( isset( $_GET['page'] ) && isset( $_GET['action'] ) ) {
 
