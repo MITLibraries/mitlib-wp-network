@@ -18,7 +18,7 @@ web/app/cache/*
 # files other than those that come with the WordPress package.
 web/wp
 web/.htaccess
-
+web/*
 # Logfiles should always be ignored.
 *.log
 
