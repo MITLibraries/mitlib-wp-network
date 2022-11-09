@@ -109,8 +109,12 @@ class Pull_Events_Plugin {
 		 * the site settings. Ideally we would store times and dates in their proper
 		 * format, but it was a legacy decision that they would be stored as
 		 * strings, rather than datetimes.
+		 *
+		 * TODO: Fix this more fundamentally.
 		 */
+		// phpcs:disable WordPress.DateTime.RestrictedFunctions.timezone_change_date_default_timezone_set -- temporarily ignore this problem.
 		date_default_timezone_set( get_option( 'timezone_string' ) );
+		// phpcs:enable -- begin scanning normally again.
 
 		$url = EVENTS_URL;
 		$result = file_get_contents( $url );
@@ -127,15 +131,15 @@ class Pull_Events_Plugin {
 				if ( isset( $val['event']['event_instances'][0]['event_instance'] ) ) {
 					$calendar_id = $val['event']['event_instances'][0]['event_instance']['id'];
 					$start = strtotime( $val['event']['event_instances'][0]['event_instance']['start'] );
-					$startdate = date( 'Ymd', $start );
-					$starttime = date( 'h:i A', $start );
+					$startdate = gmdate( 'Ymd', $start );
+					$starttime = gmdate( 'h:i A', $start );
 					$end = '';
 					$enddate = '';
 					$endtime = '';
 					if ( isset( $val['event']['event_instances'][0]['event_instance']['end'] ) ) {
 						$end = strtotime( $val['event']['event_instances'][0]['event_instance']['end'] );
-						$enddate = date( 'Ymd', $end );
-						$endtime = date( 'h:i A', $end );
+						$enddate = gmdate( 'Ymd', $end );
+						$endtime = gmdate( 'h:i A', $end );
 					}
 				}
 				if ( isset( $val['event']['localist_url'] ) ) {
@@ -209,15 +213,15 @@ class Pull_Events_Plugin {
 							error_log( $title . ': Inserted' );
 						}
 					}
-					self::__update_post_meta( $post_id, 'event_date', $startdate );
-					self::__update_post_meta( $post_id, 'event_start_time', $starttime );
+					self::wrap_update_post_meta( $post_id, 'event_date', $startdate );
+					self::wrap_update_post_meta( $post_id, 'event_start_time', $starttime );
 					if ( isset( $val['event']['event_instances'][0]['event_instance']['end'] ) ) {
-						self::__update_post_meta( $post_id, 'event_end_time', $endtime );
+						self::wrap_update_post_meta( $post_id, 'event_end_time', $endtime );
 					}
-					self::__update_post_meta( $post_id, 'is_event', '1' );
-					self::__update_post_meta( $post_id, 'calendar_url', $calendar_url );
-					self::__update_post_meta( $post_id, 'calendar_id', $calendar_id );
-					self::__update_post_meta( $post_id, 'calendar_image', $photo_url );
+					self::wrap_update_post_meta( $post_id, 'is_event', '1' );
+					self::wrap_update_post_meta( $post_id, 'calendar_url', $calendar_url );
+					self::wrap_update_post_meta( $post_id, 'calendar_id', $calendar_id );
+					self::wrap_update_post_meta( $post_id, 'calendar_image', $photo_url );
 
 				}
 			}
@@ -232,8 +236,8 @@ class Pull_Events_Plugin {
 	 * @param string  $field_name The field being updated for this post.
 	 * @param string  $value The new value for this field.
 	 */
-	public static function __update_post_meta( $post_id, $field_name, $value = '' ) {
-		if ( empty( $value ) or ! $value ) {
+	public static function wrap_update_post_meta( $post_id, $field_name, $value = '' ) {
+		if ( empty( $value ) || ! $value ) {
 			delete_post_meta( $post_id, $field_name );
 		} elseif ( ! get_post_meta( $post_id, $field_name ) ) {
 			add_post_meta( $post_id, $field_name, $value );
@@ -249,7 +253,7 @@ class Pull_Events_Plugin {
 
 		if ( isset( $_GET['page'] ) && isset( $_GET['action'] ) ) {
 
-			if ( $_GET['page'] == 'pull_mit_events' && $_GET['action'] == 'pull-events' ) {
+			if ( 'pull_mit_events' == $_GET['page'] && 'pull-events' == $_GET['action'] ) {
 				 echo '<h2>Pull MIT Library Events</h2>';
 				self::pull_events( true );
 				exit;
