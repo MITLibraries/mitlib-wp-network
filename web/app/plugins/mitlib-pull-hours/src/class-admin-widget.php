@@ -6,12 +6,12 @@
  * @since 0.0.1
  */
 
-namespace Mitlib;
+namespace Mitlib\PullHours;
 
 /**
  * Defines base widget
  */
-class Pull_Hours_Admin_Widget {
+class Admin_Widget {
 
 	/**
 	 * The id of this widget.
@@ -33,7 +33,7 @@ class Pull_Hours_Admin_Widget {
 			wp_add_dashboard_widget(
 				self::WID, // A unique slug/ID.
 				'Library hours information', // Visible name for the widget.
-				array( 'Mitlib\Pull_Hours_Admin_Widget', 'widget' )  // Callback for the main widget content.
+				array( 'Mitlib\PullHours\Admin_Widget', 'widget' )  // Callback for the main widget content.
 			);
 		}
 	}

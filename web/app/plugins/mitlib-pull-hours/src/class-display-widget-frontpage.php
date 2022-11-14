@@ -7,12 +7,12 @@
  * @since 0.6.0
  */
 
-namespace Mitlib;
+namespace Mitlib\PullHours;
 
 /**
  * Defines a public-facing widget for displaying all locations
  */
-class Pull_Hours_Display_Widget_Frontpage extends \WP_Widget {
+class Display_Widget_Frontpage extends \WP_Widget {
 
 	/**
 	 * Overridden constructor from WP_Widget.
@@ -80,7 +80,7 @@ class Pull_Hours_Display_Widget_Frontpage extends \WP_Widget {
 	 * Registers widget.
 	 */
 	public static function init() {
-		register_widget( 'Mitlib\Pull_Hours_Display_Widget_Frontpage' );
+		register_widget( 'Mitlib\PullHours\Display_Widget_Frontpage' );
 	}
 
 	/**

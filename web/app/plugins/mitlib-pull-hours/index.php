@@ -6,6 +6,6 @@
  * @since 0.1.0
  */
 
-namespace Mitlib;
+namespace Mitlib\PullHours;
 
 // Silence is golden.
