@@ -105,6 +105,13 @@ class Display_Widget_Frontpage extends \WP_Widget {
 	 * @link https://developer.wordpress.org/reference/classes/wp_widget/
 	 */
 	public function widget( $args, $instance ) {
+		// Register javascript.
+		wp_register_script( 'moment', plugin_dir_url( __FILE__ ) . '../js/libs/moment.min.js', array(), '2.8.3', true );
+		wp_register_script( 'underscore', plugin_dir_url( __FILE__ ) . '../js/libs/underscore.min.js', array(), '1.7.0', true );
+		wp_register_script( 'polyfill', '//polyfill.io/v3/polyfill.js?version=3.52.1', array(), '3.52.1', true );
+		wp_register_script( 'hours-loader', plugin_dir_url( __FILE__ ) . '../js/hours-loader.js', array( 'jquery', 'moment', 'underscore', 'polyfill' ), '1.10.0', true );
+		wp_enqueue_script( 'hours-loader' );
+
 		$instance = null; // There are no publicly exposed settings for this widget.
 
 		// Define expected array of tags and attributes in user-configurable fields.
