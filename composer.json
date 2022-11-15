@@ -77,6 +77,7 @@
     "wpackagist-plugin/cf7-to-zapier": "^2.2",
     "wpackagist-plugin/classic-editor": "^1.6",
     "wpackagist-plugin/classic-widgets": "^0.3.0",
+    "wpackagist-plugin/cms-tree-page-view": "^1.6",
     "wpackagist-plugin/contact-form-7": "^5.6",
     "wpackagist-plugin/custom-post-type-ui": "^1.13",
     "wpackagist-plugin/enable-media-replace": "^4.0",
