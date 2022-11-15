@@ -53,6 +53,7 @@
   <exclude-pattern>web/app/plugins/cf7-to-zapier</exclude-pattern>
   <exclude-pattern>web/app/plugins/classic-editor</exclude-pattern>
   <exclude-pattern>web/app/plugins/classic-widgets</exclude-pattern>
+  <exclude-pattern>web/app/plugins/cms-tree-page-view</exclude-pattern>
   <exclude-pattern>web/app/plugins/contact-form-7</exclude-pattern>
   <exclude-pattern>web/app/plugins/custom-post-type-ui</exclude-pattern>
   <exclude-pattern>web/app/plugins/enable-media-replace</exclude-pattern>

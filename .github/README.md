@@ -107,6 +107,11 @@ composer update wpackagist-plugin/hello-dolly
 **Please note:** If the resulting diff from a Composer workflow goes beyond `composer.json` and `composer.lock`, please
 double-check what is being changed. It is likely that something unexpected has happened; proceed with caution.
 
+**Please note:** Our linting rules expect that you will manually exclude third party plugins in our `phpcs.xml` config.
+For example: `<exclude-pattern>web/app/plugins/FOO</exclude-pattern>`. We don't exclude _all_ plugins as we want to
+ensure that our locally developed plugins follow our standards so by default scanning everything and turning off third
+party plugins manually is our practice
+
 #### Adding or updating locally-written code
 
 Locally-developed plugins and themes are, with rare exceptions, added directly to this repository.
