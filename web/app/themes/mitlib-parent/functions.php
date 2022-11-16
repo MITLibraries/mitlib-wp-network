@@ -49,3 +49,21 @@ function load_styles() {
 	wp_enqueue_style( 'styles' );
 }
 add_action( 'wp_enqueue_scripts', 'Mitlib\Parent\load_styles' );
+
+/**
+ * Register sidebars.
+ */
+function mitlib_sidebars_init() {
+	register_sidebar(
+		array(
+			'name' => __( 'Main Sidebar', 'mitlib' ),
+			'id' => 'sidebar-1',
+			'description' => __( 'Appears on posts and pages except the optional Front Page template, which has its own widgets', 'mitlib' ),
+			'before_widget' => '<aside id="%1$s" class="widget %2$s" role="complementary">',
+			'after_widget' => '</aside>',
+			'before_title' => '<h2 class="widget-title">',
+			'after_title' => '</h2>',
+		)
+	);
+}
+add_action( 'widgets_init', 'Mitlib\Parent\mitlib_sidebars_init' );

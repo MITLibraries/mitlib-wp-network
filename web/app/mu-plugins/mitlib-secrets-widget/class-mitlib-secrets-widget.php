@@ -33,7 +33,7 @@ class Mitlib_Secrets_Widget {
 		}
 
 		wp_add_dashboard_widget(
-			self::WID, // A unique slug/ID
+			self::WID, // A unique slug/ID.
 			'Available Secrets', // Visible name for the widget.
 			array( 'Mitlib\SecretsWidget\Mitlib_Secrets_Widget', 'widget' )  // Callback for the main widget content.
 		);
@@ -70,14 +70,15 @@ class Mitlib_Secrets_Widget {
 	 * @link https://github.com/pantheon-systems/quicksilver-examples/blob/master/slack_notification/slack_notification.php
 	 */
 	private static function get_secrets( $required_keys, $defaults ) {
-		// Check user capabilities.
-		if ( ! current_user_can( self::PERMS ) ) {
+		// Check user capabilities, and that the needed superglobal is defined.
+		if ( ! current_user_can( self::PERMS ) || ! isset( $_SERVER['HOME'] ) ) {
 			return;
 		}
 
-		$secrets_file = $_SERVER['HOME'] . '/files/private/secrets.json';
+		$files_path = sanitize_text_field( wp_unslash( $_SERVER['HOME'] ) );
+		$secrets_file = realpath( $files_path . '/files/private/secrets.json' );
 		if ( ! file_exists( $secrets_file ) ) {
-			die( '<p>No secrets file found. in ' . $secrets_file . ' Aborting...</p>' );
+			die( '<p>No secrets file found in ' . esc_html( $secrets_file ) . '. Aborting...</p>' );
 		}
 		$secrets_contents = file_get_contents( $secrets_file );
 		$secrets          = json_decode( $secrets_contents, 1 );
