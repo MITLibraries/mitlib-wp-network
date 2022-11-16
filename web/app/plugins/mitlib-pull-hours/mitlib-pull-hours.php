@@ -21,13 +21,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Include the necesary classes.
-require( plugin_dir_path( __FILE__ ) . 'src/class-admin-widget.php' );
-require( plugin_dir_path( __FILE__ ) . 'src/class-dashboard.php' );
-require( plugin_dir_path( __FILE__ ) . 'src/class-display-widget.php' );
-require( plugin_dir_path( __FILE__ ) . 'src/class-display-widget-frontpage.php' );
-require( plugin_dir_path( __FILE__ ) . 'src/class-display-widget-slim.php' );
-require( plugin_dir_path( __FILE__ ) . 'src/class-harvester.php' );
-require( plugin_dir_path( __FILE__ ) . 'src/class-settings.php' );
+require_once( plugin_dir_path( __FILE__ ) . 'src/class-admin-widget.php' );
+require_once( plugin_dir_path( __FILE__ ) . 'src/class-dashboard.php' );
+require_once( plugin_dir_path( __FILE__ ) . 'src/class-display-widget.php' );
+require_once( plugin_dir_path( __FILE__ ) . 'src/class-display-widget-frontpage.php' );
+require_once( plugin_dir_path( __FILE__ ) . 'src/class-display-widget-slim.php' );
+require_once( plugin_dir_path( __FILE__ ) . 'src/class-harvester.php' );
+require_once( plugin_dir_path( __FILE__ ) . 'src/class-settings.php' );
 
 // Register classes with their hooks.
 // The settings fields themselves as the admin side initializes...
