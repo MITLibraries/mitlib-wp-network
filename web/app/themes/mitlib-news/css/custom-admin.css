@@ -1,13 +1,11 @@
- #acf-subtitle, 
+#acf-subtitle, 
 #acf_14520, 
 #acf-is_event, 
 .acf_postbox p.label, 
-#acf-urgent{
+#acf-urgent {
 	margin-bottom:0px;
 	padding-bottom:0px;
-	
-	
-	}
-.acf-label label{cursor:default}
-
-
+}
+.acf-label label{
+	cursor:default
+}
