@@ -9,15 +9,18 @@
 namespace Mitlib\Child;
 
 /**
- * Add theme-specific stylesheets
+ * Add theme-specific stylesheets.
  *
- * @link http://mor10.com/challenges-new-method-inheriting-parent-styles-wordpress-child-themes/
+ * PLEASE NOTE: Unlike the MOH and News themes, this Child theme does NOT
+ * load the parent theme's style.css (although it does end up loading the
+ * compiled global.css).
  */
-function setup_styles() {
+function child_scripts_styles() {
 	// First we enqueue style libraries.
-	wp_enqueue_style( 'bootstrap', '//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css' );
-	wp_enqueue_style( 'font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css' );
-	// Then enqueues the child stylesheet with a dependency on the parent style, which _should_ enforce correct load order.
-	wp_enqueue_style( 'child-style', get_stylesheet_uri(), array( 'libraries-global' ), '2.2.3' );
+	wp_register_style( 'bootstrap', '//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css', array(), '3.0.0' );
+	wp_register_style( 'font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css', array(), '4.6.0' );
+
+	wp_enqueue_style( 'bootstrap' );
+	wp_enqueue_style( 'font-awesome' );
 }
-add_action( 'wp_enqueue_scripts', 'Mitlib\Child\setup_styles' );
+add_action( 'wp_enqueue_scripts', 'Mitlib\Child\child_scripts_styles' );
