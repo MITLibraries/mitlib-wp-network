@@ -49,14 +49,32 @@
       "url": "https://github.com/matt-bernhardt/WP-SCSS"
     },
     {
+      "type": "package",
+      "package": {
+        "name": "advanced-custom-fields/advanced-custom-fields-pro",
+        "version": "5.12.3",
+        "type": "wordpress-plugin",
+        "dist": {
+          "type": "zip",
+          "url": "https://connect.advancedcustomfields.com/index.php?p=pro&a=download&k={%ACF_PRO_KEY}"
+        },
+        "require": {
+          "ffraenz/private-composer-installer": "^5.0",
+          "composer/installers": "^2.2"
+        }
+      }
+    },
+    {
         "type": "path",
         "url": "upstream-configuration"
     }
   ],
   "require": {
     "php": ">=7.4",
+    "advanced-custom-fields/advanced-custom-fields-pro": "^5.0",
     "composer/installers": "^2.2",
     "connectthink/wp-scss": "^2.4@beta",
+    "ffraenz/private-composer-installer": "^5.0",
     "google/apiclient": "^2.12",
     "oscarotero/env": "^2.1",
     "pantheon-systems/pantheon-mu-plugin": "^1.0",
@@ -118,7 +136,8 @@
     "allow-plugins": {
       "composer/installers": true,
       "roots/wordpress-core-installer": true,
-      "dealerdirect/phpcodesniffer-composer-installer": true
+      "dealerdirect/phpcodesniffer-composer-installer": true,
+      "ffraenz/private-composer-installer": true
     },
     "sort-packages": true
   },
@@ -132,6 +151,10 @@
       "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
       "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
       "web/app/themes/{$name}/": ["type:wordpress-theme"]
+    },
+    "private-composer-installer": {
+      "dotenv-path": ".",
+      "dotenv-name": ".env"
     },
     "wordpress-install-dir": "web/wp",
     "build-env": {
