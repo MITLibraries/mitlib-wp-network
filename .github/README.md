@@ -202,6 +202,8 @@ For information that is too sensitive to be committed to version control, or man
 
 Please see the readme for that project for [installation](https://github.com/pantheon-systems/terminus-secrets-plugin#installation) and [usage](https://github.com/pantheon-systems/terminus-secrets-plugin#usage) instructions.
 
+We are still figuring out how to make secret information (such as license keys) available to Composer.
+
 #### Required Secrets
 
 - `WPMS_SMTP_PASS` Password associated with the username in `WPMS_SMTP_USER`.
