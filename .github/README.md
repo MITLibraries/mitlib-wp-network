@@ -175,6 +175,8 @@ In some circumstances, you may need to specify port numbers as part of the site 
 
 This application uses a variety of ways to manage environment variables and secrets. All of these values are available within our shared LastPass account.
 
+**Please note!** There are two almost-identical Terminus plugins, which provide distinct workflows. `terminus secrets` (note the plural) is used to define sensitive values that are needed by WordPress itself (after it has been deployed). On the other hand, `terminus secret` (note the singular) is used to define sensitive values that are needed during deploys.
+
 ### Environment variables
 
 The [phpdotenv](https://github.com/vlucas/phpdotenv) library will load information from the `.env`, `.env.local`, and `.env.pantheon` files. The latter of these files is in version control, while `.env` and `.env.local` are ignored.
@@ -202,14 +204,51 @@ For information that is too sensitive to be committed to version control, or man
 
 Please see the readme for that project for [installation](https://github.com/pantheon-systems/terminus-secrets-plugin#installation) and [usage](https://github.com/pantheon-systems/terminus-secrets-plugin#usage) instructions.
 
-#### Required Secrets
+#### Required application secrets
 
 - `WPMS_SMTP_PASS` Password associated with the username in `WPMS_SMTP_USER`.
 - `WPMS_SMTP_USER` Username expected by the email server to send emails from WordPress. Associated with `WPMS_SMTP_PASS`.
 
-#### Optional Secrets
+#### Optional application secrets
 
 - `SENTRY_DSN` Unique identifier for this project within Sentry.
+
+### Build secrets
+
+Some values need to be available to Composer during the build / deploy of a container within Pantheon. An example of this is the Advanced Custom Fields Pro plugin, which is only published from a private website - and requires a license key be included in the download request.
+
+Secret values needed during this type of operation must be maintained using the [Terminus Secrets Manager Plugin](https://github.com/pantheon-systems/terminus-secrets-manager-plugin). Complete documentation for commands to install and manage secrets are available on the project page, but a sample implementation follows:
+
+Within `composer.json`, define the location from which to download a package:
+```json
+    {
+      "type": "package",
+      "package": {
+        "name": "advanced-custom-fields/advanced-custom-fields-pro",
+        "version": "5.12.3",
+        "type": "wordpress-plugin",
+        "dist": {
+          "type": "zip",
+          "url": "https://connect.advancedcustomfields.com/index.php?p=pro&a=download&k={%ACF_PRO_KEY}"
+        },
+        "require": {
+          "ffraenz/private-composer-installer": "^5.0",
+          "composer/installers": "^2.2"
+        }
+      }
+```
+
+The `url` parameter includes a placeholder value for the `ACF_PRO_KEY` license key, which must be provided to download the package. To make this value available to Pantheon during deploys, define the secret value:
+
+```bash
+terminus secret:set mitlib-wp-network.confirm ACF_PRO_KEY ThisWouldBeASecretValue
+```
+
+For local development, values such as these should be defined within `.env` files. Because of their sensitive nature, however, these values should not be committed to `.env.pantheon` and published to GitHub.
+
+#### Required Build secrets
+
+- `ACF_PRO_KEY` The license key for downloading the Advanced Custom Fields Pro plugin.
 
 ### Github secrets
 
