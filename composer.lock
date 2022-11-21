@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3fdaea0a6b2f88a1688d1990b16fa62f",
+    "content-hash": "7f14dd1cbeba4d887570195418f071f0",
     "packages": [
         {
             "name": "ConnectThink/WP-SCSS",
@@ -984,6 +984,19 @@
                 }
             ],
             "time": "2022-07-24T11:55:47+00:00"
+        },
+        {
+            "name": "nsp-code/advanced-post-types-order",
+            "version": "4.4.3",
+            "dist": {
+                "type": "zip",
+                "url": "https://www.nsp-code.com/?download_file={%APTO_FILE}&order={%APTO_ORDER}&email={%APTO_EMAIL}&key={%APTO_KEY}"
+            },
+            "require": {
+                "composer/installers": "^2.2",
+                "ffraenz/private-composer-installer": "^5.0"
+            },
+            "type": "wordpress-plugin"
         },
         {
             "name": "oscarotero/env",
