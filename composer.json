@@ -62,8 +62,12 @@
       "url": "https://github.com/matt-bernhardt/WP-SCSS"
     },
     {
-      "type": "path",
-      "url": "upstream-configuration"
+      "type": "vcs",
+      "url": "https://github.com/matt-bernhardt/wp-slug-trimmer"
+    },
+    {
+        "type": "path",
+        "url": "upstream-configuration"
     }
   ],
   "require": {
@@ -72,6 +76,7 @@
     "composer/installers": "^2.2",
     "connectthink/wp-scss": "^2.4@beta",
     "google/apiclient": "^2.12",
+    "matt-bernhardt/wp-slug-trimmer": "1.1.0",
     "oscarotero/env": "^2.1",
     "pantheon-systems/pantheon-mu-plugin": "^1.0",
     "pantheon-upstreams/upstream-configuration": "dev-main",
