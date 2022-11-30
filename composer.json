@@ -31,7 +31,13 @@
     }
   ],
   "keywords": [
-    "bedrock", "composer", "roots", "wordpress", "wp", "wp-config", "pantheon"
+    "bedrock",
+    "composer",
+    "roots",
+    "wordpress",
+    "wp",
+    "wp-config",
+    "pantheon"
   ],
   "support": {
     "issues": "https://github.com/pantheon-systems/wordpress-composer-managed/issues",
@@ -42,15 +48,18 @@
     {
       "type": "composer",
       "url": "https://wpackagist.org",
-      "only": ["wpackagist-plugin/*", "wpackagist-theme/*"]
+      "only": [
+        "wpackagist-plugin/*",
+        "wpackagist-theme/*"
+      ]
     },
     {
       "type": "vcs",
       "url": "https://github.com/matt-bernhardt/WP-SCSS"
     },
     {
-        "type": "path",
-        "url": "upstream-configuration"
+      "type": "path",
+      "url": "upstream-configuration"
     }
   ],
   "require": {
@@ -129,9 +138,15 @@
       "Sheets"
     ],
     "installer-paths": {
-      "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
-      "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
-      "web/app/themes/{$name}/": ["type:wordpress-theme"]
+      "web/app/mu-plugins/{$name}/": [
+        "type:wordpress-muplugin"
+      ],
+      "web/app/plugins/{$name}/": [
+        "type:wordpress-plugin"
+      ],
+      "web/app/themes/{$name}/": [
+        "type:wordpress-theme"
+      ]
     },
     "wordpress-install-dir": "web/wp",
     "build-env": {
@@ -147,9 +162,9 @@
     }
   },
   "autoload": {
-      "classmap": [
-          "upstream-configuration/scripts/ComposerScripts.php"
-      ]
+    "classmap": [
+      "upstream-configuration/scripts/ComposerScripts.php"
+    ]
   },
   "scripts": {
     "post-install-cmd": "Google_Task_Composer::cleanup",
@@ -157,18 +172,20 @@
     "post-root-package-install": [
       "php -r \"copy('.env.example', '.env');\""
     ],
-    "test": [
-      "find . -path ./libs -prune -o \\( -name '*.php' \\) -exec php -lf {} \\;",
+    "security": [
       "phpcs --standard=phpcs.security.xml"
     ],
+    "syntax": [
+      "find . -path ./libs -prune -o \\( -name '*.php' \\) -exec php -lf {} \\;"
+    ],
     "pre-update-cmd": [
-        "WordPressComposerManaged\\ComposerScripts::preUpdate"
+      "WordPressComposerManaged\\ComposerScripts::preUpdate"
     ],
     "upstream-require": [
-        "WordPressComposerManaged\\ComposerScripts::upstreamRequire"
+      "WordPressComposerManaged\\ComposerScripts::upstreamRequire"
     ]
   },
   "scripts-descriptions": {
-      "upstream-require": "Add a dependency to an upstream. See https://pantheon.io/docs/create-custom-upstream for information on creating custom upstreams."
+    "upstream-require": "Add a dependency to an upstream. See https://pantheon.io/docs/create-custom-upstream for information on creating custom upstreams."
   }
 }
