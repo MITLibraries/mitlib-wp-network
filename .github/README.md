@@ -137,10 +137,21 @@ Some problems flagged may be fixable automatically by running:
 phpcbf
 ```
 
-As part of the pull request process, a security- and syntax-focused check of the codebase is performed via:
+As part of the pull request process, we run two checks.
+
+Before dependencies are installed, we do a syntax-focused check of the codebase via:
 
 ```bash
-composer test
+composer syntax
+```
+
+Note: This syntax check is done before installing dependencies as it is a slow check and running it on code that is not
+under our control during a PR is not necessary.
+
+After dependencies are checked out, we run a security-focused check of the codebase via:
+
+```bash
+composer security
 ```
 
 #### Changing sites on the network
