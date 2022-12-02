@@ -182,9 +182,51 @@ In some circumstances, you may need to specify port numbers as part of the site 
 * [Terminus](https://pantheon.io/docs/terminus) is used for CLI access to the Pantheon platform.
 * Enhanced security (separated web root and secure passwords with [wp-password-bcrypt](https://github.com/roots/wp-password-bcrypt))
 
+
 ## Environment variables and secrets
 
 This application uses a variety of ways to manage environment variables and secrets. All of these values are available within our shared LastPass account.
+
+**Please note!** There are two almost-identical Terminus plugins, which provide distinct workflows:
+
+- `terminus secret` (note the singular) is used for values that are used during build / deploy.
+- `terminus secrets` (note the plural) is used for values that are used by the WordPress application itself (after it has been deployed).
+
+
+### Build secrets
+
+Managed with: [**Terminus Secrets Manager** plugin](https://github.com/pantheon-systems/terminus-secrets-manager-plugin)
+
+Example: `terminus secret:list mitlib-wp-network`
+
+This tool allows us to provide secret values for use by Composer during application deploys.
+
+Please see the readme for that project for [installation](https://github.com/pantheon-systems/terminus-secrets-manager-plugin#installation) and [usage](https://github.com/pantheon-systems/terminus-secrets-manager-plugin#terminus-secrets-manager-commands) instructions.
+
+#### Required build secrets
+
+- `ACF_PRO_KEY` - License key necessary for installing the Advanced Custom Fields Pro plugin
+
+
+### Application secrets
+
+Managed with: [**Terminus Secrets** plugin](https://github.com/pantheon-systems/terminus-secrets-plugin)
+
+Example: `terminus secrets:list mitlib-wp-network.live`
+
+This tool allows us to populate secret values into the Pantheon filesystem, which are read into WordPress constants within `/web/wp-config.php`.
+
+Please see the readme for that project for [installation](https://github.com/pantheon-systems/terminus-secrets-plugin#installation) and [usage](https://github.com/pantheon-systems/terminus-secrets-plugin#usage) instructions.
+
+#### Required application secrets
+
+- `WPMS_SMTP_PASS` Password associated with the username in `WPMS_SMTP_USER`.
+- `WPMS_SMTP_USER` Username expected by the email server to send emails from WordPress. Associated with `WPMS_SMTP_PASS`.
+
+#### Optional application secrets
+
+- `SENTRY_DSN` Unique identifier for this project within Sentry.
+
 
 ### Environment variables
 
@@ -203,32 +245,24 @@ Bedrock makes use of an `.env` file to store environment variables. Pantheon tak
 - `WP_ENV` - Set to environment (`development`, `staging`, `production`)
 - `WP_HOME` - Full URL to WordPress home (https://example.com)
 - `WP_SITEURL` - Full URL to WordPress including subdirectory (https://example.com/wp)
+- `ACF_PRO_KEY` - License key necessary for installing the Advanced Custom Fields Pro plugin
 - `AUTH_KEY`, `SECURE_AUTH_KEY`, `LOGGED_IN_KEY`, `NONCE_KEY`, `AUTH_SALT`, `SECURE_AUTH_SALT`, `LOGGED_IN_SALT`, `NONCE_SALT`
   - Generate with [wp-cli-dotenv-command](https://github.com/aaemnnosttv/wp-cli-dotenv-command)
   - Regenerate with [Bedrock's WordPress salts generator](https://roots.io/salts.html)
 
-### Application secrets
-
-For information that is too sensitive to be committed to version control, or managed via phpdotenv, we turn to the [Terminus Secrets Plugin](https://github.com/pantheon-systems/terminus-secrets-plugin). This tool allows us to populate secret values into the filesystem, which are read into WordPress constants within `/web/wp-config.php`.
-
-Please see the readme for that project for [installation](https://github.com/pantheon-systems/terminus-secrets-plugin#installation) and [usage](https://github.com/pantheon-systems/terminus-secrets-plugin#usage) instructions.
-
-#### Required Secrets
-
-- `WPMS_SMTP_PASS` Password associated with the username in `WPMS_SMTP_USER`.
-- `WPMS_SMTP_USER` Username expected by the email server to send emails from WordPress. Associated with `WPMS_SMTP_PASS`.
-
-#### Optional Secrets
-
-- `SENTRY_DSN` Unique identifier for this project within Sentry.
 
 ### Github secrets
 
+Managed with: Github web UI
+
 In addition to secret values stored using Terminus, we also define certain values used by our CI workflow using Github secrets.
 
+- `ACF_PRO_KEY` License key necessary for installing the Advanced Custom Fields Pro plugin.
 - `DEPLOY_SSH_KNOWN_HOSTS` The known_hosts file to allow GitHubs' CI to trust the Pantheon git server.
 - `DEPLOY_SSH_PRIVATE_KEY` The private key (with blank passphrase) used to connect to Pantheon's git server. The public key is added to your personal settings within Pantheon.
 - `PANTHEON_REPOSITORY` The SSH-format address of the git repository in Pantheon.
+
+
 
 ---
 **The sections below were included in the original Readme, and I'm not sure whether they are still useful in this context.**
