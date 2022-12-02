@@ -201,6 +201,8 @@ Example: `terminus secret:list mitlib-wp-network`
 
 This tool allows us to provide secret values for use by Composer during application deploys.
 
+Please see the readme for that project for [installation](https://github.com/pantheon-systems/terminus-secrets-manager-plugin#installation) and [usage](https://github.com/pantheon-systems/terminus-secrets-manager-plugin#terminus-secrets-manager-commands) instructions.
+
 #### Required build secrets
 
 - `ACF_PRO_KEY` - License key necessary for installing the Advanced Custom Fields Pro plugin
