@@ -206,7 +206,7 @@ Please see the readme for that project for [installation](https://github.com/pan
 #### Required build secrets
 
 - `ACF_PRO_KEY` - License key necessary for installing the Advanced Custom Fields Pro plugin
-
+- `github-oauth.github.com` - Documentation for this coming soon
 
 ### Application secrets
 
