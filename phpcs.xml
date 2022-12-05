@@ -81,7 +81,6 @@
   <exclude-pattern>web/app/plugins/WP-SCSS</exclude-pattern>
   <exclude-pattern>web/app/plugins/wp-security-audit-log</exclude-pattern>
   <exclude-pattern>web/app/plugins/wp-sentry-integration</exclude-pattern>
-  <exclude-pattern>web/app/plugins/wp-slug-trimmer</exclude-pattern>
   <exclude-pattern>web/app/plugins/wpcf7-recaptcha</exclude-pattern>
   <exclude-pattern>web/private/*</exclude-pattern>
   <!-- End Pantheon addition -->

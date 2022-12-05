@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "98ad3489ee1c9ac946a4aae37f648a85",
+    "content-hash": "e1e3b7e9d26eab86a6d081ec562779be",
     "packages": [
         {
             "name": "ConnectThink/WP-SCSS",
@@ -836,40 +836,6 @@
                 }
             ],
             "time": "2022-10-26T14:07:24+00:00"
-        },
-        {
-            "name": "matt-bernhardt/wp-slug-trimmer",
-            "version": "1.1.0",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:matt-bernhardt/wp-slug-trimmer.git",
-                "reference": "63e057242cd58ea5502d19c6f61bd5b490ce3fcf"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/matt-bernhardt/wp-slug-trimmer/zipball/63e057242cd58ea5502d19c6f61bd5b490ce3fcf",
-                "reference": "63e057242cd58ea5502d19c6f61bd5b490ce3fcf",
-                "shasum": ""
-            },
-            "type": "wordpress-plugin",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Matt Bernhardt",
-                    "email": "mjbernha@mit.edu"
-                },
-                {
-                    "name": "Graeme Pietersz"
-                }
-            ],
-            "description": "A small plugin to allow shorter slugs on posts",
-            "support": {
-                "source": "https://github.com/matt-bernhardt/wp-slug-trimmer/tree/1.1.0",
-                "issues": "https://github.com/matt-bernhardt/wp-slug-trimmer/issues"
-            },
-            "time": "2022-11-23T18:08:35+00:00"
         },
         {
             "name": "monolog/monolog",

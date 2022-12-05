@@ -80,7 +80,6 @@
     "composer/installers": "^2.2",
     "connectthink/wp-scss": "^2.4@beta",
     "google/apiclient": "^2.12",
-    "matt-bernhardt/wp-slug-trimmer": "1.1.0",
     "nsp-code/advanced-post-types-order": "^4.4",
     "oscarotero/env": "^2.1",
     "pantheon-systems/pantheon-mu-plugin": "^1.0",
