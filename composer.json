@@ -63,6 +63,10 @@
     },
     {
       "type": "vcs",
+      "url": "https://github.com/mitlibraries/advanced-post-types-order"
+    },
+    {
+      "type": "vcs",
       "url": "https://github.com/matt-bernhardt/wp-slug-trimmer"
     },
     {
@@ -77,6 +81,7 @@
     "connectthink/wp-scss": "^2.4@beta",
     "google/apiclient": "^2.12",
     "matt-bernhardt/wp-slug-trimmer": "1.1.0",
+    "nsp-code/advanced-post-types-order": "^4.4",
     "oscarotero/env": "^2.1",
     "pantheon-systems/pantheon-mu-plugin": "^1.0",
     "pantheon-upstreams/upstream-configuration": "dev-main",
