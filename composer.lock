@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a16f94c50b098ee0153db47532476214",
+    "content-hash": "614ffb0dc63b16ec736ce5dae8e504db",
     "packages": [
         {
             "name": "ConnectThink/WP-SCSS",
@@ -987,6 +987,37 @@
                 "issues": "https://github.com/MITLibraries/slideshow-gallery/issues"
             },
             "time": "2022-12-06T21:58:02+00:00"
+        },
+        {
+            "name": "mitlibraries/types",
+            "version": "2.3.5",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:MITLibraries/types.git",
+                "reference": "c0c5fb8923aaac043d0ba0da39cfe0f0e7eea198"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/MITLibraries/types/zipball/c0c5fb8923aaac043d0ba0da39cfe0f0e7eea198",
+                "reference": "c0c5fb8923aaac043d0ba0da39cfe0f0e7eea198",
+                "shasum": ""
+            },
+            "default-branch": true,
+            "type": "wordpress-plugin",
+            "license": [
+                "GPL-2.0-only"
+            ],
+            "authors": [
+                {
+                    "name": "OnTheGoSystems"
+                }
+            ],
+            "description": "Toolset Types defines custom content in WordPress",
+            "support": {
+                "source": "https://github.com/MITLibraries/types/tree/2.3.5",
+                "issues": "https://github.com/MITLibraries/types/issues"
+            },
+            "time": "2022-12-06T21:42:13+00:00"
         },
         {
             "name": "mitlibraries/wp-slug-trimmer",
