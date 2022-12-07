@@ -43,9 +43,11 @@
   <exclude-pattern>web/app/mu-plugins/pantheon-mu-plugin</exclude-pattern>
   <exclude-pattern>web/app/mu-plugins/bedrock-autoloader.php</exclude-pattern>
   <exclude-pattern>web/app/plugins/acf-image-crop-add-on</exclude-pattern>
+  <exclude-pattern>web/app/plugins/acf-location-field</exclude-pattern>
   <exclude-pattern>web/app/plugins/add-category-to-pages</exclude-pattern>
-  <exclude-pattern>web/app/plugins/advanced-custom-fields-pro</exclude-pattern>
   <exclude-pattern>web/app/plugins/addthis</exclude-pattern>
+  <exclude-pattern>web/app/plugins/advanced-custom-fields-pro</exclude-pattern>
+  <exclude-pattern>web/app/plugins/advanced-post-types-order</exclude-pattern>
   <exclude-pattern>web/app/plugins/akismet</exclude-pattern>
   <exclude-pattern>web/app/plugins/antivirus</exclude-pattern>
   <exclude-pattern>web/app/plugins/black-studio-tinymce-widget</exclude-pattern>
@@ -55,11 +57,14 @@
   <exclude-pattern>web/app/plugins/classic-widgets</exclude-pattern>
   <exclude-pattern>web/app/plugins/cms-tree-page-view</exclude-pattern>
   <exclude-pattern>web/app/plugins/contact-form-7</exclude-pattern>
+  <exclude-pattern>web/app/plugins/cpt-onomies</exclude-pattern>
   <exclude-pattern>web/app/plugins/custom-post-type-ui</exclude-pattern>
+  <exclude-pattern>web/app/plugins/dynamic-menu-manager</exclude-pattern>
   <exclude-pattern>web/app/plugins/enable-media-replace</exclude-pattern>
   <exclude-pattern>web/app/plugins/filter-page-by-template</exclude-pattern>
   <exclude-pattern>web/app/plugins/google-sitemap-generator</exclude-pattern>
   <exclude-pattern>web/app/plugins/lh-hsts</exclude-pattern>
+  <exclude-pattern>web/app/plugins/lightbox-plus</exclude-pattern>
   <exclude-pattern>web/app/plugins/media-library-assistant</exclude-pattern>
   <exclude-pattern>web/app/plugins/notification</exclude-pattern>
   <exclude-pattern>web/app/plugins/page-links-to</exclude-pattern>
@@ -70,6 +75,7 @@
   <exclude-pattern>web/app/plugins/slideshow-gallery</exclude-pattern>
   <exclude-pattern>web/app/plugins/tablepress</exclude-pattern>
   <exclude-pattern>web/app/plugins/tinymce-advanced</exclude-pattern>
+  <exclude-pattern>web/app/plugins/types</exclude-pattern>
   <exclude-pattern>web/app/plugins/ultimate-posts-widget</exclude-pattern>
   <exclude-pattern>web/app/plugins/widget-context</exclude-pattern>
   <exclude-pattern>web/app/plugins/widget-css-classes</exclude-pattern>
@@ -80,6 +86,7 @@
   <exclude-pattern>web/app/plugins/WP-SCSS</exclude-pattern>
   <exclude-pattern>web/app/plugins/wp-security-audit-log</exclude-pattern>
   <exclude-pattern>web/app/plugins/wp-sentry-integration</exclude-pattern>
+  <exclude-pattern>web/app/plugins/wp-slug-trimmer</exclude-pattern>
   <exclude-pattern>web/app/plugins/wpcf7-recaptcha</exclude-pattern>
   <exclude-pattern>web/private/*</exclude-pattern>
   <!-- End Pantheon addition -->

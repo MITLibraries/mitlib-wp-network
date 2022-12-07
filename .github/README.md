@@ -153,6 +153,28 @@ After dependencies are checked out, we run a security-focused check of the codeb
 ```bash
 composer security
 ```
+#### Adding plugins from private repositories
+
+In certain conditions, we need to add plugins which are not distributed via the WordPress plugin directory. In some of
+these cases, the plugin publisher will include documentation about how to deploy their plugin via Composer, in which
+case those instructions should be followed.
+
+When there is no Composer-compliant means of deploying the plugin, however, we can still include those plugins by
+creating a private repository within our organization. The following process should be followed:
+
+1. Create a private repository within the MIT Libraries organization with the plugin code.
+2. If one does not already exist, create a minimal `composer.json` with the type value of `wordpress-plugin`. The
+   package name should be `mitlibraries/plugin-name`, with the original plugin authors named. If a composer file already
+   exists, so long as the type is set correctly no changes should be made - but future references to the plugin should
+   use its existing package name.
+3. Create a release with the same version number that the plugin currently states in its base PHP file.
+4. Add this private repository to the [WordPress team](https://github.com/orgs/MITLibraries/teams/wordpress/repositories) within the Libraries' organization.
+5. Add the private repository URL to the list of repositories within `composer.json`.
+6. Add the plugin itself via `composer require mitlibraries/plugin-name`.
+7. Add the plugin as an exclusion to the `phpcs.xml` file.
+
+The intent behind the WordPress team and its structure are inherited from the Infrastructure group's use of an
+Automation team for their work. [Details about this approach can be found on the Infra wiki.](https://mitlibraries.atlassian.net/wiki/spaces/IN/pages/2888826883/Reference+Terraform+Cloud+and+GitHub+Initial+Configuration)
 
 #### Changing sites on the network
 
@@ -206,6 +228,7 @@ Please see the readme for that project for [installation](https://github.com/pan
 #### Required build secrets
 
 - `ACF_PRO_KEY` - License key necessary for installing the Advanced Custom Fields Pro plugin
+- `github-oauth.github.com` - User access token defined by the `mitlib-wp-network-deploy` account
 
 
 ### Application secrets
@@ -249,7 +272,8 @@ Bedrock makes use of an `.env` file to store environment variables. Pantheon tak
 - `AUTH_KEY`, `SECURE_AUTH_KEY`, `LOGGED_IN_KEY`, `NONCE_KEY`, `AUTH_SALT`, `SECURE_AUTH_SALT`, `LOGGED_IN_SALT`, `NONCE_SALT`
   - Generate with [wp-cli-dotenv-command](https://github.com/aaemnnosttv/wp-cli-dotenv-command)
   - Regenerate with [Bedrock's WordPress salts generator](https://roots.io/salts.html)
-
+- `COMPOSER_AUTH` - The user access token defined by the `mitlib-wp-network-deploy` account, for installing forked
+  plugins
 
 ### Github secrets
 
@@ -258,6 +282,7 @@ Managed with: Github web UI
 In addition to secret values stored using Terminus, we also define certain values used by our CI workflow using Github secrets.
 
 - `ACF_PRO_KEY` License key necessary for installing the Advanced Custom Fields Pro plugin.
+- `COMPOSER_AUTH` The user access token defined by the `mitlib-wp-network-deploy` account, for installing forked plugins.
 - `DEPLOY_SSH_KNOWN_HOSTS` The known_hosts file to allow GitHubs' CI to trust the Pantheon git server.
 - `DEPLOY_SSH_PRIVATE_KEY` The private key (with blank passphrase) used to connect to Pantheon's git server. The public key is added to your personal settings within Pantheon.
 - `PANTHEON_REPOSITORY` The SSH-format address of the git repository in Pantheon.
