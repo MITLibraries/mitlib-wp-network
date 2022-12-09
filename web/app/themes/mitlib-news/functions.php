@@ -19,18 +19,25 @@ function news_scripts_styles() {
 	$theme_version = wp_get_theme()->get( 'Version' );
 	$parent_version = wp_get_theme()->parent()->get( 'Version' );
 
-	// Load FontAwesome via CDN.
+	// Register stylesheets.
 	wp_register_style( 'font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css', array(), '4.6.0' );
-	wp_enqueue_style( 'font-awesome' );
-
-	// Load local bootstrap and mobile styles.
 	wp_register_style( 'parent-style', get_template_directory_uri() . '/style.css', array(), $parent_version );
 	wp_register_style( 'bootstrap', get_stylesheet_directory_uri() . '/css/bootstrap.css', array(), $theme_version );
 	wp_register_style( 'newsmobile', get_stylesheet_directory_uri() . '/css/newsmobile.css', array(), $theme_version );
+
+	// Register javascript libraries.
+	wp_register_script( 'bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js', array( 'jquery' ), '3.3.1', false );
+	wp_register_script( 'lazyload', get_stylesheet_directory_uri() . '/js/libs/lazyload.min.js', array( 'jquery' ), $theme_version, false );
+	wp_register_script( 'myScripts', get_stylesheet_directory_uri() . '/js/myScripts.js', array( 'lazyload' ), $theme_version, false );
+
+	// Enqueue libraries - these files are always loaded.
+	wp_enqueue_style( 'font-awesome' );
 	wp_enqueue_style( 'parent-style' );
 	wp_enqueue_style( 'bootstrap' );
 	wp_enqueue_style( 'newsmobile' );
-	wp_enqueue_script( 'bootstrap','https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js', array( 'jquery' ), '3.3.1', false );
+	wp_enqueue_script( 'bootstrap' );
+	wp_enqueue_script( 'myScripts' );
+
 }
 add_action( 'wp_enqueue_scripts', 'Mitlib\News\news_scripts_styles' );
 
@@ -54,12 +61,3 @@ function admin_styles() {
 	}
 }
 add_action( 'admin_head', 'Mitlib\News\admin_styles' );
-
-/**
- * Add LazyLoad and MyScripts for all users
- */
-function add_scripts() {
-	wp_enqueue_script( 'lazyload', get_stylesheet_directory_uri() . '/js/lazyload.js', array( 'jquery' ), '', false );
-	wp_enqueue_script( 'myScripts', get_stylesheet_directory_uri() . '/js/myScripts.js', array( 'lazyload' ), '', false );
-}
-add_action( 'wp_enqueue_scripts', 'Mitlib\News\add_scripts' );
