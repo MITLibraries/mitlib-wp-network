@@ -30,6 +30,7 @@ function news_scripts_styles() {
 	wp_enqueue_style( 'parent-style' );
 	wp_enqueue_style( 'bootstrap' );
 	wp_enqueue_style( 'newsmobile' );
+	wp_enqueue_script( 'bootstrap','https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js', array( 'jquery' ), '3.3.1', false );
 }
 add_action( 'wp_enqueue_scripts', 'Mitlib\News\news_scripts_styles' );
 
@@ -53,3 +54,12 @@ function admin_styles() {
 	}
 }
 add_action( 'admin_head', 'Mitlib\News\admin_styles' );
+
+/**
+ * Add LazyLoad and MyScripts for all users
+ */
+function add_scripts() {
+	wp_enqueue_script( 'lazyload', get_stylesheet_directory_uri() . '/js/lazyload.js', array( 'jquery' ), '', false );
+	wp_enqueue_script( 'myScripts', get_stylesheet_directory_uri() . '/js/myScripts.js', array( 'lazyload' ), '', false );
+}
+add_action( 'wp_enqueue_scripts', 'Mitlib\News\add_scripts' );
