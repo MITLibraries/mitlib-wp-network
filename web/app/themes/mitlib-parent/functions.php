@@ -106,7 +106,8 @@ function setup_scripts_styles() {
 
 	wp_register_script( 'searchJS', get_template_directory_uri() . '/js/build/search.min.js', array( 'jquery', 'modernizr' ), $theme_version, false );
 
-	wp_register_script( 'mapJS', get_template_directory_uri() . '/js/build/map.min.js', array( 'jquery' ), $theme_version, true );
+	// Map bundle.
+	wp_register_script( 'parent-map', get_template_directory_uri() . '/js/map.js', array( 'googleMapsAPI', 'infobox', 'jquery' ), $theme_version, true );
 
 	/* All-site JS */
 
@@ -148,9 +149,7 @@ function setup_scripts_styles() {
 	}
 
 	if ( is_page( 'locations' ) ) {
-		wp_enqueue_script( 'googleMapsAPI' );
-		wp_enqueue_script( 'mapJS' );
-		wp_enqueue_script( 'infobox' );
+		wp_enqueue_script( 'parent-map' );
 	}
 
 	if ( is_page( 'search' ) ) {
