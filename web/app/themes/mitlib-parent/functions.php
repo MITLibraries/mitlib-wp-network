@@ -86,6 +86,10 @@ function setup_scripts_styles() {
 
 	wp_register_script( 'googleMapsAPI', '//maps.googleapis.com/maps/api/js?key=AIzaSyDJg6fTKm3Pa_NfKEVAdyeRUbVs7zZm5Nw', array(), '1.7.0', true );
 
+	wp_register_script( 'jquery-cookie', get_template_directory_uri() . '/js/libs/jquery.cookie.js', array(), '1.3', true );
+
+	wp_register_script( 'jquery-sticky', get_template_directory_uri() . '/js/libs/jquery.sticky.js', array(), '1.0.0', true );
+
 	wp_register_script( 'infobox', get_template_directory_uri() . '/libs/infobox/infobox.js', array( 'googleMapsAPI' ), '1.1.12', true );
 
 	wp_register_script( 'modernizr', get_template_directory_uri() . '/js/libs/modernizr.min.js', array(), '2.8.3', false );
@@ -102,7 +106,11 @@ function setup_scripts_styles() {
 	wp_register_script( 'productionJS', get_template_directory_uri() . '/js/build/production.min.js', array( 'jquery', 'moment', 'underscore' ), $theme_version, true );
 
 	wp_register_script( 'hours-loader', get_template_directory_uri() . '/js/hours-loader.js', array( 'moment', 'underscore', 'polyfill' ), $theme_version, true );
-	wp_register_script( 'hoursJS', get_template_directory_uri() . '/js/build/hours.min.js', array( 'jquery', 'productionJS', 'gldatepickerJS' ), $theme_version, true );
+
+	// Hours bundle.
+	wp_register_script( 'hours-scrollStick', get_template_directory_uri() . '/js/hours.scrollStick.js', array( 'jquery-cookie' ), $theme_version, true );
+	wp_register_script( 'hours-stickyMenu', get_template_directory_uri() . '/js/sticky-hours.menu.js', array( 'jquery-sticky' ), $theme_version, true );
+	wp_register_script( 'parent-hours', get_template_directory_uri() . '/js/make.datepicker.js', array( 'jquery', 'gldatepickerJS', 'hours-scrollStick', 'hours-stickyMenu' ), $theme_version, true );
 
 	// Search bundle.
 	wp_register_script( 'search-discovery', get_template_directory_uri() . '/js/ga_discovery.js', array(), $theme_version, false );
@@ -151,7 +159,7 @@ function setup_scripts_styles() {
 
 	if ( is_page( 'hours' ) ) {
 		wp_enqueue_style( 'parent-hours' );
-		wp_enqueue_script( 'hoursJS' );
+		wp_enqueue_script( 'parent-hours' );
 	}
 
 	if ( is_page( 'locations' ) ) {
