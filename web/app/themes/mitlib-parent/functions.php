@@ -104,7 +104,10 @@ function setup_scripts_styles() {
 	wp_register_script( 'hours-loader', get_template_directory_uri() . '/js/hours-loader.js', array( 'moment', 'underscore', 'polyfill' ), $theme_version, true );
 	wp_register_script( 'hoursJS', get_template_directory_uri() . '/js/build/hours.min.js', array( 'jquery', 'productionJS', 'gldatepickerJS' ), $theme_version, true );
 
-	wp_register_script( 'searchJS', get_template_directory_uri() . '/js/build/search.min.js', array( 'jquery', 'modernizr' ), $theme_version, false );
+	// Search bundle.
+	wp_register_script( 'search-discovery', get_template_directory_uri() . '/js/ga_discovery.js', array(), $theme_version, false );
+	wp_register_script( 'search-ie', get_template_directory_uri() . '/js/search-ie.js', array(), $theme_version, false );
+	wp_register_script( 'parent-search', get_template_directory_uri() . '/js/search.js', array( 'jquery', 'modernizr', 'search-discovery', 'search-ie' ), $theme_version, false );
 
 	// Map bundle.
 	wp_register_script( 'parent-map', get_template_directory_uri() . '/js/map.js', array( 'googleMapsAPI', 'infobox', 'jquery' ), $theme_version, true );
@@ -117,12 +120,15 @@ function setup_scripts_styles() {
 
 	/* Page-specific JS & CSS */
 
+	// Everything other than the site homepage
 	if ( ! is_front_page() || is_child_theme() ) {
 		wp_enqueue_script( 'productionJS' );
 	}
 
+	// The site homepage (but not sub-site homepages)
 	if ( is_front_page() && ! is_child_theme() ) {
 		wp_enqueue_script( 'homeJS' );
+		wp_enqueue_script( 'parent-search' );
 	}
 
 
@@ -153,7 +159,7 @@ function setup_scripts_styles() {
 	}
 
 	if ( is_page( 'search' ) ) {
-		wp_enqueue_script( 'searchJS' );
+		wp_enqueue_script( 'parent-search' );
 	}
 
 	if ( in_category( 'has-menu' ) ) {
