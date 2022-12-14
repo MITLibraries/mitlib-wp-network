@@ -188,6 +188,20 @@ function setup_scripts_styles() {
 add_action( 'wp_enqueue_scripts', 'Mitlib\Parent\setup_scripts_styles' );
 
 /**
+ * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
+ */
+function customize_preview_js() {
+	// This allows us to cache-bust these assets without needing to remember to
+	// increment the theme version here.
+	$theme_version = wp_get_theme()->get( 'Version' );
+
+	wp_register_script( 'customizer', get_template_directory_uri() . '/js/theme-customizer.js', array( 'customize-preview', 'jquery' ), $theme_version, true );
+
+	wp_enqueue_script( 'customizer');
+}
+add_action( 'customize_preview_init', 'Mitlib\Parent\customize_preview_js' );
+
+/**
  * The following functions get called in various places by theme templates.
  */
 
