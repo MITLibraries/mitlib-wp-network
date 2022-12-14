@@ -101,8 +101,12 @@ function setup_scripts_styles() {
 	wp_register_script( 'underscore', get_template_directory_uri() . '/js/libs/underscore.min.js', array(), '1.7.0', true );
 
 	// Register javascript that we've written.
-
+	wp_register_script( 'dev', get_template_directory_uri() . '/js/dev.js', array(), $theme_version, true );
+	wp_register_script( 'fonts', get_template_directory_uri() . '/js/fonts.js', array(), $theme_version, true );
 	wp_register_script( 'hours-loader', get_template_directory_uri() . '/js/hours-loader.js', array( 'moment', 'underscore', 'polyfill' ), $theme_version, true );
+	wp_register_script( 'libchat', get_template_directory_uri() . '/js/libchat.js', array( 'jquery' ), $theme_version, true );
+	wp_register_script( 'menu-toggle', get_template_directory_uri() . '/js/menu.toggle.js', array(), $theme_version, true );
+	wp_register_script( 'parent-production', get_template_directory_uri() . '/js/alerts.js', array( 'dev', 'fonts', 'hours-loader', 'jquery', 'libchat', 'menu-toggle' ), $theme_version, true );
 
 	// Interior bundle.
 	wp_register_script( 'ga-links', get_template_directory_uri() . '/js/ga_links.js', array(), $theme_version, true );
@@ -127,10 +131,8 @@ function setup_scripts_styles() {
 	wp_register_script( 'parent-map', get_template_directory_uri() . '/js/map.js', array( 'googleMapsAPI', 'infobox', 'jquery' ), $theme_version, true );
 
 	/* All-site JS */
-
 	wp_enqueue_script( 'modernizr' );
-
-	wp_enqueue_script( 'hours-loader' );
+	wp_enqueue_script( 'parent-production' );
 
 	/* Page-specific JS & CSS */
 
