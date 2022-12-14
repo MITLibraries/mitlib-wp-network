@@ -101,9 +101,12 @@ function setup_scripts_styles() {
 	wp_register_script( 'underscore', get_template_directory_uri() . '/js/libs/underscore.min.js', array(), '1.7.0', true );
 
 	// Register javascript that we've written.
-	wp_register_script( 'productionJS', get_template_directory_uri() . '/js/build/production.min.js', array( 'jquery', 'moment', 'underscore' ), $theme_version, true );
 
 	wp_register_script( 'hours-loader', get_template_directory_uri() . '/js/hours-loader.js', array( 'moment', 'underscore', 'polyfill' ), $theme_version, true );
+
+	// Interior bundle.
+	wp_register_script( 'ga-links', get_template_directory_uri() . '/js/ga_links.js', array(), $theme_version, true );
+	wp_register_script( 'parent-interior', get_template_directory_uri() . '/js/core.js', array( 'ga-links' ), $theme_version, true );
 
 	// Homepage bundle.
 	wp_register_script( 'parent-experts-home', get_template_directory_uri() . '/js/experts-home.js', array( 'jquery' ), $theme_version, true );
@@ -133,7 +136,7 @@ function setup_scripts_styles() {
 
 	// Everything other than the site homepage.
 	if ( ! is_front_page() || is_child_theme() ) {
-		wp_enqueue_script( 'productionJS' );
+		wp_enqueue_script( 'parent-interior' );
 	}
 
 	// The site homepage (but not sub-site homepages).
