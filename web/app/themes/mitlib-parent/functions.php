@@ -101,11 +101,14 @@ function setup_scripts_styles() {
 	wp_register_script( 'underscore', get_template_directory_uri() . '/js/libs/underscore.min.js', array(), '1.7.0', true );
 
 	// Register javascript that we've written.
-	wp_register_script( 'homeJS', get_template_directory_uri() . '/js/build/home.min.js', array( 'jquery', 'modernizr', 'moment', 'underscore' ), $theme_version, true );
-
 	wp_register_script( 'productionJS', get_template_directory_uri() . '/js/build/production.min.js', array( 'jquery', 'moment', 'underscore' ), $theme_version, true );
 
 	wp_register_script( 'hours-loader', get_template_directory_uri() . '/js/hours-loader.js', array( 'moment', 'underscore', 'polyfill' ), $theme_version, true );
+
+	// Homepage bundle.
+	wp_register_script( 'parent-experts-home', get_template_directory_uri() . '/js/experts-home.js', array( 'jquery' ), $theme_version, true );
+	wp_register_script( 'parent-guides-home', get_template_directory_uri() . '/js/guides-home.js', array( 'jquery' ), $theme_version, true );
+	wp_register_script( 'parent-hours-home', get_template_directory_uri() . '/js/hours-home.js', array( 'jquery' ), $theme_version, true );
 
 	// Hours bundle.
 	wp_register_script( 'hours-scrollStick', get_template_directory_uri() . '/js/hours.scrollStick.js', array( 'jquery-cookie' ), $theme_version, true );
@@ -128,14 +131,16 @@ function setup_scripts_styles() {
 
 	/* Page-specific JS & CSS */
 
-	// Everything other than the site homepage
+	// Everything other than the site homepage.
 	if ( ! is_front_page() || is_child_theme() ) {
 		wp_enqueue_script( 'productionJS' );
 	}
 
-	// The site homepage (but not sub-site homepages)
+	// The site homepage (but not sub-site homepages).
 	if ( is_front_page() && ! is_child_theme() ) {
-		wp_enqueue_script( 'homeJS' );
+		wp_enqueue_script( 'parent-experts-home' );
+		wp_enqueue_script( 'parent-guides-home' );
+		wp_enqueue_script( 'parent-hours-home' );
 		wp_enqueue_script( 'parent-search' );
 	}
 
