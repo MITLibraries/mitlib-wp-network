@@ -94,19 +94,12 @@ function setup_scripts_styles() {
 
 	wp_register_script( 'modernizr', get_template_directory_uri() . '/js/libs/modernizr.min.js', array(), '2.8.3', false );
 
-	wp_register_script( 'moment', get_template_directory_uri() . '/js/libs/moment.min.js', array(), '2.9.0', true );
-
-	wp_register_script( 'polyfill', '//polyfill.io/v3/polyfill.js?version=3.52.1', array(), '3.52.1', true );
-
-	wp_register_script( 'underscore', get_template_directory_uri() . '/js/libs/underscore.min.js', array(), '1.7.0', true );
-
 	// Register javascript that we've written.
 	wp_register_script( 'dev', get_template_directory_uri() . '/js/dev.js', array(), $theme_version, true );
 	wp_register_script( 'fonts', get_template_directory_uri() . '/js/fonts.js', array(), $theme_version, false );
-	wp_register_script( 'hours-loader', get_template_directory_uri() . '/js/hours-loader.js', array( 'jquery', 'moment', 'underscore', 'polyfill' ), $theme_version, true );
 	wp_register_script( 'libchat', get_template_directory_uri() . '/js/libchat.js', array( 'jquery' ), $theme_version, true );
 	wp_register_script( 'menu-toggle', get_template_directory_uri() . '/js/menu.toggle.js', array(), $theme_version, true );
-	wp_register_script( 'parent-production', get_template_directory_uri() . '/js/alerts.js', array( 'dev', 'fonts', 'hours-loader', 'jquery', 'libchat', 'menu-toggle' ), $theme_version, true );
+	wp_register_script( 'parent-production', get_template_directory_uri() . '/js/alerts.js', array( 'dev', 'fonts', 'jquery', 'libchat', 'menu-toggle' ), $theme_version, true );
 
 	// Interior bundle.
 	wp_register_script( 'ga-links', get_template_directory_uri() . '/js/ga_links.js', array(), $theme_version, true );
