@@ -102,8 +102,8 @@ function setup_scripts_styles() {
 
 	// Register javascript that we've written.
 	wp_register_script( 'dev', get_template_directory_uri() . '/js/dev.js', array(), $theme_version, true );
-	wp_register_script( 'fonts', get_template_directory_uri() . '/js/fonts.js', array(), $theme_version, true );
-	wp_register_script( 'hours-loader', get_template_directory_uri() . '/js/hours-loader.js', array( 'moment', 'underscore', 'polyfill' ), $theme_version, true );
+	wp_register_script( 'fonts', get_template_directory_uri() . '/js/fonts.js', array(), $theme_version, false );
+	wp_register_script( 'hours-loader', get_template_directory_uri() . '/js/hours-loader.js', array( 'jquery', 'moment', 'underscore', 'polyfill' ), $theme_version, true );
 	wp_register_script( 'libchat', get_template_directory_uri() . '/js/libchat.js', array( 'jquery' ), $theme_version, true );
 	wp_register_script( 'menu-toggle', get_template_directory_uri() . '/js/menu.toggle.js', array(), $theme_version, true );
 	wp_register_script( 'parent-production', get_template_directory_uri() . '/js/alerts.js', array( 'dev', 'fonts', 'hours-loader', 'jquery', 'libchat', 'menu-toggle' ), $theme_version, true );
@@ -133,6 +133,7 @@ function setup_scripts_styles() {
 	/* All-site JS */
 	wp_enqueue_script( 'modernizr' );
 	wp_enqueue_script( 'parent-production' );
+	wp_add_inline_script( 'fonts', 'const THEME_ROOT = "' . esc_js( get_template_directory_uri() ) . '";', 'before' );
 
 	/* Page-specific JS & CSS */
 
@@ -148,7 +149,6 @@ function setup_scripts_styles() {
 		wp_enqueue_script( 'parent-hours-home' );
 		wp_enqueue_script( 'parent-search' );
 	}
-
 
 	/**
 	 * The global compiled styles, and dependencies (fonts and the exception
@@ -197,7 +197,7 @@ function customize_preview_js() {
 
 	wp_register_script( 'customizer', get_template_directory_uri() . '/js/theme-customizer.js', array( 'customize-preview', 'jquery' ), $theme_version, true );
 
-	wp_enqueue_script( 'customizer');
+	wp_enqueue_script( 'customizer' );
 }
 add_action( 'customize_preview_init', 'Mitlib\Parent\customize_preview_js' );
 
