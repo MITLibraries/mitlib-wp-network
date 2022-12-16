@@ -13,6 +13,8 @@ get_header();
 
 <div id="content">
 	<p>This is the home page template.</p>
+
+	<div class="img-loc"></div>
 </div>
 
 <?php get_footer(); ?>

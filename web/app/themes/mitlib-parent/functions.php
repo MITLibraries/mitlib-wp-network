@@ -53,7 +53,10 @@ function setup_scripts_styles() {
 	// increment the theme version here.
 	$theme_version = wp_get_theme()->get( 'Version' );
 
-	// Register the various stylesheets we expect to load.
+	/**
+	 * Register stylesheets.
+	 */
+
 	wp_register_style( 'font-open-sans', '//fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,600,600italic,700,700italic', false, $theme_version, 'all' );
 
 	wp_register_style( 'parent-styles', get_stylesheet_uri(), array(), $theme_version );
@@ -69,8 +72,76 @@ function setup_scripts_styles() {
 	wp_register_style( 'bootstrapCSS', get_stylesheet_directory_uri() . '/css/bootstrap.css', array(), $theme_version, false );
 
 	/**
-	 * Deal with scripts (this section coming in the next ticket).
+	 * Register javascript.
 	 */
+
+	// Deregister WP Core jQuery, load our own.
+	wp_deregister_script( 'jquery' );
+	wp_register_script( 'jquery', get_template_directory_uri() . '/js/jquery.min.js', array(), '1.11.1-local', false );
+
+	// Register other third-party libraries that will be loaded.
+	wp_register_script( 'bootstrap-js', '//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js', array( 'jquery' ), '3.0.0' );
+
+	wp_register_script( 'gldatepickerJS', get_template_directory_uri() . '/libs/datepicker/glDatePicker.min.js', array(), '2.0', true );
+
+	wp_register_script( 'googleMapsAPI', '//maps.googleapis.com/maps/api/js?key=AIzaSyDJg6fTKm3Pa_NfKEVAdyeRUbVs7zZm5Nw', array(), '1.7.0', true );
+
+	wp_register_script( 'jquery-cookie', get_template_directory_uri() . '/js/libs/jquery.cookie/jquery.cookie.js', array(), '1.3', true );
+
+	wp_register_script( 'jquery-sticky', get_template_directory_uri() . '/js/libs/jquery.sticky/jquery.sticky.js', array(), '1.0.0', true );
+
+	wp_register_script( 'infobox', get_template_directory_uri() . '/libs/infobox/infobox.js', array( 'googleMapsAPI' ), '1.1.12', true );
+
+	wp_register_script( 'modernizr', get_template_directory_uri() . '/js/libs/modernizr.min.js', array(), '2.8.3', false );
+
+	// Register javascript that we've written.
+	wp_register_script( 'dev', get_template_directory_uri() . '/js/dev.js', array(), $theme_version, true );
+	wp_register_script( 'fonts', get_template_directory_uri() . '/js/fonts.js', array(), $theme_version, false );
+	wp_register_script( 'libchat', get_template_directory_uri() . '/js/libchat.js', array( 'jquery' ), $theme_version, true );
+	wp_register_script( 'menu-toggle', get_template_directory_uri() . '/js/menu.toggle.js', array(), $theme_version, true );
+	wp_register_script( 'parent-production', get_template_directory_uri() . '/js/alerts.js', array( 'dev', 'fonts', 'jquery', 'libchat', 'menu-toggle' ), $theme_version, true );
+
+	// Interior bundle.
+	wp_register_script( 'ga-links', get_template_directory_uri() . '/js/ga_links.js', array(), $theme_version, true );
+	wp_register_script( 'parent-interior', get_template_directory_uri() . '/js/core.js', array( 'ga-links' ), $theme_version, true );
+
+	// Homepage bundle.
+	wp_register_script( 'parent-experts-home', get_template_directory_uri() . '/js/experts-home.js', array( 'jquery' ), $theme_version, true );
+	wp_register_script( 'parent-guides-home', get_template_directory_uri() . '/js/guides-home.js', array( 'jquery' ), $theme_version, true );
+	wp_register_script( 'parent-hours-home', get_template_directory_uri() . '/js/hours-home.js', array( 'jquery' ), $theme_version, true );
+
+	// Hours bundle.
+	wp_register_script( 'hours-scrollStick', get_template_directory_uri() . '/js/hours.scrollStick.js', array( 'jquery-cookie' ), $theme_version, true );
+	wp_register_script( 'hours-stickyMenu', get_template_directory_uri() . '/js/sticky-hours.menu.js', array( 'jquery-sticky' ), $theme_version, true );
+	wp_register_script( 'parent-hours', get_template_directory_uri() . '/js/make.datepicker.js', array( 'jquery', 'gldatepickerJS', 'hours-scrollStick', 'hours-stickyMenu' ), $theme_version, true );
+
+	// Search bundle.
+	wp_register_script( 'search-discovery', get_template_directory_uri() . '/js/ga_discovery.js', array(), $theme_version, false );
+	wp_register_script( 'search-ie', get_template_directory_uri() . '/js/search-ie.js', array(), $theme_version, false );
+	wp_register_script( 'parent-search', get_template_directory_uri() . '/js/search.js', array( 'jquery', 'modernizr', 'search-discovery', 'search-ie' ), $theme_version, false );
+
+	// Map bundle.
+	wp_register_script( 'parent-map', get_template_directory_uri() . '/js/map.js', array( 'googleMapsAPI', 'infobox', 'jquery' ), $theme_version, true );
+
+	/* All-site JS */
+	wp_enqueue_script( 'modernizr' );
+	wp_enqueue_script( 'parent-production' );
+	wp_add_inline_script( 'fonts', 'const THEME_ROOT = "' . esc_js( get_template_directory_uri() ) . '";', 'before' );
+
+	/* Page-specific JS & CSS */
+
+	// Everything other than the site homepage.
+	if ( ! is_front_page() || is_child_theme() ) {
+		wp_enqueue_script( 'parent-interior' );
+	}
+
+	// The site homepage (but not sub-site homepages).
+	if ( is_front_page() && ! is_child_theme() ) {
+		wp_enqueue_script( 'parent-experts-home' );
+		wp_enqueue_script( 'parent-guides-home' );
+		wp_enqueue_script( 'parent-hours-home' );
+		wp_enqueue_script( 'parent-search' );
+	}
 
 	/**
 	 * The global compiled styles, and dependencies (fonts and the exception
@@ -86,17 +157,42 @@ function setup_scripts_styles() {
 	 */
 	if ( is_page_template( 'page-authenticate.php' ) || is_page_template( 'page-forms.php' ) || is_page_template( 'templates/page.php' ) ) {
 		wp_enqueue_style( 'parent-forms' );
+		wp_enqueue_script( 'formsJS' );
 	}
 
 	if ( is_page( 'hours' ) ) {
 		wp_enqueue_style( 'parent-hours' );
+		wp_enqueue_script( 'parent-hours' );
+	}
+
+	if ( is_page( 'locations' ) ) {
+		wp_enqueue_script( 'parent-map' );
+	}
+
+	if ( is_page( 'search' ) ) {
+		wp_enqueue_script( 'parent-search' );
 	}
 
 	if ( in_category( 'has-menu' ) ) {
 		wp_enqueue_style( 'bootstrapCSS' );
+		wp_enqueue_script( 'bootstrap-js' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'Mitlib\Parent\setup_scripts_styles' );
+
+/**
+ * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
+ */
+function customize_preview_js() {
+	// This allows us to cache-bust these assets without needing to remember to
+	// increment the theme version here.
+	$theme_version = wp_get_theme()->get( 'Version' );
+
+	wp_register_script( 'customizer', get_template_directory_uri() . '/js/theme-customizer.js', array( 'customize-preview', 'jquery' ), $theme_version, true );
+
+	wp_enqueue_script( 'customizer' );
+}
+add_action( 'customize_preview_init', 'Mitlib\Parent\customize_preview_js' );
 
 /**
  * The following functions get called in various places by theme templates.
