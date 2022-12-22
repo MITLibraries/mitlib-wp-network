@@ -229,6 +229,30 @@ function get_root( $post ) {
 }
 
 /**
+ * Adds custom fields to 'post' and 'experts' API endpoints
+ *
+ * @link http://v2.wp-api.org/extending/modifying/
+ * @link https://gist.github.com/rileypaulsen/9b4505cdd0ac88d5ef51#gistcomment-1622466
+ */
+function mitlib_api_alter() {
+	// Add custom fields to posts endpoint.
+	register_rest_field( 'post',
+		'meta',
+		array(
+			'get_callback'    => function( $data, $field, $request, $type ) {
+				if ( function_exists( 'get_fields' ) ) {
+					return get_fields( $data['id'] );
+				}
+				return array();
+			},
+			'update_callback' => null,
+			'schema'          => null,
+		)
+	);
+}
+add_action( 'rest_api_init', 'Mitlib\Parent\mitlib_api_alter' );
+
+/**
  * Registers our main widget areas.
  */
 function mitlib_sidebars_init() {
