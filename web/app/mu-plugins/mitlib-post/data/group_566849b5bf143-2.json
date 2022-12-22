@@ -1,0 +1,163 @@
+{
+    "key": "group_566849b5bf143-2",
+    "title": "Exhibit Field Group",
+    "fields": [
+        {
+            "key": "field_56685f5b45fac",
+            "label": "Subtitle",
+            "name": "subtitle",
+            "type": "text",
+            "instructions": "Add subtitle, if applicable.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_591aff4186725",
+            "label": "Excerpt",
+            "name": "excerpt",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_5668601e45fad",
+            "label": "Start date",
+            "name": "start_date",
+            "type": "date_picker",
+            "instructions": "Enter Start Date of Exhibit.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "F j, Y",
+            "return_format": "F j, Y",
+            "first_day": 1
+        },
+        {
+            "key": "field_5668625945fae",
+            "label": "End date",
+            "name": "end_date",
+            "type": "date_picker",
+            "instructions": "Enter End Date of Exhibit.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "F j, Y",
+            "return_format": "F j, Y",
+            "first_day": 1
+        },
+        {
+            "key": "field_5653de80919c0",
+            "label": "Exhibit Thumbnail Image",
+            "name": "exhibit_thumbnail_image",
+            "type": "image",
+            "instructions": "This image is for the Exhibits category\/archive page that displays all exhibit posts as excerpts in a list and should be at least 432px in width by 300px in height.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "preview_size": "exhibit_thumbnail_image",
+            "library": "all",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
+        },
+        {
+            "key": "field_569375cf7c0d1",
+            "label": "Sponsored",
+            "name": "sponsored",
+            "type": "text",
+            "instructions": "If Exhibit has sponsor, add their information here.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_62fd3bfec0a0d",
+            "label": "Uncategorized Location",
+            "name": "uncategorized_location",
+            "type": "text",
+            "instructions": "Exhibits must be use the Categories field to indicate their location. For exhibits whose location does not appear on the list, choose the \"Uncategorized\" option and then provide a location value in this field.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "exhibits"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1671581867
+}

@@ -54,6 +54,7 @@ wp-cli.local.yml
 # mu-plugins is version controlled. Exceptions to this rule are made to specific
 # files managed by Composer.
 web/app/mu-plugins/*/
+!web/app/mu-plugins/mitlib-post
 !web/app/mu-plugins/mitlib-secrets-widget
 
 # Plugins
@@ -66,11 +67,14 @@ web/app/plugins/*
 !web/app/plugins/.gitkeep
 !web/app/plugins/mitlib-analytics
 !web/app/plugins/mitlib-cf7-elements
-!web/app/plugins/mitlib-custom-post-types
 !web/app/plugins/mitlib-home-page-news
 !web/app/plugins/mitlib-multisearch-widget
 !web/app/plugins/mitlib-pending-posts
 !web/app/plugins/mitlib-plugin-canary
+!web/app/plugins/mitlib-post-events
+!web/app/plugins/mitlib-post-exhibits
+!web/app/plugins/mitlib-post-experts
+!web/app/plugins/mitlib-post-locations
 !web/app/plugins/mitlib-pull-events
 !web/app/plugins/mitlib-pull-hours
 
