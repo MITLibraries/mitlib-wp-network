@@ -9,6 +9,15 @@
 namespace Mitlib\Parent;
 
 /**
+ * Define global values, load required files, etc.
+ *
+ * We do this explicitly for now, but a structure like
+ * foreach ( glob( get_template_directory() . '/src/*.php' ) as $file )
+ * could work down the road.
+ */
+require_once( 'src/news.php' );
+
+/**
  * Ensure that the directories expected by SCSS compiler exist.
  *
  * The WP-SCSS plugin that we rely on to compile theme stylesheets requires that

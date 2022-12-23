@@ -38,7 +38,7 @@ endif;
 			<div id="home-posts-news" class="posts--preview news-events">
 				<h2><a href="/news">News &amp; events</a></h2>
 				<div class="flex-container">
-					<p>This is where news cards will appear.</p>
+					<?php load_news(); ?>
 				</div>
 				<a href="/news" class="button-primary--orange link-news">All news &amp; events</a>
 			</div><!-- end div.news-events -->
