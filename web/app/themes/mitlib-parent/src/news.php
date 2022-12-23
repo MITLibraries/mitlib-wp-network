@@ -13,31 +13,16 @@
 $news_site_id = 4;
 
 /**
- * This is an alternate entry point for the code, which gets called on a staff
- * template which lists all current articles which are eligible for the front
- * page.
- */
-function debug_news() {
-	global $news_site_id;
-
-	echo '<!-- Loading featured news items -->';
-
-	// Switch context to news site.
-	switch_to_blog( $news_site_id );
-
-	$pool = retrieve_pool();
-
-	render_pool( $pool );
-
-	// Restore context back to current site.
-	restore_current_blog();
-}
-
-/**
  * This is the main entry point for this code, which gets called on the homepage
- * template.
+ * template and the "featured news" debugging template.
+ *
+ * @param boolean $debug A flag to determine whether the shuffling logic should
+ *                       be applied. A value of True will skip this logic,
+ *                       resulting in all news items being shown. A value of
+ *                       False will include the shuffle, resulting in only two
+ *                       items being shown.
  */
-function load_news() {
+function load_news( $debug = false ) {
 	global $news_site_id;
 
 	echo '<!-- Loading featured news items -->';
@@ -47,7 +32,7 @@ function load_news() {
 
 	$pool = retrieve_pool();
 
-	if ( count( $pool ) != 2 ) {
+	if ( ! $debug && count( $pool ) != 2 ) {
 		// If there are anything other than two items in the pool, then we...
 		// Summarize the pool and determine query type.
 		$query_type = summarize_pool( $pool );
