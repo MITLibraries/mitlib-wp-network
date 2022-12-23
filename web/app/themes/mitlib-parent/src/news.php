@@ -10,7 +10,7 @@
  * @since 0.2.0
  */
 
-$news_site_id = 7;
+$news_site_id = 4;
 
 /**
  * This is an alternate entry point for the code, which gets called on a staff
@@ -53,7 +53,7 @@ function load_news() {
 		$query_type = summarize_pool( $pool );
 
 		// Build the appropriate item pool.
-		if ( $query_type === 'two' ) {
+		if ( 'two' === $query_type ) {
 			$pool = query_pool_two();
 		} else {
 			$pool = query_pool_one();
@@ -172,14 +172,14 @@ function render_pool( $items ) {
 
 		// Label.
 		$label = '<div class="category-post">';
-		if ( $item->post_type === 'post' ) {
-			if ( $item->is_event[0] === '1' ) {
+		if ( 'post' === $item->post_type ) {
+			if ( '1' === $item->is_event[0] ) {
 				$label .= 'Event';
 			} else {
 				$label .= 'News';
 			}
 		} else {
-			if ( $item->post_type === 'spotlights' ) {
+			if ( 'spotlights' === $item->post_type ) {
 				if ( 'tip' === $custom['feature_type'][0] ) {
 					$label .= $custom['feature_type'][0];
 				} elseif ( 'update' === $custom['feature_type'][0] ) {
@@ -191,7 +191,7 @@ function render_pool( $items ) {
 				} else {
 					$label .= 'Featured ' . $custom['feature_type'][0];
 				}
-			} elseif ( $item->post_type === 'bibliotech' ) {
+			} elseif ( 'bibliotech' === $item->post_type ) {
 				$label .= 'Bibliotech';
 			} else {
 				$label .= 'Other';
@@ -208,17 +208,17 @@ function render_pool( $items ) {
 
 		// Event date, if applicable.
 		$event_date = '';
-		if ( $item->post_type === 'post' && array_key_exists( 'is_event', $custom ) ) {
-			if ( $custom['is_event'][0] === '1' ) {
+		if ( 'post' === $item->post_type && array_key_exists( 'is_event', $custom ) ) {
+			if ( '1' === $custom['is_event'][0] ) {
 				$event_date = DateTime::createFromFormat( 'Ymd', $custom['event_date'][0] );
 				$event_date = '<div class="date-event"><img alt="calendar icon" src="<?php echo get_template_directory_uri(); ?>/images/calendar.svg" width="13px" height="13px" ><span class="event">' . date_format( $event_date, 'F j' ) . '</span>';
-				if ( $custom['event_start_time'][0] != '' ) {
+				if ( '' != $custom['event_start_time'][0] ) {
 					$event_date = $event_date . '<span class="time-event"> ' . $custom['event_start_time'][0];
 				};
-				if ( $custom['event_end_time'][0] != '' ) {
+				if ( '' != $custom['event_end_time'][0] ) {
 					$event_date = $event_date . ' - ' . $custom['event_end_time'][0];
 				};
-				if ( $custom['event_start_time'][0] != '' ) {
+				if ( '' != $custom['event_start_time'][0] ) {
 					$event_date = $event_date . '</span>';
 				};
 				$event_date = $event_date . '</div>';
@@ -227,8 +227,8 @@ function render_pool( $items ) {
 
 		// Highlight image.
 		$image_element = '';
-		if ( $item->post_type === 'post' || $item->post_type === 'bibliotech' ) {
-			if ( $custom['homeImg'][0] != '' ) {
+		if ( 'post' === $item->post_type || 'bibliotech' === $item->post_type ) {
+			if ( '' != $custom['homeImg'][0] ) {
 				$image = json_decode( $custom['homeImg'][0] );
 				// We use "original" even though this is already cropped to avoid cropping again.
 				$image_url = wp_get_attachment_image_src( $image->cropped_image, 'original' );
@@ -237,12 +237,15 @@ function render_pool( $items ) {
 			}
 		}
 
-		echo '<a class="post--full-bleed no-underline flex-container" href="' . $url . '">';
+		echo '<a class="post--full-bleed no-underline flex-container" href="' . esc_url( $url ) . '">';
 		echo '<div class="excerpt-news">';
-		echo $label;
+		echo wp_kses( $label, array( 'div' => array( 'class' => array() ) ) );
+		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		echo $headline;
+		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		echo $event_date;
 		echo '</div>';
+		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		echo $image_element;
 		echo '</a>';
 	}
@@ -290,9 +293,9 @@ function summarize_pool( $items ) {
 		'total' => 0,
 	);
 	foreach ( $items as $item ) {
-		if ( $item->post_type === 'post' || $item->post_type === 'bibliotech' ) {
+		if ( 'post' === $item->post_type || 'bibliotech' === $item->post_type ) {
 			$summary['news']++;
-		} elseif ( $item->post_type === 'spotlights' ) {
+		} elseif ( 'spotlights' === $item->post_type ) {
 			$summary['spotlights']++;
 		} else {
 			$summary['other']++;
@@ -301,10 +304,10 @@ function summarize_pool( $items ) {
 	}
 
 	// Determine query type based on summary results.
-	if ( $summary['news'] === 1 ) {
+	if ( 1 === $summary['news'] ) {
 		// Only one eligible news item - so we set type to one.
 		$type = 'one';
-	} elseif ( $summary['spotlights'] === 0 ) {
+	} elseif ( 0 === $summary['spotlights'] ) {
 		// No eligible spotlights - so we show two news items.
 		$type = 'two';
 	} else {
