@@ -2,8 +2,8 @@
 /**
  * Silence is golden.
  *
- * @package MITlib_Parent
- * @since 0.0.1
+ * @package MIT_Libraries_Parent
+ * @since 1.2.1
  */
 
 echo '';
