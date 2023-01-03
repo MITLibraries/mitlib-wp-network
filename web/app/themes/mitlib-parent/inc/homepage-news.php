@@ -27,17 +27,17 @@
 		$arNews = array();
 
 
-		for ( $i = 1;$i <= $numNews;$i++ ) {
-			$nTitle = get_field( 'news_' . $i );
-			$nUrl = get_field( 'news_' . $i . '_url' );
+	for ( $i = 1;$i <= $numNews;$i++ ) {
+		$nTitle = get_field( 'news_' . $i );
+		$nUrl = get_field( 'news_' . $i . '_url' );
 
-			if ( $nTitle != '' && $nUrl != '' ) {
-				$arNews[] = array(
-					'title' => $nTitle,
-					'url' => $nUrl,
-				);
-			}
+		if ( $nTitle != '' && $nUrl != '' ) {
+			$arNews[] = array(
+				'title' => $nTitle,
+				'url' => $nUrl,
+			);
 		}
+	}
 	?>
 
 	<div class="blockimage">
@@ -48,13 +48,13 @@
 
 			<?php if ( $newsPhoto != '' ) : ?>
 
-			<?php if ( $newsUrl != '' ) : ?>
+				<?php if ( $newsUrl != '' ) : ?>
 				<a href="<?php echo $newsUrl; ?>">
 			<?php endif; ?>
 
 			<img src="<?php echo $newsPhoto; ?>"  alt="<?php echo $newsTitle; ?>">
 
-			<?php if ( $newsUrl != '' ) : ?>
+				<?php if ( $newsUrl != '' ) : ?>
 					</a>
 			<?php endif; ?>
 
@@ -86,36 +86,38 @@
 	<ul class="linklist">
 		<!-- custom links -->
 		<?php
-			foreach ( $arNews as $news ) :
-				$nTitle = $news['title'];
-				$nUrl = $news['url'];
+		foreach ( $arNews as $news ) :
+			$nTitle = $news['title'];
+			$nUrl = $news['url'];
 
-				echo "<li><a href='$nUrl'>$nTitle</a></li>";
+			echo "<li><a href='$nUrl'>$nTitle</a></li>";
 
 			endforeach;
 		?>
 
 		<!-- Auto links -->
 		<?php
-			if ( $newsFeedCount > 0 ) :
-				if ( $newsBlog ) { switch_to_blog( $newsBlog ); }
-					$args = array(
-						'post_type' => 'post',
-						'posts_per_page' => $newsFeedCount,
-					);
+		if ( $newsFeedCount > 0 ) :
+			if ( $newsBlog ) {
+				switch_to_blog( $newsBlog ); }
+				$args = array(
+					'post_type' => 'post',
+					'posts_per_page' => $newsFeedCount,
+				);
 
-			$news = new WP_Query( $args );
+				$news = new WP_Query( $args );
 
-			while ( $news->have_posts() ) :
-				$news->the_post();
-		?>
+				while ( $news->have_posts() ) :
+					$news->the_post();
+					?>
 
 		<li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
 
-		<?php
+					<?php
 			endwhile;
 
-			if ( $newsBlog ) { restore_current_blog(); }
+				if ( $newsBlog ) {
+					restore_current_blog(); }
 			endif; // End news feed count.
 		?>
 

@@ -236,7 +236,8 @@ function get_root( $post ) {
  */
 function mitlib_api_alter() {
 	// Add custom fields to posts endpoint.
-	register_rest_field( 'post',
+	register_rest_field(
+		'post',
 		'meta',
 		array(
 			'get_callback'    => function( $data, $field, $request, $type ) {

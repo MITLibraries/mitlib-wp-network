@@ -63,18 +63,18 @@ function twentytwelve_header_style() {
 	<style type="text/css">
 	<?php
 		// Has the text been hidden?
-		if ( ! display_header_text() ) :
-	?>
+	if ( ! display_header_text() ) :
+		?>
 		.site-title,
 		.site-description {
 			position: absolute !important;
 			clip: rect(1px 1px 1px 1px); /* IE7 */
 			clip: rect(1px, 1px, 1px, 1px);
 		}
-	<?php
+		<?php
 		// If the user has set a custom color for the text, use that.
 		else :
-	?>
+			?>
 		.site-title a,
 		.site-description {
 			color: #<?php echo $text_color; ?> !important;
@@ -90,7 +90,7 @@ function twentytwelve_header_style() {
  * @since Twenty Twelve 1.0
  */
 function twentytwelve_admin_header_style() {
-?>
+	?>
 	<style type="text/css">
 	.appearance_page_custom-header #headimg {
 		border: none;
@@ -120,7 +120,7 @@ function twentytwelve_admin_header_style() {
 		max-width: <?php echo get_theme_support( 'custom-header', 'max-width' ); ?>px;
 	}
 	</style>
-<?php
+	<?php
 }
 
 /**
@@ -136,13 +136,15 @@ function twentytwelve_admin_header_image() {
 		if ( ! display_header_text() ) {
 			$style = ' style="display:none;"'; } else {
 			$style = ' style="color:#' . get_header_textcolor() . ';"'; }
-		?>
+			?>
 		<h1><a id="name"<?php echo $style; ?> onclick="return false;" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
 		<h2 id="desc"<?php echo $style; ?>><?php bloginfo( 'description' ); ?></h2>
 		<?php
 		$header_image = get_header_image();
-		if ( ! empty( $header_image ) ) : ?>
+		if ( ! empty( $header_image ) ) :
+			?>
 			<img src="<?php echo esc_url( $header_image ); ?>" class="header-image" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="" />
 		<?php endif; ?>
 	</div>
-<?php }
+	<?php
+}

@@ -88,7 +88,10 @@ get_header(); ?>
 			<?php wsf_breadcrumbs( ' &raquo; ', '' ); ?>
 		</div>
 
-		<?php while ( have_posts() ) : the_post(); ?>
+		<?php
+		while ( have_posts() ) :
+			the_post();
+			?>
 		
 		<div class="contain-main" role="main">
 	

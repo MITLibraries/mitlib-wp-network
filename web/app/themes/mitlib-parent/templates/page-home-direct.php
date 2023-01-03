@@ -11,13 +11,15 @@
 <div id="content">
 <?php
 if ( is_active_sidebar( 'sidebar-search' ) ) :
-?>
+	?>
 	<div id="sidebar-search" class="widget-area" role="complementary">
 		<?php dynamic_sidebar( 'sidebar-search' ); ?>
 	</div>
-<?php else :
+	<?php
+else :
 		get_template_part( 'inc/search' );
-endif; ?>
+endif;
+?>
 
 	<div class="content-main flex-container libraries-home" role="main">
 		<div class="col-1 flex-item">

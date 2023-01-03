@@ -42,9 +42,12 @@ get_header(); ?>
 								'order' => 'ASC',
 							);
 							$libraryList = new WP_Query( $args );
-						?>
-						<?php while ( $libraryList->have_posts() ) : $libraryList->the_post(); ?>
+							?>
 						<?php
+						while ( $libraryList->have_posts() ) :
+							$libraryList->the_post();
+							?>
+							<?php
 							$locationId = get_the_ID();
 							$slug = $post->post_name;
 
@@ -80,7 +83,8 @@ get_header(); ?>
 							$directionsUrl = 'http://maps.google.com/maps?';
 							$directionsUrl .= 'daddr=' . $lat . ',' . $lng;
 							if ( $lat != '' && $lng != '' ) :
-						?>				
+								?>
+										
 						<div class="location">
 							<div class="id"><?php echo $locationId; ?></div>
 							<div class="slug"><?php echo $slug; ?></div>
@@ -94,7 +98,7 @@ get_header(); ?>
 									<div class="infoImage" style="background-image: url(<?php echo $val; ?>); background-repeat: no-repeat;"></div>
 									<?php endif; ?>
 									<div class="content">
-										<h3><a href="<?php echo $pageLink ?>"><?php echo $name; ?></a> <i class="icon-arrow-right"></i></h3>
+										<h3><a href="<?php echo $pageLink; ?>"><?php echo $name; ?></a> <i class="icon-arrow-right"></i></h3>
 										<span class="building"><?php echo $building; ?></span><br/>
 										<span class="directions"><a href="<?php echo $directionsUrl; ?>" target="_blank" >Find on Google maps</a> <i class="icon-arrow-right"></i></span>
 									</div>
@@ -123,9 +127,12 @@ get_header(); ?>
 								'order' => 'ASC',
 							);
 							$libraryList = new WP_Query( $args );
-						?>
-						<?php while ( $libraryList->have_posts() ) : $libraryList->the_post(); ?>
+							?>
 						<?php
+						while ( $libraryList->have_posts() ) :
+							$libraryList->the_post();
+							?>
+							<?php
 							$locationId = get_the_ID();
 							$slug = $post->post_name;
 
@@ -146,14 +153,14 @@ get_header(); ?>
 							$post = $temp;
 
 
-						?>
+							?>
 							<li class="location-name">
-								<h2 class="name-location"><a href="<?php echo $pageLink ?>" class="locationLink"><?php the_title(); ?></a></h2>
-								<div class="sub"><?php echo $subject ?></div>
+								<h2 class="name-location"><a href="<?php echo $pageLink; ?>" class="locationLink"><?php the_title(); ?></a></h2>
+								<div class="sub"><?php echo $subject; ?></div>
 								<?php if ( $phone != '' ) : ?>
-								<?php echo $phone ?>
+									<?php echo $phone; ?>
 								<br/>
-								<?php endif; ?><a class="map" data-target="<?php echo $locationId; ?>" href="#!<?php echo $slug; ?>">Map: <?php echo $building ?></a>
+								<?php endif; ?><a class="map" data-target="<?php echo $locationId; ?>" href="#!<?php echo $slug; ?>">Map: <?php echo $building; ?></a>
 								<?php if ( $study24 == 1 ) : ?>
 									<br/>
 									<a class="space247" href="<?php echo $gStudy24Url; ?>" alt="This location contains one or more study spaces available 24 hours a day, seven days a week. Click the link for more info." title="Study 24/7">Study 24/7</a>
@@ -177,9 +184,13 @@ get_header(); ?>
 
 						);
 						$subList = new WP_Query( $args );
-					?>					
-					<?php while ( $subList->have_posts() ) : $subList->the_post(); ?>
+						?>
+										
 					<?php
+					while ( $subList->have_posts() ) :
+						$subList->the_post();
+						?>
+						<?php
 						$locationId = get_the_ID();
 						$slug = $post->post_name;
 
@@ -196,17 +207,17 @@ get_header(); ?>
 						$displayPage = get_field( 'display_page' );
 						$pageID = $displayPage->ID;
 						$pageLink = get_permalink( $pageID );
-					?>
+						?>
 						<li class="location-secondary">
 							<?php if ( 'stata' === $slug || 'building-9' === $slug ) : ?>
-							<h3 class="name-location--secondary"><?php echo the_title() ?></h3>
+							<h3 class="name-location--secondary"><?php echo the_title(); ?></h3>
 							<?php else : ?>
-							<h3 class="name-location--secondary"><a href="<?php echo $pageLink; ?>"><?php echo the_title() ?></a></h3>
+							<h3 class="name-location--secondary"><a href="<?php echo $pageLink; ?>"><?php echo the_title(); ?></a></h3>
 							<?php endif; ?>
 							<?php if ( $phone != '' ) : ?>
-							<?php echo $phone ?><br/>
+								<?php echo $phone; ?><br/>
 							<?php endif; ?>
-							<a class="map" data-target="<?php echo $locationId; ?>" href="#!<?php echo $slug; ?>">Map: <?php echo $building ?></a>
+							<a class="map" data-target="<?php echo $locationId; ?>" href="#!<?php echo $slug; ?>">Map: <?php echo $building; ?></a>
 						</li>
 					
 					<?php endwhile; // end of the loop. ?>					

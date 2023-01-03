@@ -127,30 +127,40 @@ $alertContent = cf( 'alert_content' );
 			<div class="tabcontent group noTab">
 				<div class="tab tab1 active flex-container group" id="tab1">
 
-					<div class="flex-item first group <?php if ( $content1wide ) : ?>span7 wideColumn<?php else : ?>span4<?php endif; ?>">
+					<div class="flex-item first group 
+					<?php
+					if ( $content1wide ) :
+						?>
+						span7 wideColumn
+						<?php
+else :
+	?>
+						span4<?php endif; ?>">
 
 						<?php
-							if ( $arexpert ) {
-								$expertIndex = array_rand( $arexpert );
-								$expert = $arexpert[ $expertIndex ];
+						if ( $arexpert ) {
+							$expertIndex = array_rand( $arexpert );
+							$expert = $arexpert[ $expertIndex ];
 
 
-								$name = $expert->post_title;
-								$bio = $expert->post_excerpt;
-								// $url = $expert->guid;
-								$url = get_post_meta( $expert->ID, 'expert_url', 1 );
+							$name = $expert->post_title;
+							$bio = $expert->post_excerpt;
+							// $url = $expert->guid;
+							$url = get_post_meta( $expert->ID, 'expert_url', 1 );
 
-								if ( has_post_thumbnail( $expert->ID ) ) {
-									$thumb = get_the_post_thumbnail( $expert->ID, array( 108, 108 ) );
-								} else {
-									$thumb = '';
-								}
+							if ( has_post_thumbnail( $expert->ID ) ) {
+								$thumb = get_the_post_thumbnail( $expert->ID, array( 108, 108 ) );
+							} else {
+								$thumb = '';
+							}
 
-						?>
+							?>
 						<div class="profile-content">
-							<?php if ( '' !== $thumb ) :
+							<?php
+							if ( '' !== $thumb ) :
 								echo $thumb;
-							endif; ?>
+							endif;
+							?>
 							<div class="profile-content__body">
 								<h3>
 									<span class="intro">Featured expert</span>
@@ -166,10 +176,10 @@ $alertContent = cf( 'alert_content' );
 
 						</div>
 
-						<?php
-							}
+							<?php
+						}
 								echo $content1left;
-							?>
+						?>
 
 					</div>
 

@@ -34,7 +34,7 @@
 						'compare' => '=',
 					),
 				),
-				'post_type' => array( 'post' , 'spotlights' , 'bibliotech' ),
+				'post_type' => array( 'post', 'spotlights', 'bibliotech' ),
 				'post_status' => 'publish',
 				'posts_per_page' => 50,
 				'orderby' => 'post_title',
@@ -45,7 +45,8 @@
 			$the_stories = new WP_Query( $args );
 
 			if ( $the_stories->have_posts() ) {
-				while ( $the_stories->have_posts() ) : $the_stories->the_post();
+				while ( $the_stories->have_posts() ) :
+					$the_stories->the_post();
 					$custom = get_post_custom();
 
 					// URL.
@@ -119,7 +120,7 @@
 
 			// Switch back to parent site.
 			restore_current_blog();
-		?>
+			?>
 					</div><!-- end div.debug -->
 				</div>
 			</div><!-- end div.news-events -->

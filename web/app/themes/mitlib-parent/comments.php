@@ -28,12 +28,20 @@ if ( post_password_required() ) {
 		<h2 class="comments-title">Thoughts on &ldquo;<span><?php the_title(); ?></span>&rdquo;</h2>
 
 		<ol class="commentlist">
-			<?php wp_list_comments( array( 'callback' => 'twentytwelve_comment', 'style' => 'ol' ) ); ?>
+			<?php
+			wp_list_comments(
+				array(
+					'callback' => 'twentytwelve_comment',
+					'style' => 'ol',
+				)
+			);
+			?>
 		</ol><!-- .commentlist -->
 
 		<?php
 		// Are there comments to navigate through?
-		if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
+		if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) :
+			?>
 		<nav id="comment-nav-below" class="navigation" role="navigation">
 			<h1 class="assistive-text section-heading">Comment navigation</h1>
 			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'twentytwelve' ) ); ?></div>
@@ -47,7 +55,8 @@ if ( post_password_required() ) {
 		 * If there are no comments and comments are closed, let's leave a note.
 		 * But we only want the note on posts and pages that had comments in the first place.
 		 */
-		if ( ! comments_open() && get_comments_number() ) : ?>
+		if ( ! comments_open() && get_comments_number() ) :
+			?>
 		<p class="nocomments">Comments are closed.</p>
 		<?php endif; ?>
 

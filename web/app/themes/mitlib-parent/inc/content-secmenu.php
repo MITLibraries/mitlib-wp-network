@@ -36,7 +36,7 @@ global $isRoot;
 				'walker'            => new navwalker(),
 			)
 		);
-	?>
+		?>
 
 	</div>
 </nav>

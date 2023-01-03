@@ -25,31 +25,39 @@ get_header();
 	<?php endif; ?>
 
 			<?php if ( in_category( 'shortcrumb' ) ) { ?>
-		<?php get_template_part( 'inc/breadcrumbs', 'noChild' ); ?>
+				<?php get_template_part( 'inc/breadcrumbs', 'noChild' ); ?>
 			<?php } else { ?>
-			<?php get_template_part( 'inc/breadcrumbs' ); ?>
+				<?php get_template_part( 'inc/breadcrumbs' ); ?>
 			<?php } ?>
 			
-			<?php while ( have_posts() ) : the_post(); ?>
+			<?php
+			while ( have_posts() ) :
+				the_post();
+				?>
 
 		<div id="stage" class="inner" role="main">
 			
-			<?php if ( in_category( 'shortcrumb' ) ) { ?>
-			<?php get_template_part( 'inc/self', 'title' ); ?>
+				<?php if ( in_category( 'shortcrumb' ) ) { ?>
+					<?php get_template_part( 'inc/self', 'title' ); ?>
 			<?php } elseif ( ! in_category( 'page-root' ) ) { ?>
-			<?php get_template_part( 'inc/content', 'root' ); ?>
+					<?php get_template_part( 'inc/content', 'root' ); ?>
 			<?php } ?>	
 			
-			<div id="content" class="content <?php if ( is_active_sidebar( 'sidebar-1' ) ) { echo 'has-sidebar';} ?>">
+			<div id="content" class="content 
+				<?php
+				if ( is_active_sidebar( 'sidebar-1' ) ) {
+					echo 'has-sidebar';}
+				?>
+			">
 		
-			<?php if ( in_category( 'shortcrumb' ) ) { ?>
-			<?php get_template_part( 'content', 'shortcrumb' ); ?>
+				<?php if ( in_category( 'shortcrumb' ) ) { ?>
+					<?php get_template_part( 'content', 'shortcrumb' ); ?>
 			<?php } else { ?>				
-			<?php get_template_part( 'content', 'page' ); ?>
+					<?php get_template_part( 'content', 'page' ); ?>
 			<?php } ?>
 							
-			<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
-			<?php get_sidebar(); ?>
+				<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
+					<?php get_sidebar(); ?>
 			<?php endif; ?>
 
 			</div>

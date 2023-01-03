@@ -41,17 +41,17 @@ get_header(); ?>
 
 	<?php
 
-		if ( ! current_user_can( 'manage_options' ) ) {
-			include( get_query_template( '404' ) );
-			exit();
-		} else {
-			?>
+	if ( ! current_user_can( 'manage_options' ) ) {
+		include( get_query_template( '404' ) );
+		exit();
+	} else {
+		?>
 			<ul>
-				<?php
-				foreach ( $template_pages as $template_page ) {
-					echo '<li><a href="' . get_permalink( $template_page->ID ) . '">' . $template_page->post_title . '</a></li>';
-				}
-				?>
+			<?php
+			foreach ( $template_pages as $template_page ) {
+				echo '<li><a href="' . get_permalink( $template_page->ID ) . '">' . $template_page->post_title . '</a></li>';
+			}
+			?>
 			</ul>
 			
 

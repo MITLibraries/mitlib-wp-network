@@ -32,14 +32,14 @@
 	$content2 = get_field( 'tab_2_content' );
 
 	$content2wide = 0;
-	if ( '' === $content2 ) {
-		$content2wide = 1;
-	}
+if ( '' === $content2 ) {
+	$content2wide = 1;
+}
 
 	$content1wide = 0;
-	if ( '' === $content1 ) {
-		$content1wide = 1;
-	}
+if ( '' === $content1 ) {
+	$content1wide = 1;
+}
 
 	$study24 = get_field( 'study_24' );
 
@@ -48,43 +48,43 @@
 
 
 	$reserveText = get_field( 'reserve_text' );
-	if ( '' === $reserveText ) {
-		$reserveText = 'Reserve Group Study Space';
-	}
+if ( '' === $reserveText ) {
+	$reserveText = 'Reserve Group Study Space';
+}
 	$reserveUrl = get_field( 'reserve_url' );
 
 
 
 	$expertAskUrl = get_field( 'expert_ask_url' );
-	if ( '' === $expertAskUrl ) {
-		$expertAskUrl = 'http://libraries.mit.edu/ask';
-	}
+if ( '' === $expertAskUrl ) {
+	$expertAskUrl = 'http://libraries.mit.edu/ask';
+}
 
 
 	$numMain = 6;
 	$arMain = array();
 
-	for ( $i = 1;$i <= $numMain;$i++ ) {
-		$img = get_field( 'main_image' . $i, $locationId );
-		if ( $img != '' ) {
-			$arMain[] = $img; }
-	}
+for ( $i = 1;$i <= $numMain;$i++ ) {
+	$img = get_field( 'main_image' . $i, $locationId );
+	if ( $img != '' ) {
+		$arMain[] = $img; }
+}
 
 	$numSub = 8;
 	$arSub = array();
 	$subs = 0;
-	for ( $i = 1;$i <= $numSub;$i++ ) {
-		$img = get_field( 'sub_image' . $i, $locationId );
-		if ( $img != '' ) {
-			$subs++;
-			$arSub[] = $img;
-		}
+for ( $i = 1;$i <= $numSub;$i++ ) {
+	$img = get_field( 'sub_image' . $i, $locationId );
+	if ( $img != '' ) {
+		$subs++;
+		$arSub[] = $img;
 	}
+}
 
 	$strLocation = '';
-	if ( $subs <= 0 ) {
-		$strLocation = 'noThumbs';
-	}
+if ( $subs <= 0 ) {
+	$strLocation = 'noThumbs';
+}
 
 
 	$alertTitle = cf( 'alert_title' );
@@ -94,10 +94,10 @@
 <div class="libraryAlertTop">
 <?php
 					include( locate_template( 'inc/alert.php' ) );
-					if ( $showAlert == 0 && $alertTitle != '' ) {
-						echo '<div class="libraryAlert">' . '<div class="location--alerts flex-container"><i class="icon-exclamation-sign"></i>' . '<div class="alertText">' . '<h3>' . $alertTitle . '</h3>' . '<p>' . $alertContent . '</p>' . '</div>' . '</div>' . '</div>';
-					}
-				?>
+if ( $showAlert == 0 && $alertTitle != '' ) {
+	echo '<div class="libraryAlert">' . '<div class="location--alerts flex-container"><i class="icon-exclamation-sign"></i>' . '<div class="alertText">' . '<h3>' . $alertTitle . '</h3>' . '<p>' . $alertContent . '</p>' . '</div>' . '</div>' . '</div>';
+}
+?>
 </div>				
 	<div class="title-page libraryTitle flex-container">
 		
@@ -107,14 +107,14 @@
 				<div class="libraryContent">
 					<h1>
 						<span class="libraryName"><?php the_title(); ?></span>
-						<span class="subject-library"><?php echo $subject ?></span>
+						<span class="subject-library"><?php echo $subject; ?></span>
 					</h1>
 					<div class="info-more">
-						<a href="tel:<?php echo $phone; ?>" class="phone"><?php echo $phone ?></a> |
+						<a href="tel:<?php echo $phone; ?>" class="phone"><?php echo $phone; ?></a> |
 							<?php if ( $email ) : ?>
-						<a href="mailto:<?php echo $email; ?>" class="email"><?php echo $email ?></a> |
+						<a href="mailto:<?php echo $email; ?>" class="email"><?php echo $email; ?></a> |
 							<?php endif; ?>
-						<a href="<?php echo $mapPage . $slug; ?>">Room: <?php echo $building ?> <i class="icon-arrow-right"></i></a>
+						<a href="<?php echo $mapPage . $slug; ?>">Room: <?php echo $building; ?> <i class="icon-arrow-right"></i></a>
 					</div>
 				</div><!-- end div.libraryContent -->
 
@@ -157,49 +157,59 @@
 			<?php
 			if ( '' != $title1 || '' != $title2 ) :
 				$noTab = '';
-			?>
+				?>
 			<ul class="tabnav">
 				<?php if ( '' != $title1 ) : ?>
-				<li class="active tab1st"><h2 class="title-tab"><a href="#tab1"><?php echo $title1 ?><span class="title-sub hidden-mobile"><?php echo $subtitle1 ?></span class="title-sub"></a></h2></li>
+				<li class="active tab1st"><h2 class="title-tab"><a href="#tab1"><?php echo $title1; ?><span class="title-sub hidden-mobile"><?php echo $subtitle1; ?></span class="title-sub"></a></h2></li>
 				<?php endif; ?>
 				<?php if ( '' != $title2 ) : ?>
-				<li class="tab2nd"><h2 class="title-tab"><a href="#tab2"><?php echo $title2 ?><span class="title-sub hidden-mobile"><?php echo $subtitle2 ?></span class="title-sub"></a></h2></li>
+				<li class="tab2nd"><h2 class="title-tab"><a href="#tab2"><?php echo $title2; ?><span class="title-sub hidden-mobile"><?php echo $subtitle2; ?></span class="title-sub"></a></h2></li>
 				<?php endif; ?>
 			</ul>
-			<?php
+				<?php
 			else :
 				$noTab = ' noTab';
 			endif;
 			?>
 
-			<div class="tabcontent group <?php echo $noTab ?>">
+			<div class="tabcontent group <?php echo $noTab; ?>">
 
 				<div class="tab tab1 active flex-container group" id="tab1">
 
-						<div class="flex-item first group <?php if ( $content1wide ) : ?>span7 wideColumn<?php else : ?>span4<?php endif; ?>">
+						<div class="flex-item first group 
+						<?php
+						if ( $content1wide ) :
+							?>
+							span7 wideColumn
+							<?php
+else :
+	?>
+							span4<?php endif; ?>">
 
 							<?php
-								if ( $arexpert ) {
-									$expertIndex = array_rand( $arexpert );
-									$expert = $arexpert[ $expertIndex ];
+							if ( $arexpert ) {
+								$expertIndex = array_rand( $arexpert );
+								$expert = $arexpert[ $expertIndex ];
 
 
-									$name = $expert->post_title;
-									$bio = $expert->post_excerpt;
-									// $url = $expert->guid;
-									$url = get_post_meta( $expert->ID, 'expert_url', 1 );
+								$name = $expert->post_title;
+								$bio = $expert->post_excerpt;
+								// $url = $expert->guid;
+								$url = get_post_meta( $expert->ID, 'expert_url', 1 );
 
-									if ( has_post_thumbnail( $expert->ID ) ) {
-										$thumb = get_the_post_thumbnail( $expert->ID, array( 108, 108 ) );
-									} else {
-										$thumb = '';
-									}
+								if ( has_post_thumbnail( $expert->ID ) ) {
+									$thumb = get_the_post_thumbnail( $expert->ID, array( 108, 108 ) );
+								} else {
+									$thumb = '';
+								}
 
-							?>
+								?>
 							<div class="profile-content">
-								<?php if ( $thumb != '' ) :
+								<?php
+								if ( $thumb != '' ) :
 									echo $thumb;
-								endif; ?>
+								endif;
+								?>
 								<div class="profile-content__body">
 									<h3>
 										<span class="intro">Featured expert</span>
@@ -215,15 +225,15 @@
 
 							</div>
 
-							<?php
-								}
+								<?php
+							}
 									echo $content1left;
-								?>
+							?>
 
 						</div>
 
 						<div class="flex-item second span3">
-							<?php echo $content1 ?>
+							<?php echo $content1; ?>
 						</div>
 
 				</div>
@@ -231,8 +241,16 @@
 				
 				<div class="tab tab2 flex-container group" id="tab2">
 
-						<div class="flex-item first <?php if ( $content2wide ) : ?>span8 wideColumn<?php else : ?>span2<?php endif; ?>">
-						<?php echo $content2left ?>
+						<div class="flex-item first 
+						<?php
+						if ( $content2wide ) :
+							?>
+							span8 wideColumn
+							<?php
+else :
+	?>
+							span2<?php endif; ?>">
+						<?php echo $content2left; ?>
 						
 						<?php if ( $reserveUrl != '' ) : ?>
 									<a class="reserve hidden-phone" href="<?php echo $reserveUrl; ?>"><?php echo $reserveText; ?></a>
@@ -242,7 +260,7 @@
 						</div>
 
 						<div class="flex-item second span6">
-							<?php echo $content2 ?>
+							<?php echo $content2; ?>
 						</div>
 
 				</div>

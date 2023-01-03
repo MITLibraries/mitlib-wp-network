@@ -95,12 +95,16 @@ $alertContent = cf( 'alert_content' );
 	</div>
 	<div class="middleAlert">
 	  <?php
-	if ( have_posts() ) :
-	while ( have_posts() ) : the_post();
-		  the_content(); ?>
-	  <?php  endwhile;
+		if ( have_posts() ) :
+			while ( have_posts() ) :
+				the_post();
+				  the_content();
+				?>
+				<?php
+	   endwhile;
 endif;
-wp_reset_query();  ?>
+		wp_reset_query();
+		?>
 	</div>
 	<div class="wrap-cal-hours hidden-phone">
 	  <div id="hourCalendar" class="cal-hours"> </div>
@@ -174,15 +178,15 @@ tr:nth-child(even) td {
 						$th_classes .= ' cur';
 						$next = 'curAfter';
 					}
-				?>
+					?>
 				<th class="<?php echo esc_attr( $th_classes ); ?>">
 					<span class="fullDay">
 						<?php echo esc_html( date( 'l', $day ) ); ?>
-						<div class="date"><?php echo esc_html( date( 'M j', $day ) );?></div>
+						<div class="date"><?php echo esc_html( date( 'M j', $day ) ); ?></div>
 					</span>
 					<span class="mobileDay">
 						<?php echo esc_html( date( 'D', $day ) ); ?>
-						<div class="date"><?php echo esc_html( date( 'M \<\b\r\\/> j', $day ) );?></div>
+						<div class="date"><?php echo esc_html( date( 'M \<\b\r\\/> j', $day ) ); ?></div>
 					</span>
 				</th>
 				<?php } ?>
@@ -190,40 +194,44 @@ tr:nth-child(even) td {
 		</thead>
 	  <tbody>
 		<?php
-$args = array(
-	'post_type' => 'location',
-	'meta_key' => 'primary_location',
-	'meta_value' => 1,
-	'posts_per_page' => -1,
-	/*'orderby' => 'menu_order',*/
-	'orderby' => 'name',
-	'order' => 'ASC',
-);
-$libraryList = new WP_Query( $args );?>
-		<?php while ( $libraryList->have_posts() ) : $libraryList->the_post();
-$locationId = get_the_ID();
-$slug = $post->post_name;
-$mapPage = '/locations/#!';
+		$args = array(
+			'post_type' => 'location',
+			'meta_key' => 'primary_location',
+			'meta_value' => 1,
+			'posts_per_page' => -1,
+			/*'orderby' => 'menu_order',*/
+			'orderby' => 'name',
+			'order' => 'ASC',
+		);
+		$libraryList = new WP_Query( $args );
+		?>
+		<?php
+		while ( $libraryList->have_posts() ) :
+			$libraryList->the_post();
+			$locationId = get_the_ID();
+			$slug = $post->post_name;
+			$mapPage = '/locations/#!';
 
-?>
+			?>
 		<tr data-location="<?php the_title(); ?>">
 		  <td width="260" class="name"><div class="nameHolder">
-			  <h3> <a href="<?php
+			  <h3> <a href="
+			  <?php
 					$post_object = get_field( 'display_page' );
-					if ( $post_object ) :
-						// Dont even ask why.
-						$post = $post_object;
-						setup_postdata( $post );
-				?>
-			<?php the_permalink(); ?>">
-				<?php the_title(); ?>
+				if ( $post_object ) :
+					// Dont even ask why.
+					$post = $post_object;
+					setup_postdata( $post );
+					?>
+					<?php the_permalink(); ?>">
+					<?php the_title(); ?>
 				</a></h3>
-			  <?php wp_reset_postdata();  ?>
+					<?php wp_reset_postdata(); ?>
 			  <?php endif; ?>
 			  <?php the_field( 'phone', $locationId ); ?>
 			  <br />
 			  <a class="map" href="<?php echo $mapPage . $slug; ?>">Map:&nbsp;
-			  <?php  the_field( 'building', $locationId ); ?>
+			  <?php the_field( 'building', $locationId ); ?>
 			  </a>
 			  <?php if ( get_field( 'study_24', $locationId ) ) { ?>
 			  <span class="hidden">|</span> <a class="space247" href="/study/24x7/" alt="This location contains one or more study spaces available 24 hours a day, seven days a week. Click the link for more info." title="Study 24/7">Study 24/7</a>
@@ -232,23 +240,23 @@ $mapPage = '/locations/#!';
 			  <div class="libraryAlert"> <i class="icon-exclamation-sign"></i>
 				<div class="alertText">
 			  <div class="la-title"><?php the_field( 'alert_title', $locationId ); ?></div>
-				<?php the_field( 'alert_content', $locationId ); ?>
+					<?php the_field( 'alert_content', $locationId ); ?>
 			  </div>
 			  </div>
 			  <?php } ?>
 			</div></td>
-		  <?php for ( $i = 0;$i <= 6;$i++ ) { ?>
-		  <?php
-	  $curDay = $arr_days[ $i ];
+			<?php for ( $i = 0;$i <= 6;$i++ ) { ?>
+				<?php
+				$curDay = $arr_days[ $i ];
 
-	  if ( $curDay == $now ) {
-		$class = 'cur';
-		$next = 'curAfter';
-	  } else {
-		$class = $next;
-		$next = '';
-	  }
-	?>
+				if ( $curDay == $now ) {
+					$class = 'cur';
+					$next = 'curAfter';
+				} else {
+					$class = $next;
+					$next = '';
+				}
+				?>
 		<td data-day="<?php echo esc_attr( $i ); ?>" class="<?php echo esc_attr( $class ); ?>" data-foo="bar">
 			<span class="hidden-non-mobile date-label">
 				<?php echo esc_html( date( 'D', $curDay ) ) . '<br/>' . esc_html( date( 'n/j', $curDay ) ); ?>
@@ -256,13 +264,16 @@ $mapPage = '/locations/#!';
 		</td>
 		  <?php } ?>
 		</tr>
-		<?php wp_reset_postdata();
-endwhile;    ?>
+			<?php
+			wp_reset_postdata();
+endwhile;
+		?>
 	  </tbody>
 		<thead>
 			<tr>
 				<th class="name">More Locations</th>
-				<?php for ( $i = 0;$i <= 6;$i++ ) {
+				<?php
+				for ( $i = 0;$i <= 6;$i++ ) {
 					$day = $arr_days[ $i ];
 					// Now we build the list of classes for this header cell.
 					$th_classes = 'fullDay';
@@ -277,15 +288,15 @@ endwhile;    ?>
 						$th_classes .= ' cur';
 						$next = 'curAfter';
 					}
-				?>
+					?>
 				<th class="<?php echo esc_attr( $th_classes ); ?>">
 					<span class="fullDay">
 						<?php echo esc_html( date( 'l', $day ) ); ?>
-						<div class="date"><?php echo esc_html( date( 'M j', $day ) );?></div>
+						<div class="date"><?php echo esc_html( date( 'M j', $day ) ); ?></div>
 					</span>
 					<span class="mobileDay">
 						<?php echo esc_html( date( 'D', $day ) ); ?>
-						<div class="date"><?php echo esc_html( date( 'M \<\b\r\\/> j', $day ) );?></div>
+						<div class="date"><?php echo esc_html( date( 'M \<\b\r\\/> j', $day ) ); ?></div>
 					</span>
 				</th>
 				<?php } ?>
@@ -293,40 +304,43 @@ endwhile;    ?>
 		</thead>
 		<?php
 
-$args = array(
-	'post_type' => 'location',
-	'meta_key' => 'primary_location',
-	'meta_value' => 0,
-	'posts_per_page' => -1,
-	/*'orderby' => 'menu_order',*/
-	'orderby' => 'name',
-	'order' => 'ASC',
-	// Excludes DIRC and Stata.
-	'meta_query' => array(
-		'relation' => 'AND',
-		array(
-			'key' => 'no_hours',
-			'value' => 0,
-			'compare' => '=',
-		),
-	),
-);
-$libraryList2 = new WP_Query( $args );?>
-		<?php while ( $libraryList2->have_posts() ) : $libraryList2->the_post();
-$locationId = get_the_ID();
-$slug = $post->post_name;
-$mapPage = '/locations/#!';
+		$args = array(
+			'post_type' => 'location',
+			'meta_key' => 'primary_location',
+			'meta_value' => 0,
+			'posts_per_page' => -1,
+			/*'orderby' => 'menu_order',*/
+			'orderby' => 'name',
+			'order' => 'ASC',
+			// Excludes DIRC and Stata.
+			'meta_query' => array(
+				'relation' => 'AND',
+				array(
+					'key' => 'no_hours',
+					'value' => 0,
+					'compare' => '=',
+				),
+			),
+		);
+		$libraryList2 = new WP_Query( $args );
+		?>
+		<?php
+		while ( $libraryList2->have_posts() ) :
+			$libraryList2->the_post();
+			$locationId = get_the_ID();
+			$slug = $post->post_name;
+			$mapPage = '/locations/#!';
 
-?>
+			?>
 	  <tr class="moreLocs" data-location="<?php the_title(); ?>">
 		<td width="260"  class="name"><div class="nameHolder">
 		  
 	
-<?php
-$displayPage = get_field( 'display_page' );
-$pageID = $displayPage->ID;
-$pageLink = get_permalink( $pageID );
-			  ?>
+			<?php
+			$displayPage = get_field( 'display_page' );
+			$pageID = $displayPage->ID;
+			$pageLink = get_permalink( $pageID );
+			?>
 <h3><a href="<?php echo $pageLink; ?>"><?php the_title(); ?></a></h3>
 	
 			  
@@ -336,7 +350,7 @@ $pageLink = get_permalink( $pageID );
 			<?php the_field( 'phone', $locationId ); ?>
 			<br />
 			<a class="map" href="<?php echo $mapPage . $slug; ?>">Map:&nbsp;
-			<?php  the_field( 'building', $locationId ); ?>
+			<?php the_field( 'building', $locationId ); ?>
 			</a>
 			<?php if ( get_field( 'study_location', $locationId ) ) { ?>
 			<a class="space247" href="/study/24x7/" alt="This location contains one or more study spaces available 24 hours a day, seven days a week. Click the link for more info." title="Study 24/7"> | Study 24/7</a>
@@ -345,23 +359,23 @@ $pageLink = get_permalink( $pageID );
 			  <div class="libraryAlert"> <i class="icon-exclamation-sign"></i>
 				<div class="alertText">
 			  <div class="la-title"><?php the_field( 'alert_title', $locationId ); ?></div>
-				<?php the_field( 'alert_content', $locationId ); ?>
+					<?php the_field( 'alert_content', $locationId ); ?>
 			  </div>
 			  </div>
 			  <?php } ?>
 		  </div></td>
-		<?php for ( $i = 0;$i <= 6;$i++ ) { ?>
-		<?php
-$curDay = $arr_days[ $i ];
+			<?php for ( $i = 0;$i <= 6;$i++ ) { ?>
+				<?php
+				$curDay = $arr_days[ $i ];
 
-if ( $curDay == $now ) {
-$class = 'cur';
-$next = 'curAfter';
-} else {
-$class = $next;
-$next = '';
-}
-?>
+				if ( $curDay == $now ) {
+					$class = 'cur';
+					$next = 'curAfter';
+				} else {
+					$class = $next;
+					$next = '';
+				}
+				?>
 		<td data-day="<?php echo esc_attr( $i ); ?>" class="<?php echo esc_attr( $class ); ?> noPadding">
 			<span class="hidden-non-mobile date-label">
 				<?php echo esc_html( date( 'D', $curDay ) ) . '<br/>' . esc_html( date( 'n/j', $curDay ) ); ?>
@@ -369,8 +383,8 @@ $next = '';
 		</td>
 		<?php } ?>
 	  </tr>
-	   <?php wp_reset_postdata();  ?>
-	  <?php endwhile;   ?>
+			<?php wp_reset_postdata(); ?>
+	  <?php endwhile; ?>
 		</tbody>
 	  
 	</table>

@@ -28,11 +28,14 @@ get_header(); ?>
 
 			$locPosts = new WP_Query( $args );
 
-		?>
+			?>
 		
 		<div id="stage" class="inner" role="main">
 
-		<?php while ( $locPosts->have_posts() ) : $locPosts->the_post(); ?>
+		<?php
+		while ( $locPosts->have_posts() ) :
+			$locPosts->the_post();
+			?>
 
 				<?php get_template_part( 'content', 'location' ); ?>
 

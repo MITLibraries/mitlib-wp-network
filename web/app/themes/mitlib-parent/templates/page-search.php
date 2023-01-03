@@ -23,7 +23,10 @@ get_header(); ?>
 
 		<?php get_template_part( 'inc/breadcrumbs' ); ?>
 
-		<?php while ( have_posts() ) : the_post(); ?>
+		<?php
+		while ( have_posts() ) :
+			the_post();
+			?>
 			
 		<div id="stage" class="inner" role="main">
 

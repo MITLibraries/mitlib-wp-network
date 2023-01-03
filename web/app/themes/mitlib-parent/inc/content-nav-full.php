@@ -27,11 +27,16 @@ global $isRoot;
 			$menu = wp_get_nav_menu_items( $menuName );
 
 			if ( $menu ) {
-				wp_nav_menu( array( 'menu' => $menuName, 'menu_class' => 'nav-menu' ) );
+				wp_nav_menu(
+					array(
+						'menu' => $menuName,
+						'menu_class' => 'nav-menu',
+					)
+				);
 			} else {
 				wp_list_pages( $args );
 			}
-		?>
+			?>
 		</ul>
 		</div>
 	</div>

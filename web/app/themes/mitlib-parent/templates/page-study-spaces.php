@@ -50,9 +50,13 @@ get_header(); ?>
 							);
 							$subList = new WP_Query( $args );
 
-						?>					
-						<?php while ( $subList->have_posts() ) : $subList->the_post(); ?>
+							?>
+											
 						<?php
+						while ( $subList->have_posts() ) :
+							$subList->the_post();
+							?>
+							<?php
 							$locationId = get_the_ID();
 							$slug = $post->post_name;
 
@@ -94,12 +98,12 @@ get_header(); ?>
 							$post = $temp;
 
 
-						?>
+							?>
 							<li class="study-space">
 								<div class="study-space-image" style="background-image: url(<?php echo $studyImage; ?>);"></div>
 								<div class="study-space--content">
 									<div class="study-space--header ss-item">
-										<h3><a href="<?php echo $pageLink; ?>"><?php echo the_title() ?></a></h3>
+										<h3><a href="<?php echo $pageLink; ?>"><?php echo the_title(); ?></a></h3>
 										<div class="description">
 											<?php echo $description; ?>
 										</div>
@@ -112,19 +116,19 @@ get_header(); ?>
 									</div>
 									<div class="study-space--info">
 										<div class="ss-1 ss-item">
-											<h4><?php echo $subject ?></h4>
+											<h4><?php echo $subject; ?></h4>
 											<div class="sub">
 												<?php if ( $phone != '' ) : ?>
-												<?php echo $phone ?><br/>
+													<?php echo $phone; ?><br/>
 												<?php endif; ?>
-												Show on map: <br><a href="/locations/#!<?php echo $slug; ?>"><?php echo $building ?></a><br/>
+												Show on map: <br><a href="/locations/#!<?php echo $slug; ?>"><?php echo $building; ?></a><br/>
 												<?php if ( get_the_title() !== 'Information Intersection at Stata Center' ) : ?>
 													<span class="hours">Today's hours:<br/>
 													<span data-location-hours="<?php the_title(); ?>"></span></span>
-												<?php
+													<?php
 													endif;
-													if ( $reserveUrl != '' ) :
-												?>
+												if ( $reserveUrl != '' ) :
+													?>
 												<a class="mobileReserve visible-phone" href="<?php echo $reserveUrl; ?>"><?php echo $reserveText; ?></a>
 												<?php endif; ?>
 											</div>

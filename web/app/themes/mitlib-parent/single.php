@@ -14,7 +14,7 @@ $isRoot = $section->ID == $post->ID;
 
 get_header(); ?>
 
-<?php get_template_part( 'inc/breadcrumbs', 'child' ) ?>
+<?php get_template_part( 'inc/breadcrumbs', 'child' ); ?>
 	
 <div id="stage" class="inner" role="main">
 
@@ -24,7 +24,10 @@ get_header(); ?>
 
 				<div class="content-main main-content">			
 					
-					<?php while ( have_posts() ) : the_post(); ?>
+					<?php
+					while ( have_posts() ) :
+						the_post();
+						?>
 					
 						<div class="article-head">
 

@@ -28,8 +28,11 @@ get_header(); ?>
 			
 			<div class="preContent" id="locationsHome">
 				<ul class="locationMainList">
-						<?php while ( have_posts() ) : the_post(); ?>
 						<?php
+						while ( have_posts() ) :
+							the_post();
+							?>
+							<?php
 							$subject = cf( 'subject' );
 							$phone = cf( 'phone' );
 							$building = cf( 'building' );
@@ -44,12 +47,12 @@ get_header(); ?>
 							$title2 = cf( 'tab_2_title' );
 							$subtitle2 = cf( 'tab_2_subtitle' );
 							$content2 = cf( 'tab_2_content' );
-						?>
+							?>
 							<li>
 								<div class="hours">Open today 10am - 6pm</div>
-								<h3><a href="<?php the_permalink() ?>"><?php the_title(); ?><i class="icon-arrow-right"></i></a></h3>
-								<div class="sub"><?php echo $subject ?></div>
-								<?php echo $phone ?> <a class="map" href="#">Map: <?php echo $building ?> <i class="icon-arrow-right"></i></a>
+								<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?><i class="icon-arrow-right"></i></a></h3>
+								<div class="sub"><?php echo $subject; ?></div>
+								<?php echo $phone; ?> <a class="map" href="#">Map: <?php echo $building; ?> <i class="icon-arrow-right"></i></a>
 							</li>	
 						
 						<?php endwhile; // end of the loop. ?>					
@@ -62,8 +65,11 @@ get_header(); ?>
 				<div id="mainContent">
 					<h2>More Locations</h2>
 					<ul class="locationList">
-						<?php while ( have_posts() ) : the_post(); ?>
 						<?php
+						while ( have_posts() ) :
+							the_post();
+							?>
+							<?php
 							$subject = cf( 'subject' );
 							$phone = cf( 'phone' );
 							$building = cf( 'building' );
@@ -78,9 +84,9 @@ get_header(); ?>
 							$title2 = cf( 'tab_2_title' );
 							$subtitle2 = cf( 'tab_2_subtitle' );
 							$content2 = cf( 'tab_2_content' );
-						?>
+							?>
 							<li>
-								<h3><a href="#"><?php echo the_title() ?><i class="icon-arrow-right"></i></a></h3>
+								<h3><a href="#"><?php echo the_title(); ?><i class="icon-arrow-right"></i></a></h3>
 								<?php echo esc_html( $phone ); ?><br/>
 								Open today 9am-5pm by appointment only<br/>
 								<a href="#">Map: <?php echo esc_html( $building ); ?> <i class="icon-arrow-right"></i></a>
@@ -92,7 +98,7 @@ get_header(); ?>
 				</div>
 				
 				<div id="sidebarContent">
-					<a href="#" class="widgetButton"><img src="<?php bloginfo( 'template_directory' ) ?>/images/btn-study-space.png" alt="Find a Study Space" /></a>
+					<a href="#" class="widgetButton"><img src="<?php bloginfo( 'template_directory' ); ?>/images/btn-study-space.png" alt="Find a Study Space" /></a>
 					<div class="sidebarWidgets">
 						<div class="widget">
 							<h3>In the libraries</h3>
