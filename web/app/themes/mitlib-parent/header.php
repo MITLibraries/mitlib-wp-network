@@ -26,13 +26,6 @@ namespace Mitlib\Parent;
 <link rel="profile" href="https://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <?php wp_head(); ?>
-<?php
-		// $askUrl = get_post_meta($post->ID, "ask_us_override", 1);
-		$askUrl = '';
-if ( '' === $askUrl ) {
-	$askUrl = '/ask';
-}
-?>
 	<script>
 		todayDate="";
 	</script>
@@ -62,10 +55,3 @@ if ( '' === $askUrl ) {
 			<?php get_template_part( 'inc/nav', 'smalldisplays' ); ?>
 
 		</header>
-
-		<?php
-
-			$pageRoot = getRoot( $post );
-			$section = get_post( $pageRoot );
-
-		?>
