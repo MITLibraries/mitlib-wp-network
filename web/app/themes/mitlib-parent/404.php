@@ -2,13 +2,16 @@
 /**
  * The template for displaying 404 pages (Not Found).
  *
- * @package MIT_Libraries_Parent
- * @since 1.2.1
+ * @package MITlib_Parent
+ * @since 0.0.1
  */
 
-get_header(); ?>
+namespace Mitlib\Parent;
 
+get_header();
+?>
 		<div id="stage" class="inner" role="main">
+
 			<div id="content" class="content has-sidebar">
 
 				<div class="main-content content-main">

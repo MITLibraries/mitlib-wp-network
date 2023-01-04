@@ -4,9 +4,11 @@
  *
  * If no active widgets in either sidebar, they will be hidden completely.
  *
- * @package MIT_Libraries_Parent
- * @since 1.2.1
+ * @package MITlib_Parent
+ * @since 0.2.0
  */
+
+namespace Mitlib\Parent;
 
 /*
  * The front page widget area is triggered if any of the areas

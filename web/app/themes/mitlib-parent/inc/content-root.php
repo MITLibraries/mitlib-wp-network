@@ -2,8 +2,8 @@
 /**
  * The template used for displaying conditional header content in page.php
  *
- * @package MIT_Libraries_Parent
- * @since 1.2.1
+ * @package MITlib_Parent
+ * @since 0.2.0
  */
 
 $pageRoot = getRoot( $post );

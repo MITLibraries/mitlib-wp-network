@@ -6,6 +6,8 @@
  * @since 0.0.1
  */
 
+namespace Mitlib\Parent;
+
 ?>
 <div class="footer-main flex-container">
 	<div class="links-all flex-container">

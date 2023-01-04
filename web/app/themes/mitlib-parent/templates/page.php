@@ -7,13 +7,11 @@
  * and that other 'pages' on your WordPress site will use a
  * different template.
  *
- * @package MIT_Libraries_Parent
- * @since 1.2.1
+ * @package MITlib_Parent
+ * @since 0.0.1
  */
 
-$pageRoot = getRoot( $post );
-$section = get_post( $pageRoot );
-$isRoot = $section->ID == $post->ID;
+namespace Mitlib\Parent;
 
 get_header();
 ?>

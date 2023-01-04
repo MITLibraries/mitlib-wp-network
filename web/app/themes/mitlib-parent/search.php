@@ -2,9 +2,11 @@
 /**
  * The template for displaying Search Results pages.
  *
- * @package MIT_Libraries_Parent
- * @since 1.2.1
+ * @package MITlib_Parent
+ * @since 0.2.0
  */
+
+namespace Mitlib\Parent;
 
 get_header();
 

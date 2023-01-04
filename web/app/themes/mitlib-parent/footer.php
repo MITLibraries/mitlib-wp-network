@@ -2,9 +2,11 @@
 /**
  * The template for displaying the footer.
  *
- * @package MIT_Libraries_Parent
- * @since 1.2.1
+ * @package MITlib_Parent
+ * @since 0.0.1
  */
+
+namespace Mitlib\Parent;
 
 ?>
 <footer>

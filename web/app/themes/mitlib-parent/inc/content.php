@@ -2,9 +2,11 @@
 /**
  * The default template for displaying content. Used for both single and index/archive/search.
  *
- * @package MIT_Libraries_Parent
- * @since 1.2.1
+ * @package MITlib_Parent
+ * @since 0.2.0
  */
+
+namespace Mitlib\Parent;
 
 ?>
 

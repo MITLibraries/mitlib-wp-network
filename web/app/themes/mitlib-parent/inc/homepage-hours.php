@@ -2,9 +2,11 @@
 /**
  * Template partial for the homepage hours & locations panel
  *
- * @package MIT_Libraries_Parent
- * @since 1.9.1
+ * @package MITlib_Parent
+ * @since 0.2.0
  */
+
+namespace Mitlib\Parent;
 
 ?>
 <h2><a href="/hours">Hours &amp; locations</a></h2>

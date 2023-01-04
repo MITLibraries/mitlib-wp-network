@@ -2,9 +2,11 @@
 /**
  * Template for locations on front page
  *
- * @package MIT_Libraries_Parent
- * @since 1.2.1
+ * @package MITlib_Parent
+ * @since 0.2.0
  */
+
+namespace Mitlib\Parent;
 
 	// Query the locations.
 	$args = array(

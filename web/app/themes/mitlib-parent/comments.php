@@ -7,9 +7,11 @@
  * handled by a callback to twentytwelve_comment() which is
  * located in the functions.php file.
  *
- * @package MIT_Libraries_Parent
- * @since 1.2.1
+ * @package MITlib_Parent
+ * @since 0.2.0
  */
+
+namespace Mitlib\Parent;
 
 /*
  * If the current post is protected by a password and

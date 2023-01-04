@@ -3,14 +3,11 @@
  *
  * This is the template that displays single posts
  *
- * @package MIT_Libraries_Parent
- * @since 1.2.1
+ * @package MITlib_Parent
+ * @since 0.2.0
  */
 
-$pageRoot = getRoot( $post );
-$section = get_post( $pageRoot );
-$isRoot = $section->ID == $post->ID;
-
+namespace Mitlib\Parent;
 
 get_header(); ?>
 

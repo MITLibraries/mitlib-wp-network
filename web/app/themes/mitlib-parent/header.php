@@ -4,9 +4,11 @@
  *
  * Displays all of the <head> section and everything up till div#breadcrumb
  *
- * @package MIT_Libraries_Parent
- * @since 1.2.1
+ * @package MITlib_Parent
+ * @since 0.0.1
  */
+
+namespace Mitlib\Parent;
 
 ?><!DOCTYPE html>
 <!--[if lte IE 9]><html class="no-js lte-ie9" lang="en"><![endif]-->

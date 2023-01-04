@@ -2,9 +2,11 @@
 /**
  * The template used for displaying page content in page.php
  *
- * @package MIT_Libraries_Parent
- * @since 1.2.1
+ * @package MITlib_Parent
+ * @since 0.2.0
  */
+
+namespace Mitlib\Parent;
 
 global $isRoot;
 ?>
