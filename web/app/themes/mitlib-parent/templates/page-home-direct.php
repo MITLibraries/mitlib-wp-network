@@ -16,8 +16,6 @@ if ( is_active_sidebar( 'sidebar-search' ) ) :
 		<?php dynamic_sidebar( 'sidebar-search' ); ?>
 	</div>
 	<?php
-else :
-		get_template_part( 'inc/search' );
 endif;
 ?>
 

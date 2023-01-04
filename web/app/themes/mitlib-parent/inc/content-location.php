@@ -93,7 +93,6 @@ if ( $subs <= 0 ) {
 
 <div class="libraryAlertTop">
 <?php
-					include( locate_template( 'inc/alert.php' ) );
 if ( $showAlert == 0 && $alertTitle != '' ) {
 	echo '<div class="libraryAlert">' . '<div class="location--alerts flex-container"><i class="icon-exclamation-sign"></i>' . '<div class="alertText">' . '<h3>' . $alertTitle . '</h3>' . '<p>' . $alertContent . '</p>' . '</div>' . '</div>' . '</div>';
 }

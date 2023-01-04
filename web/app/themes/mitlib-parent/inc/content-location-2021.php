@@ -70,7 +70,6 @@ $alertContent = cf( 'alert_content' );
 
 <div class="libraryAlertTop">
 	<?php
-	require locate_template( 'inc/alert.php' );
 	if ( 0 == $showAlert && '' !== $alertTitle ) {
 		echo '<div class="libraryAlert">' . '<div class="location--alerts flex-container"><i class="icon-exclamation-sign"></i>' . '<div class="alertText">' . '<h3>' . $alertTitle . '</h3>' . '<p>' . $alertContent . '</p>' . '</div>' . '</div>' . '</div>';
 	}
