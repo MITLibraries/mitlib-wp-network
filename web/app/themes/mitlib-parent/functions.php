@@ -9,6 +9,56 @@
 namespace Mitlib\Parent;
 
 /**
+ * We use Navwalker to render custom secondary menus in a mobile-friendly way,
+ * via the custom-secmenu.php partial.
+ *
+ * TODO: Refactor this. We were told that Navwalker needs to be at the theme
+ * root for it to function, which I'm skeptical of. Options include:
+ * - Leave as is, at theme root, with explicit loading
+ * - Move into the lib/ directory, alongside the bespoke news library
+ * - Load via Packagist, if version 2.0.4 is available and we can access it from
+ *   there.
+ */
+require_once( 'navwalker.php' );
+
+/**
+ * Sets up theme defaults and registers the various WordPress features that it
+ * supports. This was function was borrowed from Twenty Twelve.
+ *
+ * @uses add_editor_style() To add a visual editor stylesheet.
+ * @uses add_theme_support() To add support for post thumbnails.
+ * @uses register_nav_menu() To add support for navigation menus.
+ * @uses set_post_thumbnail_size() To set a custom post thumbnail size.
+ *
+ * @since 0.2.0
+ */
+function theme_setup() {
+	/**
+	 * If this theme were to support translation, we would call
+	 * load_theme_textdomain here.
+	 */
+
+	/**
+	 * This theme styles the visual editor with editor-style.css to match the
+	 * theme style.
+	 */
+	add_editor_style();
+
+	// This theme uses wp_nav_menu() in one location.
+	register_nav_menu( 'primary', 'Primary Menu' );
+	register_nav_menu( 'secondary', 'Secondary Menu' );
+	register_nav_menu( 'footer', 'Footer Menu' );
+
+	/**
+	 * This theme uses a custom image size for featured images, displayed on
+	 * "standard" posts.
+	 */
+	add_theme_support( 'post-thumbnails' );
+	set_post_thumbnail_size( 624, 9999 ); // Unlimited height, soft crop.
+}
+add_action( 'after_setup_theme', 'Mitlib\Parent\theme_setup' );
+
+/**
  * Ensure that the directories expected by SCSS compiler exist.
  *
  * The WP-SCSS plugin that we rely on to compile theme stylesheets requires that

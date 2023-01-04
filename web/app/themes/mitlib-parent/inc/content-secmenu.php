@@ -2,11 +2,11 @@
 /**
  * The template used for displaying conditional secondary menu in page.php
  *
- * @package MIT_Libraries_Parent
- * @since 1.2.1
+ * @package MITlib_Parent
+ * @since 0.2.0
  */
 
-global $isRoot;
+namespace Mitlib\Parent;
 
 ?>
 
@@ -33,7 +33,7 @@ global $isRoot;
 				'container_id'      => 'bs-example-navbar-collapse-1',
 				'menu_class'        => 'nav navbar-nav nav-second',
 				'fallback_cb'       => false,
-				'walker'            => new navwalker(),
+				'walker'            => new \navwalker(),
 			)
 		);
 		?>

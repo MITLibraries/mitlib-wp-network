@@ -49,9 +49,9 @@ get_header();
 			">
 		
 				<?php if ( in_category( 'shortcrumb' ) ) { ?>
-					<?php get_template_part( 'content', 'shortcrumb' ); ?>
+					<?php get_template_part( 'inc/content', 'shortcrumb' ); ?>
 			<?php } else { ?>				
-					<?php get_template_part( 'content', 'page' ); ?>
+					<?php get_template_part( 'inc/content', 'page' ); ?>
 			<?php } ?>
 							
 				<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
