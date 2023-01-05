@@ -2,9 +2,11 @@
 /**
  * Template Name: Style Guide
  *
- * @package MIT_Libraries_Parent
- * @since 1.2.1
+ * @package MITlib_Parent
+ * @since 0.2.0
  */
+
+namespace Mitlib\Parent;
 
 get_header(); ?>
 		<style>
@@ -84,9 +86,11 @@ get_header(); ?>
 				background: #cca329;
 			}
 		</style>
-		<div id="breadcrumb" class="inner hidden-phone" role="navigation" aria-label="breadcrumbs">
-			<?php wsf_breadcrumbs( ' &raquo; ', '' ); ?>
-		</div>
+		<?php if ( in_category( 'shortcrumb' ) ) { ?>
+			<?php get_template_part( 'inc/breadcrumbs', 'nochild' ); ?>
+		<?php } else { ?>
+			<?php get_template_part( 'inc/breadcrumbs' ); ?>
+		<?php } ?>
 
 		<?php
 		while ( have_posts() ) :
