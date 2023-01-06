@@ -13,7 +13,7 @@
 
 namespace Mitlib\Parent;
 
-$newsBlogID = 7;
+$newsBlogID = 4;
 
 function DebugNews() {
 	global $newsBlogID;
@@ -192,7 +192,7 @@ function RenderPool( $items ) {
 		$eventDate = '';
 		if ( $item->post_type === 'post' && array_key_exists( 'is_event', $custom ) ) {
 			if ( $custom['is_event'][0] === '1' ) {
-				$eventDate = DateTime::createFromFormat( 'Ymd', $custom['event_date'][0] );
+				$eventDate = \DateTime::createFromFormat( 'Ymd', $custom['event_date'][0] );
 				$eventDate = '<div class="date-event"><img alt="calendar icon" src="/wp-content/themes/libraries/images/calendar.svg" width="13px" height="13px" ><span class="event">' . date_format( $eventDate, 'F j' ) . '</span>';
 				if ( $custom['event_start_time'][0] != '' ) {
 					$eventDate = $eventDate . '<span class="time-event"> ' . $custom['event_start_time'][0];

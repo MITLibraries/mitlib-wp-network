@@ -22,6 +22,12 @@ namespace Mitlib\Parent;
 require_once( 'navwalker.php' );
 
 /**
+ * We use lib/news.php to render a selection of news articles on the front page,
+ * and also for debugging this feature on a Featured News template.
+ */
+require_once( 'lib/news.php' );
+
+/**
  * Sets up theme defaults and registers the various WordPress features that it
  * supports. This was function was borrowed from Twenty Twelve.
  *

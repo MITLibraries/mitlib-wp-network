@@ -2,13 +2,14 @@
 /**
  * Template Name: Featured News Article List
  *
- * @package MIT_Libraries_Parent
- * @since 1.2.1
+ * @package MITlib_Parent
+ * @since 0.2.0
  */
 
-	get_header();
-?>
+namespace Mitlib\Parent;
 
+get_header();
+?>
 
 		<div class="col-2 flex-item ">
 			<div id="home-posts-news" class="posts--preview news-events">
@@ -24,7 +25,7 @@
 				<div class="debug">
 		<?php
 			// Switch to news blog.
-			switch_to_blog( 7 );
+			switch_to_blog( 4 );
 
 			$args = array(
 				'meta_query' => array(
@@ -42,7 +43,7 @@
 				'ignore_sticky_posts' => 1,
 			);
 			$the_stories = null;
-			$the_stories = new WP_Query( $args );
+			$the_stories = new \WP_Query( $args );
 
 			if ( $the_stories->have_posts() ) {
 				while ( $the_stories->have_posts() ) :
@@ -86,7 +87,7 @@
 
 					// Card date.
 					if ( $post->post_type === 'post' && $post->is_event[0] === '1' ) {
-						$eventDate = DateTime::createFromFormat( 'Ymd', $post->event_date );
+						$eventDate = \DateTime::createFromFormat( 'Ymd', $post->event_date );
 						$eventDate = '<span class="date">' . date_format( $eventDate, 'F j' ) . '</span>';
 						if ( $post->event_start_time != '' ) {
 							$eventDate = $eventDate . ' ' . $post->event_start_time;
