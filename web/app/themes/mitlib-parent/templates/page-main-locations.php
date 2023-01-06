@@ -1,22 +1,19 @@
 <?php
 /**
- * Template Name: Location Listing Template
+ * Template Name: Map of Locations
  *
  * This is the template that displays all pages by default.
  * Please note that this is the WordPress construct of pages
  * and that other 'pages' on your WordPress site will use a
  * different template.
  *
- * @package MIT_Libraries_Parent
- * @since 1.2.1
+ * @package MITlib_Parent
+ * @since 0.2.0
  */
 
-$pageRoot = getRoot( $post );
-$section = get_post( $pageRoot );
+namespace Mitlib\Parent;
 
 $showMap = ( $_GET['v'] != '' ) && ( $_GET['v'] == 'map' ) ? 1 : 0;
-
-
 
 get_header(); ?>
 	<script>
@@ -41,7 +38,7 @@ get_header(); ?>
 								'orderby' => 'menu_order',
 								'order' => 'ASC',
 							);
-							$libraryList = new WP_Query( $args );
+							$libraryList = new \WP_Query( $args );
 							?>
 						<?php
 						while ( $libraryList->have_posts() ) :
@@ -126,7 +123,7 @@ get_header(); ?>
 								'orderby' => 'menu_order',
 								'order' => 'ASC',
 							);
-							$libraryList = new WP_Query( $args );
+							$libraryList = new \WP_Query( $args );
 							?>
 						<?php
 						while ( $libraryList->have_posts() ) :
@@ -183,7 +180,7 @@ get_header(); ?>
 							'order' => 'ASC',
 
 						);
-						$subList = new WP_Query( $args );
+						$subList = new \WP_Query( $args );
 						?>
 										
 					<?php
