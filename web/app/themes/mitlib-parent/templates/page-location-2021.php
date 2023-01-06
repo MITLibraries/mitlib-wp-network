@@ -9,13 +9,11 @@
  * It does not display the standard sidebar, and the corresponding content
  * template (content-location-2021) does not use a tabbed layout.
  *
- * @package MIT_Libraries_Parent
- * @since 1.12.0
+ * @package MITlib_Parent
+ * @since 0.2.0
  */
 
-$pageRoot = getRoot( $post );
-$section = get_post( $pageRoot );
-$isRoot = $section->ID == $post->ID;
+namespace Mitlib\Parent;
 
 get_header(); ?>
 
@@ -29,7 +27,7 @@ $args = array(
 	'post_type' => 'any',
 );
 
-$location_posts = new WP_Query( $args );
+$location_posts = new \WP_Query( $args );
 ?>
 
 <div id="stage" class="inner" role="main">
@@ -39,7 +37,7 @@ $location_posts = new WP_Query( $args );
 		$location_posts->the_post();
 		?>
 
-		<?php get_template_part( 'content', 'location-2021' ); ?>
+		<?php get_template_part( 'inc/content', 'location-2021' ); ?>
 
 	<?php endwhile; // end of the loop. ?>
 

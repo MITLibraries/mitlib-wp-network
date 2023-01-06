@@ -396,6 +396,20 @@ function better_breadcrumbs() {
 }
 
 /**
+ * The cf function is a thin wrapper around the get_post_meta function, allowing
+ * simpler references to custom fields within page templates.
+ *
+ * This could potentially be removed by converting page templates to use the
+ * get_field function provided by ACF.
+ *
+ * @param String $name The name of the custom field being loaded.
+ * @uses get_post_meta Retrieves a post meta field for a given post ID.
+ */
+function cf( $name ) {
+	return get_post_meta( get_the_ID(), $name, true );
+}
+
+/**
  * The get_root function finds the post at the root of a content tree below a
  * specified leaf post.
  *

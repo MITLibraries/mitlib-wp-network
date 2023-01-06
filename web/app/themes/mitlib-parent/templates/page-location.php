@@ -6,15 +6,14 @@
  * of custom fields defined by the ACF plugin. This template was designed
  * prior to 2021, and is a legacy layout.
  *
- * @package MIT_Libraries_Parent
- * @since 1.2.1
+ * @package MITlib_Parent
+ * @since 0.2.0
  */
 
-$pageRoot = getRoot( $post );
-$section = get_post( $pageRoot );
-$isRoot = $section->ID == $post->ID;
+namespace Mitlib\Parent;
 
-get_header(); ?>
+get_header();
+?>
 		<!-- Version 1.9 -->
 		<?php get_template_part( 'inc/breadcrumbs' ); ?>
 
@@ -26,7 +25,7 @@ get_header(); ?>
 				'post_type' => 'any',
 			);
 
-			$locPosts = new WP_Query( $args );
+			$locPosts = new \WP_Query( $args );
 
 			?>
 		
@@ -37,7 +36,7 @@ get_header(); ?>
 			$locPosts->the_post();
 			?>
 
-				<?php get_template_part( 'content', 'location' ); ?>
+				<?php get_template_part( 'inc/content', 'location' ); ?>
 
 				<?php get_sidebar(); ?>
 		

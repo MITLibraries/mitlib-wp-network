@@ -2,9 +2,11 @@
 /**
  * The template for displaying location post information in a single display.
  *
- * @package MIT_Libraries_Parent
- * @since 1.12.0
+ * @package MITlib_Parent
+ * @since 0.2.0
  */
+
+namespace Mitlib\Parent;
 
 global $gStudy24Url;
 
