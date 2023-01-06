@@ -1,18 +1,18 @@
 <?php
 /**
- * Template Name: Location Hours
+ * Template Name: Hours
  *
  * This is the template that displays all pages by default.
  * Please note that this is the WordPress construct of pages
  * and that other 'pages' on your WordPress site will use a
  * different template.
  *
- * @package MIT_Libraries_Parent
- * @since 1.2.1
+ * @package MITlib_Parent
+ * @since 0.2.0
  */
 
-$pageRoot = getRoot( $post );
-$section = get_post( $pageRoot );
+namespace Mitlib\Parent;
+
 if ( ! $_GET['d'] ) {
 	$inDate = 'Now';
 } else {
@@ -90,7 +90,7 @@ $alertContent = cf( 'alert_content' );
 	<div class="title-page flex-container">
 	<div class="libraryContent">
 	  <h1>
-		<?php showBreadTitle(); ?>
+		<?php the_title(); ?>
 	  </h1>
 	</div>
 	<div class="middleAlert">
@@ -203,7 +203,7 @@ tr:nth-child(even) td {
 			'orderby' => 'name',
 			'order' => 'ASC',
 		);
-		$libraryList = new WP_Query( $args );
+		$libraryList = new \WP_Query( $args );
 		?>
 		<?php
 		while ( $libraryList->have_posts() ) :
@@ -322,7 +322,7 @@ endwhile;
 				),
 			),
 		);
-		$libraryList2 = new WP_Query( $args );
+		$libraryList2 = new \WP_Query( $args );
 		?>
 		<?php
 		while ( $libraryList2->have_posts() ) :
