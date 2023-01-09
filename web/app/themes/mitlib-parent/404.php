@@ -10,32 +10,32 @@ namespace Mitlib\Parent;
 
 get_header();
 ?>
-		<div id="stage" class="inner" role="main">
 
-			<div id="content" class="content has-sidebar">
+	<div id="stage" class="inner" role="main">
+		<div id="content" class="content has-sidebar">
 
-				<div class="main-content content-main">
+			<div class="main-content content-main">
 
-					<article id="post-0" class="post error404 no-results not-found">
+				<article id="post-0" class="post error404 no-results not-found">
 
-						<?php if ( is_active_sidebar( 'sidebar-404' ) ) { ?>
+					<?php if ( is_active_sidebar( 'sidebar-404' ) ) { ?>
 
-							<div id="sidebar-404" class="widget-area" role="complementary">
-								<?php dynamic_sidebar( 'sidebar-404' ); ?>
-							</div>
+						<div id="sidebar-404" class="widget-area" role="complementary">
+							<?php dynamic_sidebar( 'sidebar-404' ); ?>
+						</div>
 
-						<?php } else { ?>
+					<?php } else { ?>
 
-							<header class="entry-header">
-								<h1 class="entry-title">The requested content was not found.</h1>
-							</header>
-							<?php get_template_part( 'inc/site-search' ); ?>
+						<header class="entry-header">
+							<h1 class="entry-title">The requested content was not found.</h1>
+						</header>
+						<?php get_template_part( 'inc/site-search' ); ?>
 
-						<?php } ?>
+					<?php } ?>
 
-					</article><!-- #post-0 -->
+				</article><!-- #post-0 -->
 
-				</div>
+			</div>
 
 			<?php get_sidebar(); ?>
 
