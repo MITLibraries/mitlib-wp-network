@@ -354,6 +354,18 @@ function mitlib_sidebars_init() {
 add_action( 'widgets_init', 'Mitlib\Parent\mitlib_sidebars_init' );
 
 /**
+ * This changes the name of the always-present Default Template to something
+ * more descriptive, since this theme has edited index.php to return no
+ * response.
+ *
+ * @uses default_page_template_title Overrides the usual name for index.php
+ */
+function update_default_template_name() {
+	return __( 'Blank template - do not use', 'mitlib' );
+}
+add_filter( 'default_page_template_title', 'Mitlib\Parent\update_default_template_name' );
+
+/**
  * ============================================================================
  * ============================================================================
  * These functions are defined here, without adding them via add_action. They
