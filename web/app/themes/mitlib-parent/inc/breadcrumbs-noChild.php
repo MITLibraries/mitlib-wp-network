@@ -1,10 +1,12 @@
 <?php
 /**
- * Template for breadcrumbs - no Child
+ * Template for breadcrumbs - no child
  *
- * @package MIT_Libraries_Parent
- * @since 1.2.1
+ * @package MITlib_Parent
+ * @since 0.2.0
  */
+
+namespace Mitlib\Parent;
 
 ?>
 <div id="betterBreadcrumbs" class="betterBreadcrumbs" role="navigation" aria-label="breadcrumbs">

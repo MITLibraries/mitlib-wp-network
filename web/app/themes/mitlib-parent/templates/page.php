@@ -23,7 +23,7 @@ get_header();
 	<?php endif; ?>
 
 			<?php if ( in_category( 'shortcrumb' ) ) { ?>
-				<?php get_template_part( 'inc/breadcrumbs', 'noChild' ); ?>
+				<?php get_template_part( 'inc/breadcrumbs', 'nochild' ); ?>
 			<?php } else { ?>
 				<?php get_template_part( 'inc/breadcrumbs' ); ?>
 			<?php } ?>

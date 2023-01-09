@@ -245,40 +245,6 @@ function customize_preview_js() {
 add_action( 'customize_preview_init', 'Mitlib\Parent\customize_preview_js' );
 
 /**
- * The following functions get called in various places by theme templates.
- */
-
-/**
- * The get_root function finds the post at the root of a content tree below a
- * specified leaf post.
- *
- * @param WP_Post $post The post we are starting from.
- */
-function get_root( $post ) {
-	$ar = get_post_ancestors( $post );
-
-	$is_section = get_post_meta( $post->ID, 'is_section', 1 );
-
-	$count_ar = count( $ar );
-
-	for ( $i = 0; $i < $count_ar; $i++ ) {
-		$pid = $ar[ $i ];
-		$is_section = get_post_meta( $pid, 'is_section', 1 );
-		if ( 1 == $is_section ) {
-			return $pid;
-		}
-	}
-
-	$max = count( $ar ) - 1;
-
-	if ( -1 == $max ) {
-		return $post->ID;
-	} else {
-		return $ar[ $max ];
-	}
-}
-
-/**
  * Adds custom fields to 'post' and 'experts' API endpoints
  *
  * @link http://v2.wp-api.org/extending/modifying/
@@ -380,3 +346,92 @@ function mitlib_sidebars_init() {
 
 }
 add_action( 'widgets_init', 'Mitlib\Parent\mitlib_sidebars_init' );
+
+/**
+ * ============================================================================
+ * ============================================================================
+ * These functions are defined here, without adding them via add_action. They
+ * may be called by the templates within the theme.
+ */
+
+/**
+ * Provides an alternative way for building a breadcrumb.
+ *
+ * TODO: There are many code validation problems in this function.
+ */
+function better_breadcrumbs() {
+
+	global $post;
+
+	if ( is_search() ) {
+		echo '<span>Search</span>';
+	}
+
+	if ( ! is_child_page() && is_page() || is_category() || is_single() ) {
+		echo '<span>' . the_title() . '</span>';
+		return;
+	}
+
+	if ( is_child_page() ) {
+		$hideParent = get_field( 'hide_parent_breadcrumb' );
+		$parentLink = get_permalink( $post->post_parent );
+		$parentTitle = get_the_title( $post->post_parent );
+		$startLink = '<a href="';
+		$endLink = '">';
+		$closeLink = '</a>';
+		$parentBreadcrumb = $startLink . $parentLink . $endLink . $parentTitle . $closeLink;
+		$pageTitle = get_the_title( $post );
+		$pageLink = get_permalink( $post );
+		$childBreadcrumb = $startLink . $pageLink . $endLink . $pageTitle . $closeLink;
+
+		if ( $parentBreadcrumb != '' && $hideParent != 1 ) {echo '<span>' . $parentBreadcrumb . '</span>';}
+		if ( $childBreadcrumb != '' ) {echo '<span>' . $pageTitle . '</span>';}
+	}
+}
+
+/**
+ * The get_root function finds the post at the root of a content tree below a
+ * specified leaf post.
+ *
+ * @param WP_Post $post The post we are starting from.
+ */
+function get_root( $post ) {
+	$ar = get_post_ancestors( $post );
+
+	$is_section = get_post_meta( $post->ID, 'is_section', 1 );
+
+	$count_ar = count( $ar );
+
+	for ( $i = 0; $i < $count_ar; $i++ ) {
+		$pid = $ar[ $i ];
+		$is_section = get_post_meta( $pid, 'is_section', 1 );
+		if ( 1 == $is_section ) {
+			return $pid;
+		}
+	}
+
+	$max = count( $ar ) - 1;
+
+	if ( -1 == $max ) {
+		return $post->ID;
+	} else {
+		return $ar[ $max ];
+	}
+}
+
+/**
+ * The is_child_page function determines whether a piece of content is a Page
+ * record, and whether it has an assigned parent. If these are the case, it
+ * returns the parent.
+ *
+ * If either is not the case, it returns false.
+ */
+function is_child_page() {
+	global $post;     // If outside the loop.
+
+	if ( is_page() && $post->post_parent ) {
+		return $post->post_parent;
+	} else {
+		return false;
+	}
+}
