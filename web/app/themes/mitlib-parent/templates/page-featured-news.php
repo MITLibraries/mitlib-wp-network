@@ -2,6 +2,11 @@
 /**
  * Template Name: Featured News Article List
  *
+ * This template generates a list of all available promoted articles from the
+ * News site. It includes the rendering of the cards for these news articles,
+ * in order that site builders can confirm whether everything will display as
+ * intended.
+ *
  * @package MITlib_Parent
  * @since 0.2.0
  */
@@ -11,18 +16,18 @@ namespace Mitlib\Parent;
 get_header();
 ?>
 
-		<div class="col-2 flex-item ">
-			<div id="home-posts-news" class="posts--preview news-events">
-				<h2>Featured Articles</h2>
-				<div class="home">
-					<div class="news-events">
-						<div class="flex-container" style="background-color: #f3f3f3; margin: 0 auto; flex-direction: column; width: 662px; padding: 10px;">
-							<?php DebugNews(); ?>
-						</div>
-					</div>
+<div class="col-2 flex-item ">
+	<div id="home-posts-news" class="posts--preview news-events">
+		<h2>Featured Articles</h2>
+		<div class="home">
+			<div class="news-events">
+				<div class="flex-container" style="background-color: #f3f3f3; margin: 0 auto; flex-direction: column; width: 662px; padding: 10px;">
+					<?php DebugNews(); ?>
 				</div>
-				<hr>
-				<div class="debug">
+			</div>
+		</div>
+		<hr>
+		<div class="debug">
 		<?php
 			// Switch to news blog.
 			switch_to_blog( 4 );
@@ -122,14 +127,10 @@ get_header();
 			// Switch back to parent site.
 			restore_current_blog();
 			?>
-					</div><!-- end div.debug -->
-				</div>
-			</div><!-- end div.news-events -->
-		</div><!-- end div.col-2 -->
-
-<?php
-	get_footer();
-?>
+			</div><!-- end div.debug -->
+		</div>
+	</div><!-- end div.news-events -->
+</div><!-- end div.col-2 -->
 <style type="text/css">
 .debug .post--full-bleed.no-underline {
 	border:1px solid black; 
@@ -143,3 +144,6 @@ get_header();
 	border: 1px solid blue;
 }
 </style>
+
+<?php get_footer(); ?>
+

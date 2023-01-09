@@ -16,52 +16,52 @@ namespace Mitlib\Parent;
 get_header();
 ?>
 
-	<?php if ( is_active_sidebar( 'sidebar-search' ) ) : ?>
-		<div id="sidebar-search" class="widget-area" role="complementary">
-			<?php dynamic_sidebar( 'sidebar-search' ); ?>
-		</div>
-	<?php endif; ?>
+<?php if ( is_active_sidebar( 'sidebar-search' ) ) : ?>
+	<div id="sidebar-search" class="widget-area" role="complementary">
+		<?php dynamic_sidebar( 'sidebar-search' ); ?>
+	</div>
+<?php endif; ?>
+
+<?php if ( in_category( 'shortcrumb' ) ) { ?>
+	<?php get_template_part( 'inc/breadcrumbs', 'nochild' ); ?>
+<?php } else { ?>
+	<?php get_template_part( 'inc/breadcrumbs' ); ?>
+<?php } ?>
+
+<?php
+while ( have_posts() ) : // Start of the loop.
+	the_post();
+
+	$content_classes = 'content';
+	if ( is_active_sidebar( 'sidebar-1' ) ) {
+		$content_classes = 'content has-sidebar';
+	}
+	?>
+
+	<div id="stage" class="inner" role="main">
+
+		<?php if ( in_category( 'shortcrumb' ) ) { ?>
+			<?php get_template_part( 'inc/self', 'title' ); ?>
+		<?php } elseif ( ! in_category( 'page-root' ) ) { ?>
+			<?php get_template_part( 'inc/content', 'root' ); ?>
+		<?php } ?>
+
+		<div id="content" class="<?php echo esc_attr( $content_classes ); ?>">
 
 			<?php if ( in_category( 'shortcrumb' ) ) { ?>
-				<?php get_template_part( 'inc/breadcrumbs', 'nochild' ); ?>
+				<?php get_template_part( 'inc/content', 'shortcrumb' ); ?>
 			<?php } else { ?>
-				<?php get_template_part( 'inc/breadcrumbs' ); ?>
+				<?php get_template_part( 'inc/content', 'page' ); ?>
 			<?php } ?>
-			
-			<?php
-			while ( have_posts() ) :
-				the_post();
-				?>
 
-		<div id="stage" class="inner" role="main">
-			
-				<?php if ( in_category( 'shortcrumb' ) ) { ?>
-					<?php get_template_part( 'inc/self', 'title' ); ?>
-			<?php } elseif ( ! in_category( 'page-root' ) ) { ?>
-					<?php get_template_part( 'inc/content', 'root' ); ?>
-			<?php } ?>	
-			
-			<div id="content" class="content 
-				<?php
-				if ( is_active_sidebar( 'sidebar-1' ) ) {
-					echo 'has-sidebar';}
-				?>
-			">
-		
-				<?php if ( in_category( 'shortcrumb' ) ) { ?>
-					<?php get_template_part( 'inc/content', 'shortcrumb' ); ?>
-			<?php } else { ?>				
-					<?php get_template_part( 'inc/content', 'page' ); ?>
-			<?php } ?>
-							
-				<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
-					<?php get_sidebar(); ?>
+			<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
+				<?php get_sidebar(); ?>
 			<?php endif; ?>
 
-			</div>
-		
-		</div><!-- end div#stage -->
-		
-		<?php endwhile; // end of the loop. ?>
+		</div><!-- end div#content -->
+
+	</div><!-- end div#stage -->
+
+<?php endwhile; // End of the loop. ?>
 
 <?php get_footer(); ?>
