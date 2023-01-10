@@ -16,4 +16,5 @@ ratings:
   paths:
   - "**.js"
   - "**.php"
-exclude_paths: []
+exclude_paths:
+  - web/app/themes/mitlib-parent/navwalker.php

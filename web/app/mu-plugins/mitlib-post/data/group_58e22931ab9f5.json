@@ -45,7 +45,7 @@
             "label": "Display Page",
             "name": "display_page",
             "type": "post_object",
-            "instructions": "",
+            "instructions": "This field is used to construct the link from the Study Spaces template back to the page for that library location.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {

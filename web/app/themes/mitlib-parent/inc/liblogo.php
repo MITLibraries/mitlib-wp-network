@@ -6,6 +6,8 @@
  * @since 0.0.1
  */
 
+namespace Mitlib\Parent;
+
 ?>
 
 <h1 class="name-site group nav-logo">

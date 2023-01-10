@@ -9,6 +9,62 @@
 namespace Mitlib\Parent;
 
 /**
+ * We use Navwalker to render custom secondary menus in a mobile-friendly way,
+ * via the menu-secondary.php partial.
+ *
+ * TODO: Refactor this. We were told that Navwalker needs to be at the theme
+ * root for it to function, which I'm skeptical of. Options include:
+ * - Leave as is, at theme root, with explicit loading
+ * - Move into the lib/ directory, alongside the bespoke news library
+ * - Load via Packagist, if version 2.0.4 is available and we can access it from
+ *   there.
+ */
+require_once( 'navwalker.php' );
+
+/**
+ * We use lib/news.php to render a selection of news articles on the front page,
+ * and also for debugging this feature on a Featured News template.
+ */
+require_once( 'lib/news.php' );
+
+/**
+ * Sets up theme defaults and registers the various WordPress features that it
+ * supports. This was function was borrowed from Twenty Twelve.
+ *
+ * @uses add_editor_style() To add a visual editor stylesheet.
+ * @uses add_theme_support() To add support for post thumbnails.
+ * @uses register_nav_menu() To add support for navigation menus.
+ * @uses set_post_thumbnail_size() To set a custom post thumbnail size.
+ *
+ * @since 0.2.0
+ */
+function theme_setup() {
+	/**
+	 * If this theme were to support translation, we would call
+	 * load_theme_textdomain here.
+	 */
+
+	/**
+	 * This theme styles the visual editor with editor-style.css to match the
+	 * theme style.
+	 */
+	add_editor_style();
+
+	// This theme uses wp_nav_menu() in one location.
+	register_nav_menu( 'primary', 'Primary Menu' );
+	register_nav_menu( 'secondary', 'Secondary Menu' );
+	register_nav_menu( 'footer', 'Footer Menu' );
+
+	/**
+	 * This theme uses a custom image size for featured images, displayed on
+	 * "standard" posts.
+	 */
+	add_theme_support( 'post-thumbnails' );
+	set_post_thumbnail_size( 624, 9999 ); // Unlimited height, soft crop.
+}
+add_action( 'after_setup_theme', 'Mitlib\Parent\theme_setup' );
+
+/**
  * Ensure that the directories expected by SCSS compiler exist.
  *
  * The WP-SCSS plugin that we rely on to compile theme stylesheets requires that
@@ -195,40 +251,6 @@ function customize_preview_js() {
 add_action( 'customize_preview_init', 'Mitlib\Parent\customize_preview_js' );
 
 /**
- * The following functions get called in various places by theme templates.
- */
-
-/**
- * The get_root function finds the post at the root of a content tree below a
- * specified leaf post.
- *
- * @param WP_Post $post The post we are starting from.
- */
-function get_root( $post ) {
-	$ar = get_post_ancestors( $post );
-
-	$is_section = get_post_meta( $post->ID, 'is_section', 1 );
-
-	$count_ar = count( $ar );
-
-	for ( $i = 0; $i < $count_ar; $i++ ) {
-		$pid = $ar[ $i ];
-		$is_section = get_post_meta( $pid, 'is_section', 1 );
-		if ( 1 == $is_section ) {
-			return $pid;
-		}
-	}
-
-	$max = count( $ar ) - 1;
-
-	if ( -1 == $max ) {
-		return $post->ID;
-	} else {
-		return $ar[ $max ];
-	}
-}
-
-/**
  * Adds custom fields to 'post' and 'experts' API endpoints
  *
  * @link http://v2.wp-api.org/extending/modifying/
@@ -236,7 +258,8 @@ function get_root( $post ) {
  */
 function mitlib_api_alter() {
 	// Add custom fields to posts endpoint.
-	register_rest_field( 'post',
+	register_rest_field(
+		'post',
 		'meta',
 		array(
 			'get_callback'    => function( $data, $field, $request, $type ) {
@@ -329,3 +352,125 @@ function mitlib_sidebars_init() {
 
 }
 add_action( 'widgets_init', 'Mitlib\Parent\mitlib_sidebars_init' );
+
+/**
+ * This changes the name of the always-present Default Template to something
+ * more descriptive, since this theme has edited index.php to return no
+ * response.
+ *
+ * @uses default_page_template_title Overrides the usual name for index.php
+ */
+function update_default_template_name() {
+	return __( 'Blank template - do not use', 'mitlib' );
+}
+add_filter( 'default_page_template_title', 'Mitlib\Parent\update_default_template_name' );
+
+/**
+ * ============================================================================
+ * ============================================================================
+ * These functions are defined here, without adding them via add_action. They
+ * may be called by the templates within the theme.
+ */
+
+/**
+ * Provides an alternative way for building a breadcrumb.
+ */
+function better_breadcrumbs() {
+
+	global $post;
+
+	if ( is_search() ) {
+		echo '<span>Search</span>';
+	}
+
+	if ( ! is_child_page() && is_page() || is_category() || is_single() ) {
+		echo '<span>' . esc_html( the_title() ) . '</span>';
+		return;
+	}
+
+	if ( is_child_page() ) {
+		$hide_parent = get_field( 'hide_parent_breadcrumb' );
+		$parent_link = get_permalink( $post->post_parent );
+		$parent_title = get_the_title( $post->post_parent );
+		$start_link = '<a href="';
+		$end_link = '">';
+		$close_link = '</a>';
+		$parent_breadcrumb = $start_link . $parent_link . $end_link . $parent_title . $close_link;
+		$page_title = get_the_title( $post );
+		$page_link = get_permalink( $post );
+		$child_breadcrumb = $start_link . $page_link . $end_link . $page_title . $close_link;
+
+		$allowed_html = array(
+			'a' => array(
+				'href' => array(),
+			),
+		);
+		if ( '' != $parent_breadcrumb && 1 != $hide_parent ) {
+			echo '<span>' . wp_kses( $parent_breadcrumb, $allowed ) . '</span>';
+		}
+		if ( '' != $child_breadcrumb ) {
+			echo '<span>' . esc_html( $page_title ) . '</span>';
+		}
+	}
+}
+
+/**
+ * The cf function is a thin wrapper around the get_post_meta function, allowing
+ * simpler references to custom fields within page templates.
+ *
+ * This could potentially be removed by converting page templates to use the
+ * get_field function provided by ACF.
+ *
+ * @param String $name The name of the custom field being loaded.
+ * @uses get_post_meta Retrieves a post meta field for a given post ID.
+ */
+function cf( $name ) {
+	return get_post_meta( get_the_ID(), $name, true );
+}
+
+/**
+ * The get_root function finds the post at the root of a content tree below a
+ * specified leaf post.
+ *
+ * @param WP_Post $post The post we are starting from.
+ */
+function get_root( $post ) {
+	$ar = get_post_ancestors( $post );
+
+	$is_section = get_post_meta( $post->ID, 'is_section', 1 );
+
+	$count_ar = count( $ar );
+
+	for ( $i = 0; $i < $count_ar; $i++ ) {
+		$pid = $ar[ $i ];
+		$is_section = get_post_meta( $pid, 'is_section', 1 );
+		if ( 1 == $is_section ) {
+			return $pid;
+		}
+	}
+
+	$max = count( $ar ) - 1;
+
+	if ( -1 == $max ) {
+		return $post->ID;
+	} else {
+		return $ar[ $max ];
+	}
+}
+
+/**
+ * The is_child_page function determines whether a piece of content is a Page
+ * record, and whether it has an assigned parent. If these are the case, it
+ * returns the parent.
+ *
+ * If either is not the case, it returns false.
+ */
+function is_child_page() {
+	global $post;     // If outside the loop.
+
+	if ( is_page() && $post->post_parent ) {
+		return $post->post_parent;
+	} else {
+		return false;
+	}
+}
