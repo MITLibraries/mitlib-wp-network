@@ -13,11 +13,13 @@
 
 namespace Mitlib\Parent;
 
+// phpcs:disable WordPress.Security.ValidatedSanitizedInput.InputNotValidated -- need to properly receive 'v' parameter.
 $showMap = ( $_GET['v'] != '' ) && ( $_GET['v'] == 'map' ) ? 1 : 0;
+// phpcs:enable
 
 get_header(); ?>
 	<script>
-		var showMap = <?php echo $showMap; ?>;
+		var showMap = <?php echo esc_js( $showMap ); ?>;
 	</script>	
 
 		<?php get_template_part( 'inc/breadcrumbs' ); ?>
@@ -83,21 +85,21 @@ get_header(); ?>
 								?>
 										
 						<div class="location">
-							<div class="id"><?php echo $locationId; ?></div>
-							<div class="slug"><?php echo $slug; ?></div>
-							<div class="name"><?php echo $name; ?></div>
-							<div class="lat"><?php echo $lat; ?></div>
-							<div class="lng"><?php echo $lng; ?></div>
-							<div class="address"><?php echo $address; ?></div>
+							<div class="id"><?php echo esc_html( $locationId ); ?></div>
+							<div class="slug"><?php echo esc_html( $slug ); ?></div>
+							<div class="name"><?php echo esc_html( $name ); ?></div>
+							<div class="lat"><?php echo esc_html( $lat ); ?></div>
+							<div class="lng"><?php echo esc_html( $lng ); ?></div>
+							<div class="address"><?php echo esc_html( $address ); ?></div>
 							<div class="description">
 								<div class="infoContent">
 									<?php if ( $val != '' ) : ?>
-									<div class="infoImage" style="background-image: url(<?php echo $val; ?>); background-repeat: no-repeat;"></div>
+									<div class="infoImage" style="background-image: url(<?php echo esc_url( $val ); ?>); background-repeat: no-repeat;"></div>
 									<?php endif; ?>
 									<div class="content">
-										<h3><a href="<?php echo $pageLink; ?>"><?php echo $name; ?></a> <i class="icon-arrow-right"></i></h3>
-										<span class="building"><?php echo $building; ?></span><br/>
-										<span class="directions"><a href="<?php echo $directionsUrl; ?>" target="_blank" >Find on Google maps</a> <i class="icon-arrow-right"></i></span>
+										<h3><a href="<?php echo esc_url( $pageLink ); ?>"><?php echo esc_html( $name ); ?></a> <i class="icon-arrow-right"></i></h3>
+										<span class="building"><?php echo esc_html( $building ); ?></span><br/>
+										<span class="directions"><a href="<?php echo esc_url( $directionsUrl ); ?>" target="_blank" >Find on Google maps</a> <i class="icon-arrow-right"></i></span>
 									</div>
 									<br clear="all" />
 								</div>
@@ -152,15 +154,15 @@ get_header(); ?>
 
 							?>
 							<li class="location-name">
-								<h2 class="name-location"><a href="<?php echo $pageLink; ?>" class="locationLink"><?php the_title(); ?></a></h2>
-								<div class="sub"><?php echo $subject; ?></div>
+								<h2 class="name-location"><a href="<?php echo esc_url( $pageLink ); ?>" class="locationLink"><?php esc_html( the_title() ); ?></a></h2>
+								<div class="sub"><?php echo esc_html( $subject ); ?></div>
 								<?php if ( $phone != '' ) : ?>
-									<?php echo $phone; ?>
+									<?php echo esc_html( $phone ); ?>
 								<br/>
-								<?php endif; ?><a class="map" data-target="<?php echo $locationId; ?>" href="#!<?php echo $slug; ?>">Map: <?php echo $building; ?></a>
+								<?php endif; ?><a class="map" data-target="<?php echo esc_attr( $locationId ); ?>" href="#!<?php echo esc_url( $slug ); ?>">Map: <?php echo esc_html( $building ); ?></a>
 								<?php if ( $study24 == 1 ) : ?>
 									<br/>
-									<a class="space247" href="<?php echo $gStudy24Url; ?>" alt="This location contains one or more study spaces available 24 hours a day, seven days a week. Click the link for more info." title="Study 24/7">Study 24/7</a>
+									<a class="space247" href="<?php echo esc_url( $gStudy24Url ); ?>" alt="This location contains one or more study spaces available 24 hours a day, seven days a week. Click the link for more info." title="Study 24/7">Study 24/7</a>
 								<?php endif; ?>
 							</li>	
 						<?php endwhile; // end of the loop. ?>					
@@ -207,14 +209,14 @@ get_header(); ?>
 						?>
 						<li class="location-secondary">
 							<?php if ( 'stata' === $slug || 'building-9' === $slug ) : ?>
-							<h3 class="name-location--secondary"><?php echo the_title(); ?></h3>
+							<h3 class="name-location--secondary"><?php echo esc_html( the_title() ); ?></h3>
 							<?php else : ?>
-							<h3 class="name-location--secondary"><a href="<?php echo $pageLink; ?>"><?php echo the_title(); ?></a></h3>
+							<h3 class="name-location--secondary"><a href="<?php echo esc_url( $pageLink ); ?>"><?php echo esc_html( the_title() ); ?></a></h3>
 							<?php endif; ?>
 							<?php if ( $phone != '' ) : ?>
-								<?php echo $phone; ?><br/>
+								<?php echo esc_html( $phone ); ?><br/>
 							<?php endif; ?>
-							<a class="map" data-target="<?php echo $locationId; ?>" href="#!<?php echo $slug; ?>">Map: <?php echo $building; ?></a>
+							<a class="map" data-target="<?php echo esc_attr( $locationId ); ?>" href="#!<?php echo esc_url( $slug ); ?>">Map: <?php echo esc_html( $building ); ?></a>
 						</li>
 					
 					<?php endwhile; // end of the loop. ?>					

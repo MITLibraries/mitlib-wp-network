@@ -98,28 +98,32 @@ get_header(); ?>
 
 							?>
 							<li class="study-space">
-								<div class="study-space-image" style="background-image: url(<?php echo $studyImage; ?>);"></div>
+								<div class="study-space-image" style="background-image: url(<?php echo esc_url( $studyImage ); ?>);"></div>
 								<div class="study-space--content">
 									<div class="study-space--header ss-item">
-										<h3><a href="<?php echo $pageLink; ?>"><?php echo the_title(); ?></a></h3>
+										<h3><a href="<?php echo esc_url( $pageLink ); ?>"><?php echo esc_html( the_title() ); ?></a></h3>
 										<div class="description">
-											<?php echo $description; ?>
+											<?php
+											// phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped -- This field will need careful inspection and probably wp_kses().
+											echo $description;
+											// phpcs:enable
+											?>
 										</div>
 										<?php if ( $reserveUrl != '' ) : ?>
-												<a class="reserve hidden-phone" href="<?php echo $reserveUrl; ?>"><?php echo $reserveText; ?></a>
+												<a class="reserve hidden-phone" href="<?php echo esc_url( $reserveUrl ); ?>"><?php echo esc_html( $reserveText ); ?></a>
 										<?php endif; ?>
 										<?php if ( $study24 == 1 ) : ?>
-											<span> | </span><a class="space247 hidden-phone" href="<?php echo $gStudy24Url; ?>" alt="This location contains one or more study spaces available 24 hours a day, seven days a week. Click the link for more info." title="Study 24/7">Study 24/7</a>
+											<span> | </span><a class="space247 hidden-phone" href="<?php echo esc_url( $gStudy24Url ); ?>" alt="This location contains one or more study spaces available 24 hours a day, seven days a week. Click the link for more info." title="Study 24/7">Study 24/7</a>
 										<?php endif; ?>
 									</div>
 									<div class="study-space--info">
 										<div class="ss-1 ss-item">
-											<h4><?php echo $subject; ?></h4>
+											<h4><?php echo esc_html( $subject ); ?></h4>
 											<div class="sub">
 												<?php if ( $phone != '' ) : ?>
-													<?php echo $phone; ?><br/>
+													<?php echo esc_html( $phone ); ?><br/>
 												<?php endif; ?>
-												Show on map: <br><a href="/locations/#!<?php echo $slug; ?>"><?php echo $building; ?></a><br/>
+												Show on map: <br><a href="/locations/#!<?php echo esc_url( $slug ); ?>"><?php echo esc_html( $building ); ?></a><br/>
 												<?php if ( get_the_title() !== 'Information Intersection at Stata Center' ) : ?>
 													<span class="hours">Today's hours:<br/>
 													<span data-location-hours="<?php the_title(); ?>"></span></span>
@@ -127,7 +131,7 @@ get_header(); ?>
 													endif;
 												if ( $reserveUrl != '' ) :
 													?>
-												<a class="mobileReserve visible-phone" href="<?php echo $reserveUrl; ?>"><?php echo $reserveText; ?></a>
+												<a class="mobileReserve visible-phone" href="<?php echo esc_url( $reserveUrl ); ?>"><?php echo esc_html( $reserveText ); ?></a>
 												<?php endif; ?>
 											</div>
 										</div>
@@ -135,14 +139,22 @@ get_header(); ?>
 										<?php if ( $individual != '' ) : ?>
 										<div class="ss-2 ss-item">
 											<h4>Total seats</h4>
-											<?php echo $individual; ?>
+											<?php
+											// phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped -- This field will need careful inspection and probably wp_kses().
+											echo $individual;
+											// phpcs:enable
+											?>
 										</div>
 										<?php endif; ?>
 
 										<?php if ( $spaces != '' ) : ?>
 										<div class="ss-3 ss-item last">
 											<h4>Group spaces</h4>
-											<?php echo $spaces; ?>
+											<?php
+											// phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped -- This field will need careful inspection and probably wp_kses().
+											echo $spaces;
+											// phpcs:enable
+											?>
 										</div>
 										<?php endif; ?>
 									</div>

@@ -386,7 +386,7 @@ function better_breadcrumbs() {
 	}
 
 	if ( ! is_child_page() && is_page() || is_category() || is_single() ) {
-		echo '<span>' . the_title() . '</span>';
+		echo '<span>' . esc_html( the_title() ) . '</span>';
 		return;
 	}
 
@@ -402,8 +402,13 @@ function better_breadcrumbs() {
 		$pageLink = get_permalink( $post );
 		$childBreadcrumb = $startLink . $pageLink . $endLink . $pageTitle . $closeLink;
 
-		if ( $parentBreadcrumb != '' && $hideParent != 1 ) {echo '<span>' . $parentBreadcrumb . '</span>';}
-		if ( $childBreadcrumb != '' ) {echo '<span>' . $pageTitle . '</span>';}
+		$allowed_html = array(
+			'a' => array(
+				'href' => array(),
+			),
+		);
+		if ( $parentBreadcrumb != '' && $hideParent != 1 ) {echo '<span>' . wp_kses( $parentBreadcrumb, $allowed ) . '</span>';}
+		if ( $childBreadcrumb != '' ) {echo '<span>' . esc_html( $pageTitle ). '</span>';}
 	}
 }
 

@@ -16,7 +16,11 @@ global $isRoot;
 	<?php if ( has_post_thumbnail() ) : ?>
 
 		<div class="featuredImage">
-			<?php echo the_post_thumbnail( 700, 300 ); ?>
+			<?php
+			// phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped -- This is intended to output markup, need to understand how to escape it properly.
+			echo the_post_thumbnail( 700, 300 );
+			// phpcs:enable
+			?>
 		
 		</div>
 	

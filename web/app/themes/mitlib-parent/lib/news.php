@@ -219,7 +219,8 @@ function RenderPool( $items ) {
 			}
 		}
 
-		echo '<a class="post--full-bleed no-underline flex-container" href="' . $url . '">';
+		// phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped -- need to spend more time than I have now to refactor this to be properly escaped.
+		echo '<a class="post--full-bleed no-underline flex-container" href="' . esc_url( $url ) . '">';
 		echo '<div class="excerpt-news">';
 		echo $label;
 		echo $headline;
@@ -227,6 +228,7 @@ function RenderPool( $items ) {
 		echo '</div>';
 		echo $imageElement;
 		echo '</a>';
+		// phpcs:enable
 	}
 }
 

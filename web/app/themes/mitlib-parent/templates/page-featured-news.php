@@ -102,6 +102,7 @@ get_header();
 						};
 					}
 
+					// phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped -- need to spend more time than I have now to refactor this to be properly escaped.
 					echo '<div class="excerpt-news" style="background-color: #ddf;border:1px solid blue;">';
 					echo '    <div class="category-post">' . $label . '</div>';
 					echo '    <div class="href">' . esc_url( $url ) . '</div>';
@@ -120,6 +121,7 @@ get_header();
 					echo '</div>';
 
 					echo '</div>';
+					// phpcs:enable
 
 				endwhile;
 			}

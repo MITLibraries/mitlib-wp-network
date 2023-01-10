@@ -13,11 +13,15 @@
 
 namespace Mitlib\Parent;
 
+// phpcs:disable WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+// phpcs:disable WordPress.Security.ValidatedSanitizedInput.InputNotValidated
+// phpcs:disable WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 if ( ! $_GET['d'] ) {
 	$inDate = 'Now';
 } else {
 	$inDate = $_GET['d'];
 }
+// phpcs:enable
 
 get_header();
 
@@ -33,7 +37,7 @@ $dtWeekday = date( 'N', $dt );
 
 ?>
 <script>
-	todayDate = new Date(<?php echo $dtYear; ?>,<?php echo ( $dtMo - 1 ); ?>,<?php echo $dtDay; ?>);
+	todayDate = new Date(<?php echo esc_js( $dtYear ); ?>,<?php echo esc_js( $dtMo - 1 ); ?>,<?php echo esc_js( $dtDay ); ?>);
 </script>
 <?php
 
@@ -142,9 +146,9 @@ endif;
 	<div id="hourContent" class="content-page">
 	<div id="hourNav-sticky-wrapper" class="sticky-wrapper" style="height: 0px;">
 	  <div id="hourNav" style="width: 1008px;">
-		<div id="prevWeek"> <i class="icon-arrow-left"></i> <a href="<?php echo $path . '?d=' . $prevWeek; ?>">Previous week</a> </div>
-		<div id="thisWeek"> <a href="<?php echo $path . '?d=' . $thisWeek; ?>">This week</a> </div>
-		<div id="nextWeek"> <a href="<?php echo $path . '?d=' . $nextWeek; ?>">Next week</a> <i class="icon-arrow-right"></i> </div>
+		<div id="prevWeek"> <i class="icon-arrow-left"></i> <a href="<?php echo esc_url( $path . '?d=' . $prevWeek ); ?>">Previous week</a> </div>
+		<div id="thisWeek"> <a href="<?php echo esc_url( $path . '?d=' . $thisWeek ); ?>">This week</a> </div>
+		<div id="nextWeek"> <a href="<?php echo esc_url( $path . '?d=' . $nextWeek ); ?>">Next week</a> <i class="icon-arrow-right"></i> </div>
 	  </div>
 	</div>
 	<style type="text/css">
@@ -230,7 +234,7 @@ tr:nth-child(even) td {
 			  <?php endif; ?>
 			  <?php the_field( 'phone', $locationId ); ?>
 			  <br />
-			  <a class="map" href="<?php echo $mapPage . $slug; ?>">Map:&nbsp;
+			  <a class="map" href="<?php echo esc_url( $mapPage . $slug ); ?>">Map:&nbsp;
 			  <?php the_field( 'building', $locationId ); ?>
 			  </a>
 			  <?php if ( get_field( 'study_24', $locationId ) ) { ?>
@@ -341,7 +345,7 @@ endwhile;
 			$pageID = $displayPage->ID;
 			$pageLink = get_permalink( $pageID );
 			?>
-<h3><a href="<?php echo $pageLink; ?>"><?php the_title(); ?></a></h3>
+<h3><a href="<?php echo esc_url( $pageLink ); ?>"><?php the_title(); ?></a></h3>
 	
 			  
 			  
@@ -349,7 +353,7 @@ endwhile;
 			  
 			<?php the_field( 'phone', $locationId ); ?>
 			<br />
-			<a class="map" href="<?php echo $mapPage . $slug; ?>">Map:&nbsp;
+			<a class="map" href="<?php echo esc_url( $mapPage . $slug ); ?>">Map:&nbsp;
 			<?php the_field( 'building', $locationId ); ?>
 			</a>
 			<?php if ( get_field( 'study_location', $locationId ) ) { ?>

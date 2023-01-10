@@ -23,5 +23,5 @@ $locationsQuery = new WP_Query( $args );
 
 while ( $locationsQuery->have_posts() ) {
 	$locationsQuery->the_post();
-	echo '<div class="location"><h3>' . get_the_title() . '</h3></div>';
+	echo '<div class="location"><h3>' . esc_html( get_the_title() ) . '</h3></div>';
 }
