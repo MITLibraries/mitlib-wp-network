@@ -2,6 +2,9 @@
 <ruleset name="WordPress Security Standards">
   <description>WordPress Security Standards</description>
 
+  <!-- Exclude files which should not be scanned by PHPCS -->
+  <exclude-pattern>/web/app/themes/mitlib-parent/navwalker.php</exclude-pattern>
+
   <!-- Use the main phpcs.xml as a base, but restrict to security checks -->
   <rule ref="phpcs.xml">
     <!-- Exclude non-security sniffs -->
