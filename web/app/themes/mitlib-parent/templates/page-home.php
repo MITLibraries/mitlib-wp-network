@@ -2,6 +2,9 @@
 /**
  * Template Name: Home Page
  *
+ * This template builds the site homepage. It it applied to a Page record, but
+ * no fields from that Page are ever displayed.
+ *
  * @package MITlib_Parent
  * @since 0.0.1
  */

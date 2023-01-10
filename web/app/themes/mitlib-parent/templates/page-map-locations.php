@@ -2,10 +2,9 @@
 /**
  * Template Name: Map of Locations
  *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site will use a
- * different template.
+ * This template generates the markup needed to display the map of library
+ * locations. Below the map is shown a categorized list of locations, with links
+ * to the various pages for each location.
  *
  * @package MITlib_Parent
  * @since 0.2.0

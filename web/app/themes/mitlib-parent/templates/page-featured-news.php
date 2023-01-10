@@ -7,6 +7,9 @@
  * in order that site builders can confirm whether everything will display as
  * intended.
  *
+ * This template is inteded to render content for site builders, not for site
+ * visitors.
+ *
  * @package MITlib_Parent
  * @since 0.2.0
  */

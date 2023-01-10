@@ -2,10 +2,11 @@
 /**
  * Template Name: Study Spaces Template
  *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site will use a
- * different template.
+ * This template constructs a query for Location records which have the flag set
+ * indicating that they have spaces for studying.
+ *
+ * While the template includes space for the title and body of the host page to
+ * be rendered, these fields are a minor part of the overall display.
  *
  * @package MITlib_Parent
  * @since 0.2.0

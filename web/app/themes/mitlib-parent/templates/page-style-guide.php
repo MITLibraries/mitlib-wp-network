@@ -2,6 +2,14 @@
 /**
  * Template Name: Style Guide
  *
+ * This template is a static set of markup which we anticipate to be present
+ * across the greater website. It is collected on this template so that site
+ * builders and developers can see a reference set of content, styled by the
+ * actual CSS in place within the theme.
+ *
+ * For a more pure display of the Libraries' current web identity, please visit
+ * http://mitlibraries.github.io/mitlib-style/examples.html
+ *
  * @package MITlib_Parent
  * @since 0.2.0
  */

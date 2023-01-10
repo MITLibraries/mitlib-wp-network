@@ -2,10 +2,13 @@
 /**
  * Template Name: Hours
  *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site will use a
- * different template.
+ * This template builds the markup needed for the weekly view of all libary
+ * hours, across all location. The actual hours information is then supplied by
+ * a separate plugin from a cache.
+ *
+ * While this template is applied to a Page record, and the title and body of
+ * that record are included in the display, this is a minor feature of the
+ * template as a whole.
  *
  * @package MITlib_Parent
  * @since 0.2.0
