@@ -374,8 +374,6 @@ add_filter( 'default_page_template_title', 'Mitlib\Parent\update_default_templat
 
 /**
  * Provides an alternative way for building a breadcrumb.
- *
- * TODO: There are many code validation problems in this function.
  */
 function better_breadcrumbs() {
 
@@ -391,24 +389,28 @@ function better_breadcrumbs() {
 	}
 
 	if ( is_child_page() ) {
-		$hideParent = get_field( 'hide_parent_breadcrumb' );
-		$parentLink = get_permalink( $post->post_parent );
-		$parentTitle = get_the_title( $post->post_parent );
-		$startLink = '<a href="';
-		$endLink = '">';
-		$closeLink = '</a>';
-		$parentBreadcrumb = $startLink . $parentLink . $endLink . $parentTitle . $closeLink;
-		$pageTitle = get_the_title( $post );
-		$pageLink = get_permalink( $post );
-		$childBreadcrumb = $startLink . $pageLink . $endLink . $pageTitle . $closeLink;
+		$hide_parent = get_field( 'hide_parent_breadcrumb' );
+		$parent_link = get_permalink( $post->post_parent );
+		$parent_title = get_the_title( $post->post_parent );
+		$start_link = '<a href="';
+		$end_link = '">';
+		$close_link = '</a>';
+		$parent_breadcrumb = $start_link . $parent_link . $end_link . $parent_title . $close_link;
+		$page_title = get_the_title( $post );
+		$page_link = get_permalink( $post );
+		$child_breadcrumb = $start_link . $page_link . $end_link . $page_title . $close_link;
 
 		$allowed_html = array(
 			'a' => array(
 				'href' => array(),
 			),
 		);
-		if ( $parentBreadcrumb != '' && $hideParent != 1 ) {echo '<span>' . wp_kses( $parentBreadcrumb, $allowed ) . '</span>';}
-		if ( $childBreadcrumb != '' ) {echo '<span>' . esc_html( $pageTitle ). '</span>';}
+		if ( '' != $parent_breadcrumb && 1 != $hide_parent ) {
+			echo '<span>' . wp_kses( $parent_breadcrumb, $allowed ) . '</span>';
+		}
+		if ( '' != $child_breadcrumb ) {
+			echo '<span>' . esc_html( $page_title ) . '</span>';
+		}
 	}
 }
 
