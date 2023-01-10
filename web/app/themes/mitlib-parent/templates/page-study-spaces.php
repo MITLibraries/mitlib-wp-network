@@ -27,7 +27,7 @@ get_header(); ?>
 			
 			<?php
 			if ( in_category( 'has-menu' ) ) {
-				get_template_part( 'inc/content', 'secmenu' );
+				get_template_part( 'inc/menu', 'secondary' );
 			}
 			?>
 						

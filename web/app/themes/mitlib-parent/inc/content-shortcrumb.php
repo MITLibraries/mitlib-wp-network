@@ -11,7 +11,7 @@ namespace Mitlib\Parent;
 ?>
 
 <?php if ( in_category( 'has-menu' ) ) { ?>
-	<?php get_template_part( 'inc/content', 'secmenu' ); ?>
+	<?php get_template_part( 'inc/menu', 'secondary' ); ?>
 <?php } ?>
 
 <div class="main-content content-main">

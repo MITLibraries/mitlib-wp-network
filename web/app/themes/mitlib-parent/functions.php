@@ -10,7 +10,7 @@ namespace Mitlib\Parent;
 
 /**
  * We use Navwalker to render custom secondary menus in a mobile-friendly way,
- * via the custom-secmenu.php partial.
+ * via the menu-secondary.php partial.
  *
  * TODO: Refactor this. We were told that Navwalker needs to be at the theme
  * root for it to function, which I'm skeptical of. Options include:

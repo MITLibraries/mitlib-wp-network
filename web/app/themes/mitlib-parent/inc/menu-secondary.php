@@ -1,6 +1,6 @@
 <?php
 /**
- * The template used for displaying conditional secondary menu in page.php
+ * The template used for displaying the secondary menu on page templates.
  *
  * @package MITlib_Parent
  * @since 0.2.0
