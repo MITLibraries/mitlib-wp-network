@@ -21,7 +21,9 @@ get_template_part( 'inc/breadcrumbs', 'child' );
 
 		<div class="content-main main-content">
 
-			<?php while ( have_posts() ) : the_post();
+			<?php
+			while ( have_posts() ) :
+				the_post();
 				$current_post_id = $post->ID;
 				?>
 
@@ -59,18 +61,20 @@ get_template_part( 'inc/breadcrumbs', 'child' );
 						'tag__in' => $tag_ids,
 						'post__not_in' => array( $current_post_id ),
 						'posts_per_page' => 3,
-						);
+					);
 				}
 					$related_query = new WP_Query( $args );
 
 				if ( $related_query->have_posts() ) :
-				?>
+					?>
 					<hr/>
 					<div>
 					<h3>Related posts</h3>
 						<ul class="relateds">
 						<?php
-						while ( $related_query->have_posts() ) : $related_query->the_post(); ?>
+						while ( $related_query->have_posts() ) :
+							$related_query->the_post();
+							?>
 
 							<li class="related">
 								<?php the_post_thumbnail( array( 100, 100 ) ); ?>
@@ -82,9 +86,9 @@ get_template_part( 'inc/breadcrumbs', 'child' );
 						<?php endwhile; ?>
 						</ul>
 					</div>
-				<?php endif;?>
+				<?php endif; ?>
 			 
-			<?php
+				<?php
 
 			}
 			wp_reset_query();

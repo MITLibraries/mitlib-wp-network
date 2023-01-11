@@ -13,15 +13,16 @@
 
 get_header( 'child' ); ?>
 
-	<?php if ( is_front_page() ) {
+	<?php
+	if ( is_front_page() ) {
 
 		get_template_part( 'inc/breadcrumbs', 'sitename' );
 
-		} else {
+	} else {
 
 		get_template_part( 'inc/breadcrumbs', 'child' );
 
-		}
+	}
 
 	?>
 
@@ -29,15 +30,23 @@ get_header( 'child' ); ?>
 
 			<?php get_template_part( 'inc/postHead' ); ?>
 
-			<?php while ( have_posts() ) : the_post(); ?>
+			<?php
+			while ( have_posts() ) :
+				the_post();
+				?>
 
-			<div id="content" class="content <?php if ( is_active_sidebar( 'sidebar' ) ) { echo 'has-sidebar';} ?>">
+			<div id="content" class="content 
+				<?php
+				if ( is_active_sidebar( 'sidebar' ) ) {
+					echo 'has-sidebar';}
+				?>
+			">
 
 				<?php get_template_part( 'inc/content', 'front' ); ?>
 
 				<?php if ( is_active_sidebar( 'sidebar' ) ) : ?>
 			
-				<?php get_sidebar(); ?>
+					<?php get_sidebar(); ?>
 			
 				<?php endif; ?>				
 				
