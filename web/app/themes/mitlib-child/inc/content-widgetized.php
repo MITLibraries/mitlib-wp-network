@@ -23,7 +23,8 @@ global $isRoot;
 		<?php
 		$title = get_the_title();
 		if ( '' !== $title ) :
-			if ( ! is_front_page() ) { echo '<h1>' . esc_html( $title ) . '</h1>'; }
+			if ( ! is_front_page() ) {
+				echo '<h1>' . esc_html( $title ) . '</h1>'; }
 		endif;
 
 		the_content();

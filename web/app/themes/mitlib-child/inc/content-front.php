@@ -35,19 +35,19 @@ if ( count( $sticky ) > 0 ) {
 
 		while ( $the_query->have_posts() ) :
 			$the_query->the_post();
-?>
+			?>
 
 		<div class="excerpt-post">
 			<?php if ( get_first_post_image() ) : ?>
 			<img class="excerpt-post__fig" src="<?php echo esc_attr( get_first_post_image() ); ?>" width="200" >
 			<?php endif; ?>
 			<div class="excerpt-post__body">
-				<h3><a href="<?php echo the_permalink();?>"><?php echo get_the_title();?></a></h3>
-				<?php custom_excerpt( 20, '...' ) ?>
+				<h3><a href="<?php echo the_permalink(); ?>"><?php echo get_the_title(); ?></a></h3>
+				<?php custom_excerpt( 20, '...' ); ?>
 			</div>
 		</div>
 
-<?php
+			<?php
 		endwhile;
 
 		wp_reset_postdata();

@@ -11,12 +11,13 @@
 
 get_header( 'child' ); ?>
 
-<?php // Get today's date in the right format.
+<?php
+// Get today's date in the right format.
 $todaysDate = date( 'm/d/Y H:i:s' );
 ?>
 	<?php
 
-		get_template_part( 'inc/breadcrumbs','sitename' );
+		get_template_part( 'inc/breadcrumbs', 'sitename' );
 
 	?>
 			
@@ -28,12 +29,15 @@ $todaysDate = date( 'm/d/Y H:i:s' );
 
 				<div class="main-content">
 
-					<?php while ( have_posts() ) : the_post();
+					<?php
+					while ( have_posts() ) :
+						the_post();
 
 						the_content();
 						wp_reset_postdata();
 
-					endwhile; ?>
+					endwhile;
+					?>
 					
 					<?php
 
@@ -46,14 +50,17 @@ $todaysDate = date( 'm/d/Y H:i:s' );
 								'order' => 'ASC',
 							)
 						);
-						while ( $query->have_posts() ) : $query->the_post(); ?>
+						while ( $query->have_posts() ) :
+							$query->the_post();
+							?>
 						 
-						<?php get_template_part( 'inc/exhibits-detail' ); ?>
+							<?php get_template_part( 'inc/exhibits-detail' ); ?>
 
-						<?php wp_reset_postdata(); ?>
-						<?php endwhile;
+							<?php wp_reset_postdata(); ?>
+							<?php
+						endwhile;
 
-					?>
+						?>
 					
 				<a class="button-secondary exhibits-button" href="/exhibits/current-upcoming-past-exhibits/">View all exhibits</a>
 

@@ -18,7 +18,10 @@ get_header( 'child' ); ?>
 	<div id="content" class="content has-sidebar">
 		<div class="content-main main-content">
 
-				<?php while ( have_posts() ) : the_post();?>
+				<?php
+				while ( have_posts() ) :
+					the_post();
+					?>
 
 					<?php get_template_part( 'inc/post', 'trimmed' ); ?>
 			

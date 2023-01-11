@@ -9,8 +9,8 @@
 	$siteName = get_bloginfo( 'name' );
 	$noChildNav = array( 'MIT Libraries News', 'Document Services' );
 	$countPosts = wp_count_posts( 'page' )->publish;
-	if ( ! in_array( $siteName, $noChildNav ) && $countPosts > 1 ) {
-?>
+if ( ! in_array( $siteName, $noChildNav ) && $countPosts > 1 ) {
+	?>
 
 	
 	<nav class="navbar navbar-default" role="navigation">
@@ -24,11 +24,11 @@
 				<span class="icon-bar"></span>
 			</button>
 			<a class="navbar-brand mobile-display">
-				<?php esc_html_e( 'View Menu' ); ?>
+			<?php esc_html_e( 'View Menu' ); ?>
 			</a>
 		</div>
 
-				<?php
+			<?php
 			wp_nav_menu(
 				array(
 					'menu'              => 'Sub Nav',
@@ -44,7 +44,7 @@
 
 
 
-		?>
+			?>
 
 
 		</div>

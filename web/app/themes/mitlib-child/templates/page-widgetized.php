@@ -21,7 +21,10 @@ get_header( 'child' );
 get_template_part( 'inc/breadcrumbs', 'child' ); ?>
 
 
-	<?php while ( have_posts() ) : the_post(); ?>
+	<?php
+	while ( have_posts() ) :
+		the_post();
+		?>
 
 		
 

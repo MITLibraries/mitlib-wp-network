@@ -43,7 +43,7 @@ get_header( 'child' ); ?>
 						else :
 							printf( 'Archives' );
 					endif;
-					?>
+						?>
 				</h2>
 			</header><!-- .archive-header -->
 
