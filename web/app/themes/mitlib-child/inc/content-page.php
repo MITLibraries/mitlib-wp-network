@@ -2,9 +2,11 @@
 /**
  * The template used for displaying page content in page.php
  *
- * @package MIT_Libraries_Child
- * @since Twenty Twelve 1.0
+ * @package MITlib_Child
+ * @since 0.1.0
  */
+
+namespace Mitlib\Child;
 
 ?>
 

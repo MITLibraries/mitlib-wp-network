@@ -2,9 +2,11 @@
 /**
  * Breadcrumb template for front-pages of sites.
  *
- * @package MIT_Libraries_Child
- * @since 1.2.1
+ * @package MITlib_Child
+ * @since 0.1.0
  */
+
+namespace Mitlib\Child;
 
 ?>
 <div class="betterBreadcrumbs hidden-phone" role="navigation" aria-label="breadcrumbs">

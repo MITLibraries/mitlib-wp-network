@@ -3,11 +3,11 @@
  * Template Name: Exhibits | Home Page
  * Used to display archive-type pages for posts in a category.
  *
- * Learn more: http://codex.wordpress.org/Template_Hierarchy
- *
- * @package MIT_Libraries_Child
- * @since Twenty Twelve 1.0
+ * @package MITlib_Child
+ * @since 0.1.0
  */
+
+namespace Mitlib\Child;
 
 get_header( 'child' ); ?>
 

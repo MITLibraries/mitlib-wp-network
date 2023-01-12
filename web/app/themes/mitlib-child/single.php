@@ -3,9 +3,11 @@
  *
  * This is the template that displays single posts
  *
- * @package MIT_Libraries_Child
- * @since 2.1.0
+ * @package MITlib_Child
+ * @since 0.1.0
  */
+
+namespace Mitlib\Child;
 
 get_header( 'child' );
 

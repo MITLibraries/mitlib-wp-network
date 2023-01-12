@@ -2,9 +2,11 @@
 /**
  * The template used for displaying search results in search.php
  *
- * @package MIT_Libraries_Child
- * @since 2.2.2
+ * @package MITlib_Child
+ * @since 0.1.0
  */
+
+namespace Mitlib\Child;
 
 ?>
 
