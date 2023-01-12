@@ -42,7 +42,7 @@ if ( count( $sticky ) > 0 ) {
 			<img class="excerpt-post__fig" src="<?php echo esc_attr( get_first_post_image() ); ?>" width="200" >
 			<?php endif; ?>
 			<div class="excerpt-post__body">
-				<h3><a href="<?php echo the_permalink(); ?>"><?php echo get_the_title(); ?></a></h3>
+				<h3><a href="<?php echo esc_url( the_permalink() ); ?>"><?php the_title(); ?></a></h3>
 				<?php custom_excerpt( 20, '...' ); ?>
 			</div>
 		</div>
