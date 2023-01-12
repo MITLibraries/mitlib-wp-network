@@ -8,6 +8,10 @@
   <!-- Scan only PHP files -->
   <arg name="extensions" value="php"/>
 
+  <!-- Exclude files which should not be scanned by PHPCS -->
+  <exclude-pattern>/web/app/themes/mitlib-child/navwalker.php</exclude-pattern>
+  <exclude-pattern>/web/app/themes/mitlib-parent/navwalker.php</exclude-pattern>
+
   <!-- Ignore WordPress and Composer dependencies -->
   <exclude-pattern>config/</exclude-pattern>
   <exclude-pattern>upstream-configuration/</exclude-pattern>
