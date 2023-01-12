@@ -12,7 +12,11 @@
 
 <?php if ( $instance['before_posts'] ) : ?>
   <div class="upw-before">
-	<?php echo wpautop( $instance['before_posts'] ); ?>
+	<?php
+		// phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped -- wpautop likely needs wp_kses to allow paragraphs.
+		echo wpautop( $instance['before_posts'] );
+		// phpcs:enable -- resume normal scanning.
+	?>
   </div>
 <?php endif; ?>
 
@@ -39,7 +43,7 @@
 				<div class="entry-cats-list">
 				<?php
 				foreach ( ( get_the_category() ) as $category ) {
-					echo '<span class="category-bg"><span class="category-init">' . ( substr( $category->cat_name, 0, 1 ) ) . '</span></span>' . '<span class="catName">' . $category->cat_name . ' Exhibit' . '</span> ';
+					echo '<span class="category-bg"><span class="category-init">' . esc_html( substr( $category->cat_name, 0, 1 ) ) . '</span></span>' . '<span class="catName">' . esc_html( $category->cat_name ) . ' Exhibit' . '</span> ';
 				}
 				?>
 				</div>
@@ -73,9 +77,13 @@
 			<?php if ( $instance['show_excerpt'] ) : ?>
 			<div class="entry-summary">
 			  <p>
-				<?php echo get_the_excerpt(); ?>
+				<?php
+					// phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped -- excerpt will likely contain markup, needs wp_kses.
+					echo get_the_excerpt();
+					// phpcs:enable -- resume normal scanning.
+				?>
 				<?php if ( $instance['show_readmore'] ) : ?>
-				  <a href="<?php the_permalink(); ?>" class="more-link"><?php echo $instance['excerpt_readmore']; ?></a>
+				  <a href="<?php the_permalink(); ?>" class="more-link"><?php echo esc_html( $instance['excerpt_readmore'] ); ?></a>
 				<?php endif; ?>
 			  </p>
 			</div>
@@ -94,7 +102,7 @@
 					$custom_field_values = get_post_meta( $post->ID, $name, true );
 					if ( $custom_field_values ) :
 						?>
-					<span class="custom-field custom-field-<?php echo $name; ?>">
+					<span class="custom-field custom-field-<?php echo esc_attr( $name ); ?>">
 						<?php
 						if ( ! is_array( $custom_field_values ) ) {
 
@@ -109,7 +117,7 @@
 							if ( 'end_date' === $name ) {
 								?>
 						   <div class="exhibit-ends">
-								<?php echo 'Ends ' . $custom_field_values; } ?>
+								<?php echo 'Ends ' . esc_html( $custom_field_values ); } ?>
 						   </div>
 					  
 							<?php
@@ -117,7 +125,7 @@
 						} else {
 							$last_value = end( $custom_field_values );
 							foreach ( $custom_field_values as $value ) {
-								echo $value;
+								echo esc_html( $value );
 								if ( $value != $last_value ) {
 									echo ' , '; }
 							}
@@ -142,7 +150,7 @@
   <?php else : ?>
 
 	<p class="upw-not-found">
-	  <?php _e( 'No posts found.', 'upw' ); ?>
+	  <?php esc_html_e( 'No posts found.', 'upw' ); ?>
 	</p>
 
   <?php endif; ?>
@@ -151,6 +159,10 @@
 
 <?php if ( $instance['after_posts'] ) : ?>
   <div class="upw-after">
-	<?php echo wpautop( $instance['after_posts'] ); ?>
+	<?php
+		// phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped -- wpautop likely needs wp_kses to allow paragraphs.
+		echo wpautop( $instance['after_posts'] );
+		// phpcs:enable -- resume normal scanning.
+	?>
   </div>
 <?php endif; ?>
