@@ -65,7 +65,7 @@ get_template_part( 'inc/breadcrumbs', 'child' );
 						'posts_per_page' => 3,
 					);
 				}
-					$related_query = new WP_Query( $args );
+					$related_query = new \WP_Query( $args );
 
 				if ( $related_query->have_posts() ) :
 					?>

@@ -23,7 +23,7 @@ get_header();
 
 		<?php
 
-			$current_query = new WP_Query(
+			$current_query = new \WP_Query(
 				array(
 					'posts_per_page' => -1,
 					'ignore_sticky_posts' => false,
@@ -79,7 +79,7 @@ get_header();
 
 		<?php
 
-		$future_query = new WP_Query(
+		$future_query = new \WP_Query(
 			array(
 				'category_name' => 'rotch-library',
 				'meta_key'    => 'start_date',  // Load up the event_date meta.
@@ -128,7 +128,7 @@ get_header();
 		 
 		<?php
 
-		$past_query = new WP_Query(
+		$past_query = new \WP_Query(
 			array(
 				'category_name' => 'rotch-library',
 				'meta_key'    => 'end_date',  // Load up the event_date meta.

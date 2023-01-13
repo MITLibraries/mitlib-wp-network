@@ -41,7 +41,7 @@ $todaysDate = date( 'm/d/Y H:i:s' );
 					
 					<?php
 
-						$query = new WP_Query(
+						$query = new \WP_Query(
 							array(
 								'post_type' => 'exhibits',
 								'posts_per_page' => 10,

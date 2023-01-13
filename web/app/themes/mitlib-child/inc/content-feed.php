@@ -18,7 +18,7 @@ namespace Mitlib\Child;
 
 	$custom_query_args['paged'] = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
 
-	$custom_query = new WP_Query( $custom_query_args );
+	$custom_query = new \WP_Query( $custom_query_args );
 
 	$temp_query = $wp_query;
 	$wp_query   = null;

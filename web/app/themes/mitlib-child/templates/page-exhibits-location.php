@@ -42,7 +42,7 @@ $location_name = $categories[0]->name;
 
 			<?php
 
-			$current_query = new WP_Query(
+			$current_query = new \WP_Query(
 				array(
 					'post_type'           => 'exhibits',  // Only query exhibits.
 					'category_name'       => $location_name,
@@ -107,7 +107,7 @@ $location_name = $categories[0]->name;
 
 		<?php
 
-		$future_query = new WP_Query(
+		$future_query = new \WP_Query(
 			array(
 				'post_type'      => 'exhibits',  // Only query exhibits.
 				'category_name'  => $location_name,
@@ -155,7 +155,7 @@ $location_name = $categories[0]->name;
 
 		<?php
 
-		$past_query = new WP_Query(
+		$past_query = new \WP_Query(
 			array(
 				'post_type'      => 'exhibits',  // Only query exhibits.
 				'category_name'  => $location_name,
