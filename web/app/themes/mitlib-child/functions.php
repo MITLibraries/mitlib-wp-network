@@ -34,6 +34,77 @@ function child_scripts_styles() {
 add_action( 'wp_enqueue_scripts', 'Mitlib\Child\child_scripts_styles' );
 
 /**
+ * Remove widget areas inherited from the Parent theme.
+ */
+function remove_parent_widgets() {
+	unregister_sidebar( 'sidebar-1' );
+	unregister_sidebar( 'sidebar-2' );
+	unregister_sidebar( 'sidebar-3' );
+}
+add_action( 'widgets_init', 'Mitlib\Child\remove_parent_widgets', 11 );
+
+/**
+ * Registers the Widgetized Area Below the Content.
+ */
+function sidebars_init() {
+	register_sidebar(
+		array(
+			'name' => __( 'Main Sidebar', 'twentytwelve' ),
+			'id' => 'sidebar',
+			'description' => __( 'Appears on posts and pages', 'twentytwelve' ),
+			'before_widget' => '<aside id="%1$s" class="widget %2$s" role="complementary">',
+			'after_widget' => '</aside>',
+			'before_title' => '<h2 class="widget-title">',
+			'after_title' => '</h2>',
+		)
+	);
+
+	register_sidebar(
+		array(
+			'name' => __( 'Below Content Widget Area', 'twentytwelve' ),
+			'id' => 'sidebar-two',
+			'description' => __( 'Appears when using the Front Page or Widgetized Page templates', 'twentytwelve' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s" role="complementary">',
+			'after_widget' => '</div>',
+			'before_title' => '<h3 class="widget-title">',
+			'after_title' => '</h3>',
+		)
+	);
+}
+add_action( 'widgets_init', 'Mitlib\Child\sidebars_init' );
+
+/**
+ * Define register_child_nav function.
+ */
+function register_child_nav() {
+	register_nav_menu( 'child-nav', 'Child Nav' );
+}
+add_action( 'init', 'Mitlib\Child\register_child_nav' );
+
+/**
+ * Remove parent theme page templates.
+ *
+ * The Parent theme includes a number of page templates which are meant for only
+ * one page, and which are not relevant to any site rendered by the Child theme.
+ * This function removes those irrelevant templates from the list of available
+ * options shown to page editors within the Child theme.
+ *
+ * @param array $page_templates The list of available page templates in the theme.
+ */
+function prune_inherited_templates( $page_templates ) {
+	unset( $page_templates['templates/page-featured-news.php'] );
+	unset( $page_templates['templates/page-home.php'] );
+	unset( $page_templates['templates/page-hours.php'] );
+	unset( $page_templates['templates/page-location-2021.php'] );
+	unset( $page_templates['templates/page-location.php'] );
+	unset( $page_templates['templates/page-map-locations.php'] );
+	unset( $page_templates['templates/page-study-spaces.php'] );
+
+	return $page_templates;
+}
+add_filter( 'theme_page_templates', 'Mitlib\Child\prune_inherited_templates' );
+
+/**
  * ============================================================================
  * ============================================================================
  * These functions are defined here, without adding them via add_action. They
