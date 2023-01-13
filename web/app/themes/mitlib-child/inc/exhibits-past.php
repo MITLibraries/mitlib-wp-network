@@ -3,9 +3,11 @@
  * The sub-template used by page-exhibits-feed.php, category-rotch-library.php
  * and category-maihaugen-gallery.php for displaying Past Exhibits.
  *
- * @package MIT_Libraries_Child
- * @since 2.0.0
+ * @package MITlib_Child
+ * @since 0.1.0
  */
+
+namespace Mitlib\Child;
 
 global $isRoot;
 

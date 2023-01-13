@@ -2,9 +2,11 @@
 /**
  * The template for displaying location information for Doc Services.
  *
- * @package MIT_Libraries_Child
- * @since 2.0.0
+ * @package MITlib_Child
+ * @since 0.1.0
  */
+
+namespace Mitlib\Child;
 
 $docs = get_post( 1028 );
 $docs_phone = get_post_meta( 1028, 'phone', true );

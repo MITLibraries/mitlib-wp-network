@@ -2,9 +2,6 @@
 /**
  * Template Name: Exhibits | Location Index
  *
- * @package MIT_Libraries_Child
- * @since Twenty Twelve 1.0
- *
  * This template displays relevant exhibits for a given location, specified
  * in page content by assigning the page to a given category.
  *
@@ -17,7 +14,12 @@
  *    returned by get_the_category() will be used.
  * 3. Set the Page to display using this page template.
  * 4. The page will now show Exhibit records which share the same category.
+ *
+ * @package MITlib_Child
+ * @since 0.1.0
  */
+
+namespace Mitlib\Child;
 
 get_header( 'child' );
 

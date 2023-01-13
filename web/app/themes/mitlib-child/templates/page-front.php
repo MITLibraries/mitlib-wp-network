@@ -7,9 +7,11 @@
  * and that other 'pages' on your WordPress site will use a
  * different template.
  *
- * @package MIT_Libraries_Child
- * @since Twenty Twelve 1.0
+ * @package MITlib_Child
+ * @since 0.1.0
  */
+
+namespace Mitlib\Child;
 
 get_header( 'child' ); ?>
 

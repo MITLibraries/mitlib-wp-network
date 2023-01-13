@@ -2,9 +2,11 @@
 /**
  * Breadcrumb template for internal (non-front) pages.
  *
- * @package MIT_Libraries_Child
- * @since 2.2.0
+ * @package MITlib_Child
+ * @since 0.1.0
  */
+
+namespace Mitlib\Child;
 
 ?>
 <div class="betterBreadcrumbs hidden-phone" role="navigation" aria-label="breadcrumbs">

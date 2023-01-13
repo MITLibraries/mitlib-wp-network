@@ -2,9 +2,11 @@
 /**
  * The template for displaying a trimmed post.
  *
- * @package MIT_Libraries_Child
- * @since 2.0.0
+ * @package MITlib_Child
+ * @since 0.1.0
  */
+
+namespace Mitlib\Child;
 
 ?>
 

@@ -2,9 +2,11 @@
 /**
  * Custom template to display post excerpts when using ultimate posts widget
  *
- * @package MIT_Libraries_Child
- * @since 2.0.0
+ * @package MITlib_Child
+ * @since 0.1.0
  */
+
+namespace Mitlib\Child;
 
 ?>
 

@@ -2,9 +2,11 @@
 /**
  * The template used for displaying a feed of posts
  *
- * @package MIT_Libraries_Child
- * @since Twenty Twelve 2.2.2
+ * @package MITlib_Child
+ * @since 0.1.0
  */
+
+namespace Mitlib\Child;
 
 ?>
 <div id="sticky-posts-2" class="widget-1 widget-first widget-last widget-odd hide-title widget widget_ultimate_posts" role="complementary">

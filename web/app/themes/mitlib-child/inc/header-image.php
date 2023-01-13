@@ -2,9 +2,11 @@
 /**
  * This is the template the loads the relevant hero image.
  *
- * @package MIT_Libraries_Child
- * @since 2.0.0
+ * @package MITlib_Child
+ * @since 0.1.0
  */
+
+namespace Mitlib\Child;
 
 // Hero images use a different class on site homepages.
 $hero_class = 'header-bg-image-short';
