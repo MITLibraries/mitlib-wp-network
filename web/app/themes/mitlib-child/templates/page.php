@@ -30,7 +30,7 @@ get_header( 'child' ); ?>
 
 		<div id="stage" class="inner" role="main">
 
-			<?php get_template_part( 'inc/postHead' ); ?>
+			<?php get_template_part( 'inc/title-banner' ); ?>
 
 			<?php
 			while ( have_posts() ) :
