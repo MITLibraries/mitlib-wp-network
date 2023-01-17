@@ -32,3 +32,56 @@ function child_scripts_styles() {
 	wp_enqueue_script( 'bootstrap-js' );
 }
 add_action( 'wp_enqueue_scripts', 'Mitlib\Child\child_scripts_styles' );
+
+/**
+ * ============================================================================
+ * ============================================================================
+ * These functions are defined here, without adding them via add_action. They
+ * may be called by the templates within the theme.
+ */
+
+/**
+ * Allows for custom excerpt lengths
+ *
+ * @param int    $new_length The new length of the excerpt.
+ * @param scalar $new_more The string to append when trimming the excerpt.
+ */
+function custom_excerpt( $new_length = 20, $new_more = '...' ) {
+	add_filter(
+		'excerpt_length',
+		function () use ( $new_length ) {
+			return $new_length;
+		},
+		999
+	);
+	add_filter(
+		'excerpt_more',
+		function () use ( $new_more ) {
+			return $new_more;
+		}
+	);
+	$output = get_the_excerpt();
+	$output = apply_filters( 'wptexturize', $output );
+	$output = apply_filters( 'convert_chars', $output );
+	// phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped -- This could have a wide variety of markup from rich text fields.
+	echo '<p>' . $output . '</p>';
+	// phpcs:enable -- Start scanning again.
+}
+
+/**
+ * Get URL of first image in a post
+ */
+function get_first_post_image() {
+	global $post, $posts;
+	$first_img = '';
+	ob_start();
+	ob_end_clean();
+	$output = preg_match_all( '/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches );
+	$first_img = $matches [1] [0];
+
+	// Defines a default image.
+	if ( empty( $first_img ) ) {
+		$first_img = '';
+	}
+	return $first_img;
+}
