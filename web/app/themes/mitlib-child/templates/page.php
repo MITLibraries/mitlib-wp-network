@@ -2,10 +2,11 @@
 /**
  * Template Name: Standard Child
  *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site will use a
- * different template.
+ * This page template is an override of the Standard Template which is inherited
+ * from the Parent theme.
+ *
+ * Please note that while this template does load the Main Sidebar defined by
+ * the Child theme, it does _not_ load the "Below Content Widget Area" sidebar.
  *
  * @package MITlib_Child
  * @since 0.1.0
@@ -13,52 +14,42 @@
 
 namespace Mitlib\Child;
 
-get_header( 'child' ); ?>
+$content_classes = 'content';
+if ( is_active_sidebar( 'sidebar' ) ) {
+	$content_classes .= ' has-sidebar';
+}
+?>
 
-	<?php
-	if ( is_front_page() ) {
+<?php get_header( 'child' ); ?>
 
-		get_template_part( 'inc/breadcrumbs', 'sitename' );
+<?php
+if ( is_front_page() ) {
+	get_template_part( 'inc/breadcrumbs', 'sitename' );
+} else {
+	get_template_part( 'inc/breadcrumbs', 'child' );
+}
+?>
 
-	} else {
+<div id="stage" class="inner" role="main">
 
-		get_template_part( 'inc/breadcrumbs', 'child' );
+	<?php get_template_part( 'inc/title-banner' ); ?>
 
-	}
+	<div id="content" class="<?php echo esc_attr( $content_classes ); ?>">
 
-	?>
+		<?php
+		while ( have_posts() ) :
+			the_post();
 
-		<div id="stage" class="inner" role="main">
+			get_template_part( 'inc/content', 'page' );
+		endwhile; // End of the loop.
+		?>
 
-			<?php get_template_part( 'inc/title-banner' ); ?>
+		<?php if ( is_active_sidebar( 'sidebar' ) ) { ?>
+			<?php get_sidebar(); ?>
+		<?php } ?>
 
-			<?php
-			while ( have_posts() ) :
-				the_post();
-				?>
+	</div><!-- end div#content -->
 
-				<?php if ( is_active_sidebar( 'sidebar' ) ) { ?>
-
-				<div id="content" class="content has-sidebar">
-
-					<?php get_template_part( 'inc/content', 'page' ); ?>
-
-					<?php get_sidebar(); ?>
-
-			</div>
-
-			<?php } else { ?>
-
-			<div id="content" class="content">
-
-					<?php get_template_part( 'inc/content', 'page' ); ?>
-
-			</div>
-
-			<?php } ?>
-
-		</div><!-- end div#stage -->
-
-	<?php endwhile; // End of the loop. ?>
+</div><!-- end div#stage -->
 
 <?php get_footer(); ?>
