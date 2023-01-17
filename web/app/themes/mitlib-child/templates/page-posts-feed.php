@@ -2,10 +2,12 @@
 /**
  * Template Name: Posts Feed Page
  *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site will use a
- * different template.
+ * This is very similar to the Standard Child template, except that it loads
+ * the content-feed rather than content-page partial.
+ *
+ * Content-feed implements a custom query and content loop that will show a list
+ * of Post records, which is useful when a site wants a page to highlight recent
+ * news articles.
  *
  * @package MITlib_Child
  * @since 0.1.0
@@ -13,58 +15,42 @@
 
 namespace Mitlib\Child;
 
-get_header( 'child' );
+$content_classes = 'content';
+if ( is_active_sidebar( 'sidebar' ) ) {
+	$content_classes .= ' has-sidebar';
+}
+?>
 
-get_template_part( 'inc/breadcrumbs', 'child' ); ?>
+<?php get_header( 'child' ); ?>
 
+<?php
+if ( is_front_page() ) {
+	get_template_part( 'inc/breadcrumbs', 'sitename' );
+} else {
+	get_template_part( 'inc/breadcrumbs', 'child' );
+}
+?>
 
-	<?php
-	while ( have_posts() ) :
-		the_post();
+<div id="stage" class="inner" role="main">
+
+	<?php get_template_part( 'inc/title-banner' ); ?>
+
+	<div id="content" class="<?php echo esc_attr( $content_classes ); ?>">
+
+		<?php
+		while ( have_posts() ) :
+			the_post();
+
+			get_template_part( 'inc/content', 'feed' );
+		endwhile; // End of the loop.
 		?>
 
-		
+		<?php if ( is_active_sidebar( 'sidebar' ) ) { ?>
+			<?php get_sidebar(); ?>
+		<?php } ?>
 
-		<div id="stage" class="inner" role="main">
+	</div><!-- end div#content -->
 
-			<?php get_template_part( 'inc/title-banner' ); ?>
-			
-			<?php if ( is_active_sidebar( 'sidebar' ) ) { ?>
-			
-				<div id="content" class="content has-sidebar">
-					<div class="main-content">
-						<div class="entry-content">
-							<?php
-							$title = get_the_title();
-							if ( '' !== $title ) :
-								if ( ! is_front_page() ) {
-									echo '<h1>' . esc_html( $title ) . '</h1>'; }
-							endif;
-
-							the_content();
-							?>
-							
-							<?php get_template_part( 'inc/content', 'feed' ); ?>
-
-						</div>
-					</div>
-				<?php get_sidebar(); ?>
-
-			</div>
-			
-			<?php } else { ?> 
-			
-			<div id="content" class="content">
-
-				<?php get_template_part( 'inc/content', 'feed' ); ?>
-
-			</div>
-			
-			<?php } ?>
-		
-		</div><!-- end div#stage -->
-		
-	<?php endwhile; // End of the loop. ?>
-
+</div><!-- end div#stage -->
 
 <?php get_footer(); ?>
