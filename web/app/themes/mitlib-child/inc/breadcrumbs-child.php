@@ -12,5 +12,5 @@ namespace Mitlib\Child;
 <div class="betterBreadcrumbs hidden-phone" role="navigation" aria-label="breadcrumbs">
 	<span><a href="/">Libraries home</a></span>
 	<span><a href="<?php echo esc_url( home_url() ); ?>"><?php bloginfo(); ?></a></span>
-	<?php betterChildBreadcrumbs(); ?>
+	<?php \Mitlib\Parent\better_breadcrumbs(); ?>
 </div>
