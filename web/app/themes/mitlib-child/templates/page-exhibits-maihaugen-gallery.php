@@ -23,7 +23,7 @@ get_header( 'child' );
 
 			<?php
 
-			$current_query = new WP_Query(
+			$current_query = new \WP_Query(
 				array(
 					'post_type'           => 'exhibits',  // Only query exhibits.
 					'posts_per_page'      => 10,
@@ -84,7 +84,7 @@ get_header( 'child' );
 
 		<?php
 
-		$future_query = new WP_Query(
+		$future_query = new \WP_Query(
 			array(
 				'post_type'      => 'exhibits',  // Only query exhibits.
 				'meta_key'       => 'start_date',
@@ -138,7 +138,7 @@ get_header( 'child' );
 
 		<?php
 
-		$past_query = new WP_Query(
+		$past_query = new \WP_Query(
 			array(
 				'post_type'      => 'exhibits',  // Only query exhibits.
 				'meta_key'       => 'end_date',

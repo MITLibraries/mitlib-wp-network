@@ -24,7 +24,7 @@ namespace Mitlib\Child;
 		 
 		<?php
 		$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-		$past_query = new WP_Query(
+		$past_query = new \WP_Query(
 			array(
 				'post_type'   => 'exhibits',  // Only query events.
 				'meta_key'    => 'end_date',  // Load up the event_date meta.
