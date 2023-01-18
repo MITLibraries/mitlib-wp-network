@@ -21,7 +21,7 @@ define( 'WP_ALLOW_MULTISITE', true );
 define( 'MULTISITE', true );
 define( 'SUBDOMAIN_INSTALL', false );
 $base = '/';
-# define( 'DOMAIN_CURRENT_SITE', 'dev-mitlib-wp-network.sites.presalesexamples.com' );
+# define( 'DOMAIN_CURRENT_SITE', 'dev-mitlib-wp-network.pantheonsite.io' );
 define( 'PATH_CURRENT_SITE', '/' );
 define( 'SITE_ID_CURRENT_SITE', 1 );
 define( 'BLOG_ID_CURRENT_SITE', 1 );
@@ -38,17 +38,17 @@ if ( ! empty( $_ENV['PANTHEON_ENVIRONMENT'] ) ) {
       // define( 'DOMAIN_CURRENT_SITE', 'example-network.com' );
       break;
     case 'test':
-      define( 'DOMAIN_CURRENT_SITE', 'test-mitlib-wp-network.sites.presalesexamples.com' );
+      define( 'DOMAIN_CURRENT_SITE', 'test-mitlib-wp-network.pantheonsite.io' );
       break;
     case 'dev':
-      define( 'DOMAIN_CURRENT_SITE', 'dev-mitlib-wp-network.sites.presalesexamples.com' );
+      define( 'DOMAIN_CURRENT_SITE', 'dev-mitlib-wp-network.pantheonsite.io' );
       break;
     case 'lando':
       define( 'DOMAIN_CURRENT_SITE', 'mitlib-wp-network.lndo.site' );
       break;
     default:
       # Catch-all to accommodate default naming for multi-dev environments.
-      define( 'DOMAIN_CURRENT_SITE', $_ENV['PANTHEON_ENVIRONMENT'] . '-' . $_ENV['PANTHEON_SITE_NAME'] . '.sites.presalesexamples.com' );
+      define( 'DOMAIN_CURRENT_SITE', $_ENV['PANTHEON_ENVIRONMENT'] . '-' . $_ENV['PANTHEON_SITE_NAME'] . '.pantheonsite.io' );
       break;
   }
 
