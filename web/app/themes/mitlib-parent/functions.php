@@ -406,7 +406,7 @@ function better_breadcrumbs() {
 			),
 		);
 		if ( '' != $parent_breadcrumb && 1 != $hide_parent ) {
-			echo '<span>' . wp_kses( $parent_breadcrumb, $allowed ) . '</span>';
+			echo '<span>' . wp_kses( $parent_breadcrumb, $allowed_html ) . '</span>';
 		}
 		if ( '' != $child_breadcrumb ) {
 			echo '<span>' . esc_html( $page_title ) . '</span>';
