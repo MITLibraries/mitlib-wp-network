@@ -32,7 +32,7 @@ get_template_part( 'inc/breadcrumbs', 'child' ); ?>
 
 		<div id="stage" class="inner" role="main">
 
-			<?php get_template_part( 'inc/postHead' ); ?>
+			<?php get_template_part( 'inc/title-banner' ); ?>
 			
 			<?php if ( is_active_sidebar( 'sidebar' ) ) { ?>
 			
