@@ -29,7 +29,7 @@ get_header( 'child' ); ?>
 			
 				<?php endwhile; // End of the loop. ?>
 
-				<?php twentytwelve_content_nav( 'nav-below' ); ?>
+				<?php \Mitlib\Parent\content_nav( 'nav-below' ); ?>
 			</div>
 				
 				<?php get_sidebar(); ?>				

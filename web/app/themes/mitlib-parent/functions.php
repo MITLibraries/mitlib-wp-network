@@ -429,6 +429,26 @@ function cf( $name ) {
 }
 
 /**
+ * The content_nav function displays navigation to next/previous pages when
+ * applicable.
+ *
+ * @param string $html_id The value to use for the ID attribute of the nav
+ *                        element.
+ */
+function content_nav( $html_id ) {
+	global $wp_query;
+
+	if ( $wp_query->max_num_pages > 1 ) : ?>
+		<nav id="<?php echo esc_attr( $html_id ); ?>" class="navigation" role="navigation">
+			<h3 class="assistive-text">Post navigation</h3>
+			<div class="nav-previous alignleft"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'twentytwelve' ) ); ?></div>
+			<div class="nav-next alignright"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'twentytwelve' ) ); ?></div>
+		</nav><!-- #<?php echo esc_attr( $html_id ); ?> .navigation -->
+		<?php
+	endif;
+}
+
+/**
  * The get_root function finds the post at the root of a content tree below a
  * specified leaf post.
  *

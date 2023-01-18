@@ -54,7 +54,7 @@ get_header(); ?>
 
 			endwhile;
 
-			twentytwelve_content_nav( 'nav-below' );
+			content_nav( 'nav-below' );
 			?>
 
 		<?php else : ?>

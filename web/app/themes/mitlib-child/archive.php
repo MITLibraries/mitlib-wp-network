@@ -58,7 +58,7 @@ get_header( 'child' ); ?>
 
 			endwhile;
 
-			twentytwelve_content_nav( 'nav-below' );
+			\Mitlib\Parent\content_nav( 'nav-below' );
 			?>
 
 		<?php else : ?>
