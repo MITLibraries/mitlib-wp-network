@@ -56,10 +56,3 @@ namespace Mitlib\Child;
 			</a><!-- End /barton-account -->
 
 		</header>
-
-		<?php
-
-			$pageRoot = getRoot( $post );
-			$section = get_post( $pageRoot );
-
-		?>
