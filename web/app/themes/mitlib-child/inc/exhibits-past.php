@@ -9,8 +9,6 @@
 
 namespace Mitlib\Child;
 
-global $isRoot;
-
 ?>
 
 <?php

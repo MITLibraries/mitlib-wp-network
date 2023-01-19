@@ -8,17 +8,7 @@
 
 namespace Mitlib\Child;
 
-global $isRoot;
 ?>
-
-<?php
-
-	$pageRoot = getRoot( $post );
-	$section = get_post( $pageRoot );
-
-?>
-
-
 <div class="main-content">
 	
 	<div class="entry-content">

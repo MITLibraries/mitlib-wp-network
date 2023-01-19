@@ -8,10 +8,7 @@
 
 namespace Mitlib\Child;
 
-global $isRoot;
 ?>
-
-
 <div class="main-content content-main">
 	
 	<div class="entry-content">
