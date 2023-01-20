@@ -74,6 +74,62 @@ function sidebars_init() {
 add_action( 'widgets_init', 'Mitlib\Child\sidebars_init' );
 
 /**
+ * Sets up theme defaults and registers the various WordPress features that it
+ * supports. This was function was borrowed from Twenty Twelve.
+ *
+ * @link https://developer.wordpress.org/themes/functionality/custom-headers/
+ * @uses add_theme_support() To enable the theme's support for custom header
+ *                           images.
+ */
+function theme_setup() {
+	$args = array(
+		'width' => 1250,
+		'height' => 800,
+		'uploads' => true,
+	);
+	add_theme_support( 'custom-header', $args );
+}
+add_action( 'after_setup_theme', 'Mitlib\Child\theme_setup' );
+
+/**
+ * Define a new Menu Style section within the Customizer.
+ *
+ * @link https://developer.wordpress.org/themes/customize-api/customizer-objects/
+ * @param type $wp_customize The Customizer object which we are extending.
+ */
+function theme_menu_style_customizer( $wp_customize ) {
+
+	$wp_customize->add_section(
+		'menu_style_section',
+		array(
+			'title' => 'Menu Style',
+		)
+	);
+
+	$wp_customize->add_setting(
+		'menu_style_setting',
+		array(
+			'default' => 'Full Menu',
+			'type' => 'option',
+		)
+	);
+
+	$wp_customize->add_control(
+		'menu_style_setting',
+		array(
+			'label'   => 'Menu Style',
+			'section' => 'menu_style_section',
+			'type'    => 'radio',
+			'choices'    => array(
+				'full' => 'Full Menu',
+				'slim' => 'Slim No Menu',
+			),
+		)
+	);
+}
+add_action( 'customize_register', 'Mitlib\Child\theme_menu_style_customizer' );
+
+/**
  * Define register_child_nav function.
  */
 function register_child_nav() {
