@@ -16,6 +16,16 @@ To contribute to this application, please make sure your local environment inclu
 * [Composer](https://getcomposer.org) for managing third-party plugins and themes within WordPress, and tooling outside of WordPress.
 * [Lando](https://lando.dev/) for running a local copy of this application.
 
+### WebOps workflow
+
+Beyond the production instance of the Libraries' website, we maintain a number of separate instances for various purposes. These are described in general terms here; for a current list of instances, and links to each, please consult the Pantheon dashboard or Terminus CLI.
+
+In general, this application is developed and managed using Pantheon's [WebOps Workflow](https://pantheon.io/docs/pantheon-workflow), which involves a progression between three tiers in a pipeline: Dev, Test, and Live.
+
+Beyond these three tiers, we can create additional instances using either the Terminus CLI or Pantheon's web-based dashboard. While many of these instances will be short-lived in order to develop specific features, there is one long-running `touchstone` instance for management of our Touchstone integration.
+
+Instructions for how to create, manage, and remote these instances can be found below.
+
 ### Branch names
 
 Pantheon imposes [restrictions on branch names](https://pantheon.io/docs/guides/multidev/create-multidev), including a length limit and some reserved words. **The easiest convention is to name your branch after its Jira ticket, which sets up the following relationships:**
