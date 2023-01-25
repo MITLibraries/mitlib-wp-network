@@ -37749,7 +37749,7 @@ Access to Annex collections is available to:
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-home-direct.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page-home.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wpas_done_all]]></wp:meta_key>
@@ -38061,7 +38061,7 @@ Here's how we plan to contribute to a world with enduring, abundant, equitable, 
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[is_section]]></wp:meta_key>
@@ -38198,7 +38198,7 @@ For questions about your borrowed materials contact <a href="mailto:circulation@
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wpas_done_all]]></wp:meta_key>
@@ -38279,7 +38279,7 @@ The "More" tab above provides a search of the Libraries' website - search here
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-search.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wpas_done_all]]></wp:meta_key>
@@ -38359,7 +38359,7 @@ The "More" tab above provides a search of the Libraries' website - search here
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-featured-news.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page-featured-news.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
@@ -38416,7 +38416,7 @@ The following internship opportunities were recently posted:
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -38497,7 +38497,7 @@ The new teaching and learning space will allow the Libraries’ instructional st
 										<category domain="category" nicename="page-root"><![CDATA[Hide the big link to the top-level category.]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
@@ -38572,7 +38572,7 @@ The MIT Libraries tried BrowZine to explore ways to make online browsing more v
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -38622,7 +38622,7 @@ Use the "All" tab in the blue search area of the <a href="/">MIT Libraries homep
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -39055,7 +39055,7 @@ Use the "All" tab in the blue search area of the <a href="/">MIT Libraries homep
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-forms.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -39090,7 +39090,7 @@ Use the "All" tab in the blue search area of the <a href="/">MIT Libraries homep
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -39281,7 +39281,7 @@ Use the "All" tab in the blue search area of the <a href="/">MIT Libraries homep
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[is_section]]></wp:meta_key>
@@ -39337,7 +39337,7 @@ Use the "All" tab in the blue search area of the <a href="/">MIT Libraries homep
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-location.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page-location.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wpas_done_all]]></wp:meta_key>
@@ -39436,7 +39436,7 @@ The Dome’s oculus was covered during WWII and has recently been restored to it
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[is_section]]></wp:meta_key>
@@ -39520,7 +39520,7 @@ The Dome’s oculus was covered during WWII and has recently been restored to it
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-location.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page-location.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wpas_done_all]]></wp:meta_key>
@@ -39572,7 +39572,7 @@ The Dome’s oculus was covered during WWII and has recently been restored to it
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-location.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page-location.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wpas_done_all]]></wp:meta_key>
@@ -39624,7 +39624,7 @@ The Dome’s oculus was covered during WWII and has recently been restored to it
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-location.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page-location.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wpas_done_all]]></wp:meta_key>
@@ -39728,7 +39728,7 @@ The Music Library originally functioned as a music lounge when it opened in the 
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[is_section]]></wp:meta_key>
@@ -39804,7 +39804,7 @@ The Music Library originally functioned as a music lounge when it opened in the 
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-location.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page-location.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wpas_done_all]]></wp:meta_key>
@@ -39856,7 +39856,7 @@ The Music Library originally functioned as a music lounge when it opened in the 
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-location-2021.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page-location-2021.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wpas_done_all]]></wp:meta_key>
@@ -39954,7 +39954,7 @@ The Dewey Library Hermann Building is an example of “Brutalist” architecture
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
@@ -40058,7 +40058,7 @@ The Hayden Library was completed in 1951 by the firm of Voorhees, Walker, Foley 
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[ask_us_override]]></wp:meta_key>
@@ -40160,7 +40160,7 @@ The Rotch Library supports MIT’s architecture program, which was the first in 
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[is_section]]></wp:meta_key>
@@ -40228,7 +40228,7 @@ The Rotch Library supports MIT’s architecture program, which was the first in 
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-location.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page-location.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wpas_done_all]]></wp:meta_key>
@@ -40315,7 +40315,7 @@ The historical print collection includes reports from the Research Laboratory of
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-standard.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[is_section]]></wp:meta_key>
@@ -40397,7 +40397,7 @@ Statistics, numeric, and tabular data in the social sciences, management, and re
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
@@ -40475,7 +40475,7 @@ The Science collection provides extraordinary access to scholarship in the physi
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wpas_done_all]]></wp:meta_key>
@@ -40567,7 +40567,7 @@ Includes audio and video interviews along with transcripts documenting the rich 
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wpas_done_all]]></wp:meta_key>
@@ -40668,7 +40668,7 @@ Digitized job files from the Connick Studio (1912-1987) and a collection of digi
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wpas_done_all]]></wp:meta_key>
@@ -40782,7 +40782,7 @@ Digitzed job files from the Connick Studio (1912-1987) and a collection of digit
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-standard.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wpas_done_all]]></wp:meta_key>
@@ -40870,7 +40870,7 @@ Digitzed job files from the Connick Studio (1912-1987) and a collection of digit
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-main-locations.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page-map-locations.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
@@ -40915,7 +40915,7 @@ Digitzed job files from the Connick Studio (1912-1987) and a collection of digit
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-study-spaces.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page-study-spaces.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wpas_done_all]]></wp:meta_key>
@@ -40990,7 +40990,7 @@ Digitzed job files from the Connick Studio (1912-1987) and a collection of digit
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-hours-json.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page-hours.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wpas_done_all]]></wp:meta_key>
@@ -41050,7 +41050,7 @@ Digitzed job files from the Connick Studio (1912-1987) and a collection of digit
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-location.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page-location.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wpas_done_all]]></wp:meta_key>
@@ -41139,7 +41139,7 @@ See the <a href="/faculty">Faculty FAQ</a>.]]></content:encoded>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wpas_done_all]]></wp:meta_key>
@@ -41245,7 +41245,7 @@ See the <a href="/faculty">Faculty FAQ</a>.]]></content:encoded>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wpas_done_all]]></wp:meta_key>
@@ -41390,7 +41390,7 @@ One of the listening areas in the library was upgraded from a listening room wit
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-standard.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wpas_done_all]]></wp:meta_key>
@@ -41502,7 +41502,7 @@ One of the listening areas in the library was upgraded from a listening room wit
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wpas_done_all]]></wp:meta_key>
@@ -41672,7 +41672,7 @@ Due to the open architecture of Rotch, and the desire to keep sound issues to a 
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wpas_done_all]]></wp:meta_key>
@@ -41803,7 +41803,7 @@ Log in to <a href="http://mycard.mit.edu">mycard.mit.edu</a> to cancel your rese
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wpas_done_all]]></wp:meta_key>
@@ -41915,7 +41915,7 @@ Log in to <a href="http://mycard.mit.edu">mycard.mit.edu</a> to cancel your rese
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
@@ -42021,7 +42021,7 @@ Log in to <a href="http://mycard.mit.edu">mycard.mit.edu</a> to cancel your rese
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wpas_done_all]]></wp:meta_key>
@@ -42096,7 +42096,7 @@ At the conclusion of his first inaugural address, Abraham Lincoln appealed to "t
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-standard.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wpas_done_all]]></wp:meta_key>
@@ -42193,7 +42193,7 @@ It was a pleasure to be able to donate this unusual hybrid composition to MIT Mu
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-standard.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wpas_done_all]]></wp:meta_key>
@@ -42262,7 +42262,7 @@ As with other rooms in Dewey Library, the Instruction Room is available only dur
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wpas_done_all]]></wp:meta_key>
@@ -42390,7 +42390,7 @@ As with other rooms in Dewey Library, the Instruction Room is available only dur
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[is_section]]></wp:meta_key>
@@ -42490,7 +42490,7 @@ June 2018]]></content:encoded>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wpas_done_all]]></wp:meta_key>
@@ -42579,7 +42579,7 @@ To create a more pleasant environment for all library users, <strong>please fol
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wpas_done_all]]></wp:meta_key>
@@ -42657,7 +42657,7 @@ April 2016]]></content:encoded>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wpas_done_all]]></wp:meta_key>
@@ -42721,7 +42721,7 @@ In the case of court orders or subpoenas for information about an individual, th
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wpas_done_all]]></wp:meta_key>
@@ -42934,7 +42934,7 @@ Log in to your library accounts. All MIT Libraries accounts require MIT Touchsto
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[is_section]]></wp:meta_key>
@@ -43077,7 +43077,7 @@ Follow one of these methods to get recognized as an authorized MIT user.
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
@@ -43384,7 +43384,7 @@ Zotero at MIT
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
@@ -43473,7 +43473,7 @@ Alumni and non-MIT users may come to campus and access many of these resources f
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wpas_done_all]]></wp:meta_key>
@@ -43537,7 +43537,7 @@ Alumni and non-MIT users may come to campus and access many of these resources f
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-standard.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_links_to]]></wp:meta_key>
@@ -43591,7 +43591,7 @@ Alumni and non-MIT users may come to campus and access many of these resources f
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
@@ -43643,7 +43643,7 @@ We may offer this resource through a different point of access.  Please check <
 		<category domain="category" nicename="shortcrumb"><![CDATA[Make the breadcrumb shorter (cut out the parent page(s)).]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wpas_done_all]]></wp:meta_key>
@@ -44222,7 +44222,7 @@ To eliminate excess, unreadable characters as much as possible, we suggest you s
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -44311,7 +44311,7 @@ If you have more questions about SFX, <a href="/ask">Ask Us!</a></section>]]></c
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_hide_parent_breadcrumb]]></wp:meta_key>
@@ -44381,7 +44381,7 @@ If you have more questions about SFX, <a href="/ask">Ask Us!</a></section>]]></c
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
@@ -44421,7 +44421,7 @@ Use of this resource is governed by license agreements which restrict use to the
 		<category domain="category" nicename="shortcrumb"><![CDATA[Make the breadcrumb shorter (cut out the parent page(s)).]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-standard.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wpas_done_all]]></wp:meta_key>
@@ -44509,7 +44509,7 @@ In the meantime, for online resources, search <a href="/vera">Vera: E-journals 
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-standard.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wpas_done_all]]></wp:meta_key>
@@ -44557,7 +44557,7 @@ In the meantime, for online resources, search <a href="/vera">Vera: E-journals 
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_breadcrumb_override]]></wp:meta_key>
@@ -44630,7 +44630,7 @@ Use of many of these resources is governed by license agreements which restrict 
 		<category domain="category" nicename="shortcrumb"><![CDATA[Make the breadcrumb shorter (cut out the parent page(s)).]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-standard.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
@@ -44695,7 +44695,7 @@ If you think you have received this message in error, please report this to <a h
 		<category domain="category" nicename="shortcrumb"><![CDATA[Make the breadcrumb shorter (cut out the parent page(s)).]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-standard.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wpas_done_all]]></wp:meta_key>
@@ -44766,7 +44766,7 @@ This error can sometimes happen if you're very new to MIT or your status has cha
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-standard.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wpas_done_all]]></wp:meta_key>
@@ -44859,7 +44859,7 @@ If you have questions or need help, please <a href="/ask">Ask Us!</a>]]></conten
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
@@ -44906,7 +44906,7 @@ Your authentication credentials are inadequate for access to this content, which
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-standard.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wpas_done_all]]></wp:meta_key>
@@ -44968,7 +44968,7 @@ Your authentication credentials are inadequate for access to this content, which
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-standard.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wpas_done_all]]></wp:meta_key>
@@ -45058,7 +45058,7 @@ Forrester is not intended for use by walk-in visitors of the library who are not
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-standard.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
@@ -45122,7 +45122,7 @@ Gartner Reports may be used only by current MIT students, faculty, and staff, an
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-standard.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
@@ -45186,7 +45186,7 @@ ITERATE is intended for use by current members of the MIT community, including f
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-standard.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
@@ -45248,7 +45248,7 @@ Use of many of these resources is governed by license agreements which restrict 
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-standard.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wpas_done_all]]></wp:meta_key>
@@ -45330,7 +45330,7 @@ Use of many of these resources is governed by license agreements which restrict 
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-standard.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
@@ -45392,7 +45392,7 @@ Use of many of these resources is governed by license agreements which restrict 
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-standard.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
@@ -45456,7 +45456,7 @@ Please see our <a href="/research-guides">research guides</a>, or consult with o
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-standard.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
@@ -45526,7 +45526,7 @@ If you are interested in more information about this important movement, which o
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-standard.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
@@ -45592,7 +45592,7 @@ Use of many of these resources is governed by license agreements which restrict 
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-standard.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
@@ -45660,7 +45660,7 @@ Use of many of these resources is governed by license agreements which restrict 
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-standard.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
@@ -45730,7 +45730,7 @@ Use of many of these resources is governed by license agreements which restrict 
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-standard.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -45798,7 +45798,7 @@ SciFinder Scholar is not intended for use by walk-in visitors of the library who
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-standard.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wpas_done_all]]></wp:meta_key>
@@ -45873,7 +45873,7 @@ Note: Some resources always require authentication regardless of IP address. In 
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-standard.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
@@ -45935,7 +45935,7 @@ Note: Some resources always require authentication regardless of IP address. In 
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-standard.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
@@ -45993,7 +45993,7 @@ Use of many of these resources is governed by license agreements which restrict 
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-standard.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wpas_done_all]]></wp:meta_key>
@@ -46077,7 +46077,7 @@ Use of many of these resources is governed by license agreements which restrict 
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-standard.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
@@ -46135,7 +46135,7 @@ Use of many of these resources is governed by license agreements which restrict 
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wpas_done_all]]></wp:meta_key>
@@ -46203,7 +46203,7 @@ In this case, you'll need to navigate through the journal issues or search for 
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
@@ -46265,7 +46265,7 @@ In this case, you'll need to navigate through the journal issues or search for 
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
@@ -46297,7 +46297,7 @@ In this case, you'll need to navigate through the journal issues or search for 
 		<wp:is_sticky>0</wp:is_sticky>
 														<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-my-admin.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_ask_us_override]]></wp:meta_key>
@@ -46373,7 +46373,7 @@ If you have any questions, please don't hesitate to <a href="/ask">Ask us</a>.
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[hide_parent_breadcrumb]]></wp:meta_key>
@@ -46443,7 +46443,7 @@ See <a href="http://libraries.mit.edu/borrow/non-mit-access/">visit non-MIT Libr
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[hide_parent_breadcrumb]]></wp:meta_key>
@@ -46532,7 +46532,7 @@ To explore the full range of options available to MIT users, view our <a href="/
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[hide_parent_breadcrumb]]></wp:meta_key>
@@ -46600,7 +46600,7 @@ For more information, contact <a href="/docs">Document Services</a> (Room 14-055
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[hide_parent_breadcrumb]]></wp:meta_key>
@@ -46723,7 +46723,7 @@ BorrowDirect is a service that allows MIT faculty, students, and staff to borrow
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[hide_parent_breadcrumb]]></wp:meta_key>
@@ -46801,7 +46801,7 @@ Contact <a href="mailto:circulation@mit.edu">circulation@mit.edu</a> for assista
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
@@ -46911,7 +46911,7 @@ To make that URL work for MIT users when off-campus, add that persistent URL to 
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-standard.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
@@ -47430,7 +47430,7 @@ See also: <a href="/search/#othertools">Specialized search tools</a> or <a href=
 		<wp:is_sticky>0</wp:is_sticky>
 														<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
@@ -47524,7 +47524,7 @@ If this doesn't solve the problem, or if you're not using the MIT wireless netwo
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-standard.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
@@ -47580,7 +47580,7 @@ If this doesn't solve the problem, or if you're not using the MIT wireless netwo
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-style-guide.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page-style-guide.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
@@ -47646,7 +47646,7 @@ When contacting us, the more information you can supply, the more responsive we 
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
@@ -47719,7 +47719,7 @@ BLC libraries that <strong>do not</strong> allow visitor access include:
 		<wp:is_sticky>0</wp:is_sticky>
 														<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
@@ -47761,7 +47761,7 @@ If a participant engages in harassing behavior, the organizers may take any acti
 		<wp:is_sticky>0</wp:is_sticky>
 														<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
@@ -47840,7 +47840,7 @@ Sign up for our monthly email news to stay up to date on our latest events and h
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -47889,7 +47889,7 @@ Manifest URL: <a href="https://libraries.mit.edu/app/iiif/class_of_1982_sequenti
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -47948,7 +47948,7 @@ Want more? <a href="http://projectmirador.org/docs/">View the technical document
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -48013,7 +48013,7 @@ The beta will run through the Spring 2017 semester and if successful, will launc
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -48066,7 +48066,7 @@ Members of the MIT community may use SNL Energy data for scholarly, research, an
 		<category domain="category" nicename="shortcrumb"><![CDATA[Make the breadcrumb shorter (cut out the parent page(s)).]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
@@ -48129,7 +48129,7 @@ We plan to continue to improve the search experience by adding functionality, im
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -48165,7 +48165,7 @@ If you have any questions or comments on this service, please send them to <a hr
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -48341,7 +48341,7 @@ Find information on the <a href="http://libguides.mit.edu/assessment">MIT Librar
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -48403,7 +48403,7 @@ Apply online at <a href="http://careers.mit.edu">careers.mit.edu</a>.
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -48439,7 +48439,7 @@ None of this text appears on the page, because the Authenticate page template do
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-authenticate.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -48477,7 +48477,7 @@ Yep, you can put text below a form as well - although this probably not a best p
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-forms.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -48523,7 +48523,7 @@ Yep, you can put text below a form as well - although this probably not a best p
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-forms.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -48557,7 +48557,7 @@ This type of thank you page is used for providing longer information to the user
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -48606,7 +48606,7 @@ Standards purchases may take 2-3 weeks before the standard is ready to be picked
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-forms.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -48649,7 +48649,7 @@ If you have any questions about open access at MIT, please contact <a href="mai
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-forms.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -48689,7 +48689,7 @@ For more information, please contact us:
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -48733,7 +48733,7 @@ If you have any questions about open access at MIT, please email <a href="mailto
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -48769,7 +48769,7 @@ If you have any questions about open access at MIT, please email <a href="mailto
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-forms.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -48803,7 +48803,7 @@ If you have any questions about open access at MIT, please email <a href="mailto
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-forms.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -48851,7 +48851,7 @@ If you have any questions about working with the <a href="https://libraries.mit.
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-forms.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -48893,7 +48893,7 @@ Registration is not needed for access to publicly available DSpace@MIT content; 
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-forms.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -48938,7 +48938,7 @@ Required fields are followed by *
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-forms.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -48978,7 +48978,7 @@ Required fields are followed by *
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-forms.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -49012,7 +49012,7 @@ Required fields are followed by *
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-forms.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -49046,7 +49046,7 @@ Required fields are followed by *
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-forms.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -49085,7 +49085,7 @@ Required fields are followed by *
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-forms.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -49121,7 +49121,7 @@ Required fields are followed by *
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-forms.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -49153,7 +49153,7 @@ Required fields are followed by *
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-forms.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -49185,7 +49185,7 @@ Required fields are followed by *
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -49223,7 +49223,7 @@ Required fields are followed by *
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-forms.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -49283,7 +49283,7 @@ Experts from across disciplines and sectors worked to identify critical problems
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -49330,7 +49330,7 @@ Read and use our Public Domain Day collection via the <a href="https://archive.o
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -49406,7 +49406,7 @@ $.getJSON('https://libraries.mit.edu/news/wp-json/wp/v2/posts?tags=192')
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -49440,7 +49440,7 @@ $.getJSON('https://libraries.mit.edu/news/wp-json/wp/v2/posts?tags=192')
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-forms.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -49476,7 +49476,7 @@ Fields marked with </strong>*<strong> are required.
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-forms.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -49528,7 +49528,7 @@ The MIT Libraries will make every effort to obtain the corpus you need at no cos
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-forms.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -49591,7 +49591,7 @@ We look forward to input on the draft report from the public and especially from
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -49992,7 +49992,7 @@ Prepared by the MIT Libraries as prescribed by the Committee on Graduate Program
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -50141,7 +50141,7 @@ We gratefully acknowledge the UC Berkeley Library, whose <a href="http://www.lib
 		<wp:is_sticky>0</wp:is_sticky>
 														<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
@@ -50208,7 +50208,7 @@ Remote access to lab computers is available by request (see <a href="/data-servi
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -50360,7 +50360,7 @@ Use of licensed software is restricted to members of the MIT community for the p
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -50407,7 +50407,7 @@ Get help with and see features available in Your Account: <a href="https://libgu
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -50479,7 +50479,7 @@ For help adding content:
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -50555,7 +50555,7 @@ Please email <a href="mailto:lib-res@mit.edu">lib-res@mit.edu</a> and ask that i
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -50608,7 +50608,7 @@ Request through our Resource Sharing department using <a href="/illiad">ILLiad<
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -50671,7 +50671,7 @@ Your existing loans and requests in the Barton catalog transferred to the new pl
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -50715,7 +50715,7 @@ For more information on this change, see: <a href="https://libraries.mit.edu/res
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -50747,7 +50747,7 @@ For more information on this change, see: <a href="https://libraries.mit.edu/res
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-location-2021.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page-location-2021.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[page_location]]></wp:meta_key>
@@ -50787,7 +50787,7 @@ For more information on this change, see: <a href="https://libraries.mit.edu/res
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-location.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page-location.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[page_location]]></wp:meta_key>
@@ -50964,7 +50964,7 @@ Browse these lists of new books, music, maps, and more, or subscribe to our RSS 
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
@@ -51052,7 +51052,7 @@ Browse these lists of new books, music, maps, and more, or subscribe to our RSS 
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-rss.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[hide_parent_breadcrumb]]></wp:meta_key>
@@ -51156,7 +51156,7 @@ Browse these lists of new books, music, maps, and more, or subscribe to our RSS 
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-rss.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_trash_meta_status]]></wp:meta_key>
@@ -51244,7 +51244,7 @@ Browse these lists of new books, music, maps, and more, or subscribe to our RSS 
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-rss.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
@@ -51340,7 +51340,7 @@ Browse these lists of new books, music, maps, and more, or subscribe to our RSS 
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-rss.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_trash_meta_status]]></wp:meta_key>
@@ -51408,7 +51408,7 @@ Browse these lists of new books, music, maps, and more, or subscribe to our RSS 
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-rss.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[hide_parent_breadcrumb]]></wp:meta_key>
@@ -51520,7 +51520,7 @@ Browse these lists of new books, music, maps, and more, or subscribe to our RSS 
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-rss.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[hide_parent_breadcrumb]]></wp:meta_key>
@@ -51612,7 +51612,7 @@ Browse these lists of new books, music, maps, and more, or subscribe to our RSS 
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-rss.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
@@ -51656,7 +51656,7 @@ Browse these lists of new books, music, maps, and more, or subscribe to our RSS 
 		<wp:is_sticky>0</wp:is_sticky>
 														<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-rss.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[hide_parent_breadcrumb]]></wp:meta_key>
@@ -51796,7 +51796,7 @@ Browse these lists of new books, music, maps, and more, or subscribe to our RSS 
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-rss.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
@@ -51888,7 +51888,7 @@ Browse these lists of new books, music, maps, and more, or subscribe to our RSS 
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-rss.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
@@ -51945,7 +51945,7 @@ Located next to the 2nd-floor reading room, the Oasis is a zone for contemplatio
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -51982,7 +51982,7 @@ If you have a routine question that can wait, <a href="/ask/">Ask Us</a>. We'll 
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -52018,7 +52018,7 @@ If you have a routine question that can wait, <a href="/ask/">Ask Us</a>. We'll 
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-forms.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -52066,7 +52066,7 @@ All Scan &amp; Deliver requests are subject to fair use copyright guidelines. We
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -52103,7 +52103,7 @@ Please submit the following information to request a Datastream account. All fie
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-forms.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -52137,7 +52137,7 @@ Please submit the following information to request a Datastream account. All fie
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -52179,7 +52179,7 @@ We updated the URLs on May 19, 2022.]]></content:encoded>
 		<wp:is_sticky>0</wp:is_sticky>
 														<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
@@ -52224,7 +52224,7 @@ Questions? Need help? Email us at <a href="mailto:ilb-lib@mit.edu">ilb-lib@mit.e
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -52401,7 +52401,7 @@ Click on any of the images below to see larger versions.
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -52429,7 +52429,7 @@ Click on any of the images below to see larger versions.
 		<wp:is_sticky>0</wp:is_sticky>
 														<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-rss.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[hide_parent_breadcrumb]]></wp:meta_key>
@@ -52569,7 +52569,7 @@ Click on any of the images below to see larger versions.
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-rss.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
@@ -52629,7 +52629,7 @@ Click on any of the images below to see larger versions.
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-rss.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[hide_parent_breadcrumb]]></wp:meta_key>
@@ -52725,7 +52725,7 @@ Click on any of the images below to see larger versions.
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-rss.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[hide_parent_breadcrumb]]></wp:meta_key>
@@ -52845,7 +52845,7 @@ Click on any of the images below to see larger versions.
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-rss.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
@@ -52929,7 +52929,7 @@ Click on any of the images below to see larger versions.
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-rss.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[hide_parent_breadcrumb]]></wp:meta_key>
@@ -53017,7 +53017,7 @@ Click on any of the images below to see larger versions.
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-rss.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[hide_parent_breadcrumb]]></wp:meta_key>
@@ -53117,7 +53117,7 @@ Click on any of the images below to see larger versions.
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-rss.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[hide_parent_breadcrumb]]></wp:meta_key>
@@ -53201,7 +53201,7 @@ Click on any of the images below to see larger versions.
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-rss.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[hide_parent_breadcrumb]]></wp:meta_key>
@@ -53305,7 +53305,7 @@ Click on any of the images below to see larger versions.
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-rss.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
@@ -53361,7 +53361,7 @@ Click on any of the images below to see larger versions.
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-rss.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[hide_parent_breadcrumb]]></wp:meta_key>
@@ -53489,7 +53489,7 @@ Click on any of the images below to see larger versions.
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-rss.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
@@ -53581,7 +53581,7 @@ Click on any of the images below to see larger versions.
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-rss.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
@@ -53645,7 +53645,7 @@ Click on any of the images below to see larger versions.
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-rss.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[hide_parent_breadcrumb]]></wp:meta_key>
@@ -53765,7 +53765,7 @@ Click on any of the images below to see larger versions.
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-rss.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
@@ -53833,7 +53833,7 @@ Click on any of the images below to see larger versions.
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-rss.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[hide_parent_breadcrumb]]></wp:meta_key>
@@ -53949,7 +53949,7 @@ Click on any of the images below to see larger versions.
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-rss.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
@@ -54041,7 +54041,7 @@ Click on any of the images below to see larger versions.
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-rss.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
@@ -54133,7 +54133,7 @@ Click on any of the images below to see larger versions.
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-rss.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
@@ -54213,7 +54213,7 @@ Click on any of the images below to see larger versions.
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-rss.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[hide_parent_breadcrumb]]></wp:meta_key>
@@ -54269,7 +54269,7 @@ Click on any of the images below to see larger versions.
 		<wp:is_sticky>0</wp:is_sticky>
 														<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-rss.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[hide_parent_breadcrumb]]></wp:meta_key>
@@ -54361,7 +54361,7 @@ Click on any of the images below to see larger versions.
 		<wp:is_sticky>0</wp:is_sticky>
 														<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-rss.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[hide_parent_breadcrumb]]></wp:meta_key>
@@ -54477,7 +54477,7 @@ Click on any of the images below to see larger versions.
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-rss.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[hide_parent_breadcrumb]]></wp:meta_key>
@@ -54569,7 +54569,7 @@ Click on any of the images below to see larger versions.
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-rss.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[hide_parent_breadcrumb]]></wp:meta_key>
@@ -54653,7 +54653,7 @@ Click on any of the images below to see larger versions.
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-rss.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[hide_parent_breadcrumb]]></wp:meta_key>
@@ -54745,7 +54745,7 @@ Click on any of the images below to see larger versions.
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-rss.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[hide_parent_breadcrumb]]></wp:meta_key>
@@ -54869,7 +54869,7 @@ Click on any of the images below to see larger versions.
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-rss.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
@@ -54933,7 +54933,7 @@ Click on any of the images below to see larger versions.
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-rss.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[hide_parent_breadcrumb]]></wp:meta_key>
@@ -55053,7 +55053,7 @@ Click on any of the images below to see larger versions.
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-rss.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
@@ -55121,7 +55121,7 @@ Click on any of the images below to see larger versions.
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-rss.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[hide_parent_breadcrumb]]></wp:meta_key>
@@ -55217,7 +55217,7 @@ Click on any of the images below to see larger versions.
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-rss.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[hide_parent_breadcrumb]]></wp:meta_key>
@@ -55317,7 +55317,7 @@ Click on any of the images below to see larger versions.
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-rss.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[hide_parent_breadcrumb]]></wp:meta_key>
@@ -55413,7 +55413,7 @@ Click on any of the images below to see larger versions.
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-rss.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[hide_parent_breadcrumb]]></wp:meta_key>
@@ -55513,7 +55513,7 @@ Click on any of the images below to see larger versions.
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-rss.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
@@ -55561,7 +55561,7 @@ Click on any of the images below to see larger versions.
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-rss.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[hide_parent_breadcrumb]]></wp:meta_key>
@@ -55665,7 +55665,7 @@ Click on any of the images below to see larger versions.
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-rss.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[hide_parent_breadcrumb]]></wp:meta_key>
@@ -55765,7 +55765,7 @@ Click on any of the images below to see larger versions.
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-rss.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[hide_parent_breadcrumb]]></wp:meta_key>
@@ -55881,7 +55881,7 @@ Click on any of the images below to see larger versions.
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-rss.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
@@ -55925,7 +55925,7 @@ Click on any of the images below to see larger versions.
 		<wp:is_sticky>0</wp:is_sticky>
 														<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-rss.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[hide_parent_breadcrumb]]></wp:meta_key>
@@ -56053,7 +56053,7 @@ Click on any of the images below to see larger versions.
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-rss.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[hide_parent_breadcrumb]]></wp:meta_key>
@@ -56121,7 +56121,7 @@ Click on any of the images below to see larger versions.
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-rss.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[hide_parent_breadcrumb]]></wp:meta_key>
@@ -56249,7 +56249,7 @@ Click on any of the images below to see larger versions.
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-rss.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
@@ -56297,7 +56297,7 @@ Click on any of the images below to see larger versions.
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-rss.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[hide_parent_breadcrumb]]></wp:meta_key>
@@ -56389,7 +56389,7 @@ Click on any of the images below to see larger versions.
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-rss.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[hide_parent_breadcrumb]]></wp:meta_key>
@@ -56513,7 +56513,7 @@ Click on any of the images below to see larger versions.
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-rss.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[hide_parent_breadcrumb]]></wp:meta_key>
@@ -56613,7 +56613,7 @@ Click on any of the images below to see larger versions.
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-rss.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[hide_parent_breadcrumb]]></wp:meta_key>
@@ -56661,7 +56661,7 @@ Click on any of the images below to see larger versions.
 		<wp:is_sticky>0</wp:is_sticky>
 														<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-rss.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[hide_parent_breadcrumb]]></wp:meta_key>
@@ -56801,7 +56801,7 @@ Click on any of the images below to see larger versions.
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-rss.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
@@ -56881,7 +56881,7 @@ Click on any of the images below to see larger versions.
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-rss.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[hide_parent_breadcrumb]]></wp:meta_key>
@@ -56985,7 +56985,7 @@ Click on any of the images below to see larger versions.
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-rss.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_edit_last]]></wp:meta_key>
@@ -57033,7 +57033,7 @@ Click on any of the images below to see larger versions.
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-rss.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[hide_parent_breadcrumb]]></wp:meta_key>
@@ -57137,7 +57137,7 @@ Click on any of the images below to see larger versions.
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-rss.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[hide_parent_breadcrumb]]></wp:meta_key>
@@ -57229,7 +57229,7 @@ Click on any of the images below to see larger versions.
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-rss.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[hide_parent_breadcrumb]]></wp:meta_key>
@@ -57333,7 +57333,7 @@ Click on any of the images below to see larger versions.
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-rss.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[hide_parent_breadcrumb]]></wp:meta_key>
@@ -57437,7 +57437,7 @@ Click on any of the images below to see larger versions.
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-rss.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_breadcrumb_override]]></wp:meta_key>
@@ -57541,7 +57541,7 @@ Click on any of the images below to see larger versions.
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-rss.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_trash_meta_status]]></wp:meta_key>
@@ -57585,7 +57585,7 @@ Click on any of the images below to see larger versions.
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page-rss.php]]></wp:meta_value>
+		<wp:meta_value><![CDATA[templates/page.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_rss_script]]></wp:meta_key>
