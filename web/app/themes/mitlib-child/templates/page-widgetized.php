@@ -1,11 +1,14 @@
 <?php
 /**
- * Template Name: Widgetized Page
+ * Template Name: DEPRECATED Widgetized Page
  *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site will use a
- * different template.
+ * This page template is "widgetized" in that it loads both of the defined
+ * sidebars in the Child theme:
+ * - "sidebar" is shown to the right of page content, and is referred to as the
+ *   "Main Sidebar" within the WP admin interface.
+ * - "sidebar-two" (loaded within the content-widgetized.php partial) is shown
+ *   below the page content, and is referred to as the "Below Content Widget
+ *   Area" within the WP admin interface.
  *
  * @package MITlib_Child
  * @since 0.1.0
@@ -13,47 +16,42 @@
 
 namespace Mitlib\Child;
 
-get_header( 'child' );
+$content_classes = 'content';
+if ( is_active_sidebar( 'sidebar' ) ) {
+	$content_classes .= ' has-sidebar';
+}
+?>
 
-get_template_part( 'inc/breadcrumbs', 'child' ); ?>
+<?php get_header( 'child' ); ?>
 
+<?php
+if ( is_front_page() ) {
+	get_template_part( 'inc/breadcrumbs', 'sitename' );
+} else {
+	get_template_part( 'inc/breadcrumbs', 'child' );
+}
+?>
 
-	<?php
-	while ( have_posts() ) :
-		the_post();
+<div id="stage" class="inner" role="main">
+
+	<?php get_template_part( 'inc/title-banner' ); ?>
+
+	<div id="content" class="<?php echo esc_attr( $content_classes ); ?>">
+
+		<?php
+		while ( have_posts() ) :
+			the_post();
+
+			get_template_part( 'inc/content', 'widgetized' );
+		endwhile; // End of the loop.
 		?>
 
-		
+		<?php if ( is_active_sidebar( 'sidebar' ) ) { ?>
+			<?php get_sidebar(); ?>
+		<?php } ?>
 
-		<div id="stage" class="inner" role="main">
+	</div><!-- end div#content -->
 
-			<?php get_template_part( 'inc/title-banner' ); ?>
-			
-			<?php if ( is_active_sidebar( 'sidebar' ) ) { ?>
-			
-				<div id="content" class="content has-sidebar">
-					
-					
-
-				<?php get_template_part( 'inc/content', 'widgetized' ); ?>
-
-				<?php get_sidebar(); ?>
-
-			</div>
-			
-			<?php } else { ?> 
-			
-			<div id="content" class="content">
-
-				<?php get_template_part( 'inc/content', 'widgetized' ); ?>
-
-			</div>
-			
-			<?php } ?>
-		
-		</div><!-- end div#stage -->
-		
-	<?php endwhile; // End of the loop. ?>
-
+</div><!-- end div#stage -->
 
 <?php get_footer(); ?>

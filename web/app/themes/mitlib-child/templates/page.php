@@ -2,10 +2,16 @@
 /**
  * Template Name: Standard Child
  *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site will use a
- * different template.
+ * This page template is an override of the Standard Template which is inherited
+ * from the Parent theme. It is the preferred page template for displaying a
+ * Page record, unless a specialized feature is needed like:
+ * - Displaying sticky Posts above the content (such as a site-level alert)
+ * - Showing a paginated set of Posts below the content (such as a Recent News-
+ *   type page for a site)
+ *
+ * This template supports both widget areas defined by the site, the `sidebar`
+ * that usually shows up in a right column, and `sidebar-two` which is loaded
+ * by inc/content-page below the page content block.
  *
  * @package MITlib_Child
  * @since 0.1.0
@@ -13,52 +19,42 @@
 
 namespace Mitlib\Child;
 
-get_header( 'child' ); ?>
+$content_classes = 'content';
+if ( is_active_sidebar( 'sidebar' ) ) {
+	$content_classes .= ' has-sidebar';
+}
+?>
 
-	<?php
-	if ( is_front_page() ) {
+<?php get_header( 'child' ); ?>
 
-		get_template_part( 'inc/breadcrumbs', 'sitename' );
+<?php
+if ( is_front_page() ) {
+	get_template_part( 'inc/breadcrumbs', 'sitename' );
+} else {
+	get_template_part( 'inc/breadcrumbs', 'child' );
+}
+?>
 
-	} else {
+<div id="stage" class="inner" role="main">
 
-		get_template_part( 'inc/breadcrumbs', 'child' );
+	<?php get_template_part( 'inc/title-banner' ); ?>
 
-	}
+	<div id="content" class="<?php echo esc_attr( $content_classes ); ?>">
 
-	?>
+		<?php
+		while ( have_posts() ) :
+			the_post();
 
-		<div id="stage" class="inner" role="main">
+			get_template_part( 'inc/content', 'page' );
+		endwhile; // End of the loop.
+		?>
 
-			<?php get_template_part( 'inc/title-banner' ); ?>
+		<?php if ( is_active_sidebar( 'sidebar' ) ) { ?>
+			<?php get_sidebar(); ?>
+		<?php } ?>
 
-			<?php
-			while ( have_posts() ) :
-				the_post();
-				?>
+	</div><!-- end div#content -->
 
-				<?php if ( is_active_sidebar( 'sidebar' ) ) { ?>
-
-				<div id="content" class="content has-sidebar">
-
-					<?php get_template_part( 'inc/content', 'page' ); ?>
-
-					<?php get_sidebar(); ?>
-
-			</div>
-
-			<?php } else { ?>
-
-			<div id="content" class="content">
-
-					<?php get_template_part( 'inc/content', 'page' ); ?>
-
-			</div>
-
-			<?php } ?>
-
-		</div><!-- end div#stage -->
-
-	<?php endwhile; // End of the loop. ?>
+</div><!-- end div#stage -->
 
 <?php get_footer(); ?>
