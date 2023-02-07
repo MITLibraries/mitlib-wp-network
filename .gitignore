@@ -159,3 +159,7 @@ Thumbs.db
 # SASS #
 ##########
 .sass-cache
+
+# MISC #
+##########
+.vscode
