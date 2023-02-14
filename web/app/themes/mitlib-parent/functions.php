@@ -127,6 +127,8 @@ function setup_scripts_styles() {
 
 	wp_register_style( 'bootstrapCSS', get_stylesheet_directory_uri() . '/css/bootstrap.css', array(), $theme_version, false );
 
+	wp_register_style( 'super-admin', get_template_directory_uri() . '/css/super-admin.css', array(), $theme_version, false );
+
 	/**
 	 * Register javascript.
 	 */
@@ -211,6 +213,10 @@ function setup_scripts_styles() {
 	/**
 	 * Conditionally enqueue assets.
 	 */
+	if ( is_super_admin() ) {
+		wp_enqueue_style( 'super-admin' );
+	}
+
 	if ( is_page_template( 'page-authenticate.php' ) || is_page_template( 'page-forms.php' ) || is_page_template( 'templates/page.php' ) ) {
 		wp_enqueue_style( 'parent-forms' );
 		wp_enqueue_script( 'formsJS' );
