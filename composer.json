@@ -54,10 +54,6 @@
       ]
     },
     {
-      "type": "composer",
-      "url": "https://pivvenit.github.io/acf-composer-bridge/composer/v3/wordpress-plugin/"
-    },
-    {
       "type": "vcs",
       "url": "https://github.com/matt-bernhardt/WP-SCSS"
     },
@@ -100,7 +96,6 @@
   ],
   "require": {
     "php": ">=7.4",
-    "advanced-custom-fields/advanced-custom-fields-pro": "^5",
     "composer/installers": "^2.2",
     "connectthink/wp-scss": "^2.4@beta",
     "google/apiclient": "^2.12",
@@ -172,8 +167,7 @@
     "allow-plugins": {
       "composer/installers": true,
       "roots/wordpress-core-installer": true,
-      "dealerdirect/phpcodesniffer-composer-installer": true,
-      "pivvenit/acf-pro-installer": true
+      "dealerdirect/phpcodesniffer-composer-installer": true
     },
     "sort-packages": true
   },
