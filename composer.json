@@ -213,6 +213,7 @@
     ]
   },
   "scripts": {
+    "pre-install-cmd": "php --version",
     "post-install-cmd": "Google_Task_Composer::cleanup",
     "post-update-cmd": "Google_Task_Composer::cleanup",
     "post-root-package-install": [
