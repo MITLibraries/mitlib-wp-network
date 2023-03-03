@@ -161,6 +161,15 @@ function prune_inherited_templates( $page_templates ) {
 add_filter( 'theme_page_templates', 'Mitlib\Child\prune_inherited_templates' );
 
 /**
+ * Remove native gallery styling.
+ *
+ * By default, WordPress includes some inline CSS rules when using a gallery
+ * shorttag. This filter removes that, as we have our own rules in the child
+ * theme for these styles.
+ */
+add_filter( 'use_default_gallery_style', '__return_false' );
+
+/**
  * ============================================================================
  * ============================================================================
  * These functions are defined here, without adding them via add_action. They
