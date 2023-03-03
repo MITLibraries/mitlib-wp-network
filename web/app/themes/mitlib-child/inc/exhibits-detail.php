@@ -34,9 +34,9 @@ $location_info = get_exhibit_location();
 			</div>
 			<div class="exhibit-ends">
 				<?php
-				$today = new DateTime( gmdate( 'Y-m-d' ) );
-				$start = new DateTime( get_field( 'start_date' ) );
-				$end = new DateTime( get_field( 'end_date' ) );
+				$today = new \DateTime( gmdate( 'Y-m-d' ) );
+				$start = new \DateTime( get_field( 'start_date' ) );
+				$end = new \DateTime( get_field( 'end_date' ) );
 				if ( $end < $today ) {
 					?>
 					Ended <?php the_field( 'end_date' ); ?>
