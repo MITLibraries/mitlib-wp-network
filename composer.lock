@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ead665bab0ac3ab9dc56e0cba2eddc10",
+    "content-hash": "2a0d460b332c8730c5636da32ba20e29",
     "packages": [
         {
             "name": "ConnectThink/WP-SCSS",
@@ -926,97 +926,6 @@
                 "issues": "https://github.com/MITLibraries/dynamic-menu-manager/issues"
             },
             "time": "2022-12-06T20:59:34+00:00"
-        },
-        {
-            "name": "mitlibraries/lightbox-plus",
-            "version": "2.7.2",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:MITLibraries/lightbox-plus.git",
-                "reference": "cc1d91a5e3fd3dc9e79dbdec49352f03ca286b63"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/MITLibraries/lightbox-plus/zipball/cc1d91a5e3fd3dc9e79dbdec49352f03ca286b63",
-                "reference": "cc1d91a5e3fd3dc9e79dbdec49352f03ca286b63",
-                "shasum": ""
-            },
-            "type": "wordpress-plugin",
-            "license": [
-                "GPL-2.0-only"
-            ],
-            "authors": [
-                {
-                    "name": "Dan Zappone"
-                }
-            ],
-            "description": "Lightbox Plus Colorbox permits users to view larger versions of images, simple slideshows, videos, and content all in an overlay",
-            "support": {
-                "source": "https://github.com/MITLibraries/lightbox-plus/tree/2.7.2",
-                "issues": "https://github.com/MITLibraries/lightbox-plus/issues"
-            },
-            "time": "2022-12-06T21:29:44+00:00"
-        },
-        {
-            "name": "mitlibraries/slideshow-gallery",
-            "version": "dev-main",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:MITLibraries/slideshow-gallery.git",
-                "reference": "8daf9198a68d22843d42950a1329dc3a458367c3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/MITLibraries/slideshow-gallery/zipball/8daf9198a68d22843d42950a1329dc3a458367c3",
-                "reference": "8daf9198a68d22843d42950a1329dc3a458367c3",
-                "shasum": ""
-            },
-            "default-branch": true,
-            "type": "wordpress-plugin",
-            "license": [
-                "GPL-2.0-only"
-            ],
-            "authors": [
-                {
-                    "name": "Tribulant"
-                }
-            ],
-            "description": "Feature content in a JavaScript powered slideshow gallery showcase on your WordPress website",
-            "support": {
-                "source": "https://github.com/MITLibraries/slideshow-gallery/tree/1.6.12.1-mitlib3",
-                "issues": "https://github.com/MITLibraries/slideshow-gallery/issues"
-            },
-            "time": "2022-12-06T21:58:02+00:00"
-        },
-        {
-            "name": "mitlibraries/types",
-            "version": "2.3.5",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:MITLibraries/types.git",
-                "reference": "c0c5fb8923aaac043d0ba0da39cfe0f0e7eea198"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/MITLibraries/types/zipball/c0c5fb8923aaac043d0ba0da39cfe0f0e7eea198",
-                "reference": "c0c5fb8923aaac043d0ba0da39cfe0f0e7eea198",
-                "shasum": ""
-            },
-            "type": "wordpress-plugin",
-            "license": [
-                "GPL-2.0-only"
-            ],
-            "authors": [
-                {
-                    "name": "OnTheGoSystems"
-                }
-            ],
-            "description": "Toolset Types defines custom content in WordPress",
-            "support": {
-                "source": "https://github.com/MITLibraries/types/tree/2.3.5",
-                "issues": "https://github.com/MITLibraries/types/issues"
-            },
-            "time": "2022-12-06T21:42:13+00:00"
         },
         {
             "name": "mitlibraries/wp-slug-trimmer",
@@ -4246,7 +4155,6 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "connectthink/wp-scss": 10,
-        "mitlibraries/slideshow-gallery": 20,
         "pantheon-upstreams/upstream-configuration": 20,
         "roave/security-advisories": 20
     },
