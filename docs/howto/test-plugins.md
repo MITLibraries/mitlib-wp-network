@@ -137,13 +137,6 @@ template file.
 
 Confirm that the sitemap is visible at `/sitemap.xml` on any site.
 
-## Lightbox Plus Colorbox
-
-There should be a "Lightbox Plus Colorbox" entry under the Appearance are in the
-admin dashboard. One of the tabs on this screen is a Demo/Test image.
-
-_I don't know where to look in our content for any use of this plugin._
-
 ## Media Libary Assistant
 
 Under the "Media" area of the admin dashboard, you should see links for "Att. 
@@ -268,15 +261,6 @@ You should see an option to make the record sticky.
 
 _This plugin is only used on the News site._
 
-## Slideshow Gallery
-
-**Removal candidate**
-
-1. On the Collections site, you should see a "Slideshow" item on the sidebar.
-2. When editing the "Charles J. Connick Stained Glass Foundation Collection"
-page, you should see this shortcode: `[tribulant_slideshow gallery_id="1"]`.
-3. When viewing the same page, you should see a slideshow of images.
-
 ## Slug Trimmer
 
 _This plugin is only used on the News site._
@@ -289,10 +273,6 @@ item on the sidebar.
 near the bottom of the page, you should see a "Reload via MIT Libs" link.
 
 ## TablePress
-
-_This plugin is only used on the Music Oral History site._
-
-## Toolset Types
 
 _This plugin is only used on the Music Oral History site._
 

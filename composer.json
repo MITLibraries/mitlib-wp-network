@@ -79,18 +79,6 @@
     },
     {
       "type": "vcs",
-      "url": "https://github.com/mitlibraries/lightbox-plus"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/mitlibraries/slideshow-gallery"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/mitlibraries/types"
-    },
-    {
-      "type": "vcs",
       "url": "https://github.com/mitlibraries/wp-slug-trimmer"
     },
     {
@@ -107,9 +95,6 @@
     "mitlibraries/acf-location-field": "^1.0",
     "mitlibraries/cpt-onomies": "^1.4",
     "mitlibraries/dynamic-menu-manager": "^1.0",
-    "mitlibraries/lightbox-plus": "^2.7",
-    "mitlibraries/slideshow-gallery": "dev-main",
-    "mitlibraries/types": "^2.3",
     "mitlibraries/wp-slug-trimmer": "^1.1",
     "nsp-code/advanced-post-types-order": "^4.4",
     "oscarotero/env": "^2.1",
