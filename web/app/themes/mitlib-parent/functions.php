@@ -372,6 +372,60 @@ function update_default_template_name() {
 add_filter( 'default_page_template_title', 'Mitlib\Parent\update_default_template_name' );
 
 /**
+ * Extends the default WordPress body class to denote:
+ * 1. Using a full-width layout, when no active widgets in the sidebar
+ *    or full-width template.
+ * 2. Front Page template: thumbnail in use and number of sidebars for
+ *    widget areas.
+ * 3. Single or multiple authors.
+ *
+ * @since Twenty Twelve 1.0
+ *
+ * @param array Existing class values.
+ * @return array Filtered class values.
+ */
+function twentytwelve_body_class( $classes ) {
+	global $post;
+
+	if ( isset( $post ) ) {
+		$classes[] = $post->post_type . '-' . $post->post_name;
+	}
+
+	if ( ! is_active_sidebar( 'sidebar-1' ) || is_page_template( 'page-templates/full-width.php' ) ) {
+		$classes[] = 'full-width'; }
+
+	if ( is_page_template( 'page-templates/front-page.php' ) ) {
+		$classes[] = 'template-front-page';
+		if ( has_post_thumbnail() ) {
+			$classes[] = 'has-post-thumbnail'; }
+		if ( is_active_sidebar( 'sidebar-2' ) && is_active_sidebar( 'sidebar-3' ) ) {
+			$classes[] = 'two-sidebars'; }
+	}
+
+	if ( is_child_theme() ) {
+		$classes[] = 'childTheme';
+	}
+
+	if ( is_child_page() ) {
+		$classes[] = 'childPage';
+	}
+
+	if ( is_page_template( 'page-selfTitle.php' ) ) {
+		$classes[] = 'boxSizingOn';
+	}
+
+	if ( is_page_template( 'page-location.php' ) || is_page_template( 'page-location-2021.php' ) ) {
+		$classes[] = 'locationPage';
+	}
+
+	if ( ! is_multi_author() ) {
+		$classes[] = 'single-author'; }
+
+	return $classes;
+}
+add_filter( 'body_class', 'twentytwelve_body_class' );
+
+/**
  * ============================================================================
  * ============================================================================
  * These functions are defined here, without adding them via add_action. They
