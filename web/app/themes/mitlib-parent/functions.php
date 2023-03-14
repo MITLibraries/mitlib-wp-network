@@ -372,6 +372,46 @@ function update_default_template_name() {
 add_filter( 'default_page_template_title', 'Mitlib\Parent\update_default_template_name' );
 
 /**
+ * Extends the default WordPress body class to denote:
+ * 1. The post type and name (useful for contexts like the network homepage).
+ * 2. Use of a full-width layout when the primary sidebar is not present.
+ * 3. Adding a class to identify when a child theme is active.
+ * 4. Adding a class for the various location page templates.
+ * 3. Noting when a page has a single author (which corresponds to a handful of
+ *    CSS rules being activated).
+ * These conditions correspond to various styling rules found across the
+ * stylesheets.
+ *
+ * @uses body_class Filters the list of classes on the body tag.
+ * @param array $classes Existing class values.
+ * @return array $classes Filtered class values.
+ */
+function customize_body_class( $classes ) {
+	global $post;
+
+	if ( isset( $post ) ) {
+		$classes[] = $post->post_type . '-' . $post->post_name;
+	}
+
+	if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+		$classes[] = 'full-width'; }
+
+	if ( is_child_theme() ) {
+		$classes[] = 'childTheme';
+	}
+
+	if ( is_page_template( 'templates/page-location.php' ) || is_page_template( 'templates/page-location-2021.php' ) ) {
+		$classes[] = 'locationPage';
+	}
+
+	if ( ! is_multi_author() ) {
+		$classes[] = 'single-author'; }
+
+	return $classes;
+}
+add_filter( 'body_class', 'Mitlib\Parent\customize_body_class' );
+
+/**
  * ============================================================================
  * ============================================================================
  * These functions are defined here, without adding them via add_action. They
