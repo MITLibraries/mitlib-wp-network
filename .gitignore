@@ -13,6 +13,13 @@ web/app/uploads/*
 !web/app/uploads/.gitkeep
 web/app/cache/*
 
+# Ordinarily this path would not exist - and it does not when I inspect any
+# multidev on Pantheon. However, after pulling content locally using "lando
+# pull", this path gets populated with a lot of uploaded files. So we are
+# ignoring it here to prevent accidentally committing over 1,000 images.
+# Again.
+web/wp-content
+
 # WordPress is installed in web/wp so that it can be fully managed by Composer.
 # This ensures that the WordPress directory is clean and doesn't contain any
 # files other than those that come with the WordPress package.
