@@ -78,6 +78,7 @@ web/app/plugins/*
 !web/app/plugins/mitlib-multisearch-widget
 !web/app/plugins/mitlib-pending-posts
 !web/app/plugins/mitlib-plugin-canary
+!web/app/plugins/mitlib-post-bibliotechs
 !web/app/plugins/mitlib-post-events
 !web/app/plugins/mitlib-post-exhibits
 !web/app/plugins/mitlib-post-experts
