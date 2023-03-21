@@ -1,66 +1,64 @@
-[
-    {
-        "key": "group_54dd062c31627",
-        "title": "Urgent for post",
-        "fields": [
+{
+    "key": "group_54dd062c31627",
+    "title": "Urgency flag",
+    "fields": [
+        {
+            "key": "field_543699593ef84",
+            "label": "Urgent",
+            "name": "urgent",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "This post is urgent.",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        }
+    ],
+    "location": [
+        [
             {
-                "key": "field_543699593ef84",
-                "label": "Urgent",
-                "name": "urgent",
-                "type": "true_false",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "message": "This post is urgent.",
-                "default_value": 0,
-                "ui": 0,
-                "ui_on_text": "",
-                "ui_off_text": ""
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
             }
         ],
-        "location": [
-            [
-                {
-                    "param": "post_type",
-                    "operator": "==",
-                    "value": "post"
-                }
-            ],
-            [
-                {
-                    "param": "post_type",
-                    "operator": "==",
-                    "value": "spotlights"
-                }
-            ]
-        ],
-        "menu_order": 3,
-        "position": "normal",
-        "style": "seamless",
-        "label_placement": "top",
-        "instruction_placement": "label",
-        "hide_on_screen": [
-            "permalink",
-            "excerpt",
-            "custom_fields",
-            "discussion",
-            "comments",
-            "revisions",
-            "slug",
-            "author",
-            "format",
-            "featured_image",
-            "categories",
-            "tags",
-            "send-trackbacks"
-        ],
-        "active": true,
-        "description": "",
-        "show_in_rest": false
-    }
-]
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "spotlights"
+            }
+        ]
+    ],
+    "menu_order": 3,
+    "position": "normal",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "permalink",
+        "excerpt",
+        "custom_fields",
+        "discussion",
+        "comments",
+        "revisions",
+        "slug",
+        "author",
+        "format",
+        "featured_image",
+        "categories",
+        "tags",
+        "send-trackbacks"
+    ],
+    "active": true,
+    "description": "News site: Add a flag for urgent review to Post and Spotlight records",
+    "show_in_rest": false
+}
