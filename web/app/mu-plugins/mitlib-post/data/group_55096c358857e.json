@@ -1,0 +1,43 @@
+[
+    {
+        "key": "group_55096c358857e",
+        "title": "Image info",
+        "fields": [
+            {
+                "key": "field_55096c43b870d",
+                "label": "Use the “Add Media” button below to upload the image(s) to your post.",
+                "name": "",
+                "type": "message",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "message": "Remember to rename and resize (if too large) your files before uploading.<br \/> For complete information\/image help see <a href=\"http:\/\/libguides.mit.edu\/c.php?g=234344&p=1556391#s-lg-box-wrapper-5575665\" target=\"_blank\">Image instructions.<\/a>",
+                "esc_html": 0,
+                "new_lines": "wpautop"
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "post"
+                }
+            ]
+        ],
+        "menu_order": 3,
+        "position": "acf_after_title",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "show_in_rest": false
+    }
+]

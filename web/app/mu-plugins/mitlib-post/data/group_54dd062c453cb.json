@@ -1,0 +1,58 @@
+[
+    {
+        "key": "group_54dd062c453cb",
+        "title": "Notes for admins",
+        "fields": [
+            {
+                "key": "field_549476bac49d2",
+                "label": "Notes for editorial team",
+                "name": "notes",
+                "type": "textarea",
+                "instructions": "Please use this area to communicate with the editorial team. For news\/event posts - if you cannot find an image, let us know what you are looking for and we will try to help. Reminder, spotlights do not need images.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "maxlength": "",
+                "rows": "",
+                "new_lines": "br",
+                "readonly": 0,
+                "disabled": 0
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "spotlights"
+                }
+            ],
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "post"
+                }
+            ]
+        ],
+        "menu_order": 5,
+        "position": "normal",
+        "style": "seamless",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": [
+            "the_content",
+            "excerpt",
+            "featured_image"
+        ],
+        "active": true,
+        "description": "",
+        "show_in_rest": false
+    }
+]

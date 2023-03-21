@@ -1,0 +1,79 @@
+[
+    {
+        "key": "group_55c25be764027",
+        "title": "Post Author",
+        "fields": [
+            {
+                "key": "field_55c25bebd5a82",
+                "label": "Post Author",
+                "name": "pauthor",
+                "type": "text",
+                "instructions": "This field will be displayed as the author if it is filled out, if it is left blank then the author will be the logged in user that is creating the post.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": "",
+                "readonly": 0,
+                "disabled": 0
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "post"
+                }
+            ],
+            [
+                {
+                    "param": "current_user_role",
+                    "operator": "==",
+                    "value": "administrator"
+                },
+                {
+                    "param": "current_user_role",
+                    "operator": "==",
+                    "value": "super_admin"
+                },
+                {
+                    "param": "current_user_role",
+                    "operator": "==",
+                    "value": "contributor"
+                }
+            ]
+        ],
+        "menu_order": 3,
+        "position": "normal",
+        "style": "seamless",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": [
+            "permalink",
+            "the_content",
+            "excerpt",
+            "custom_fields",
+            "discussion",
+            "comments",
+            "revisions",
+            "slug",
+            "author",
+            "format",
+            "featured_image",
+            "categories",
+            "tags",
+            "send-trackbacks"
+        ],
+        "active": true,
+        "description": "",
+        "show_in_rest": false
+    }
+]

@@ -1,0 +1,113 @@
+[
+    {
+        "key": "group_55101c54091f3",
+        "title": "Homepage fields",
+        "fields": [
+            {
+                "key": "field_53ecc2b9abf15",
+                "label": "Homepage post title",
+                "name": "homepage_post_title",
+                "type": "text",
+                "instructions": "Enter the title of the post as it should appear on the homepage.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "formatting": "none",
+                "maxlength": "",
+                "readonly": 0,
+                "disabled": 0
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "current_user_role",
+                    "operator": "==",
+                    "value": "super_admin"
+                },
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "post"
+                }
+            ],
+            [
+                {
+                    "param": "current_user_role",
+                    "operator": "==",
+                    "value": "administrator"
+                },
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "post"
+                }
+            ],
+            [
+                {
+                    "param": "current_user_role",
+                    "operator": "==",
+                    "value": "super_admin"
+                },
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "bibliotech"
+                }
+            ],
+            [
+                {
+                    "param": "current_user_role",
+                    "operator": "==",
+                    "value": "administrator"
+                },
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "bibliotech"
+                }
+            ],
+            [
+                {
+                    "param": "current_user_role",
+                    "operator": "==",
+                    "value": "super_admin"
+                },
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "spotlights"
+                }
+            ],
+            [
+                {
+                    "param": "current_user_role",
+                    "operator": "==",
+                    "value": "administrator"
+                },
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "spotlights"
+                }
+            ]
+        ],
+        "menu_order": 11,
+        "position": "normal",
+        "style": "seamless",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "show_in_rest": false
+    }
+]

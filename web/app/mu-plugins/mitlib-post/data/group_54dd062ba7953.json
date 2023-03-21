@@ -1,0 +1,67 @@
+[
+    {
+        "key": "group_54dd062ba7953",
+        "title": "Date fields",
+        "fields": [
+            {
+                "key": "field_543696fae1ec4",
+                "label": "Date start",
+                "name": "date_start",
+                "type": "date_picker",
+                "instructions": "Enter the start date",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "first_day": 1,
+                "return_format": "Ymd",
+                "display_format": "d\/m\/Y"
+            },
+            {
+                "key": "field_54369712e1ec5",
+                "label": "Date end",
+                "name": "date_end",
+                "type": "date_picker",
+                "instructions": "Enter the end date.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "first_day": 1,
+                "return_format": "Ymd",
+                "display_format": "d\/m\/Y"
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "exhibits"
+                }
+            ],
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "updates"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "seamless",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": [],
+        "active": true,
+        "description": "",
+        "show_in_rest": false
+    }
+]
