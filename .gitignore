@@ -83,6 +83,8 @@ web/app/plugins/*
 !web/app/plugins/mitlib-post-exhibits
 !web/app/plugins/mitlib-post-experts
 !web/app/plugins/mitlib-post-locations
+!web/app/plugins/mitlib-post-site-news
+!web/app/plugins/mitlib-post-site-parent
 !web/app/plugins/mitlib-post-spotlights
 !web/app/plugins/mitlib-pull-events
 !web/app/plugins/mitlib-pull-hours

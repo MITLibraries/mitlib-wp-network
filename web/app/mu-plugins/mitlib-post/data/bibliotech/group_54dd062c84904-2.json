@@ -1,6 +1,6 @@
 {
-    "key": "group_54dd062c84904",
-    "title": "Featured Article flag",
+    "key": "group_54dd062c84904-2",
+    "title": "Featured Article flag (Bibliotech)",
     "fields": [
         {
             "key": "field_5474bef390af8",
@@ -37,55 +37,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "post"
-            }
-        ],
-        [
-            {
-                "param": "current_user_role",
-                "operator": "==",
-                "value": "super_admin"
-            },
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "spotlights"
-            }
-        ],
-        [
-            {
-                "param": "current_user_role",
-                "operator": "==",
-                "value": "super_admin"
-            },
-            {
-                "param": "post_type",
-                "operator": "==",
                 "value": "bibliotech"
-            }
-        ],
-        [
-            {
-                "param": "current_user_role",
-                "operator": "==",
-                "value": "administrator"
-            },
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "post"
-            }
-        ],
-        [
-            {
-                "param": "current_user_role",
-                "operator": "==",
-                "value": "administrator"
-            },
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "spotlights"
             }
         ],
         [
@@ -108,6 +60,6 @@
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": true,
-    "description": "News site: Add a flag to promote news site content (Posts, Bibliotech, Spotlights) to parent site front page - visible only to admins and above",
+    "description": "Add a flag to promote news site content (Bibliotech) to parent site front page - visible only to admins and above",
     "show_in_rest": false
 }

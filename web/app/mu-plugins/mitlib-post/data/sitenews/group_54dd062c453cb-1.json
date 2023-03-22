@@ -1,6 +1,6 @@
 {
-    "key": "group_54dd062c453cb",
-    "title": "Notes for admins",
+    "key": "group_54dd062c453cb-1",
+    "title": "Notes for admins (Post)",
     "fields": [
         {
             "key": "field_549476bac49d2",
@@ -29,13 +29,6 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "spotlights"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
                 "value": "post"
             }
         ]
@@ -51,6 +44,6 @@
         "featured_image"
     ],
     "active": true,
-    "description": "News site: Add a notes field for admin review to Post and Spotlight records",
+    "description": "Add a notes field for admin review to Post records",
     "show_in_rest": false
 }

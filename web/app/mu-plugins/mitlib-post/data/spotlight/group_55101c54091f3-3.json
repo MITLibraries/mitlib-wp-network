@@ -1,6 +1,6 @@
 {
-    "key": "group_55101c54091f3",
-    "title": "Homepage title",
+    "key": "group_55101c54091f3-3",
+    "title": "Homepage title (Spotlights)",
     "fields": [
         {
             "key": "field_53ecc2b9abf15",
@@ -35,54 +35,6 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "post"
-            }
-        ],
-        [
-            {
-                "param": "current_user_role",
-                "operator": "==",
-                "value": "administrator"
-            },
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "post"
-            }
-        ],
-        [
-            {
-                "param": "current_user_role",
-                "operator": "==",
-                "value": "super_admin"
-            },
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "bibliotech"
-            }
-        ],
-        [
-            {
-                "param": "current_user_role",
-                "operator": "==",
-                "value": "administrator"
-            },
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "bibliotech"
-            }
-        ],
-        [
-            {
-                "param": "current_user_role",
-                "operator": "==",
-                "value": "super_admin"
-            },
-            {
-                "param": "post_type",
-                "operator": "==",
                 "value": "spotlights"
             }
         ],
@@ -106,6 +58,6 @@
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": true,
-    "description": "News site: Add a variation of the title field on Post, Spotlight, and Bibliotech records for use on the parent site homepage - visible only to admins and above",
+    "description": "Add a variation of the title field on Spotlight records for use on the parent site homepage - visible only to admins and above",
     "show_in_rest": false
 }

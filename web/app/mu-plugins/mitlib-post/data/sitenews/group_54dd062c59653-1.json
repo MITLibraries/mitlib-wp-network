@@ -1,6 +1,6 @@
 {
-    "key": "group_54dd062c59653",
-    "title": "Surrogate images",
+    "key": "group_54dd062c59653-1",
+    "title": "Surrogate images (Post)",
     "fields": [
         {
             "key": "field_549485f7cbb49",
@@ -92,30 +92,6 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "bibliotech"
-            },
-            {
-                "param": "current_user_role",
-                "operator": "==",
-                "value": "super_admin"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "bibliotech"
-            },
-            {
-                "param": "current_user_role",
-                "operator": "==",
-                "value": "administrator"
-            }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
                 "value": "post"
             },
             {
@@ -146,6 +122,6 @@
         "send-trackbacks"
     ],
     "active": true,
-    "description": "News site: Add fields for specifically-sized images when Post and Bibliotech records are promoted - visible only to admins and above",
+    "description": "News site: Add fields for specifically-sized images when Post records are promoted - visible only to admins and above",
     "show_in_rest": false
 }

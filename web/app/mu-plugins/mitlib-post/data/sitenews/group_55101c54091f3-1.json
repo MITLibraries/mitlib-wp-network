@@ -1,13 +1,13 @@
 {
-    "key": "group_54dd062c123b5",
-    "title": "Subtitle",
+    "key": "group_55101c54091f3-1",
+    "title": "Homepage title (Post)",
     "fields": [
         {
-            "key": "field_54b54d9262fa8",
-            "label": "Subtitle",
-            "name": "subtitle",
+            "key": "field_53ecc2b9abf15",
+            "label": "Homepage post title",
+            "name": "homepage_post_title",
             "type": "text",
-            "instructions": "",
+            "instructions": "Enter the title of the post as it should appear on the homepage.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -19,7 +19,7 @@
             "placeholder": "",
             "prepend": "",
             "append": "",
-            "formatting": "html",
+            "formatting": "none",
             "maxlength": "",
             "readonly": 0,
             "disabled": 0
@@ -28,6 +28,11 @@
     "location": [
         [
             {
+                "param": "current_user_role",
+                "operator": "==",
+                "value": "super_admin"
+            },
+            {
                 "param": "post_type",
                 "operator": "==",
                 "value": "post"
@@ -35,31 +40,24 @@
         ],
         [
             {
+                "param": "current_user_role",
+                "operator": "==",
+                "value": "administrator"
+            },
+            {
                 "param": "post_type",
                 "operator": "==",
-                "value": "bibliotech"
+                "value": "post"
             }
         ]
     ],
-    "menu_order": 1,
-    "position": "acf_after_title",
+    "menu_order": 11,
+    "position": "normal",
     "style": "seamless",
     "label_placement": "top",
     "instruction_placement": "label",
-    "hide_on_screen": [
-        "permalink",
-        "excerpt",
-        "custom_fields",
-        "discussion",
-        "comments",
-        "revisions",
-        "slug",
-        "author",
-        "format",
-        "featured_image",
-        "send-trackbacks"
-    ],
+    "hide_on_screen": "",
     "active": true,
-    "description": "News site: Add a subtitle to Post and Bibliotech records",
+    "description": "Add a variation of the title field on Post records for use on the parent site homepage - visible only to admins and above",
     "show_in_rest": false
 }
