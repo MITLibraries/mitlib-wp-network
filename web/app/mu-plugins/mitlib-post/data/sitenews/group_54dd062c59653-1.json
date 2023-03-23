@@ -1,0 +1,127 @@
+{
+    "key": "group_54dd062c59653-1",
+    "title": "Surrogate images (Post)",
+    "fields": [
+        {
+            "key": "field_549485f7cbb49",
+            "label": "Grid view long top image",
+            "name": "featuredListImg",
+            "type": "image_crop",
+            "instructions": "This image is for the homepage and should be the exact dimensions 662px width by 256px height",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "crop_type": "hard",
+            "target_size": "news-feature",
+            "width": "662px",
+            "height": "256px",
+            "preview_size": "full",
+            "force_crop": "yes",
+            "save_in_media_library": "yes",
+            "retina_mode": "no",
+            "save_format": "url",
+            "library": "all"
+        },
+        {
+            "key": "field_549489d7cbb4b",
+            "label": "Libraries homepage image",
+            "name": "homeImg",
+            "type": "image_crop",
+            "instructions": "This image is for the homepage and should be the exact dimensions 113px width by 206px height",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "crop_type": "hard",
+            "target_size": "news-home",
+            "width": "",
+            "height": "",
+            "preview_size": "full",
+            "force_crop": "yes",
+            "save_in_media_library": "yes",
+            "retina_mode": "no",
+            "save_format": "url",
+            "library": "all"
+        },
+        {
+            "key": "field_54cfa8ab5b6f2",
+            "label": "Grid view regular box image",
+            "name": "listImg",
+            "type": "image_crop",
+            "instructions": "This image is for the news homepage and should be the exact dimensions 323px width by 111px height",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "crop_type": "hard",
+            "target_size": "news-listing",
+            "width": "",
+            "height": "",
+            "preview_size": "full",
+            "force_crop": "yes",
+            "save_in_media_library": "yes",
+            "retina_mode": "no",
+            "save_format": "url",
+            "library": "all"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            },
+            {
+                "param": "current_user_role",
+                "operator": "==",
+                "value": "super_admin"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            },
+            {
+                "param": "current_user_role",
+                "operator": "==",
+                "value": "administrator"
+            }
+        ]
+    ],
+    "menu_order": 7,
+    "position": "normal",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "permalink",
+        "excerpt",
+        "custom_fields",
+        "discussion",
+        "comments",
+        "revisions",
+        "slug",
+        "author",
+        "format",
+        "featured_image",
+        "categories",
+        "tags",
+        "send-trackbacks"
+    ],
+    "active": true,
+    "description": "News site: Add fields for specifically-sized images when Post records are promoted - visible only to admins and above",
+    "show_in_rest": false
+}

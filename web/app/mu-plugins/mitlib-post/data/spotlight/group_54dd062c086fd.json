@@ -1,0 +1,70 @@
+{
+    "key": "group_54dd062c086fd",
+    "title": "Spotlight type",
+    "fields": [
+        {
+            "key": "field_54359302ca174",
+            "label": "Spotlight type",
+            "name": "feature_type",
+            "type": "select",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "check": "Check it out",
+                "collection": "Featured collection",
+                "exhibit": "Featured exhibit",
+                "service": "Featured service",
+                "story": "Featured story",
+                "video": "Featured video",
+                "media": "In the media",
+                "tip": "Tip",
+                "update": "Update"
+            },
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "placeholder": "",
+            "disabled": 0,
+            "readonly": 0,
+            "return_format": "value"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "spotlights"
+            }
+        ]
+    ],
+    "menu_order": 1,
+    "position": "acf_after_title",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "permalink",
+        "the_content",
+        "excerpt",
+        "custom_fields",
+        "discussion",
+        "comments",
+        "revisions",
+        "slug",
+        "author",
+        "featured_image",
+        "send-trackbacks"
+    ],
+    "active": true,
+    "description": "News site: Add a type field to Spotlight records",
+    "show_in_rest": false
+}

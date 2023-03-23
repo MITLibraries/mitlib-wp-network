@@ -1,0 +1,46 @@
+{
+    "key": "group_54dd062c26afa",
+    "title": "External links",
+    "fields": [
+        {
+            "key": "field_5432b230123f7",
+            "label": "Link",
+            "name": "external_link",
+            "type": "text",
+            "instructions": "Add the link associated with this spotlight here.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "formatting": "html",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "spotlights"
+            }
+        ]
+    ],
+    "menu_order": 3,
+    "position": "normal",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [],
+    "active": true,
+    "description": "News site: Add a link field to Spotlight records",
+    "show_in_rest": false
+}
