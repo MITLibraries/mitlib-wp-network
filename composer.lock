@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bf2d53abc9f080fb4655804e03d58b7d",
+    "content-hash": "16b1f0f20df4cab13b7e41200eb760a2",
     "packages": [
         {
             "name": "ConnectThink/WP-SCSS",
@@ -926,40 +926,6 @@
                 "issues": "https://github.com/MITLibraries/dynamic-menu-manager/issues"
             },
             "time": "2022-12-06T20:59:34+00:00"
-        },
-        {
-            "name": "mitlibraries/wp-slug-trimmer",
-            "version": "1.1.1",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:MITLibraries/wp-slug-trimmer.git",
-                "reference": "e6986e66b756007110c3c060f84848082e1c4263"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/MITLibraries/wp-slug-trimmer/zipball/e6986e66b756007110c3c060f84848082e1c4263",
-                "reference": "e6986e66b756007110c3c060f84848082e1c4263",
-                "shasum": ""
-            },
-            "type": "wordpress-plugin",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "MIT Libraries",
-                    "email": "engx@mit.edu"
-                },
-                {
-                    "name": "Graeme Pietersz"
-                }
-            ],
-            "description": "A small plugin to allow shorter slugs on posts",
-            "support": {
-                "source": "https://github.com/MITLibraries/wp-slug-trimmer/tree/1.1.1",
-                "issues": "https://github.com/MITLibraries/wp-slug-trimmer/issues"
-            },
-            "time": "2022-12-06T16:06:02+00:00"
         },
         {
             "name": "monolog/monolog",
