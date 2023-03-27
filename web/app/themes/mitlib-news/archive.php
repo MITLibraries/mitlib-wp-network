@@ -24,9 +24,10 @@ $date = DateTime::createFromFormat( 'Ymd', get_field( 'event_date' ) );
 ?>
 <?php get_template_part( 'inc/sub-header' ); ?>
 <?php
-if ( (get_post_type( get_the_ID() ) == 'bibliotech') || (cat_is_ancestor_of( 73, $cat ) or is_category( 73 )) ) {  ?>
-<?php get_template_part( 'inc/bib-header' ); ?>
-<?php  } ?>
+if ( ( get_post_type( get_the_ID() ) == 'bibliotech' ) || ( cat_is_ancestor_of( 73, $cat ) or is_category( 73 ) ) ) {
+	?>
+	<?php get_template_part( 'inc/bib-header' ); ?>
+<?php } ?>
 
 
 
@@ -39,62 +40,75 @@ if ( (get_post_type( get_the_ID() ) == 'bibliotech') || (cat_is_ancestor_of( 73,
 	<div class="row">
 	
 	
-	  <?php
-	  $i = -1;
+		<?php
+		$i = -1;
 
 
-	  while ( have_posts() ) : the_post();
+		while ( have_posts() ) :
+			the_post();
 
-	  $i++;
+			$i++;
 
 
-	  ?>
+			?>
 	  
-	  <div class="<?php if ( 0 == $i % 3 ) { echo 'third '; } ?> col-xs-12  col-xs-B-6 col-sm-4 col-md-4 no-padding-left-mobile">
+	  <div class="
+			<?php
+			if ( 0 == $i % 3 ) {
+				echo 'third '; }
+			?>
+		 col-xs-12  col-xs-B-6 col-sm-4 col-md-4 no-padding-left-mobile">
 	  <div class="hentry flex-item blueTop eventsBox <?php echo esc_attr( check_image() ); ?>"
-		onClick='location.href="<?php if ( ( '' != get_field( 'external_link' ) ) && 'spotlights' == $post->post_type ) { the_field( 'external_link' );
-} else { echo get_post_permalink();}  ?>"'>
+		onClick='location.href="
+			<?php
+			if ( ( '' != get_field( 'external_link' ) ) && 'spotlights' == $post->post_type ) {
+				the_field( 'external_link' );
+			} else {
+				echo get_post_permalink();}
+			?>
+		"'>
 
 
 
 	
-		  <?php get_template_part( 'inc/spotlights' ); ?>
+			<?php get_template_part( 'inc/spotlights' ); ?>
 	   
-		<?php
-		if ( get_field( 'listImg' ) != '' ) { ?>
+			<?php
+			if ( get_field( 'listImg' ) != '' ) {
+				?>
 		<img src="<?php the_field( 'listImg' ); ?>" width="100%" height="111" class="img-responsive" alt="<?php the_title(); ?>"/>
-		<?php } ?>
+		  <?php } ?>
 		
 		
-		<?php if ( 'spotlights' == $post->post_type ) { ?>
+			<?php if ( 'spotlights' == $post->post_type ) { ?>
 			 <h2 class="entry-title title-post spotlights">
-		  <a href="<?php the_field( 'external_link' ); ?>"><?php the_title();?></a>
+		  <a href="<?php the_field( 'external_link' ); ?>"><?php the_title(); ?></a>
 		</h2> 
 		<?php } else { ?>
 		<h2 class="entry-title title-post">
-		  <a href="<?php the_permalink(); ?>"><?php the_title();?></a>
+		  <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 		</h2>
-		<?php 	} ?>
+		<?php } ?>
 		
-		 <?php get_template_part( 'inc/events' ); ?>
+			<?php get_template_part( 'inc/events' ); ?>
 		
-		<?php get_template_part( 'inc/entry' ); ?>
+			<?php get_template_part( 'inc/entry' ); ?>
 
 		<!--final **** else-->
-		<?php {  ?>
+			<?php {; ?>
 		<!--EVENT -->
-		<?php } ?>
+			<?php }; ?>
 
 
 
 
 		
 		<div class="category-post">
-		  <?php
+			<?php
 				$category = get_the_category();     if ( $category[0] ) {
 				echo '<a title="' . $category[0]->cat_name . '"  title="' . $category[0]->cat_name . '" href="' . get_category_link( $category[0]->term_id ) . '">' . $category[0]->cat_name . '</a>';
 				}
-			?>
+				?>
 		 <span class="mitDate">
 		  <time class="updated"  datetime="<?php echo get_the_date(); ?>">&nbsp;&nbsp;<?php echo get_the_date(); ?></time>
 		  </span>    
@@ -102,9 +116,9 @@ if ( (get_post_type( get_the_ID() ) == 'bibliotech') || (cat_is_ancestor_of( 73,
 	  </div>
 	 </div>
 	  <!-- eventsBox -->
-	  <?php 	endwhile; ?>
+		<?php endwhile; ?>
 	  <?php else : ?>
-	  <?php get_template_part( 'content', 'none' ); ?>
+		  <?php get_template_part( 'content', 'none' ); ?>
 	  <?php endif; ?>
 	</div>
 	<!-- MITContainer --> 
@@ -121,10 +135,11 @@ if ( (get_post_type( get_the_ID() ) == 'bibliotech') || (cat_is_ancestor_of( 73,
 
 		if ( $i > 7 ) {
 
-	get_template_part( 'inc/more-posts' );
+			get_template_part( 'inc/more-posts' );
 
-	}
-	?>   
+		}
+		?>
+	   
 		
 
 </div>

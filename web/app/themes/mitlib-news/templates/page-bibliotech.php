@@ -34,25 +34,27 @@ $args = array(
 );
 $query2 = new WP_Query( $args );
 if ( $query2->have_posts() ) :
-while ( $query2->have_posts() ) : $query2->the_post(); ?>
-<?php if ( isset( $sticky[0] ) ) { ?>
+	while ( $query2->have_posts() ) :
+		$query2->the_post();
+		?>
+		<?php if ( isset( $sticky[0] ) ) { ?>
 
 
 					
 				<!-- CALLS MOBILE CARDS -->
-		<?php renderMobileBiblioCard( $i, $post ); ?>
+			<?php renderMobileBiblioCard( $i, $post ); ?>
 
 				<!-- CALLS STICKY CARDS -->
-		<?php renderFeatureCard( $i, $post ); ?>
+			<?php renderFeatureCard( $i, $post ); ?>
 
 				<!-- RESETS QUERY -->
-		 <?php wp_reset_postdata(); ?>
+			 <?php wp_reset_postdata(); ?>
 			
-				<?php wp_reset_query(); ?>
+					<?php wp_reset_query(); ?>
 		  
-					<?php } //isset( $sticky[0] ) ?>
+						<?php } //isset( $sticky[0] ) ?>
 		 
-					<?php endwhile; ?>
+						<?php endwhile; ?>
 		
 					<?php endif; ?> 
 						<div class="container container-fluid">
@@ -61,25 +63,25 @@ while ( $query2->have_posts() ) : $query2->the_post(); ?>
 				<div class="row">  
 	
 			<?php
-$args = array(
-			'posts_per_page'      => 9,
-			'post__not_in'        => get_option( 'sticky_posts' ),
-			'ignore_sticky_posts' => 1,
-			'post_type'       	  => 'bibliotech',
-			'orderby'        	  => 'date',
-			'order'          	  => 'DESC',
-			'suppress_filters'    => false,
+			$args = array(
+				'posts_per_page'      => 9,
+				'post__not_in'        => get_option( 'sticky_posts' ),
+				'ignore_sticky_posts' => 1,
+				'post_type'           => 'bibliotech',
+				'orderby'             => 'date',
+				'order'               => 'DESC',
+				'suppress_filters'    => false,
 			);
-$my_query = new WP_Query( $args );
-$m = -1;
-// Getting length.
-$theLength = $my_query->post_count;
-while ( $my_query->have_posts() ) {
-$m++;
-$my_query->the_post();
-?>
+			$my_query = new WP_Query( $args );
+			$m = -1;
+			// Getting length.
+			$theLength = $my_query->post_count;
+			while ( $my_query->have_posts() ) {
+				$m++;
+				$my_query->the_post();
+				?>
 	
-	<?php renderBiblioCard( $i, $post ); ?>
+				<?php renderBiblioCard( $i, $post ); ?>
 					
 	<?php } ?>
 	</div>
@@ -91,7 +93,9 @@ $my_query->the_post();
 
 			get_template_part( 'inc/more-posts' );
 
-		} ?> 
+	}
+	?>
+		 
 </div>
 <script>
 $(document).ready(function() {

@@ -21,15 +21,15 @@ $(document).ready(function() {
 <?php
 
 	$offset = htmlspecialchars( trim( $_GET['offset'] ) );
-	if ( '' == $offset ) {
-		$offset = 11;
-	}
+if ( '' == $offset ) {
+	$offset = 11;
+}
 
 	 $limit = htmlspecialchars( trim( $_GET['limit'] ) );
 
-	if ( '' == $limit ) {
-		$limit = 18;
-	}
+if ( '' == $limit ) {
+	$limit = 18;
+}
 ?>
 <?php
 $date = DateTime::createFromFormat( 'Ymd', get_field( 'event_date' ) );
@@ -41,22 +41,22 @@ $args = array(
 
 	'post_type' => 'post',
 	'meta_query' => array(
-	array(
-	  'key' => 'is_event',
-	  'value' => '1',
-	  'compare' => '=',
-	),
-	array(
-	  'key' => 'event_date',
-	  'value' => date( 'Y-m-d' ),
-	  'compare' => '<',
-	  'type' => 'DATE',
-	),
+		array(
+			'key' => 'is_event',
+			'value' => '1',
+			'compare' => '=',
+		),
+		array(
+			'key' => 'event_date',
+			'value' => date( 'Y-m-d' ),
+			'compare' => '<',
+			'type' => 'DATE',
+		),
 	),
 
 	'meta_key' => 'event_date',
 	'orderby' => array(
-	'meta_value_num' => 'DESC',
+		'meta_value_num' => 'DESC',
 	),
 
 );
@@ -67,18 +67,19 @@ $args = array(
 $ajaxLength = $the_query->post_count;
 
 if ( $ajaxLength < $limit ) {
-?>
+	?>
 <script>
 $("#another").hide();
 </script>
-<?php
+	<?php
 }
 // Removes button end.
 if ( $the_query->have_posts() ) :
 	$o = -1;
-	while ( $the_query->have_posts() ) : $the_query->the_post();
-	$o++;
-	renderEventCard( $o, $post );
+	while ( $the_query->have_posts() ) :
+		$the_query->the_post();
+		$o++;
+		renderEventCard( $o, $post );
 	endwhile;
 endif;
 

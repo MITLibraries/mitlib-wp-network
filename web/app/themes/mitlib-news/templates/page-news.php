@@ -23,45 +23,45 @@ get_header(); ?>
 			
 			<!-- OPEN ROW FOR REGULAR CARD LAYOUT -->
 				<div class="row"> 
-	                
-	                <h1 class="events-header">News</h1>
+					
+					<h1 class="events-header">News</h1>
 	
 		<?php
 
 		$sticky = get_option( 'sticky_posts' );
 		// Arguments.
 		$args = array(
-		'post_type'  				=> 'post',
-		'post__not_in' => array( $sticky ),
+			'post_type'                 => 'post',
+			'post__not_in' => array( $sticky ),
 			'posts_per_page'        => '9',
 			'ignore_sticky_posts'   => true,
 			'order'                 => 'DESC',
 			'orderby'               => 'date',
-					'meta_query'             => array(
-							array(
-								'key'       => 'is_event',
-								'value'     => '1',
-								'compare'   => '!=',
-								'type'      => 'NUMERIC',
-							),
-						),
+			'meta_query'             => array(
+				array(
+					'key'       => 'is_event',
+					'value'     => '1',
+					'compare'   => '!=',
+					'type'      => 'NUMERIC',
+				),
+			),
 
-			);
+		);
 			$the_query = new WP_Query( $args );
-			?>
-			   <?php
-			if ( $the_query->have_posts() ) :
-			// $theLength = $count_posts->publish;
-			?>
-	
-	
-			<?php
-			$i = -1;
-			while ( $the_query->have_posts() ) :
-				$the_query->the_post();
-				$i++;
-				renderRegularCard( $i, $post ); // --- CALLS REGULAR CARDS --- //
 		?>
+			   <?php
+				if ( $the_query->have_posts() ) :
+					// $theLength = $count_posts->publish;
+					?>
+	
+	
+					<?php
+					$i = -1;
+					while ( $the_query->have_posts() ) :
+						$the_query->the_post();
+						$i++;
+						renderRegularCard( $i, $post ); // --- CALLS REGULAR CARDS --- //
+						?>
 	
 	
 		   
@@ -79,9 +79,9 @@ get_header(); ?>
 			  <!--closes CONTAINER-->
 
 		<?php
-			if ( $i > 6 ) {
-				get_template_part( 'inc/more-posts' );
-			}
+		if ( $i > 6 ) {
+			get_template_part( 'inc/more-posts' );
+		}
 		?>
 
 					<?php wp_reset_query();  // Restore global post data stomped by the_post(). ?>

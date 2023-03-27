@@ -17,10 +17,12 @@
 	  <?php } else { ?>
 	
 	<h1 class="name-site"><a href="/news/">News &amp; events</a>
-	<?php
-	if ( is_category() ) {
-	 printf( '<span>' . ': ' . single_cat_title( '', false ) . '</span>' );
-	}  ?>        
+		<?php
+		if ( is_category() ) {
+			printf( '<span>' . ': ' . single_cat_title( '', false ) . '</span>' );
+		}
+		?>
+			
 	</h1>
 	
 	<?php } ?>
@@ -57,7 +59,7 @@
 /*
 ?><div class="flex-container subNavH">
   <div class="leftNav">
-    <div class="box-row newsNav">
+	<div class="box-row newsNav">
 
 	   <?php
 // main nav
@@ -85,10 +87,10 @@ wp_nav_menu( $defaults );
 
 
 ?>
-    </div>
+	</div>
   </div>
   <div class="rightNav">
-    <div class="box-row" style="width:330px;">
+	<div class="box-row" style="width:330px;">
 
 <ul>
 
@@ -123,16 +125,16 @@ wp_nav_menu( $defaults );
 </ul>
 
 <script>
-    jQuery(function(){
-      // bind change event to select
-      jQuery('#dynamic_select').bind('change', function () {
-          var url = $(this).val(); // get selected value
-          if (url) { // require a URL
-              window.location = url; // redirect
-          }
-          return false;
-      });
-    });
+	jQuery(function(){
+	  // bind change event to select
+	  jQuery('#dynamic_select').bind('change', function () {
+		  var url = $(this).val(); // get selected value
+		  if (url) { // require a URL
+			  window.location = url; // redirect
+		  }
+		  return false;
+	  });
+	});
 </script>
  </div>
   </div>

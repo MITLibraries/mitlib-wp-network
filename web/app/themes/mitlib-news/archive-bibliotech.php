@@ -37,7 +37,7 @@ function the_excerpt_max_charlength( $charlength ) {
 		} else {
 			return $subex;
 		}
-		echo '[...]' ;
+		echo '[...]';
 	} else {
 		return $excerpt;
 	}
@@ -53,8 +53,8 @@ function the_excerpt_max_charlength( $charlength ) {
 	<header class="archive-header">
 	  <h2>
 		<?php
-					if ( is_day() ) :
-						printf( __( 'Daily Archives: %s', 'twentytwelve' ), '<span>' . get_the_date() . '</span>' );
+		if ( is_day() ) :
+			printf( __( 'Daily Archives: %s', 'twentytwelve' ), '<span>' . get_the_date() . '</span>' );
 					elseif ( is_month() ) :
 						printf( __( 'Monthly Archives: %s', 'twentytwelve' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'twentytwelve' ) ) . '</span>' );
 					elseif ( is_year() ) :
@@ -62,47 +62,51 @@ function the_excerpt_max_charlength( $charlength ) {
 					else :
 						_e( 'Archives', 'twentytwelve' );
 					endif;
-				?>
+					?>
 	  </h2>
 	</header>
 	<!-- .archive-header -->
 	<div class="mit-container">
-	  <?php while ( have_posts() ) : the_post(); ?>
+		<?php
+		while ( have_posts() ) :
+			the_post();
+			?>
 	  <div class="flex-item blueTop eventsBox <?php echo esc_attr( check_image() ); ?>"
 		onClick='location.href="<?php echo get_post_permalink(); ?>"'>
-		<?php if ( get_field( 'mark_as_new' ) === true ) : ?>
+			<?php if ( get_field( 'mark_as_new' ) === true ) : ?>
 		<?php endif; ?>
-		<?php if ( has_post_thumbnail() ) {
-$thumb_id = get_post_thumbnail_id();
-$thumb_url_array = wp_get_attachment_image_src( $thumb_id, 'thumbnail-size', true );
-$thumb_url = $thumb_url_array[0];
+			<?php
+			if ( has_post_thumbnail() ) {
+				$thumb_id = get_post_thumbnail_id();
+				$thumb_url_array = wp_get_attachment_image_src( $thumb_id, 'thumbnail-size', true );
+				$thumb_url = $thumb_url_array[0];
 
-?>
+				?>
 		<img src="<?php echo $thumb_url; ?>" width="100%" height="200" />
-		<?php	} 	?>
+			<?php	} ?>
 		<h2 class="title-post">
-		  <?php the_title(); ?>
+			<?php the_title(); ?>
 		</h2>
 		<br />
 		<div class="excerpt-post">
-		  <?php the_excerpt_max_charlength( 140 ); ?>
+			<?php the_excerpt_max_charlength( 140 ); ?>
 		</div>
 		<div class="category-post">
-		  <?php
-$category = get_the_category();
-if ( $category[0] ) {
-echo '<a href="' . get_category_link( $category[0]->term_id ) . '">' . $category[0]->cat_name . '</a>';
-}
-?>
+			<?php
+			$category = get_the_category();
+			if ( $category[0] ) {
+				echo '<a href="' . get_category_link( $category[0]->term_id ) . '">' . $category[0]->cat_name . '</a>';
+			}
+			?>
 		  <span class="mitDate">&nbsp;&nbsp;<?php echo get_the_date(); ?></span> 
 		  <!--echo all the cat --> 
 		  
 		</div>
 	  </div>
 	  <!-- eventsBox -->
-	  <?php 	endwhile; ?>
+	  <?php endwhile; ?>
 	  <?php else : ?>
-	  <?php get_template_part( 'content', 'none' ); ?>
+		  <?php get_template_part( 'content', 'none' ); ?>
 	  <?php endif; ?>
 	</div>
 	<!-- MITContainer --> 

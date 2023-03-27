@@ -22,10 +22,12 @@ get_header(); ?>
 	  <?php } else { ?>
 	
 	<h1 class="name-site"><a href="/news/">News &amp; events</a>
-	<?php
-	if ( is_category() ) {
-	 printf( '<span>' . ': ' . single_cat_title( '', false ) . '</span>' );
-	}  ?>        
+		<?php
+		if ( is_category() ) {
+			printf( '<span>' . ': ' . single_cat_title( '', false ) . '</span>' );
+		}
+		?>
+			
 	</h1>
 	
 	<?php } ?>
@@ -46,7 +48,10 @@ get_header(); ?>
 
 
 
-	<?php while ( have_posts() ) : the_post(); ?>
+	<?php
+	while ( have_posts() ) :
+		the_post();
+		?>
 		<div class="container">
 		<div class="row">
 		
@@ -59,7 +64,7 @@ get_header(); ?>
 				<?php if ( $isRoot ) : ?>
 				<h2><?php echo $section->post_title; ?></h2>
 				<?php else : ?>
-				<h2><a href="<?php echo get_permalink( $section->ID ) ?>"><?php echo $section->post_title; ?></a></h2>
+				<h2><a href="<?php echo get_permalink( $section->ID ); ?>"><?php echo $section->post_title; ?></a></h2>
 				<?php endif; ?>
 			</div>
 			
@@ -87,7 +92,7 @@ get_header(); ?>
 	
 	
 	<div class="col-xs-12 col-xs-B-11 col-sm-3 col-md-3 col-lg-3">
-<?php if ( ! dynamic_sidebar() ) : ?>
+		<?php if ( ! dynamic_sidebar() ) : ?>
 	
 		<div id="sidebarContent" class="sidebar span3">
 		<div class="sidebarWidgets">
@@ -95,7 +100,7 @@ get_header(); ?>
 		</div>
 	</div>		
 
-<?php endif; ?>	
+		<?php endif; ?>	
 
 
 </div>

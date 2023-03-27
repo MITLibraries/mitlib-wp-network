@@ -16,7 +16,10 @@ get_header(); ?>
 <div id="primary" class="content-area">
 <main id="main" role="main">
 <div class="row">
-		<?php while ( have_posts() ) : the_post(); ?>
+		<?php
+		while ( have_posts() ) :
+			the_post();
+			?>
 
 			<div id="content" class="content has-sidebar">
 

@@ -19,12 +19,15 @@ get_template_part( 'inc/bib-header' );
 
 <?php
 if ( have_posts() ) {
-	while ( have_posts() ) : the_post();
-?>
+	while ( have_posts() ) :
+		the_post();
+		?>
 
 			<div class="col-md-12">
-				<?php the_title( '<h1>', '</h1>' );
-				if ( get_field( 'subtitle' ) ) { ?>
+				<?php
+				the_title( '<h1>', '</h1>' );
+				if ( get_field( 'subtitle' ) ) {
+					?>
 					<h2 class="subtitle"><?php the_field( 'subtitle' ); ?></h2>
 				<?php } ?>
 			</div>
@@ -35,30 +38,38 @@ if ( have_posts() ) {
 			</div>
 	
 			<div class="col-xs-12 col-xs-B-6 col-sm-6 col-md-6">
-			<?php if ( has_post_thumbnail() ) :
+			<?php
+			if ( has_post_thumbnail() ) :
 
 				if ( get_field( 'bibLink' ) ) {
-					?><a href="<?php the_field( 'bibLink' ); ?>"><?php
+					?>
+					<a href="<?php the_field( 'bibLink' ); ?>">
+					<?php
 				}
 
 				the_post_thumbnail();
 
 				if ( get_field( 'bibLink' ) ) {
-					?></a><?php
+					?>
+					</a>
+					<?php
 				}
 
 				if ( get_field( 'bibCaption' ) ) {
-					?><div class="caption"><?php the_field( 'bibCaption' ); ?></div><?php
+					?>
+					<div class="caption"><?php the_field( 'bibCaption' ); ?></div>
+					<?php
 				}
-			endif; ?>
+			endif;
+			?>
 			</div>
 
-<?php
+		<?php
 	endwhile;
 } else {
-?>
+	?>
 	<p><?php esc_html_e( 'Sorry, no posts matched your criteria.' ); ?></p>
-<?php
+	<?php
 }
 ?>
 

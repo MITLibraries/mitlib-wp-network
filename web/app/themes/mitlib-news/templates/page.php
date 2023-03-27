@@ -20,7 +20,10 @@ $isRoot = $section->ID == $post->ID;
 get_header(); ?>
 	<?php get_template_part( 'inc/sub-headerSingle' ); ?>
 
-	<?php while ( have_posts() ) : the_post(); ?>
+	<?php
+	while ( have_posts() ) :
+		the_post();
+		?>
 		<div class="container">
 		<div class="row">
 		<div id="stage" class="inner column3 tertiaryPage  subscribe clearfix" role="main">
@@ -33,7 +36,7 @@ get_header(); ?>
 				<?php if ( $isRoot ) : ?>
 				<h2><?php echo $section->post_title; ?></h2>
 				<?php else : ?>
-				<h2><a href="<?php echo get_permalink( $section->ID ) ?>"><?php echo $section->post_title; ?></a></h2>
+				<h2><a href="<?php echo get_permalink( $section->ID ); ?>"><?php echo $section->post_title; ?></a></h2>
 				<?php endif; ?>
 			</div>
 			
@@ -61,15 +64,15 @@ get_header(); ?>
 	
 	
 	<div class="col-xs-12 col-xs-B-11 col-sm-3 col-md-3 col-lg-3">
-<?php if ( ! dynamic_sidebar() ) : ?>
+		<?php if ( ! dynamic_sidebar() ) : ?>
 	
 		<div id="sidebarContent" class="sidebar span3">
 		<div class="sidebarWidgets">
-			<?php // This was a call to dynamic_sidebar() for 'subscribe'. ?>
+					<?php // This was a call to dynamic_sidebar() for 'subscribe'. ?>
 		</div>
 	</div>		
 
-<?php endif; ?>	
+		<?php endif; ?>	
 
 
 </div>

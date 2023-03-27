@@ -49,7 +49,7 @@ function render( $post, $i, $type ) {
 	// Default outer classes.
 	$outerClasses = 'padding-right-mobile col-xs-12 col-xs-B-6 col-sm-4 col-md-4 col-lg-4';
 	if ( 0 == $i % 3 ) {
-	$outerClasses .= ' third';
+		$outerClasses .= ' third';
 	}
 	// Default inner classes.
 	$inner_classes = 'flex-item blueTop eventsBox render-confirm-' . $type . ' ' . check_image();
@@ -66,33 +66,33 @@ function render( $post, $i, $type ) {
 	$dateMarkup = '';
 
 	/*
-  Not sure this check is needed
-  if ($post->post_type == 'bibliotech') {
-    $categoryClasses .= " Bibliotech";
-  }
-  */
-	if ( is_page( 'bibliotech-index' ) || (is_page_template( 'additionalPosts-biblio.php' )) || (is_category( 'bibliotech_issues' ) || (is_tax() ) || is_page_template( 'additionalPosts-archives.php' )) ) {
-	// Bibliotech articles without icon.
-	$categoryMarkup = "<div class='biblioPad'>&nbsp;<a href='/news/bibliotech-index/' title='Bibliotech'>Bibliotech</a></div>";
-	} elseif ( ( 'bibliotech' == $post->post_type ) && ( ! is_page_template( 'additionalPosts-biblio.php' ) ) ) {
-	// Bibliotech articles with icon.
-	$categoryMarkup = "<div class='bilbioImg bilbioTechIcon'> </div>";
-	$categoryMarkup .= "<div class='biblioPad'>&nbsp;<a href='/news/bibliotech-index/' title='Bibliotech'>Bibliotech</a>";
-	$dateMarkup = "<span class='mitDate'>" .
-	"<time class='updated' datetime='" . get_the_date() . "'>" . get_the_date() . '</time>' .
-	'</span>' .
-	'</div>';
-	} else {
-	// Non-biliotech articles.
-	$category = get_the_category();
-	$rCat = count( $category );
-	$r = rand( 0, $rCat -1 );
-	$categoryMarkup = '<a title="' . $category[ $r ]->cat_name . '"  title="' . $category[ $r ]->cat_name . '" href="' . get_category_link( $category[ $r ]->term_id ) . '">' . $category[ $r ]->cat_name . '</a>';
-	$dateMarkup = "<span class='mitDate'>" .
-	"<time class='updated' datetime='" . get_the_date() . "'>&nbsp;&nbsp;" . get_the_date() . '</time>' .
-	'</span>';
+	Not sure this check is needed
+	if ($post->post_type == 'bibliotech') {
+	$categoryClasses .= " Bibliotech";
 	}
-?>
+	*/
+	if ( is_page( 'bibliotech-index' ) || ( is_page_template( 'additionalPosts-biblio.php' ) ) || ( is_category( 'bibliotech_issues' ) || ( is_tax() ) || is_page_template( 'additionalPosts-archives.php' ) ) ) {
+		// Bibliotech articles without icon.
+		$categoryMarkup = "<div class='biblioPad'>&nbsp;<a href='/news/bibliotech-index/' title='Bibliotech'>Bibliotech</a></div>";
+	} elseif ( ( 'bibliotech' == $post->post_type ) && ( ! is_page_template( 'additionalPosts-biblio.php' ) ) ) {
+		// Bibliotech articles with icon.
+		$categoryMarkup = "<div class='bilbioImg bilbioTechIcon'> </div>";
+		$categoryMarkup .= "<div class='biblioPad'>&nbsp;<a href='/news/bibliotech-index/' title='Bibliotech'>Bibliotech</a>";
+		$dateMarkup = "<span class='mitDate'>" .
+		"<time class='updated' datetime='" . get_the_date() . "'>" . get_the_date() . '</time>' .
+		'</span>' .
+		'</div>';
+	} else {
+		// Non-biliotech articles.
+		$category = get_the_category();
+		$rCat = count( $category );
+		$r = rand( 0, $rCat - 1 );
+		$categoryMarkup = '<a title="' . $category[ $r ]->cat_name . '"  title="' . $category[ $r ]->cat_name . '" href="' . get_category_link( $category[ $r ]->term_id ) . '">' . $category[ $r ]->cat_name . '</a>';
+		$dateMarkup = "<span class='mitDate'>" .
+		"<time class='updated' datetime='" . get_the_date() . "'>&nbsp;&nbsp;" . get_the_date() . '</time>' .
+		'</span>';
+	}
+	?>
 	<div id="theBox" class="<?php echo $outerClasses; ?>">
 	<div class="<?php echo esc_attr( $inner_classes ); ?>" onClick='location.href="<?php echo esc_url( $card_url ); ?>"'>
 
@@ -116,7 +116,7 @@ function render( $post, $i, $type ) {
 
 <!-- RENDER FUNCTION FOR MOBILE CARDS -->
 
-<?php
+	<?php
 }
 /**
  * Render a card for display on mobile devices
@@ -126,51 +126,52 @@ function render( $post, $i, $type ) {
  */
 function renderMobileCard( $i, $post ) {
 	$card_url = lookup_url( $post );
-?>
+	?>
 <div  class="visible-xs visible-sm hidden-md hidden-lg no-padding-left-mobile no-padding-left-tablet col-xs-12 col-xs-B-6 col-sm-6 col-md-4 col-lg-4 ">
 <div class="flex-item blueTop eventsBox <?php echo esc_attr( check_image() ); ?>"
 	onClick='location.href="<?php echo esc_url( $card_url ); ?>"'>
 	
-	   		<!-- INTERNAL CONTAINER TO CONTROL FOR OVERFLOW -->   
+			   <!-- INTERNAL CONTAINER TO CONTROL FOR OVERFLOW -->   
 			 <div class="interiorCardContainer">
 				 
 				<!-- CHECKS FOR SPOTLIGHT -->   
 				<?php if ( 'spotlights' == $post->post_type ) { ?>
-				<?php get_template_part( 'inc/spotlights' ); ?>
-		        <?php 	} ?><!-- SPOTLIGHT -->  
+					<?php get_template_part( 'inc/spotlights' ); ?>
+				<?php } ?><!-- SPOTLIGHT -->  
 				
 				<!-- CHECKS FOR IMAGE -->   
-		        <?php
-				if ( get_field( 'listImg' ) != '' ) { ?>
-		    	<?php get_template_part( 'inc/image' ); ?>
-		        <?php } ?><!-- .listImg -->  
-		         
+				<?php
+				if ( get_field( 'listImg' ) != '' ) {
+					?>
+					<?php get_template_part( 'inc/image' ); ?>
+				<?php } ?><!-- .listImg -->  
+				 
 				<!-- CALLS TITLE FOR REGULAR/SPOTLIGHT POST-TYPES -->   
-		        <?php get_template_part( 'inc/title' ); ?>
-		        <!-- TITLE -->  
-		        
+				<?php get_template_part( 'inc/title' ); ?>
+				<!-- TITLE -->  
+				
 				<!-- CHECKS IF EVENT TYPE -->   
-		        <?php if ( get_field( 'event_date' ) ) { ?>
-		    	<?php get_template_part( 'inc/events' ); ?>
-		        <?php } ?><!-- EVENT -->
-		    	
+				<?php if ( get_field( 'event_date' ) ) { ?>
+					<?php get_template_part( 'inc/events' ); ?>
+				<?php } ?><!-- EVENT -->
+				
 				<!-- CHECKS FOR SUBTITLE -->
-		        <?php if ( get_field( 'subtitle' ) ) { ?>
-		        	<?php get_template_part( 'inc/subtitle' ); ?>
+				<?php if ( get_field( 'subtitle' ) ) { ?>
+					<?php get_template_part( 'inc/subtitle' ); ?>
 				<?php } ?><!-- .subtitle -->    	
-		        
+				
 				<!-- CALLS FOR EXCERPT -->   
-		        <?php get_template_part( 'inc/entry' ); ?>
+				<?php get_template_part( 'inc/entry' ); ?>
 		
 			</div> <!--.interiorCardBox -->  
 				
 				<!-- CALLS FOR FOOTER -->   
-		        <?php get_template_part( 'inc/footer' ); ?>
+				<?php get_template_part( 'inc/footer' ); ?>
 
 	</div><!--last-->
 </div>
 
-<?php
+	<?php
 }
 /**
  * Render a Bibliotech card for display on mobile devices
@@ -180,41 +181,42 @@ function renderMobileCard( $i, $post ) {
  */
 function renderMobileBiblioCard( $i, $post ) {
 	$card_url = lookup_url( $post );
-?>
+	?>
 <div  class="visible-xs visible-sm hidden-md hidden-lg no-padding-left-mobile no-padding-left-tablet col-xs-12 col-xs-B-6 col-sm-6 col-md-4 col-lg-4 ">
 <div class="flex-item blueTop eventsBox <?php echo esc_attr( check_image() ); ?>"
 	onClick='location.href="<?php echo esc_url( $card_url ); ?>"'>
 	
-	   		<!-- INTERNAL CONTAINER TO CONTROL FOR OVERFLOW -->   
+			   <!-- INTERNAL CONTAINER TO CONTROL FOR OVERFLOW -->   
 			 <div class="interiorCardContainer">
 				
 				<!-- CHECKS FOR IMAGE -->   
-		        <?php
-				if ( get_field( 'listImg' ) != '' ) { ?>
-		    	<?php get_template_part( 'inc/image' ); ?>
-		        <?php } ?><!-- .listImg -->  
-		         
+				<?php
+				if ( get_field( 'listImg' ) != '' ) {
+					?>
+					<?php get_template_part( 'inc/image' ); ?>
+				<?php } ?><!-- .listImg -->  
+				 
 				<!-- CALLS TITLE FOR REGULAR/SPOTLIGHT POST-TYPES -->   
-		        <?php get_template_part( 'inc/title' ); ?>
-		        <!-- TITLE -->  
-		    	
+				<?php get_template_part( 'inc/title' ); ?>
+				<!-- TITLE -->  
+				
 				<!-- CHECKS FOR SUBTITLE -->
-		        <?php if ( get_field( 'subtitle' ) ) { ?>
-		        	<?php get_template_part( 'inc/subtitle' ); ?>
+				<?php if ( get_field( 'subtitle' ) ) { ?>
+					<?php get_template_part( 'inc/subtitle' ); ?>
 				<?php } ?><!-- .subtitle -->    	
-		        
+				
 				<!-- CALLS FOR EXCERPT -->   
-		        <?php get_template_part( 'inc/entry' ); ?>
+				<?php get_template_part( 'inc/entry' ); ?>
 		
 			</div> <!--.interiorCardBox -->  
 				
 				<!-- CALLS FOR FOOTER -->   
-		        <?php get_template_part( 'inc/catFooter' ); ?>
+				<?php get_template_part( 'inc/catFooter' ); ?>
 
 	</div><!--last-->
 </div>
 
-<?php
+	<?php
 }
 /**
  * Render a Bibliotech card
@@ -224,43 +226,44 @@ function renderMobileBiblioCard( $i, $post ) {
  */
 function renderBiblioCard( $m, $post ) {
 	$card_url = lookup_url( $post );
-?>
+	?>
 <div  class="no-padding-left-mobile col-xs-12 col-xs-B-6 col-sm-6 col-md-4 col-lg-4">
 <div class="flex-item blueTop eventsBox <?php echo esc_attr( check_image() ); ?>"
 	onClick='location.href="<?php echo esc_url( $card_url ); ?>"'>
 	
-	   		<!-- INTERNAL CONTAINER TO CONTROL FOR OVERFLOW -->   
+			   <!-- INTERNAL CONTAINER TO CONTROL FOR OVERFLOW -->   
 			 <div class="interiorCardContainer">
-				 				
+								
 				<!-- CHECKS FOR IMAGE -->   
-		        <?php
-				if ( get_field( 'listImg' ) != '' ) { ?>
-		    	<?php get_template_part( 'inc/image' ); ?>
-		        <?php } ?><!-- .listImg -->  
-		         
+				<?php
+				if ( get_field( 'listImg' ) != '' ) {
+					?>
+					<?php get_template_part( 'inc/image' ); ?>
+				<?php } ?><!-- .listImg -->  
+				 
 				<!-- CALLS TITLE FOR REGULAR/SPOTLIGHT POST-TYPES -->   
-		        <?php get_template_part( 'inc/title' ); ?>
-		        <!-- TITLE -->  
-		    	
+				<?php get_template_part( 'inc/title' ); ?>
+				<!-- TITLE -->  
+				
 				<!-- CHECKS FOR SUBTITLE -->
-		        <?php if ( get_field( 'subtitle' ) ) { ?>
-		        	<?php get_template_part( 'inc/subtitle' ); ?>
+				<?php if ( get_field( 'subtitle' ) ) { ?>
+					<?php get_template_part( 'inc/subtitle' ); ?>
 				<?php } ?><!-- .subtitle -->    	
-		        
+				
 				<!-- CALLS FOR EXCERPT -->   
-		        <?php get_template_part( 'inc/entry' ); ?>
+				<?php get_template_part( 'inc/entry' ); ?>
 		
 			</div> <!--.interiorCardBox -->  
 				
 				<!-- CALLS FOR FOOTER -->   
-		        <?php get_template_part( 'inc/catFooter' ); ?>
+				<?php get_template_part( 'inc/catFooter' ); ?>
 
 	</div><!--last-->
 </div>
 
 <!-- RENDER FUNCTION FOR REGULAR CARDS -->
 
-<?php
+	<?php
 }
 /**
  * Render a card
@@ -274,59 +277,60 @@ function renderRegularCard( $i, $post ) {
 
 	$image_class = check_image();
 
-?>
+	?>
 <div id="theBox" class="no-padding-left-mobile col-xs-12 col-xs-B-6 col-sm-6 col-md-4 col-lg-4">
 <div class="flex-item blueTop eventsBox <?php echo esc_attr( $image_class ); ?>" 
 	onClick='location.href="<?php echo esc_url( $card_url ); ?>"'
 	>
-	   		<!-- INTERNAL CONTAINER TO CONTROL FOR OVERFLOW -->   
+			   <!-- INTERNAL CONTAINER TO CONTROL FOR OVERFLOW -->   
 			 <div class="interiorCardContainer">
 				 
 				<!-- CHECKS FOR SPOTLIGHT -->   
 				<?php if ( 'spotlights' == $post->post_type ) { ?>
-				<?php get_template_part( 'inc/spotlights' ); ?>
-		        <?php 	} ?><!-- SPOTLIGHT -->  
+					<?php get_template_part( 'inc/spotlights' ); ?>
+				<?php } ?><!-- SPOTLIGHT -->  
 				
 				<!-- CHECKS FOR IMAGE -->   
-		        <?php
-				if ( get_field( 'listImg' ) != '' ) { ?>
-		    	<?php get_template_part( 'inc/image' ); ?>
+				<?php
+				if ( get_field( 'listImg' ) != '' ) {
+					?>
+					<?php get_template_part( 'inc/image' ); ?>
 				<?php } elseif ( strlen( get_field( 'calendar_image' ) ) > 0 ) { ?>
-				<?php get_template_part( 'inc/imageEvent' ); ?>
-		        <?php } ?><!-- .listImg -->  
+					<?php get_template_part( 'inc/imageEvent' ); ?>
+				<?php } ?><!-- .listImg -->  
 
 				<!-- CALLS TITLE FOR REGULAR/SPOTLIGHT POST-TYPES -->   
-		        <?php get_template_part( 'inc/title' ); ?>
-		        <!-- TITLE -->  
-		        
+				<?php get_template_part( 'inc/title' ); ?>
+				<!-- TITLE -->  
+				
 				<!-- CHECKS IF EVENT TYPE -->   
-		        <?php if ( get_field( 'event_date' ) ) { ?>
-		    	<?php get_template_part( 'inc/events' ); ?>
-		        <?php } ?><!-- EVENT -->
-		    	
+				<?php if ( get_field( 'event_date' ) ) { ?>
+					<?php get_template_part( 'inc/events' ); ?>
+				<?php } ?><!-- EVENT -->
+				
 				<!-- CHECKS FOR SUBTITLE -->
-		        <?php if ( get_field( 'subtitle' ) ) { ?>
-		        	<?php get_template_part( 'inc/subtitle' ); ?>
+				<?php if ( get_field( 'subtitle' ) ) { ?>
+					<?php get_template_part( 'inc/subtitle' ); ?>
 				<?php } ?><!-- .subtitle -->    	
-		        
+				
 				<!-- CALLS FOR EXCERPT -->   
-		        <?php get_template_part( 'inc/entry' ); ?>
+				<?php get_template_part( 'inc/entry' ); ?>
 		
 			</div> <!--.interiorCardBox -->  
 				
 				<!-- CALLS FOR FOOTER -->   
-		        <?php get_template_part( 'inc/footer' ); ?>
+				<?php get_template_part( 'inc/footer' ); ?>
 
 	</div><!--last-->
 </div>
 	<?php
 	if ( get_post_type( get_the_ID() ) == 'bibliotech' ) {
-	?>
+		?>
 	</div>
 
 <!-- RENDER FUNCTION FOR EVENT CARDS -->
 
-<?php
+		<?php
 	}
 }
 /**
@@ -340,7 +344,7 @@ function renderEventCard( $i, $post ) {
 	$card_url = lookup_url( $post );
 
 	$image_class = check_image();
-?>
+	?>
 	<div id="theBox" class="col-xs-12 col-xs-B-6 col-sm-6 col-md-4 col-lg-4">
 	<div itemscope itemtype="http://data-vocabulary.org/Event"
 		class="flex-item blueTop eventsBox <?php echo esc_attr( $image_class ); ?>"
@@ -349,41 +353,42 @@ function renderEventCard( $i, $post ) {
 			 <div class="interiorCardContainer">
 				 
 				<!-- CHECKS FOR IMAGE -->   
-		        <?php
-				if ( get_field( 'listImg' ) != '' ) { ?>
-		    	<?php get_template_part( 'inc/image' ); ?>
+				<?php
+				if ( get_field( 'listImg' ) != '' ) {
+					?>
+					<?php get_template_part( 'inc/image' ); ?>
 				<?php } elseif ( strlen( get_field( 'calendar_image' ) ) > 0 ) { ?>
-				<?php get_template_part( 'inc/imageEvent' ); ?>
-		        <?php } ?><!-- .listImg -->  
+					<?php get_template_part( 'inc/imageEvent' ); ?>
+				<?php } ?><!-- .listImg -->  
 
 
 				<!-- CALLS TITLE FOR REGULAR/SPOTLIGHT POST-TYPES -->   
-		        <?php get_template_part( 'inc/title' ); ?>
-		        <!-- TITLE -->  
-		        
+				<?php get_template_part( 'inc/title' ); ?>
+				<!-- TITLE -->  
+				
 				<!-- CHECKS IF EVENT TYPE -->   
-		        <?php if ( get_field( 'event_date' ) ) { ?>
-		    	<?php get_template_part( 'inc/events' ); ?>
-		        <?php } ?><!-- EVENT -->
-		    	
+				<?php if ( get_field( 'event_date' ) ) { ?>
+					<?php get_template_part( 'inc/events' ); ?>
+				<?php } ?><!-- EVENT -->
+				
 				<!-- CHECKS FOR SUBTITLE -->
-		        <?php if ( get_field( 'subtitle' ) ) { ?>
-		        	<?php get_template_part( 'inc/subtitleEvents' ); ?>
+				<?php if ( get_field( 'subtitle' ) ) { ?>
+					<?php get_template_part( 'inc/subtitleEvents' ); ?>
 				<?php } ?><!-- .subtitle -->    	
-		        
+				
 				<!-- CALLS FOR EXCERPT -->   
-		        <?php get_template_part( 'inc/entry' ); ?>
+				<?php get_template_part( 'inc/entry' ); ?>
 		
 			</div> <!--.interiorCardBox -->  
 				
 				<!-- CALLS FOR FOOTER -->   
-		        <?php get_template_part( 'inc/catFooter' ); ?>
+				<?php get_template_part( 'inc/catFooter' ); ?>
 	</div> <!-- close itemscope -->
 </div> <!-- close eventsPage -->
 
 <!-- RENDER FUNCTION FOR STICKY/FEATURED CARDS -->
 
-<?php
+	<?php
 }
 /**
  * Render a featured card
@@ -393,38 +398,38 @@ function renderEventCard( $i, $post ) {
  */
 function renderFeatureCard( $i, $post ) {
 	$card_url = lookup_url( $post );
-?>
+	?>
 	<div class="sticky  hidden-xs hidden-sm col-md-12 clearfix">
 	<div class="no-padding-left-mobile sticky col-xs-3 col-xs-B-6 col-sm-8 col-lg-8 col-md-8" onClick='location.href="<?php echo esc_url( $card_url ); ?>"' style="padding-right:0px; padding-left:6px !important;" > <img src="<?php the_field( 'featuredListImg' ); ?>" class="img-responsive" width="679" height="260" alt="<?php the_title(); ?>" /> </div>
 	<div class=" hidden-xs bgWhite col-xs-12 col-xs-B-6 col-sm-4 col-md-4 col-lg-4" onClick='location.href="<?php echo esc_url( $card_url ); ?>"'>
 		
 				<!-- CHECKS FOR SPOTLIGHT -->   
 				<?php if ( 'spotlights' == $post->post_type ) { ?>
-				<?php get_template_part( 'inc/spotlights' ); ?>
-		        <?php 	} ?><!-- SPOTLIGHT -->  
-		         
+					<?php get_template_part( 'inc/spotlights' ); ?>
+				<?php } ?><!-- SPOTLIGHT -->  
+				 
 				<!-- CALLS TITLE FOR REGULAR/SPOTLIGHT POST-TYPES -->   
-		        <?php get_template_part( 'inc/title' ); ?>
-		        <!-- TITLE -->  
-		        
+				<?php get_template_part( 'inc/title' ); ?>
+				<!-- TITLE -->  
+				
 				<!-- CHECKS IF EVENT TYPE -->   
-		        <?php if ( get_field( 'event_date' ) ) { ?>
-		    	<?php get_template_part( 'inc/events' ); ?>
-		        <?php } ?><!-- EVENT -->
-		    	
+				<?php if ( get_field( 'event_date' ) ) { ?>
+					<?php get_template_part( 'inc/events' ); ?>
+				<?php } ?><!-- EVENT -->
+				
 				<!-- CHECKS FOR SUBTITLE -->
-		        <?php if ( get_field( 'subtitle' ) ) { ?>
-		        	<?php get_template_part( 'inc/subtitle' ); ?>
+				<?php if ( get_field( 'subtitle' ) ) { ?>
+					<?php get_template_part( 'inc/subtitle' ); ?>
 				<?php } ?><!-- .subtitle -->    	
-		        
+				
 				<!-- CALLS FOR EXCERPT -->   
-		        <?php get_template_part( 'inc/entry' ); ?>
+				<?php get_template_part( 'inc/entry' ); ?>
 		
 				<!-- CALLS FOR FOOTER --> 
-		        <?php get_template_part( 'inc/catFooter' ); ?>
+				<?php get_template_part( 'inc/catFooter' ); ?>
 	
 	</div>
 </div>
-<?php
+	<?php
 }
 ?>
