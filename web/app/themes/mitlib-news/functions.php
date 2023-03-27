@@ -9,6 +9,12 @@
 namespace Mitlib\News;
 
 /**
+ * We use lib/cards.php to define a handful of functions which together
+ * render content in this theme in card format.
+ */
+require_once( 'lib/cards.php' );
+
+/**
  * Register and selectively enqueue stylesheets needed for the current page.
  */
 function news_scripts_styles() {

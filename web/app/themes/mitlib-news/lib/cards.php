@@ -2,9 +2,11 @@
 /**
  * Handles render function for all elements that constitute CARDS.
  *
- * @package MITLibraries-News
- * @since 1.1.11
+ * @package MITlib_News
+ * @since 0.1.0
  */
+
+namespace Mitlib\News;
 
 /**
  * This returns either "no-image" or "has-image" based on whether a post has an image or not.
