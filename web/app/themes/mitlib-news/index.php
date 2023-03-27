@@ -8,6 +8,8 @@
  * @since Twenty Twelve 1.0
  */
 
+namespace Mitlib\News;
+
 // $pageRoot = getRoot( $post );
 // $section  = get_post( $pageRoot );
 // $isRoot   = $section->ID == $post->ID;
@@ -52,7 +54,7 @@ $args   = array(
 	'order' => 'DESC',
 	'suppress_filters' => false,
 );
-$sticky_query = new WP_Query( $args );
+$sticky_query = new \WP_Query( $args );
 
 if ( $sticky_query->have_posts() ) :
 	$i = 1; // $i is a counter variable.
@@ -106,7 +108,7 @@ $args = array(
 	'suppress_filters' => false,
 );
 
-$standard_query = new WP_Query( $args );
+$standard_query = new \WP_Query( $args );
 
 if ( $standard_query->have_posts() ) :
 	// $theLength = $count_posts->publish;

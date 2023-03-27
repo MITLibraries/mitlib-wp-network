@@ -7,6 +7,8 @@
  * @since 1.0
  */
 
+namespace Mitlib\News;
+
 ?>
 
 <script type="text/javascript">
@@ -32,7 +34,7 @@ if ( '' == $limit ) {
 }
 ?>
 <?php
-$date = DateTime::createFromFormat( 'Ymd', get_field( 'event_date' ) );
+$date = \DateTime::createFromFormat( 'Ymd', get_field( 'event_date' ) );
 $args = array(
 
 	'posts_per_page' => $limit,
@@ -61,7 +63,7 @@ $args = array(
 
 );
 
-	$the_query = new WP_Query( $args );
+	$the_query = new \WP_Query( $args );
 
 // Removes button start.
 $ajaxLength = $the_query->post_count;

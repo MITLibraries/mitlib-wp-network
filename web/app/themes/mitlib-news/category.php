@@ -6,11 +6,13 @@
  * @since Twenty Twelve 1.0
  */
 
+namespace Mitlib\News;
+
 get_header();
 
 
 
-$date = DateTime::createFromFormat( 'Ymd', get_field( 'event_date' ) );
+$date = \DateTime::createFromFormat( 'Ymd', get_field( 'event_date' ) );
 ?>
 <?php get_template_part( 'inc/sub-header' ); ?>
 

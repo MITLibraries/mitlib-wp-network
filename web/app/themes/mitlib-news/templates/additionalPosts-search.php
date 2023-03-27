@@ -7,6 +7,8 @@
  * @since 1.0
  */
 
+namespace Mitlib\News;
+
 ?>
 
 <?php
@@ -30,7 +32,7 @@ $(document).ready(function() {
 });	
 </script>
 <?php
-$date = DateTime::createFromFormat( 'Ymd', get_field( 'event_date' ) );
+$date = \DateTime::createFromFormat( 'Ymd', get_field( 'event_date' ) );
 ?>
 <?php
 
@@ -59,7 +61,7 @@ foreach ( $query_args as $key => $string ) {
 	}
 } // foreach
 
-$the_query = new WP_Query( $search_args );
+$the_query = new \WP_Query( $search_args );
 // The set_search() function is defined above.
 set_search( $the_query );
 

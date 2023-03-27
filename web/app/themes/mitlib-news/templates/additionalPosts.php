@@ -7,6 +7,8 @@
  * @since 1.0
  */
 
+namespace Mitlib\News;
+
 ?>
 
 <script type="text/javascript">
@@ -19,7 +21,7 @@ $(document).ready(function() {
 });	
 </script>
 <?php
-$date = DateTime::createFromFormat( 'Ymd', get_field( 'event_date' ) );
+$date = \DateTime::createFromFormat( 'Ymd', get_field( 'event_date' ) );
 
 ?>
 <?php
@@ -47,7 +49,7 @@ if ( '' == $limit ) {
 
 	);
 
-	$the_query = new WP_Query( $args );
+	$the_query = new \WP_Query( $args );
 
 
 	?>

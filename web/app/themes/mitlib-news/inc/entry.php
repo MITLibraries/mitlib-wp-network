@@ -6,6 +6,8 @@
  * @since 1.1.11
  */
 
+namespace Mitlib\News;
+
 ?>
 		
 <div class="excerpt-post classCheck">

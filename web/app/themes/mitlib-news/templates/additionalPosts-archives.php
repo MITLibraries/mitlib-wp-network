@@ -7,6 +7,8 @@
  * @since 1.0.0
  */
 
+namespace Mitlib\News;
+
 ?>
 
 <script type="text/javascript">
@@ -46,7 +48,7 @@ if ( '' == $limit ) {
 
 
 	);
-	$the_query = new WP_Query( $args );
+	$the_query = new \WP_Query( $args );
 
 
 	?>

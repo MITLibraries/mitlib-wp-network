@@ -7,6 +7,8 @@
  * @since 1.0
  */
 
+namespace Mitlib\News;
+
 ?>
 		<?php
 
@@ -54,7 +56,7 @@
 
 		);
 
-		 $the_query = new WP_Query( $args2 );
+		 $the_query = new \WP_Query( $args2 );
 		?>
 
 
