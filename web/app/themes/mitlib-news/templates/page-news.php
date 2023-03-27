@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Bibliotech
+ * Template Name: News
  *
  * This template is used to display
  * latest News Posts
