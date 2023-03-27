@@ -9,9 +9,9 @@
  * @since 1.0
  */
 
-$pageRoot = getRoot( $post );
-$section = get_post( $pageRoot );
-$isRoot = $section->ID == $post->ID;
+// $pageRoot = getRoot( $post );
+// $section = get_post( $pageRoot );
+// $isRoot = $section->ID == $post->ID;
 get_header(); ?>
 <?php get_template_part( 'inc/sub-header' ); ?>
 <?php get_template_part( 'inc/bib-header' ); ?>
