@@ -2,9 +2,11 @@
 /**
  * The template for displaying archive-type pages for posts by an author.
  *
- * @package MITLibraries-News
- * @since Twenty Twelve 1.0
+ * @package MITlib_News
+ * @since 0.2.0
  */
+
+namespace Mitlib\News;
 
 get_header(); ?>
 
@@ -43,7 +45,7 @@ get_header(); ?>
 				rewind_posts();
 			?>
 
-			<?php twentytwelve_content_nav( 'nav-above' ); ?>
+			<?php \Mitlib\Parent\content_nav( 'nav-above' ); ?>
 
 			<?php
 
@@ -90,7 +92,8 @@ get_header(); ?>
 				if ( ( '' != get_field( 'external_link' ) ) && 'spotlights' == $post->post_type ) {
 					the_field( 'external_link' );
 				} else {
-					echo get_post_permalink();}
+					echo esc_url( get_post_permalink() );
+				}
 				?>
 		"'>
 		  
@@ -138,7 +141,7 @@ get_header(); ?>
 					  $category = get_the_category();
 					  $rCat = count( $category );
 					  $r = rand( 0, $rCat - 1 );
-					  echo '<a title="' . $category[ $r ]->cat_name . '"  title="' . $category[ $r ]->cat_name . '" href="' . get_category_link( $category[ $r ]->term_id ) . '">' . $category[ $r ]->cat_name . '</a>';
+					  echo '<a title="' . esc_attr( $category[ $r ]->cat_name ) . '" href="' . esc_url( get_category_link( $category[ $r ]->term_id ) ) . '">' . esc_html( $category[ $r ]->cat_name ) . '</a>';
 				}
 				?>
 		  <span class="mitDate">
