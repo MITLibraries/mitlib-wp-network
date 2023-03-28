@@ -9,6 +9,12 @@
 namespace Mitlib\News;
 
 /**
+ * We use lib/cards.php to define a handful of functions which together
+ * render content in this theme in card format.
+ */
+require_once( 'lib/cards.php' );
+
+/**
  * Register and selectively enqueue stylesheets needed for the current page.
  */
 function news_scripts_styles() {
@@ -61,3 +67,24 @@ function admin_styles() {
 	}
 }
 add_action( 'admin_head', 'Mitlib\News\admin_styles' );
+
+/**
+ * This function trims a WP excerpt at a word limit defined by $limit. If no
+ * limit (or a negative number) is received, the entire excerpt is returned.
+ *
+ * @param int $limit The number of words requested.
+ */
+function excerpt( $limit = 0 ) {
+	$excerpt = get_the_excerpt();
+	if ( $limit > 0 ) {
+		$excerpt = explode( ' ', get_the_excerpt(), $limit );
+		if ( count( $excerpt ) >= $limit ) {
+			array_pop( $excerpt );
+			$excerpt = implode( ' ', $excerpt ) . '...';
+		} else {
+			$excerpt = implode( ' ', $excerpt );
+		}
+	}
+	$excerpt = preg_replace( '`\[[^\]]*\]`', '', $excerpt );
+	return $excerpt;
+}
