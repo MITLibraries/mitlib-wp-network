@@ -1,10 +1,11 @@
 <?php
 /**
- * This template loads additional Posts if any exist by Category.
  * Template Name: Additional Posts - Category
  *
- * @package MITLibraries-News
- * @since 1.0
+ * This template loads additional Posts if any exist by Category.
+ *
+ * @package MITlib_News
+ * @since 0.1.0
  */
 
 namespace Mitlib\News;
@@ -30,20 +31,19 @@ $date = \DateTime::createFromFormat( 'Ymd', get_field( 'event_date' ) );
 <?php
 
 global $post;
-$categoryId = $_GET['categoryID'];
-
-
-
-
-
-	$offset = htmlspecialchars( trim( $_GET['offset'] ) );
-if ( '' == $offset ) {
-	$offset = 21;
+$category_id = 3; // 3 is the "All news" value.
+if ( isset( $_GET['categoryID'] ) ) {
+	$category_id = sanitize_key( $_GET['categoryID'] );
 }
 
-	 $limit = htmlspecialchars( trim( $_GET['limit'] ) );
-if ( '' == $limit ) {
-	$limit = 9;
+$offset = 21;
+if ( isset( $_GET['offset'] ) ) {
+	$offset = sanitize_key( $_GET['offset'] );
+}
+
+$limit = 9;
+if ( isset( $_GET['limit'] ) ) {
+	$limit = sanitize_key( $_GET['limit'] );
 }
 
 
@@ -51,7 +51,7 @@ if ( '' == $limit ) {
 	$args = array(
 		'posts_per_page'      => $limit,
 		'post_type'               => 'post',
-		'cat'                 => $categoryId,
+		'cat'                 => $category_id,
 		'offset'              => 21,
 		'post__not_in'        => get_option( 'sticky_posts' ),
 		'ignore_sticky_posts' => 1,
