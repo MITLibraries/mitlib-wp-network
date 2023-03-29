@@ -1,27 +1,27 @@
 <?php
 /**
- * This template loads additional News posts if any exist.
  * Template Name: Additional Posts - News
  *
- * @package MITLibraries-News
- * @since 1.0
+ * This template loads additional News posts if any exist.
+ *
+ * @package MITlib_News
+ * @since 0.1.0
  */
 
 namespace Mitlib\News;
 
 ?>
-		<?php
+<?php
+$offset = 9;
+if ( isset( $_GET['offset'] ) ) {
+	$offset = sanitize_key( $_GET['offset'] );
+}
 
-			$offset = htmlspecialchars( trim( $_GET['offset'] ) );
-		if ( '' == $offset ) {
-			$offset = 9;
-		}
-
-			 $limit = htmlspecialchars( trim( $_GET['limit'] ) );
-		if ( '' == $limit ) {
-			$limit = 9;
-		}
-		?>
+$limit = 9;
+if ( isset( $_GET['limit'] ) ) {
+	$limit = sanitize_key( $_GET['limit'] );
+}
+?>
 
 		<script type="text/javascript">
 		$(document).ready(function() {
