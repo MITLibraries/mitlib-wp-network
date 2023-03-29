@@ -2,9 +2,11 @@
 /**
  * Template-part displays the SUBTITLE on CARDS.
  *
- * @package MITLibraries-News
- * @since 1.1.11
+ * @package MITlib_News
+ * @since 0.2.0
  */
+
+namespace Mitlib\News;
 
 ?>
 	
