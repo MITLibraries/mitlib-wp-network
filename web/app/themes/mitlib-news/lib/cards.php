@@ -95,7 +95,7 @@ function render( $post, $i, $type ) {
 		'</span>';
 	}
 	?>
-	<div id="theBox" class="<?php echo $outerClasses; ?>">
+	<div id="theBox" class="<?php echo esc_attr( $outerClasses ); ?>">
 	<div class="<?php echo esc_attr( $inner_classes ); ?>" onClick='location.href="<?php echo esc_url( $card_url ); ?>"'>
 
 	  <?php get_template_part( 'inc/spotlights' ); ?>
@@ -108,9 +108,13 @@ function render( $post, $i, $type ) {
 
 	  <?php get_template_part( 'inc/entry' ); ?>
 
-	  <div class="<?php echo $categoryClasses; ?>">
-		<?php echo $categoryMarkup; ?>
-		<?php echo $dateMarkup; ?>
+	  <div class="<?php echo esc_attr( $categoryClasses ); ?>">
+		<?php
+		// phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped -- This would need wpkses to escape properly.
+		echo $categoryMarkup;
+		echo $dateMarkup;
+		// phpcs:enable -- Start scanning again.
+		?>
 	  </div>
 
 	</div>
