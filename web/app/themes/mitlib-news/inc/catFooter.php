@@ -2,9 +2,11 @@
 /**
  * Template-part for displaying FOOTER on featured/sticky + Bibliotech CARDS.
  *
- * @package MITLibraries-News
- * @since 1.1.11
+ * @package MITlib_News
+ * @since 0.2.0
  */
+
+namespace Mitlib\News;
 
 ?>
 
@@ -12,7 +14,7 @@
 	  <?php
 		$category = get_the_category();
 		if ( $category[0] ) {
-			echo '<a title="' . $category[0]->cat_name . '" href="' . get_category_link( $category[0]->term_id ) . '">' . $category[0]->cat_name . '</a>';
+			echo '<a title="' . esc_attr( $category[0]->cat_name ) . '" href="' . esc_url( get_category_link( $category[0]->term_id ) ) . '">' . esc_html( $category[0]->cat_name ) . '</a>';
 		}
 		?>
 	  <span class="mitDate"><?php echo get_the_date(); ?></span> 
