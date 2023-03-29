@@ -2,8 +2,8 @@
 /**
  * The template for displaying archive-type pages for posts in a category.
  *
- * @package MITLibraries-News
- * @since Twenty Twelve 1.0
+ * @package MITlib_News
+ * @since 0.2.0
  */
 
 namespace Mitlib\News;
@@ -73,7 +73,7 @@ $(document).ready(function() {
 		offset = offset+21;
 		$("#postContainer")
 			//.slideUp()
-			.load("/news/add-posts-category/?offset="+offset+"&limit="+limit+"&categoryID="+<?php echo $categoryID2; ?>+"", function() {
+			.load("/news/add-posts-category/?offset="+offset+"&limit="+limit+"&categoryID="+<?php echo esc_html( $categoryID2 ); ?>+"", function() {
 			 //.load("/news/test/?offset="+offset, function() {
 			   $(this).slideDown();
 			   
