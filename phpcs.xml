@@ -81,6 +81,7 @@
   <exclude-pattern>web/app/plugins/tinymce-advanced</exclude-pattern>
   <exclude-pattern>web/app/plugins/types</exclude-pattern>
   <exclude-pattern>web/app/plugins/ultimate-posts-widget</exclude-pattern>
+  <exclude-pattern>web/app/plugins/what-the-file</exclude-pattern>
   <exclude-pattern>web/app/plugins/widget-context</exclude-pattern>
   <exclude-pattern>web/app/plugins/widget-css-classes</exclude-pattern>
   <exclude-pattern>web/app/plugins/widget-importer-exporter</exclude-pattern>
