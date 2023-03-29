@@ -2,9 +2,11 @@
 /**
  * Template-part for displaying social media icons in subheader.
  *
- * @package MITLibraries-News
- * @since 1.0
+ * @package MITlib_News
+ * @since 0.2.0
  */
+
+namespace Mitlib\News;
 
 ?>
 
