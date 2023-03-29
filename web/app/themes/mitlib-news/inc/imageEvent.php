@@ -2,9 +2,11 @@
 /**
  * Template-part for displaying IMAGES on CARDS fom Calendar.mit.edu.
  *
- * @package MITLibraries-News
- * @since 1.6.0
+ * @package MITlib_News
+ * @since 0.2.0
  */
+
+namespace Mitlib\News;
 
 ?>
 
