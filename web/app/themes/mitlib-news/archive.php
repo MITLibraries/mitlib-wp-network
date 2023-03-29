@@ -13,18 +13,20 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package MITLibraries-News
- * @since Twenty Twelve 1.0
+ * @package MITlib_News
+ * @since 0.2.0
  */
 
+namespace Mitlib\News;
+
 get_header();
-$date = DateTime::createFromFormat( 'Ymd', get_field( 'event_date' ) );
+$date = \DateTime::createFromFormat( 'Ymd', get_field( 'event_date' ) );
 
 
 ?>
 <?php get_template_part( 'inc/sub-header' ); ?>
 <?php
-if ( ( get_post_type( get_the_ID() ) == 'bibliotech' ) || ( cat_is_ancestor_of( 73, $cat ) or is_category( 73 ) ) ) {
+if ( ( get_post_type( get_the_ID() ) == 'bibliotech' ) || ( cat_is_ancestor_of( 73, $cat ) || is_category( 73 ) ) ) {
 	?>
 	<?php get_template_part( 'inc/bib-header' ); ?>
 <?php } ?>
@@ -64,7 +66,8 @@ if ( ( get_post_type( get_the_ID() ) == 'bibliotech' ) || ( cat_is_ancestor_of( 
 			if ( ( '' != get_field( 'external_link' ) ) && 'spotlights' == $post->post_type ) {
 				the_field( 'external_link' );
 			} else {
-				echo get_post_permalink();}
+				echo esc_url( get_post_permalink() );
+			}
 			?>
 		"'>
 
@@ -106,7 +109,7 @@ if ( ( get_post_type( get_the_ID() ) == 'bibliotech' ) || ( cat_is_ancestor_of( 
 		<div class="category-post">
 			<?php
 				$category = get_the_category();     if ( $category[0] ) {
-				echo '<a title="' . $category[0]->cat_name . '"  title="' . $category[0]->cat_name . '" href="' . get_category_link( $category[0]->term_id ) . '">' . $category[0]->cat_name . '</a>';
+				echo '<a title="' . esc_attr( $category[0]->cat_name ) . '" href="' . esc_url( get_category_link( $category[0]->term_id ) ) . '">' . esc_html( $category[0]->cat_name ) . '</a>';
 				}
 				?>
 		 <span class="mitDate">
