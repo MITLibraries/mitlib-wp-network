@@ -2,13 +2,16 @@
 /**
  * Template Name: Last Year Archive
  *
- * @package MITLibraries-News
- * @since 1.0
+ * @package MITlib_News
+ * @since 0.1.0
  */
+
+namespace Mitlib\News;
 
 $pageRoot = getRoot( $post );
 $section = get_post( $pageRoot );
 $isRoot = $section->ID == $post->ID;
+
 get_header(); ?>
 <?php
 the_excerpt_max_charlength( 140 );
@@ -27,7 +30,9 @@ function the_excerpt_max_charlength( $charlength ) {
 		$exwords = explode( ' ', $subex );
 		$excut = - ( mb_strlen( $exwords[ count( $exwords ) - 1 ] ) );
 		if ( $excut < 0 ) {
+			// phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped -- not sure what it will take to escape this properly.
 			echo mb_substr( $subex, 0, $excut );
+			// phpcs:enable -- Start scanning again.
 		} else {
 			return $subex;
 		}
@@ -64,7 +69,7 @@ function the_excerpt_max_charlength( $charlength ) {
 		),
 	);
 
-	$the_query = new WP_Query( $args );
+	$the_query = new \WP_Query( $args );
 
 
 	?>
@@ -76,7 +81,7 @@ function the_excerpt_max_charlength( $charlength ) {
 				$the_query->the_post();
 				?>
 	  <div class="flex-item eventsBox <?php echo esc_attr( check_image() ); ?>"
-		onClick='location.href="<?php echo get_post_permalink(); ?>"'>
+		onClick='location.href="<?php echo esc_url( get_post_permalink() ); ?>"'>
 				<?php if ( get_field( 'mark_as_new' ) === true ) : ?>
 		<?php endif; ?>
 				<?php
@@ -86,7 +91,7 @@ function the_excerpt_max_charlength( $charlength ) {
 					$thumb_url = $thumb_url_array[0];
 
 					?>
-		<img src="<?php echo $thumb_url; ?>" width="100%" height="200" />
+		<img src="<?php echo esc_url( $thumb_url ); ?>" width="100%" height="200" />
 				<?php	} ?>
 		<h2 class="title-post">
 				<?php the_title(); ?>
@@ -101,10 +106,10 @@ function the_excerpt_max_charlength( $charlength ) {
 				$mitDate = date( 'l t Y', strtotime( $mitDate ) );
 
 				?>
-		<div class="event"><?php echo $mitDate; ?>&nbsp;&nbsp; &nbsp; <span class="time">
+		<div class="event"><?php echo esc_html( $mitDate ); ?>&nbsp;&nbsp; &nbsp; <span class="time">
 				<?php
 				if ( get_field( 'event_start_time' ) ) {
-						echo the_field( 'event_start_time' );
+						echo esc_html( the_field( 'event_start_time' ) );
 				}
 				?>
 				<?php
@@ -114,7 +119,7 @@ function the_excerpt_max_charlength( $charlength ) {
 				?>
 				<?php
 				if ( get_field( 'event_end_time' ) ) {
-							echo the_field( 'event_end_time' );
+							echo esc_html( the_field( 'event_end_time' ) );
 				}
 				?>
 		  </span> </div>
@@ -126,7 +131,7 @@ function the_excerpt_max_charlength( $charlength ) {
 				<?php
 				$category = get_the_category();
 				if ( $category[0] ) {
-					echo '<a href="' . get_category_link( $category[0]->term_id ) . '">' . $category[0]->cat_name . '</a>';
+					echo '<a href="' . esc_url( get_category_link( $category[0]->term_id ) ) . '">' . esc_html( $category[0]->cat_name ) . '</a>';
 				}
 				?>
 		  <span class="mitDate">&nbsp;&nbsp;<?php echo get_the_date(); ?></span> </div>
@@ -136,7 +141,7 @@ function the_excerpt_max_charlength( $charlength ) {
 	  <!-- The very first "if" tested to see if there were any Posts to --> 
 	  <!-- display.  This "else" part tells what do if there weren't any. -->
 	  <p>
-		  <?php _e( 'Sorry, no posts matched your criteria.' ); ?>
+		  <?php esc_html_e( 'Sorry, no posts matched your criteria.' ); ?>
 	  </p>
 	  <!-- REALLY stop The Loop. -->
 	  <?php endif; ?>

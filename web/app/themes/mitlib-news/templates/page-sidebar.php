@@ -5,9 +5,11 @@
  * This template is used to display
  * page content with sidebar
  *
- * @package MITLibraries-News
- * @since 1.3
+ * @package MITlib_News
+ * @since 0.1.0
  */
+
+namespace Mitlib\News;
 
 get_header(); ?>
 

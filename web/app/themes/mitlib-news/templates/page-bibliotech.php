@@ -5,9 +5,11 @@
  * This template is used to display
  * latest Bibliotech Posts
  *
- * @package MITLibraries-News
- * @since 1.0
+ * @package MITlib_News
+ * @since 0.1.0
  */
+
+namespace Mitlib\News;
 
 // $pageRoot = getRoot( $post );
 // $section = get_post( $pageRoot );
@@ -32,7 +34,7 @@ $args = array(
 	'orderby'                => 'date',
 	'suppress_filters' => false,
 );
-$query2 = new WP_Query( $args );
+$query2 = new \WP_Query( $args );
 if ( $query2->have_posts() ) :
 	while ( $query2->have_posts() ) :
 		$query2->the_post();
@@ -72,10 +74,10 @@ if ( $query2->have_posts() ) :
 				'order'               => 'DESC',
 				'suppress_filters'    => false,
 			);
-			$my_query = new WP_Query( $args );
+			$my_query = new \WP_Query( $args );
 			$m = -1;
 			// Getting length.
-			$theLength = $my_query->post_count;
+			$the_length = $my_query->post_count;
 			while ( $my_query->have_posts() ) {
 				$m++;
 				$my_query->the_post();
@@ -89,7 +91,7 @@ if ( $query2->have_posts() ) :
 	<?php
 
 
-	if ( $theLength > 8 ) {
+	if ( $the_length > 8 ) {
 
 			get_template_part( 'inc/more-posts' );
 
@@ -99,7 +101,7 @@ if ( $query2->have_posts() ) :
 </div>
 <script>
 $(document).ready(function() {
-	var theLength = "<?php echo $theLength; ?>";
+	var theLength = "<?php echo esc_html( $the_length ); ?>";
 	var offset = 11;
 	var limit = 9;
 	//$("#postContainer").load("/news/add-bibliotech-posts/");
