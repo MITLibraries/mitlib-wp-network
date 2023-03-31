@@ -92,6 +92,17 @@ function prune_inherited_templates( $page_templates ) {
 add_filter( 'theme_page_templates', 'Mitlib\News\prune_inherited_templates' );
 
 /**
+ * Remove unwanted widget areas inherited from the Parent theme.
+ */
+function remove_parent_widgets() {
+	unregister_sidebar( 'sidebar-2' );
+	unregister_sidebar( 'sidebar-3' );
+	unregister_sidebar( 'sidebar-search' );
+	unregister_sidebar( 'sidebar-hours' );
+}
+add_action( 'widgets_init', 'Mitlib\News\remove_parent_widgets', 11 );
+
+/**
  * ============================================================================
  * ============================================================================
  * These functions are defined here, without adding them via add_action. They
