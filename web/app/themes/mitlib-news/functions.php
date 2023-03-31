@@ -69,6 +69,36 @@ function admin_styles() {
 add_action( 'admin_head', 'Mitlib\News\admin_styles' );
 
 /**
+ * Remove parent theme page templates.
+ *
+ * The Parent theme includes a number of page templates which are meant for only
+ * one page, and which are not relevant to the News theme. This function removes
+ * those irrelevant templates from the list of available options shown to page
+ * editors within the News theme.
+ *
+ * @param array $page_templates The list of available page templates in the theme.
+ */
+function prune_inherited_templates( $page_templates ) {
+	unset( $page_templates['templates/page-featured-news.php'] );
+	unset( $page_templates['templates/page-home.php'] );
+	unset( $page_templates['templates/page-hours.php'] );
+	unset( $page_templates['templates/page-location-2021.php'] );
+	unset( $page_templates['templates/page-location.php'] );
+	unset( $page_templates['templates/page-map-locations.php'] );
+	unset( $page_templates['templates/page-study-spaces.php'] );
+
+	return $page_templates;
+}
+add_filter( 'theme_page_templates', 'Mitlib\News\prune_inherited_templates' );
+
+/**
+ * ============================================================================
+ * ============================================================================
+ * These functions are defined here, without adding them via add_action. They
+ * may be called by the templates within the theme.
+ */
+
+/**
  * This function trims a WP excerpt at a word limit defined by $limit. If no
  * limit (or a negative number) is received, the entire excerpt is returned.
  *
