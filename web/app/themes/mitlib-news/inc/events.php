@@ -2,15 +2,17 @@
 /**
  * This template-part displays EVENT date/times on CARDS.
  *
- * @package MITLibraries-News
- * @since 1.0
+ * @package MITlib_News
+ * @since 0.2.0
  */
+
+namespace Mitlib\News;
 
 ?>
 
 		  <?php
 			if ( get_field( 'event_date' ) ) {
-				$date = DateTime::createFromFormat( 'Ymd', get_field( 'event_date' ) );
+				$date = \DateTime::createFromFormat( 'Ymd', get_field( 'event_date' ) );
 
 				?>
 		  <!--EVENT --> 
@@ -35,11 +37,11 @@
 </g>
 </svg>
 </span>    
-		  <span class="event"><?php echo $date->format( 'F j, Y' ); ?></span> 
+		  <span class="event"><?php echo esc_html( $date->format( 'F j, Y' ) ); ?></span> 
 		  <span class="time">
 				<?php
 				if ( get_field( 'event_start_time' ) ) {
-					echo the_field( 'event_start_time' );
+					echo esc_html( the_field( 'event_start_time' ) );
 				}
 				?>
 				<?php
@@ -49,7 +51,7 @@
 				?>
 				<?php
 				if ( get_field( 'event_end_time' ) ) {
-					echo the_field( 'event_end_time' );
+					echo esc_html( the_field( 'event_end_time' ) );
 				}
 				?>
 			</span> 

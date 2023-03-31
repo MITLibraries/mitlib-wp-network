@@ -5,9 +5,11 @@
  * This template is used to display
  * latest Events Posts
  *
- * @package MITLibraries-News
- * @since 1.0
+ * @package MITlib_News
+ * @since 0.1.0
  */
+
+namespace Mitlib\News;
 
 // $pageRoot = getRoot( $post );
 // $section = get_post( $pageRoot );
@@ -20,7 +22,7 @@ get_header(); ?>
 
 	<?php
 
-	$date = DateTime::createFromFormat( 'Ymd', get_field( 'event_date' ) );
+	$date = \DateTime::createFromFormat( 'Ymd', get_field( 'event_date' ) );
 
 	/*
 	* The event sort is two-fold:
@@ -54,7 +56,7 @@ get_header(); ?>
 		),
 
 	);
-	$the_future = new WP_Query( $future );
+	$the_future = new \WP_Query( $future );
 	$future_posts = (array) $the_future->posts;
 
 	$past = array(
@@ -84,7 +86,7 @@ get_header(); ?>
 
 	);
 
-	$the_past = new WP_Query( $past );
+	$the_past = new \WP_Query( $past );
 	$past_posts = (array) $the_past->posts;
 
 	// Archived events tagged by "oldevents".
@@ -99,7 +101,7 @@ get_header(); ?>
 		'orderby' => 'post_date',
 
 	);
-	$the_archive = new WP_Query( $archive );
+	$the_archive = new \WP_Query( $archive );
 	$archive_posts = (array) $the_archive->posts;
 
 	?>

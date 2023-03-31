@@ -2,9 +2,11 @@
 /**
  * This template-part loads the additional subheader for *bibliotech* PAGES.
  *
- * @package MITLibraries-News
- * @since 1.0
+ * @package MITlib_News
+ * @since 0.2.0
  */
+
+namespace Mitlib\News;
 
 ?>
 
@@ -39,10 +41,10 @@ foreach ( $menuitems as $m ) {
 	?>
 <option
 	<?php
-	if ( $_SERVER['SCRIPT_URI'] == $m->url ) {
-		echo 'selected';}
+	if ( trailingslashit( home_url( add_query_arg( array(), $wp->request ) ) ) == $m->url ) {
+		echo 'selected="selected"';}
 	?>
-	 value="<?php echo $m->url; ?>"><?php echo $m->title; ?></option>
+	 value="<?php echo esc_url( $m->url ); ?>"><?php echo esc_html( $m->title ); ?></option>
 <?php	} ?>
 </select>
 		</div><!--bibliobox-->

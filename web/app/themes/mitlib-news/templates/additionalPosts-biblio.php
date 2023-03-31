@@ -1,10 +1,11 @@
 <?php
 /**
- * This template loads additional Bibliotech posts if any exist.
  * Template Name: Additional Posts - Bibliotech
  *
- * @package MITLibraries-News
- * @since 1.0
+ * This template loads additional Bibliotech posts if any exist.
+ *
+ * @package MITlib_News
+ * @since 0.1.0
  */
 
 namespace Mitlib\News;
@@ -22,16 +23,14 @@ $(document).ready(function() {
 </script>
 
 <?php
-
-
-	$offset = htmlspecialchars( trim( $_GET['offset'] ) );
-if ( '' == $offset ) {
-	$offset = 10;
+$offset = 10;
+if ( isset( $_GET['offset'] ) ) {
+	$offset = sanitize_key( $_GET['offset'] );
 }
 
-	 $limit = htmlspecialchars( trim( $_GET['limit'] ) );
-if ( '' == $limit ) {
-	$limit = 9;
+$limit = 9;
+if ( isset( $_GET['limit'] ) ) {
+	$limit = sanitize_key( $_GET['limit'] );
 }
 
 

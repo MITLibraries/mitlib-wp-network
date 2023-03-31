@@ -2,9 +2,11 @@
 /**
  * The template for displaying archive-type pages for posts by an author.
  *
- * @package MITLibraries-News
- * @since Twenty Twelve 1.0
+ * @package MITlib_News
+ * @since 0.2.0
  */
+
+namespace Mitlib\News;
 
 get_header(); ?>
 
@@ -18,9 +20,8 @@ get_header(); ?>
 	  <div class="row">
 
 			<?php
-
-				/*
-				 Queue the first post, that way we know
+				/**
+				 * Queue the first post, that way we know
 				 * what author we're dealing with (if that is the case).
 				 *
 				 * We reset this later so we can run the loop
@@ -30,41 +31,21 @@ get_header(); ?>
 			?>
 
 			<header class="author-archive-header">
-				<h1 class="lib-header"><?php printf( 'Author: ' . '<strong>' . get_the_author( '', false ) . '</strong>' ); ?></h1>
+				<h1 class="lib-header">Author: <strong><?php printf( get_the_author( '', false ) ); ?></strong></h1>
 			</header><!-- .archive-header -->
 
 			<?php
-
-				/*
-				 Since we called the_post() above, we need to
+				/**
+				 * Since we called the_post() above, we need to
 				 * rewind the loop back to the beginning that way
 				 * we can run the loop properly, in full.
 				 */
 				rewind_posts();
 			?>
 
-			<?php twentytwelve_content_nav( 'nav-above' ); ?>
+			<?php \Mitlib\Parent\content_nav( 'nav-above' ); ?>
 
-			<?php
-
-			/*
-				If a user has filled out their description, show a bio on their entries.
-
-			if ( get_the_author_meta( 'description' ) ) : ?>
-			<div class="author-info">
-				<div class="author-avatar">
-					<?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'twentytwelve_author_bio_avatar_size', 60 ) ); ?>
-				</div><!-- .author-avatar -->
-				<div class="author-description">
-					<h2><?php printf( __( 'About %s', 'twentytwelve' ), get_the_author() ); ?></h2>
-					<p><?php the_author_meta( 'description' ); ?></p>
-				</div><!-- .author-description	-->
-			</div><!-- .author-info -->
-			<?php endif; ?>
-
-			<?php /* Start the Loop
-			*/
-			?>
+			<?php // Start the Loop. ?>
 			<div class="row">
 
 			
@@ -90,7 +71,8 @@ get_header(); ?>
 				if ( ( '' != get_field( 'external_link' ) ) && 'spotlights' == $post->post_type ) {
 					the_field( 'external_link' );
 				} else {
-					echo get_post_permalink();}
+					echo esc_url( get_post_permalink() );
+				}
 				?>
 		"'>
 		  
@@ -136,9 +118,8 @@ get_header(); ?>
 					echo "<div class='biblioPadding'>&nbsp;<a href='/news/bibliotech/' title='Bibliotech'>Bibliotech</a>";
 				} else {
 					  $category = get_the_category();
-					  $rCat = count( $category );
-					  $r = rand( 0, $rCat - 1 );
-					  echo '<a title="' . $category[ $r ]->cat_name . '"  title="' . $category[ $r ]->cat_name . '" href="' . get_category_link( $category[ $r ]->term_id ) . '">' . $category[ $r ]->cat_name . '</a>';
+					  $r = rand( 0, count( $category ) - 1 );
+					  echo '<a title="' . esc_attr( $category[ $r ]->cat_name ) . '" href="' . esc_url( get_category_link( $category[ $r ]->term_id ) ) . '">' . esc_html( $category[ $r ]->cat_name ) . '</a>';
 				}
 				?>
 		  <span class="mitDate">

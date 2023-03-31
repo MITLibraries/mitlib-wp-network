@@ -2,9 +2,11 @@
 /**
  * Template-part for displaying FOOTER on CARDS.
  *
- * @package MITLibraries-News
- * @since 1.1.11
+ * @package MITlib_News
+ * @since 0.2.0
  */
+
+namespace Mitlib\News;
 
 ?>
 
@@ -30,7 +32,7 @@
 		$category = get_the_category();
 		$rCat = count( $category );
 		$r = rand( 0, $rCat - 1 );
-		echo '<a title="' . $category[ $r ]->cat_name . '"  title="' . $category[ $r ]->cat_name . '" href="' . get_category_link( $category[ $r ]->term_id ) . '">' . $category[ $r ]->cat_name . '</a>';
+		echo '<a title="' . esc_attr( $category[ $r ]->cat_name ) . '" href="' . esc_url( get_category_link( $category[ $r ]->term_id ) ) . '">' . esc_html( $category[ $r ]->cat_name ) . '</a>';
 		?>
 	  <span class="mitDate">
 		<time class="updated"  datetime="<?php echo get_the_date(); ?>"><?php echo get_the_date(); ?></time>

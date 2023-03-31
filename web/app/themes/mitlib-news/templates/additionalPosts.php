@@ -1,10 +1,11 @@
 <?php
 /**
- * This template loads additional Posts if any exist from the homepage.
  * Template Name: Additional Posts
  *
- * @package MITLibraries-News
- * @since 1.0
+ * This template loads additional Posts if any exist from the homepage.
+ *
+ * @package MITlib_News
+ * @since 0.1.0
  */
 
 namespace Mitlib\News;
@@ -25,15 +26,14 @@ $date = \DateTime::createFromFormat( 'Ymd', get_field( 'event_date' ) );
 
 ?>
 <?php
-
-	$offset = htmlspecialchars( trim( $_GET['offset'] ) );
-if ( '' == $offset ) {
-	$offset = 9;
+$offset = 9;
+if ( isset( $_GET['offset'] ) ) {
+	$offset = sanitize_key( $_GET['offset'] );
 }
 
-	 $limit = htmlspecialchars( trim( $_GET['limit'] ) );
-if ( '' == $limit ) {
-	$limit = 9;
+$limit = 9;
+if ( isset( $_GET['limit'] ) ) {
+	$limit = sanitize_key( $_GET['limit'] );
 }
 
 

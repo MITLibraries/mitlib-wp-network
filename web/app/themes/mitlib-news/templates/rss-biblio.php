@@ -5,9 +5,12 @@
  * This template is used to display
  * RSS feed for Biblio posts.
  *
- * @package MITLibraries-News
- * @since 1.0
+ * @package MITlib_News
+ * @since 0.1.0
+ * @link https://yoast.com/custom-rss-feeds-wordpress/
  */
+
+namespace Mitlib\News;
 
 $numposts = 5;
 
@@ -19,7 +22,7 @@ $numposts = 5;
  */
 function yoast_rss_date( $timestamp = null ) {
 	$timestamp = ( null == $timestamp ) ? time() : $timestamp;
-	echo date( DATE_RSS, $timestamp );
+	echo esc_html( date( DATE_RSS, $timestamp ) );
 }
 
 /**
@@ -48,7 +51,7 @@ $args = array(
 	'order'               => 'ASC',
 	'suppress_filters'    => false,
 );
-$the_query = new WP_Query( $args );
+$the_query = new \WP_Query( $args );
 $lastpost = $numposts - 1;
 header( 'Content-Type: application/rss+xml; charset=UTF-8' );
 echo '<?xml version="1.0"?>';
@@ -66,15 +69,19 @@ echo '<?xml version="1.0"?>';
 <?php
 while ( $the_query->have_posts() ) :
 	$the_query->the_post();
+	// phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped -- This is targeted at the yoast_rss_text_limit function below.
 	?>
 
 	<item>
-	<title><?php echo get_the_title( $post->ID ); ?></title>
-	<link><?php echo get_permalink( $post->ID ); ?></link>
-	<description><?php echo '<![CDATA[' . yoast_rss_text_limit( $post->post_content, 500 ) . '<br/><br/>Keep on reading: <a href="' . get_permalink( $post->ID ) . '">' . get_the_title( $post->ID ) . '</a>' . ']]>'; ?></description>
+	<title><?php echo esc_html( get_the_title( $post->ID ) ); ?></title>
+	<link><?php the_permalink_rss( $post->ID ); ?></link>
+	<description><?php echo '<![CDATA[' . yoast_rss_text_limit( $post->post_content, 500 ) . '<br/><br/>Keep on reading: <a href="' . esc_url( get_permalink( $post->ID ) ) . '">' . esc_html( get_the_title( $post->ID ) ) . '</a>' . ']]>'; ?></description>
 	<pubDate><?php yoast_rss_date( strtotime( $post->post_date_gmt ) ); ?></pubDate>
-	<guid><?php echo get_permalink( $post->ID ); ?></guid>
+	<guid><?php echo esc_url( get_permalink( $post->ID ) ); ?></guid>
 	</item>
-<?php endwhile; ?>
+<?php
+	// phpcs:enable -- Start scanning again.
+endwhile;
+?>
 </channel>
 </rss>

@@ -2,9 +2,11 @@
 /**
  * Template-part for displaying SUBHEADER on POSTS.
  *
- * @package MITLibraries-News
- * @since 1.0
+ * @package MITlib_News
+ * @since 0.2.0
  */
+
+namespace Mitlib\News;
 
 ?>
 

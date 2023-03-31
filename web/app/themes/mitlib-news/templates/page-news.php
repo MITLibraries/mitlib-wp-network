@@ -5,9 +5,11 @@
  * This template is used to display
  * latest News Posts
  *
- * @package MITLibraries-News
- * @since 1.0
+ * @package MITlib_News
+ * @since 0.1.0
  */
+
+namespace Mitlib\News;
 
 // $pageRoot = getRoot( $post );
 // $section = get_post( $pageRoot );
@@ -47,7 +49,7 @@ get_header(); ?>
 			),
 
 		);
-			$the_query = new WP_Query( $args );
+			$the_query = new \WP_Query( $args );
 		?>
 			   <?php
 				if ( $the_query->have_posts() ) :

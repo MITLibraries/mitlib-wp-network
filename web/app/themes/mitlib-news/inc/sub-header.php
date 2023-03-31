@@ -2,9 +2,11 @@
 /**
  * Template-part for displaying SUBHEADER on PAGES.
  *
- * @package MITLibraries-News
- * @since 1.0
+ * @package MITlib_News
+ * @since 0.2.0
  */
+
+namespace Mitlib\News;
 
 ?>
 
@@ -93,14 +95,13 @@ wp_nav_menu( $defaults );
 			'exclude'          => '44',
 			'exclude_tree'     => '44',
 		);
+		$select  = wp_dropdown_categories( $args );
+		$replace = "<select$1 onchange='return this.form.submit()'>";
+		$select  = preg_replace( '#<select([^>]*)>#', $replace, $select );
+		// phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped -- This would need wp_kses to escape properly (or a refactoring to avoid the regular expression).
+		echo $select;
+		// phpcs:enable -- Start scanning again.
 		?>
-
-		<?php $select  = wp_dropdown_categories( $args ); ?>
-		<?php $replace = "<select$1 onchange='return this.form.submit()'>"; ?>
-		<?php $select  = preg_replace( '#<select([^>]*)>#', $replace, $select ); ?>
-
-		<?php echo $select; ?>
-
 		<noscript>
 			<input type="submit" value="View" />
 		</noscript>

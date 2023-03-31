@@ -4,15 +4,11 @@
  * first is for sticky posts, followed by everything else. The two sections
  * are separated into two adjacent div elements.
  *
- * @package MITLibraries-News
- * @since Twenty Twelve 1.0
+ * @package MITlib_News
+ * @since 0.2.0
  */
 
 namespace Mitlib\News;
-
-// $pageRoot = getRoot( $post );
-// $section  = get_post( $pageRoot );
-// $isRoot   = $section->ID == $post->ID;
 
 /**
  * The $post_count variable is used to record how many stories were loaded

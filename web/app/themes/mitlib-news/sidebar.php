@@ -4,9 +4,11 @@
  *
  * If no active widgets in sidebar, let's hide it completely.
  *
- * @package MITLibraries-News
- * @since Twenty Twelve 1.0
+ * @package MITlib_News
+ * @since 0.2.0
  */
+
+namespace Mitlib\News;
 
 ?>
 	

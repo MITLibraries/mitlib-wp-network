@@ -12,12 +12,14 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package MITLibraries-News
- * @since 1.0
+ * @package MITlib_News
+ * @since 0.2.0
  */
 
+namespace Mitlib\News;
+
 get_header();
-$date = DateTime::createFromFormat( 'Ymd', get_field( 'event_date' ) );
+$date = \DateTime::createFromFormat( 'Ymd', get_field( 'event_date' ) );
 
 /**
  * Trim a post excerpt at a provided length.
@@ -33,7 +35,9 @@ function the_excerpt_max_charlength( $charlength ) {
 		$exwords = explode( ' ', $subex );
 		$excut = - ( mb_strlen( $exwords[ count( $exwords ) - 1 ] ) );
 		if ( $excut < 0 ) {
+			// phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped -- the excerpt in these posts could have a lot of markup, so there isn't a great way to escape it without a lot more work.
 			echo mb_substr( $subex, 0, $excut );
+			// phpcs:enable -- Start scanning again.
 		} else {
 			return $subex;
 		}
@@ -54,15 +58,15 @@ function the_excerpt_max_charlength( $charlength ) {
 	  <h2>
 		<?php
 		if ( is_day() ) :
-			printf( __( 'Daily Archives: %s', 'twentytwelve' ), '<span>' . get_the_date() . '</span>' );
-					elseif ( is_month() ) :
-						printf( __( 'Monthly Archives: %s', 'twentytwelve' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'twentytwelve' ) ) . '</span>' );
-					elseif ( is_year() ) :
-						printf( __( 'Yearly Archives: %s', 'twentytwelve' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'twentytwelve' ) ) . '</span>' );
-					else :
-						_e( 'Archives', 'twentytwelve' );
-					endif;
-					?>
+			printf( esc_html__( 'Daily Archives: %s', 'twentytwelve' ), '<span>' . get_the_date() . '</span>' );
+		elseif ( is_month() ) :
+			printf( esc_html__( 'Monthly Archives: %s', 'twentytwelve' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'twentytwelve' ) ) . '</span>' );
+		elseif ( is_year() ) :
+			printf( esc_html__( 'Yearly Archives: %s', 'twentytwelve' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'twentytwelve' ) ) . '</span>' );
+		else :
+			esc_html_e( 'Archives', 'twentytwelve' );
+		endif;
+		?>
 	  </h2>
 	</header>
 	<!-- .archive-header -->
@@ -72,7 +76,7 @@ function the_excerpt_max_charlength( $charlength ) {
 			the_post();
 			?>
 	  <div class="flex-item blueTop eventsBox <?php echo esc_attr( check_image() ); ?>"
-		onClick='location.href="<?php echo get_post_permalink(); ?>"'>
+		onClick='location.href="<?php echo esc_url( get_post_permalink() ); ?>"'>
 			<?php if ( get_field( 'mark_as_new' ) === true ) : ?>
 		<?php endif; ?>
 			<?php
@@ -82,7 +86,7 @@ function the_excerpt_max_charlength( $charlength ) {
 				$thumb_url = $thumb_url_array[0];
 
 				?>
-		<img src="<?php echo $thumb_url; ?>" width="100%" height="200" />
+		<img src="<?php echo esc_url( $thumb_url ); ?>" width="100%" height="200" />
 			<?php	} ?>
 		<h2 class="title-post">
 			<?php the_title(); ?>
@@ -95,7 +99,7 @@ function the_excerpt_max_charlength( $charlength ) {
 			<?php
 			$category = get_the_category();
 			if ( $category[0] ) {
-				echo '<a href="' . get_category_link( $category[0]->term_id ) . '">' . $category[0]->cat_name . '</a>';
+				echo '<a href="' . esc_url( get_category_link( $category[0]->term_id ) ) . '">' . esc_html( $category[0]->cat_name ) . '</a>';
 			}
 			?>
 		  <span class="mitDate">&nbsp;&nbsp;<?php echo get_the_date(); ?></span> 

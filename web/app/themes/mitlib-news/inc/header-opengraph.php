@@ -4,9 +4,11 @@
  *
  * This is an override of the same template from the Parent theme.
  *
- * @package MIT_Libraries_Parent
- * @since 1.6.5
+ * @package MITlib_News
+ * @since 0.2.0
  */
+
+namespace Mitlib\News;
 
 ?>
 <?php

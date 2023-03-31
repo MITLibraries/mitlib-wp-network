@@ -2,9 +2,11 @@
 /**
  * Template Name: Test Template
  *
- * @package MITLibraries-News
- * @since 1.0.0
+ * @package MITlib_News
+ * @since 0.1.0
  */
+
+namespace Mitlib\News;
 
 get_header();
 ?>
@@ -26,7 +28,7 @@ get_header();
 		'order'         => 'ASC',
 		'suppress_filters' => false,
 	);
-	$query2 = new WP_Query( $args );
+	$query2 = new \WP_Query( $args );
 	if ( $query2->have_posts() ) :
 		while ( $query2->have_posts() ) :
 			$query2->the_post();
@@ -34,11 +36,11 @@ get_header();
 
 			<?php if ( isset( $sticky[0] ) ) { ?>
 	<div class="row">
-			  <div class="col-md-8" onClick='location.href="<?php echo get_post_permalink(); ?>"' style="padding-right:0px;" > <?php echo get_currentuserinfo(); ?>
+			  <div class="col-md-8" onClick='location.href="<?php echo esc_url( get_post_permalink() ); ?>"' style="padding-right:0px;" > <?php echo esc_html( get_currentuserinfo() ); ?>
 
 					<img src="<?php the_field( 'featuredListImg' ); ?> "width="679" height="256" alt="<?php the_title(); ?>" /> 
 			 </div>
-			  <div class="bgWhite col-xs-12 col-sm-4 col-md-4" onClick='location.href="<?php echo get_post_permalink(); ?>"'>
+			  <div class="bgWhite col-xs-12 col-sm-4 col-md-4" onClick='location.href="<?php echo esc_url( get_post_permalink() ); ?>"'>
 			 <h2><?php the_title(); ?> </h2>
 		
 				<?php
@@ -46,10 +48,10 @@ get_header();
 					$mitDate = get_field( 'event_date' );
 					$mitDate = date( 'l t Y', strtotime( $mitDate ) );
 					?>
-		<div class="event"><?php echo $mitDate; ?>&nbsp;&nbsp; &nbsp; <span class="time">
+		<div class="event"><?php echo esc_html( $mitDate ); ?>&nbsp;&nbsp; &nbsp; <span class="time">
 					<?php
 					if ( get_field( 'event_start_time' ) ) {
-						echo the_field( 'event_start_time' );
+						echo esc_html( the_field( 'event_start_time' ) );
 					}
 					?>
 					<?php
@@ -59,7 +61,7 @@ get_header();
 					?>
 					<?php
 					if ( get_field( 'event_end_time' ) ) {
-							echo the_field( 'event_end_time' );
+							echo esc_html( the_field( 'event_end_time' ) );
 					}
 					?>
 		  </span> </div>
@@ -71,11 +73,13 @@ get_header();
 		<div class="excerpt-post">
 		  <p>
 					<?php
+					// phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped -- need wp_kses for this, and more time.
 					if ( excerpt() ) {
 						echo excerpt( 20 );
 					} elseif ( content() ) {
 						echo content( 20 );
 					}
+					// phpcs:enable -- Start scanning again.
 					?>
 		  </p>
 		</div>
@@ -83,7 +87,7 @@ get_header();
 				  <?php
 					$category = get_the_category();
 					if ( $category[0] ) {
-						echo '<a title="' . $category[0]->cat_name . '" href="' . get_category_link( $category[0]->term_id ) . '">' . $category[0]->cat_name . '</a>';
+						echo '<a title="' . esc_attr( $category[0]->cat_name ) . '" href="' . esc_url( get_category_link( $category[0]->term_id ) ) . '">' . esc_html( $category[0]->cat_name ) . '</a>';
 					}
 					?>
 		  <span class="mitDate">&nbsp;&nbsp;<?php echo get_the_date(); ?></span> 
@@ -117,7 +121,7 @@ get_header();
 			'suppress_filters' => false,
 
 		);
-		$the_query = new WP_Query( $args );
+		$the_query = new \WP_Query( $args );
 
 
 		?>
@@ -142,7 +146,8 @@ get_header();
 				if ( ( '' != get_field( 'external_link' ) ) && 'spotlights' == $post->post_type ) {
 					the_field( 'external_link' );
 				} else {
-					echo get_post_permalink();}
+					echo esc_url( get_post_permalink() );
+				}
 				?>
 		"'>
 				<?php if ( 'spotlights' == $post->post_type ) { ?>
@@ -162,13 +167,13 @@ get_header();
 			<!--/EVENT  DATE-->
 					<?php
 					if ( get_field( 'event_date' ) ) {
-						$date = DateTime::createFromFormat( 'Ymd', get_field( 'event_date' ) );
+						$date = \DateTime::createFromFormat( 'Ymd', get_field( 'event_date' ) );
 
 						?>
-		<div class="event"><?php echo $date->format( 'F, j Y' ); ?>&nbsp;&nbsp; &nbsp; <span class="time">
+		<div class="event"><?php echo esc_html( $date->format( 'F, j Y' ) ); ?>&nbsp;&nbsp; &nbsp; <span class="time">
 						<?php
 						if ( get_field( 'event_start_time' ) ) {
-								echo the_field( 'event_start_time' );
+								echo esc_html( the_field( 'event_start_time' ) );
 						}
 						?>
 						<?php
@@ -178,7 +183,7 @@ get_header();
 						?>
 						<?php
 						if ( get_field( 'event_end_time' ) ) {
-								echo the_field( 'event_end_time' );
+								echo esc_html( the_field( 'event_end_time' ) );
 						}
 						?>
 		  </span> </div>
@@ -193,7 +198,9 @@ get_header();
 
 
 					if ( ( $newsTitle >= 50 ) && has_excerpt( $post->ID ) ) {
+						// phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped -- need wp_kses for this.
 						echo excerpt( 30 );
+						// phpcs:enable -- Start scanning again.
 						echo 'excertp greater then';
 
 
@@ -216,18 +223,18 @@ get_header();
 					$thumb_url_array = wp_get_attachment_image_src( $thumb_id, 'thumbnail-size', true );
 					$thumb_url = $thumb_url_array[0];
 					?>
-		<img src="<?php echo $thumb_url; ?>" width="100%" height="200" />
+		<img src="<?php echo esc_url( $thumb_url ); ?>" width="100%" height="200" />
 		 <h2><?php the_title(); ?> </h2>
 			<!--/EVENT  DATE-->
 					<?php
 					if ( get_field( 'event_date' ) ) {
-						$date = DateTime::createFromFormat( 'Ymd', get_field( 'event_date' ) );
+						$date = \DateTime::createFromFormat( 'Ymd', get_field( 'event_date' ) );
 
 						?>
-		<div class="event"><?php echo $date->format( 'F, j Y' ); ?>&nbsp;&nbsp; &nbsp; <span class="time">
+		<div class="event"><?php echo esc_html( $date->format( 'F, j Y' ) ); ?>&nbsp;&nbsp; &nbsp; <span class="time">
 						<?php
 						if ( get_field( 'event_start_time' ) ) {
-							  echo the_field( 'event_start_time' );
+							  echo esc_html( the_field( 'event_start_time' ) );
 						}
 						?>
 						<?php
@@ -237,7 +244,7 @@ get_header();
 						?>
 						<?php
 						if ( get_field( 'event_end_time' ) ) {
-							  echo the_field( 'event_end_time' );
+							  echo esc_html( the_field( 'event_end_time' ) );
 						}
 						?>
 		  </span> </div>
@@ -247,11 +254,13 @@ get_header();
 		<div class="excerpt-post">
 		  <p class="entry-summary">
 					<?php
+					// phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped -- need wp_kses for this.
 					if ( excerpt() ) {
 							 echo excerpt( 15 );
 					} elseif ( content() ) {
 						echo content( 15 );
 					}
+					// phpcs:enable -- Start scanning again.
 					?>
 		  </p>
 		</div>
@@ -266,15 +275,15 @@ get_header();
 		 <!--/EVENT  DATE-->
 					<?php
 					if ( get_field( 'event_date' ) ) {
-							$date = DateTime::createFromFormat( 'Ymd', get_field( 'event_date' ) );
+							$date = \DateTime::createFromFormat( 'Ymd', get_field( 'event_date' ) );
 
 						?>
 		<div class="event">
 
-						<?php echo $date->format( 'F, j Y' ); ?>&nbsp;&nbsp; &nbsp; <span class="time">
+						<?php echo esc_html( $date->format( 'F, j Y' ) ); ?>&nbsp;&nbsp; &nbsp; <span class="time">
 						<?php
 						if ( get_field( 'event_start_time' ) ) {
-							echo the_field( 'event_start_time' );
+							echo esc_html( the_field( 'event_start_time' ) );
 						}
 						?>
 						<?php
@@ -284,7 +293,7 @@ get_header();
 						?>
 						<?php
 						if ( get_field( 'event_end_time' ) ) {
-								  echo the_field( 'event_end_time' );
+								  echo esc_html( the_field( 'event_end_time' ) );
 						}
 						?>
 		  </span> </div>
@@ -297,11 +306,13 @@ get_header();
 		<div class="excerpt-post">
 		  <p class="entry-summary">
 					<?php
+					// phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped -- need wp_kses for this.
 					if ( excerpt() ) {
 							 echo excerpt( 30 );
 					} elseif ( content() ) {
 						echo content( 30 );
 					}
+					// phpcs:enable -- Start scanning again.
 					?>
 		  </p>
 		</div>
@@ -330,7 +341,7 @@ get_header();
 
 					$rCat = count( $category );
 					$r = rand( 0, $rCat - 1 );
-					echo '<a title="' . $category[ $r ]->cat_name . '"  title="' . $category[ $r ]->cat_name . '" href="' . get_category_link( $category[ $r ]->term_id ) . '">' . $category[ $r ]->cat_name . '</a>';
+					echo '<a title="' . esc_attr( $category[ $r ]->cat_name ) . '" href="' . esc_url( get_category_link( $category[ $r ]->term_id ) ) . '">' . esc_html( $category[ $r ]->cat_name ) . '</a>';
 
 				}
 				?>

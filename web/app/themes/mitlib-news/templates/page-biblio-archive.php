@@ -5,9 +5,11 @@
  * This template is used to display the
  * Archive page of all Bibliotech issues
  *
- * @package MITLibraries-News
- * @since 1.0
+ * @package MITlib_News
+ * @since 0.1.0
  */
+
+namespace Mitlib\News;
 
 get_header();
 get_template_part( 'inc/sub-header' );

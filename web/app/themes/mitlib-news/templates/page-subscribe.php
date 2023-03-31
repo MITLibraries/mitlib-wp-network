@@ -2,15 +2,15 @@
 /**
  * Template Name: Subscribe
  *
- * @package MITLibraries-News
- * @since 1.0.0
+ * @package MITlib_News
+ * @since 0.1.0
  */
+
+namespace Mitlib\News;
 
 $pageRoot = getRoot( $post );
 $section = get_post( $pageRoot );
 $isRoot = $section->ID == $post->ID;
-
-
 
 get_header(); ?>
 	<div class="newsSubHeader clearfix">
@@ -60,19 +60,16 @@ get_header(); ?>
 		
 <div class="col-xs-12 col-xs-B-12 col-xs-B-12 col-sm-9 col-lg-9">
 	
-			<div class="title-page">
-				<?php if ( $isRoot ) : ?>
-				<h2><?php echo $section->post_title; ?></h2>
-				<?php else : ?>
-				<h2><a href="<?php echo get_permalink( $section->ID ); ?>"><?php echo $section->post_title; ?></a></h2>
-				<?php endif; ?>
-			</div>
 			
 		
 				
 		<?php if ( has_post_thumbnail() ) : ?>
 		<div class="featuredImage">
-			<?php echo the_post_thumbnail( 700, 300 ); ?>
+			<?php
+			// phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped -- Needs wp_kses to escape this, or a different native WP function.
+			echo the_post_thumbnail( 700, 300 );
+			// phpcs:enable -- Start scanning again.
+			?>
 		
 		</div>	
 		<?php endif; ?>

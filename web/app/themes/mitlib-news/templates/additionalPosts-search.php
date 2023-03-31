@@ -1,10 +1,11 @@
 <?php
 /**
- * This template loads additional Posts from search-results page if any exist.
  * Template Name: Additional Posts - Search
  *
- * @package MITLibraries-News
- * @since 1.0
+ * This template loads additional Posts from search-results page if any exist.
+ *
+ * @package MITlib_News
+ * @since 0.1.0
  */
 
 namespace Mitlib\News;
@@ -35,20 +36,23 @@ $(document).ready(function() {
 $date = \DateTime::createFromFormat( 'Ymd', get_field( 'event_date' ) );
 ?>
 <?php
-
-	$offset = htmlspecialchars( trim( $_GET['offset'] ) );
-if ( '' == $offset ) {
-	$offset = 9;
+$offset = 9;
+if ( isset( $_GET['offset'] ) ) {
+	$offset = sanitize_key( $_GET['offset'] );
 }
 
-	 $limit = htmlspecialchars( trim( $_GET['limit'] ) );
-if ( '' == $limit ) {
-	$limit = 9;
+$limit = 9;
+if ( isset( $_GET['limit'] ) ) {
+	$limit = sanitize_key( $_GET['limit'] );
 }
 
 // Build $search_args based on passed parameters
 // Based on https://codex.wordpress.org/Creating_a_Search_Page.
-$query_args = explode( '&', $_SERVER['QUERY_STRING'] );
+if ( isset( $_SERVER['QUERY_STRING'] ) ) {
+	// phpcs:disable WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- There is likely a better way to handle this, but I can't find it right now.
+	$query_args = explode( '&', wp_unslash( $_SERVER['QUERY_STRING'] ) );
+	// phpcs:enable -- Start scanning again.
+}
 $search_args = array(
 	'posts_per_page' => $limit,
 );
@@ -104,7 +108,8 @@ $("#another").hide();
 		if ( ( '' != get_field( 'external_link' ) ) && 'spotlights' == $post->post_type ) {
 			the_field( 'external_link' );
 		} else {
-			echo get_post_permalink();}
+			echo esc_url( get_post_permalink() );
+		}
 		?>
 		"'> 
 			<?php get_template_part( 'inc/spotlights' ); ?>
@@ -156,7 +161,7 @@ $("#another").hide();
 				$category = get_the_category();
 				$rCat = count( $category );
 				$r = rand( 0, $rCat - 1 );
-				echo '<a title="' . $category[ $r ]->cat_name . '"  title="' . $category[ $r ]->cat_name . '" href="' . get_category_link( $category[ $r ]->term_id ) . '">' . $category[ $r ]->cat_name . '</a>';
+				echo '<a title="' . esc_attr( $category[ $r ]->cat_name ) . '" href="' . esc_url( get_category_link( $category[ $r ]->term_id ) ) . '">' . esc_html( $category[ $r ]->cat_name ) . '</a>';
 			?>
 	 
 		  <span class="mitDate">
