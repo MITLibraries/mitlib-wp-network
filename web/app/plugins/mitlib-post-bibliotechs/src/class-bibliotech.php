@@ -63,8 +63,8 @@ class Bibliotech extends Base {
 	 */
 	public static function taxonomies() {
 		$labels = array(
-			'name'                       => _x( 'Bibliotechs', 'Taxonomy General Name', 'text_domain' ),
-			'singular_name'              => _x( 'Bibliotech', 'Taxonomy Singular Name', 'text_domain' ),
+			'name'                       => _x( 'Bibliotech Issues', 'Taxonomy General Name', 'text_domain' ),
+			'singular_name'              => _x( 'Bibliotech Issue', 'Taxonomy Singular Name', 'text_domain' ),
 			'menu_name'                  => __( 'Issues', 'text_domain' ),
 			'all_items'                  => __( 'All Issues', 'text_domain' ),
 			'parent_item'                => __( 'Parent Issue', 'text_domain' ),
