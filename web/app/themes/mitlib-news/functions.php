@@ -69,6 +69,19 @@ function admin_styles() {
 add_action( 'admin_head', 'Mitlib\News\admin_styles' );
 
 /**
+ * Add custom images for the news.
+ *
+ * @uses add_theme_support() To enable the theme's support for custom header
+ *                           images.
+ * @uses add_image_size() Registers a new image size for use by the theme.
+ */
+add_theme_support( 'post-thumbnails' );
+add_image_size( 'news-home', 111, 206, true ); // Hard Crop Mode.
+add_image_size( 'news-listing', 323, 111, true ); // Hard Crop Mode.
+add_image_size( 'news-feature', 657, 256, true ); // Hard Crop Mode.
+add_image_size( 'news-single', 451, 651, true ); // Hard Crop Mode.
+
+/**
  * Remove parent theme page templates.
  *
  * The Parent theme includes a number of page templates which are meant for only
