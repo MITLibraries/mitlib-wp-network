@@ -99,7 +99,7 @@
                 "operator": "==",
                 "value": "administrator"
             }
-        ],
+        ]
     ],
     "menu_order": 7,
     "position": "normal",
