@@ -116,6 +116,28 @@ function remove_parent_widgets() {
 add_action( 'widgets_init', 'Mitlib\News\remove_parent_widgets', 11 );
 
 /**
+ * Expands the category display, for categories that are not Bibliotech issues,
+ * to include content from all post types (Spotlights and Bibliotech articles,
+ * in addition to Posts).
+ *
+ * @param object $request A request object.
+ */
+function expand_category_scope( $request ) {
+	$vars = $request->query_vars;
+	if ( is_category() && ! is_category( 'bibliotech' ) && ! array_key_exists( 'post_type', $vars ) ) :
+		$vars = array_merge(
+			$vars,
+			array(
+				'post_type' => 'any',
+			)
+		);
+		$request->query_vars = $vars;
+	endif;
+	return $request;
+}
+add_filter( 'pre_get_posts', 'Mitlib\News\expand_category_scope' );
+
+/**
  * ============================================================================
  * ============================================================================
  * These functions are defined here, without adding them via add_action. They
