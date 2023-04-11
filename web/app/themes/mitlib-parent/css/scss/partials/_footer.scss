@@ -125,6 +125,7 @@
 		flex-wrap: wrap;
 		padding-left: 1.375em;
 		width: auto;
+		min-width: 12em;
 		@include bp-tablet--portrait {
 			flex-wrap: nowrap;
 			margin-bottom: .2em;
