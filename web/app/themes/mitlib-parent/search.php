@@ -2,6 +2,12 @@
 /**
  * The template for displaying Search Results pages.
  *
+ * We generally don't rely on this template for _most_ of our site search.
+ * However, the template remains to handle built in search functionality in
+ * WordPress.
+ *
+ * Example link that uses this template: `/?s=keyword`
+ *
  * @package MITlib_Parent
  * @since 0.2.0
  */

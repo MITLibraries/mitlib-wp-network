@@ -27,7 +27,7 @@ get_header();
 					<?php } else { ?>
 
 						<header class="entry-header">
-							<h1 class="entry-title">The requested content was not found.</h1>
+							<h1 class="entry-title">Sorry, that link doesn’t work anymore. Get help below!</h1>
 						</header>
 						<?php get_template_part( 'inc/site-search' ); ?>
 
