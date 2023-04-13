@@ -20,18 +20,14 @@
 		</div>
 	</form>
 
-	<h2>Browse our <a href="/site-search">A-Z index of pages</a> on this site.</h2>
+	<h2>Need help? <a href="/ask">Ask us!</a></h2>
 
-	<p>You can also check out these commonly-used resources:</p>
-
+	<p>Or try:</p>
 	<ul>
-		<li><a href="//libraries.mit.edu/quicksearch">Quick search: Books, articles, &amp; more at MIT</a></li>
-		<li><a href="//libguides.mit.edu/directory">Staff directory</a></li>
-		<li><a href="/research-guides">Research guides - databases by subject</a></li>
-		<li><a href="/shortcuts/">Shortcuts to frequently used pages</a></li>
+		<li><a href="/search">Quick search: Books, articles, films, archival material, and more</a></li>
+		<li><a href="/research-guides">Research guides &amp; expert librarians</a></li>
 		<li><a href="//web.mit.edu/search.html">MIT web site search</a></li>
 	</ul>
 
-	<p><a href="/ask">Need more help? Ask us!</a></p>
 
 </div><!-- .entry-content -->
