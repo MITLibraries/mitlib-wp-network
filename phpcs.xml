@@ -77,7 +77,6 @@
   <exclude-pattern>web/app/plugins/seamless-sticky-custom-post-types</exclude-pattern>
   <exclude-pattern>web/app/plugins/shortcode-variables</exclude-pattern>
   <exclude-pattern>web/app/plugins/slideshow-gallery</exclude-pattern>
-  <exclude-pattern>web/app/plugins/tablepress</exclude-pattern>
   <exclude-pattern>web/app/plugins/tinymce-advanced</exclude-pattern>
   <exclude-pattern>web/app/plugins/types</exclude-pattern>
   <exclude-pattern>web/app/plugins/ultimate-posts-widget</exclude-pattern>

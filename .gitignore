@@ -82,6 +82,8 @@ web/app/plugins/*
 !web/app/plugins/mitlib-post-events
 !web/app/plugins/mitlib-post-exhibits
 !web/app/plugins/mitlib-post-experts
+!web/app/plugins/mitlib-post-interviewees
+!web/app/plugins/mitlib-post-interviews
 !web/app/plugins/mitlib-post-locations
 !web/app/plugins/mitlib-post-site-news
 !web/app/plugins/mitlib-post-site-parent

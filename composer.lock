@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4de2d0be2427176ba20931cd2595f92f",
+    "content-hash": "bcde7db1616f5eef151f241c0b1f6d65",
     "packages": [
         {
             "name": "ConnectThink/WP-SCSS",
@@ -3149,24 +3149,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/shortcode-variables/"
-        },
-        {
-            "name": "wpackagist-plugin/tablepress",
-            "version": "1.14",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/tablepress/",
-                "reference": "tags/1.14"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/tablepress.1.14.zip"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/tablepress/"
         },
         {
             "name": "wpackagist-plugin/tinymce-advanced",
