@@ -28,6 +28,16 @@ require_once( 'navwalker.php' );
 require_once( 'lib/news.php' );
 
 /**
+ * Define custom query params. Right now this is just the `v` parameter used by
+ * the map template.
+ */
+function register_params() {
+	global $wp;
+	$wp->add_query_var( 'v' );
+}
+add_action( 'init', 'Mitlib\Parent\register_params' );
+
+/**
  * Sets up theme defaults and registers the various WordPress features that it
  * supports. This was function was borrowed from Twenty Twelve.
  *

@@ -12,13 +12,15 @@
 
 namespace Mitlib\Parent;
 
-// phpcs:disable WordPress.Security.ValidatedSanitizedInput.InputNotValidated -- need to properly receive 'v' parameter.
-$showMap = ( $_GET['v'] != '' ) && ( $_GET['v'] == 'map' ) ? 1 : 0;
-// phpcs:enable
+$v = get_query_var( 'v' );
+$show_map = 0;
+if ( 'map' == $v ) {
+	$show_map = 1;
+}
 
 get_header(); ?>
 	<script>
-		var showMap = <?php echo esc_js( $showMap ); ?>;
+		var showMap = <?php echo esc_js( $show_map ); ?>;
 	</script>	
 
 		<?php get_template_part( 'inc/breadcrumbs' ); ?>
