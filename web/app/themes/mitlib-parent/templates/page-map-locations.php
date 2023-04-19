@@ -57,13 +57,15 @@ get_header(); ?>
 
 							$mapImage = get_field( 'map_image' );
 
+							$val = '';
 							for ( $i = 1;$i <= $numMain;$i++ ) {
 								$img = get_field( 'main_image' . $i, $locationId );
 								if ( $img != '' ) {
 									$arMain[] = $img; }
 							}
-							$val = $arMain[ array_rand( $arMain ) ];
-							// $val = $arMain[0];
+							if ( 0 < count( $arMain ) ) {
+								$val = $arMain[ array_rand( $arMain ) ];
+							}
 							if ( $mapImage != '' ) {
 								// user override image.
 								$val = $mapImage;
