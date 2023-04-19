@@ -112,7 +112,7 @@
     "wpackagist-plugin/akismet": "^5.0",
     "wpackagist-plugin/antivirus": "^1.4",
     "wpackagist-plugin/black-studio-tinymce-widget": "^2.7",
-    "wpackagist-plugin/cf7-conditional-fields": "^2.2",
+    "wpackagist-plugin/cf7-conditional-fields": "2.2.3",
     "wpackagist-plugin/cf7-to-zapier": "^2.2",
     "wpackagist-plugin/classic-editor": "^1.6",
     "wpackagist-plugin/classic-widgets": "^0.3.0",

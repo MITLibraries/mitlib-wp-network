@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bcde7db1616f5eef151f241c0b1f6d65",
+    "content-hash": "8e7b2660a6b646edadb564198eb59d1d",
     "packages": [
         {
             "name": "ConnectThink/WP-SCSS",
@@ -2828,15 +2828,15 @@
         },
         {
             "name": "wpackagist-plugin/cf7-conditional-fields",
-            "version": "2.3.4",
+            "version": "2.2.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/cf7-conditional-fields/",
-                "reference": "tags/2.3.4"
+                "reference": "tags/2.2.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/cf7-conditional-fields.2.3.4.zip"
+                "url": "https://downloads.wordpress.org/plugin/cf7-conditional-fields.2.2.3.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -2918,15 +2918,15 @@
         },
         {
             "name": "wpackagist-plugin/contact-form-7",
-            "version": "5.7.4",
+            "version": "5.7.5.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/contact-form-7/",
-                "reference": "tags/5.7.4"
+                "reference": "tags/5.7.5.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/contact-form-7.5.7.4.zip"
+                "url": "https://downloads.wordpress.org/plugin/contact-form-7.5.7.5.1.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
