@@ -14,6 +14,8 @@
 
 namespace Mitlib\Parent;
 
+$gStudy24Url = '/study/24x7/';
+
 get_header(); ?>
 
 		<?php get_template_part( 'inc/breadcrumbs' ); ?>

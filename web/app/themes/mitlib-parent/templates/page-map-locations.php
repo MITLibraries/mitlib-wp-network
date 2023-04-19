@@ -18,6 +18,8 @@ if ( 'map' == $v ) {
 	$show_map = 1;
 }
 
+$gStudy24Url = '/study/24x7/';
+
 get_header(); ?>
 	<script>
 		var showMap = <?php echo esc_js( $show_map ); ?>;
