@@ -82,8 +82,10 @@ get_header(); ?>
 							$name = html_entity_decode( get_the_title() );
 
 							$displayPage = get_field( 'display_page' );
-							$pageID = $displayPage->ID;
-							$pageLink = get_permalink( $pageID );
+							$pageLink = get_permalink( $post );
+							if ( 'object' == gettype( $displayPage ) ) {
+								$pageLink = get_permalink( $displayPage->ID );
+							}
 							$directionsUrl = 'http://maps.google.com/maps?';
 							$directionsUrl .= 'daddr=' . $lat . ',' . $lng;
 							if ( $lat != '' && $lng != '' ) :
@@ -150,8 +152,10 @@ get_header(); ?>
 							$study24 = get_field( 'study_24' );
 
 							$displayPage = get_field( 'display_page' );
-							$pageID = $displayPage->ID;
-							$pageLink = get_permalink( $pageID );
+							$pageLink = get_permalink( $post );
+							if ( 'object' == gettype( $displayPage ) ) {
+								$pageLink = get_permalink( $displayPage->ID );
+							}
 
 							$temp = $post;
 							$post = $temp;
@@ -209,8 +213,10 @@ get_header(); ?>
 						$post = $temp;
 
 						$displayPage = get_field( 'display_page' );
-						$pageID = $displayPage->ID;
-						$pageLink = get_permalink( $pageID );
+						$pageLink = get_permalink( $post );
+						if ( 'object' == gettype( $displayPage ) ) {
+							$pageLink = get_permalink( $displayPage->ID );
+						}
 						?>
 						<li class="location-secondary">
 							<?php if ( 'stata' === $slug || 'building-9' === $slug ) : ?>
