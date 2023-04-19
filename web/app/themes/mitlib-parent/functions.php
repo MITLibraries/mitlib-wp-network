@@ -262,7 +262,7 @@ add_action( 'customize_preview_init', 'Mitlib\Parent\customize_preview_js' );
  * @link http://v2.wp-api.org/extending/modifying/
  * @link https://gist.github.com/rileypaulsen/9b4505cdd0ac88d5ef51#gistcomment-1622466
  */
-function mitlib_api_alter() {
+function api_alter() {
 	// Add custom fields to posts endpoint.
 	register_rest_field(
 		'post',
@@ -278,8 +278,19 @@ function mitlib_api_alter() {
 			'schema'          => null,
 		)
 	);
+
+	// Switch featured_media field from media ID to URL of the image.
+	register_rest_field(
+		'experts',
+		'featured_media',
+		array(
+			'get_callback'    => 'Mitlib\Parent\api_get_image',
+			'update_callback' => null,
+			'schema'          => null,
+		)
+	);
 }
-add_action( 'rest_api_init', 'Mitlib\Parent\mitlib_api_alter' );
+add_action( 'rest_api_init', 'Mitlib\Parent\api_alter' );
 
 /**
  * Registers our main widget areas.
@@ -417,6 +428,20 @@ add_filter( 'body_class', 'Mitlib\Parent\customize_body_class' );
  * These functions are defined here, without adding them via add_action. They
  * may be called by the templates within the theme.
  */
+
+/**
+ * Get the value of a specified field for use in the API. This function is
+ * called by api_alter above
+ *
+ * @param array  $object Details of current post.
+ * @param string $field_name Name of field.
+ *
+ * @return mixed
+ */
+function api_get_image( $object, $field_name ) {
+	$link = wp_get_attachment_image_src( $object[ $field_name ], 'thumbnail-size' );
+	return $link[0];
+}
 
 /**
  * Provides an alternative way for building a breadcrumb.
