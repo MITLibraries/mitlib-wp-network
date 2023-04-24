@@ -12,13 +12,17 @@
 
 namespace Mitlib\Parent;
 
-// phpcs:disable WordPress.Security.ValidatedSanitizedInput.InputNotValidated -- need to properly receive 'v' parameter.
-$showMap = ( $_GET['v'] != '' ) && ( $_GET['v'] == 'map' ) ? 1 : 0;
-// phpcs:enable
+$v = get_query_var( 'v' );
+$show_map = 0;
+if ( 'map' == $v ) {
+	$show_map = 1;
+}
+
+$gStudy24Url = '/study/24x7/';
 
 get_header(); ?>
 	<script>
-		var showMap = <?php echo esc_js( $showMap ); ?>;
+		var showMap = <?php echo esc_js( $show_map ); ?>;
 	</script>	
 
 		<?php get_template_part( 'inc/breadcrumbs' ); ?>
@@ -55,13 +59,15 @@ get_header(); ?>
 
 							$mapImage = get_field( 'map_image' );
 
+							$val = '';
 							for ( $i = 1;$i <= $numMain;$i++ ) {
 								$img = get_field( 'main_image' . $i, $locationId );
 								if ( $img != '' ) {
 									$arMain[] = $img; }
 							}
-							$val = $arMain[ array_rand( $arMain ) ];
-							// $val = $arMain[0];
+							if ( 0 < count( $arMain ) ) {
+								$val = $arMain[ array_rand( $arMain ) ];
+							}
 							if ( $mapImage != '' ) {
 								// user override image.
 								$val = $mapImage;
@@ -76,8 +82,10 @@ get_header(); ?>
 							$name = html_entity_decode( get_the_title() );
 
 							$displayPage = get_field( 'display_page' );
-							$pageID = $displayPage->ID;
-							$pageLink = get_permalink( $pageID );
+							$pageLink = get_permalink( $post );
+							if ( 'object' == gettype( $displayPage ) ) {
+								$pageLink = get_permalink( $displayPage->ID );
+							}
 							$directionsUrl = 'http://maps.google.com/maps?';
 							$directionsUrl .= 'daddr=' . $lat . ',' . $lng;
 							if ( $lat != '' && $lng != '' ) :
@@ -144,8 +152,10 @@ get_header(); ?>
 							$study24 = get_field( 'study_24' );
 
 							$displayPage = get_field( 'display_page' );
-							$pageID = $displayPage->ID;
-							$pageLink = get_permalink( $pageID );
+							$pageLink = get_permalink( $post );
+							if ( 'object' == gettype( $displayPage ) ) {
+								$pageLink = get_permalink( $displayPage->ID );
+							}
 
 							$temp = $post;
 							$post = $temp;
@@ -203,8 +213,10 @@ get_header(); ?>
 						$post = $temp;
 
 						$displayPage = get_field( 'display_page' );
-						$pageID = $displayPage->ID;
-						$pageLink = get_permalink( $pageID );
+						$pageLink = get_permalink( $post );
+						if ( 'object' == gettype( $displayPage ) ) {
+							$pageLink = get_permalink( $displayPage->ID );
+						}
 						?>
 						<li class="location-secondary">
 							<?php if ( 'stata' === $slug || 'building-9' === $slug ) : ?>

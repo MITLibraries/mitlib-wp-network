@@ -8,7 +8,7 @@
 
 namespace Mitlib\Parent;
 
-	global $gStudy24Url;
+	$gStudy24Url = '/study/24x7/';
 
 	$mapPage = '/locations/#!';
 
