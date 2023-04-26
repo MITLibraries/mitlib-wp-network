@@ -103,19 +103,6 @@ class Pull_Events_Plugin {
 	 *                         error log.
 	 */
 	public static function pull_events( $confirm = false ) {
-
-		/**
-		 * Before we do anything, make sure our timezone is set correctly based on
-		 * the site settings. Ideally we would store times and dates in their proper
-		 * format, but it was a legacy decision that they would be stored as
-		 * strings, rather than datetimes.
-		 *
-		 * TODO: Fix this more fundamentally.
-		 */
-		// phpcs:disable WordPress.DateTime.RestrictedFunctions.timezone_change_date_default_timezone_set -- temporarily ignore this problem.
-		date_default_timezone_set( get_option( 'timezone_string' ) );
-		// phpcs:enable -- begin scanning normally again.
-
 		$url = EVENTS_URL;
 		$result = file_get_contents( $url );
 		$events = json_decode( $result, true );
@@ -132,14 +119,18 @@ class Pull_Events_Plugin {
 					$calendar_id = $val['event']['event_instances'][0]['event_instance']['id'];
 					$start = strtotime( $val['event']['event_instances'][0]['event_instance']['start'] );
 					$startdate = gmdate( 'Ymd', $start );
-					$starttime = gmdate( 'h:i A', $start );
+					$workingtime = new DateTime( gmdate( 'h:i A', $start ) );
+					$workingtime->setTimezone( new DateTimeZone( get_option( 'timezone_string' ) ) );
+					$starttime = $workingtime->format( 'h:i A' );
 					$end = '';
 					$enddate = '';
 					$endtime = '';
 					if ( isset( $val['event']['event_instances'][0]['event_instance']['end'] ) ) {
 						$end = strtotime( $val['event']['event_instances'][0]['event_instance']['end'] );
 						$enddate = gmdate( 'Ymd', $end );
-						$endtime = gmdate( 'h:i A', $end );
+						$workingtime = new DateTime( gmdate( 'h:i A', $end ) );
+						$workingtime->setTimezone( new DateTimeZone( get_option( 'timezone_string' ) ) );
+						$endtime = $workingtime->format( 'h:i A' );
 					}
 				}
 				if ( isset( $val['event']['localist_url'] ) ) {
