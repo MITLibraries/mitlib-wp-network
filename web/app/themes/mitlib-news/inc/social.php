@@ -22,12 +22,6 @@ namespace Mitlib\News;
 		<span class="si_twitterBlue image_off"></span>
 		</a>
 		</li>
-		<li class="fb soc">
-		<a title="facebook"  href="//libraries.mit.edu/facebook" class="facebookLink">
-		<span class="si_facebook image_on"></span>
-		<span class="si_facebookBlue image_off"></span>
-		 </a>
-		</li>
 		<li class="ig soc">
 		<a title="Instagram"  href="//instagram.com/mitlibraries/">
 		<span class="si_instagram image_on"></span>

@@ -202,11 +202,6 @@ table.hrList tr:nth-child(even) {
 	color: rgb(153,153,153);
 }
 
-.facebookLink {
-	margin-top: 1px;
-	margin-right: 9px;
-}
-
 .no-padding-left {
 	padding-left: 0 !important;
 }
@@ -1468,7 +1463,7 @@ p.search {
 
 
 /*SRPITE*/
-.biblioHeader, .or_cog-25, .or_check-25, .bilbioTechIcon, .or_check-25, .or_star-25, .or_eye-25, .or_life-25, .or_pin-25, .or_sun-25, .or_thumb-25, .si_facebook, .si_facebookBlue, .si_instagram, .si_instagramBlue, .si_twitter, .si_twitterBlue, .info, .update, .searchIcon {
+.biblioHeader, .or_cog-25, .or_check-25, .bilbioTechIcon, .or_check-25, .or_star-25, .or_eye-25, .or_life-25, .or_pin-25, .or_sun-25, .or_thumb-25, .si_instagram, .si_instagramBlue, .si_twitter, .si_twitterBlue, .info, .update, .searchIcon {
 	background: url(images/sprites.png) no-repeat;
 }
 .biblioHeader {
@@ -1521,16 +1516,6 @@ p.search {
 	background-position: -61px -177px;
 	width: 25px;
 	height: 25px;
-}
-.si_facebook {
-	background-position: -161px -27px;
-	width: 26px;
-	height: 24px;
-}
-.si_facebookBlue {
-	background-position: -160px -79px;
-	width: 26px;
-	height: 24px;
 }
 .si_instagram {
 	background-position: -213px -28px;
