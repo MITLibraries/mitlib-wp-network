@@ -1,0 +1,126 @@
+{
+    "key": "group_56b37a0c995bf",
+    "title": "News and Events",
+    "fields": [
+        {
+            "key": "field_56b37a2079733",
+            "label": "Is this an event?",
+            "name": "is_this_an_event",
+            "type": "true_false",
+            "instructions": "Check this box to display this post as an Event.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_56b37c4779734",
+            "label": "Event Date",
+            "name": "event_date",
+            "type": "date_picker",
+            "instructions": "Select the Event date.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_56b37a2079733",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "F j, Y",
+            "return_format": "F j, Y",
+            "first_day": 1
+        },
+        {
+            "key": "field_56b37cbf79735",
+            "label": "Event Start Time",
+            "name": "event_start_time",
+            "type": "text",
+            "instructions": "Enter the event start time. This field is not required.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_56b37a2079733",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "12pm",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": 7,
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_56b37d3b79736",
+            "label": "Event End Time",
+            "name": "event_end_time",
+            "type": "text",
+            "instructions": "Enter the event end time. This field is not required.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_56b37a2079733",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "3pm",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": 7,
+            "readonly": 0,
+            "disabled": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": false
+}
