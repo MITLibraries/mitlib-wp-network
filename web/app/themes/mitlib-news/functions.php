@@ -137,6 +137,12 @@ function expand_category_scope( $request ) {
 }
 add_filter( 'pre_get_posts', 'Mitlib\News\expand_category_scope' );
 
+// Add full-width CSS body class to all news pages
+// https://developer.wordpress.org/reference/hooks/body_class/#user-contributed-notes .
+add_filter( 'body_class', function( $classes ) {
+	return array_merge( $classes, array( 'full-width' ) );
+} );
+
 /**
  * ============================================================================
  * ============================================================================
