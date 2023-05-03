@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e3d2bc1e3910478f39e0fb5d118920d2",
+    "content-hash": "6aa8482cc37f5a43988a1af338fab523",
     "packages": [
         {
             "name": "ConnectThink/WP-SCSS",
@@ -864,36 +864,6 @@
                 "issues": "https://github.com/MITLibraries/acf-location-field/issues"
             },
             "time": "2022-12-06T20:22:05+00:00"
-        },
-        {
-            "name": "mitlibraries/cpt-onomies",
-            "version": "1.4.0",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:MITLibraries/cpt-onomies.git",
-                "reference": "0f9222a20198525b95bd3d8ed948a941d55e7a1c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/MITLibraries/cpt-onomies/zipball/0f9222a20198525b95bd3d8ed948a941d55e7a1c",
-                "reference": "0f9222a20198525b95bd3d8ed948a941d55e7a1c",
-                "shasum": ""
-            },
-            "type": "wordpress-plugin",
-            "license": [
-                "GPL-2.0-only"
-            ],
-            "authors": [
-                {
-                    "name": "Dejan Markovic"
-                }
-            ],
-            "description": "Use your custom post types as taxonomies. Create powerful relationships between your posts and, therefore, powerful content",
-            "support": {
-                "source": "https://github.com/MITLibraries/cpt-onomies/tree/1.4.0",
-                "issues": "https://github.com/MITLibraries/cpt-onomies/issues"
-            },
-            "time": "2022-12-06T20:41:52+00:00"
         },
         {
             "name": "mitlibraries/dynamic-menu-manager",
