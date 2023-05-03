@@ -49,7 +49,6 @@
   <exclude-pattern>web/app/plugins/acf-image-crop-add-on</exclude-pattern>
   <exclude-pattern>web/app/plugins/acf-location-field</exclude-pattern>
   <exclude-pattern>web/app/plugins/add-category-to-pages</exclude-pattern>
-  <exclude-pattern>web/app/plugins/addthis</exclude-pattern>
   <exclude-pattern>web/app/plugins/advanced-custom-fields-pro</exclude-pattern>
   <exclude-pattern>web/app/plugins/advanced-post-types-order</exclude-pattern>
   <exclude-pattern>web/app/plugins/akismet</exclude-pattern>

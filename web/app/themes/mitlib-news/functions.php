@@ -60,11 +60,6 @@ function admin_styles() {
 	wp_register_style( 'custom-admin', get_stylesheet_directory_uri() . '/css/custom-admin.css', array(), $theme_version );
 	wp_enqueue_style( 'custom-admin' );
 
-	// Users who cannot edit theme options (i.e. non-administrators) are not shown the AddThis panel.
-	if ( ! current_user_can( 'edit_theme_options' ) ) {
-		wp_register_style( 'hide-addthis', get_stylesheet_directory_uri() . '/css/hide-addthis.css', array(), $theme_version );
-		wp_enqueue_style( 'hide-addthis' );
-	}
 }
 add_action( 'admin_head', 'Mitlib\News\admin_styles' );
 

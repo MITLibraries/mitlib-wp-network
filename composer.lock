@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6a14c7fb707bedc2fe333a31a2f0190d",
+    "content-hash": "e3d2bc1e3910478f39e0fb5d118920d2",
     "packages": [
         {
             "name": "ConnectThink/WP-SCSS",
@@ -2754,24 +2754,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/add-category-to-pages/"
-        },
-        {
-            "name": "wpackagist-plugin/addthis",
-            "version": "6.2.7",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/addthis/",
-                "reference": "tags/6.2.7"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/addthis.6.2.7.zip"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/addthis/"
         },
         {
             "name": "wpackagist-plugin/akismet",
