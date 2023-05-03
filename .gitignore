@@ -85,6 +85,7 @@ web/app/plugins/*
 !web/app/plugins/mitlib-post-interviewees
 !web/app/plugins/mitlib-post-interviews
 !web/app/plugins/mitlib-post-locations
+!web/app/plugins/mitlib-post-site-akdc
 !web/app/plugins/mitlib-post-site-news
 !web/app/plugins/mitlib-post-site-parent
 !web/app/plugins/mitlib-post-spotlights
