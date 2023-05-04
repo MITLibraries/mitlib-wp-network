@@ -132,6 +132,17 @@ function expand_category_scope( $request ) {
 }
 add_filter( 'pre_get_posts', 'Mitlib\News\expand_category_scope' );
 
+/**
+ * Allows contributor to upload images
+ */
+function allow_contributor_uploads() {
+	$contributor = get_role( 'contributor' );
+	$contributor->add_cap( 'upload_files' );
+}
+if ( current_user_can( 'contributor' ) && ! current_user_can( 'upload_files' ) ) {
+	add_action( 'admin_init', 'Mitlib\News\allow_contributor_uploads' );
+}
+
 // Add full-width CSS body class to all news pages
 // https://developer.wordpress.org/reference/hooks/body_class/#user-contributed-notes .
 add_filter( 'body_class', function( $classes ) {
