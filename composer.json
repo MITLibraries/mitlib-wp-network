@@ -191,10 +191,25 @@
   },
   "autoload": {
     "classmap": [
-      "upstream-configuration/scripts/ComposerScripts.php"
+      "upstream-configuration/scripts/ComposerScripts.php",
+      "scripts/composer/class-mitcomposerscripts.php"
     ]
   },
   "scripts": {
+    "multidev-clone-syntax": [
+      "MitComposerScripts::multidev_clone_syntax"
+    ],
+    "multidev-create-syntax": [
+      "MitComposerScripts::multidev_create_syntax"
+    ],
+    "multidev-search-replace-syntax": [
+      "MitComposerScripts::multidev_search_replace_syntax"
+    ],
+    "multidev-create-all": [
+      "MitComposerScripts::multidev_create_syntax",
+      "MitComposerScripts::multidev_clone_syntax",
+      "MitComposerScripts::multidev_search_replace_syntax"
+    ],
     "pre-install-cmd": [
       "php -v"
     ],
