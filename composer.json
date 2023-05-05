@@ -146,7 +146,7 @@
     "dealerdirect/phpcodesniffer-composer-installer": "^0.7.2",
     "roave/security-advisories": "dev-latest",
     "squizlabs/php_codesniffer": "^3.6.2",
-    "wp-coding-standards/wpcs": "^2.3"
+    "wp-coding-standards/wpcs": "dev-develop"
   },
   "config": {
     "optimize-autoloader": true,
@@ -209,6 +209,9 @@
       "MitComposerScripts::multidev_create_syntax",
       "MitComposerScripts::multidev_clone_syntax",
       "MitComposerScripts::multidev_search_replace_syntax"
+    ],
+    "phpcs": [
+      "phpcs"
     ],
     "pre-install-cmd": [
       "php -v"
