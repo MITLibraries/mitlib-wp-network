@@ -1,0 +1,81 @@
+.group {
+	margin-bottom: 24px;	
+}
+
+#titlebar {
+	background: #f2f0f0;
+
+	.list-inline {
+		margin-top: 12px;
+
+		&.links li {
+			margin-right: 12px;
+		}
+	}
+
+	.post-thumbnail {
+		margin-right: 12px;
+
+		img {
+			width: 150px;
+			height: auto;
+		}
+	}
+}
+
+#interview {
+	justify-content: space-between;
+	padding-right: 0;
+
+	#playerWrap {
+		width: 50%;
+	}
+
+	#chapterWrap {
+		width: 50%;
+
+		h3 {
+			margin-top: 0;
+		}
+
+		table.chapters {
+			margin-bottom: 18px;
+			width: 100%;
+
+			tbody tr:nth-child(even) {
+				background: #f2f0f0;
+			}
+
+			td {
+				padding: 8px;
+			}
+
+			th {
+				background: #f2f0f0;
+				padding: 8px;
+			}
+		}
+
+		ul.more-interviews li {
+			margin-left: 0;
+		}
+	}
+}
+
+@media screen and (max-width: 920px) {
+	.expandable .content {
+		padding: 0 16px;	
+	}
+
+	#interview {
+		flex-direction: column;
+
+		#playerWrap {
+			width: 100%;
+		}
+
+		#chapterWrap {
+			width: 100%;
+		}
+	}
+}
