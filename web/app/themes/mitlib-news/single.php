@@ -15,8 +15,6 @@ $category = get_the_category();
 	$type;
 ?>
 
-<!-- Go to www.addthis.com/dashboard to customize your tools -->
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=mitlib" async="async"></script>
 <?php get_template_part( 'inc/sub-headerSingle' ); ?>
 <?php
 if ( ( get_post_type( get_the_ID() ) == 'bibliotech' ) || ( cat_is_ancestor_of( 73, $cat ) or is_category( 73 ) ) ) {
@@ -70,8 +68,6 @@ while ( have_posts() ) :
 		</span>
 		<?php endif; ?>
 	  </div> 
-<!-- Go to www.addthis.com/dashboard to customize your tools -->
-<div class="addthis_sharing_toolbox"></div>
 	<div class="clearfix"></div>
 	<!-- .entry-meta --> 
 	</div>
