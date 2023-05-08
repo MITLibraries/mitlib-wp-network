@@ -25,7 +25,3 @@ $map_page = '/locations/#!' . $docs_slug;
 	<?php endif; ?>
 	<a href="<?php echo esc_attr( $map_page ); ?>">Room: <?php echo esc_html( $docs_building ); ?> <i class="icon-arrow-right"></i></a>
 </div>
-<div class="hours-today">
-	<span>Today's Hours: <span data-location-hours="Document Services"></span></span>  | 
-	<a href="/hours" class="link-hours-all">See all hours</a>
-</div>
