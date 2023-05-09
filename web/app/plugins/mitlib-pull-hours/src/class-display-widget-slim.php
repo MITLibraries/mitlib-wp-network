@@ -124,7 +124,7 @@ class Display_Widget_Slim extends \WP_Widget {
 
 		// Render markup.
 		echo wp_kses( $args['before_widget'], $allowed );
-		$template = file_get_contents( dirname( __FILE__ ) . '/../templates/display-widget-slim.html' );
+		$template = file_get_contents( __DIR__ . '/../templates/display-widget-slim.html' );
 		echo wp_kses( sprintf( $template, $instance['location_label'], $instance['title'] ), $allowed );
 		echo wp_kses( $args['after_widget'], $allowed );
 	}
