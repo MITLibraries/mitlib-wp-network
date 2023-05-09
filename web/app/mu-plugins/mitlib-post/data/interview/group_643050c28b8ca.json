@@ -191,8 +191,8 @@
                         "class": "",
                         "id": ""
                     },
-                    "display_format": "g:i:s",
-                    "return_format": "g:i:s"
+                    "display_format": "G:i:s",
+                    "return_format": "G:i:s"
                 }
             ]
         }
