@@ -91,6 +91,7 @@
     "advanced-custom-fields/advanced-custom-fields-pro": "^5",
     "composer/installers": "^2.2",
     "connectthink/wp-scss": "^2.4@beta",
+    "cweagans/composer-patches": "^1.7",
     "google/apiclient": "^2.12",
     "mitlibraries/acf-location-field": "^1.0",
     "mitlibraries/cpt-onomies": "^1.4",
@@ -99,12 +100,11 @@
     "oscarotero/env": "^2.1",
     "pantheon-systems/pantheon-mu-plugin": "^1.0",
     "pantheon-upstreams/upstream-configuration": "dev-main",
-    "roots/bedrock-autoloader": "^1.0",
-    "roots/bedrock-disallow-indexing": "^2.0",
-    "roots/multisite-url-fixer": "^1.1",
-    "roots/wordpress": "6.0.3",
-    "roots/wp-config": "1.0.0",
-    "roots/wp-password-bcrypt": "1.1.0",
+    "roots/bedrock-autoloader": "*",
+    "roots/bedrock-disallow-indexing": "*",
+    "roots/wordpress": "*",
+    "roots/wp-config": "*",
+    "roots/wp-password-bcrypt": "*",
     "vlucas/phpdotenv": "^5.5",
     "wpackagist-plugin/acf-image-crop-add-on": "^1.4",
     "wpackagist-plugin/add-category-to-pages": "^1.2",
@@ -125,7 +125,7 @@
     "wpackagist-plugin/media-library-assistant": "^3.04",
     "wpackagist-plugin/notification": "^8.0",
     "wpackagist-plugin/page-links-to": "^3.3",
-    "wpackagist-plugin/pantheon-advanced-page-cache": "^1.0",
+    "wpackagist-plugin/pantheon-advanced-page-cache": "*",
     "wpackagist-plugin/redirection": "^5.3",
     "wpackagist-plugin/seamless-sticky-custom-post-types": "^1.4",
     "wpackagist-plugin/shortcode-variables": "^4.0",
@@ -137,12 +137,13 @@
     "wpackagist-plugin/widget-importer-exporter": "^1.6",
     "wpackagist-plugin/wordpress-importer": "^0.8.0",
     "wpackagist-plugin/wp-mail-smtp": "^3.6",
-    "wpackagist-plugin/wp-native-php-sessions": "^1.2",
+    "wpackagist-plugin/wp-native-php-sessions": "*",
     "wpackagist-plugin/wp-security-audit-log": "^4.4",
     "wpackagist-plugin/wp-sentry-integration": "^6.0",
     "wpackagist-plugin/wpcf7-recaptcha": "^1.4"
   },
   "require-dev": {
+    "assertwell/shellcheck": "^1.0",
     "dealerdirect/phpcodesniffer-composer-installer": "^0.7.2",
     "roave/security-advisories": "dev-latest",
     "squizlabs/php_codesniffer": "^3.6.2",
@@ -151,15 +152,17 @@
   "config": {
     "optimize-autoloader": true,
     "preferred-install": "dist",
+    "process-timeout": 0,
     "allow-plugins": {
       "composer/installers": true,
-      "roots/wordpress-core-installer": true,
+      "cweagans/composer-patches": true,
       "dealerdirect/phpcodesniffer-composer-installer": true,
-      "pivvenit/acf-pro-installer": true
+      "pivvenit/acf-pro-installer": true,
+      "roots/wordpress-core-installer": true
     },
     "sort-packages": true
   },
-  "minimum-stability": "dev",
+  "minimum-stability": "stable",
   "prefer-stable": true,
   "extra": {
     "google/apiclient-services": [
@@ -187,7 +190,9 @@
       "locations": {
         "web-root": "./"
       }
-    }
+    },
+    "composer-exit-on-patch-failure": true,
+    "enable-patching": true
   },
   "autoload": {
     "classmap": [
@@ -213,7 +218,11 @@
     "pre-install-cmd": [
       "php -v"
     ],
-    "post-install-cmd": "Google_Task_Composer::cleanup",
+    "post-install-cmd": [
+      "cd web; ln -s wp/* . || true",
+      "rm web/wp-settings.php",
+      "Google_Task_Composer::cleanup"
+    ],
     "post-update-cmd": "Google_Task_Composer::cleanup",
     "post-root-package-install": [
       "php -r \"copy('.env.example', '.env');\""
@@ -227,6 +236,24 @@
     "pre-update-cmd": [
       "WordPressComposerManaged\\ComposerScripts::preUpdate"
     ],
+    "install-sage": [
+      "bash ./private/scripts/sage-theme-install.sh"
+    ],
+    "lint": [
+      "@lint:php",
+      "@lint:phpcs",
+      "@lint:bash"
+    ],
+    "lint:php": [
+      "php -l web/wp/wp-settings.php"
+    ],
+    "lint:phpcs": [
+      "phpcs"
+    ],
+    "lint:bash": [
+      "shellcheck private/scripts/*.sh"
+    ],
+    "test": [],
     "upstream-require": [
       "WordPressComposerManaged\\ComposerScripts::upstreamRequire"
     ]

@@ -122,11 +122,21 @@ composer upstream-require wpackagist-theme/twentytwentytwo
 composer upstream-require wpackagist-plugin/advanced-custom-fields
 ```
 
+### Using Roots Sage starter theme
+
+We've included a Sage Install script that can be run via Composer. This will install the Sage starter theme from Roots, ensure all dependencies are installed, and adds a `post-install-cmd` hook to the `composer.json`. For more information see [Installing Sage](docs/Installing-Sage.md). The command to run the script is below.
+
+```
+composer install-sage
+```
+
 ## Contributing
 
 Contributions are welcome in the form of GitHub pull requests. However, the `pantheon-upstreams/wordpress-composer-managed` repository is a mirror that does not directly accept pull requests.
 
 Instead, to propose a change, please fork [pantheon-systems/wordpress-composer-managed](https://github.com/pantheon-systems/wordpress-composer-managed) and submit a PR to that repository.
+
+Feature or bugfix development branches and pull requests should originate from and be submitted against the `default` branch. Please note that the `main` branch is the main _testing_ branch and exists as a clone of the default branch for use in testing automation. 
 
 ## Community
 
@@ -136,3 +146,4 @@ There are large, thriving communities in both the Roots ecosystem and the Panthe
 - Join the Roots community on Discord by [sponsoring them on GitHub](https://github.com/sponsors/roots)
 - Participate on the [Roots Discourse](https://discourse.roots.io/) or the [Pantheon Community Forums](https://discuss.pantheon.io/).
 - Follow [@rootswp](https://twitter.com/rootswp) and [@getpantheon](https://twitter.com/getpantheon) on Twitter
+
