@@ -29,6 +29,7 @@ function child_scripts_styles() {
 	// First we register stylesheet libraries.
 	wp_register_style( 'bootstrap', '//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css', array(), '3.0.0' );
 	wp_register_style( 'font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css', array(), '4.6.0' );
+	wp_register_style( 'interviews', get_stylesheet_directory_uri() . '/css/build/interviews.css', array(), $theme_version );
 	wp_register_style( 'child-style', get_stylesheet_uri(), array( 'parent-global' ), $theme_version );
 
 	// Then we register javascript libraries.
@@ -37,6 +38,7 @@ function child_scripts_styles() {
 	wp_register_script( 'bootstrap-js', '//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js', array( 'jquery' ), '3.0.0' );
 	wp_register_script( 'moment', get_template_directory_uri() . '/js/libs/moment.min.js', array(), $theme_version, true );
 	wp_register_script( 'underscore', get_template_directory_uri() . '/js/libs/underscore.min.js', array(), $theme_version, true );
+	wp_register_script( 'youtube-iframe-api', 'https://www.youtube.com/iframe_api', array(), $theme_version, true );
 
 	// Finally we enqueue those libraries - the child theme just always enqueues everything.
 	wp_enqueue_style( 'bootstrap' );
@@ -46,6 +48,11 @@ function child_scripts_styles() {
 	wp_enqueue_script( 'bootstrap-js' );
 	wp_enqueue_script( 'moment' );
 	wp_enqueue_script( 'underscore' );
+
+	if ( 'interview' == get_post_type() ) {
+		wp_enqueue_style( 'interviews' );
+		wp_enqueue_script( 'youtube-iframe-api' );
+	}
 }
 add_action( 'wp_enqueue_scripts', 'Mitlib\Child\child_scripts_styles' );
 
