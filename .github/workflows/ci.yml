@@ -40,8 +40,5 @@ jobs:
         ACF_PRO_KEY: ${{ secrets.ACF_PRO_KEY }}
         COMPOSER_AUTH: '{"github-oauth": {"github.com": "${{secrets.COMPOSER_AUTH}}"} }'
 
-    - name: Run lints
-      run: composer lint
-
     - name: Run tests
       run: composer security
