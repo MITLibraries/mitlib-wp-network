@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "12337528d720e8554b165cf21b59228b",
+    "content-hash": "ee2e66d23ad8069d31e4cc5c5023ce08",
     "packages": [
         {
             "name": "ConnectThink/WP-SCSS",
@@ -3352,41 +3352,6 @@
         }
     ],
     "packages-dev": [
-        {
-            "name": "assertwell/shellcheck",
-            "version": "v1.0.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/assertwell/shellcheck.git",
-                "reference": "a68b0e934a5746fcfc785bb635e72b9d98cdc939"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/assertwell/shellcheck/zipball/a68b0e934a5746fcfc785bb635e72b9d98cdc939",
-                "reference": "a68b0e934a5746fcfc785bb635e72b9d98cdc939",
-                "shasum": ""
-            },
-            "bin": [
-                "bin/shellcheck"
-            ],
-            "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Steve Grunwell",
-                    "homepage": "https://stevegrunwell.com"
-                }
-            ],
-            "description": "Expose ShellCheck as a vendor binary for PHP projects",
-            "support": {
-                "issues": "https://github.com/assertwell/shellcheck/issues",
-                "source": "https://github.com/assertwell/shellcheck"
-            },
-            "time": "2022-02-09T15:45:30+00:00"
-        },
         {
             "name": "dealerdirect/phpcodesniffer-composer-installer",
             "version": "v0.7.2",

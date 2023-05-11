@@ -143,7 +143,6 @@
     "wpackagist-plugin/wpcf7-recaptcha": "^1.4"
   },
   "require-dev": {
-    "assertwell/shellcheck": "^1.0",
     "dealerdirect/phpcodesniffer-composer-installer": "^0.7.2",
     "roave/security-advisories": "dev-latest",
     "squizlabs/php_codesniffer": "^3.6.2",
@@ -241,17 +240,13 @@
     ],
     "lint": [
       "@lint:php",
-      "@lint:phpcs",
-      "@lint:bash"
+      "@lint:phpcs"
     ],
     "lint:php": [
       "php -l web/wp/wp-settings.php"
     ],
     "lint:phpcs": [
       "phpcs"
-    ],
-    "lint:bash": [
-      "shellcheck private/scripts/*.sh"
     ],
     "test": [],
     "upstream-require": [
