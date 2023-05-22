@@ -237,9 +237,9 @@ Please see the readme for that project for [installation](https://github.com/pan
 
 #### Required build secrets
 
-- `ACF_PRO_KEY` - License key necessary for installing the Advanced Custom Fields Pro plugin
-- `github-oauth.github.com` - User access token defined by the `mitlib-wp-network-deploy` account
-
+* `COMPOSER_AUTH` - License key necessary for installing the Advanced Custom Fields Pro plugin. Content can be found in
+  the official acf documentation `auth.json` file and just removing all the line breaks
+* `github-oauth.github.com` - User access token defined by the `mitlib-wp-network-deploy` account
 
 ### Application secrets
 
@@ -278,12 +278,11 @@ Bedrock makes use of an `.env` file to store environment variables. Pantheon tak
 - `WP_ENV` - Set to environment (`development`, `staging`, `production`)
 - `WP_HOME` - Full URL to WordPress home (https://example.com)
 - `WP_SITEURL` - Full URL to WordPress including subdirectory (https://example.com/wp)
-- `ACF_PRO_KEY` - License key necessary for installing the Advanced Custom Fields Pro plugin
 - `AUTH_KEY`, `SECURE_AUTH_KEY`, `LOGGED_IN_KEY`, `NONCE_KEY`, `AUTH_SALT`, `SECURE_AUTH_SALT`, `LOGGED_IN_SALT`, `NONCE_SALT`
   - Generate with [wp-cli-dotenv-command](https://github.com/aaemnnosttv/wp-cli-dotenv-command)
   - Regenerate with [Bedrock's WordPress salts generator](https://roots.io/salts.html)
-- `COMPOSER_AUTH` - The user access token defined by the `mitlib-wp-network-deploy` account, for installing forked
-  plugins
+- `COMPOSER_AUTH` A JSON formatted object that has one entry for the user access token defined by the `mitlib-wp-network-deploy` account, for installing forked plugins and an entry for our Advanced Custom Fields Pro authentication. [see Shared-Prod-Pantheon folder in lastpass for values and additional context for `auth.json` and `COMPOSER_AUTH`] [NOTE: composer does not read from .env so locally these also need to be in auth.json and kept out of version control]
+  * composer will read an auth.json file in a user home directory or the root directory of the application. If using the application root, please ensure it is gitignored. Our lastpass should contain a current working version of what to put in auth.json (and if you make changes to auth.json locally, consisider whether they should also change in lastpass or in the CI and Pantheon equivalent which is `COMPOSER_AUTH`!)
 
 ### Github secrets
 
@@ -291,13 +290,10 @@ Managed with: Github web UI
 
 In addition to secret values stored using Terminus, we also define certain values used by our CI workflow using Github secrets.
 
-- `ACF_PRO_KEY` License key necessary for installing the Advanced Custom Fields Pro plugin.
-- `COMPOSER_AUTH` The user access token defined by the `mitlib-wp-network-deploy` account, for installing forked plugins.
+- `COMPOSER_AUTH` A JSON structure that has one entry for the user access token defined by the `mitlib-wp-network-deploy` account, for installing forked plugins and an entry for our Advanced Custom Fields Pro authentication. [see lastpass]
 - `DEPLOY_SSH_KNOWN_HOSTS` The known_hosts file to allow GitHubs' CI to trust the Pantheon git server.
 - `DEPLOY_SSH_PRIVATE_KEY` The private key (with blank passphrase) used to connect to Pantheon's git server. The public key is added to your personal settings within Pantheon.
 - `PANTHEON_REPOSITORY` The SSH-format address of the git repository in Pantheon.
-
-
 
 ---
 **The sections below were included in the original Readme, and I'm not sure whether they are still useful in this context.**

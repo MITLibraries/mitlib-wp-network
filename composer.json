@@ -55,7 +55,7 @@
     },
     {
       "type": "composer",
-      "url": "https://pivvenit.github.io/acf-composer-bridge/composer/v3/wordpress-plugin/"
+      "url": "https://connect.advancedcustomfields.com"
     },
     {
       "type": "vcs",
@@ -88,7 +88,7 @@
   ],
   "require": {
     "php": ">=7.4",
-    "advanced-custom-fields/advanced-custom-fields-pro": "^5",
+    "wpengine/advanced-custom-fields-pro": "^5",
     "composer/installers": "^2.2",
     "connectthink/wp-scss": "^2.4@beta",
     "google/apiclient": "^2.12",
