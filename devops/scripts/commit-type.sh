@@ -11,7 +11,7 @@ function identify_commit_type() {
 
   affected_paths=$(git show "${commit}" --pretty=oneline --name-only | tail -n +2)
   for path in $affected_paths; do
-      if [[ $path =~ ^.circleci/ || $path =~ ^devops/ || $path == "README-internal.md" ]] ; then
+      if [[ $path =~ ^.circleci/ || $path =~ ^.github/ || $path =~ ^devops/ || $path == "README-internal.md" ]] ; then
         has_nonrelease_changes=1
         continue
       fi
@@ -35,7 +35,7 @@ function identify_commit_type() {
 # Verifies that the given commit does not contain forbidden files.
 function only_allowed_files() {
   local commit=$1
-  local forbidden_files=("composer.lock")
+  local forbidden_files=("composer.lock",".github/workflows/ci.yml")
   local has_forbidden_files=0
 
   affected_paths=$(git show "${commit}" --pretty=oneline --name-only | tail -n +2)
