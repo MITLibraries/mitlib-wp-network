@@ -158,7 +158,7 @@
     },
     "sort-packages": true
   },
-  "minimum-stability": "dev",
+  "minimum-stability": "stable",
   "prefer-stable": true,
   "extra": {
     "google/apiclient-services": [
@@ -212,7 +212,14 @@
     "pre-install-cmd": [
       "php -v"
     ],
-    "post-install-cmd": "Google_Task_Composer::cleanup",
+    "pre-update-cmd": [
+      "WordPressComposerManaged\\ComposerScripts::preUpdate"
+    ],
+    "post-install-cmd": [
+      "Google_Task_Composer::cleanup",
+      "cd web; ln -s wp/* . || true",
+      "rm web/wp-settings.php"
+    ],
     "post-update-cmd": "Google_Task_Composer::cleanup",
     "post-root-package-install": [
       "php -r \"copy('.env.example', '.env');\""
@@ -223,8 +230,8 @@
     "syntax": [
       "find . -path ./libs -prune -o \\( -name '*.php' \\) -exec php -lf {} \\;"
     ],
-    "pre-update-cmd": [
-      "WordPressComposerManaged\\ComposerScripts::preUpdate"
+    "test": [
+      "phpcs"
     ],
     "upstream-require": [
       "WordPressComposerManaged\\ComposerScripts::upstreamRequire"
