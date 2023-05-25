@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for the main footer, showing EDS / Barton as discovery options.
+ * The template for the main footer, showing Alma / Primo as discovery options.
  *
  * @package MITlib_Parent
  * @since 0.0.1
@@ -13,11 +13,10 @@ namespace Mitlib\Parent;
 	<div class="links-all flex-container">
 		<div class="flex-item">
 			<h4><a href="/search">Search</a></h4>
-			<a href="/quicksearch" class="link-sub">Quick search</a>
-			<a href="/barton" class="link-sub">Barton catalog</a>
-			<a href="/vera" class="link-sub">Vera: E-journals &amp; databases</a>
+			<a href="/search-collections" class="link-sub">Search Our Collections</a>
 			<a href="/worldcat" class="link-sub">WorldCat</a>
-			<a href="/barton-reserves" class="link-sub">Course reserves</a>
+			<a href="https://libguides.mit.edu/az.php" class="link-sub">Databases A-Z</a>
+			<a href="/search-reserves" class="link-sub">Course reserves</a>
 			<a href="/site-search" class="link-sub">Site search</a>
 			<a href="/search" class="link-sub">More search options</a>
 		</div>
@@ -30,8 +29,8 @@ namespace Mitlib\Parent;
 		</div>
 		<div class="flex-item">
 			<h4><a href="/borrow">Borrow &amp; request</a></h4>
-			<a href="/barton-account" class="link-sub">Your Account</a>
-			<a href="/reserves" class="link-sub">Reserves &amp; TIP</a>
+			<a href="/accounts" class="link-sub">Accounts overview</a>
+			<a href="/reserves" class="link-sub">Course reserves</a>
 			<a href="/otherlibraries" class="link-sub">Visit non-MIT libraries</a>
 			<a href="/borrow" class="link-sub">More borrow &amp; request options</a>
 		</div>
@@ -39,7 +38,7 @@ namespace Mitlib\Parent;
 			<h4><a href="/research-support">Research support</a></h4>
 			<a href="/ask" class="link-sub">Ask us</a>
 			<a href="/experts" class="link-sub">Research guides &amp; expert librarians</a>
-			<a href="/scholarly" class="link-sub">Scholarly publishing</a>
+			<a href="/scholarly" class="link-sub">Scholarly communications</a>
 			<a href="/references" class="link-sub">Citation &amp; writing software</a>
 			<a href="/research-support" class="link-sub">More research support options</a>
 		</div>
