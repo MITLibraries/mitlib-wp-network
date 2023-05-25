@@ -32,16 +32,25 @@ for commit in $newcommits; do
   fi
 
   if [[ $commit_type == "mixed" ]] ; then
-    2>&1 echo "Commit ${commit} contains both release and nonrelease changes. Cannot proceed."
-    exit 1
+    2>&1 echo "Commit ${commit} contains both release and nonrelease changes. Skipping this commit."
+    echo "You may wish to ensure that nothing in this commit is meant for release."
+    delete=(${commit})
+    for remove in "${delete[@]}"; do
+      for i in "${commits[@]}"; do
+        if [ [ ${commits[i]} = $remove ]]; then
+          unset 'commits[i]'
+        fi
+      done
+    done
   fi
 done
 
 # If nothing found to release, bail without doing anything.
 if [[ ${#commits[@]} -eq 0 ]] ; then
   echo "No new commits found to release"
-  echo "https://i.kym-cdn.com/photos/images/newsfeed/001/240/075/90f.png"
-  exit 1
+  echo "Proceeding to decoulped script"
+  echo "https://media.giphy.com/media/cqG5aFdTkk5ig/giphy.gif"
+  exit 0
 fi
 
 # Cherry-pick commits not modifying circle config onto the release branch

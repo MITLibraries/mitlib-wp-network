@@ -16,6 +16,18 @@
   <exclude-pattern>config/</exclude-pattern>
   <exclude-pattern>upstream-configuration/</exclude-pattern>
   <exclude-pattern>web/wp</exclude-pattern>
+  <exclude-pattern>web/wp-activate.php</exclude-pattern>
+  <exclude-pattern>web/wp-blog-header.php</exclude-pattern>
+  <exclude-pattern>web/wp-comments-post.php</exclude-pattern>
+  <exclude-pattern>web/wp-config-sample.php</exclude-pattern>
+  <exclude-pattern>web/wp-cron.php</exclude-pattern>
+  <exclude-pattern>web/wp-links-opml.php</exclude-pattern>
+  <exclude-pattern>web/wp-load.php</exclude-pattern>
+  <exclude-pattern>web/wp-login.php</exclude-pattern>
+  <exclude-pattern>web/wp-mail.php</exclude-pattern>
+  <exclude-pattern>web/wp-signup.php</exclude-pattern>
+  <exclude-pattern>web/wp-trackback.php</exclude-pattern>
+  <exclude-pattern>web/xmlrpc.php</exclude-pattern>
   <exclude-pattern>web/app/themes/twentytwentytwo/</exclude-pattern>
   <exclude-pattern>vendor/</exclude-pattern>
 

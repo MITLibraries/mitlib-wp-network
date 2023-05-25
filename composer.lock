@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "37231fafb14b6a104b7fcb007a11ed01",
+    "content-hash": "c04ebeeb4113740f107bf96f1853263a",
     "packages": [
         {
             "name": "ConnectThink/WP-SCSS",
@@ -4025,7 +4025,7 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "stability-flags": {
         "connectthink/wp-scss": 10,
         "pantheon-upstreams/upstream-configuration": 20,
