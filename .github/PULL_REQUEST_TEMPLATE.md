@@ -1,5 +1,10 @@
 ## Developer
 
+### Stylesheets
+
+- [ ] Any theme or plugin whose stylesheets have changed has had its version
+      string incremented.
+
 ### Secrets
 
 - [ ] All new secrets have been added to Pantheon tiers
