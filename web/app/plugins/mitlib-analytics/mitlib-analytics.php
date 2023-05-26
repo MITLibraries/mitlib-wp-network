@@ -21,10 +21,9 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Creates plugin options and settings
  */
 function mitlib_analytics_init() {
-	// Register a new setting for the GA property.
-	register_setting( 'mitlib_analytics', 'mitlib_ga_property' );
-	register_setting( 'mitlib_analytics', 'mitlib_ga_domains' );
-	register_setting( 'mitlib_analytics', 'mitlib_mit_property' );
+	// Register a new setting for the Matomo property.
+	register_setting( 'mitlib_analytics', 'mitlib_matomo_property_id' );
+	register_setting( 'mitlib_analytics', 'mitlib_matomo_url' );
 
 	// Register a section for libraries settings on the mitlib-analytics page.
 	add_settings_section(
@@ -34,49 +33,28 @@ function mitlib_analytics_init() {
 		'mitlib-analytics'
 	);
 
-	// Register a section for MIT settings on the mitlib-analytics page.
-	add_settings_section(
-		'mitlib_analytics_mit',
-		__( 'MIT settings', 'mitlib_analytics' ),
-		'mitlib\mitlib_analytics_section_mit',
-		'mitlib-analytics'
-	);
-
 	// Register a new field in the "mitlib_analytics_general" section, inside the "mitlib-analytics" page.
 	add_settings_field(
-		'mitlib_ga_property',
-		__( 'Libraries Analytics Property', 'mitlib_analytics' ),
+		'mitlib_matomo_property_id',
+		__( 'Matomo Analytics Property ID', 'mitlib_analytics' ),
 		'mitlib\mitlib_analytics_property_callback',
 		'mitlib-analytics',
 		'mitlib_analytics_general',
 		array(
-			'label_for' => 'mitlib_ga_property',
+			'label_for' => 'mitlib_matomo_property_id',
 			'class' => 'mitlib_analytics_row',
 		)
 	);
 
 	// Register the domain list field in the "mitlib_analytics_general" section, inside the "mitlib-analytics" page.
 	add_settings_field(
-		'mitlib_ga_domains',
-		__( 'Linked Domains', 'mitlib_analytics' ),
-		'mitlib\mitlib_analytics_domain_callback',
+		'mitlib_matomo_url',
+		__( 'Matomo URL', 'mitlib_analytics' ),
+		'mitlib\mitlib_analytics_url_callback',
 		'mitlib-analytics',
 		'mitlib_analytics_general',
 		array(
-			'label_for' => 'mitlib_ga_domains',
-			'class' => 'mitlib_analytics_row',
-		)
-	);
-
-	// Register a new field in the "mitlib_analytics_mit" section, inside the "mitlib-analytics" page.
-	add_settings_field(
-		'mitlib_mit_property',
-		__( 'MIT Analytics Property', 'mitlib_analytics' ),
-		'mitlib\mitlib_analytics_mit_property_callback',
-		'mitlib-analytics',
-		'mitlib_analytics_mit',
-		array(
-			'label_for' => 'mitlib_mit_property',
+			'label_for' => 'mitlib_matomo_url',
 			'class' => 'mitlib_analytics_row',
 		)
 	);
@@ -107,71 +85,37 @@ function mitlib_analytics_section_libraries() {
 }
 
 /**
- * Section rendering callback
- */
-function mitlib_analytics_section_mit() {
-	?>
-	<p>This controls whether the MIT-level property is used on this site.</p>
-	<?php
-}
-
-/**
- * Field rendering callback: Libraries GA Property
+ * Field rendering callback: Matomo property
  */
 function mitlib_analytics_property_callback() {
 	// Get the settings value.
-	$options = get_site_option( 'mitlib_ga_property' );
+	$options = get_site_option( 'mitlib_matomo_property_id' );
 	?>
 	<input
 		type="text"
-		name="<?php echo esc_attr( 'mitlib_ga_property' ); ?>"
+		name="<?php echo esc_attr( 'mitlib_matomo_property_id' ); ?>"
 		value="<?php echo esc_attr( $options ); ?>"
-		id="<?php echo esc_attr( 'mitlib_ga_property' ); ?>"
+		id="<?php echo esc_attr( 'mitlib_matomo_property_id' ); ?>"
 		size="20">
 	<p>If you aren't sure what value to use, please contact UX/Web Services.</p>
 	<?php
 }
 
 /**
- * Field rendering callback: Domain list
+ * Field rendering callback: Matomo URL
  */
-function mitlib_analytics_domain_callback() {
+function mitlib_analytics_url_callback() {
 	// Get the settings value.
-	$options = get_site_option( 'mitlib_ga_domains' );
+	$options = get_site_option( 'mitlib_matomo_url' );
 	?>
 	<input
 		type="text"
-		name="<?php echo esc_attr( 'mitlib_ga_domains' ); ?>"
+		name="<?php echo esc_attr( 'mitlib_matomo_url' ); ?>"
 		value="<?php echo esc_attr( $options ); ?>"
-		id="<?php echo esc_attr( 'mitlib_ga_domains' ); ?>"
+		id="<?php echo esc_attr( 'mitlib_matomo_url' ); ?>"
 		size="60">
-	<p>This should be the comma-separated list of domains that report together.</p>
-	<p>Read more about
-		<a href="https://developers.google.com/analytics/devguides/collection/analyticsjs/cross-domain">
-			cross-domain tracking
-		</a>
-		and
-		<a href="https://developers.google.com/analytics/devguides/collection/analyticsjs/linker">
-			the linker plugin
-		</a>.
-	</p>
-	<?php
-}
-
-/**
- * Field rendering callback: MIT GA Property
- */
-function mitlib_analytics_mit_property_callback() {
-	// Get the settings value.
-	$options = get_site_option( 'mitlib_mit_property' );
-	?>
-	<input
-		type="text"
-		name="<?php echo esc_attr( 'mitlib_mit_property' ); ?>"
-		value="<?php echo esc_attr( $options ); ?>"
-		id="<?php echo esc_attr( 'mitlib_mit_property' ); ?>"
-		size="20">
-	<p>If you aren't sure what value to use, please contact UX/Web Services.</p>
+	<p>The base URL for the Matomo instance to which analytics will be reported, including trailing forward-slash.</p>
+  <p>E.g., <pre>https://matomo.example.org/</pre></p>
 	<?php
 }
 
@@ -194,30 +138,22 @@ function mitlib_analytics_page_html() {
 		// Update settings.
 		if ( 'update' == filter_input( INPUT_POST, 'action' ) ) {
 			// Set default values.
-			$mitlib_ga_property = '';
-			$mitlib_ga_domains = '';
-			$mitlib_mit_property = '';
-			// GA Property.
-			if ( filter_input( INPUT_POST, 'mitlib_ga_property' ) ) {
-				$mitlib_ga_property = sanitize_text_field(
-					wp_unslash( filter_input( INPUT_POST, 'mitlib_ga_property' ) )
+			$mitlib_matomo_property_id = '';
+			$mitlib_matomo_url = '';
+			// Matomo property ID.
+			if ( filter_input( INPUT_POST, 'mitlib_matomo_property_id' ) ) {
+				$mitlib_matomo_property_id = sanitize_text_field(
+					wp_unslash( filter_input( INPUT_POST, 'mitlib_matomo_property_id' ) )
 				);
 			}
-			// GA domain list.
-			if ( filter_input( INPUT_POST, 'mitlib_ga_domains' ) ) {
-				$mitlib_ga_domains = sanitize_text_field(
-					wp_unslash( filter_input( INPUT_POST, 'mitlib_ga_domains' ) )
+			// Matomo URL.
+			if ( filter_input( INPUT_POST, 'mitlib_matomo_url' ) ) {
+				$mitlib_matomo_url = sanitize_text_field(
+					wp_unslash( filter_input( INPUT_POST, 'mitlib_matomo_url' ) )
 				);
 			}
-			// MIT Property.
-			if ( filter_input( INPUT_POST, 'mitlib_mit_property' ) ) {
-				$mitlib_mit_property = sanitize_text_field(
-					wp_unslash( filter_input( INPUT_POST, 'mitlib_mit_property' ) )
-				);
-			}
-			update_site_option( 'mitlib_ga_property', $mitlib_ga_property );
-			update_site_option( 'mitlib_ga_domains', $mitlib_ga_domains );
-			update_site_option( 'mitlib_mit_property', $mitlib_mit_property );
+			update_site_option( 'mitlib_matomo_property_id', $mitlib_matomo_property_id );
+			update_site_option( 'mitlib_matomo_url', $mitlib_matomo_url );
 		}
 	}
 
@@ -242,28 +178,23 @@ function mitlib_analytics_page_html() {
 }
 
 /**
- * View function that outputs the GA code on public pages.
+ * View function that outputs the Matomo code on public pages.
  */
 function mitlib_analytics_view() {
-	$domains = explode( ',', get_site_option( 'mitlib_ga_domains' ) );
-	$mit = get_site_option( 'mitlib_mit_property' );
-	echo "<script>
-	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-	ga('create', '" . esc_html( get_site_option( 'mitlib_ga_property' ) ) . "',  'auto', {'allowLinker': true});
-	ga('require', 'linker');
-	ga('linker:autoLink', [";
-	foreach ( $domains as &$item ) {
-		echo "'" . esc_attr( trim( $item ) ) . "',";
-	}
-	echo "]);\n";
-	if ( $mit ) {
-		echo "ga('create', '" . esc_html( $mit ) . "', {'name':'mitsitewide'});
-		ga('mitsitewide.send','pageview');\n";
-	}
-	echo "ga('send', 'pageview');
-	</script>\n";
+	echo "<!-- Matomo -->
+  <script>
+    var _paq = window._paq = window._paq || [];
+    /* tracker methods like 'setCustomDimension' should be called before 'trackPageView' */
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u='" . esc_html( get_site_option( 'mitlib_matomo_url' ) ) . "';
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '" . esc_html( get_site_option( 'mitlib_matomo_property_id' ) ) . "']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+  <!-- End Matomo Code -->";
 }
 add_action( 'wp_footer', 'mitlib\mitlib_analytics_view' );

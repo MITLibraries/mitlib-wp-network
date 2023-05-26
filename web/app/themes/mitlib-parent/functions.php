@@ -170,8 +170,7 @@ function setup_scripts_styles() {
 	wp_register_script( 'parent-production', get_template_directory_uri() . '/js/alerts.js', array( 'dev', 'fonts', 'jquery', 'libchat', 'menu-toggle' ), $theme_version, true );
 
 	// Interior bundle.
-	wp_register_script( 'ga-links', get_template_directory_uri() . '/js/ga_links.js', array(), $theme_version, true );
-	wp_register_script( 'parent-interior', get_template_directory_uri() . '/js/core.js', array( 'ga-links' ), $theme_version, true );
+	wp_register_script( 'parent-interior', get_template_directory_uri() . '/js/core.js', array(), $theme_version, true );
 
 	// Homepage bundle.
 	wp_register_script( 'parent-experts-home', get_template_directory_uri() . '/js/experts-home.js', array( 'jquery' ), $theme_version, true );
@@ -187,9 +186,8 @@ function setup_scripts_styles() {
 	wp_register_script( 'parent-hours', get_template_directory_uri() . '/js/make.datepicker.js', array( 'jquery', 'gldatepickerJS', 'hours-scrollStick', 'hours-stickyMenu', 'underscore', 'moment', 'hours-loader' ), $theme_version, true );
 
 	// Search bundle.
-	wp_register_script( 'search-discovery', get_template_directory_uri() . '/js/ga_discovery.js', array(), $theme_version, false );
 	wp_register_script( 'search-ie', get_template_directory_uri() . '/js/search-ie.js', array(), $theme_version, false );
-	wp_register_script( 'parent-search', get_template_directory_uri() . '/js/search.js', array( 'jquery', 'modernizr', 'search-discovery', 'search-ie' ), $theme_version, false );
+	wp_register_script( 'parent-search', get_template_directory_uri() . '/js/search.js', array( 'jquery', 'modernizr', 'search-ie' ), $theme_version, false );
 
 	// Map bundle.
 	wp_register_script( 'parent-map', get_template_directory_uri() . '/js/map.js', array( 'googleMapsAPI', 'infobox', 'jquery' ), $theme_version, true );
