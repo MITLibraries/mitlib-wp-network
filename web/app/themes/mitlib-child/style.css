@@ -1,7 +1,7 @@
 /*
 Theme Name: MITlib Child
 Author: MIT Libraries
-Version: 0.1.1
+Version: 1.0.0
 Description: A child theme of the MIT Libraries' parent, focused on sites built primarily with static pages.
 Template: mitlib-parent
 
@@ -960,10 +960,8 @@ footer .footerHeader {
 	clear: both;
 }
 
-.childTheme .staff-widget {
-	float: left;
-	width: 30%;
-	margin-right: 5%;
+.staff-widget {
+	margin-top: 1em;
 }
 
 .entry-content .staff-widget .textwidget,
@@ -1110,8 +1108,6 @@ a.px14 {
 	font-weight: 600;
 	margin-left: 65px;
 	font-size: 16px;
-	position: relative;
-	top: 5px;
 }
 
 .category-image {
@@ -1299,6 +1295,11 @@ a.px14 {
 		width: 100%;
 		margin-bottom: 50px;
 		float: none;
+	}
+
+	.childTheme .has-sidebar .sidebar {
+		clear: both;
+		padding-top: 50px;
 	}
 
 	ul.nav li.dropdown:hover > ul.dropdown-menu {
