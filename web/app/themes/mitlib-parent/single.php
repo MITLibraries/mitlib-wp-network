@@ -15,8 +15,6 @@ get_header(); ?>
 	
 <div id="stage" class="inner" role="main">
 
-	<?php get_template_part( 'inc/postHead' ); ?>
-			
 		<div id="content" class="content has-sidebar">
 
 				<div class="content-main main-content">			
