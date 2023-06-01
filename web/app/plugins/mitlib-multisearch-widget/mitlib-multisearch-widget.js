@@ -1,25 +1,3 @@
-function logSearch(element) {
-	var search = new Object();
-
-	// What form was submitted?
-	search.target = element.dataset.target;
-
-	// What was the search string?
-	search.request = jQuery( element ).find( "input[type=text]").val();
-
-	// What was the search type?
-	search.type = jQuery( element ).find( "select" ).find(":selected").text();
-
-	// Send search details to analytics
-	ga('discovery.send', {
-		hitType: 'event',
-		eventCategory: 'Wordpress',
-		eventAction: 'Search',
-		eventLabel: JSON.stringify( search )
-	});
-
-};
-
 function preventSearch(textField,button) {
 
 	// By default submit is disabled 
@@ -63,10 +41,6 @@ jQuery( document ).ready(function() {
 		$( '#search_tabs_nav a' ).removeAttr( "aria-expanded" );
 		$( '#search_tabs_nav a .current' ).remove();
 		$(this).attr( "aria-expanded", "true" ).prepend( "<span class='sr current'>Current: </span>" );
-	});
-
-	jQuery( "#multisearch form" ).on( 'submit', function() {
-		logSearch( this );
 	});
 
 	// prevent submission until text field is not empty 
