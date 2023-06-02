@@ -41,7 +41,9 @@ if ( ! empty( $_ENV['PANTHEON_ENVIRONMENT'] ) ) {
       define( 'DOMAIN_CURRENT_SITE', 'www-test.libraries.mit.edu' );
       break;
     case 'dev':
-      define( 'DOMAIN_CURRENT_SITE', 'www-dev.libraries.mit.edu' );
+      // Replicate the Live setting to investigate an SSL issue.
+      define( 'DOMAIN_CURRENT_SITE', $_SERVER['HTTP_HOST'] );
+      // define( 'DOMAIN_CURRENT_SITE', 'www-dev.libraries.mit.edu' );
       break;
     case 'lando':
       define( 'DOMAIN_CURRENT_SITE', 'mitlib-wp-network.lndo.site' );
