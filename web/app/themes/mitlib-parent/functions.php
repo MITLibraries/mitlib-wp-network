@@ -182,8 +182,8 @@ function setup_scripts_styles() {
 	wp_register_script( 'hours-stickyMenu', get_template_directory_uri() . '/js/sticky-hours.menu.js', array( 'jquery-sticky' ), $theme_version, true );
 	wp_register_script( 'moment', get_template_directory_uri() . '/js/libs/moment.min.js', array(), $theme_version, true );
 	wp_register_script( 'underscore', get_template_directory_uri() . '/js/libs/underscore.min.js', array(), $theme_version, true );
-	wp_register_script( 'hours-loader', get_template_directory_uri() . '../../../plugins/mitlib-pull-hours/js/hours-loader.js', array(), $theme_version, true );
-	wp_register_script( 'parent-hours', get_template_directory_uri() . '/js/make.datepicker.js', array( 'jquery', 'gldatepickerJS', 'hours-scrollStick', 'hours-stickyMenu', 'underscore', 'moment', 'hours-loader' ), $theme_version, true );
+	wp_register_script( 'hours-loader-theme', get_template_directory_uri() . '../../../plugins/mitlib-pull-hours/js/hours-loader.js', array(), $theme_version, true );
+	wp_register_script( 'parent-hours', get_template_directory_uri() . '/js/make.datepicker.js', array( 'jquery', 'gldatepickerJS', 'hours-scrollStick', 'hours-stickyMenu', 'underscore', 'moment', 'hours-loader-theme' ), $theme_version, true );
 
 	// Search bundle.
 	wp_register_script( 'search-ie', get_template_directory_uri() . '/js/search-ie.js', array(), $theme_version, false );
@@ -234,12 +234,16 @@ function setup_scripts_styles() {
 		wp_enqueue_script( 'formsJS' );
 	}
 
+	// While some parts of the site load hours via widgets (which enqueue the
+	// hours loader and its dependencies on their own), other parts of the site
+	// load hours via templates. For the templates, we enqueue the hours loader
+	// via these conditionals.
 	if ( is_page( 'hours' ) ) {
-		wp_enqueue_style( 'parent-hours' );
+		wp_enqueue_style( 'parent-hours' ); // This hours styles are focused on the datepicker, which is specific to this one page.
 		wp_enqueue_script( 'parent-hours' );
 	}
 
-	if ( is_page_template( 'templates/page-location-2021.php' ) || is_page_template( 'templates/page-location.php' ) ) {
+	if ( is_page_template( 'templates/page-location-2021.php' ) || is_page_template( 'templates/page-location.php' ) || is_page_template( 'templates/page-study-spaces.php' ) ) {
 		wp_enqueue_script( 'parent-hours' );
 	}
 
