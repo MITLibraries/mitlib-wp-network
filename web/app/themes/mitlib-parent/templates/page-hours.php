@@ -240,26 +240,26 @@ tr:nth-child(even) td {
 			  <?php if ( get_field( 'study_24', $locationId ) ) { ?>
 			  <span class="hidden">|</span> <a class="space247" href="/study/24x7/" alt="This location contains one or more study spaces available 24 hours a day, seven days a week. Click the link for more info." title="Study 24/7">Study 24/7</a>
 			  <?php } ?>
-			  <?php
-			  if ( get_field( 'alert_title', $locationId ) ) {
-				$alert_title = get_field( 'alert_title', $locationId );
-				$alert_content = get_field( 'alert_content', $locationId );
-				$no_html = array();
-				$allowed_html = array(
-					'a' => array(
-						'href' => array(),
-					),
-					'em' => array(),
-					'strong' => array(),
-				);
-			  ?>
+				<?php
+				if ( get_field( 'alert_title', $locationId ) ) {
+					$alert_title = get_field( 'alert_title', $locationId );
+					$alert_content = get_field( 'alert_content', $locationId );
+					$no_html = array();
+					$allowed_html = array(
+						'a' => array(
+							'href' => array(),
+						),
+						'em' => array(),
+						'strong' => array(),
+					);
+				?>
 				<div class="libraryAlert"> <i class="icon-exclamation-sign"></i>
 					<div class="alertText">
 						<div class="la-title"><?php echo wp_kses( $alert_title, $no_html ); ?></div>
 						<?php echo '<p>' . wp_kses( $alert_content, $allowed_html ) . '</p>'; ?>
 					</div>
 				</div>
-			  <?php } ?>
+				<?php } ?>
 			</div></td>
 			<?php for ( $i = 0;$i <= 6;$i++ ) { ?>
 				<?php
