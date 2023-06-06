@@ -66,16 +66,13 @@ if ( 0 >= $subs ) {
 	$strLocation = 'noThumbs';
 }
 
-$alertTitle   = cf( 'alert_title' );
-$alertContent = cf( 'alert_content' );
+$alert_title   = cf( 'alert_title' );
 ?>
 
 <div class="libraryAlertTop">
 	<?php
-	if ( 0 == $showAlert && '' !== $alertTitle ) {
-		// phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped -- alertContent comes from a rich text field, and needs careful treatment. Probably wp_kses and negotiations with site builders.
-		echo '<div class="libraryAlert">' . '<div class="location--alerts flex-container"><i class="icon-exclamation-sign"></i>' . '<div class="alertText">' . '<h3>' . esc_html( $alertTitle ) . '</h3>' . '<p>' . $alertContent . '</p>' . '</div>' . '</div>' . '</div>';
-		// phpcs:enable
+	if ( 0 == $showAlert && '' !== $alert_title ) {
+		get_template_part( 'inc/location', 'alert' );
 	}
 	?>
 </div>				
