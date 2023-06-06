@@ -66,16 +66,22 @@ if ( 0 >= $subs ) {
 	$strLocation = 'noThumbs';
 }
 
-$alertTitle   = cf( 'alert_title' );
-$alertContent = cf( 'alert_content' );
+$alert_title   = cf( 'alert_title' );
+$alert_content = cf( 'alert_content' );
 ?>
 
 <div class="libraryAlertTop">
 	<?php
-	if ( 0 == $showAlert && '' !== $alertTitle ) {
-		// phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped -- alertContent comes from a rich text field, and needs careful treatment. Probably wp_kses and negotiations with site builders.
-		echo '<div class="libraryAlert">' . '<div class="location--alerts flex-container"><i class="icon-exclamation-sign"></i>' . '<div class="alertText">' . '<h3>' . esc_html( $alertTitle ) . '</h3>' . '<p>' . $alertContent . '</p>' . '</div>' . '</div>' . '</div>';
-		// phpcs:enable
+	if ( 0 == $showAlert && '' !== $alert_title ) {
+		$no_html = array();
+		$allowed_html = array(
+			'a' => array(
+				'href' => array(),
+			),
+			'em' => array(),
+			'strong' => array(),
+		);
+		echo '<div class="libraryAlert">' . '<div class="location--alerts flex-container"><i class="icon-exclamation-sign"></i>' . '<div class="alertText">' . '<h3>' . wp_kses( $alert_title, $no_html ) . '</h3>' . '<p>' . wp_kses( $alert_content, $allowed_html ) . '</p>' . '</div>' . '</div>' . '</div>';
 	}
 	?>
 </div>				

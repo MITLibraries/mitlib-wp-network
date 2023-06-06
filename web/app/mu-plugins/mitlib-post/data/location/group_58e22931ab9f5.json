@@ -7,7 +7,7 @@
             "label": "Alert Title",
             "name": "alert_title",
             "type": "wysiwyg",
-            "instructions": "This field must contain content for the alert to work. Also, don't add any HTML tags.",
+            "instructions": "This field must contain content for the alert to work. This content is automatically wrapped in an h3 or div tag depending on location. Do not add HTML tags here.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -26,7 +26,7 @@
             "label": "Alert Content",
             "name": "alert_content",
             "type": "wysiwyg",
-            "instructions": "This field must contain content for the alert to work. Also, don't add any HTML tags.",
+            "instructions": "This field must contain content for the alert to work. The only supported HTML tags are links, bold, and italics (a, em, and strong).",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
