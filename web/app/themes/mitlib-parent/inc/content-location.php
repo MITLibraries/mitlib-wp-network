@@ -90,23 +90,14 @@ if ( $subs <= 0 ) {
 
 
 $alert_title = cf( 'alert_title' );
-$alert_content = cf( 'alert_content' );
 ?>
 
 <div class="libraryAlertTop">
-<?php
-if ( 0 == $showAlert && '' !== $alert_title ) {
-	$no_html = array();
-	$allowed_html = array(
-		'a' => array(
-			'href' => array(),
-		),
-		'em' => array(),
-		'strong' => array(),
-	);
-	echo '<div class="libraryAlert">' . '<div class="location--alerts flex-container"><i class="icon-exclamation-sign"></i>' . '<div class="alertText">' . '<h3>' . wp_kses( $alert_title, $no_html ) . '</h3>' . '<p>' . wp_kses( $alert_content, $allowed_html ) . '</p>' . '</div>' . '</div>' . '</div>';
-}
-?>
+	<?php
+	if ( 0 == $showAlert && '' !== $alert_title ) {
+		get_template_part( 'inc/location', 'alert' );
+	}
+	?>
 </div>				
 	<div class="title-page libraryTitle flex-container">
 		
