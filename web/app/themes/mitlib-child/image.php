@@ -4,17 +4,19 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package MITlib_Parent
- * @since 0.2.0
+ * @package MITlib_Child
+ * @since 1.0.0
  */
 
-namespace Mitlib\Parent;
+namespace Mitlib\Child;
 
 get_header(); ?>
 		<?php get_template_part( 'inc/breadcrumbs' ); ?>
 
 		<div id="stage" class="inner" role="main">
 			
+			<?php get_template_part( 'inc/title-banner' ); ?>
+
 			<div id="content" class="content has-sidebar">
 				
 				<div class="main-content content-main">
