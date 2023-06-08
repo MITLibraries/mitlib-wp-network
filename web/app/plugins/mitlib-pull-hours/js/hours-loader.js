@@ -207,9 +207,20 @@ var HoursLoader = {
 		// For each date in the week...
 		_.each(testweek, function(dayofweek) {
 			testday = new Date(dayofweek);
-			rebuildsemester = [];
+			// Define default vales, in case testday is beyond the range of defined semesters.
+			// Ideally these would be calculated from the Default Hours sheet.
+			semester_cache = 'Default-Hours.json';
+			testday.semestername = "Default Hours";
+			testday.start = '1/1/1970';
+			testday.end = '12/31/2100';
+			rebuildsemester = [
+				'Default Hours',
+				'1/1/1970',
+				'12/31/2100',
+				'Default-Hours.json'
+			];
 			// Cycle through each term, determining which it belongs to.
-			// (This is inefficient, I know...)
+			// (This is inefficient, I know... - could be _.every() with a break or return?)
 			_.each(testsemesters, function(semester) {
 				semester_start = new Date(semester[1]);
 				semester_end = new Date(semester[2]);
