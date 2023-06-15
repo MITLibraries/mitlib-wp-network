@@ -168,7 +168,7 @@ get_header(); ?>
 								<?php if ( $phone != '' ) : ?>
 									<?php echo esc_html( $phone ); ?>
 								<br/>
-								<?php endif; ?><a class="map" data-target="<?php echo esc_attr( $locationId ); ?>" href="#!<?php echo esc_url( $slug ); ?>">Map: <?php echo esc_html( $building ); ?></a>
+								<?php endif; ?><a class="map" data-target="<?php echo esc_attr( $locationId ); ?>" href="#!<?php echo esc_attr( $slug ); ?>">Map: <?php echo esc_html( $building ); ?></a>
 								<?php if ( $study24 == 1 ) : ?>
 									<br/>
 									<a class="space247" href="<?php echo esc_url( $gStudy24Url ); ?>" alt="This location contains one or more study spaces available 24 hours a day, seven days a week. Click the link for more info." title="Study 24/7">Study 24/7</a>
@@ -227,7 +227,7 @@ get_header(); ?>
 							<?php if ( $phone != '' ) : ?>
 								<?php echo esc_html( $phone ); ?><br/>
 							<?php endif; ?>
-							<a class="map" data-target="<?php echo esc_attr( $locationId ); ?>" href="#!<?php echo esc_url( $slug ); ?>">Map: <?php echo esc_html( $building ); ?></a>
+							<a class="map" data-target="<?php echo esc_attr( $locationId ); ?>" href="#!<?php echo esc_attr( $slug ); ?>">Map: <?php echo esc_html( $building ); ?></a>
 						</li>
 					
 					<?php endwhile; // end of the loop. ?>					
