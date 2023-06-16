@@ -6,10 +6,20 @@
 	background: #f2f0f0;
 
 	.list-inline {
+		margin-bottom: 12px;
 		margin-top: 12px;
 
 		&.links li {
 			margin-right: 12px;
+		}
+
+		&.tags li::after {
+			content: ', ';
+		}
+
+		&.tags li:first-child::after,
+		&.tags li:last-child::after {
+			content: none;
 		}
 	}
 
