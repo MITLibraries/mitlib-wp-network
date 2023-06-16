@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c04ebeeb4113740f107bf96f1853263a",
+    "content-hash": "756ec83d27dfeec7dad9283a2086069f",
     "packages": [
         {
             "name": "ConnectThink/WP-SCSS",
@@ -2640,24 +2640,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/akismet/"
-        },
-        {
-            "name": "wpackagist-plugin/antivirus",
-            "version": "1.4.4",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/antivirus/",
-                "reference": "tags/1.4.4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/antivirus.1.4.4.zip"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/antivirus/"
         },
         {
             "name": "wpackagist-plugin/black-studio-tinymce-widget",
