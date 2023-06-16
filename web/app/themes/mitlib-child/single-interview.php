@@ -148,10 +148,12 @@ $related = new \WP_Query( $query );
 
 				<div id="interview" class="entry-content flex-container">
 
-					<div id="playerWrap" class="wrap-videoplayer flex-item">
-						<iframe frameborder="0" height="300" id="myytplayer" src="https://www.youtube.com/embed/<?php echo esc_attr( the_field( 'youtube-id' ) ); ?>?enablejsapi=1" type="text/html" width="440" allowfullscreen></iframe>
-						<script type="text/javascript" src="<?php echo esc_url( $threeplay_url ); ?>"></script>
-					</div>
+					<?php if ( get_field( 'youtube-id' ) ) { ?>
+						<div id="playerWrap" class="wrap-videoplayer flex-item">
+							<iframe frameborder="0" height="300" id="myytplayer" src="https://www.youtube.com/embed/<?php echo esc_attr( the_field( 'youtube-id' ) ); ?>?enablejsapi=1" type="text/html" width="440" allowfullscreen></iframe>
+							<script type="text/javascript" src="<?php echo esc_url( $threeplay_url ); ?>"></script>
+						</div>
+					<?php } ?>
 
 					<div id="chapterWrap" class="flex-item">
 
