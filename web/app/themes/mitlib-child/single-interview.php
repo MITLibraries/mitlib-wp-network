@@ -39,7 +39,7 @@ if ( $interviewees ) {
 		$interviewee_music = get_field( 'music-professional-work', $interviewee->ID );
 		$interviewee_mit = get_field( 'mit-affiliation', $interviewee->ID );
 
-		$interviewee_thumbnail = '<img src="' . get_stylesheet_directory_uri() . '/images/no-photo.png" alt="No Photo">';
+		$interviewee_thumbnail = '';
 		if ( get_the_post_thumbnail( $interviewee->ID, 'thumbnail' ) ) {
 			$interviewee_thumbnail = get_the_post_thumbnail( $interviewee->ID, 'thumbnail' );
 		}
