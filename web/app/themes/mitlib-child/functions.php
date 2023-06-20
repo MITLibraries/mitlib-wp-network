@@ -30,7 +30,7 @@ function child_scripts_styles() {
 	wp_register_style( 'bootstrap', '//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css', array(), '3.0.0' );
 	wp_register_style( 'font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css', array(), '4.6.0' );
 	wp_register_style( 'interviews', get_stylesheet_directory_uri() . '/css/build/interviews.css', array(), $theme_version );
-	wp_register_style( 'child-style', get_stylesheet_uri(), array( 'parent-global' ), $theme_version );
+	wp_register_style( 'child-style', get_stylesheet_uri(), array( 'parent-global', 'dashicons' ), $theme_version );
 
 	// Then we register javascript libraries.
 	wp_deregister_script( 'jquery' );
