@@ -75,7 +75,7 @@ $related = new \WP_Query( $query );
 	<?php get_template_part( 'inc/title-banner' ); ?>
 
 	<div class="title-page flex-container">
-		<h3 class="title-sub"><?php the_title(); ?></h3>
+		<h2 class="title-sub"><?php the_title(); ?></h2>
 	</div>
 
 	<div id="content" class="content">
@@ -137,8 +137,8 @@ $related = new \WP_Query( $query );
 				<section class="expandable group" role="region">
 					<h3><a href="#">Biography &amp; other information</a></h3>
 					<div id="biography" class="content" style="display: none;">
-						<h2 class="heading"><?php echo esc_html( $interviewee->post_title ); ?></h2>
-						<p class="muted"><strong>
+						<p><strong><?php echo esc_html( $interviewee->post_title ); ?></strong></p>
+						<p><strong>
 							<?php echo esc_html( $interviewee_mit ); ?><br>
 							<?php echo esc_html( $interviewee_music ); ?>
 						</strong></p>
