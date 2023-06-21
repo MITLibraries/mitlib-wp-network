@@ -30,6 +30,7 @@ function child_scripts_styles() {
 	wp_register_style( 'bootstrap', '//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css', array(), '3.0.0' );
 	wp_register_style( 'font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css', array(), '4.6.0' );
 	wp_register_style( 'interviews', get_stylesheet_directory_uri() . '/css/build/interviews.css', array(), $theme_version );
+	wp_register_style( 'interviewees', get_stylesheet_directory_uri() . '/css/build/interviewees.css', array(), $theme_version );
 	wp_register_style( 'child-style', get_stylesheet_uri(), array( 'parent-global', 'dashicons' ), $theme_version );
 
 	// Then we register javascript libraries.
@@ -52,6 +53,11 @@ function child_scripts_styles() {
 	if ( 'interview' == get_post_type() ) {
 		wp_enqueue_style( 'interviews' );
 		wp_enqueue_script( 'youtube-iframe-api' );
+	}
+
+	// Load the styles for the index of interviewees only on that archive.
+	if ( is_post_type_archive( 'interviewee' ) ) {
+		wp_enqueue_style( 'interviewees' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'Mitlib\Child\child_scripts_styles' );
@@ -111,6 +117,8 @@ function theme_setup() {
 		'uploads' => true,
 	);
 	add_theme_support( 'custom-header', $args );
+
+	add_image_size( 'small', 100, 100, true );
 }
 add_action( 'after_setup_theme', 'Mitlib\Child\theme_setup' );
 

@@ -56,15 +56,15 @@ if ( $interviewees ) {
  */
 $query = array(
 	'post_type' => 'interview',
-	'posts_per_page' => 10,
+	'posts_per_page' => -1,
 	'orderby' => 'post_date',
 	'order' => 'ASC',
 	'post_status' => 'publish',
 	'meta_key' => 'interviewee',
 	'meta_query' => array(
 		'key' => 'interviewee',
-		'value' => $interviewee->ID,
-		'compare' => 'LIKE',
+		'value' => serialize( array( strval( $interviewee->ID ) ) ),
+		'compare' => '=',
 	),
 );
 $related = new \WP_Query( $query );
@@ -195,7 +195,7 @@ $related = new \WP_Query( $query );
 							echo '<ul class="more-interviews">';
 							while ( $related->have_posts() ) {
 								$related->the_post();
-								if ( get_the_id() != $interview_id ) {
+								if ( ( get_the_id() != $interview_id ) ) {
 									echo '<li><a href="' . esc_url( get_permalink() ) . '">' . esc_html( get_the_title() ) . '</a></li>';
 								}
 							};
