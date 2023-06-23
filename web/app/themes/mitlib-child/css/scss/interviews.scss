@@ -6,7 +6,7 @@
 	background: #f2f0f0;
 
 	.row-icon {
-		margin: 9px 6px 6px 9px;
+		margin: 9px 9px 6px 9px;
 	}
 
 	.list-inline {
@@ -19,8 +19,15 @@
 
 		&.tags li,
 		&.categories li {
-			background-color: #ccc;
-			margin: 0 5px;
+			padding-left: 0;
+
+			&:after {
+				content: ' | ';
+			}
+
+			&:last-child:after {
+				content: '';
+			}
 		}
 	}
 
