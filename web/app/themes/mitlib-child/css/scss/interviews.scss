@@ -5,21 +5,22 @@
 #titlebar {
 	background: #f2f0f0;
 
+	.row-icon {
+		margin: 9px 6px 6px 9px;
+	}
+
 	.list-inline {
-		margin-bottom: 12px;
-		margin-top: 12px;
+		margin-bottom: 6px;
+		margin-top: 9px;
 
 		&.links li {
 			margin-right: 12px;
 		}
 
-		&.tags li::after {
-			content: ', ';
-		}
-
-		&.tags li:first-child::after,
-		&.tags li:last-child::after {
-			content: none;
+		&.tags li,
+		&.categories li {
+			background-color: #ccc;
+			margin: 0 5px;
 		}
 	}
 

@@ -99,22 +99,26 @@ $related = new \WP_Query( $query );
 						<?php echo wp_kses( $interviewee_thumbnail, $allowed_thumbnail ); ?>
 					</div>
 					<div class="flex-item">
-						<ul class="list-inline categories">
-							<li><i class="icon-folder-close"></i></li>
-							<?php
-							foreach ( $categories as $category ) {
-								echo '<li>' . esc_html( $category->name ) . '</li>';
-							}
-							?>
-						</ul>
-						<ul class="list-inline tags">
-							<li><i class="icon-tag"></i></li>
-							<?php
-							foreach ( $tags as $tag ) {
-								echo '<li>' . esc_html( $tag->name ) . '</li>';
-							}
-							?>
-						</ul>
+						<div class="flex-container">
+							<i class="icon-folder-close flex-item row-icon"></i>
+							<ul class="list-inline categories flex-item">
+								<?php
+								foreach ( $categories as $category ) {
+									echo '<li>' . esc_html( $category->name ) . '</li>';
+								}
+								?>
+							</ul>
+						</div>
+						<div class="flex-container">
+							<i class="icon-tag flex-item row-icon"></i>
+							<ul class="list-inline tags flex-item">
+								<?php
+								foreach ( $tags as $tag ) {
+									echo '<li>' . esc_html( $tag->name ) . '</li>';
+								}
+								?>
+							</ul>
+						</div>
 						<ul class="list-inline links">
 							<?php
 							if ( $audio ) {
