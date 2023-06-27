@@ -67,10 +67,6 @@
     },
     {
       "type": "vcs",
-      "url": "https://github.com/mitlibraries/advanced-post-types-order"
-    },
-    {
-      "type": "vcs",
       "url": "https://github.com/mitlibraries/cpt-onomies"
     },
     {
@@ -94,7 +90,6 @@
     "google/apiclient": "^2.12",
     "mitlibraries/acf-location-field": "^1.0",
     "mitlibraries/dynamic-menu-manager": "^1.0",
-    "nsp-code/advanced-post-types-order": "^4.4",
     "oscarotero/env": "^2.1",
     "pantheon-systems/pantheon-mu-plugin": "*",
     "pantheon-upstreams/upstream-configuration": "dev-main",
