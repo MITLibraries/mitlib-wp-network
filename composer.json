@@ -67,15 +67,7 @@
     },
     {
       "type": "vcs",
-      "url": "https://github.com/mitlibraries/cpt-onomies"
-    },
-    {
-      "type": "vcs",
       "url": "https://github.com/mitlibraries/dynamic-menu-manager"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/mitlibraries/wp-slug-trimmer"
     },
     {
       "type": "path",
