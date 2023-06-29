@@ -5,11 +5,29 @@
 #titlebar {
 	background: #f2f0f0;
 
+	.row-icon {
+		margin: 9px 9px 6px 9px;
+	}
+
 	.list-inline {
-		margin-top: 12px;
+		margin-bottom: 6px;
+		margin-top: 9px;
 
 		&.links li {
 			margin-right: 12px;
+		}
+
+		&.tags li,
+		&.categories li {
+			padding-left: 0;
+
+			&:after {
+				content: ' | ';
+			}
+
+			&:last-child:after {
+				content: '';
+			}
 		}
 	}
 

@@ -39,7 +39,7 @@ if ( $interviewees ) {
 		$interviewee_music = get_field( 'music-professional-work', $interviewee->ID );
 		$interviewee_mit = get_field( 'mit-affiliation', $interviewee->ID );
 
-		$interviewee_thumbnail = '<img src="' . get_stylesheet_directory_uri() . '/images/no-photo.png" alt="No Photo">';
+		$interviewee_thumbnail = '';
 		if ( get_the_post_thumbnail( $interviewee->ID, 'thumbnail' ) ) {
 			$interviewee_thumbnail = get_the_post_thumbnail( $interviewee->ID, 'thumbnail' );
 		}
@@ -56,15 +56,15 @@ if ( $interviewees ) {
  */
 $query = array(
 	'post_type' => 'interview',
-	'posts_per_page' => 10,
+	'posts_per_page' => -1,
 	'orderby' => 'post_date',
 	'order' => 'ASC',
 	'post_status' => 'publish',
 	'meta_key' => 'interviewee',
 	'meta_query' => array(
 		'key' => 'interviewee',
-		'value' => $interviewee->ID,
-		'compare' => 'LIKE',
+		'value' => serialize( array( strval( $interviewee->ID ) ) ),
+		'compare' => '=',
 	),
 );
 $related = new \WP_Query( $query );
@@ -75,7 +75,7 @@ $related = new \WP_Query( $query );
 	<?php get_template_part( 'inc/title-banner' ); ?>
 
 	<div class="title-page flex-container">
-		<h3 class="title-sub"><?php the_title(); ?></h3>
+		<h2 class="title-sub"><?php the_title(); ?></h2>
 	</div>
 
 	<div id="content" class="content">
@@ -99,22 +99,26 @@ $related = new \WP_Query( $query );
 						<?php echo wp_kses( $interviewee_thumbnail, $allowed_thumbnail ); ?>
 					</div>
 					<div class="flex-item">
-						<ul class="list-inline categories">
-							<li><i class="icon-folder-close"></i></li>
-							<?php
-							foreach ( $categories as $category ) {
-								echo '<li>' . esc_html( $category->name ) . '</li>';
-							}
-							?>
-						</ul>
-						<ul class="list-inline tags">
-							<li><i class="icon-tag"></i></li>
-							<?php
-							foreach ( $tags as $tag ) {
-								echo '<li>' . esc_html( $tag->name ) . '</li>';
-							}
-							?>
-						</ul>
+						<div class="flex-container">
+							<i class="icon-folder-close flex-item row-icon"></i>
+							<ul class="list-inline categories flex-item">
+								<?php
+								foreach ( $categories as $category ) {
+									echo '<li>' . esc_html( $category->name ) . '</li>';
+								}
+								?>
+							</ul>
+						</div>
+						<div class="flex-container">
+							<i class="icon-tag flex-item row-icon"></i>
+							<ul class="list-inline tags flex-item">
+								<?php
+								foreach ( $tags as $tag ) {
+									echo '<li>' . esc_html( $tag->name ) . '</li>';
+								}
+								?>
+							</ul>
+						</div>
 						<ul class="list-inline links">
 							<?php
 							if ( $audio ) {
@@ -137,8 +141,8 @@ $related = new \WP_Query( $query );
 				<section class="expandable group" role="region">
 					<h3><a href="#">Biography &amp; other information</a></h3>
 					<div id="biography" class="content" style="display: none;">
-						<h2 class="heading"><?php echo esc_html( $interviewee->post_title ); ?></h2>
-						<p class="muted"><strong>
+						<p><strong><?php echo esc_html( $interviewee->post_title ); ?></strong></p>
+						<p><strong>
 							<?php echo esc_html( $interviewee_mit ); ?><br>
 							<?php echo esc_html( $interviewee_music ); ?>
 						</strong></p>
@@ -148,10 +152,12 @@ $related = new \WP_Query( $query );
 
 				<div id="interview" class="entry-content flex-container">
 
-					<div id="playerWrap" class="wrap-videoplayer flex-item">
-						<iframe frameborder="0" height="300" id="myytplayer" src="https://www.youtube.com/embed/<?php echo esc_attr( the_field( 'youtube-id' ) ); ?>?enablejsapi=1" type="text/html" width="440" allowfullscreen></iframe>
-						<script type="text/javascript" src="<?php echo esc_url( $threeplay_url ); ?>"></script>
-					</div>
+					<?php if ( get_field( 'youtube-id' ) ) { ?>
+						<div id="playerWrap" class="wrap-videoplayer flex-item">
+							<iframe frameborder="0" height="300" id="myytplayer" src="https://www.youtube.com/embed/<?php echo esc_attr( the_field( 'youtube-id' ) ); ?>?enablejsapi=1" type="text/html" width="440" allowfullscreen></iframe>
+							<script type="text/javascript" src="<?php echo esc_url( $threeplay_url ); ?>"></script>
+						</div>
+					<?php } ?>
 
 					<div id="chapterWrap" class="flex-item">
 
@@ -193,7 +199,7 @@ $related = new \WP_Query( $query );
 							echo '<ul class="more-interviews">';
 							while ( $related->have_posts() ) {
 								$related->the_post();
-								if ( get_the_id() != $interview_id ) {
+								if ( ( get_the_id() != $interview_id ) ) {
 									echo '<li><a href="' . esc_url( get_permalink() ) . '">' . esc_html( get_the_title() ) . '</a></li>';
 								}
 							};
