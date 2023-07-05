@@ -67,19 +67,7 @@
     },
     {
       "type": "vcs",
-      "url": "https://github.com/mitlibraries/advanced-post-types-order"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/mitlibraries/cpt-onomies"
-    },
-    {
-      "type": "vcs",
       "url": "https://github.com/mitlibraries/dynamic-menu-manager"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/mitlibraries/wp-slug-trimmer"
     },
     {
       "type": "path",
@@ -94,7 +82,6 @@
     "google/apiclient": "^2.12",
     "mitlibraries/acf-location-field": "^1.0",
     "mitlibraries/dynamic-menu-manager": "^1.0",
-    "nsp-code/advanced-post-types-order": "^4.4",
     "oscarotero/env": "^2.1",
     "pantheon-systems/pantheon-mu-plugin": "*",
     "pantheon-upstreams/upstream-configuration": "dev-main",
@@ -107,7 +94,6 @@
     "vlucas/phpdotenv": "^5.5",
     "wpackagist-plugin/acf-image-crop-add-on": "^1.4",
     "wpackagist-plugin/add-category-to-pages": "^1.2",
-    "wpackagist-plugin/akismet": "^5.0",
     "wpackagist-plugin/black-studio-tinymce-widget": "^2.7",
     "wpackagist-plugin/cf7-conditional-fields": "2.2.3",
     "wpackagist-plugin/cf7-to-zapier": "^2.2",
