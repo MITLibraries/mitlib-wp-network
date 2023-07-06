@@ -47,7 +47,17 @@ consult the Site Health report (WordPress admin interface -> Tools -> Site
 Health). The report's Info tab includes a Server panel which reports the PHP
 version.
 
-4. Push branch to Github for code review
+4. Rebuild your local Lando environment with these changes
+
+Running `lando rebuild` will apply any needed container updates, now that the
+new PHP version is specified in `pantheon.upstream.yml`. The output of this
+command should include confirmation of the new PHP version, as the relevant
+pre-install command will be triggered during this process.
+
+The PHP version is also reported as part of the Site Health report within the
+WordPress dashboard (Tools -> Site Health -> Info tab - > Server panel).
+
+5. Push branch to Github for code review
 
 From this point, follow our standing practices for pull requests and code
 review.
