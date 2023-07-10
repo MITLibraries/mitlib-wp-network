@@ -1,0 +1,8 @@
+/**
+ * This stylesheet is only sent to autheticated users in the Super Admin role.
+ * This is a helpful technique for highlighting specific content conditions that
+ * site builders need to watch for.
+ *
+ * Past examples of how we've used this feature are to highlight links using an
+ * insecure protocol, or references to specific domains which we need to remove.
+ */

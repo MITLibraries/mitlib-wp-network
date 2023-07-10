@@ -1,0 +1,98 @@
+{
+    "key": "group_58e229318a751",
+    "title": "Alerts",
+    "fields": [
+        {
+            "key": "field_51a21249841dd",
+            "label": "Alert",
+            "name": "alert",
+            "type": "true_false",
+            "instructions": "This is an alert-level post.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_54495c5677eae",
+            "label": "Confirm alert",
+            "name": "confirm_alert",
+            "type": "true_false",
+            "instructions": "Alert posts appear at the top of ALL pages. Please confirm that this is an alert-level post.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_51a21249841dd",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_54495c8077eaf",
+            "label": "Closable",
+            "name": "closable",
+            "type": "true_false",
+            "instructions": "Allow users to close this alert. Once closed, the alert will not be show again for that particular user.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_51a21249841dd",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 6,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1671735420
+}

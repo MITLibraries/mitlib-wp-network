@@ -1,0 +1,208 @@
+{
+    "key": "group_55101c53c2d37",
+    "title": "Event fields",
+    "fields": [
+        {
+            "key": "field_53ecc2067d32f",
+            "label": "Is event",
+            "name": "is_event",
+            "type": "true_false",
+            "instructions": "Check the box to mark this post as an event.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_53ecc21c7d330",
+            "label": "Event date",
+            "name": "event_date",
+            "type": "date_picker",
+            "instructions": "Select the event date.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_53ecc2067d32f",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "first_day": 1,
+            "return_format": "Ymd",
+            "display_format": "F d"
+        },
+        {
+            "key": "field_53ecc24f7d331",
+            "label": "Event Start Time",
+            "name": "event_start_time",
+            "type": "text",
+            "instructions": "Enter the event start time. This field is not required.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_53ecc2067d32f",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "12pm",
+            "prepend": "",
+            "append": "",
+            "maxlength": 8
+        },
+        {
+            "key": "field_53ecc2667d332",
+            "label": "Event end time",
+            "name": "event_end_time",
+            "type": "text",
+            "instructions": "Enter the event end time. This field is not required.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_53ecc2067d32f",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "3pm",
+            "prepend": "",
+            "append": "",
+            "maxlength": 8
+        },
+        {
+            "key": "field_5a2a9ca90a81c",
+            "label": "Calendar URL",
+            "name": "calendar_url",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5a2a9cd20a81d",
+            "label": "Calendar ID",
+            "name": "calendar_id",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5a2a9ce50a81e",
+            "label": "Calendar Image",
+            "name": "calendar_image",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "current_user_role",
+                "operator": "==",
+                "value": "super_admin"
+            },
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ],
+        [
+            {
+                "param": "current_user_role",
+                "operator": "==",
+                "value": "administrator"
+            },
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ],
+        [
+            {
+                "param": "current_user_role",
+                "operator": "==",
+                "value": "contributor"
+            },
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 2,
+    "position": "acf_after_title",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "News site: Add a cluster of fields to allow a Post record to function as an event - visible to Contributors, Admins, and Super Admins",
+    "show_in_rest": false
+}

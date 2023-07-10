@@ -1,0 +1,21 @@
+---
+engines:
+  duplication:
+    enabled: true
+    config:
+      languages:
+      - javascript
+      - php
+  fixme:
+    enabled: true
+  phpcodesniffer:
+    enabled: true
+    config:
+      standard: "phpcs.xml"
+ratings:
+  paths:
+  - "**.js"
+  - "**.php"
+exclude_paths:
+  - web/app/themes/mitlib-child/navwalker.php
+  - web/app/themes/mitlib-parent/navwalker.php

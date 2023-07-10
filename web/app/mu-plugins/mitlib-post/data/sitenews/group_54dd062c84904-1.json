@@ -1,0 +1,65 @@
+{
+    "key": "group_54dd062c84904-1",
+    "title": "Featured Article flag (Post)",
+    "fields": [
+        {
+            "key": "field_5474bef390af8",
+            "label": "Featured Article on News Page",
+            "name": "featuredArticle",
+            "type": "radio",
+            "instructions": "Should this be featured on the front page of the news?",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "false": "Should not display on homepage",
+                "True": "Feature on homepage"
+            },
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "false : Should not display on homepage",
+            "layout": "vertical",
+            "allow_null": 0,
+            "return_format": "value"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "current_user_role",
+                "operator": "==",
+                "value": "super_admin"
+            },
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ],
+        [
+            {
+                "param": "current_user_role",
+                "operator": "==",
+                "value": "administrator"
+            },
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 2000,
+    "position": "normal",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Add a flag to promote news site content (Posts) to parent site front page - visible only to admins and above",
+    "show_in_rest": false
+}
