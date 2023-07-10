@@ -31,28 +31,6 @@
   <exclude-pattern>web/app/themes/twentytwentytwo/</exclude-pattern>
   <exclude-pattern>vendor/</exclude-pattern>
 
-  <!-- Ignore symlinks for sites -->
-  <exclude-pattern>web/150books</exclude-pattern>
-  <exclude-pattern>web/about</exclude-pattern>
-  <exclude-pattern>web/akdc</exclude-pattern>
-  <exclude-pattern>web/collections</exclude-pattern>
-  <exclude-pattern>web/council</exclude-pattern>
-  <exclude-pattern>web/creos</exclude-pattern>
-  <exclude-pattern>web/data-management</exclude-pattern>
-  <exclude-pattern>web/distinctive-collections</exclude-pattern>
-  <exclude-pattern>web/docs</exclude-pattern>
-  <exclude-pattern>web/exhibits</exclude-pattern>
-  <exclude-pattern>web/future-spaces</exclude-pattern>
-  <exclude-pattern>web/giving</exclude-pattern>
-  <exclude-pattern>web/mit-and-slavery</exclude-pattern>
-  <exclude-pattern>web/mit-reads</exclude-pattern>
-  <exclude-pattern>web/mithistory</exclude-pattern>
-  <exclude-pattern>web/music-oral-history</exclude-pattern>
-  <exclude-pattern>web/news</exclude-pattern>
-  <exclude-pattern>web/opendata</exclude-pattern>
-  <exclude-pattern>web/pomeroy</exclude-pattern>
-  <exclude-pattern>web/scholarly</exclude-pattern>
-
   <!-- Start Pantheon addition: Ignore plugins and quicksilver scripts -->
   <exclude-pattern>web/app/mu-plugins/bedrock-disallow-indexing</exclude-pattern>
   <exclude-pattern>web/app/mu-plugins/multisite-url-fixer</exclude-pattern>
