@@ -79,6 +79,7 @@
     "wpengine/advanced-custom-fields-pro": "^5",
     "composer/installers": "^2.2",
     "connectthink/wp-scss": "^2.4@beta",
+    "cweagans/composer-patches": "^1.7",
     "google/apiclient": "^2.12",
     "mitlibraries/acf-location-field": "^1.0",
     "mitlibraries/dynamic-menu-manager": "^1.0",
@@ -135,11 +136,13 @@
   "config": {
     "optimize-autoloader": true,
     "preferred-install": "dist",
+    "process-timeout": 0,
     "allow-plugins": {
       "composer/installers": true,
-      "roots/wordpress-core-installer": true,
+      "cweagans/composer-patches": true,
       "dealerdirect/phpcodesniffer-composer-installer": true,
-      "pivvenit/acf-pro-installer": true
+      "pivvenit/acf-pro-installer": true,
+      "roots/wordpress-core-installer": true
     },
     "sort-packages": true
   },
@@ -171,7 +174,9 @@
       "locations": {
         "web-root": "./"
       }
-    }
+    },
+    "composer-exit-on-patch-failure": true,
+    "enable-patching": true
   },
   "autoload": {
     "classmap": [
@@ -214,6 +219,9 @@
     ],
     "syntax": [
       "find . -path ./libs -prune -o \\( -name '*.php' \\) -exec php -lf {} \\;"
+    ],
+    "install-sage": [
+      "bash ./private/scripts/sage-theme-install.sh"
     ],
     "test": [
       "phpcs"
