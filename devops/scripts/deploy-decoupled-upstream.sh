@@ -29,8 +29,27 @@ echo
 newcommits=$(git log decoupled-release-pointer..HEAD --reverse --pretty=format:"%h")
 commits=()
 
+# There are a small number of commits which must be manually excluded, usually
+# due to changes in the commit type rules which would retroactively include commits
+# which were not initially included, causing merge conflicts. Commits which should
+# be excluded can be added to this array and will not be cherry picked.
+exclude_list=(0099a8b)
+
 # Identify commits that should be released
 for commit in $newcommits; do
+  # Exclude commits which have been manually rejected
+  skip=false
+  for item in "${exclude_list[@]}"; do
+    if [[ $item == $commit ]]; then
+      echo "Commit ${commit} has been manually excluded."
+      skip=true
+    fi
+  done
+
+  if [[ $skip == true ]] ; then
+      continue
+  fi
+
   commit_type=$(identify_commit_type "$commit")
   if [[ $commit_type == "normal" ]] ; then
     commits+=($commit)
@@ -41,11 +60,13 @@ for commit in $newcommits; do
     echo "You may wish to ensure that nothing in this commit is meant for release."
     delete=(${commit})
     for remove in "${delete[@]}"; do
-      for i in "${commits[@]}"; do
-        if [ [ ${commits[i]} = $remove ]]; then
-          unset 'commits[i]'
-        fi
-      done
+      if (( ${#commits[@]} )); then
+        for i in "${commits[@]}"; do
+          if [[ ${commits[0]} = $remove ]]; then
+            unset 'commits[i]'
+          fi
+        done
+      fi
     done
   fi
 done
@@ -72,7 +93,7 @@ for commit in "${commits[@]}"; do
   fi
   echo "Adding $commit:"
   git --no-pager log --format=%B -n 1 "$commit"
-  git cherry-pick -rn "$commit" 2>&1
+  git cherry-pick -rn -X theirs "$commit" 2>&1
   # Product request - single commit per release
   # The commit message from the last commit will be used.
   git log --format=%B -n 1 "$commit" > /tmp/commit_message
