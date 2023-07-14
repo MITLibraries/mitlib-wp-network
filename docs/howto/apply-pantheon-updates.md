@@ -12,39 +12,48 @@ into our `master` branch.
 
 ## Workflow
 
-1. Create a "catchup" branch from `master`, and create a multidev from it.
+1. Create a `catchup` branch from `master`, and create a multidev from it.
 
 Doing this now, from a trusted starting point, can make troubleshooting easier.
 
-2. Sync our `default` branch - and only the `default` branch - with the Pantheon
-   repository. **Do not sync the entire repository**
+2. Sync the `default` branch - and only the `default` branch - with the Pantheon
+   repository.
 
-3. Identify which commits on the `default` branch still need to be merged
+**Syncing the entire repository would overwrite all our local development, and
+revert us to a blank WordPress site.**
 
-Each round of platform updates is marked along the branch with a tag - so this
-step should be completed by reading the list of commits until you get to a tag.
+3. Identify which commits on the `default` branch still need to be merged.
 
-4. Review this set of commits to the `default` branch to identify any concerns
+Each round of platform updates is marked along the branch with a tag (you'll
+create one for this round of updates in step 9), so this step should be
+completed by reading the list of commits until you get to a tag.
+
+4. Review this set of commits to identify any concerns.
 
 Ideally all commits will be judged safe to apply. If a subset are desired, pick
 that point along the `default` branch.
 
-5. Create a "default#" branch off of the chosen starting point
+5. Create a `default#` branch off of the chosen starting point
 
 The number used in this branch name will naturally change over time, obviously.
 
-6. Merge "default#" into "catchup"
+6. Merge `default#` into `catchup`.
 
 This PR can be merged without review, but may require resolving a merge
 conflict in cases where Pantheon makes changes to a file we have also modified.
 
-7. Re-deploy "catchup" to Pantheon, and inspect it for functionality
+7. Re-deploy `catchup` to Pantheon, and inspect it for functionality.
 
-8. After any needed signoffs and review, merge "catchup" into `master`
+This inspection may be something that an individual engineer can evaluate
+directly, or may require code review or stakeholder review - at your discretion.
+Treat this process as you would any other dependency update, and if you have any
+questions you can ask your colleagues for their input.
 
-9. Create a tag on the `default` branch marking what was included in this round
-   of updates, to make the next round of updates easier to start.
+8. After any needed signoffs and review, merge `catchup` into `master`.
 
-The name for this tag should match the `default#` branch you created in step 5.
+9. Create a tag on the `default` branch marking what was included in the update.
 
-10. Delete the catchup and default# branches you created during this process.
+Creating this tag will make it easier to start the next round of updates. The
+name for this tag should match the `default#` branch you created in step 5.
+
+10. Delete the `catchup` and `default#` branches.
