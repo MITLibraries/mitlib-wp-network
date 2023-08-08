@@ -85,6 +85,7 @@ function sidebars_init() {
 			'after_widget' => '</aside>',
 			'before_title' => '<h2 class="widget-title">',
 			'after_title' => '</h2>',
+			'show_in_rest' => true,
 		)
 	);
 
@@ -97,6 +98,7 @@ function sidebars_init() {
 			'after_widget' => '</div>',
 			'before_title' => '<h3 class="widget-title">',
 			'after_title' => '</h3>',
+			'show_in_rest' => true,
 		)
 	);
 }

@@ -357,6 +357,7 @@ function mitlib_sidebars_init() {
 			'after_widget' => '</aside>',
 			'before_title' => '<h2 class="widget-title">',
 			'after_title' => '</h2>',
+			'show_in_rest' => true,
 		)
 	);
 
@@ -369,6 +370,7 @@ function mitlib_sidebars_init() {
 			'after_widget' => '</aside>',
 			'before_title' => '<h3 class="widget-title">',
 			'after_title' => '</h3>',
+			'show_in_rest' => true,
 		)
 	);
 
@@ -381,6 +383,7 @@ function mitlib_sidebars_init() {
 			'after_widget' => '</aside>',
 			'before_title' => '<h3 class="widget-title">',
 			'after_title' => '</h3>',
+			'show_in_rest' => true,
 		)
 	);
 
@@ -392,6 +395,7 @@ function mitlib_sidebars_init() {
 			'before_title' => '<h3 class="widget-title">',
 			'after_title' => '</h3>',
 			'class' => '',
+			'show_in_rest' => true,
 		)
 	);
 
@@ -404,6 +408,7 @@ function mitlib_sidebars_init() {
 			'after_widget'  => '</aside>',
 			'before_title'  => '<h2 class="widget-title">',
 			'after_title'   => '</h2>',
+			'show_in_rest' => true,
 		)
 	);
 
@@ -416,6 +421,7 @@ function mitlib_sidebars_init() {
 			'after_widget'  => '</aside>',
 			'before_title'  => '<h2 class="widget-title">',
 			'after_title'   => '</h2>',
+			'show_in_rest' => true,
 		)
 	);
 
@@ -427,6 +433,7 @@ function mitlib_sidebars_init() {
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
+		'show_in_rest' => true,
 	) );
 
 	register_sidebar( array(
@@ -437,6 +444,7 @@ function mitlib_sidebars_init() {
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h3 class="widget-title">',
 		'after_title'   => '</h3>',
+		'show_in_rest' => true,
 	) );
 
 }
