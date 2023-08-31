@@ -33,7 +33,7 @@ namespace Mitlib\News;
 				?>
 			</span>
 			<?php if ( has_category() ) : ?>
-			<span class="category-post">
+			<span class="category-post-single">
 		   
 				<?php
 				$category = get_the_category();
