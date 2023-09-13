@@ -443,7 +443,7 @@ img.wp-smiley,
 .nav-previous,
 .previous-image {
 	float: left;
-	width: 50%;
+	width: 48%;
 }
 .meta-nav {
 	position: relative;
@@ -454,7 +454,7 @@ img.wp-smiley,
 .next-image {
 	float: right;
 	text-align: right;
-	width: 50%;
+	width: 48%;
 }
 .nav-single + .comments-area,
 #comment-nav-above {
