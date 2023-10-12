@@ -1063,23 +1063,23 @@
         },
         {
             "name": "pantheon-systems/pantheon-mu-plugin",
-            "version": "1.0.5",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pantheon-systems/pantheon-mu-plugin.git",
-                "reference": "a185eeb0b424fe3e347bc064eae4c7af90ad3a6e"
+                "reference": "567c9881dac19be5f16ee1039b6ac5b33617d4a3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pantheon-systems/pantheon-mu-plugin/zipball/a185eeb0b424fe3e347bc064eae4c7af90ad3a6e",
-                "reference": "a185eeb0b424fe3e347bc064eae4c7af90ad3a6e",
+                "url": "https://api.github.com/repos/pantheon-systems/pantheon-mu-plugin/zipball/567c9881dac19be5f16ee1039b6ac5b33617d4a3",
+                "reference": "567c9881dac19be5f16ee1039b6ac5b33617d4a3",
                 "shasum": ""
             },
             "require": {
                 "vlucas/phpdotenv": "*"
             },
             "require-dev": {
-                "pantheon-systems/pantheon-wp-coding-standards": "^1.0"
+                "pantheon-systems/pantheon-wp-coding-standards": "^2.0"
             },
             "type": "wordpress-muplugin",
             "notification-url": "https://packagist.org/downloads/",
@@ -1089,9 +1089,9 @@
             "description": "Pantheon mu-plugin for WordPress sites.",
             "support": {
                 "issues": "https://github.com/pantheon-systems/pantheon-mu-plugin/issues",
-                "source": "https://github.com/pantheon-systems/pantheon-mu-plugin/tree/1.0.5"
+                "source": "https://github.com/pantheon-systems/pantheon-mu-plugin/tree/1.2.0"
             },
-            "time": "2023-03-21T20:57:23+00:00"
+            "time": "2023-09-14T16:42:48+00:00"
         },
         {
             "name": "pantheon-upstreams/upstream-configuration",
@@ -2767,15 +2767,15 @@
         },
         {
             "name": "wpackagist-plugin/custom-post-type-ui",
-            "version": "1.13.6",
+            "version": "1.14.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/custom-post-type-ui/",
-                "reference": "tags/1.13.6"
+                "reference": "tags/1.14.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/custom-post-type-ui.1.13.6.zip"
+                "url": "https://downloads.wordpress.org/plugin/custom-post-type-ui.1.14.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -2785,15 +2785,15 @@
         },
         {
             "name": "wpackagist-plugin/enable-media-replace",
-            "version": "4.1.2",
+            "version": "4.1.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/enable-media-replace/",
-                "reference": "tags/4.1.2"
+                "reference": "tags/4.1.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/enable-media-replace.4.1.2.zip"
+                "url": "https://downloads.wordpress.org/plugin/enable-media-replace.4.1.4.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -2821,15 +2821,15 @@
         },
         {
             "name": "wpackagist-plugin/google-sitemap-generator",
-            "version": "4.1.11",
+            "version": "4.1.13",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/google-sitemap-generator/",
-                "reference": "tags/4.1.11"
+                "reference": "tags/4.1.13"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/google-sitemap-generator.4.1.11.zip"
+                "url": "https://downloads.wordpress.org/plugin/google-sitemap-generator.4.1.13.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -2857,15 +2857,15 @@
         },
         {
             "name": "wpackagist-plugin/media-library-assistant",
-            "version": "3.09",
+            "version": "3.12",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/media-library-assistant/",
-                "reference": "tags/3.09"
+                "reference": "trunk"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/media-library-assistant.3.09.zip"
+                "url": "https://downloads.wordpress.org/plugin/media-library-assistant.zip?timestamp=1696797213"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -2911,15 +2911,15 @@
         },
         {
             "name": "wpackagist-plugin/pantheon-advanced-page-cache",
-            "version": "1.3.0",
+            "version": "1.4.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/pantheon-advanced-page-cache/",
-                "reference": "tags/1.3.0"
+                "reference": "tags/1.4.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/pantheon-advanced-page-cache.1.3.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/pantheon-advanced-page-cache.1.4.1.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -2965,15 +2965,15 @@
         },
         {
             "name": "wpackagist-plugin/shortcode-variables",
-            "version": "4.0.3",
+            "version": "4.0.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/shortcode-variables/",
-                "reference": "tags/4.0.3"
+                "reference": "tags/4.0.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/shortcode-variables.4.0.3.zip"
+                "url": "https://downloads.wordpress.org/plugin/shortcode-variables.4.0.4.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -2983,15 +2983,15 @@
         },
         {
             "name": "wpackagist-plugin/tinymce-advanced",
-            "version": "5.9.0",
+            "version": "5.9.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/tinymce-advanced/",
-                "reference": "tags/5.9.0"
+                "reference": "tags/5.9.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/tinymce-advanced.5.9.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/tinymce-advanced.5.9.2.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -3001,15 +3001,15 @@
         },
         {
             "name": "wpackagist-plugin/ultimate-posts-widget",
-            "version": "2.2.5",
+            "version": "2.2.7",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/ultimate-posts-widget/",
-                "reference": "tags/2.2.5"
+                "reference": "tags/2.2.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/ultimate-posts-widget.2.2.5.zip"
+                "url": "https://downloads.wordpress.org/plugin/ultimate-posts-widget.2.2.7.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -3109,15 +3109,15 @@
         },
         {
             "name": "wpackagist-plugin/wp-mail-smtp",
-            "version": "3.8.0",
+            "version": "3.9.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-mail-smtp/",
-                "reference": "tags/3.8.0"
+                "reference": "tags/3.9.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-mail-smtp.3.8.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/wp-mail-smtp.3.9.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -3163,15 +3163,15 @@
         },
         {
             "name": "wpackagist-plugin/wp-sentry-integration",
-            "version": "6.20.0",
+            "version": "6.26.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-sentry-integration/",
-                "reference": "tags/6.20.0"
+                "reference": "tags/6.26.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-sentry-integration.6.20.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/wp-sentry-integration.6.26.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
