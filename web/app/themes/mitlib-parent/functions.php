@@ -501,7 +501,7 @@ add_filter( 'body_class', 'Mitlib\Parent\customize_body_class' );
  * @return int The maximum number of words to include from the excerpt.
  */
 function custom_excerpt_length( $length ) {
-	return 9999;
+	return 100;
 }
 add_filter( 'excerpt_length', 'Mitlib\Parent\custom_excerpt_length', 999 );
 
