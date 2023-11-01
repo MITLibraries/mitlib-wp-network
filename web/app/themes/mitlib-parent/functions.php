@@ -495,6 +495,17 @@ function customize_body_class( $classes ) {
 add_filter( 'body_class', 'Mitlib\Parent\customize_body_class' );
 
 /**
+ * Defines a new value for the length of the excerpt.
+ *
+ * @param int $length Number of words to include in the excerpt.
+ * @return int The maximum number of words to include from the excerpt.
+ */
+function custom_excerpt_length( $length ) {
+	return 100;
+}
+add_filter( 'excerpt_length', 'Mitlib\Parent\custom_excerpt_length', 999 );
+
+/**
  * ============================================================================
  * ============================================================================
  * These functions are defined here, without adding them via add_action. They
