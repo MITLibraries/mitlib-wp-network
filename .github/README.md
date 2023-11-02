@@ -199,7 +199,7 @@ Maintaining these symlinks involves two steps. For a hypothetical site like `lib
 
 * `lando start` will get your local containers running.
 * `lando pull` will prompt for the environment on Pantheon from which to grab the database and files. (Our default workflow is to not prompt for copying code directly from Pantheon)
-* `lando wp search-replace dev-mitlib-wp-network.pantheonsite.io mitlib-wp-network.lndo.site --url=dev-mitlib-wp-network.pantheonsite.io --network` will cleanup the database to work with our local site name. Note: `dev-mitlib...` would change to match whichever multidev you pulled data from in the previous step. This assumes `dev` but if you chose `engxhallo`, the prefix would change to `engxhallo-mitlib`. If the command finishes saying it made 0 replacements, it's likely you ran a command for replacing that didn't match the multidev you pulled from.
+* `lando wp search-replace www-dev.libraries.mit.edu mitlib-wp-network.lndo.site --url=www-dev.libraries.mit.edu --network` will cleanup the database to work with our local site name. Note: `dev-mitlib...` would change to match whichever multidev you pulled data from in the previous step. This assumes `dev` but if you chose `engxhallo`, the prefix would change to `engxhallo-mitlib`. If the command finishes saying it made 0 replacements, it's likely you ran a command for replacing that didn't match the multidev you pulled from.
 * Access the site at: `https://mitlib-wp-network.lndo.site`
 
 You can completely start your local environment over with `lando destroy` - after which you should follow each step in the above process.
