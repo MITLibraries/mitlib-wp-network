@@ -118,15 +118,15 @@ class Pull_Events_Plugin {
 				if ( isset( $val['event']['event_instances'][0]['event_instance'] ) ) {
 					$calendar_id = $val['event']['event_instances'][0]['event_instance']['id'];
 					$start = new DateTimeImmutable( $val['event']['event_instances'][0]['event_instance']['start'] );
-					$startdate = date_format($start, 'Ymd');
-					$starttime = date_format($start, 'h:i A');
+					$startdate = date_format( $start, 'Ymd' );
+					$starttime = date_format( $start, 'h:i A' );
 					$end = '';
 					$enddate = '';
 					$endtime = '';
 					if ( isset( $val['event']['event_instances'][0]['event_instance']['end'] ) ) {
 						$end = new DateTimeImmutable( $val['event']['event_instances'][0]['event_instance']['end'] );
-						$startdate = date_format($end, 'Ymd');
-						$endtime = date_format($end, 'h:i A');
+						$startdate = date_format( $end, 'Ymd' );
+						$endtime = date_format( $end, 'h:i A' );
 					}
 				}
 				if ( isset( $val['event']['localist_url'] ) ) {
