@@ -117,20 +117,16 @@ class Pull_Events_Plugin {
 				}
 				if ( isset( $val['event']['event_instances'][0]['event_instance'] ) ) {
 					$calendar_id = $val['event']['event_instances'][0]['event_instance']['id'];
-					$start = strtotime( $val['event']['event_instances'][0]['event_instance']['start'] );
-					$startdate = gmdate( 'Ymd', $start );
-					$workingtime = new DateTime( gmdate( 'h:i A', $start ) );
-					$workingtime->setTimezone( new DateTimeZone( get_option( 'timezone_string' ) ) );
-					$starttime = $workingtime->format( 'h:i A' );
+					$start = new DateTimeImmutable( $val['event']['event_instances'][0]['event_instance']['start'] );
+					$startdate = date_format( $start, 'Ymd' );
+					$starttime = date_format( $start, 'h:i A' );
 					$end = '';
 					$enddate = '';
 					$endtime = '';
 					if ( isset( $val['event']['event_instances'][0]['event_instance']['end'] ) ) {
-						$end = strtotime( $val['event']['event_instances'][0]['event_instance']['end'] );
-						$enddate = gmdate( 'Ymd', $end );
-						$workingtime = new DateTime( gmdate( 'h:i A', $end ) );
-						$workingtime->setTimezone( new DateTimeZone( get_option( 'timezone_string' ) ) );
-						$endtime = $workingtime->format( 'h:i A' );
+						$end = new DateTimeImmutable( $val['event']['event_instances'][0]['event_instance']['end'] );
+						$startdate = date_format( $end, 'Ymd' );
+						$endtime = date_format( $end, 'h:i A' );
 					}
 				}
 				if ( isset( $val['event']['localist_url'] ) ) {
