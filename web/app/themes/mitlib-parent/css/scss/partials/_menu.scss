@@ -88,6 +88,8 @@ body.user-is-tabbing *.nav-main {
       font-size: 1em;
 
       a {
+        align-items: flex-end;
+        flex-direction: row;
         text-transform: none;
         padding-top: 2em;
       }
