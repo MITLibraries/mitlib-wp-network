@@ -71,7 +71,7 @@ body.user-is-tabbing *.nav-main {
       font-size: 0.75em;
 
       a {
-        padding: 1rem 0.5rem 0.5rem 0.5rem;
+        padding: 1.9375rem 0.5rem 0.5rem 0.5rem;
         align-items: center;
         flex-direction: column;
         text-transform: uppercase;
@@ -88,6 +88,8 @@ body.user-is-tabbing *.nav-main {
       font-size: 1em;
 
       a {
+        align-items: flex-end;
+        flex-direction: row;
         text-transform: none;
         padding-top: 2em;
       }
@@ -192,7 +194,7 @@ body.user-is-tabbing *.nav-main {
       color: #fff;
       display: flex;
       height: 100%;
-      padding-top: 2em;
+      padding-top: 2.875em;
     }
 
 	  &.active {

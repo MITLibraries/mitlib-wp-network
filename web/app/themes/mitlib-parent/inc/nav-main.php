@@ -99,7 +99,7 @@ namespace Mitlib\Parent;
 		</li>
 		<li class="link-primary flex-end">
 			<h2 class="main-nav-header">
-				<a id="main-nav-researchmenu-title"href="#" class="no-underline main-nav-link menu-control">Research support</a>
+				<a id="main-nav-researchmenu-title" href="#" class="no-underline main-nav-link menu-control">Research support</a>
 			</h2>
 			<div aria-labelledby="main-nav-researchmenu-title" id="main-nav-researchmenu" class="links-sub flex-container push group">
 				<div class="col-1 flex-item">

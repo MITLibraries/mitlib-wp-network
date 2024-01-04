@@ -67,10 +67,8 @@ endif;
 			</div><!-- end div.guides-experts -->
 		</div><!-- end div.col-2 -->
 	</div><!-- end div.content-main -->
+</div><!-- end div.content -->
 
 <?php
 	get_footer();
 ?>
-
-</div>
-<!-- end #content -->

@@ -29,7 +29,7 @@
 
 	.logo-mit-lib {
 		fill: $color-text--light;
-		padding: 8px;
+		padding: 1.6785rem 0.5rem 0.5rem 0.5rem;
 
 		svg {
 			@include rem-first(max-height, 1.75);
@@ -112,8 +112,8 @@
 		@include rem-first(padding-bottom, 0.5);
 		padding-left: 0.5em;
 		padding-right: 0.5em;
-		max-width: 59px;
-		@include rem-first(max-width, 3.6875);
+		max-width: 74px;
+		@include rem-first(max-width, 4.6);
 
 		@include bp-tablet--portrait {
 			display: block;

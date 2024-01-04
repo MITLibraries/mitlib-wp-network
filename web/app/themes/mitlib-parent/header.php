@@ -25,6 +25,10 @@ namespace Mitlib\Parent;
 	<?php get_template_part( 'inc/header', 'opengraph' ); ?>
 	<link rel="profile" href="https://gmpg.org/xfn/11" />
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+	<link rel="icon" href="https://cdn.libraries.mit.edu/files/branding/favicons/favicon.ico" sizes="32x32">
+	<link rel="icon" href="https://cdn.libraries.mit.edu/files/branding/favicons/favicon.svg" type="image/svg+xml">
+	<link rel="apple-touch-icon" href="https://cdn.libraries.mit.edu/files/branding/favicons/apple-touch-icon.png"><!-- 180×180 -->
+	<link rel="manifest" href="https://cdn.libraries.mit.edu/files/branding/favicons/manifest.json">
 	<?php wp_head(); ?>
 	<script>
 		todayDate="";
@@ -38,8 +42,7 @@ namespace Mitlib\Parent;
 			<?php get_template_part( 'inc/nav', 'hamburger' ); ?>
 			<?php get_template_part( 'inc/liblogo' ); ?>
 			<?php get_template_part( 'inc/nav', 'main' ); ?>
-			<a class="link-logo-mit" href="http://www.mit.edu"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" width="54" height="28" viewBox="0 0 54 28" enable-background="new 0 0 54 28" xml:space="preserve" class="logo-mit"><title>Massaschusetts Institute of Technology logo</title><rect x="28.9" y="8.9" width="5.8" height="19.1" class="color"/><rect width="5.8" height="28"/><rect x="9.6" width="5.8" height="18.8"/><rect x="19.3" width="5.8" height="28"/><rect x="38.5" y="8.9" width="5.8" height="19.1"/><rect x="38.8" width="15.2" height="5.6"/><rect x="28.9" width="5.8" height="5.6"/></svg>
-				<span class="sr">MIT Logo</span>
+			<a class="link-logo-mit" href="http://www.mit.edu"><img src="https://cdn.libraries.mit.edu/files/branding/local/mit_logo_std_rgb_white.svg" height="32" alt="MIT logo" >
 			</a><!-- End MIT Logo -->
 			<?php get_template_part( 'inc/nav', 'smalldisplays' ); ?>
 		</header>
