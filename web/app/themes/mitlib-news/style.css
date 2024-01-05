@@ -1,7 +1,7 @@
 /*
 Theme Name: MITlib News
 Author: MIT Libraries
-Version: 0.3.0
+Version: 0.4
 Description: A child theme of the MIT Libraries' parent, focused on News features and content.
 Template: mitlib-parent
 
@@ -82,34 +82,21 @@ h3 {
 .socialNavMiddle {
 	padding: 19px !important;
 }
+ul.anotherMenu {
+	align-items: baseline;
+}
 ul.anotherMenu li {
-	float: left;
+	white-space: nowrap;
 }
 li.sub {
-	margin-right: 13px;
-	padding-top: 0px;
+	margin-right: 7px;
 }
-li.fb {
-	margin-left: 5px;
-	margin-top: 1px;
-	margin-right: 5px;
+li.sub a {
+	border-right: 1px solid black;
+	padding-right: 7px;
 }
-li.tw {
-	margin-top: 0px;
-	margin-right: 8px;
-}
-li.ig {
+li.follow {
 	margin-right: 14px;
-	margin-top: 2px;
-}
-li.soc {
-	padding-top: 5px;
-}
-.image_off, .sIcons li:hover .image_on {
-	display: none
-}
-.image_on, .sIcons li:hover .image_off {
-	display: inline-block
 }
 ul#menu-subscribe {
 	float: left;
@@ -261,6 +248,7 @@ h2.search {
 	line-height: 1;
 	margin: 15px 0px;
 	padding: 0px 0px;
+	white-space: nowrap;
 }
 .entry-meta .author, .entry-meta .date-post, .entry-meta .category-post-single {
 	font-size: 11px;
