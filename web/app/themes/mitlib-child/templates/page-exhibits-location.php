@@ -21,7 +21,7 @@
 
 namespace Mitlib\Child;
 
-get_header( 'child' );
+get_header();
 
 // Pages using this template should have one and only one category value. If
 // the page is placed in multiple categories, then the first term returned here

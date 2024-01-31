@@ -18,7 +18,7 @@ namespace Mitlib\Child;
 
 ?>
 
-<?php get_header( 'child' ); ?>
+<?php get_header(); ?>
 
 <?php
 if ( is_front_page() ) {

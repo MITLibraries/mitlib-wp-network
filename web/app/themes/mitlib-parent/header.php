@@ -10,6 +10,10 @@
 
 namespace Mitlib\Parent;
 
+$menu = 'full';
+if ( 'slim' === get_option( 'menu_style_setting' ) ) {
+	$menu = 'slim';
+}
 ?><!DOCTYPE html>
 <!--[if lte IE 9]><html class="no-js lte-ie9" lang="en"><![endif]-->
 <!--[if !(IE 8) | !(IE 9) ]><!-->
@@ -39,10 +43,16 @@ namespace Mitlib\Parent;
 	<div id="skip"><a href="#content">Skip to Main Content</a></div>
 	<div class="wrap-page">
 		<header class="header-main flex-container flex-end">
-			<?php get_template_part( 'inc/nav', 'hamburger' ); ?>
+			<?php if ( 'full' === $menu ) { ?>
+				<?php get_template_part( 'inc/nav', 'hamburger' ); ?>
+			<?php } ?>
 			<?php get_template_part( 'inc/liblogo' ); ?>
-			<?php get_template_part( 'inc/nav', 'main' ); ?>
+			<?php if ( 'full' === $menu ) { ?>
+				<?php get_template_part( 'inc/nav', 'main' ); ?>
+			<?php } ?>
 			<a class="link-logo-mit" href="http://www.mit.edu"><img src="https://cdn.libraries.mit.edu/files/branding/local/mit_logo_std_rgb_white.svg" height="32" alt="MIT logo" >
 			</a><!-- End MIT Logo -->
-			<?php get_template_part( 'inc/nav', 'smalldisplays' ); ?>
+			<?php if ( 'full' === $menu ) { ?>
+				<?php get_template_part( 'inc/nav', 'smalldisplays' ); ?>
+			<?php } ?>
 		</header>

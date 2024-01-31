@@ -30,7 +30,7 @@ $interview_params = array(
 $interviews = new \WP_Query( $interview_params );
 ?>
 
-<?php get_header( 'child' ); ?>
+<?php get_header(); ?>
 
 <?php get_template_part( 'inc/breadcrumbs', 'child' ); ?>
 
