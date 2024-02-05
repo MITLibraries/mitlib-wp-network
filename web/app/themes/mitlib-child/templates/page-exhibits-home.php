@@ -9,7 +9,7 @@
 
 namespace Mitlib\Child;
 
-get_header( 'child' ); ?>
+get_header(); ?>
 
 <?php
 // Get today's date in the right format.

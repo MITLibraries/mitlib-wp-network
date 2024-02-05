@@ -263,6 +263,44 @@ function setup_scripts_styles() {
 add_action( 'wp_enqueue_scripts', 'Mitlib\Parent\setup_scripts_styles' );
 
 /**
+ * Define a new Menu Style section within the Customizer.
+ *
+ * @link https://developer.wordpress.org/themes/customize-api/customizer-objects/
+ * @param type $wp_customize The Customizer object which we are extending.
+ */
+function customize_menu_style( $wp_customize ) {
+
+	$wp_customize->add_section(
+		'menu_style_section',
+		array(
+			'title' => 'Menu Style',
+		)
+	);
+
+	$wp_customize->add_setting(
+		'menu_style_setting',
+		array(
+			'default' => 'Full Menu',
+			'type' => 'option',
+		)
+	);
+
+	$wp_customize->add_control(
+		'menu_style_setting',
+		array(
+			'label'   => 'Menu Style',
+			'section' => 'menu_style_section',
+			'type'    => 'radio',
+			'choices'    => array(
+				'full' => 'Full Menu',
+				'slim' => 'Slim No Menu',
+			),
+		)
+	);
+}
+add_action( 'customize_register', 'Mitlib\Parent\customize_menu_style' );
+
+/**
  * Creates a nicely formatted and more specific title element text
  * for output in head of document, based on current view.
  *

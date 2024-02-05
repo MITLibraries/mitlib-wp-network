@@ -8,7 +8,7 @@
 
 namespace Mitlib\Child;
 
-get_header( 'child' ); ?>
+get_header(); ?>
 
 <?php get_template_part( 'inc/breadcrumbs', 'child' ); ?>
 

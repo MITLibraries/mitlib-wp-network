@@ -12,7 +12,7 @@ namespace Mitlib\Child;
 
 ?>
 
-<?php get_header( 'child' ); ?>
+<?php get_header(); ?>
 
 <?php get_template_part( 'inc/breadcrumbs', 'sitename' ); ?>
 		

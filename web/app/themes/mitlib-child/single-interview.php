@@ -8,7 +8,7 @@
 
 namespace Mitlib\PostTypes;
 
-get_header( 'child' ); // Should be 'moh'?
+get_header();
 
 get_template_part( 'inc/breadcrumbs', 'child' );
 

@@ -9,7 +9,7 @@
 
 namespace Mitlib\Child;
 
-get_header( 'child' );
+get_header();
 
 get_template_part( 'inc/breadcrumbs', 'child' );
 
