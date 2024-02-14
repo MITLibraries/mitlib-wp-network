@@ -259,7 +259,7 @@ Please see the readme for that project for [installation](https://github.com/pan
 #### Optional application secrets
 
 - `SENTRY_DSN` Unique identifier for this project within Sentry.
-
+- `BLOCKED_IPS` A space-separated list of IP addresses which should be blocked from getting a Wordpress response.
 
 ### Environment variables
 
