@@ -69,8 +69,30 @@ if ( ! empty( $_ENV['PANTHEON_ENVIRONMENT'] ) ) {
       define( 'WP_SENTRY_VERSION', 'v1' );
       define( 'WP_SENTRY_ENV', $_ENV['PANTHEON_ENVIRONMENT'] );
     }
-  }
 
+    // Blocked IP address handling - defined as a space-separated string in secrets, and
+    // parsed to an array.
+    if ( array_key_exists( 'BLOCKED_IPS', $secrets ) ) {
+      define( 'BLOCKED_IPS', $secrets['BLOCKED_IPS'] );
+    }
+  }
+}
+
+/**
+ * Respond with a 403 error message if the user IP address is on our block list.
+ *
+ * This assumes that BLOCKED_IPS is a string that can be exploded to an array of values.
+ * It also assumes that the block list consists of individual IP addresses, and not
+ * ranges that need to be calculated.
+ */
+if ( defined( 'BLOCKED_IPS' ) ) {
+  $array_blocked_ips = explode( " ", BLOCKED_IPS );
+  $request_remote_addr = $_SERVER['REMOTE_ADDR'];
+
+  if ( in_array($request_remote_addr, $array_blocked_ips) ) {
+    header( 'HTTP/1.0 403 Forbidden' );
+    exit;
+  }
 }
 
 /**
