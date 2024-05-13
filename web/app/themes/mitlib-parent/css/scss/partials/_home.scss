@@ -199,10 +199,14 @@ body.page-home {
 			}
 		}
 
-		.location-hayden-reno {
+		.location-alert {
 			padding: .5rem 1em;
 			color: #008700;
 			margin: 0;
+
+			@include bp-tablet--portrait {
+				padding: 0 1rem 1rem
+			}
 
 			p {
 				margin-bottom: 0 !important;

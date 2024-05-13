@@ -84,6 +84,44 @@ class Display_Widget_Frontpage extends \WP_Widget {
 	}
 
 	/**
+	 * This function accepts the post ID of a location record, which will be used
+	 * to check if that location has its alert populated. If either of the two
+	 * fields for the location alert (alert_title or alert_content) are populated,
+	 * that content will be shown in a div.
+	 *
+	 * The function does not return anything.
+	 *
+	 * @param string $location_id The ID of a location record to look up.
+	 *
+	 * @return void
+	 */
+	public function location_alert( $location_id ) {
+		$allowed_html = array(
+			'a' => array(
+				'href' => array(),
+			),
+			'p' => array(),
+		);
+
+		$query_args = array(
+			'post_type' => 'location',
+			'p' => $location_id,
+			'post_status' => 'publish',
+		);
+		$locations = new \WP_Query( $query_args );
+
+		while ( $locations->have_posts() ) {
+			$locations->the_post();
+			$alert_frontpage = get_field( 'alert_frontpage' );
+			if ( $alert_frontpage ) {
+				echo '<div class="location-alert">';
+				echo wp_kses( $alert_frontpage, $allowed_html );
+				echo '</div>';
+			}
+		}
+	}
+
+	/**
 	 * Sanitize widget form values as they are saved.
 	 *
 	 * @see WP_Widget::form()
