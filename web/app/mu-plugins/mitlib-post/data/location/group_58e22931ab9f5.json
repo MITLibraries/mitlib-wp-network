@@ -41,6 +41,25 @@
             "delay": 0
         },
         {
+            "key": "field_6643c15f0075d",
+            "label": "Alert Frontpage",
+            "name": "alert_frontpage",
+            "type": "wysiwyg",
+            "instructions": "This field is shown only on the front page hours widget. The content is automatically wrapped in a paragraph tag. The only allowed HTML tag is for links (a tags).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
             "key": "field_24",
             "label": "Display Page",
             "name": "display_page",
@@ -990,5 +1009,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1671581913
+    "modified": 1715716606
 }
