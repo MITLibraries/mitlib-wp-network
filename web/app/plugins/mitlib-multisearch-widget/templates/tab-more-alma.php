@@ -17,6 +17,7 @@
 			<li><a href="/theses">MIT theses</a></li>
 			<li><a href="https://dspace.mit.edu">DSpace@MIT</a></li>
 			<li><a href="https://archivesspace.mit.edu/">ArchivesSpace</a></li>
+			<li><a href="https://dataverse.harvard.edu/dataverse/mit-libraries">MIT Libraries Dataverse</a></li>
 			<li><a href="http://libraries.mit.edu/experts/">Search tools by subject</a></li>
 			<li><a href="/search">More search options: images, data, etc.</a></li>
 		</ul>
