@@ -18,7 +18,7 @@
 			<li><a href="https://dspace.mit.edu">DSpace@MIT</a></li>
 			<li><a href="https://archivesspace.mit.edu/">ArchivesSpace</a></li>
 			<li><a href="https://dataverse.harvard.edu/dataverse/mit-libraries">MIT Libraries Dataverse</a></li>
-			<li><a href="http://libraries.mit.edu/experts/">Search tools by subject</a></li>
+			<li><a href="/experts/">Search tools by subject</a></li>
 			<li><a href="/search">More search options: images, data, etc.</a></li>
 		</ul>
 	</div>
@@ -26,7 +26,7 @@
 		<h3 class="header-col">Other useful tools</h3>
 		<ul>
 			<li><a href="https://libraries.mit.edu/worldcat">WorldCat</a></li>
-			<li><a href="http://libguides.mit.edu/google/googlescholar">Google Scholar for MIT</a></li>
+			<li><a href="https://libguides.mit.edu/google/googlescholar">Google Scholar for MIT</a></li>
 		</ul>
 	</div>
 	<div class="col col-3">
