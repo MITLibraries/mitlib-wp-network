@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3b3d9be6b3786ccc9f831e3056a97871",
+    "content-hash": "d1f28b988c81f581c6cd6d29ed8a78bb",
     "packages": [
         {
             "name": "ConnectThink/WP-SCSS",
@@ -3159,15 +3159,15 @@
         },
         {
             "name": "wpackagist-plugin/wp-sentry-integration",
-            "version": "6.26.0",
+            "version": "7.17.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-sentry-integration/",
-                "reference": "tags/6.26.0"
+                "reference": "tags/7.17.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-sentry-integration.6.26.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/wp-sentry-integration.7.17.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
