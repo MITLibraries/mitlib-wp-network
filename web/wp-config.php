@@ -43,6 +43,9 @@ if ( ! empty( $_ENV['PANTHEON_ENVIRONMENT'] ) ) {
     case 'dev':
       define( 'DOMAIN_CURRENT_SITE', 'www-dev.libraries.mit.edu' );
       break;
+    case 'www-ux':
+      define( 'DOMAIN_CURRENT_SITE', 'www-ux.libraries.mit.edu' );
+      break;
     case 'lando':
       define( 'DOMAIN_CURRENT_SITE', 'mitlib-wp-network.lndo.site' );
       break;
