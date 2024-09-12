@@ -227,19 +227,9 @@ This application uses a variety of ways to manage environment variables and secr
 
 ### Build secrets
 
-Managed with: [**Terminus Secrets Manager** plugin](https://github.com/pantheon-systems/terminus-secrets-manager-plugin)
+_Information about our build-related secret values has been moved to a separate How-to article:
+[How to manage secret values for automated builds and deploys](/docs/howto/manage-build-secrets.md)_
 
-Example: `terminus secret:list mitlib-wp-network`
-
-This tool allows us to provide secret values for use by Composer during application deploys.
-
-Please see the readme for that project for [installation](https://github.com/pantheon-systems/terminus-secrets-manager-plugin#installation) and [usage](https://github.com/pantheon-systems/terminus-secrets-manager-plugin#terminus-secrets-manager-commands) instructions.
-
-#### Required build secrets
-
-* `COMPOSER_AUTH` - License key necessary for installing the Advanced Custom Fields Pro plugin. Content can be found in
-  the official acf documentation `auth.json` file and just removing all the line breaks
-* `github-oauth.github.com` - User access token defined by the `mitlib-wp-network-deploy` account
 
 ### Application secrets
 
@@ -284,16 +274,6 @@ Bedrock makes use of an `.env` file to store environment variables. Pantheon tak
 - `COMPOSER_AUTH` A JSON formatted object that has one entry for the user access token defined by the `mitlib-wp-network-deploy` account, for installing forked plugins and an entry for our Advanced Custom Fields Pro authentication. [see Shared-Prod-Pantheon folder in lastpass for values and additional context for `auth.json` and `COMPOSER_AUTH`] [NOTE: composer does not read from .env so locally these also need to be in auth.json and kept out of version control]
   * composer will read an auth.json file in a user home directory or the root directory of the application. If using the application root, please ensure it is gitignored. Our lastpass should contain a current working version of what to put in auth.json (and if you make changes to auth.json locally, consisider whether they should also change in lastpass or in the CI and Pantheon equivalent which is `COMPOSER_AUTH`!)
 
-### Github secrets
-
-Managed with: Github web UI
-
-In addition to secret values stored using Terminus, we also define certain values used by our CI workflow using Github secrets.
-
-- `COMPOSER_AUTH` A JSON structure that has one entry for the user access token defined by the `mitlib-wp-network-deploy` account, for installing forked plugins and an entry for our Advanced Custom Fields Pro authentication. [see lastpass]
-- `DEPLOY_SSH_KNOWN_HOSTS` The known_hosts file to allow GitHubs' CI to trust the Pantheon git server.
-- `DEPLOY_SSH_PRIVATE_KEY` The private key (with blank passphrase) used to connect to Pantheon's git server. The public key is added to your personal settings within Pantheon.
-- `PANTHEON_REPOSITORY` The SSH-format address of the git repository in Pantheon.
 
 ---
 **The sections below were included in the original Readme, and I'm not sure whether they are still useful in this context.**
