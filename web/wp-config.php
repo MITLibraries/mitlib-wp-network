@@ -66,7 +66,7 @@ if ( ! empty( $_ENV['PANTHEON_ENVIRONMENT'] ) ) {
     define( 'WPMS_SMTP_PASS', $secrets['WPMS_SMTP_PASS'] );
 
     // Sentry configuration is optional.
-    if ( array_key_exists( 'SENTRY_DSN', $secrets ) ) {
+    if ( array_key_exists( 'SENTRY_DSN', $secrets ) && $_ENV['PANTHEON_ENVIRONMENT'] != 'lando' ) {
       define( 'WP_SENTRY_DSN', $secrets['SENTRY_DSN'] );
       define( 'WP_SENTRY_ERROR_TYPES', E_ERROR & E_CORE_ERROR & E_COMPILE_ERROR );
       define( 'WP_SENTRY_VERSION', 'v1' );
