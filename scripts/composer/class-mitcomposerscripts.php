@@ -61,7 +61,7 @@ class MitComposerScripts {
 	 */
 	public static function multidev_search_replace_syntax( $event ): void {
 		$multidev = self::multidev_name( $event );
-		$terminus_command = "terminus remote:wp mitlib-wp-network.$multidev -- search-replace live-mitlib-wp-network.pantheonsite.io $multidev-mitlib-wp-network.pantheonsite.io --url=live-mitlib-wp-network.pantheonsite.io --network";
+		$terminus_command = "terminus remote:wp mitlib-wp-network.$multidev -- search-replace libraries.mit.edu $multidev-mitlib-wp-network.pantheonsite.io --url=libraries.mit.edu --network";
 		$event->getIO()->write( $terminus_command );
 		$event->getIO()->write( '-----' );
 	}
