@@ -81,21 +81,51 @@ class Harvester {
 		// - key => filename in cache
 		// - value => url that will be polled.
 
-		// Third, we populate an array of sheet names within our spreadsheet.
-		// This array will then comprise the "shopping list" of values that
-		// are harvested to populate the local cache.
-		$response = $api_service->spreadsheets->get( $this->spreadsheet_key );
-		$sheet_array = array_map( array( $this, 'pluck_sheet_name' ), $response->sheets );
+		try {
+			// Third, we populate an array of sheet names within our spreadsheet.
+			// This array will then comprise the "shopping list" of values that
+			// are harvested to populate the local cache.
+			$response = $api_service->spreadsheets->get( $this->spreadsheet_key ); // Need to catch Google\Service\Exception.
+			$sheet_array = array_map( array( $this, 'pluck_sheet_name' ), $response->sheets );
+			$sheet_count = count( $sheet_array );
+			add_settings_error(
+				'mitlib_pull_hours',
+				'sheets_inventoried',
+				"{$sheet_count} data sheets inventoried.",
+				'success'
+			);
 
-		// Fourth, we iterates over the associative array that was built in the
-		// last step, reading each URL (in the value) and saving the contents
-		// to the cache (named in the key).
-		$this->fetch( $api_service, $sheet_array );
+			// Fourth, we iterates over the associative array that was built in the
+			// last step, reading each URL (in the value) and saving the contents
+			// to the cache (named in the key).
+			$this->fetch( $api_service, $sheet_array );
 
-		// Finally, we echo an updated message about the number of records
-		// that were updated.
-		echo( '<div class="updated"><p>Local hours cache has been harvested with information from ' . esc_html( count( $sheet_array ) ) . ' sheets .</p></div>' );
+			return true;
 
+		} catch ( \Google\Service\Exception $e ) {
+			$raw     = json_decode( $e->getMessage(), true );
+			$code    = $raw['error']['code'] ?? 'unknown';
+			$message = $raw['error']['message'] ?? 'Unknown Google API error - check logs for details.';
+			add_settings_error(
+				'mitlib_pull_hours',
+				'google_api_error',
+				"Error {$code}: {$message}",
+				'error'
+			);
+
+			return false;
+
+		} catch ( \Exception $e ) {
+			add_settings_error(
+				'mitlib_pull_hours',
+				'unexpected_error',
+				'Something truly unexpected happened. Please check the application logs for details.',
+				'error'
+			);
+
+			return false;
+
+		}
 	}
 
 	/**
@@ -164,8 +194,20 @@ class Harvester {
 
 		// Define cache directory, ensure it exists.
 		$this->path = wp_upload_dir()['basedir'] . '/pull-hours';
+		add_settings_error(
+			'mitlib_pull_hours',
+			'settings_updated',
+			"Confirming cache directory: _{$this->path}_",
+			'success'
+		);
 		if ( ! wp_mkdir_p( $this->path ) ) {
-			error_log( 'Failed to create cache directory: ' . $basedir );
+			error_log( "Failed to create cache directory: {$basedir}" );
+			add_settings_error(
+				'mitlib_pull_hours',
+				'invalid_cache_location',
+				"Failed to create cache directory: {$basedir}",
+				'error'
+			);
 		}
 	}
 
