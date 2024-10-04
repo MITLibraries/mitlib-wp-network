@@ -93,11 +93,25 @@ class Dashboard {
 
 			// Perform the harvesting.
 			$harvester = new Harvester();
-			$harvester->harvest();
+			$result = $harvester->harvest();
 
+			if ( $result ) {
+				// Add the success message.
+				add_settings_error(
+					'mitlib_pull_hours',
+					'harvester_success',
+					__( 'The library hours settings have been updated. Please <a href="/hours">check the public hours page</a> to verify success.', 'mitlib-pull-hours' ),
+					'success'
+				);
+			} else {
+				// Add the success message.
+				add_settings_error(
+					'mitlib_pull_hours',
+					'harvester_error',
+					__( 'Harvesting of library hours failed. Please <a href="/hours">inspect the public hours page closely</a>, and check the application logs for details about what happened.', 'mitlib-pull-hours' ),
+					'error'
+				);
+			}
 		}
-
-		// Add the success message.
-		echo( '<div class="updated"><p>The library hours settings have been updated. Please <a href="/hours">check the public hours page</a> to verify success.</p></div>' );
 	}
 }
