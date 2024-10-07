@@ -97,3 +97,78 @@
 		padding: 1% 5%;
 	}
 }
+
+.mitlib-alert {
+	border: 4px solid #007499;
+	margin-bottom: 20px;
+	padding: 16px;
+	display: flex;
+
+	i  {
+		margin-right: 12px;
+
+		&:before{
+			color: #007499;
+			content: "\f05a";
+
+			font-family: FontAwesome;
+			font-weight: normal;
+			font-size: 24px;
+			font-style: normal;
+			display: inline-block;
+			text-decoration: inherit;
+		}
+	}
+
+	div > h3 {
+		font-weight: 700;
+		margin-top: 2px;
+	}
+
+	p {
+		margin-bottom: 16px;
+
+		&:last-of-type {margin-bottom: 0 !important;}
+	}
+
+	.btn {
+		border: 1px solid #000;
+		border-radius: 0;
+		padding: 6px 12px;
+		text-decoration: none;
+		font-size: 16px;
+		font-weight: 600;
+
+		&:hover {
+			color: #fff;
+			background-color: #000;
+		}
+	}
+
+	&.warning {
+		border-color: #FFD300;
+
+		i:before {
+			color: #000;
+			content: "\f06a";
+		}
+	}
+
+	&.danger {
+		border-color: #FF0000;
+
+		i:before {
+			color: #FF0000;
+			content: "\f05e";
+		}
+	}
+
+	&.success {
+		border-color: #009900;
+
+		i:before {
+			color: #009900;
+			content: "\f046";
+		}
+	}
+}
