@@ -144,3 +144,20 @@ $color-guides-experts: $magenta-dark;
 	background: linear-gradient(45deg,  #5889c2 0%,#3fa0c9 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5889c2', endColorstr='#3fa0c9',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
+
+// Alert Semantic Variables
+// Adding new color values until we can adjust the global variables above
+$info-blue: #007499;
+$success-green: #009900;
+
+$info-border-color: $info-blue;
+$info-icon-color: $info-blue;
+
+$warning-border-color: $yellow;
+$warning-icon-color: $black;
+
+$danger-border-color: $red;
+$danger-icon-color: $red;
+
+$success-border-color: $success-green;
+$success-icon-color: $success-green;
