@@ -1,0 +1,43 @@
+# 345678901234567890123456789012345678901234567890
+# 50-character clear, concise, subject line
+
+# 3456789012345678901234567890123456789012345678901234567890123456789012
+# This question tells reviewers of your pull request what to expect in
+# the commit, allowing them to more easily identify and point out
+# unrelated changes.
+
+** Why are these changes being introduced:
+Our current Alert styling in Wordpress is inconsistent and isn't a cohesive system. The particular example in PW-108 is a custom alert that isn't close to the styling of other alerts in Wordpress or the styling in our style guide.
+
+We now have a new visual pattern for Alerts that we should begin to implement across all of our properties.
+
+* 
+
+# 3456789012345678901234567890123456789012345678901234567890123456789012
+# full URLs not ticket numbers for longer term usefulness
+
+** Relevant ticket(s):
+PW-108 (https://mitlibraries.atlassian.net/browse/PW-108)
+
+# 3456789012345678901234567890123456789012345678901234567890123456789012
+# Describe, at a high level, what was done to affect change
+# If your change is obvious, you may be able to omit
+# addressing this question (delete it!).
+
+** How does this address that need:
+This work adds styling to our Wordpress Parent Theme that supports the new alert style. A new default alert style is prefixed with "mitlib-" to avoid conflict with styles from other plugins, especially because "alert" is a pretty common term.
+
+The informational styling is applied as the default since thats the lowest level of importance. Classes have been added to support upgrading the alert from informational to warning, danger, or success.
+
+* 
+
+# 3456789012345678901234567890123456789012345678901234567890123456789012
+# This is the most important question to answer, as it can point out
+# problems where you are making too many changes in one commit or
+# branch. One or two bullet points for related changes may be okay, but
+# five or six are likely indicators of a commit that is doing too many
+# things.
+
+** Document any side effects to this change:
+This new Alert style uses existing FontAwesome icons that best fit the semantics of each alert, but aren't ideal. This work probably needs to be followed by an upgrade of FontAwesome to version 6.
+*

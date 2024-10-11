@@ -99,7 +99,7 @@
 }
 
 .mitlib-alert {
-	border: 4px solid #007499;
+	border: 4px solid $info-border-color;
 	margin-bottom: 20px;
 	padding: 16px;
 	display: flex;
@@ -108,7 +108,7 @@
 		margin-right: 12px;
 
 		&:before{
-			color: #007499;
+			color: $info-icon-color;
 			content: "\f05a";
 
 			font-family: FontAwesome;
@@ -146,28 +146,28 @@
 	}
 
 	&.warning {
-		border-color: #FFD300;
+		border-color: $warning-border-color;
 
 		i:before {
-			color: #000;
+			color: $warning-icon-color;
 			content: "\f06a";
 		}
 	}
 
 	&.danger {
-		border-color: #FF0000;
+		border-color: $danger-border-color;
 
 		i:before {
-			color: #FF0000;
+			color: $danger-icon-color;
 			content: "\f05e";
 		}
 	}
 
 	&.success {
-		border-color: #009900;
+		border-color: $success-border-color;
 
 		i:before {
-			color: #009900;
+			color: $success-icon-color;
 			content: "\f046";
 		}
 	}
