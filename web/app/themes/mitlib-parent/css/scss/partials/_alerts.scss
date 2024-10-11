@@ -132,7 +132,7 @@
 	}
 
 	.btn {
-		border: 1px solid #000;
+		border: 1px solid $black;
 		border-radius: 0;
 		padding: 6px 12px;
 		text-decoration: none;
@@ -140,8 +140,8 @@
 		font-weight: 600;
 
 		&:hover {
-			color: #fff;
-			background-color: #000;
+			color: $white;
+			background-color: $black;
 		}
 	}
 
