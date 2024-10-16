@@ -63,7 +63,7 @@ endif;
 						<li class="expert"></li>
 					</ul>
 				</div>
-				<a href="/experts" class="button-primary--magenta view-experts">All <span class="count">32</span> experts</a>
+				<a href="/experts" class="button-primary--magenta view-experts">All experts</a>
 			</div><!-- end div.guides-experts -->
 		</div><!-- end div.col-2 -->
 	</div><!-- end div.content-main -->

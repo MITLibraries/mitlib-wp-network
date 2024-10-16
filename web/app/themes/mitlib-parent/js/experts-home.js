@@ -76,8 +76,6 @@ function parseExperts(data) {
 	$('.expert .link-profile:eq(1)').attr('href', expertURL2);
 	$('.expert .link-profile:eq(2)').attr('href', expertURL3);
 	$('.expert .link-profile:eq(3)').attr('href', expertURL4);
-	// Add the expert count to the "All Experts" button
-	$('.view-experts .count').text(data.length);
 }
 
 $(function(){
