@@ -9,6 +9,7 @@
 # but in most cases, we don't want to version control anything in here.
 # It's unlikely that you would need to change any of these rules.
 web/app/upgrade
+web/app/uploads
 web/app/uploads/*
 !web/app/uploads/.gitkeep
 web/app/cache/*
