@@ -666,12 +666,42 @@ dd.wp-caption-text {
 	margin-top:10px;
 }
 
-.post ul,
-.post ol,
-.main-content .entry-content ul,
-.main-content .entry-content ol {
-	margin-left:1em;
-	margin-bottom: 20px;
+.entry-content ol,
+.comment-content ol,
+.entry-content ul,
+.comment-content ul,
+.mu_register ul {
+	margin: 0 0 24px;
+	margin: 0 0 1.714285714rem;
+	line-height: 1.714285714;
+}
+.entry-content ul ul,
+.comment-content ul ul,
+.entry-content ol ol,
+.comment-content ol ol,
+.entry-content ul ol,
+.comment-content ul ol,
+.entry-content ol ul,
+.comment-content ol ul {
+	margin-bottom: 0;
+}
+.entry-content ul,
+.comment-content ul,
+.mu_register ul {
+	list-style: disc outside;
+}
+.entry-content ul.arrows li{
+	list-style: none !important;
+}
+.entry-content ol,
+.comment-content ol {
+	list-style: decimal outside none;
+}
+.entry-content li,
+.comment-content li,
+.mu_register li {
+	margin: 0 0 0 36px;
+	margin: 0 0 0 2.571428571rem;
 }
 
 .post:not(:last-of-type):after {
