@@ -32,6 +32,37 @@ h3 {
 	}
 }
 
+.post,
+.entry-content,
+.comment-content,
+.mu_register {
+
+	ul { 
+		margin: 0 0 1.715rem; 
+		list-style: disc outside;
+	}
+
+	ol { 
+		list-style: decimal outside none; 
+	}
+
+	ul ul, ol ol, ol ol, ul ol, ol ul { margin-bottom: 0; }
+	
+	li {
+		margin: 0 0 4px 2.25rem;
+		line-height: 1.6em;
+
+		ol, ul {
+			margin-top: 4px;
+		}
+	}
+
+	ul.arrows li{
+		list-style: none !important;
+	}
+}
+
+
 a {
 	color: $brand-primary;
 	text-decoration: none;
