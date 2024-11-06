@@ -450,3 +450,11 @@ div.libraryAlert {
 		width: 100% !important;
 	}
 }
+
+/* Overriding new centralized heading styles */
+.page-hours h3 {
+	@include bp-tablet--portrait {
+		font-size: 1.375em;
+	}
+	margin: 0;
+}

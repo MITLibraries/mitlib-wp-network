@@ -1,4 +1,9 @@
 .locationPage {
+	h3 {
+		@include bp-tablet--portrait {
+			font-size: 1.375em;
+		}
+	}
 	.reserve {
 		background: #666;
 		color: #fff;

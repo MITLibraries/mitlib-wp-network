@@ -43,20 +43,6 @@ h6 {
 	@include rem-first(font-size, 0.85);
 }
 
-/* Page specific overrides */
-.page-hours h3 {
-	@include bp-tablet--portrait {
-		font-size: 1.375em;
-	}
-	margin: 0;
-}
-
-.locationPage h3 {
-	@include bp-tablet--portrait {
-		font-size: 1.375em;
-	}
-}
-
 /* Page / Post Content typography */
 .post,
 .entry-content,
