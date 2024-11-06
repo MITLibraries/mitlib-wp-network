@@ -1,7 +1,7 @@
 /*
 Theme Name: MITlib Child
 Author: MIT Libraries
-Version: 1.0.2
+Version: 1.3
 Description: A child theme of the MIT Libraries' parent, focused on sites built primarily with static pages.
 Template: mitlib-parent
 
@@ -42,14 +42,6 @@ b, strong {
 	position: absolute;
 	width: 1px;
 	word-wrap: normal;
-}
-
-.childTheme ul {
-	list-style-type:none;
-}
-
-.childTheme ol {
-	list-style-type:decimal;
 }
 
 .childTheme hr {
@@ -605,49 +597,6 @@ dd.wp-caption-text {
 	text-transform: uppercase;
 }
 
-.entry-content h2 {
-	font-size:21px;
-	font-size:1.3rem;
-	line-height:1.3;
-	font-weight: 600;
-	margin-top: .75em;
-	margin-bottom: .3em;
-}
-
-.entry-content h3 {
-	margin: 1em 0 .3em 0;
-	font-size:18px;
-	font-size:1.1rem;
-	font-weight: 600;
-	line-height:1.3;
-}
-
-.entry-content h4 {
-	margin: 1em 0 .3em 0;
-	font-size:16px;
-	font-size:1rem;
-	font-weight: 600;
-	line-height:1.3;
-}
-
-.entry-content h5 {
-	margin: 1em 0 .3em 0;
-	padding: 0;
-	font-size:15px;
-	font-size:.9rem;
-	font-weight: 600;
-	line-height:1.3;
-}
-
-.entry-content h6 {
-	margin: 1em 0 .3em 0;
-	font-size:13px;
-	font-size:.8rem;
-	font-weight: 600;
-	line-height:1.3;
-	text-transform: uppercase;
-}
-
 .main-content .post h2,.category .post h3,.search .post h3 {
 	font-size:24px;
 	line-height:28px;
@@ -664,14 +613,6 @@ dd.wp-caption-text {
 
 .post .entry {
 	margin-top:10px;
-}
-
-.post ul,
-.post ol,
-.main-content .entry-content ul,
-.main-content .entry-content ol {
-	margin-left:1em;
-	margin-bottom: 20px;
 }
 
 .post:not(:last-of-type):after {
