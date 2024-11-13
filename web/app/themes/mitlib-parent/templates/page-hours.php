@@ -253,7 +253,7 @@ tr:nth-child(even) td {
 						'strong' => array(),
 					);
 				?>
-				<div class="libraryAlert"> <i class="icon-exclamation-sign"></i>
+				<div class="libraryAlert"> <i class="fa-solid fa-circle-exclamation"></i></i>
 					<div class="alertText">
 						<div class="la-title"><?php echo wp_kses( $alert_title, $no_html ); ?></div>
 						<?php echo '<p>' . wp_kses( $alert_content, $allowed_html ) . '</p>'; ?>
@@ -372,7 +372,7 @@ endwhile;
 			<a class="space247" href="/study/24x7/" alt="This location contains one or more study spaces available 24 hours a day, seven days a week. Click the link for more info." title="Study 24/7"> | Study 24/7</a>
 			<?php } ?>
 			  <?php if ( get_field( 'alert_title', $locationId ) ) { ?>
-			  <div class="libraryAlert"> <i class="icon-exclamation-sign"></i>
+			  <div class="libraryAlert"> <i class="fa-solid fa-circle-exclamation"></i>
 				<div class="alertText">
 			  <div class="la-title"><?php the_field( 'alert_title', $locationId ); ?></div>
 					<?php the_field( 'alert_content', $locationId ); ?>
