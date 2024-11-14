@@ -2,8 +2,8 @@ $("#hourCalendar").glDatePicker({
 	showAlways: true,
 	selectedDate: todayDate,
 	
-	prevArrow: '<i class="icon-arrow-left"></i>',
-	nextArrow: '<i class="icon-arrow-right"></i>',
+	prevArrow: '<i class="fa-regular fa-arrow-left"></i>',
+	nextArrow: '<i class="fa-regular fa-arrow-right"></i>',
 	dowNames: "SMTWTFS",
 	dowOffset: 1,
 	onClick: function(target, cell, date, date2) {
