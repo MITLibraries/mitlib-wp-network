@@ -26,7 +26,6 @@ function news_scripts_styles() {
 	$parent_version = wp_get_theme()->parent()->get( 'Version' );
 
 	// Register stylesheets.
-	wp_register_style( 'font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css', array(), '4.6.0' );
 	wp_register_style( 'parent-style', get_template_directory_uri() . '/style.css', array(), $parent_version );
 	wp_register_style( 'bootstrap', get_stylesheet_directory_uri() . '/css/bootstrap.css', array(), $theme_version );
 	wp_register_style( 'newsmobile', get_stylesheet_directory_uri() . '/css/newsmobile.css', array(), $theme_version );
