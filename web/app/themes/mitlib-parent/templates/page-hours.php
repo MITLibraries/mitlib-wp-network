@@ -123,8 +123,8 @@ endif;
 	  cssName: "default",
 	  showAlways: true,
 	  selectedDate: todayDate,
-	  prevArrow: '<i class="fa-regular fa-arrow-left"></i>',
-	  nextArrow: '<i class="fa-regular fa-arrow-right"></i>',
+	  prevArrow: '<i class="fa fa-arrow-left"></i>',
+	  nextArrow: '<i class="fa fa-arrow-right"></i>',
 	  dowNames: "SMTWTFS",
 	  dowOffset: 1,
 	onClick: function(target, cell, date, date2) {
@@ -146,9 +146,9 @@ endif;
 	<div id="hourContent" class="content-page">
 	<div id="hourNav-sticky-wrapper" class="sticky-wrapper" style="height: 0px;">
 	  <div id="hourNav" style="width: 1008px;">
-		<div id="prevWeek"> <i class="fa-regular fa-arrow-left"></i> <a href="<?php echo esc_url( $path . '?d=' . $prevWeek ); ?>">Previous week</a> </div>
+		<div id="prevWeek"> <i class="fa fa-arrow-left"></i> <a href="<?php echo esc_url( $path . '?d=' . $prevWeek ); ?>">Previous week</a> </div>
 		<div id="thisWeek"> <a href="<?php echo esc_url( $path . '?d=' . $thisWeek ); ?>">This week</a> </div>
-		<div id="nextWeek"> <a href="<?php echo esc_url( $path . '?d=' . $nextWeek ); ?>">Next week</a> <i class="fa-regular fa-arrow-right"></i> </div>
+		<div id="nextWeek"> <a href="<?php echo esc_url( $path . '?d=' . $nextWeek ); ?>">Next week</a> <i class="fa fa-arrow-right"></i> </div>
 	  </div>
 	</div>
 	<style type="text/css">
