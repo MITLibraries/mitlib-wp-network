@@ -42,7 +42,6 @@ function child_scripts_styles() {
 
 	// Finally we enqueue those libraries - the child theme just always enqueues everything.
 	wp_enqueue_style( 'bootstrap' );
-	wp_enqueue_style( 'font-awesome' );
 	wp_enqueue_style( 'child-style' );
 	wp_enqueue_script( 'jquery' );
 	wp_enqueue_script( 'bootstrap-js' );

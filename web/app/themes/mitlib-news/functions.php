@@ -36,7 +36,6 @@ function news_scripts_styles() {
 	wp_register_script( 'myScripts', get_stylesheet_directory_uri() . '/js/myScripts.js', array( 'lazyload' ), $theme_version, false );
 
 	// Enqueue libraries - these files are always loaded.
-	wp_enqueue_style( 'font-awesome' );
 	wp_enqueue_style( 'parent-style' );
 	wp_enqueue_style( 'bootstrap' );
 	wp_enqueue_style( 'newsmobile' );
