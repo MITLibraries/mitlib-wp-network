@@ -19,6 +19,6 @@
 </a><!-- End /barton-account -->
 
 <a href="/contact" class="link-contact hidden-non-mobile">
-	<i class="icon-book" aria-hidden="true"></i>
+	<i class="fa fa-book" aria-hidden="true"></i>
 	<span class="bottom">Contact</span>
 </a><!-- End /contact -->
