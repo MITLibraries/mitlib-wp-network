@@ -23,5 +23,5 @@ $map_page = '/locations/#!' . $docs_slug;
 	<?php if ( $docs_email ) : ?>
 	<a href="mailto:<?php echo esc_attr( $docs_email ); ?>" class="email"><?php echo esc_html( $docs_email ); ?></a> |
 	<?php endif; ?>
-	<a href="<?php echo esc_attr( $map_page ); ?>">Room: <?php echo esc_html( $docs_building ); ?> <i class="icon-arrow-right"></i></a>
+	<a href="<?php echo esc_attr( $map_page ); ?>">Room: <?php echo esc_html( $docs_building ); ?> <i class="fa-solid fa-arrow-right"></i></a>
 </div>

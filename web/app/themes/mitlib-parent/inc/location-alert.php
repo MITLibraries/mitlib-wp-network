@@ -22,11 +22,10 @@ $allowed_html = array(
 );
 
 ?>
-<div class="libraryAlert">
-	<div class="location--alerts flex-container"><i class="icon-exclamation-sign"></i>
-		<div class="alertText">
-			<h3><?php echo wp_kses( $alert_title, $no_html ); ?></h3>
-			<p><?php echo wp_kses( $alert_content, $allowed_html ); ?></p>
-		</div>
+<aside class="mitlib-alert">
+	<i></i>
+	<div>
+	<h3><?php echo wp_kses( $alert_title, $no_html ); ?></h3>
+	<p><?php echo wp_kses( $alert_content, $allowed_html ); ?></p>
 	</div>
-</div>
+</aside>

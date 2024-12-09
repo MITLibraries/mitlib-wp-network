@@ -120,7 +120,7 @@ b, strong {
 .childTheme .todayHours a:after,.childTheme .locationInfo a:after {
 	content:'\f061';
 	display:inline-block;
-	font-family:'fontawesome-MITLibraries';
+	font-family:'Font Awesome 6 Free';
 	margin-left:.5em;
 }
 
@@ -997,7 +997,7 @@ a.px14 {
 
 .upw-content .custom-field-event_date:before {
 	margin-right: 5px;
-	font-family:FontAwesome;
+	font-family:'Font Awesome 6 Free';
 	content:"\f073" !important;
 	color: #F58733;
 	font-size: 1em;
@@ -1145,7 +1145,7 @@ a.px14 {
 .exhibits-button:after {
 	content:'\f061';
 	display:inline-block;
-	font-family:'fontawesome';
+	font-family:'Font Awesome 6 Free';
 	margin-left:.5em;
 }
 
@@ -1189,7 +1189,7 @@ a.px14 {
 
 .button.button-music:before {
 	content: "\f028";
-	font-family: FontAwesome;
+	font-family: 'Font Awesome 6 Free';
 	font-weight: normal;
 	font-size: inherit;
 	margin-right: 10px;

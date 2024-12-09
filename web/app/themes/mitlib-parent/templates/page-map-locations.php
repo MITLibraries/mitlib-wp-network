@@ -30,7 +30,7 @@ get_header(); ?>
 		<div id="stage" role="main">
 			<div class="title-page flex-container">
 				<h1><?php the_title(); ?></h1>
-				<a href="/hours/">See all library hours <i class="icon-arrow-right"></i></a>
+				<a href="/hours/">See all library hours <i class="fa fa-arrow-right"></i></a>
 			</div>
 			
 			<div id="locationsHome">
@@ -104,9 +104,9 @@ get_header(); ?>
 									<div class="infoImage" style="background-image: url(<?php echo esc_url( $val ); ?>); background-repeat: no-repeat;"></div>
 									<?php endif; ?>
 									<div class="content">
-										<h3><a href="<?php echo esc_url( $pageLink ); ?>"><?php echo esc_html( $name ); ?></a> <i class="icon-arrow-right"></i></h3>
+										<h3><a href="<?php echo esc_url( $pageLink ); ?>"><?php echo esc_html( $name ); ?></a> <i class="fa fa-arrow-right"></i></h3>
 										<span class="building"><?php echo esc_html( $building ); ?></span><br/>
-										<span class="directions"><a href="<?php echo esc_url( $directionsUrl ); ?>" target="_blank" >Find on Google maps</a> <i class="icon-arrow-right"></i></span>
+										<span class="directions"><a href="<?php echo esc_url( $directionsUrl ); ?>" target="_blank" >Find on Google maps</a> <i class="fa fa-arrow-right"></i></span>
 									</div>
 									<br clear="all" />
 								</div>

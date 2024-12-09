@@ -57,7 +57,7 @@ function renderAlert(markup,id) {
 
 function setClosable(alert_ID) {
 	// Add a Close icon/svg/button
-	$('.posts--preview--alerts .post').append('<a href="#0" id="close" class="action-close"><span class="sr">Dismiss</span><i class="icon-remove-sign" aria-hidden="true"></i></a>');
+	$('.posts--preview--alerts .post').append('<a href="#0" id="close" class="action-close"><span class="sr">Dismiss</span><i class="fa fa-circle-xmark" aria-hidden="true"></i></a>');
 	// On click
 	$('#close').click(function(){
 		// Add the necessary transition hide class
@@ -95,7 +95,7 @@ function showAlerts(json) {
 		// Alert HTML template
 		alert_template = '<div class="posts--preview--alerts transition-vertical transition-vertical--hide">' +
 			'<div class="post alert--critical flex-container">' +
-				'<i class="icon-exclamation-sign" aria-hidden="true"></i>' +
+				'<i class="fa fa-circle-exclamation" aria-hidden="true"></i>' +
 				'<div class="content-post alertText">' +
 					'<h3>' + alert_title + '</h3> ' + alert_posts_arr[i].content.rendered +
 				'</div>' +

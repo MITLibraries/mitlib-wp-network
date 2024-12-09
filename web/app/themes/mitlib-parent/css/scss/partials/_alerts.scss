@@ -51,10 +51,10 @@
 	opacity: 0;
 }
 
-.posts--preview--alerts .icon-exclamation-sign,
-.location--alerts .icon-exclamation-sign {
+.posts--preview--alerts .fa-circle-exclamation,
+.location--alerts .fa-circle-exclamation {
 	color: $black;
-	font-size: 3.5em;
+	font-size: 2.75em;
 	margin: 0 .5em 0 .25em;
 	position: relative;
 	@include bp-mobile--only {
@@ -109,14 +109,17 @@
 
 		&:before{
 			color: $info-icon-color;
-			content: "\f05a";
+			content: "\f129";
 
-			font-family: FontAwesome;
-			font-weight: normal;
-			font-size: 24px;
+			font-family: 'Font Awesome 6 Free';
+			font-weight: 600;
+			font-size: 22px;
 			font-style: normal;
 			display: inline-block;
+			padding-top: 1px;
+			text-align: center;
 			text-decoration: inherit;
+			width: 20px;
 		}
 	}
 
@@ -150,7 +153,7 @@
 
 		i:before {
 			color: $warning-icon-color;
-			content: "\f06a";
+			content: "\f071";
 		}
 	}
 
@@ -168,7 +171,7 @@
 
 		i:before {
 			color: $success-icon-color;
-			content: "\f046";
+			content: "\f00c";
 		}
 	}
 }

@@ -88,7 +88,7 @@ $alert_title   = cf( 'alert_title' );
 						<?php if ( $email ) : ?>
 					<a href="mailto:<?php echo esc_url( $email ); ?>" class="email"><?php echo esc_html( $email ); ?></a> |
 						<?php endif; ?>
-					<a href="<?php echo esc_url( $mapPage . $slug ); ?>">Room: <?php echo esc_html( $building ); ?> <i class="icon-arrow-right"></i></a>
+					<a href="<?php echo esc_url( $mapPage . $slug ); ?>">Room: <?php echo esc_html( $building ); ?> <i class="fa fa-arrow-right"></i></a>
 				</div>
 			</div><!-- end div.libraryContent -->
 
@@ -98,7 +98,7 @@ $alert_title   = cf( 'alert_title' );
 					<?php if ( true === $study24 ) : ?>
 						<a class="study-24-7" href="<?php echo esc_url( $gStudy24Url ); ?>" alt="This location contains one or more study spaces available 24 hours a day, seven days a week. Click the link for more info." title="Study 24/7">Study 24/7</a>
 					<?php endif; ?>
-					<a href="/hours" class="link-hours-all">See all hours <i class="icon-arrow-right"></i></a>
+					<a href="/hours" class="link-hours-all">See all hours <i class="fa fa-arrow-right"></i></a>
 				</div>
 			<?php } else { ?>
 				<div class="hours-today">
@@ -106,7 +106,7 @@ $alert_title   = cf( 'alert_title' );
 					<?php if ( true === $study24 ) : ?>
 						| <a class="study-24-7" href="<?php echo esc_url( $gStudy24Url ); ?>" alt="This location contains one or more study spaces available 24 hours a day, seven days a week. Click the link for more info." title="Study 24/7">Study 24/7</a>
 					<?php endif; ?>
-					<a href="/hours" class="link-hours-all">See all hours <i class="icon-arrow-right"></i></a>
+					<a href="/hours" class="link-hours-all">See all hours <i class="fa fa-arrow-right"></i></a>
 				</div><!-- end div.hours-today -->
 			<?php } ?>
 		</div><!-- end div.topLeft -->
@@ -170,8 +170,8 @@ else :
 									<span class="bio"><?php echo esc_html( $bio ); ?></span>
 								</h3>
 								<div class="links">
-									<a class="primary" href="<?php echo esc_url( $url ); ?>" target="_blank">How can I help? <i class="icon-arrow-right"></i></a>
-									<a href="/experts">See all our experts <i class="icon-arrow-right"></i></a>
+									<a class="primary" href="<?php echo esc_url( $url ); ?>" target="_blank">How can I help? <i class="fa fa-arrow-right"></i></a>
+									<a href="/experts">See all our experts <i class="fa fa-arrow-right"></i></a>
 								</div>
 
 							</div>

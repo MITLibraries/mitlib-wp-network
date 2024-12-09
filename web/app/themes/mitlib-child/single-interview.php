@@ -100,7 +100,7 @@ $related = new \WP_Query( $query );
 					</div>
 					<div class="flex-item">
 						<div class="flex-container">
-							<i class="icon-folder-close flex-item row-icon"></i>
+						<i class="fa fa-folder flex-item row-icon"></i></i>
 							<ul class="list-inline categories flex-item">
 								<?php
 								foreach ( $categories as $category ) {
@@ -110,7 +110,7 @@ $related = new \WP_Query( $query );
 							</ul>
 						</div>
 						<div class="flex-container">
-							<i class="icon-tag flex-item row-icon"></i>
+							<i class="fa fa-tag flex-item row-icon"></i>
 							<ul class="list-inline tags flex-item">
 								<?php
 								foreach ( $tags as $tag ) {
@@ -122,16 +122,16 @@ $related = new \WP_Query( $query );
 						<ul class="list-inline links">
 							<?php
 							if ( $audio ) {
-								echo '<li><i class="icon-download"></i> <a href="' . esc_url( $audio ) . '">Download (MP3)</a></li>';
+								echo '<li><i class="fa-regular fa-circle-down"></i> <a href="' . esc_url( $audio ) . '">Download (MP3)</a></li>';
 							}
 							if ( $transcript ) {
-								echo '<li><i class="icon-file"></i> <a href="' . esc_url( $transcript ) . '">Transcript (PDF)</a></li>';
+								echo '<li><i class="fa-regular fa-file-lines"></i> <a href="' . esc_url( $transcript ) . '">Transcript (PDF)</a></li>';
 							}
 							if ( $cd ) {
 								echo '<li><span class="dashicons dashicons-album"></span> <a href="' . esc_url( $cd ) . '">CD available in the library</a></li>';
 							}
 							if ( $print ) {
-								echo '<li><i class="icon-book"></i> <a href="' . esc_url( $print ) . '">Print transcript available in the library</a></li>';
+								echo '<li><i class="fa fa-book"></i> <a href="' . esc_url( $print ) . '">Print transcript available in the library</a></li>';
 							}
 							?>
 						</ul>
