@@ -19,13 +19,6 @@ Template: mitlib-parent
 	background: #333;
 	color: #fff;
 }*/
-body {
-	font-family:'Open Sans',Helvetica,sans-serif;
-}
-
-h1,h2,h3,h4,h5,h6 {
-	font-family:'Open Sans',Helvetica,sans-serif;
-}
 
 b, strong {
 	font-weight: bold;
