@@ -91,7 +91,6 @@
 		border: none;
 		cursor: pointer;
 		display: inline-block;
-		font-family: 'Open Sans', sans-serif;
 		@include rem-first(font-size, 0.875);
 		margin-top: 0; // Overrides some browser defaults
 		margin-bottom: 0; // Overrides some browser defaults
