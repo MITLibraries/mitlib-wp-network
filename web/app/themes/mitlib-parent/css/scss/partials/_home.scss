@@ -8,12 +8,6 @@ body.page-home {
 // these rules override our central typography styles to preserve the original design of the homepage
 .libraries-home {
 
-	h1,
-	h2,
-	h3 {
-		font-weight: 300;
-	}
-
 	h2 {
 		@include rem-first(font-size, 2.125);
 		margin: 0;
@@ -79,13 +73,6 @@ body.page-home {
 
 			a {
 				color: $color-hours-locations;
-				font-weight: 300;
-			}
-		}
-
-		h3 {
-			a {
-				font-weight: 300;
 			}
 		}
 
@@ -573,7 +560,6 @@ body.page-home {
 
 			a {
 				color: $color-guides-experts;
-				font-weight: 300;
 			}
 		}
 
