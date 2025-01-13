@@ -1,0 +1,30 @@
+# This has local overrides of the upstream defaults found in pantheon.upstream.yml. Changes should be made here, and not
+# to pantheon.upstream.yml.
+api_version: 1
+
+web_docroot: true
+
+# See https://pantheon.io/docs/pantheon-yml/#enforce-https--hsts for valid values.
+enforce_https: transitional
+
+php_version: 8.2
+
+# See https://pantheon.io/docs/pantheon-yml#specify-a-version-of-mariadb
+database:
+  version: 10.4
+
+build_step: true
+
+filemount: /app/uploads
+
+# See https://pantheon.io/docs/pantheon-yml#protected-web-paths for usage.
+protected_web_paths:
+  - /app/uploads/private/
+  - /private/
+  - /xmlrpc.php
+
+# By default, any 'protected_web_paths' added to the pantheon.yml file
+# are combined with the paths from the pantheon.upstream.yml file. If
+# 'protected_web_paths_override' is set to true, then the upstream paths
+# are disabled.
+protected_web_paths_override: false
