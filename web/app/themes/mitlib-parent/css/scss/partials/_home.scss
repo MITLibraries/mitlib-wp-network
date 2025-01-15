@@ -432,7 +432,7 @@ body.page-home {
 	.news-events {
 		h2 {
 			border-bottom: 1px solid $color-secondary;
-			text-align: center;
+			text-align: left;
 
 			@include bp-tablet--portrait {
 				display: none;
@@ -440,7 +440,6 @@ body.page-home {
 
 			a {
 				color: $color-news-events;
-				font-weight: 300;
 			}
 		}
 
