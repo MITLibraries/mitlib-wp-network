@@ -29,5 +29,5 @@
 	</div>
 </form>
 <p class="also search-all">
-	<a href="/search-advanced/">Advanced search</a>
+	<a href="/search-advanced/">Advanced search</a> | <a href="/citation-search/">Citation search</a>
 </p>

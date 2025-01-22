@@ -71,5 +71,6 @@
 </script>
 <p class="also">Also search for:
 	<a href="/search-journals/">Journals</a> or
-	<a href="/search-databases/">Databases</a>
+	<a href="/search-databases/">Databases</a> or use
+	<a href="/citation-search/">Citation search</a>
 </p>
