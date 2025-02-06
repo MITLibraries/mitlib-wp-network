@@ -12,14 +12,14 @@ body.page-id-33 {
   
   body.page-id-33 .content {
     margin: 0;
-    line-height: 1.2;
+    line-height: 1.25;
   }
   
   body.page-id-33 .main-content { 
     color: #000;
-      margin-left: 10px;
-    padding-left: 0; 
-    padding-right: 0;
+      margin-left: 0;
+    padding-left: 24px; 
+    padding-right: 4px;
     margin-bottom: 0;
   }
   
@@ -28,11 +28,10 @@ body.page-id-33 {
   }
   
   body.page-id-33 .ttl {
+      font-size: 36px;
       font-weight: 600;
       font-family: $font-family-primary-headings;
-  }
-  body.page-id-33 .main-content p {
-    line-height: 1.1;
+      line-height: 1.15;
   }
   
   body.page-id-33 .main-content .list-unbulleted li {
@@ -56,14 +55,11 @@ body.page-id-33 {
   }
   
   body.page-id-33 .wrap-intro {
-    padding: 1% 3px;
+    padding: 0;
     color: #000;
   }
   
   body.page-id-33 .wrap-intro .ttl {
-    font-size: 36px;
-    font-weight: 600;
-    line-height: .92;
     margin-bottom: .3em;
       margin-right: 30px
   }
@@ -77,11 +73,12 @@ body.page-id-33 {
     margin-top: 1rem;
   }
   
+  // Image Card Styles Begin
   body.page-id-33 .card { 
     transition: background-color ease-in-out .3s;
-    background: #fff;
+    background: #fafafa;
     color: #000;
-    margin: 15px;
+    margin: 15px 0;
     padding-top: 5px;
     line-height: 0;
   }
@@ -100,16 +97,20 @@ body.page-id-33 {
     width: 100%;
     background-color: #000;
   }
-  
+
   body.page-id-33 .card .c-content {
     padding: 10px 3%;
     font-size: 14px;
   } 
   
+  body.page-id-33 .card:hover .c-content {
+    transition: background-color ease-in-out .3s;
+    background-color: #0000FF;
+  }
+
   body.page-id-33 .card .c-ttl1 {
     font-size: 20px;
     font-weight: 600;
-    line-height: .92;
     margin: 0;
   }
   
@@ -129,19 +130,24 @@ body.page-id-33 {
   body.page-id-33 .wrap-fol .ttl {
     font-size: 36px;
     font-weight: 600;
-    line-height: .92;
   }
   
   body.page-id-33 .wrap-fol .vision-item strong {
     display: block;
     margin: 1em 0 .2em 0;
     font-size: 20px;
-    line-height: .92;
   }
   
   body.page-id-33 .wrap-fol .cta-link {
     margin-top: .5em;
   }
+
+  body.page-id-33 {
+    .who-column-1, .who-column-2, .who-column-3 {
+        margin-top: 12px;
+    }
+  }
+
   body.page-id-33 .who-column-1 {
   float: left; 
   margin-left:1%; 
@@ -160,24 +166,19 @@ body.page-id-33 {
   width: 29%;
   }
   body.page-id-33 .who-ttl1 {
-     font-family: 'NHaasGroteskDisp', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !important; 
-      font-size: 20px;
+    font-size: 20px;
     font-weight: 600;
     line-height: .92;
     margin: 0;
   }
   
   body.page-id-33 .who-ttl2 { 
-      font-family: 'NHaasGroteskTxt', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !important; 
     margin-top: .4em;
     font-size: 14px;
     line-height: 1.2;
-      font-weight: 400
+    font-weight: 400
   
-  }
-  
-  
-  
+  } 
   
   body.page-id-33 .list-social {
     display: flex;
@@ -215,13 +216,27 @@ body.page-id-33 {
   body.page-id-33 .list-pipe li:last-child:after  {
   content: "";
   }
+
+  body.page-id-33 .c-image a img {
+    width: 100%;
+}  
+
+@media screen and (max-width: 720px) {
   
-  @media only screen and (min-width: 768px) {
-  
-  }
-  
-  @media only screen and (min-width: 480px) {
-  
+    body.page-id-33 .entry-content {
+        padding-right: 20px !important;
+    }
+
+    body.page-id-33 .c-image > a {
+        height: 360px;
+        display: flex;
+        overflow: hidden;
+        align-items: end;
+    }
+
+}
+  @media only screen and (min-width: 720px) {
+
     body.page-id-33 .wrap-case-studies, 
     body.page-id-33 .wrap-linkblocks {
       display: flex;
@@ -233,10 +248,16 @@ body.page-id-33 {
       align-items: stretch;
       margin: 15px 15px 15px 0px;    
     }
-  
+
     body.page-id-33 .card:last-child {
       margin-right: 0px;
     }
+
+  }
+  
+  @media only screen and (min-width: 480px) {
+  
+
   }
   
   /*
