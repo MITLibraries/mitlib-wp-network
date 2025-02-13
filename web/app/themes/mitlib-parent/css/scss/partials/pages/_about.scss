@@ -142,29 +142,19 @@ body.page-id-33 {
     margin-top: .5em;
   }
 
-  body.page-id-33 {
-    .who-column-1, .who-column-2, .who-column-3 {
-        margin-top: 12px;
-    }
+// WHO Columns under explore our organization
+  body.page-id-33 .who-column-wrapper {
+    display: flex;
+    gap: 15px;
+    margin-top: 12px;
   }
 
-  body.page-id-33 .who-column-1 {
-  float: left; 
-  margin-left:1%; 
-  width: 25%; 
-  margin-right: 9%;
+  body.page-id-33 .who-column-wrapper > div {
+    background-color: #fafafa;
+    padding: 16px 10px 12px;
+    flex: 1 1 0px;
   }
-  
-  body.page-id-33 .who-column-2 {
-  float: left; 
-  width: 25%; 
-  margin-right: 9%;
-  }
-  
-  body.page-id-33 .who-column-3 {
-  float: left; 
-  width: 29%;
-  }
+
   body.page-id-33 .who-ttl1 {
     font-size: 20px;
     font-weight: 600;
@@ -232,6 +222,10 @@ body.page-id-33 {
         display: flex;
         overflow: hidden;
         align-items: end;
+    }
+
+    body.page-id-33 .who-column-wrapper {
+      flex-direction: column;
     }
 
 }
