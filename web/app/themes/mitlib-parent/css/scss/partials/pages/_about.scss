@@ -76,7 +76,7 @@ body.page-id-33 {
   // Image Card Styles Begin
   body.page-id-33 .card { 
     transition: background-color ease-in-out .3s;
-    background: #fafafa;
+    background: #ececec;
     color: #000;
     margin: 15px 0;
     padding-top: 5px;
@@ -150,7 +150,7 @@ body.page-id-33 {
   }
 
   body.page-id-33 .who-column-wrapper > div {
-    background-color: #fafafa;
+    background-color: #ececec;
     padding: 16px 10px 12px;
     flex: 1 1 0px;
   }
@@ -218,7 +218,7 @@ body.page-id-33 {
     }
 
     body.page-id-33 .c-image > a {
-        height: 360px;
+        height: 320px;
         display: flex;
         overflow: hidden;
         align-items: end;
@@ -248,9 +248,16 @@ body.page-id-33 {
     }
 
   }
+
+  @media only screen and (max-width: 600px) {
+    body.page-id-33 .c-image > a {
+      height: 260px;
+  }
   
-  @media only screen and (min-width: 480px) {
-  
+  @media only screen and (max-width: 450px) {
+    body.page-id-33 .c-image > a {
+      height: 200px;
+  }
 
   }
   
