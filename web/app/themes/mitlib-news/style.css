@@ -245,6 +245,7 @@ h2.search {
 body.single-post h2.name-site, body.single-post h2.name-site a {
 	font-size: 24px;
 	height: 34px;
+	margin: 24px 0px 5px;
 }
 
 .entry-meta .author, .entry-meta .date-post, .entry-meta .category-post-single {
