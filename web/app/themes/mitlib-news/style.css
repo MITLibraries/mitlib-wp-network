@@ -53,10 +53,9 @@ h3 {
 }
 
 .card-subtitle {
-    padding: 0 10px 7px;
+    padding: 0 10px 10px;
     font-size: 14px;
-    color: #6B6B70;
-    font-weight: 400 !important;
+    color: #666;
     line-height: 1.3;
     margin: 0 !important;
 }
@@ -184,7 +183,6 @@ table.hrList tr:nth-child(even) {
 .date-post {
 	font-weight: 400;
 	font-style: italic;
-	color: rgb(153,153,153);
 }
 
 .no-padding-left {
@@ -598,7 +596,7 @@ body.single-post h2.name-site, body.single-post h2.name-site a {
 	margin-bottom: -3px;
 }
 .time {
-	color: #ABABAB;
+	color: #666;
 }
 .category-post a {
 	font-size: 10px;
@@ -669,7 +667,7 @@ li#menu-item-14139 {
 	position: absolute;
 	top: 10px;
 	left: 48px;
-	color: #f58733;
+	color: #B85102;
 	font-size: 10pt;
 }
 #searchform label {
@@ -823,7 +821,7 @@ h2.grid {
 .eventsBox .excerpt-post p, .excerpt-post p {
 	padding: 0 10px 8px;
 	font-size: 12px;
-	color: #80808D;
+	color: #666;
 	line-height: 1.5;
 	font-weight: 400;
 }
@@ -1409,7 +1407,7 @@ p.search {
 	padding: 1px 0px 43px 22px;
 }
 .bgWhite .event {
-	color: #F58733;
+	color: #B85102;
 	padding-left: 20px;
 	font-size: 14px !important;
 }
@@ -1420,7 +1418,7 @@ p.search {
 	padding-left: 0;
 	}
 .events {
-	color: #F58733;
+	color: #B85102;
 	padding: 0 10px 10px;
 	font-size: 14px !important;
 	width: 100% !important;
