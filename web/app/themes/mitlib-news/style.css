@@ -106,6 +106,7 @@ ul#menu-subscribe {
 .mySingle h2.subtitle {
 	font-size: 20px;
 	line-height: 26px;
+	color: #666;
 }
 .single .mitContent h2 {
 	font-size: 24px;
@@ -198,9 +199,8 @@ table.hrList tr:nth-child(even) {
 
 .single .entry-content p {
 	font-size: 16px;
-	line-height: 1.5;
+	line-height: 1.7;
 	font-weight: 400;
-	margin-bottom: 10px;
 }
 .single .entry-content p:last-of-type {
 	margin-bottom: 83px;
