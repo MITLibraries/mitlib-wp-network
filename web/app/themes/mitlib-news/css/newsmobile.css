@@ -261,14 +261,17 @@ body.tax-bibliotech_issues .newsNav ul li a {
 	color: #777;
 }
 .newsNav ul li a:hover {
-	text-decoration: none;
+	color: #0000ff;
+	background-color: #fff;
+	text-decoration: underline;
 }
 .newsNav {
 	margin-bottom: 13px;
 	padding-left: 0px;
 }
 .newsNav ul li.current-menu-item a:hover {
-	color: #777;
+	background-color: #e7e7e7;
+	color: #0000ff;
 }
 body.tax-bibliotech_issues .newsNav ul li#menu-item-17024, body.page-bibliotech-about .newsNav ul li#menu-item-17024, body.single-bibliotech .newsNav ul li#menu-item-17024 {
 	border-radius: 0;
