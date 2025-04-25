@@ -264,22 +264,22 @@ div.entry-meta {
 	justify-content: center;
 }
 .readMorePosts button {
-	background-color: rgb(255,136,39);
+	background-color: #ca5000;
 	padding: 10px;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
 	font-size: 16px;
-	font-weight: 500;
+	font-weight: 600;
 	color: white;
-	border: 1px solid rgb(255, 125, 46);
+	border: none;
 	width: 100%;
 	margin-bottom: 20px;
 	margin-top: 13px;
 }
 .readMorePosts button:hover {
-	background-color: #f7700a;
-	color: #fff0e5;
+	background-color: #7E3200;
+	color: #fff;
 	background-image: none;
 }
 .subNavH {
@@ -321,7 +321,7 @@ div.entry-meta {
 	padding-bottom: 14px;
 }
 .moreBtn button:active, .moreBtn button:focus, .moreBtn button:hover {
-	background-color: rgb(255, 125, 46);
+	background-color: #ca5000;
 	background-image: none;
 }
 .inner, #breadcrumb {
