@@ -175,15 +175,6 @@ table.hrList tr:nth-child(even) {
 .twitterLink {
 	margin-top: 1px;
 }
-.category-post-single {
-	font-weight: 600;
-	font-style: italic;
-	color: rgb(153,153,153);
-}
-.date-post {
-	font-weight: 400;
-	font-style: italic;
-}
 
 .no-padding-left {
 	padding-left: 0 !important;
@@ -199,6 +190,7 @@ table.hrList tr:nth-child(even) {
 	font-size: 16px;
 	line-height: 1.7;
 	font-weight: 400;
+	margin-bottom: 20px !important;
 }
 .single .entry-content p:last-of-type {
 	margin-bottom: 83px;
@@ -673,6 +665,7 @@ li#menu-item-14139 {
 	left: 48px;
 	color: #B85102;
 	font-size: 10pt;
+	font-weight: 600;
 }
 #searchform label {
 	font-size: 11px;
