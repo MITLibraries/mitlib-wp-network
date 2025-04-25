@@ -11,12 +11,12 @@ Template: mitlib-parent
 .content-area a:link, 
 .content-area a:visited {
 	color: #000;
-	text-decoration: underline;
+	text-decoration: none;
 }
 .content-area a:hover, 
 .content-area a:active {
 	color: #00F;
-	text-decoration: none;
+	text-decoration: underline;
 }
 
 .container-fluid {
