@@ -232,7 +232,7 @@ h2.search {
 	white-space: nowrap;
 }
 
-body.single-post h2.name-site, body.single-post h2.name-site a {
+body.single-post h2.name-site, body.page-subscribe .title-page h1.name-site, body.single-post h2.name-site a,  body.page-subscribe .title-page h1.name-site a {
 	font-size: 24px;
 	height: 34px;
 	margin: 24px 0px 5px;
