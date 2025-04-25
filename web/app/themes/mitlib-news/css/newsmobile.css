@@ -67,8 +67,8 @@ li#menu-item-17755, li#menu-item-17832 {
 	padding-left: 0px;
 }
 .newsNav ul li.current-menu-item {
-	background-color: rgb(88,137,193);
-	display: inline;
+	background-color: #e7e7e7;
+	color: #555;
 }
 hr.news {
 	background-color: rgb(230, 230, 230);
@@ -80,21 +80,21 @@ hr.news {
 	margin-right: 0px;
 }
 .newsNav ul li {
-	border-radius: 5px;
+	border-radius: 0;
 	background-color: #fff;
 	display: inline;
 	border: 1px solid rgb(230,230,230);
 	margin-right: 5px;
 }
 .newsNav ul li.current-menu-item a {
-	color: #fff;
+	color: #555;
 }
 .newsNav ul li a {
-	color: rgb(88,137,193);
+	color: #666;
 	font-size: 12px;
 }
 body.tax-bibliotech_issues .newsNav ul li a {
-	color: rgb(88,137,193);
+	color: #666;
 }
 .newsNav ul li a:hover {
 	text-decoration: none;
@@ -104,7 +104,7 @@ body.tax-bibliotech_issues .newsNav ul li a {
 	padding-left: 0px;
 }
 .newsNav ul li.current-menu-item a:hover {
-	color: rgb(88,137,193);
+	color: #666;
 }
 body.tax-bibliotech_issues .newsNav ul li#menu-item-17024, body.page-bibliotech-about .newsNav ul li#menu-item-17024, body.single-bibliotech .newsNav ul li#menu-item-17024 {
 	border-radius: 5px;
@@ -161,14 +161,14 @@ hr.news {
 	margin-right: 0px;
 }
 .newsNav ul li {
-	border-radius: 5px;
+	border-radius: 0;
 	background-color: #fff;
 	display: inline;
 	border: 1px solid rgb(230,230,230);
 	margin-right: 5px;
 }
 .newsNav ul li.current-menu-item a {
-	color: #fff;
+	color: #555;
 }
 .newsNav ul li a {
 	color: #666;
