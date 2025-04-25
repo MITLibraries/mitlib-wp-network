@@ -1653,3 +1653,8 @@ p.search {
     margin-top: -20%;
 
  }
+
+ /* Override the color of the SVG icons */
+ span.bg-image svg path {
+	fill: #B85102;
+ }
