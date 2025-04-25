@@ -731,24 +731,23 @@ button#dropdownMenu1 {
 }
 li#categories {
 	list-style-type: none;
+	margin-top: -3px;
 }
 select#cat, select#mitArchive, select#dynamic_select, select#bilbioMenu, select#bibMenu {
 	margin: 0px;
 	font-size: 17px;
-	color: #595959;
+	color: #222;
 	width: 284px;
 	max-width: 300px;
 	font-weight: 600;
 	line-height: 28pt;
-	border-bottom: 1px solid rgb(225, 225, 225);
-	background-color: rgb(244, 244, 244);
-	border-top: 1px solid rgb(242, 242, 242);
-	border-left: 1px solid rgb(242, 242, 242);
-	border-right: 1px solid rgb(229, 229, 229);
-	height: 38px;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
+	border: 1px solid #aaa;
+	background-color: #fafafa;
+	height: 41px;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+	padding-left: 12px;
 }
 select#bibMenu {
 	width: 160px;
