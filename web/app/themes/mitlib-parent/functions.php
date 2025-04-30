@@ -111,9 +111,35 @@ if ( isset( $_ENV['PANTHEON_ENVIRONMENT'] ) && 'test' !== $_ENV['PANTHEON_ENVIRO
 }
 
 /**
- * Register and selectively enqueue the scripts and stylesheets needed for this
- * page.
+ * Override max cache age for certain conditions.
+ *
+ * The default cache behavior is defined by the combination of two plugins:
+ * Pantheon MU Plugin and Pantheon Advanced Page Cache. The cache lifetime is
+ * typically set to 1 week via the former plugin, but certain pages require a
+ * shorter cache life. This function implements those alternative lifetimes.
+ *
+ * @link https://docs.pantheon.io/guides/wordpress-configurations/wordpress-cache-plugin#override-the-default-max-age
  */
+function override_cache_default_max_age() {
+	$site = parse_url( get_site_url(), PHP_URL_PATH );
+	if ( is_page( 'hours' ) ) { // All hours pages (including those with query parameters).
+		return 1 * DAY_IN_SECONDS;
+	} elseif ( '/news' == $site && is_page( 'events' ) ) { // The news site events page.
+		return 1 * DAY_IN_SECONDS;
+	} elseif ( '/exhibits' == $site && is_page( '' ) ) { // The exhibits site homepage.
+		return 1 * DAY_IN_SECONDS;
+	} elseif ( '/exhibits' == $site && is_page( 'current-upcoming-past-exhibits' ) ) { // The exhibits site composite listing.
+		return 1 * DAY_IN_SECONDS;
+	} else { // All other content should be cached for a week.
+		return 1 * WEEK_IN_SECONDS;
+	}
+}
+add_filter( 'pantheon_cache_default_max_age', 'Mitlib\Parent\override_cache_default_max_age' );
+
+ /**
+  * Register and selectively enqueue the scripts and stylesheets needed for this
+  * page.
+  */
 function setup_scripts_styles() {
 	// This allows us to cache-bust these assets without needing to remember to
 	// increment the theme version here.
