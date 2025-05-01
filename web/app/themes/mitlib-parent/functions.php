@@ -123,13 +123,13 @@ if ( isset( $_ENV['PANTHEON_ENVIRONMENT'] ) && 'test' !== $_ENV['PANTHEON_ENVIRO
 function override_cache_default_max_age() {
 	$site = parse_url( get_site_url(), PHP_URL_PATH );
 	if ( is_page( 'hours' ) ) { // All hours pages (including those with query parameters).
-		return 1 * DAY_IN_SECONDS;
+		return 1 * HOUR_IN_SECONDS;
 	} elseif ( '/news' == $site && is_page( 'events' ) ) { // The news site events page.
-		return 1 * DAY_IN_SECONDS;
+		return 1 * HOUR_IN_SECONDS;
 	} elseif ( '/exhibits' == $site && is_page( '' ) ) { // The exhibits site homepage.
-		return 1 * DAY_IN_SECONDS;
+		return 1 * HOUR_IN_SECONDS;
 	} elseif ( '/exhibits' == $site && is_page( 'current-upcoming-past-exhibits' ) ) { // The exhibits site composite listing.
-		return 1 * DAY_IN_SECONDS;
+		return 1 * HOUR_IN_SECONDS;
 	} else { // All other content should be cached for a week.
 		return 1 * WEEK_IN_SECONDS;
 	}
