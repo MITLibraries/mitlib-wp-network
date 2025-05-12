@@ -3,7 +3,7 @@
  * Theme functions and definitions.
  *
  * @package MITlib_Parent
- * @since 0.0.1
+ * @since 0.0.2
  */
 
 namespace Mitlib\Parent;

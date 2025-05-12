@@ -3,7 +3,7 @@
  * News theme functions and definitions
  *
  * @package MITlib_News
- * @since 0.0.1
+ * @since 0.0.2
  */
 
 namespace Mitlib\News;

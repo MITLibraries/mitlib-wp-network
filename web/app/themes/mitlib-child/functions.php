@@ -3,7 +3,7 @@
  * Child themes functions and definitions.
  *
  * @package MITlib_Child
- * @since 0.0.1
+ * @since 0.0.2
  */
 
 namespace Mitlib\Child;
