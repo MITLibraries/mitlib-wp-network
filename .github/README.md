@@ -63,7 +63,7 @@ Terminus is the tool used to manage Pantheon infrastructure.
 * Create a Multidev environment that corresponds with that branch, based on the current Dev environment:
 
   ```bash
-  terminus multidev:create mitlib-wp-network.dev engx-201
+  terminus multidev:create mitlib-wp-network.live engx-201
   ```
 
 The new `engx-201` Multidev environment will be available at https://engx-201-mitlib-wp-network.pantheonsite.io/, but it
@@ -76,7 +76,15 @@ More information about Multidev, and tools to manage them, can be found at:
 
 #### Deleting a Multidev environment
 
-This section TBD
+After a multidev is no longer needed (because its associated branch has merged, or is otherwise no longer needed), it
+can be deleted via the Pantheon dashboard or via Terminus:
+
+```bash
+terminus multidev:delete mitlib-wp-network.engx-201
+```
+
+Don't forget to delete the branch from Pantheon's git server as well, which can accomplished via the Pantheon dashboard
+or via git.
 
 #### Copying web content between environments
 
@@ -86,15 +94,23 @@ down the Dev -> Test -> Live pipeline.
 * Copy a site's database and user-contributed files using the `env:clone-content` command:
 
   ```bash
-  terminus env:clone-content mitlib-wp-network.dev engx-201
+  terminus env:clone-content mitlib-wp-network.live engx-201
   ```
 
 * Update database values to match the target environment using the [search-replace](https://developer.wordpress.org/cli/commands/search-replace/) command in the WP CLI:
 
   ```bash
   terminus remote:wp mitlib-wp-network.engx-201 -- search-replace \
-    dev-mitlib-wp-network.pantheonsite.io engx-201-mitlib-wp-network.pantheonsite.io \
-    --url=dev-mitlib-wp-network.pantheonsite.io \
+    libraries.mit.edu engx-201-mitlib-wp-network.pantheonsite.io \
+    --url=libraries.mit.edu \
+    --network
+  ```
+
+* Update the email addresses used by WP Mail SMTP. The `--url` parameter is no longer needed because the database now expects the correct domain name.
+
+  ```bash
+  terminus remote:wp mitlib-wp-network.engx-201 -- search-replace \
+    noreply@engx-201-mitlib-wp-network.pantheonsite.io noreply@libraries.mit.edu \
     --network
   ```
 
