@@ -73,6 +73,7 @@ wp-cli.local.yml
 web/app/mu-plugins/*/
 !web/app/mu-plugins/mitlib-post
 !web/app/mu-plugins/mitlib-secrets-widget
+!web/app/mu-plugins/mitlib-security
 
 # Plugins
 # Ignore the plugins directory by default. WordPress plugins should be managed
