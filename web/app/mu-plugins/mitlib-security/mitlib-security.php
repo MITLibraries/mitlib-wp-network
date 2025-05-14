@@ -44,7 +44,10 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @link https://docs.pantheon.io/guides/wordpress-developer/wordpress-best-practices#security-headers
  */
 function additional_security_headers( $headers ) {
-	$headers['X-Frame-Options']             = 'SAMEORIGIN';
+	$headers['Permissions-Policy']                  = 'geolocation=(), microphone=(), camera=()';
+	$headers['Referrer-Policy']                     = 'no-referrer-when-downgrade';
+	$headers['X-Content-Type-Options']              = 'nosniff';
+	$headers['X-Frame-Options']                     = 'SAMEORIGIN';
 
 	return $headers;
 }
