@@ -1,4 +1,4 @@
-# MIT Libraries WordPress Network
+# MIT Libraries WordPress network
 
 ## Pantheon template
 
