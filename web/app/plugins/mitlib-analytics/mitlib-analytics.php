@@ -114,8 +114,8 @@ function mitlib_analytics_url_callback() {
 		value="<?php echo esc_attr( $options ); ?>"
 		id="<?php echo esc_attr( 'mitlib_matomo_url' ); ?>"
 		size="60">
-	<p>The base URL for the Matomo instance to which analytics will be reported, including trailing forward-slash.</p>
-  <p>E.g., <pre>https://matomo.example.org/</pre></p>
+	<p>The base URL for the Matomo Tag Manager instance to which analytics will be reported. The URL must contain the container id.</p>
+  <p>E.g., <pre>https://matomo.mitlibrary.net/js/container_12345678.js</pre></p>
 	<?php
 }
 
@@ -178,23 +178,20 @@ function mitlib_analytics_page_html() {
 }
 
 /**
- * View function that outputs the Matomo code on public pages.
+ * View function that outputs the Matomo Tag Manager code into the header of all pages
  */
-function mitlib_analytics_view() {
-	echo "<!-- Matomo -->
-  <script>
-    var _paq = window._paq = window._paq || [];
-    /* tracker methods like 'setCustomDimension' should be called before 'trackPageView' */
-    _paq.push(['trackPageView']);
-    _paq.push(['enableLinkTracking']);
-    (function() {
-      var u='" . esc_html( get_site_option( 'mitlib_matomo_url' ) ) . "';
-      _paq.push(['setTrackerUrl', u+'matomo.php']);
-      _paq.push(['setSiteId', '" . esc_html( get_site_option( 'mitlib_matomo_property_id' ) ) . "']);
-      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-      g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
-    })();
-  </script>
-  <!-- End Matomo Code -->";
+
+function mitlib_analytics_tag_manager_view() {
+	echo "
+	<!-- Matomo Tag Manager -->
+<script>
+  var _mtm = window._mtm = window._mtm || [];
+  _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
+  (function() {
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src='" . esc_html( get_site_option( 'mitlib_matomo_url' ) ) . "'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Tag Manager -->";
 }
-add_action( 'wp_footer', 'mitlib\mitlib_analytics_view' );
+add_action( 'wp_head', 'mitlib\mitlib_analytics_tag_manager_view' );
