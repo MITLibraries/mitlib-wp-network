@@ -22,7 +22,6 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function mitlib_analytics_init() {
 	// Register a new setting for the Matomo property.
-	register_setting( 'mitlib_analytics', 'mitlib_matomo_property_id' );
 	register_setting( 'mitlib_analytics', 'mitlib_matomo_url' );
 
 	// Register a section for libraries settings on the mitlib-analytics page.
@@ -33,23 +32,10 @@ function mitlib_analytics_init() {
 		'mitlib-analytics'
 	);
 
-	// Register a new field in the "mitlib_analytics_general" section, inside the "mitlib-analytics" page.
-	add_settings_field(
-		'mitlib_matomo_property_id',
-		__( 'Matomo Analytics Property ID', 'mitlib_analytics' ),
-		'mitlib\mitlib_analytics_property_callback',
-		'mitlib-analytics',
-		'mitlib_analytics_general',
-		array(
-			'label_for' => 'mitlib_matomo_property_id',
-			'class' => 'mitlib_analytics_row',
-		)
-	);
-
 	// Register the domain list field in the "mitlib_analytics_general" section, inside the "mitlib-analytics" page.
 	add_settings_field(
 		'mitlib_matomo_url',
-		__( 'Matomo URL', 'mitlib_analytics' ),
+		__( 'Matomo Tag Manager URL', 'mitlib_analytics' ),
 		'mitlib\mitlib_analytics_url_callback',
 		'mitlib-analytics',
 		'mitlib_analytics_general',
@@ -80,24 +66,7 @@ add_action( 'network_admin_menu', 'mitlib\mitlib_analytics_menu' );
  */
 function mitlib_analytics_section_libraries() {
 	?>
-	<p>These settings control the Libraries-level analytics information.</p>
-	<?php
-}
-
-/**
- * Field rendering callback: Matomo property
- */
-function mitlib_analytics_property_callback() {
-	// Get the settings value.
-	$options = get_site_option( 'mitlib_matomo_property_id' );
-	?>
-	<input
-		type="text"
-		name="<?php echo esc_attr( 'mitlib_matomo_property_id' ); ?>"
-		value="<?php echo esc_attr( $options ); ?>"
-		id="<?php echo esc_attr( 'mitlib_matomo_property_id' ); ?>"
-		size="20">
-	<p>If you aren't sure what value to use, please contact UX/Web Services.</p>
+	<p>These settings control the Libraries-level analytics information. They implement a Matomo Tag Manager container across all network sites.</p>
 	<?php
 }
 
@@ -138,21 +107,13 @@ function mitlib_analytics_page_html() {
 		// Update settings.
 		if ( 'update' == filter_input( INPUT_POST, 'action' ) ) {
 			// Set default values.
-			$mitlib_matomo_property_id = '';
 			$mitlib_matomo_url = '';
-			// Matomo property ID.
-			if ( filter_input( INPUT_POST, 'mitlib_matomo_property_id' ) ) {
-				$mitlib_matomo_property_id = sanitize_text_field(
-					wp_unslash( filter_input( INPUT_POST, 'mitlib_matomo_property_id' ) )
-				);
-			}
 			// Matomo URL.
 			if ( filter_input( INPUT_POST, 'mitlib_matomo_url' ) ) {
 				$mitlib_matomo_url = sanitize_text_field(
 					wp_unslash( filter_input( INPUT_POST, 'mitlib_matomo_url' ) )
 				);
 			}
-			update_site_option( 'mitlib_matomo_property_id', $mitlib_matomo_property_id );
 			update_site_option( 'mitlib_matomo_url', $mitlib_matomo_url );
 		}
 	}
