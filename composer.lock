@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "02c0b8810b2ea3af6e7e35f186cfd40a",
+    "content-hash": "187d8a24c9e1f3cd1e6ac2450571319b",
     "packages": [
         {
             "name": "ConnectThink/WP-SCSS",
@@ -848,6 +848,36 @@
                 }
             ],
             "time": "2025-03-27T12:30:47+00:00"
+        },
+        {
+            "name": "mitlibraries/dynamic-menu-manager",
+            "version": "1.0.4",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:MITLibraries/dynamic-menu-manager.git",
+                "reference": "7d1e555d4454d5fc21c8cb96f6cd7e03f55c11f7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/MITLibraries/dynamic-menu-manager/zipball/7d1e555d4454d5fc21c8cb96f6cd7e03f55c11f7",
+                "reference": "7d1e555d4454d5fc21c8cb96f6cd7e03f55c11f7",
+                "shasum": ""
+            },
+            "type": "wordpress-plugin",
+            "license": [
+                "GPL-2.0-only"
+            ],
+            "authors": [
+                {
+                    "name": "Duogeek"
+                }
+            ],
+            "description": "Add different wordpress menu in different pages",
+            "support": {
+                "source": "https://github.com/MITLibraries/dynamic-menu-manager/tree/1.0.4",
+                "issues": "https://github.com/MITLibraries/dynamic-menu-manager/issues"
+            },
+            "time": "2022-12-06T20:59:34+00:00"
         },
         {
             "name": "monolog/monolog",
