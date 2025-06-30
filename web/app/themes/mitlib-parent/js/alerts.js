@@ -119,7 +119,7 @@ $(function(){
 
 	// This retrieves a list of posts, with additional parsing to determine if
 	// any are displayable alerts.
-	$.getJSON('/wp-json/wp/v2/posts')
+	$.getJSON('/wp-json/wp/v2/posts', {_: new Date().getTime()})
 		.done(function(data){
 			showAlerts(data);
 		});
