@@ -18,6 +18,9 @@ jobs:
       with:
         php-version: ${{ matrix.php-version }}
 
+    - name: Composer diagnose
+      run: composer diagnose
+
     - name: Cache Composer dependencies
       id: composer-cache
       run: echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
