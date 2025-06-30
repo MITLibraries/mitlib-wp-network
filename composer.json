@@ -62,14 +62,6 @@
       "url": "https://github.com/matt-bernhardt/WP-SCSS"
     },
     {
-      "type": "vcs",
-      "url": "https://github.com/mitlibraries/acf-location-field"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/mitlibraries/dynamic-menu-manager"
-    },
-    {
       "type": "path",
       "url": "upstream-configuration"
     }
@@ -80,8 +72,6 @@
     "connectthink/wp-scss": "^2.4@beta",
     "cweagans/composer-patches": "^1.7",
     "google/apiclient": "^2.12",
-    "mitlibraries/acf-location-field": "^1.0",
-    "mitlibraries/dynamic-menu-manager": "^1.0",
     "oscarotero/env": "^2.1",
     "pantheon-systems/pantheon-mu-plugin": "*",
     "pantheon-upstreams/upstream-configuration": "dev-main",

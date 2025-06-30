@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ec6638b233d495702e8e67b60aef1dba",
+    "content-hash": "02c0b8810b2ea3af6e7e35f186cfd40a",
     "packages": [
         {
             "name": "ConnectThink/WP-SCSS",
@@ -848,66 +848,6 @@
                 }
             ],
             "time": "2025-03-27T12:30:47+00:00"
-        },
-        {
-            "name": "mitlibraries/acf-location-field",
-            "version": "1.0.0",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:MITLibraries/acf-location-field.git",
-                "reference": "8f6857fe8331bd0ca608116392c5cee135297fca"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/MITLibraries/acf-location-field/zipball/8f6857fe8331bd0ca608116392c5cee135297fca",
-                "reference": "8f6857fe8331bd0ca608116392c5cee135297fca",
-                "shasum": ""
-            },
-            "type": "wordpress-plugin",
-            "license": [
-                "GPL-2.0-only"
-            ],
-            "authors": [
-                {
-                    "name": "Elliot Condon"
-                }
-            ],
-            "description": "Adds a 'Google Maps' field type for the Advanced Custom Fields WordPress plugin",
-            "support": {
-                "source": "https://github.com/MITLibraries/acf-location-field/tree/1.0.0",
-                "issues": "https://github.com/MITLibraries/acf-location-field/issues"
-            },
-            "time": "2022-12-06T20:22:05+00:00"
-        },
-        {
-            "name": "mitlibraries/dynamic-menu-manager",
-            "version": "1.0.4",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:MITLibraries/dynamic-menu-manager.git",
-                "reference": "7d1e555d4454d5fc21c8cb96f6cd7e03f55c11f7"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/MITLibraries/dynamic-menu-manager/zipball/7d1e555d4454d5fc21c8cb96f6cd7e03f55c11f7",
-                "reference": "7d1e555d4454d5fc21c8cb96f6cd7e03f55c11f7",
-                "shasum": ""
-            },
-            "type": "wordpress-plugin",
-            "license": [
-                "GPL-2.0-only"
-            ],
-            "authors": [
-                {
-                    "name": "Duogeek"
-                }
-            ],
-            "description": "Add different wordpress menu in different pages",
-            "support": {
-                "source": "https://github.com/MITLibraries/dynamic-menu-manager/tree/1.0.4",
-                "issues": "https://github.com/MITLibraries/dynamic-menu-manager/issues"
-            },
-            "time": "2022-12-06T20:59:34+00:00"
         },
         {
             "name": "monolog/monolog",
