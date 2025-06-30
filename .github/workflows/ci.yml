@@ -8,7 +8,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        php-version: ['8.1', '8.2', '8.3', '8.4']
+        php-version: ['8.2', '8.3', '8.4']
 
     steps:
     - uses: actions/checkout@v4
@@ -35,7 +35,7 @@ jobs:
       run: composer validate --no-check-all
 
     - name: Install Composer dependencies
-      run: composer install --no-progress --prefer-dist --optimize-autoloader
+      run: composer install --no-progress --prefer-dist --optimize-autoloader -vv
       env:
         ACF_PRO_KEY: ${{ secrets.ACF_PRO_KEY }}
         COMPOSER_AUTH: ${{ secrets.COMPOSER_AUTH }}
