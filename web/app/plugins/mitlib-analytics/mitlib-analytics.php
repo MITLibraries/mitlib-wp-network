@@ -141,7 +141,6 @@ function mitlib_analytics_page_html() {
 /**
  * View function that outputs the Matomo Tag Manager code into the header of all pages
  */
-
 function mitlib_analytics_tag_manager_view() {
 	echo "
 	<!-- Matomo Tag Manager -->
