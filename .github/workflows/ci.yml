@@ -17,6 +17,7 @@ jobs:
       uses: shivammathur/setup-php@v2
       with:
         php-version: ${{ matrix.php-version }}
+        tools: phpcs
 
     - name: Cache Composer dependencies
       id: composer-cache
