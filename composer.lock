@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "79a470127c1b8389e4d2680a6dbbd99c",
+    "content-hash": "46b8ed0f05daccbf30e12646b710afb6",
     "packages": [
         {
             "name": "ConnectThink/WP-SCSS",
-            "version": "2.4.1-beta2",
+            "version": "2.4.1-beta1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/matt-bernhardt/WP-SCSS.git",
-                "reference": "40eb06df723be4832b2658c2f3046eeb5cce4b6a"
+                "url": "https://github.com/MITLibraries/wp-scss.git",
+                "reference": "ff756776fb252b56d3bacc3762fc425b90110be1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/matt-bernhardt/WP-SCSS/zipball/40eb06df723be4832b2658c2f3046eeb5cce4b6a",
-                "reference": "40eb06df723be4832b2658c2f3046eeb5cce4b6a",
+                "url": "https://api.github.com/repos/MITLibraries/wp-scss/zipball/ff756776fb252b56d3bacc3762fc425b90110be1",
+                "reference": "ff756776fb252b56d3bacc3762fc425b90110be1",
                 "shasum": ""
             },
             "type": "wordpress-plugin",
@@ -27,9 +27,10 @@
                 "wordpress"
             ],
             "support": {
-                "source": "https://github.com/matt-bernhardt/WP-SCSS/tree/2.4.1-beta2"
+                "source": "https://github.com/MITLibraries/wp-scss/tree/2.4.1-beta1",
+                "issues": "https://github.com/MITLibraries/wp-scss/issues"
             },
-            "time": "2022-10-18T23:27:41+00:00"
+            "time": "2025-07-01T16:07:29+00:00"
         },
         {
             "name": "composer/installers",
