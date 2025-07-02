@@ -59,15 +59,15 @@
     },
     {
       "type": "vcs",
-      "url": "https://github.com/matt-bernhardt/WP-SCSS"
-    },
-    {
-      "type": "vcs",
       "url": "https://github.com/mitlibraries/acf-location-field"
     },
     {
       "type": "vcs",
       "url": "https://github.com/mitlibraries/dynamic-menu-manager"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/mitlibraries/wp-scss"
     },
     {
       "type": "path",
@@ -77,11 +77,10 @@
   "require": {
     "php": ">=7.4",
     "composer/installers": "^2.2",
-    "connectthink/wp-scss": "^2.4@beta",
+    "connectthink/wp-scss": "2.4.1-beta1",
     "cweagans/composer-patches": "^1.7",
     "google/apiclient": "^2.12",
     "mitlibraries/acf-location-field": "^1.0",
-    "mitlibraries/dynamic-menu-manager": "^1.0",
     "oscarotero/env": "^2.1",
     "pantheon-systems/pantheon-mu-plugin": "*",
     "pantheon-upstreams/upstream-configuration": "dev-main",
