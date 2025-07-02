@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "46b8ed0f05daccbf30e12646b710afb6",
+    "content-hash": "2844f2364a3ff684773a722554c9a328",
     "packages": [
         {
             "name": "ConnectThink/WP-SCSS",
@@ -849,6 +849,36 @@
                 }
             ],
             "time": "2025-03-27T12:30:47+00:00"
+        },
+        {
+            "name": "mitlibraries/acf-location-field",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:MITLibraries/acf-location-field.git",
+                "reference": "8f6857fe8331bd0ca608116392c5cee135297fca"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/MITLibraries/acf-location-field/zipball/8f6857fe8331bd0ca608116392c5cee135297fca",
+                "reference": "8f6857fe8331bd0ca608116392c5cee135297fca",
+                "shasum": ""
+            },
+            "type": "wordpress-plugin",
+            "license": [
+                "GPL-2.0-only"
+            ],
+            "authors": [
+                {
+                    "name": "Elliot Condon"
+                }
+            ],
+            "description": "Adds a 'Google Maps' field type for the Advanced Custom Fields WordPress plugin",
+            "support": {
+                "source": "https://github.com/MITLibraries/acf-location-field/tree/1.0.0",
+                "issues": "https://github.com/MITLibraries/acf-location-field/issues"
+            },
+            "time": "2022-12-06T20:22:05+00:00"
         },
         {
             "name": "monolog/monolog",
