@@ -80,6 +80,7 @@
     "connectthink/wp-scss": "2.4.1-beta1",
     "cweagans/composer-patches": "^1.7",
     "google/apiclient": "^2.12",
+    "mitlibraries/acf-location-field": "^1.0",
     "oscarotero/env": "^2.1",
     "pantheon-systems/pantheon-mu-plugin": "*",
     "pantheon-upstreams/upstream-configuration": "dev-main",
