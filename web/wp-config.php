@@ -98,6 +98,7 @@ if ( defined( 'BLOCKED_IPS' ) ) {
   }
 }
 
+
 /**
  * Pantheon platform settings. Everything you need should already be set.
  */
