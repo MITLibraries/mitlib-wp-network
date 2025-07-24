@@ -2873,15 +2873,15 @@
         },
         {
             "name": "wpackagist-plugin/media-library-assistant",
-            "version": "3.26",
+            "version": "3.27",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/media-library-assistant/",
-                "reference": "tags/3.26"
+                "reference": "tags/3.27"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/media-library-assistant.3.26.zip"
+                "url": "https://downloads.wordpress.org/plugin/media-library-assistant.3.27.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -2891,15 +2891,15 @@
         },
         {
             "name": "wpackagist-plugin/notification",
-            "version": "9.0.4",
+            "version": "9.0.5",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/notification/",
-                "reference": "tags/9.0.4"
+                "reference": "tags/9.0.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/notification.9.0.4.zip"
+                "url": "https://downloads.wordpress.org/plugin/notification.9.0.5.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -3125,15 +3125,15 @@
         },
         {
             "name": "wpackagist-plugin/wp-mail-smtp",
-            "version": "4.1.1",
+            "version": "4.5.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-mail-smtp/",
-                "reference": "tags/4.1.1"
+                "reference": "tags/4.5.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-mail-smtp.4.1.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/wp-mail-smtp.4.5.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -3161,15 +3161,15 @@
         },
         {
             "name": "wpackagist-plugin/wp-security-audit-log",
-            "version": "5.2.1",
+            "version": "5.4.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-security-audit-log/",
-                "reference": "tags/5.2.1"
+                "reference": "tags/5.4.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-security-audit-log.5.2.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/wp-security-audit-log.5.4.2.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -3179,15 +3179,15 @@
         },
         {
             "name": "wpackagist-plugin/wp-sentry-integration",
-            "version": "8.2.0",
+            "version": "8.5.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-sentry-integration/",
-                "reference": "tags/8.2.0"
+                "reference": "tags/8.5.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-sentry-integration.8.2.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/wp-sentry-integration.8.5.0.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -3197,15 +3197,15 @@
         },
         {
             "name": "wpackagist-plugin/wpcf7-recaptcha",
-            "version": "1.4.7",
+            "version": "1.4.9",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wpcf7-recaptcha/",
-                "reference": "tags/1.4.7"
+                "reference": "tags/1.4.9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wpcf7-recaptcha.1.4.7.zip"
+                "url": "https://downloads.wordpress.org/plugin/wpcf7-recaptcha.1.4.9.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
