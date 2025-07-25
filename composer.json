@@ -90,7 +90,6 @@
     "roots/multisite-url-fixer": "^1.1",
     "roots/wordpress": "*",
     "roots/wp-config": "*",
-    "roots/wp-password-bcrypt": "*",
     "vlucas/phpdotenv": "^5.5",
     "wpackagist-plugin/acf-image-crop-add-on": "^1.4",
     "wpackagist-plugin/add-category-to-pages": "^1.2",
@@ -130,7 +129,7 @@
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",
-    "wp-coding-standards/wpcs": "^3.0.0"
+    "wp-coding-standards/wpcs": "^3"
   },
   "config": {
     "optimize-autoloader": true,
