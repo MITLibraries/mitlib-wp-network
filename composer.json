@@ -90,17 +90,16 @@
     "roots/multisite-url-fixer": "^1.1",
     "roots/wordpress": "*",
     "roots/wp-config": "*",
-    "roots/wp-password-bcrypt": "*",
     "vlucas/phpdotenv": "^5.5",
     "wpackagist-plugin/acf-image-crop-add-on": "^1.4",
     "wpackagist-plugin/add-category-to-pages": "^1.2",
     "wpackagist-plugin/black-studio-tinymce-widget": "^2.7",
     "wpackagist-plugin/cf7-conditional-fields": "2.2.3",
-    "wpackagist-plugin/cf7-to-zapier": "^3",
+    "wpackagist-plugin/cf7-to-zapier": "^4",
     "wpackagist-plugin/classic-editor": "^1.6",
     "wpackagist-plugin/classic-widgets": "^0.3.0",
     "wpackagist-plugin/cms-tree-page-view": "^1.6",
-    "wpackagist-plugin/contact-form-7": "^5.6",
+    "wpackagist-plugin/contact-form-7": "^6",
     "wpackagist-plugin/content-audit-exporter": "^1.1",
     "wpackagist-plugin/custom-post-type-ui": "^1.13",
     "wpackagist-plugin/enable-media-replace": "^4.0",
@@ -113,7 +112,7 @@
     "wpackagist-plugin/pantheon-advanced-page-cache": "*",
     "wpackagist-plugin/redirection": "^5.3",
     "wpackagist-plugin/seamless-sticky-custom-post-types": "^1.4",
-    "wpackagist-plugin/shortcode-variables": "^4.0",
+    "wpackagist-plugin/shortcode-variables": "^5",
     "wpackagist-plugin/tinymce-advanced": "^5.6",
     "wpackagist-plugin/ultimate-posts-widget": "^2.2",
     "wpackagist-plugin/what-the-file": "^1.6",
@@ -130,7 +129,7 @@
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",
-    "wp-coding-standards/wpcs": "^3.0.0"
+    "wp-coding-standards/wpcs": "^3"
   },
   "config": {
     "optimize-autoloader": true,
