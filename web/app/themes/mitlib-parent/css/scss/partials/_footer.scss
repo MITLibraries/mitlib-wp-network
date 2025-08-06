@@ -25,8 +25,11 @@
 		}
 		h4 {
 			font-size: 1.125em;
-			font-weight: normal;
+			font-weight: 500;
 			padding-bottom: 1em;
+			letter-spacing: 0.02em;
+
+			a {font-weight: 500;}
 		}
 		.flex-item {
 			margin-right: 1.75em;

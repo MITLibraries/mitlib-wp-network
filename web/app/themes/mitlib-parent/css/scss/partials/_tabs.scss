@@ -13,7 +13,7 @@
 		li {
 			display: inline-block;
 			a {
-				color: lighten($black, 60%);
+				color: #666;
 			}
 			&:not(:first-of-type) {
 				margin-left: 1em;

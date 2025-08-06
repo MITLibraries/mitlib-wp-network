@@ -235,14 +235,9 @@ gldp-default .monyear span {
 	padding: 15px 2px;
 }
 .nameHolder h3 a {
-	font-weight: bold;
+	font-weight: 600;
 	font-size: .9em;
 }
-}
-
-@media only screen  and (min-device-width : 375px)  and (max-device-width : 667px)  and (orientation : portrait)  and (-webkit-min-device-pixel-ratio : 2) {
-.title-page {
-	padding-left: 0px;
 }
 .hrList thead th {
 	display: table-cell;
@@ -250,7 +245,7 @@ gldp-default .monyear span {
 	padding: 15px 2px;
 }
 .nameHolder h3 a {
-	font-weight: bold;
+	font-weight: 600;
 	font-size: .9em;
 }
 .middleAlert {
@@ -274,7 +269,7 @@ gldp-default .monyear span {
 	width: 60%;
 }
 .nameHolder h3 a {
-	font-weight: bold !important;
+	font-weight: 600 !important;
 	font-size: .9em !important;
 }
 
@@ -397,7 +392,7 @@ gldp-default .monyear span {
 	padding: 15px 2px;
 }
 .nameHolder h3 a {
-	font-weight: bold !important;
+	font-weight: 600 !important;
 	font-size: .9em !important;
 }
 
