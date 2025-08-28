@@ -26,7 +26,7 @@
 
 #hourContent {
 	width: 100%;
-	padding-left: 0 !important;
+	padding: 0 24px;
 }	
 
 #hourNav {
@@ -38,6 +38,15 @@
 
 .libraryContent {
 	padding-right: .5em;
+}
+
+.libraryContent h1 {
+	padding-right: 24px;
+
+	@include bp-mobile--only {
+		padding-right: 0;
+		padding-bottom: 12px;
+	}
 }
 
 .isSticky #hourNav {
@@ -248,7 +257,7 @@ div.libraryAlert {
 		@include bp-mobile--only {
 			display: none;
 		}
-		font-family: 'Open Sans', sans-serif;
+		font-family: neue-haas-grotesk-text, Helvetica, sans-serif;
 		position: absolute;
 		.core {
 			background: transparent;
@@ -290,10 +299,9 @@ div.libraryAlert {
 	}
 }
 
-@media only screen and (max-width : 780px){
+@media only screen and (max-width : 830px){
 	#hourContent {
 		min-width: auto !important;
-		padding-left: 0 !important;
 	}
 	.middleAlert {
 		font-size: .85em;
@@ -303,7 +311,6 @@ div.libraryAlert {
 		display: block;
 	}
 	.hrList {
-		display: block;
 		width: 100%;
 		}
 	
@@ -326,9 +333,13 @@ div.libraryAlert {
 		min-height: 45px;
 		display: block;
 		text-align: center;
-		font-weight: 600;
+		font-weight: 400;
 		min-height: 95px ;
 		line-height: 1.5;
+
+		.date-label {
+			font-weight: 600;
+		}
 	}
 	
 
@@ -422,16 +433,13 @@ div.libraryAlert {
 		top: 2.5%;
 		left: 2.5%;
 	}	
-/*	.nameHolder {
-		width: 80%;
-	} */
+	.nameHolder {
+		font-weight: 400;
+	} 
 	
 	.tdInside {
 		top: 0px;
 		left: 0px;
-	}
-	.locations-more {
-		padding: 0 .5rem;
 	}
 }
 
@@ -441,10 +449,6 @@ div.libraryAlert {
 		padding-top: 10px !important;
 		line-height: 1.7;	
 		line-height: 16px !important;
-	}
-	.nameHolder h3 a {
-		font-size: 16px !important;
-		font-weight: 700;
 	}
 	.middleAlert {
 		width: 100% !important;

@@ -1,3 +1,7 @@
+$line-height-primary: 1.4;
+$font-family-primary: neue-haas-grotesk-text, Helvetica, Arial, sans-serif;
+$font-family-primary-headings: neue-haas-grotesk-display, Helvetica, Arial, sans-serif;
+
 body {
 	color: $black;
 	font-family: $font-family-primary;
@@ -5,38 +9,36 @@ body {
 	//text-rendering: optimizeLegibility; // This is a performance drag, and causes blank text in older WebKit Windows browsers
 }
 
-h1 {
-	@include rem-first(font-size, 1.75);
-	font-weight: 400;
+h1, h2, h3, h4, h5, h6 {
+	font-family: $font-family-primary-headings;
+	font-weight: 600;
 	line-height: 1.25;
 }
 
-h2, h3, h4, h5, h6 {
-	font-weight: 400;
-	margin: 15px 0 10px;
-	line-height: 1.25;
+h1 {
+	@include rem-first(font-size, 1.75);
+}
 
-	a {font-weight: 400;}
+h2, h3, h4, h5, h6 {
+	margin: 15px 0 10px;
+
+	a {font-weight: 600;}
 }
 
 h2 {
 	@include rem-first(font-size, 1.29);
-	font-weight: 600;
 }
 
 h3 {
 	@include rem-first(font-size, 1.14);
-	font-weight: 600;
 }
 
 h4 {
 	@include rem-first(font-size, 1);
-	font-weight: 700;
 }
 
 h5 {
 	@include rem-first(font-size, 0.85);
-	font-weight: 700;
 }
 
 h6 {

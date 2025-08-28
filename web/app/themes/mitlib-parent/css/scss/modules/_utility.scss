@@ -94,7 +94,7 @@
 	max-width: 36.625rem;
 }
 
-$font-body: 'Open Sans', sans-serif;
+$font-body: neue-haas-grotesk-text, Helvetica, sans-serif;
 
 @mixin body-text {
 	@include font-size(18px);
