@@ -148,12 +148,9 @@ function setup_scripts_styles() {
 	/**
 	 * Register stylesheets.
 	 */
-
-	wp_register_style( 'font-open-sans', '//fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,600,600italic,700,700italic', false, $theme_version, 'all' );
-
 	wp_register_style( 'parent-styles', get_stylesheet_uri(), array(), $theme_version );
 
-	wp_register_style( 'parent-global', get_template_directory_uri() . '/css/build/global.css', array( 'parent-styles', 'font-open-sans' ), $theme_version );
+	wp_register_style( 'parent-global', get_template_directory_uri() . '/css/build/global.css', array( 'parent-styles' ), $theme_version );
 
 	wp_register_style( 'parent-forms', get_template_directory_uri() . '/css/build/forms.css', array( 'parent-global' ), $theme_version );
 
@@ -190,10 +187,9 @@ function setup_scripts_styles() {
 
 	// Register javascript that we've written.
 	wp_register_script( 'dev', get_template_directory_uri() . '/js/dev.js', array(), $theme_version, true );
-	wp_register_script( 'fonts', get_template_directory_uri() . '/js/fonts.js', array(), $theme_version, false );
 	wp_register_script( 'libchat', get_template_directory_uri() . '/js/libchat.js', array( 'jquery' ), $theme_version, true );
 	wp_register_script( 'menu-toggle', get_template_directory_uri() . '/js/menu.toggle.js', array(), $theme_version, true );
-	wp_register_script( 'parent-production', get_template_directory_uri() . '/js/alerts.js', array( 'dev', 'fonts', 'jquery', 'libchat', 'menu-toggle' ), $theme_version, true );
+	wp_register_script( 'parent-production', get_template_directory_uri() . '/js/alerts.js', array( 'dev', 'jquery', 'libchat', 'menu-toggle' ), $theme_version, true );
 
 	// Interior bundle.
 	wp_register_script( 'parent-interior', get_template_directory_uri() . '/js/core.js', array(), $theme_version, true );
@@ -221,7 +217,7 @@ function setup_scripts_styles() {
 	/* All-site JS */
 	wp_enqueue_script( 'modernizr' );
 	wp_enqueue_script( 'parent-production' );
-	wp_add_inline_script( 'fonts', 'const THEME_ROOT = "' . esc_js( get_template_directory_uri() ) . '";', 'before' );
+	wp_add_inline_script( 'parent-production', 'const THEME_ROOT = "' . esc_js( get_template_directory_uri() ) . '";', 'before' );
 
 	/* Page-specific JS & CSS */
 
