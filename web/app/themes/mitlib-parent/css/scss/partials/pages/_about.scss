@@ -8,282 +8,225 @@ Page 1 styles:
 body.page-id-33 {
     background: #fff;
     color: #000;
-  }
-  
-  body.page-id-33 .content {
+
+  .content {
     margin: 0;
     line-height: 1.25;
   }
-  
-  body.page-id-33 .main-content { 
+
+  .main-content { 
     color: #000;
-      margin-left: 0;
+    margin-left: 0;
     padding-left: 24px; 
     padding-right: 4px;
     margin-bottom: 0;
+    
+    .list-unbulleted li {
+      list-style: none;
+      margin-left: 0;
+    }
+
+    .cta-link {
+      transition: background-color ease-in-out .3s;
+      display: inline-block;
+      padding: 10px;  
+      color: #000;
+      font-size: 20px;
+      font-weight: 600;
+      text-decoration: underline;
+
+      &:hover {
+        background-color: #d300cc;
+        color: #fff;
+      }
+    }
   }
-  
-  body.page-id-33 .layout-band {
+
+  .layout-band {
     padding: 1% 15px 1% 15px;
+    margin-top: 48px !important;
   }
-  
-  body.page-id-33 .ttl {
+
+  .ttl {
       font-size: 36px;
       font-weight: 600;
       font-family: $font-family-primary-headings;
       line-height: 1.15;
   }
-  
-  body.page-id-33 .main-content .list-unbulleted li {
-    list-style: none;
-    margin-left: 0;
-  }
-  
-  body.page-id-33 .main-content .cta-link {
-    transition: background-color ease-in-out .3s;
-    display: inline-block;
-    padding: 10px;  
-    color: #000;
-    font-size: 20px;
-    font-weight: 600;
-    text-decoration: underline;
-  }
-  
-  body.page-id-33 .main-content .cta-link:hover {
-    background-color: #d300cc;
-    color: #fff;
-  }
-  
-  body.page-id-33 .wrap-intro {
+
+  .wrap-intro {
     padding: 0;
     color: #000;
+
+    // STYLE FOR TOP HEADING AND PARAGRAPH
+    .ttl {
+      margin-bottom: .3em;
+      margin-right: 30px;
+    }
+
+    .pull {
+      font-size: 20px;
+      line-height: 1.2;
+    }
+
   }
-  
-  body.page-id-33 .wrap-intro .ttl {
-    margin-bottom: .3em;
-      margin-right: 30px
-  }
-  
-  body.page-id-33 .wrap-intro .pull {
-    font-size: 20px;
-    line-height: 1.2;
-  }
-  
-  body.page-id-33 .wrap-we-are {
-    margin-top: 1rem;
-  }
-  
-  // Image Card Styles Begin
-  body.page-id-33 .card { 
+
+  // STYLES FOR IMAGE CARDS
+  .card { 
     transition: background-color ease-in-out .3s;
     background: #ececec;
     color: #000;
     margin: 15px 0;
     padding-top: 5px;
     line-height: 0;
-  }
-  
-  body.page-id-33 .card:hover {
-    background-color: #0000FF;
-    background-image: none;
-    color: #fff;
-  }
-  
-  body.page-id-33 .card:hover a {
-    color: #fff !important;
-  }
-  
-  body.page-id-33 .card .c-image {
-    width: 100%;
-    background-color: #000;
-  }
+    
+    &:hover {
+      background-color: #0000FF;
+      background-image: none;
+      color: #fff;
 
-  body.page-id-33 .card .c-content {
+      a {
+        color: #fff !important;
+      }
+
+      .c-content {
+        transition: background-color ease-in-out .3s;
+        background-color: #0000FF;
+      }
+
+    }
+
+    .c-image {
+      width: 100%;
+      background-color: #000;
+      
+      a img {
+        width: 100%;
+      }  
+
+      @media screen and (max-width: 720px) {
+        & > a {
+            height: 320px;
+            display: flex;
+            overflow: hidden;
+            align-items: end;
+        }
+      }
+
+      @media only screen and (max-width: 600px) {
+        & > a {
+          height: 260px;
+        }
+      }
+      
+      @media only screen and (max-width: 450px) {
+        & > a {
+          height: 200px;
+        }
+      }      
+    }
+
+  .c-content {
     padding: 10px 3%;
     font-size: 14px;
   } 
-  
-  body.page-id-33 .card:hover .c-content {
-    transition: background-color ease-in-out .3s;
-    background-color: #0000FF;
-  }
 
-  body.page-id-33 .card .c-ttl1 {
+  .c-ttl1 {
     font-size: 20px;
     font-weight: 600;
     margin: 0;
   }
-  
-  body.page-id-33 .card .c-ttl2 {
+
+  .c-ttl2 {
     margin-top: .2em;
     font-size: 14px;
     line-height: 1.2;
     font-weight: 400;
   }
-  
-  body.page-id-33 .wrap-fol {
-    padding: 2% 15px 3% 15px;
-    color: #000;
-    font-size: 14px;
-  }
-  
-  body.page-id-33 .wrap-fol .ttl {
-    font-size: 36px;
-    font-weight: 600;
-  }
-  
-  body.page-id-33 .wrap-fol .vision-item strong {
-    display: block;
-    margin: 1em 0 .2em 0;
-    font-size: 20px;
-  }
-  
-  body.page-id-33 .wrap-fol .cta-link {
-    margin-top: .5em;
+
   }
 
-// WHO Columns under explore our organization
-  body.page-id-33 .who-column-wrapper {
+  // STYLES FOR WHO COLUMNS
+  .who-column-wrapper {
     display: flex;
     gap: 15px;
     margin-top: 24px;
+
+    > div {
+      background-color: #ececec;
+      padding: 16px 10px 12px;
+      flex: 1 1 0px;
+    }
+
+    .who-ttl1 {
+      font-size: 20px;
+      font-weight: 600;
+      line-height: .92;
+      margin: 0;
+    }
+    
+    .who-ttl2 { 
+      margin-top: .4em;
+      font-size: 14px;
+      line-height: 1.2;
+      font-weight: 400
+    } 
   }
 
-  body.page-id-33 .who-column-wrapper > div {
-    background-color: #ececec;
-    padding: 16px 10px 12px;
-    flex: 1 1 0px;
-  }
-
-  body.page-id-33 .who-ttl1 {
-    font-size: 20px;
-    font-weight: 600;
-    line-height: .92;
-    margin: 0;
-  }
-  
-  body.page-id-33 .who-ttl2 { 
-    margin-top: .4em;
-    font-size: 14px;
-    line-height: 1.2;
-    font-weight: 400
-  
-  } 
-  
-  body.page-id-33 .list-social {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  body.page-id-33 .list-social a {
-    flex: 1 1 auto;
-    padding: 20px;  
-    background-color: #fff;
-    font-size: 28px;
-    color: #234;  
+  // STYLES FOR LINK LIST DIVIDED BY PIPES
+  .list-pipe {
     text-align: center;
-  }
-  
-  body.page-id-33 .list-social a:hover {
-    background-color: #00C800;
-    color: #000;
-  }
-  
-  body.page-id-33 .list-pipe {
-    text-align: center;
-  }
-  body.page-id-33 .list-pipe li {
-    list-style-type: none;
-    display: inline-block;  
-    margin: 0;  
-    padding-right: 10px;
-  }
-  body.page-id-33 .list-pipe li:after  {
-    content: "|";
-    padding-left: 10px;
-  }
-  
-  body.page-id-33 .list-pipe li:last-child:after  {
-  content: "";
-  }
 
-  body.page-id-33 .c-image a img {
-    width: 100%;
-}  
+    li {
+      list-style-type: none;
+      display: inline-block;  
+      margin: 0;  
+      padding-right: 10px;
 
-@media screen and (max-width: 720px) {
-  
-    body.page-id-33 .entry-content {
-        padding-right: 20px !important;
+      &:after  {
+        content: "|";
+        padding-left: 10px;
+      }
+
+      &:last-child:after  {
+        content: "";
+      }
     }
+  }
 
-    body.page-id-33 .c-image > a {
-        height: 320px;
-        display: flex;
-        overflow: hidden;
-        align-items: end;
-    }
+  // RESPONSIVE LAYOUT ADJUSTMENTS
+  @media screen and (max-width: 720px) {
+    
+      .entry-content {
+          padding-right: 20px !important;
+      }
 
-    body.page-id-33 .who-column-wrapper {
-      flex-direction: column;
-    }
+      .who-column-wrapper {
+        flex-direction: column;
+      }
 
-}
+  }
+
   @media only screen and (min-width: 720px) {
 
-    body.page-id-33 .wrap-case-studies, 
-    body.page-id-33 .wrap-linkblocks {
-      display: flex;
-    } 
-      
-    body.page-id-33 .card {
-      flex: 1 1 auto; 
-      width: 30%; 
-      align-items: stretch;
-      margin: 15px 15px 15px 0px;    
-    }
+      .wrap-case-studies, 
+      .wrap-linkblocks {
+        display: flex;
+      } 
+        
+      .card {
+        flex: 1 1 auto; 
+        width: 30%; 
+        align-items: stretch;
+        margin: 15px 15px 15px 0px;    
+      }
 
-    body.page-id-33 .card:last-child {
-      margin-right: 0px;
-    }
+      .card:last-child {
+        margin-right: 0px;
+      }
 
   }
 
-  @media only screen and (max-width: 600px) {
-    body.page-id-33 .c-image > a {
-      height: 260px;
-    }
-  }
-  
-  @media only screen and (max-width: 450px) {
-    body.page-id-33 .c-image > a {
-      height: 200px;
-    }
-  }
-  
-  /*
-  Page 2 styles:
-  */
-  #content .digpreserve {
-    border-collapse: collapse;
-    border: 1px solid #aaa;
-  }
-  
-  #content .digpreserve th, 
-  #content .digpreserve td {
-    border: 1px solid #aaa;
-    padding: 1%;
-  }
-  
-  #content .digpreserve th {
-    background-color: #000;
-    color: #fff;
-  }
-  
-  #content .digpreserve #services {
-    width: 25%;
-  }
-  
-  #content .digpreserve #level1, #content .digpreserve #level2, #content .digpreserve #level3, #content .digpreserve #level4, #content .digpreserve #level5 {
-    width: 15%;
-  }
+}  
+
+

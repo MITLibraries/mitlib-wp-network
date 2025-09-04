@@ -71,3 +71,40 @@
 		}
 	}
 }
+
+/* ==================== */
+/* Custom Table Styling */
+/* ==================== */
+
+// Figure 1 on page: /about/strategic-initiatives/digital-preservation/comprehensive-digital-preservation-services-cdps-levels-of-preservation-commitment/
+body.page-id-532 {
+
+  #content {
+
+    .digpreserve {
+      border-collapse: collapse;
+      border: 1px solid #aaa;
+
+      th, td {
+        border: 1px solid #aaa;
+        padding: 1%;
+      }
+
+      th {
+        background-color: #000;
+        color: #fff;
+      }
+
+      #services {
+        width: 25%;
+      }
+
+      #level1, #level2, #level3, #level4, #level5 {
+        width: 15%;
+      }
+
+    }
+
+  }
+
+}
