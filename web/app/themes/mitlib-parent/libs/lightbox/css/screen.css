@@ -109,6 +109,7 @@ body, input, textarea {
   text-shadow: 0 -1px 0 black;
   font-size: 16px;
   line-height: 1.625em;
+  font-family: "Open Sans", "lucida grande", tahoma, sans-serif;
   font-weight: 600;
   -webkit-font-smoothing: antialiased;
 }
