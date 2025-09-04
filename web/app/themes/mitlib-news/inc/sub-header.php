@@ -34,7 +34,7 @@ namespace Mitlib\News;
 <hr class="hidden-xs news">
 <div class="subNavH">
 	<div class="row">
-	<div class="no-padding-left  col-xs-6  col-sm-8  col-sm-8  col-md-6 col-lg-6  newsNav dropdown">
+	<div class="no-padding-left col-xs-6 col-sm-8 col-md-6 col-lg-6 newsNav dropdown">
 <?php
 // Main navigation.
 $defaults = array(
@@ -77,7 +77,7 @@ wp_nav_menu( $defaults );
 	
 
 	
-	<div class="hidden-xs   col-sm-4  col-sm-4  col-md-6 col-lg-6 catNav">
+	<div class="hidden-xs col-sm-4 col-md-6 col-lg-6 catNav">
 
 <ul>
 
