@@ -33,7 +33,6 @@ if ( 'slim' === get_option( 'menu_style_setting' ) ) {
 	<link rel="icon" href="https://cdn.libraries.mit.edu/files/branding/favicons/favicon.svg" type="image/svg+xml">
 	<link rel="apple-touch-icon" href="https://cdn.libraries.mit.edu/files/branding/favicons/apple-touch-icon.png"><!-- 180×180 -->
 	<link rel="manifest" href="https://cdn.libraries.mit.edu/files/branding/favicons/manifest.json">
-	<link rel="stylesheet" href="https://use.typekit.net/ixd2vgq.css">
 	<?php wp_head(); ?>
 	<script>
 		todayDate="";
