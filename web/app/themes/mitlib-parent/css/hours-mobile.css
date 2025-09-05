@@ -53,7 +53,7 @@ gldp-default .monyear span {
 .content-main {
 	display: -webkit-flex;
 	display: flex;
-	-webkit-flex-direction: row /* works with row or column */
+	-webkit-flex-direction: row; /* works with row or column */
 	flex-direction: row;
 	-webkit-align-items: flex-start;
 	align-items: flex-start;
@@ -251,7 +251,6 @@ gldp-default .monyear span {
 .middleAlert {
 	display: block;
 	width: 100%;
-}
 }
 
 /* Samsung Galaxy S5 ----------- */
