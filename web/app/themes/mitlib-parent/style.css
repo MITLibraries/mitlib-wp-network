@@ -1,7 +1,7 @@
 /*
 Theme Name: MITlib Parent
 Author: MIT Libraries
-Version: 0.6
+Version: 0.7
 Description: The parent theme for the MIT Libraries' Pentagram-designed identity.
 
 */
@@ -205,10 +205,6 @@ display: none !important;
 	width:1px;
 	height:1px;
 	overflow:hidden;
-}
-
-body {
-	font-family: 'Open Sans', Helvetica, sans-serif !important;
 }
 
 

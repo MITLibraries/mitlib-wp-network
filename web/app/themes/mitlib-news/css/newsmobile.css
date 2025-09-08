@@ -22,7 +22,7 @@ button#dropdownMenu1 {
 	padding: 9px 0px;
 }
 .newsNav ul li.current-menu-item a {
-	color: rgb(88,137,193);
+	color: #666;
 }
 .page h2 {
 }
@@ -48,7 +48,7 @@ ul#menu-mainnav {
 	box-shadow: 0px 0 !important;
 }
 .newsNav ul li.current-menu-item a {
-	color: rgb(88,137,193);
+	color: #666;
 }
 li#menu-item-17755, li#menu-item-17832 {
 	display: none
@@ -67,8 +67,8 @@ li#menu-item-17755, li#menu-item-17832 {
 	padding-left: 0px;
 }
 .newsNav ul li.current-menu-item {
-	background-color: rgb(88,137,193);
-	display: inline;
+	background-color: #e7e7e7;
+	color: #555;
 }
 hr.news {
 	background-color: rgb(230, 230, 230);
@@ -80,21 +80,21 @@ hr.news {
 	margin-right: 0px;
 }
 .newsNav ul li {
-	border-radius: 5px;
+	border-radius: 0;
 	background-color: #fff;
 	display: inline;
 	border: 1px solid rgb(230,230,230);
 	margin-right: 5px;
 }
 .newsNav ul li.current-menu-item a {
-	color: #fff;
+	color: #555;
 }
 .newsNav ul li a {
-	color: rgb(88,137,193);
-	font-size: 12px;
+	color: #666;
+	font-size: 16px;
 }
 body.tax-bibliotech_issues .newsNav ul li a {
-	color: rgb(88,137,193);
+	color: #666;
 }
 .newsNav ul li a:hover {
 	text-decoration: none;
@@ -104,7 +104,7 @@ body.tax-bibliotech_issues .newsNav ul li a {
 	padding-left: 0px;
 }
 .newsNav ul li.current-menu-item a:hover {
-	color: rgb(88,137,193);
+	color: #666;
 }
 body.tax-bibliotech_issues .newsNav ul li#menu-item-17024, body.page-bibliotech-about .newsNav ul li#menu-item-17024, body.single-bibliotech .newsNav ul li#menu-item-17024 {
 	border-radius: 5px;
@@ -147,7 +147,8 @@ li#menu-item-17755, li#menu-item-17832 {
 	padding-left: 0px;
 }
 .newsNav ul li.current-menu-item {
-	background-color: rgb(88,137,193);
+	background-color: #e7e7e7;
+	color: #555;
 	display: inline;
 }
 hr.news {
@@ -160,21 +161,21 @@ hr.news {
 	margin-right: 0px;
 }
 .newsNav ul li {
-	border-radius: 5px;
+	border-radius: 0;
 	background-color: #fff;
 	display: inline;
 	border: 1px solid rgb(230,230,230);
 	margin-right: 5px;
 }
 .newsNav ul li.current-menu-item a {
-	color: #fff;
+	color: #555;
 }
 .newsNav ul li a {
-	color: rgb(88,137,193);
+	color: #666;
 	font-size: 12pt;
 }
 body.tax-bibliotech_issues .newsNav ul li a {
-	color: rgb(88,137,193);
+	color: #666;
 }
 .newsNav ul li a:hover {
 	text-decoration: none;
@@ -184,7 +185,7 @@ body.tax-bibliotech_issues .newsNav ul li a {
 	padding-left: 0px;
 }
 .newsNav ul li.current-menu-item a:hover {
-	color: rgb(88,137,193);
+	color: #666;
 }
 body.tax-bibliotech_issues .newsNav ul li#menu-item-17024, body.page-bibliotech-about .newsNav ul li#menu-item-17024, body.single-bibliotech .newsNav ul li#menu-item-17024 {
 	border-radius: 5px;
@@ -228,8 +229,8 @@ li#menu-item-17755, li#menu-item-17832 {
 	padding-left: 0px;
 }
 .newsNav ul li.current-menu-item {
-	border-radius: 5px;
-	background-color: rgb(88,137,193);
+	border-radius: 0;
+	background-color: #e7e7e7;
 	display: inline;
 }
 hr.news {
@@ -243,40 +244,43 @@ hr.news {
 	width: 99%;
 }
 .newsNav ul li {
-	border-radius: 5px;
+	border-radius: 0;
 	background-color: #fff;
 	display: inline;
 	border: 1px solid rgb(230,230,230);
 	margin-right: 5px;
 }
 .newsNav ul li.current-menu-item a {
-	color: #fff;
+	color: #555;
 }
 .newsNav ul li a {
-	color: rgb(88,137,193);
+	color: #666;
 	font-size: 12pt;
 }
 body.tax-bibliotech_issues .newsNav ul li a {
-	color: rgb(88,137,193);
+	color: #666;
 }
 .newsNav ul li a:hover {
-	text-decoration: none;
+	color: #0000ff;
+	background-color: #fff;
+	text-decoration: underline;
 }
 .newsNav {
 	margin-bottom: 13px;
 	padding-left: 0px;
 }
 .newsNav ul li.current-menu-item a:hover {
-	color: rgb(88,137,193);
+	background-color: #e7e7e7;
+	color: #0000ff;
 }
 body.tax-bibliotech_issues .newsNav ul li#menu-item-17024, body.page-bibliotech-about .newsNav ul li#menu-item-17024, body.single-bibliotech .newsNav ul li#menu-item-17024 {
-	border-radius: 5px;
-	background-color: rgb(88,137,193);
+	border-radius: 0;
+	background-color: #e7e7e7;
 	display: inline;
-	color: white;
+	color: #555;
 }
 body.tax-bibliotech_issues .newsNav ul li#menu-item-17024 a, body.page-bibliotech-about .newsNav ul li#menu-item-17024 a, body.single-bibliotech .newsNav ul li#menu-item-17024 a {
-	color: #fff;
+	color: #555;
 }
 /*NAV*/
 

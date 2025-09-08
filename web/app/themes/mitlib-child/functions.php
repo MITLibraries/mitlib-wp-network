@@ -31,6 +31,7 @@ function child_scripts_styles() {
 	wp_register_style( 'interviews', get_stylesheet_directory_uri() . '/css/build/interviews.css', array(), $theme_version );
 	wp_register_style( 'interviewees', get_stylesheet_directory_uri() . '/css/build/interviewees.css', array(), $theme_version );
 	wp_register_style( 'child-style', get_stylesheet_uri(), array( 'parent-global', 'dashicons' ), $theme_version );
+	wp_register_style( 'child-about', get_template_directory_uri() . '/css/build/about.css', $theme_version );
 
 	// Then we register javascript libraries.
 	wp_deregister_script( 'jquery' );
@@ -56,6 +57,13 @@ function child_scripts_styles() {
 	// Load the styles for the index of interviewees only on that archive.
 	if ( is_post_type_archive( 'interviewee' ) ) {
 		wp_enqueue_style( 'interviewees' );
+	}
+
+	// Check to see which blog we're on
+	$blog_id_to_check = get_current_blog_id();
+	// Load the about page styles only on the about page (33) in the about child site (19)
+	if ( is_page( '33' ) && $blog_id_to_check == 19 ) {
+		wp_enqueue_style( 'child-about' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'Mitlib\Child\child_scripts_styles' );

@@ -1,0 +1,232 @@
+/*
+We have custom styles for two pages on the About site:
+1. Custom styling for About site homepage (page ID 33)
+2. Custom table styles for the CDPS Levels of Preservation Commitment
+
+Page 1 styles:
+*/
+body.page-id-33 {
+    background: #fff;
+    color: #000;
+
+  .content {
+    margin: 0;
+    line-height: 1.25;
+  }
+
+  .main-content { 
+    color: #000;
+    margin-left: 0;
+    padding-left: 24px; 
+    padding-right: 4px;
+    margin-bottom: 0;
+    
+    .list-unbulleted li {
+      list-style: none;
+      margin-left: 0;
+    }
+
+    .cta-link {
+      transition: background-color ease-in-out .3s;
+      display: inline-block;
+      padding: 10px;  
+      color: #000;
+      font-size: 20px;
+      font-weight: 600;
+      text-decoration: underline;
+
+      &:hover {
+        background-color: #d300cc;
+        color: #fff;
+      }
+    }
+  }
+
+  .layout-band {
+    padding: 1% 15px 1% 15px;
+    margin-top: 48px !important;
+  }
+
+  .ttl {
+      font-size: 36px;
+      font-weight: 600;
+      font-family: $font-family-primary-headings;
+      line-height: 1.15;
+  }
+
+  .wrap-intro {
+    padding: 0;
+    color: #000;
+
+    // STYLE FOR TOP HEADING AND PARAGRAPH
+    .ttl {
+      margin-bottom: .3em;
+      margin-right: 30px;
+    }
+
+    .pull {
+      font-size: 20px;
+      line-height: 1.2;
+    }
+
+  }
+
+  // STYLES FOR IMAGE CARDS
+  .card { 
+    transition: background-color ease-in-out .3s;
+    background: #ececec;
+    color: #000;
+    margin: 15px 0;
+    padding-top: 5px;
+    line-height: 0;
+    
+    &:hover {
+      background-color: #0000FF;
+      background-image: none;
+      color: #fff;
+
+      a {
+        color: #fff !important;
+      }
+
+      .c-content {
+        transition: background-color ease-in-out .3s;
+        background-color: #0000FF;
+      }
+
+    }
+
+    .c-image {
+      width: 100%;
+      background-color: #000;
+      
+      a img {
+        width: 100%;
+      }  
+
+      @media screen and (max-width: 720px) {
+        & > a {
+            height: 320px;
+            display: flex;
+            overflow: hidden;
+            align-items: end;
+        }
+      }
+
+      @media only screen and (max-width: 600px) {
+        & > a {
+          height: 260px;
+        }
+      }
+      
+      @media only screen and (max-width: 450px) {
+        & > a {
+          height: 200px;
+        }
+      }      
+    }
+
+  .c-content {
+    padding: 10px 3%;
+    font-size: 14px;
+  } 
+
+  .c-ttl1 {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .c-ttl2 {
+    margin-top: .2em;
+    font-size: 14px;
+    line-height: 1.2;
+    font-weight: 400;
+  }
+
+  }
+
+  // STYLES FOR WHO COLUMNS
+  .who-column-wrapper {
+    display: flex;
+    gap: 15px;
+    margin-top: 24px;
+
+    > div {
+      background-color: #ececec;
+      padding: 16px 10px 12px;
+      flex: 1 1 0px;
+    }
+
+    .who-ttl1 {
+      font-size: 20px;
+      font-weight: 600;
+      line-height: .92;
+      margin: 0;
+    }
+    
+    .who-ttl2 { 
+      margin-top: .4em;
+      font-size: 14px;
+      line-height: 1.2;
+      font-weight: 400
+    } 
+  }
+
+  // STYLES FOR LINK LIST DIVIDED BY PIPES
+  .list-pipe {
+    text-align: center;
+
+    li {
+      list-style-type: none;
+      display: inline-block;  
+      margin: 0;  
+      padding-right: 10px;
+
+      &:after  {
+        content: "|";
+        padding-left: 10px;
+      }
+
+      &:last-child:after  {
+        content: "";
+      }
+    }
+  }
+
+  // RESPONSIVE LAYOUT ADJUSTMENTS
+  @media screen and (max-width: 720px) {
+    
+      .entry-content {
+          padding-right: 20px !important;
+      }
+
+      .who-column-wrapper {
+        flex-direction: column;
+      }
+
+  }
+
+  @media only screen and (min-width: 720px) {
+
+      .wrap-case-studies, 
+      .wrap-linkblocks {
+        display: flex;
+      } 
+        
+      .card {
+        flex: 1 1 auto; 
+        width: 30%; 
+        align-items: stretch;
+        margin: 15px 15px 15px 0px;    
+      }
+
+      .card:last-child {
+        margin-right: 0px;
+      }
+
+  }
+
+}  
+
+

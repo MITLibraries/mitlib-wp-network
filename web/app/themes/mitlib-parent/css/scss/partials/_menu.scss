@@ -88,7 +88,6 @@ body.user-is-tabbing *.nav-main {
       font-size: 1em;
 
       a {
-        align-items: flex-end;
         flex-direction: row;
         text-transform: none;
         padding-top: 2em;
@@ -172,6 +171,9 @@ body.user-is-tabbing *.nav-main {
     height: 100%;
     font-size: 100%;
     
+    margin-top: 0;
+    padding-top: 15px;
+
     //accessible menu opener buttons
     button {
       border: 0;
@@ -218,6 +220,9 @@ body.user-is-tabbing *.nav-main {
         background: $brand-secondary;
       }    
     }
+
+    font-weight: 500;
+    letter-spacing: 0.025em;
   }
 
   // sub menu drop-down cols
