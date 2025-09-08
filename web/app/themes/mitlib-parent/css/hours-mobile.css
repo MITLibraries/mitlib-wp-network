@@ -255,22 +255,20 @@ gldp-default .monyear span {
 
 /* Samsung Galaxy S5 ----------- */
 @media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3) {
-.hrList thead th {
-	display: table-cell;
-	padding: 15px 0px;
-	min-width: 51px !important;
-	float: left !important;
-}
-.title-page {
-	padding-left: 0px;
-}
-.middleAlert {
-	width: 60%;
-}
-.nameHolder h3 a {
-	font-weight: 600 !important;
-	font-size: .9em !important;
-}
+
+	.hrList thead th {
+		display: table-cell;
+		padding: 15px 0px;
+		min-width: 51px !important;
+		float: left !important;
+	}
+	.middleAlert {
+		width: 60%;
+	}
+	.nameHolder h3 a {
+		font-weight: 600 !important;
+		font-size: .9em !important;
+	}
 
 }
 
