@@ -28,6 +28,15 @@ require_once( 'navwalker.php' );
 require_once( 'lib/news.php' );
 
 /**
+ * The theme relies upon an external provider (Google) to provide the map
+ * tiles for the map of our locations. That integration is requires a key which
+ * is managed on a dedicated dashboard.
+ */
+require_once( 'src/class-maps.php' );
+add_action( 'admin_init', array( 'Mitlib\Parent\Maps', 'settings' ) );
+add_action( 'admin_menu', array( 'Mitlib\Parent\Maps', 'init' ) );
+
+/**
  * Define custom query params. Right now this is just the `v` parameter used by
  * the map template.
  */
@@ -177,7 +186,7 @@ function setup_scripts_styles() {
 
 	wp_register_script( 'gldatepickerJS', get_template_directory_uri() . '/libs/datepicker/glDatePicker.min.js', array(), '2.0', true );
 
-	wp_register_script( 'googleMapsAPI', '//maps.googleapis.com/maps/api/js?key=AIzaSyDJg6fTKm3Pa_NfKEVAdyeRUbVs7zZm5Nw', array(), '1.7.0', true );
+	wp_register_script( 'googleMapsAPI', '//maps.googleapis.com/maps/api/js?key=' . get_option( 'google_maps_key' ), array(), '1.7.0', true );
 
 	wp_register_script( 'jquery-cookie', get_template_directory_uri() . '/js/libs/jquery.cookie/jquery.cookie.js', array(), '1.3', true );
 
