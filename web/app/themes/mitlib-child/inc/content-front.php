@@ -41,7 +41,7 @@ if ( count( $sticky ) > 0 ) {
 				<img src="<?php echo esc_attr( get_first_post_image() ); ?>">
 			<?php endif; ?>
 			<div>				
-				<h3><a href="<?php echo esc_url( the_permalink() ); ?>"><?php the_title(); ?></a></h3>
+				<h3><?php the_title(); ?></h3>
 				<?php custom_excerpt( 20, '...' ); ?>
 				<a class="btn btn-secondary" aria-label="Read more about <?php the_title(); ?>" href="<?php echo esc_url( the_permalink() ); ?>">Read more</a>			
 			</div>			
