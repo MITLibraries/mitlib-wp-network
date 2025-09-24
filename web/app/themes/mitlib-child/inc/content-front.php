@@ -36,15 +36,16 @@ if ( count( $sticky ) > 0 ) {
 			$the_query->the_post();
 			?>
 
-		<div class="excerpt-post">
+		<aside aria-label="Featured content" class="mitlib-spotlight">
 			<?php if ( get_first_post_image() ) : ?>
-			<img class="excerpt-post__fig" src="<?php echo esc_attr( get_first_post_image() ); ?>" width="200" >
+				<img src="<?php echo esc_attr( get_first_post_image() ); ?>">
 			<?php endif; ?>
-			<div class="excerpt-post__body">
+			<div>				
 				<h3><a href="<?php echo esc_url( the_permalink() ); ?>"><?php the_title(); ?></a></h3>
 				<?php custom_excerpt( 20, '...' ); ?>
-			</div>
-		</div>
+				<a class="btn btn-secondary" href="<?php echo esc_url( the_permalink() ); ?>">Read more</a>			
+			</div>			
+		</aside>
 
 			<?php
 		endwhile;
