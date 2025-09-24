@@ -43,7 +43,7 @@ if ( count( $sticky ) > 0 ) {
 			<div>				
 				<h3><a href="<?php echo esc_url( the_permalink() ); ?>"><?php the_title(); ?></a></h3>
 				<?php custom_excerpt( 20, '...' ); ?>
-				<a class="btn btn-secondary" href="<?php echo esc_url( the_permalink() ); ?>">Read more</a>			
+				<a class="btn btn-secondary" aria-label="Read more about <?php the_title(); ?>" href="<?php echo esc_url( the_permalink() ); ?>">Read more</a>			
 			</div>			
 		</aside>
 
