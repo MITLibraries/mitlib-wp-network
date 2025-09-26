@@ -1,7 +1,7 @@
 /*
 Theme Name: MITlib News
 Author: MIT Libraries
-Version: 0.5
+Version: 0.6
 Description: A child theme of the MIT Libraries' parent, focused on News features and content.
 Template: mitlib-parent
 
@@ -11,7 +11,7 @@ Template: mitlib-parent
 .content-area a:link, 
 .content-area a:visited {
 	color: #000;
-	text-decoration: none;
+	text-decoration: underline;
 }
 .content-area a:hover, 
 .content-area a:active {
