@@ -98,13 +98,13 @@
 	}
 }
 
-.mitlib-alert {
+.mitlib-alert, .mitlib-spotlight {
 	border: 4px solid $info-border-color;
 	margin-bottom: 20px;
 	padding: 16px;
 	display: flex;
 
-	i  {
+	> i  {
 		margin-right: 12px;
 
 		&:before{
@@ -124,14 +124,13 @@
 	}
 
 	div > h3 {
-		font-weight: 700;
+		font-weight: 600;
 		margin-top: 2px;
+		font-size: 1.25rem;
 	}
 
 	p {
-		margin-bottom: 16px;
-
-		&:last-of-type {margin-bottom: 0 !important;}
+		margin-bottom: 16px;		
 	}
 
 	.btn {
@@ -173,5 +172,25 @@
 			color: $success-icon-color;
 			content: "\f00c";
 		}
+	}
+}
+
+.mitlib-alert {
+	p:last-of-type {margin-bottom: 0 !important;}
+}
+
+.mitlib-spotlight {
+	border-color: $spotlight-border-color;
+	column-gap: 24px;
+
+	img {
+		width: 100%;
+		max-width: 170px;
+		min-width: 100px;
+		height: 100%;
+	}
+
+	p {
+		padding-bottom: 4px;
 	}
 }

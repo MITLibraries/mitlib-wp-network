@@ -719,7 +719,6 @@ body.childTheme.page-home {
 
 /* ---- Sticky/Post Excerpts + Flexbox Layout---- */
 .wrap-section-hilite,
-.excerpt-post,
 .category-post {
 	display: flex;
 	align-items: flex-start;
@@ -735,40 +734,17 @@ body.childTheme.page-home {
 	background: #e4e4e4;
 }
 
-.excerpt-post {
-	background: #e4e4e4;
-	border: 1px solid #b3b3b3;
-	-webkit-box-shadow: 2px 2px 3px 1px rgba(0,0,0,0.25);
-	-moz-box-shadow: 2px 2px 3px 1px rgba(0,0,0,0.25);
-	box-shadow: 2px 2px 3px 1px rgba(0,0,0,0.25);
-	padding: 25px;
-	margin-bottom: 35px;
-}
-
-.section-hilite-image,
-.excerpt-post__fig {
+.section-hilite-image {
 	margin-right: 25px;
 	position: relative;
 	top: 5px;
 }
 
 .section-hilite,
-.excerpt-post__body,
 .category-post-content {
 	flex:1;
 	font-size: 14px;
 	line-height: 1.5 ;
-}
-
-.excerpt-post .section-hilite h3,
-.excerpt-post .excerpt-post__body h3 {
-	margin-top: 0;
-}
-
-.excerpt-post .excerpt-post__body h3 a {
-	color: #111;
-	font-weight: 600;
-	font-size: 16px;
 }
 
 /* ---- Sidebar ---- */
@@ -1372,16 +1348,8 @@ a.px14 {
 	}
 	
 	/* ---- Sticky/Post Excerpts + Flexbox Layout---- */
-	.excerpt-post,
 	.category-post {
 		flex-direction: column;
-	}
-
-	.excerpt-post__fig {
-		margin: 0 auto;
-		margin-bottom: 25px;
-		min-width: 100%;
-		max-width: 100%;
 	}
 
 	.staff-widget .textwidget {
