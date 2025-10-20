@@ -75,6 +75,7 @@
   <exclude-pattern>web/app/plugins/widget-css-classes</exclude-pattern>
   <exclude-pattern>web/app/plugins/widget-importer-exporter</exclude-pattern>
   <exclude-pattern>web/app/plugins/wordpress-importer</exclude-pattern>
+  <exclude-pattern>web/app/plugins/wp-bulk-delete</exclude-pattern>
   <exclude-pattern>web/app/plugins/wp-mail-smtp</exclude-pattern>
   <exclude-pattern>web/app/plugins/wp-native-php-sessions</exclude-pattern>
   <exclude-pattern>web/app/plugins/WP-SCSS</exclude-pattern>
