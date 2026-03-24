@@ -110,7 +110,9 @@ $alert_title = cf( 'alert_title' );
 						<span class="subject-library"><?php echo esc_html( $subject ); ?></span>
 					</h1>
 					<div class="info-more">
+							<?php if ( $phone ) : ?>
 						<a href="tel:<?php echo esc_url( $phone ); ?>" class="phone"><?php echo esc_html( $phone ); ?></a> |
+							<?php endif; ?>
 							<?php if ( $email ) : ?>
 						<a href="mailto:<?php echo esc_url( $email ); ?>" class="email"><?php echo esc_html( $email ); ?></a> |
 							<?php endif; ?>
