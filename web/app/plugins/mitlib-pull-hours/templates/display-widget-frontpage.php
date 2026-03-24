@@ -11,7 +11,7 @@
 <div class="location">
 	<a href="/barker" aria-labelledby="barker" class="img-loc barker"><span class="sr" id="barker">Barker Library</span></a>
 	<div class="wrap-loc-info">
-		<h3><a class="name-location" href="/barker">Barker Library</a></h3><div class="hours"><span data-location-hours="Barker Library"></span> today</div><div class="location-info"><a href="/locations/#!barker-library" class="map-location">10-500</a><a href="tel:617-253-0968" class="phone"><span class="number">617-253-0968</span></a></div>
+		<h3><a class="name-location" href="/barker">Barker Library</a></h3><div class="hours"><span data-location-hours="Barker Library"></span> today</div><div class="location-info"><a href="/locations/#!barker-library" class="map-location">10-500</a></div>
 	</div>
 </div>
 <?php
