@@ -83,6 +83,17 @@
 			}
 }
 
+body.locationPage.page-barker {
+	.tab.tab1 {
+		.first {
+			width: 20%;
+		}
+		.second {
+			width: 80%;
+			}
+	}
+}
+
 // The 2021 location template adjusts column widths because the sidebar is not
 // loaded.
 .locationPage.page-template-page-location-2021 {
