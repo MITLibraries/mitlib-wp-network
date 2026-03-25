@@ -83,6 +83,7 @@
 			}
 }
 
+// Overrides to Barker page styles for closure
 body.locationPage.page-barker {
 	.tab.tab1 {
 		.first {
@@ -90,6 +91,10 @@ body.locationPage.page-barker {
 		}
 		.second {
 			width: 80%;
+			}
+	ul.with-bullets li {
+			list-style: disc;
+			margin-left: 20px;
 			}
 	}
 }
