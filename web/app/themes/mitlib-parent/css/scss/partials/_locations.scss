@@ -92,9 +92,11 @@ body.locationPage.page-barker {
 		.second {
 			width: 80%;
 			}
-	ul.with-bullets li {
+	ul li {
 			list-style: disc;
 			margin-left: 20px;
+
+			ul li {list-style: circle;}
 			}
 	}
 }
