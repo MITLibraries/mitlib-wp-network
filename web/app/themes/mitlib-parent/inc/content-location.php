@@ -131,7 +131,7 @@ $alert_title = cf( 'alert_title' );
 				<?php } else { ?>
 					<div class="hours-today">
 						<span>Today's hours: <strong data-location-hours="<?php the_title(); ?>"></strong></span>
-						<?php if ( true === $study24 ) : ?>
+						<?php if ( true === $study24 && get_the_ID() != 322) : ?><!-- Added conditional to override this display for Barker -->
 							| <a class="study-24-7" href="<?php echo esc_url( $gStudy24Url ); ?>" alt="This location contains one or more study spaces available 24 hours a day, seven days a week. Click the link for more info." title="Study 24/7">Study 24/7</a>
 						<?php endif; ?>
 						<a href="/hours" class="link-hours-all">See all hours <i class="fa fa-arrow-right"></i></a>
