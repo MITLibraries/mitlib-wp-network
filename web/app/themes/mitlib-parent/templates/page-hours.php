@@ -232,8 +232,11 @@ tr:nth-child(even) td {
 				</a></h3>
 					<?php wp_reset_postdata(); ?>
 			  <?php endif; ?>
-			  <?php the_field( 'phone', $locationId ); ?>
-			  <br />
+			  <?php if (get_field('unstaffed_location', $locationId) == false) {
+					the_field( 'phone', $locationId );
+					print("<br />");
+				}	?>
+			  
 			  <a class="map" href="<?php echo esc_url( $mapPage . $slug ); ?>">Map:&nbsp;
 			  <?php the_field( 'building', $locationId ); ?>
 			  </a>
@@ -363,8 +366,10 @@ endwhile;
 			  
 			  
 			  
-			<?php the_field( 'phone', $locationId ); ?>
-			<br />
+						  <?php if (get_field('unstaffed_location', $locationId) == false) {
+					the_field( 'phone', $locationId );
+					print("<br />");
+				}	?>
 			<a class="map" href="<?php echo esc_url( $mapPage . $slug ); ?>">Map:&nbsp;
 			<?php the_field( 'building', $locationId ); ?>
 			</a>
