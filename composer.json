@@ -75,7 +75,7 @@
     }
   ],
   "require": {
-    "php": ">=7.4",
+    "php": ">=8.4",
     "composer/installers": "^2.2",
     "connectthink/wp-scss": "^2.4@beta",
     "cweagans/composer-patches": "^1.7",
