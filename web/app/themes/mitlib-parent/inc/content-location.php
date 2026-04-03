@@ -23,6 +23,8 @@ namespace Mitlib\Parent;
 	// $equipment = cf("equipment");
 	$arexpert = get_field( 'expert' );
 
+	$unstaffed_location = get_field( 'unstaffed_location' );
+
 	$title1 = cf( 'tab_1_title' );
 	$subtitle1 = cf( 'tab_1_subtitle' );
 	$content1left = get_field( 'tab_1_content_left' );
@@ -110,7 +112,9 @@ $alert_title = cf( 'alert_title' );
 						<span class="subject-library"><?php echo esc_html( $subject ); ?></span>
 					</h1>
 					<div class="info-more">
+							<?php if ( $phone && !$unstaffed_location ) : ?>
 						<a href="tel:<?php echo esc_url( $phone ); ?>" class="phone"><?php echo esc_html( $phone ); ?></a> |
+							<?php endif; ?>
 							<?php if ( $email ) : ?>
 						<a href="mailto:<?php echo esc_url( $email ); ?>" class="email"><?php echo esc_html( $email ); ?></a> |
 							<?php endif; ?>
@@ -129,7 +133,7 @@ $alert_title = cf( 'alert_title' );
 				<?php } else { ?>
 					<div class="hours-today">
 						<span>Today's hours: <strong data-location-hours="<?php the_title(); ?>"></strong></span>
-						<?php if ( true === $study24 ) : ?>
+						<?php if ( true === $study24 && !$unstaffed_location) : ?><!-- Added conditional to override this display for Barker -->
 							| <a class="study-24-7" href="<?php echo esc_url( $gStudy24Url ); ?>" alt="This location contains one or more study spaces available 24 hours a day, seven days a week. Click the link for more info." title="Study 24/7">Study 24/7</a>
 						<?php endif; ?>
 						<a href="/hours" class="link-hours-all">See all hours <i class="fa fa-arrow-right"></i></a>
@@ -151,7 +155,7 @@ $alert_title = cf( 'alert_title' );
 		<!-- </div> end div.flex-item -->
 	</div><!-- end div.libraryTitle -->
 
-	<div id="content" class="content <?php echo esc_attr( $strLocation ); ?> has-sidebar">
+	<div id="content" class="content <?php echo esc_attr( $strLocation ); ?> has-sidebar <?php if ($unstaffed_location) { echo "unstaffed"; } ?>">
 		<div class="main-content content-main">
 
 			<?php

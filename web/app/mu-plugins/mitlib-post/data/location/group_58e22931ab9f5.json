@@ -101,6 +101,25 @@
             "ui_off_text": ""
         },
         {
+            "key": "field_49",
+            "label": "Unstaffed Location",
+            "name": "unstaffed_location",
+            "type": "true_false",
+            "instructions": "Is this an unstaffed location? If checked, we'll hide the phone number and one of the tabs on the location page.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },        
+        {
             "key": "field_30",
             "label": "Study Location",
             "name": "study_location",
