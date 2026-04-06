@@ -98,6 +98,7 @@
 	}
 }
 
+// New contextual alert and spotlight styles
 .mitlib-alert, .mitlib-spotlight {
 	border: 4px solid $info-border-color;
 	margin-bottom: 20px;
@@ -204,5 +205,36 @@
 
 	p {
 		padding-bottom: 4px;
+	}
+}
+
+// Full page banner styles
+div.mitlib-banner {
+	background-color: #007899;
+	padding: 20px 32px;
+	display: flex;
+	justify-content: center;
+
+	div.wrap-notice {
+		max-width: 1024px;
+    width: 100%;
+	}
+
+	h1 {
+		font-size: 1.2rem;
+		color: #e5f9ff;
+		padding: 0;
+		margin-bottom: 0;
+	}
+
+	a {
+		text-decoration: underline;
+		text-underline-offset: 0.3rem;
+		text-decoration-color: #00c8ff;
+		color: #fff;
+	}
+
+	a:hover {
+		text-decoration-color: #99E9FF;
 	}
 }

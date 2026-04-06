@@ -41,6 +41,16 @@ if ( 'slim' === get_option( 'menu_style_setting' ) ) {
 
 <body <?php body_class(); ?>>
 	<div id="skip"><a href="#content">Skip to Main Content</a></div>
+
+	<?php
+	// Get page ID
+	$page_id = get_queried_object_id();
+
+	// If this is the homepage, show the temporary USE banner
+	if ($page_id == 122) {
+		get_template_part( 'inc/banner' );
+	}	?>
+
 	<div class="wrap-page">
 		<header class="header-main flex-container flex-end">
 			<?php if ( 'full' === $menu ) { ?>
