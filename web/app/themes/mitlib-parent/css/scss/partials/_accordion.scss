@@ -50,6 +50,16 @@
 	}
 }
 
+.expandable {
+	ul {
+		li.content {
+			padding-bottom: 0.125rem;
+			padding-left: 0.5rem;
+			margin-left: 1rem;
+		}
+	}
+}
+
 .expandable .content {
 	padding: 0 2em 1em 2.6em;
 	margin-top: 0;
