@@ -10,7 +10,7 @@
 <h3 class="sr">All panel</h3>
 <form
 	class="form search-bento"
-	action="<?php echo esc_url( $instance['bento_url'] ); ?>search/bento"
+	action="https://search.libraries.mit.edu/results"
 	method="get"
 	data-target="bento">
 	<label for="searchinput-bento">Search the MIT Libraries</label>
