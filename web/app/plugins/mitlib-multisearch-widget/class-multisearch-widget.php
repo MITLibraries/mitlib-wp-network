@@ -45,6 +45,9 @@ class Multisearch_Widget extends \WP_Widget {
 			$articles_tab_name = 'Articles + chapters';
 			$more_template = 'templates/tab-more-alma.php';
 		}
+		if ( 'use' == $instance['targets'] ) {
+			$all_template = 'templates/tab-all-use.php';
+		}
 
 		// Strip initial arguments.
 		$args = null;
@@ -84,27 +87,44 @@ class Multisearch_Widget extends \WP_Widget {
 		include( 'templates/form_nojs.html' );
 		echo '</noscript>';
 		echo '<div id="multisearch" class="' . esc_attr( $this->widgetClasses( $instance ) ) . ' nojs">';
-		echo '<h2 id="searchtabsheader" class="sr">Search the MIT libraries</h2>
-			<ul id="search_tabs_nav" aria-labelledby="searchtabsheader">
+		echo '<h2 id="searchtabsheader" class="sr">Search the MIT libraries</h2>';
+
+		// Render the search tabs only when "Unified Search" option is not selected
+		if ( $instance['targets'] != 'use' ) {
+		
+			echo '<ul id="search_tabs_nav" aria-labelledby="searchtabsheader">
 				<li><a id="tab-all" href="#search-all"><span>All</span></a></li>
 				<li><a id="tab-books" href="#search-books"><span>Books + media</span></a></li>
 				<li><a id="tab-articles" href="#search-articles"><span>'
 				. esc_html( $articles_tab_name )
 				. '</span></a></li>
 				<li><a id="tab-more" href="#search-more"><span>More...</span></a></li>
-			</ul>';
-		echo '<div id="search-all" aria-labelledby="tab-all">';
-			include( $all_template );
-		echo '</div>';
-		echo '<div id="search-books" aria-labelledby="tab-books">';
-			include( $books_template );
-		echo '</div>';
-		echo '<div id="search-articles" aria-labelledby="tab-articles">';
-			include( $articles_template );
-		echo '</div>';
-		echo '<div id="search-more" aria-labelledby="tab-more">';
-			include( $more_template );
-		echo '</div>';
+			</ul>';			
+
+			// Render the individual tab panes
+			echo '<div id="search-all" aria-labelledby="tab-all">';
+				include( $all_template );
+			echo '</div>';
+			echo '<div id="search-books" aria-labelledby="tab-books">';
+				include( $books_template );
+			echo '</div>';
+			echo '<div id="search-articles" aria-labelledby="tab-articles">';
+				include( $articles_template );
+			echo '</div>';
+			echo '<div id="search-more" aria-labelledby="tab-more">';
+				include( $more_template );
+			echo '</div>';
+
+		};
+
+		if ( $instance['targets'] == 'use' ) {
+		
+			echo '<div id="search-all" class="r-tabs-panel r-tabs-state-active use" aria-labelledby="tab-all">';
+				include( $all_template );
+			echo '</div>';
+
+		};
+
 		if ( $instance['banner_text'] ) {
 			$allowed = array(
 				'a' => array(
@@ -186,6 +206,21 @@ class Multisearch_Widget extends \WP_Widget {
 					Alma and Primo
 				</label>
 			</li>
+			<li>
+				<label>
+					<input
+						type="radio"
+						name="<?php echo esc_attr( $this->get_field_name( 'targets' ) ); ?>"
+						value="use"
+						<?php
+						if ( 'use' == $targets ) {
+							echo "checked='checked'";
+						}
+						?>
+					>
+					Unified Search
+				</label>
+			</li>			
 		</ul>
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'bento_url' ) ); ?>">

@@ -267,3 +267,60 @@
 	}
 }
 
+/* Updates for the USE search panel option */
+
+.r-tabs .use {
+
+	.search-option-links {
+		display: flex;
+		font-size: 0.8rem;
+		color: #ccc;
+		justify-content: space-between;
+
+		a:link {
+			color: #000;
+		}
+
+		.nls-toggle {
+
+			a {
+				line-height: 1.3;
+			}
+
+			.toggle {
+				margin-right: 8px;
+			}
+
+			.toggle::before {
+        background-color: #333;
+        color: #fff;
+        font-size: 0.6rem;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        padding: 3px 6px;
+        border-radius: 4px;
+        display: inline-block;
+        margin-right: 6px;
+				position: relative;
+				top: -1px;
+    	}
+
+			.toggle.off::before {
+				content: "OFF";
+			}
+
+			.toggle.on::before {
+				background-color: #CC00CC;
+				content: "ON";
+			}
+
+			.learn-more {
+				color: #666;
+			}
+
+			.learn-more:hover {
+				color: #000;
+			}
+	}
+	
+}
