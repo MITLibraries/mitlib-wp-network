@@ -49,11 +49,11 @@ namespace Mitlib\Parent;
 					<ul class="list-unbulleted">
 						<li><a href="/hours">Hours and locations home</a></li>
 						<li><a href="/barker">Barker Library</a></li>
-						<li><a href="/dewey">Dewey Library</a></li>
 						<li><a href="/hayden">Hayden Library</a></li>
 						<li><a href="/rotch">Rotch Library</a></li>
 						<li><a href="/distinctive-collections">Distinctive Collections</a></li>
 						<li><a href="/music">Lewis Music Library</a></li>
+						<li><a href="/dewey">E53 Study Space</a></li>
 						<li><a href="/lsa">Library Storage Annex</a></li>
 					</ul>
 				</div>

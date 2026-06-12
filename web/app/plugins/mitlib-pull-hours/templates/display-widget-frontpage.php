@@ -19,16 +19,6 @@
 	$this->location_alert( 322 );
 ?>
 <div class="location">
-	<a href="/dewey" aria-labelledby="dewey" class="img-loc dewey"><span class="sr" id="dewey">Dewey Library</span></a>
-	<div class="wrap-loc-info">
-		<h3><a class="name-location" href="/dewey">Dewey Library</a></h3><div class="hours"><span data-location-hours="Dewey Library"></span> today</div><div class="location-info"><a href="/locations/#!dewey-library" class="map-location">E53-100</a><?php if ( get_field("unstaffed_location", 313) == false ) : ?><a href="tel:617-253-5676" class="phone"><span class="number">617-253-5676</span></a><?php endif; ?></div>
-	</div>
-</div>
-<?php
-	// Load location alerts for Dewey (post 313).
-	$this->location_alert( 313 );
-?>
-<div class="location">
 	<a href="/hayden" aria-labelledby="hayden" class="img-loc hayden"><span class="sr" id="hayden">Hayden Library</span></a>
 	<div class="wrap-loc-info">
 		<h3><a class="name-location" href="/hayden">Hayden Library</a></h3><div class="hours"><span data-location-hours="Hayden Library"></span> today</div> <div class="location-info"><a href="/locations/#!hayden-library" class="map-location">14S-100</a><?php if ( get_field("unstaffed_location", 452) == false ) : ?><a href="tel:617-253-5671" class="phone"><span class="number">617-253-5671</span></a><?php endif; ?></div>
@@ -70,5 +60,15 @@
 <?php
 	// Load location alerts for Lewis (post 473).
 	$this->location_alert( 473 );
+?>
+<div class="location">
+	<a href="/dewey" aria-labelledby="dewey" class="img-loc dewey"><span class="sr" id="dewey">E53 Study Space</span></a>
+	<div class="wrap-loc-info">
+		<h3><a class="name-location" href="/dewey">E53 Study Space</a></h3><div class="hours"><span data-location-hours="Dewey Library"></span> today</div><div class="location-info"><a href="/locations/#!dewey-library" class="map-location">E53-100</a><?php if ( get_field("unstaffed_location", 313) == false ) : ?><a href="tel:617-253-5676" class="phone"><span class="number">617-253-5676</span></a><?php endif; ?></div>
+	</div>
+</div>
+<?php
+	// Load location alerts for Dewey (post 313).
+	$this->location_alert( 313 );
 ?>
 <a href="/hours" class="button-primary--green full add-margin link-hours">All hours &amp; locations</a>
