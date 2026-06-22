@@ -114,9 +114,9 @@
   --color-yellow-975: #1a1600;
 }
 
-/* ================= */
+/* =============== */
 /* SEMANTIC COLORS */
-/* ================= */
+/* =============== */
 
 :root {
 
@@ -134,6 +134,8 @@
 
   /* ─── Background ─── */
   --color-bg-default:  var(--color-white);
+  --color-bg-subtle:  var(--color-gray-25); 
+  --color-bg-secondary:  var(--color-gray-100); 
   --color-bg-disabled: var(--color-gray-400);
 
   /* ─── Border ─── */

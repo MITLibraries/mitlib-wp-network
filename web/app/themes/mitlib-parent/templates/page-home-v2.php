@@ -15,48 +15,64 @@ get_header( 'v2' ); ?>
 
 <main id="content">
 
-	<section>
+<?php
+// Gets the featured image for the hero section.
+if ( has_post_thumbnail() ) {
+    $image_url = get_the_post_thumbnail_url( get_the_ID(), 'full' );
+}
+?>
+
+	<section id="hero" style="background-image: url(<?php echo esc_url( $image_url ); ?>);">
+	<div class="overlay">	
 		<div class="content-wrapper">
-			<h1>Welcome to the MIT Libraries</h1>
-			<form id="search-form" action="" method="" role="search">
-				<label for="basic-search-main">What can we help you find?</label>
-				<div class="form-wrapper">
-					<div class="search-input-wrapper">
-						<i class="fa-regular fa-magnifying-glass"></i>
-						<input id="basic-search-main" type="search" class="field field-text basic-search-input" name="q" title="Keyword anywhere" value="" required="">
-						<button title="Clear search" aria-label="Clear search" type="button" id="clear-search" style="display: none;">Clear search</button>
-					</div>
-					<input id="tab-to-target" type="hidden" name="tab" value="all">
-					<button type="submit" class="btn button-primary">Search</button>
+				<div class="hero-content">
+					<h1>Welcome to the MIT Libraries</h1>
+					<form id="search-form" action="" method="" role="search">
+						<label for="basic-search-main">What can we help you find?</label>
+						<div class="form-wrapper">
+							<div class="search-input-wrapper">
+								<i class="fa-regular fa-magnifying-glass"></i>
+								<input id="basic-search-main" type="search" class="field field-text basic-search-input" name="q" title="Keyword anywhere" value="" required="">
+								<button title="Clear search" aria-label="Clear search" type="button" id="clear-search" style="display: none;">Clear search</button>
+							</div>
+							<input id="tab-to-target" type="hidden" name="tab" value="all">
+							<button type="submit" class="btn button-primary">Search</button>
+						</div>
+						<div class="search-actions">
+							<a href="https://libraries.mit.edu/search-advanced">Advanced search</a>
+						</div>
+					</form>
 				</div>
-				<div class="search-actions">
-					<a href="https://libraries.mit.edu/search-advanced">Advanced search</a>
-					<div class="semantic-search-toggle toggled-off">
-						<button type="button" aria-pressed="false">Natural language search</button>
-						<a href="/about-natural-language-search">Learn more</a>
-					</div>
-				</div>
-			</form>
+			</div>
 		</div>
 	</section>
-	<section>
+	<section id="todays-hours">
 		<div class="content-wrapper">
 			<h2>Today's hours</h2>
 			<ol class="hours-list">
 				<li>
 					<span class="libary-name">Hayden Library</span>
 					<span class="libary-hours">9am &#150; 9pm today</span>
-					<span class="libary-study">24/7 study</span>
+					<span class="libary-study">
+						<i class="fa-light fa-moon"></i>
+						24/7 study
+					</span>
 				</li>
 				<li>
 					<span class="libary-name">Rotch Library</span>
 					<span class="libary-hours">9am &#150; 9pm today</span>
-					<span class="libary-study">24/7 study</span>
+					<span class="libary-study">
+						<i class="fa-light fa-moon"></i>
+						24/7 study
+					</span>
 				</li>				
 				<li>
 					<span class="libary-name">Barker Library</span>
 					<span class="libary-hours">9am &#150; 9pm today</span>
-					<span class="libary-study">24/7 study</span>
+					<span class="libary-study">
+						<i class="fa-light fa-moon"></i>
+						24/7 study
+					</span>
 				</li>
 				<li>
 					<span class="libary-name">Lewis Music Library</span>
@@ -64,38 +80,39 @@ get_header( 'v2' ); ?>
 					<span class="libary-study"></span>
 				</li>						
 			</ol>
-			<a href="#">See all locations and hours</a>
+			<a href="#" class="arrow-right">See all locations and hours</a>
 		</div>
 	</section>	
-	<section>
+	<section id="using-the-libraries">
 		<div class="content-wrapper">
 			<h2>Using the Libraries</h2>
+			<div class="box-wrapper">
 			<div class="option-boxes">
 				<div>
 					<i class="fa-light fa-lightbulb"></i>
 					<div class="option-box-content">
-						<a href="#"><h3>Find a study space</h3></a>
+						<h3><a href="#">Find a study space</a></h3>
 						<p>Quiet and group spaces - many available 24/7</p>
 					</div>
 				</div>
 				<div>
 					<i class="fa-light fa-lightbulb"></i>
 					<div class="option-box-content">
-						<a href="#"><h3>Find a study space</h3></a>
+						<h3><a href="#">Find a study space</a></h3>
 						<p>Quiet and group spaces - many available 24/7</p>
 					</div>
 				</div>
 				<div>
 					<i class="fa-light fa-lightbulb"></i>
 					<div class="option-box-content">
-						<a href="#"><h3>Find a study space</h3></a>
+						<h3><a href="#">Find a study space</a></h3>
 						<p>Quiet and group spaces - many available 24/7</p>
 					</div>
 				</div>
 				<div>
 					<i class="fa-light fa-lightbulb"></i>
 					<div class="option-box-content">
-						<a href="#"><h3>Find a study space</h3></a>
+						<h3><a href="#">Find a study space</a></h3>
 						<p>Quiet and group spaces - many available 24/7</p>
 					</div>
 				</div>												
@@ -107,16 +124,19 @@ get_header( 'v2' ); ?>
 						<p>Get help via email, chat and more.</p>
 						<a class="button" href="#">See options</a>
 					</div>
+			</div>
 		</div>
 	</section>
-	<section>
+	<section id="featured-and-events">
 		<div class="content-wrapper">
-			Featured + Events
+			<h2>Featured + Events</h2>
 		</div>
 	</section>
-	<section>
+	<section id="featured-collection">
 		<div class="content-wrapper">
-			<div class="featured-collection-image"></div>
+			<div class="featured-collection-image">
+				<img src="https://libraries.mit.edu/app/uploads/sites/13/2025/10/Digital_Display_InkStone-2-624x886.jpg" alt="Image from the Maihaugen Gallery exhibit, Ink, Stone, and Silver Light. It shows a display case with an open book, a stone object, and a silver object, all on a red background.">
+			</div>
 			<div class="featured-collection-content">
 				<p class="eyebrow">Maihaugen Gallery Exhibit</p>
 				<h2>Ink, Stone, and Silver Light</h2>

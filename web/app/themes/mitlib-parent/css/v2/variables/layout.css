@@ -1,4 +1,12 @@
 :root {
+
+	/* Breakpoints */
+	--bp-xs: 375px;
+	--bp-sm: 480px;
+	--bp-md: 720px;
+	--bp-lg: 1024px;
+
+	/* Container calculations */
 	--content-side-margins: 32px;
 
 	--actual-max-width: 1280px; /* What we want the max width to work out to, margins included */
