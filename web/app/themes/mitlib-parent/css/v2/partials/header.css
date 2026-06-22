@@ -1,0 +1,53 @@
+body.v2-page {
+
+	/* Adjustments to existing navigation */
+	header.header-main {
+		> nav:first-child {
+				display: none;
+
+				@media only screen and (max-width: 569px) {
+					display: block;
+				}
+
+			}
+
+		.header-left, .header-right {
+			display: flex;
+		}
+
+		.header-right {
+			gap: var(--sp-800);
+
+			@media only screen and (max-width: 569px) {
+				gap: var(--sp-400);
+
+				a.hidden-non-mobile {
+					margin-left: 0;
+					margin-right: 0;
+				}
+			}
+		}
+
+		h1.name-site {margin-left: 0;}
+	}
+
+  .header-wrapper {
+    background-color: var(--color-black);
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    > header {
+      max-width: var(--content-max-width);
+      padding-left: calc(var(--content-side-margins) - 8px);
+      padding-right: calc(var(--content-side-margins) - 8px);		
+    }
+
+    .header-right {
+      justify-content: flex-end;
+      flex-grow: 1;
+    }
+
+  }
+
+}

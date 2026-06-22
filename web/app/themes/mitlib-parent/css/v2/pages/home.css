@@ -1,40 +1,9 @@
 /* Changes that should only apply to V2 pages (.v2-page body class) */
 body.v2-page {
-	background-color: #000;
+	background-color: var(--color-black);
 
 	#content {
-		background-color: #fff;
-	}
-
-	/* Adjustments to navigation */
-	header.header-main {
-		> nav:first-child {
-				display: none;
-
-				@media only screen and (max-width: 569px) {
-					display: block;
-				}
-
-			}
-
-		.header-left, .header-right {
-			display: flex;
-		}
-
-		.header-right {
-			gap: 32px;
-
-			@media only screen and (max-width: 569px) {
-				gap: 16px;
-
-				a.hidden-non-mobile {
-					margin-left: 0;
-					margin-right: 0;
-				}
-			}
-		}
-
-		h1.name-site {margin-left: 0;}
+		background-color: var(--color-white);
 	}
 
 }
@@ -46,51 +15,10 @@ body.v2-page {
 }
 
 /* Outer block wrappers for all content blocks */
-.header-wrapper, .content-wrapper, .footer-wrapper, main#content > section {
+.content-wrapper, main#content > section {
 	display: flex;
 	justify-content: center;
 	width: 100%;
-}
-
-.header-wrapper {
-	background-color: #000;
-
-	> header {
-		max-width: var(--content-max-width);
-		padding-left: calc(var(--content-side-margins) - 8px);
-		padding-right: calc(var(--content-side-margins) - 8px);		
-	}
-
-	.header-right {
-		justify-content: flex-end;
-		flex-grow: 1;
-	}
-
-}
-
-.footer-wrapper {
-	background-color: #000;
-
-	> footer {
-		//max-width: var(--content-max-width);
-	}
-
-	.footer-main, .footer-info-institute {
-		padding-left: var(--content-side-margins);
-		padding-right: var(--content-side-margins);
-		max-width: var(--content-max-width);
-	}
-
-	.links-all {
-		gap: 32px;
-
-		div.flex-item {
-			margin-right: 0;
-			flex-grow: 1;
-		}
-
-	}
-
 }
 
 main#content > section {
