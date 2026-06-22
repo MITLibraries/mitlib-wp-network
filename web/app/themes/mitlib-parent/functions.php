@@ -257,9 +257,14 @@ function setup_scripts_styles() {
 	wp_enqueue_style( 'parent-global' );
 	wp_enqueue_style( 'parent-ie', get_template_directory_uri() . '/css/ie.css', array( 'parent-styles' ), '20121010' );
 	wp_style_add_data( 'parent-ie', 'conditional', 'lt IE 9' );
-	wp_enqueue_style( 'v2' );
+	
 	wp_enqueue_style( 'adobe-fonts' );
 	
+	// Conditonally load v2 styles for only pages with the v2 header
+	if (is_page_template( 'templates/page-home-v2.php' )) {
+		wp_enqueue_style( 'v2' );
+	}
+
 	/**
 	 * Conditionally enqueue assets.
 	 */

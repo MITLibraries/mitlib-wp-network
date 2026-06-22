@@ -1,9 +1,11 @@
 <?php
+/*
+ * Template Name: Header V2
+ */
 /**
- * The Header for our theme.
  *
- * Displays all of the <head> section and everything up till div#breadcrumb
- *
+ * Updated header template originating during the homepage redesign project.
+ * 
  * @package MITlib_Parent
  * @since 0.0.1
  */

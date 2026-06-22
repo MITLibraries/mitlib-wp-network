@@ -1,4 +1,3 @@
-/* Changes that should only apply to V2 pages (.v2-page body class) */
 body.v2-page {
 	background-color: var(--color-black);
 
@@ -8,13 +7,11 @@ body.v2-page {
 
 }
 
-/* START: New layout rules for V2 page templates */
 .wrap-page.full-width {
 	width: 100%;
 	max-width: 100%;
 }
 
-/* Outer block wrappers for all content blocks */
 .content-wrapper, main#content > section {
 	display: flex;
 	justify-content: center;

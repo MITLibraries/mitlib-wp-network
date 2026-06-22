@@ -1,29 +1,25 @@
-body.v2-page {
+.footer-wrapper {
+  background-color: var(--color-black);
+  display: flex;
+  justify-content: center;
+  width: 100%;
 
-  .footer-wrapper {
-    background-color: var(--color-black);
-    display: flex;
-    justify-content: center;
-    width: 100%;
+  > footer {
+    //max-width: var(--content-max-width);
+  }
 
-    > footer {
-      //max-width: var(--content-max-width);
-    }
+  .footer-main, .footer-info-institute {
+    padding-left: var(--content-side-margins);
+    padding-right: var(--content-side-margins);
+    max-width: var(--content-max-width);
+  }
 
-    .footer-main, .footer-info-institute {
-      padding-left: var(--content-side-margins);
-      padding-right: var(--content-side-margins);
-      max-width: var(--content-max-width);
-    }
+  .links-all {
+    gap: var(--sp-800);
 
-    .links-all {
-      gap: var(--sp-800);
-
-      div.flex-item {
-        margin-right: 0;
-        flex-grow: 1;
-      }
-
+    div.flex-item {
+      margin-right: 0;
+      flex-grow: 1;
     }
 
   }
