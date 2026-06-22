@@ -1,0 +1,16 @@
+:root {
+	--content-side-margins: 32px;
+
+	--actual-max-width: 1280px; /* What we want the max width to work out to, margins included */
+	--content-max-width: calc(var(--actual-max-width) - (var(--content-side-margins) * 2));
+	
+	--content-section-vertical-padding: 48px;
+}
+
+@media only screen and (max-width: 720px) {
+  :root{--content-side-margins: 24px;}  
+}
+
+@media only screen and (max-width: 480px) {
+  :root{--content-side-margins: 16px;}
+}
