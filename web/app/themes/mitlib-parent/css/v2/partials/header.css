@@ -26,7 +26,16 @@ header.header-main {
     }
   }
 
-  h1.name-site {margin-left: 0;}
+  h1.name-site {
+    margin-left: 0;
+  }
+
+  a {text-decoration: none;}
+  a.arrow-right {
+    &:after {
+      content: "\f061";
+    }
+  }
 }
 
 .header-wrapper {
