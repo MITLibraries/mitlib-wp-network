@@ -1,0 +1,21 @@
+/* ==================== */
+/* DESIGN SYSTEM TOKENS */
+/* ==================== */
+
+@import url('variables/color.css');
+@import url('variables/corners.css');
+@import url('variables/shadows.css');
+@import url('variables/spacing.css');
+@import url('variables/typography.css');
+@import url('variables/layout.css');
+
+/* ==================== */
+/* PROJECT-LEVEL STYLES */
+/* ==================== */
+
+/* Component and template styles */
+@import url('partials/header.css');
+@import url('partials/footer.css');
+
+/* Page-level styles */
+@import url('pages/home.css');
