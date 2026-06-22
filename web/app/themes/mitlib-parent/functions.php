@@ -176,6 +176,8 @@ function setup_scripts_styles() {
 
 	wp_register_style( 'adobe-fonts', '//use.typekit.net/ixd2vgq.css', array(), $theme_version );
 
+	wp_register_style( 'fontawesome', '//cdn.libraries.mit.edu/files/fontawesome/7.1.0/css/all.min.css', array(), $theme_version );
+
 	/**
 	 * Register javascript.
 	 */
@@ -263,6 +265,7 @@ function setup_scripts_styles() {
 	// Conditonally load v2 styles for only pages with the v2 header
 	if (is_page_template( 'templates/page-home-v2.php' )) {
 		wp_enqueue_style( 'v2' );
+		wp_enqueue_style( 'fontawesome' );
 	}
 
 	/**
