@@ -24,6 +24,10 @@ header.header-main {
         margin-right: 0;
       }
     }
+
+    nav h2 {
+      margin-bottom: 0;
+    }
   }
 
   h1.name-site {
@@ -31,6 +35,53 @@ header.header-main {
   }
 
   a {text-decoration: none;}
+
+
+  /* Desktop style fixes */
+  @media only screen and (min-width: 569px) {
+    /* Style fixes to override old logo sizing for desktop sizes */
+    .link-logo-mit {
+      max-width: 74px; 
+    }
+
+    .name-site {max-width: 104px;}
+    .logo-mit-lib svg {max-height: 44px;}
+
+    /* Adjust navigation item sizing to new base font size */
+    .nav-main .main-nav-link {
+      padding-left: var(--sp-200);
+      padding-right: var(--sp-200);
+      padding-bottom: var(--sp-500);
+    }
+
+    .link-primary.small a {padding-top: 30px;}
+  }
+
+  
+  /* Mobile style fixes */
+  @media only screen and (max-width: 568px) {
+    
+    padding-left: 0 !important;
+    
+    button.menu--toggle {
+      width: 51px;
+      padding: 14.85px;
+    }
+    
+    .logo-mit-lib {
+      padding: 26px 8px 8px 8px;
+    }
+    .logo-mit-lib svg {max-height: 28px;}
+
+    a.hidden-non-mobile {
+      font-size: 12px;
+      font-weight: 400;
+      padding: 6.4px;
+
+      i {width: 100%;}
+    }
+  }
+
 }
 
 .header-wrapper {
