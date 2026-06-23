@@ -39,6 +39,7 @@ body.v2-page {
 /* ================ */
 #content > #hero {
   padding: 0;
+  background-size: cover;
   color: var(--color-text-on-color);
 
   .overlay {
@@ -60,7 +61,7 @@ body.v2-page {
   label {
     font-size: 1.8rem;
     margin-bottom: 12px;
-    font-weight: var(--fw-medium);
+    font-weight: var(--font-weight-medium);
     display: block;
     line-height: 1;
     color: var(--color-text-oncolor);
@@ -74,7 +75,7 @@ body.v2-page {
       padding: 12px 20px;
       border-radius: 0;
       font-size: 1.8rem;
-      font-weight: var(--fw-medium);
+      font-weight: var(--font-weight-medium);
 
       margin: 0;
 
@@ -158,6 +159,13 @@ body.v2-page {
 
   }
 
+  .search-actions {
+    padding-top: 16px;
+    padding-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+  }
 }
 
 /* ============= */
@@ -174,6 +182,7 @@ section#todays-hours {
   h2 {
     flex-shrink: 0;
     margin-bottom: 0;
+    font-family: var(--font-family-base)
   }
 
   ol {
@@ -207,9 +216,7 @@ section#todays-hours {
   }
 
   a {
-    color: var(--color-text-on-color);
     flex-shrink: 0;
-    text-decoration-color: var(--color-red-500);
   }
 
   .content-wrapper {

@@ -152,4 +152,7 @@
   --color-icon-danger:      var(--color-red-500);
   --color-icon-suggestion:  var(--color-magenta-800);
 
+  /* ─── Focus ─── */
+  --color-focus-light: var(--color-cyan-700);
+  --color-focus-dark:  var(--color-cyan-500);
 }
