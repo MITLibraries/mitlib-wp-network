@@ -1,6 +1,6 @@
 <?php
 /**
- * The "Alma variant" of the search tab for all content - which will search the Bento app.
+ * The "Unified Search" of the search tab for all content - which will search "Search MIT Libraries" (USE).
  *
  * @package Multisearch Widget
  * @since 1.5.0
