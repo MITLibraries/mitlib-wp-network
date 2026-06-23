@@ -80,7 +80,7 @@ if ( has_post_thumbnail() ) {
 					<span class="libary-study"></span>
 				</li>						
 			</ol>
-			<a href="#" class="arrow-right link-on-dark">See all locations and hours</a>
+			<a href="#" class="link-on-dark">See all locations and hours</a>
 		</div>
 	</section>	
 	<section id="using-the-libraries">
@@ -122,7 +122,7 @@ if ( has_post_thumbnail() ) {
 					<div class="option-box-content">
 						<h3>Ask us</h3>
 						<p>Get help via email, chat and more.</p>
-						<a class="button" href="#">See options</a>
+						<a class="button secondary" href="#">See options</a>
 					</div>
 			</div>
 		</div>
@@ -134,14 +134,14 @@ if ( has_post_thumbnail() ) {
 	</section>
 	<section id="featured-collection">
 		<div class="content-wrapper">
-			<div class="featured-collection-image">
-				<img src="https://libraries.mit.edu/app/uploads/sites/13/2025/10/Digital_Display_InkStone-2-624x886.jpg" alt="Image from the Maihaugen Gallery exhibit, Ink, Stone, and Silver Light. It shows a display case with an open book, a stone object, and a silver object, all on a red background.">
+			<div class="featured-collection-image" style="background-image: url('https://libraries.mit.edu/app/uploads/sites/13/2025/10/Digital_Display_InkStone-2-624x886.jpg');">
+				<!--<img src="https://libraries.mit.edu/app/uploads/sites/13/2025/10/Digital_Display_InkStone-2-624x886.jpg" alt="Image from the Maihaugen Gallery exhibit, Ink, Stone, and Silver Light. It shows a display case with an open book, a stone object, and a silver object, all on a red background.">-->
 			</div>
 			<div class="featured-collection-content">
 				<p class="eyebrow">Maihaugen Gallery Exhibit</p>
 				<h2>Ink, Stone, and Silver Light</h2>
 				<p>This exhibition draws on archival materials from the Aga Khan Documentation Center at MIT (AKDC) to explore a century of cultural heritage preservation in Aleppo, Syria. </p>
-				<a class="button" href="#">Check it out</a>
+				<a class="button secondary" href="#">Check it out</a>
 			</div>
 		</div>
 	</section>

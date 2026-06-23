@@ -156,3 +156,32 @@
   --color-focus-light: var(--color-cyan-700);
   --color-focus-dark:  var(--color-cyan-500);
 }
+
+/* ========================= */
+/* COMPONENT-SPECIFIC COLORS */
+/* ========================= */
+
+:root {
+/* ─────── */
+/* Buttons */
+/* ─────── */
+
+/* ─── Primary ─── */
+--color-button-base-bg-primary: var(--color-gray-950);
+--color-button-base-border-primary: var(--color-gray-950);
+--color-button-base-text-primary: var(--color-text-on-color);
+
+--color-button-hover-bg-primary: var(--color-blue-500);
+--color-button-hover-border-primary: var(--color-blue-500);
+--color-button-hover-text-primary: var(--color-text-on-color);
+
+/* ─── Secondary ─── */
+--color-button-base-bg-secondary: var(--color-bg-default);
+--color-button-base-border-secondary: var(--color-blue-500);
+--color-button-base-text-secondary: var(--color-text-primary);
+
+--color-button-hover-bg-secondary: var(--color-blue-25);
+--color-button-hover-border-secondary: var(--color-blue-500);
+--color-button-hover-text-secondary: var(--color-blue-500);
+
+}

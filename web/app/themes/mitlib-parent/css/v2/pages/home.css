@@ -40,6 +40,7 @@ body.v2-page {
 #content > #hero {
   padding: 0;
   background-size: cover;
+  background-position: center center;
   color: var(--color-text-on-color);
 
   .overlay {
@@ -193,6 +194,7 @@ section#todays-hours {
       flex: 0 1 auto;
       border-left: 1px solid var(--color-gray-800);
       padding-left: var(--sp-600);
+      padding-right: var(--sp-600);
 
       &:last-child {
         border-right: 1px solid var(--color-gray-800);
@@ -243,14 +245,14 @@ section#todays-hours {
     border-top: 3px solid var(--color-gray-300);
     display: flex;
     gap: var(--sp-400);
-    padding: var(--sp-500) var(--sp-500);
+    padding: var(--sp-500) var(--sp-500);  
 
     i {
       background-color: var(--color-gray-200);
       width: 48px;
       height: 48px;
       flex: 0 0 48px;
-      padding: 12px;
+      padding: var(--sp-300);
       border-radius: var(--radius-circle);
 
       &::before {      
@@ -280,6 +282,21 @@ section#todays-hours {
     border-top-color: var(--color-blue-400);
     flex-direction: column;
   }
+
+  /* Adjust layout to stack for smaller screens */
+  @media only screen and (max-width: 800px) {
+    .option-boxes {
+      grid-template-columns: 1fr;
+    }
+
+    .box-wrapper {
+      flex-direction: column-reverse;
+    }
+
+    .ask-us-box {
+      flex-direction: row;
+    }
+  }    
 }
 
 /* ================= */
@@ -299,5 +316,27 @@ section#todays-hours {
     gap: var(--sp-1200);
     align-items: center;
   }
+
+  .featured-collection-image {
+    height: 320px;
+    max-width: 620px;
+    width: 100%;
+    background-size: cover;
+    background-position: center center; 
+  }  
+
+    /* Adjust layout to stack for smaller screens */
+  @media only screen and (max-width: 720px) {
+    .content-wrapper {
+      flex-direction: column;
+      gap: var(--sp-800);
+    }
+
+    .featured-collection-image {
+      height: 240px;
+      max-width: 100%;
+      
+    }
+  }  
 
 }

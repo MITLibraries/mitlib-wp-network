@@ -117,13 +117,10 @@ a.link-on-dark {
   }
 }
 
-a.arrow-right {
-
-  &::after {
-    content: '\f061';
-    font-family: FontAwesome;
-    font-size: 1.2rem;
-    text-decoration: none !important;
-    padding-left: var(--sp-100);
-  }
+.eyebrow {
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.05em;
 }
