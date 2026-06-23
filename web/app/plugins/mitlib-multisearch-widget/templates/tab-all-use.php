@@ -7,7 +7,6 @@
  */
 
 ?>
-<h3 class="sr">All panel</h3>
 <form
 	class="form search-bento"
 	action="https://search.libraries.mit.edu/results"
