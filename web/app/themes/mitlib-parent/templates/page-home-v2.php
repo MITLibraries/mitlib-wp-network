@@ -39,7 +39,7 @@ if ( has_post_thumbnail() ) {
 							<button type="submit" class="btn button-primary">Search</button>
 						</div>
 						<div class="search-actions">
-							<a href="https://libraries.mit.edu/search-advanced">Advanced search</a>
+							<a class="link-on-dark" href="https://libraries.mit.edu/search-advanced">Advanced search</a>
 						</div>
 					</form>
 				</div>
@@ -51,7 +51,7 @@ if ( has_post_thumbnail() ) {
 			<h2>Today's hours</h2>
 			<ol class="hours-list">
 				<li>
-					<span class="libary-name">Hayden Library</span>
+					<span class="libary-name"><a class="link-no-underline" href="#">Hayden Library</a></span>
 					<span class="libary-hours">9am &#150; 9pm today</span>
 					<span class="libary-study">
 						<i class="fa-light fa-moon"></i>
@@ -59,7 +59,7 @@ if ( has_post_thumbnail() ) {
 					</span>
 				</li>
 				<li>
-					<span class="libary-name">Rotch Library</span>
+					<span class="libary-name"><a class="link-no-underline" href="#">Rotch Library</a></span>
 					<span class="libary-hours">9am &#150; 9pm today</span>
 					<span class="libary-study">
 						<i class="fa-light fa-moon"></i>
@@ -67,7 +67,7 @@ if ( has_post_thumbnail() ) {
 					</span>
 				</li>				
 				<li>
-					<span class="libary-name">Barker Library</span>
+					<span class="libary-name"><a class="link-no-underline" href="#">Barker Library</a></span>
 					<span class="libary-hours">9am &#150; 9pm today</span>
 					<span class="libary-study">
 						<i class="fa-light fa-moon"></i>
@@ -75,12 +75,12 @@ if ( has_post_thumbnail() ) {
 					</span>
 				</li>
 				<li>
-					<span class="libary-name">Lewis Music Library</span>
+					<span class="libary-name"><a class="link-no-underline" href="#">Lewis Music Library</a></span>
 					<span class="libary-hours">9am &#150; 9pm today</span>
 					<span class="libary-study"></span>
 				</li>						
 			</ol>
-			<a href="#" class="arrow-right">See all locations and hours</a>
+			<a href="#" class="arrow-right link-on-dark">See all locations and hours</a>
 		</div>
 	</section>	
 	<section id="using-the-libraries">

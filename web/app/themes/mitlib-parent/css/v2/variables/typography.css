@@ -85,6 +85,8 @@ p {
   line-height: 1.35;
 }
 
+
+/* Link styles */
 a {
   text-decoration: underline;
   text-decoration-color: var(--color-blue-500);
@@ -93,5 +95,35 @@ a {
 
   &:hover {
     color: var(--color-blue-500);
+  }
+}
+
+a.link-no-underline {
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--color-gray-500);
+  }
+}
+
+a.link-on-dark {
+  color: var(--color-text-on-color);
+  text-decoration-color: var(--color-red-500);
+
+  &:hover {
+    color: var(--color-red-500);
+  }
+}
+
+a.arrow-right {
+
+  &::after {
+    content: '\f061';
+    font-family: FontAwesome;
+    font-size: 1.2rem;
+    text-decoration: none !important;
+    padding-left: var(--sp-100);
   }
 }

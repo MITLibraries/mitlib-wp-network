@@ -31,11 +31,6 @@ header.header-main {
   }
 
   a {text-decoration: none;}
-  a.arrow-right {
-    &:after {
-      content: "\f061";
-    }
-  }
 }
 
 .header-wrapper {
