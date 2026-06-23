@@ -276,51 +276,58 @@
 		font-size: 0.8rem;
 		color: #ccc;
 		justify-content: space-between;
+		padding-top: 4px;
 
-		a:link {
-			color: #000;
+		@media only screen and (max-width: 650px) {
+			flex-direction: column;
+			gap: 8px;
+		}
+	}
+
+	a:link {
+		color: #000;
+	}
+
+	.nls-toggle {
+
+		a {
+			line-height: 1.3;
 		}
 
-		.nls-toggle {
+		.toggle {
+			margin-right: 8px;
+		}
 
-			a {
-				line-height: 1.3;
-			}
+		.toggle::before {
+			background-color: #333;
+			color: #fff;
+			font-size: 0.6rem;
+			font-weight: 500;
+			letter-spacing: 0.08em;
+			padding: 3px 6px;
+			border-radius: 4px;
+			display: inline-block;
+			margin-right: 6px;
+			position: relative;
+			top: -1px;
+		}
 
-			.toggle {
-				margin-right: 8px;
-			}
+		.toggle.off::before {
+			content: "OFF";
+		}
 
-			.toggle::before {
-        background-color: #333;
-        color: #fff;
-        font-size: 0.6rem;
-        font-weight: 500;
-        letter-spacing: 0.08em;
-        padding: 3px 6px;
-        border-radius: 4px;
-        display: inline-block;
-        margin-right: 6px;
-				position: relative;
-				top: -1px;
-    	}
+		.toggle.on::before {
+			background-color: #CC00CC;
+			content: "ON";
+		}
 
-			.toggle.off::before {
-				content: "OFF";
-			}
+		.learn-more {
+			color: #666;
+		}
 
-			.toggle.on::before {
-				background-color: #CC00CC;
-				content: "ON";
-			}
-
-			.learn-more {
-				color: #666;
-			}
-
-			.learn-more:hover {
-				color: #000;
-			}
+		.learn-more:hover {
+			color: #000;
+		}
 	}
 	
 }
