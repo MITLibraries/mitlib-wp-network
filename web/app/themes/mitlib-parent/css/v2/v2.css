@@ -10,11 +10,17 @@
 @import url('variables/typography.css');
 @import url('variables/layout.css');
 
+/* ======================== */
+/* DESIGN SYSTEM COMPONENTS */
+/* ======================== */
+
+@import url('components/buttons.css');
+
 /* ==================== */
 /* PROJECT-LEVEL STYLES */
 /* ==================== */
 
-/* Component and template styles */
+/* Template styles */
 @import url('partials/header.css');
 @import url('partials/footer.css');
 

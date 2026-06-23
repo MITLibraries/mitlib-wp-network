@@ -1,10 +1,13 @@
 :root {
 
 	/* Breakpoints */
-	--bp-xs: 375px;
-	--bp-sm: 480px;
-	--bp-md: 720px;
-	--bp-lg: 1024px;
+	--bp-2xs: 375px;
+	--bp-xs:  480px;
+	--bp-sm:  600px;
+	--bp-md:  720px;
+	--bp-lg:  900px;
+	--bp-xl:  1024px;
+	--bp-2xl: 1280px;
 
 	/* Container calculations */
 	--content-side-margins: 32px;
