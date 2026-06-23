@@ -96,29 +96,29 @@ if ( has_post_thumbnail() ) {
 					</div>
 				</div>
 				<div>
-					<i class="fa-light fa-lightbulb"></i>
+					<i class="fa-light fa-file-alt"></i>
 					<div class="option-box-content">
-						<h3><a href="#">Find a study space</a></h3>
-						<p>Quiet and group spaces - many available 24/7</p>
+						<h3><a href="#">Get materials</a></h3>
+						<p>Learn how to access articles, books, and more</p>
 					</div>
 				</div>
 				<div>
-					<i class="fa-light fa-lightbulb"></i>
+					<i class="fa-light fa-book"></i>
 					<div class="option-box-content">
-						<h3><a href="#">Find a study space</a></h3>
-						<p>Quiet and group spaces - many available 24/7</p>
+						<h3><a href="#">Explore research guides & librarians</a></h3>
+						<p>Guides and librarians for every research interest.</p>
 					</div>
 				</div>
 				<div>
-					<i class="fa-light fa-lightbulb"></i>
+					<i class="fa-light fa-calendar"></i>
 					<div class="option-box-content">
-						<h3><a href="#">Find a study space</a></h3>
-						<p>Quiet and group spaces - many available 24/7</p>
+						<h3><a href="#">Schedule a research consultation</a></h3>
+						<p>For complex research questions</p>
 					</div>
 				</div>												
 			</div>
 			<div class="ask-us-box">
-					<i class="fa-light fa-lightbulb"></i>
+					<i class="fa-light fa-messages-question"></i>
 					<div class="option-box-content">
 						<h3>Ask us</h3>
 						<p>Get help via email, chat and more.</p>
