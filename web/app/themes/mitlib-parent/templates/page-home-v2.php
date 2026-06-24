@@ -51,33 +51,33 @@ if ( has_post_thumbnail() ) {
 			<h2>Today's hours</h2>
 			<ol class="hours-list">
 				<li>
-					<span class="libary-name"><a class="link-no-underline" href="#">Hayden Library</a></span>
-					<span class="libary-hours">9am &#150; 9pm today</span>
-					<span class="libary-study">
+					<span class="library-name"><a class="link-no-underline" href="#">Hayden Library</a></span>
+					<span class="library-hours">9am &#150; 9pm today</span>
+					<span class="library-study">
 						<i class="fa-light fa-moon"></i>
 						24/7 study
 					</span>
 				</li>
-				<li>
-					<span class="libary-name"><a class="link-no-underline" href="#">Rotch Library</a></span>
-					<span class="libary-hours">9am &#150; 9pm today</span>
-					<span class="libary-study">
+				<li class="hour-rotch">
+					<span class="library-name"><a class="link-no-underline" href="#">Rotch Library</a></span>
+					<span class="library-hours">9am &#150; 9pm today</span>
+					<span class="library-study">
 						<i class="fa-light fa-moon"></i>
 						24/7 study
 					</span>
 				</li>				
-				<li>
-					<span class="libary-name"><a class="link-no-underline" href="#">Barker Library</a></span>
-					<span class="libary-hours">9am &#150; 9pm today</span>
-					<span class="libary-study">
+				<li class="hour-barker">
+					<span class="library-name"><a class="link-no-underline" href="#">Barker Library</a></span>
+					<span class="library-hours">9am &#150; 9pm today</span>
+					<span class="library-study">
 						<i class="fa-light fa-moon"></i>
 						24/7 study
 					</span>
 				</li>
-				<li>
-					<span class="libary-name"><a class="link-no-underline" href="#">Lewis Music Library</a></span>
-					<span class="libary-hours">9am &#150; 9pm today</span>
-					<span class="libary-study"></span>
+				<li class="hour-lewis">
+					<span class="library-name"><a class="link-no-underline" href="#">Lewis Music Library</a></span>
+					<span class="library-hours">9am &#150; 9pm today</span>
+					<span class="library-study"></span>
 				</li>						
 			</ol>
 			<a href="#" class="link-on-dark">See all locations and hours</a>

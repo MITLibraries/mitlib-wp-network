@@ -204,13 +204,13 @@ section#todays-hours {
         display: inline-block;
         min-width: 120px;
 
-        &.libary-name {
+        &.library-name {
           font-weight: var(--font-weight-medium);
         }
-        &.libary-hours, &.libary-study {
+        &.library-hours, &.library-study {
           font-size: var(--font-size-sm);
         }
-        &.libary-study {
+        &.library-study {
           color: var(--color-text-disabled);
         }
       }
@@ -226,6 +226,68 @@ section#todays-hours {
     align-items: center;
     gap: var(--sp-600);
   }
+
+  /* Responsive styles to progressively hide library hours, then stack */
+  @media only screen and (max-width: 1210px) {
+    ol li.hour-lewis {
+      display: none;
+    }
+  }
+
+  @media only screen and (max-width: 940px) {
+    ol li.hour-barker {
+      display: none;
+    }
+  }
+
+  @media only screen and (max-width: 780px) {
+    padding-top: var(--sp-600);
+    padding-bottom: var(--sp-600);    
+
+    h2 {
+      color: var(--color-gray-400);
+      text-transform: uppercase;
+      font-size: var(--font-size-xs);
+      font-weight: var(--font-weight-medium);
+      letter-spacing: 0.05em;
+    }
+
+    .content-wrapper {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--sp-300);
+    }
+
+    ol {
+      flex-direction: column;
+      gap: var(--sp-100);
+
+      li {
+        border: none;
+        padding-left: 0;
+        padding-right: 0;
+
+        &:last-child {
+          border-right: none;
+        }
+
+        span.library-name {
+          width: 160px;
+
+          a {
+            font-size: var(--font-size-sm);
+            font-weight: var(--font-weight-bold);
+          }
+        }
+      }
+
+      li.hour-lewis, li.hour-barker {
+        display: block;
+      }
+    }
+
+
+  }  
 }
 
 /* =================== */
