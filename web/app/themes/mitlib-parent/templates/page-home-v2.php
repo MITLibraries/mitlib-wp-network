@@ -52,7 +52,7 @@ if ( has_post_thumbnail() ) {
 			<ol class="hours-list">
 				<li>
 					<span class="library-name"><a class="link-no-underline" href="#">Hayden Library</a></span>
-					<span class="library-hours">9am &#150; 9pm today</span>
+					<span class="library-hours">9am &#150; 9pm</span>
 					<span class="library-study">
 						<i class="fa-light fa-moon"></i>
 						24/7 study
@@ -60,7 +60,7 @@ if ( has_post_thumbnail() ) {
 				</li>
 				<li class="hour-rotch">
 					<span class="library-name"><a class="link-no-underline" href="#">Rotch Library</a></span>
-					<span class="library-hours">9am &#150; 9pm today</span>
+					<span class="library-hours">9am &#150; 9pm</span>
 					<span class="library-study">
 						<i class="fa-light fa-moon"></i>
 						24/7 study
@@ -68,7 +68,7 @@ if ( has_post_thumbnail() ) {
 				</li>				
 				<li class="hour-barker">
 					<span class="library-name"><a class="link-no-underline" href="#">Barker Library</a></span>
-					<span class="library-hours">9am &#150; 9pm today</span>
+					<span class="library-hours">9am &#150; 9pm</span>
 					<span class="library-study">
 						<i class="fa-light fa-moon"></i>
 						24/7 study
@@ -76,7 +76,7 @@ if ( has_post_thumbnail() ) {
 				</li>
 				<li class="hour-lewis">
 					<span class="library-name"><a class="link-no-underline" href="#">Lewis Music Library</a></span>
-					<span class="library-hours">9am &#150; 9pm today</span>
+					<span class="library-hours">9am &#150; 9pm</span>
 					<span class="library-study"></span>
 				</li>						
 			</ol>
@@ -129,7 +129,92 @@ if ( has_post_thumbnail() ) {
 	</section>
 	<section id="featured-and-events">
 		<div class="content-wrapper">
-			<h2>Featured + Events</h2>
+			<div class="featured-content">
+				<h2>Featured</h2>
+				<div class="featured-items">
+					<div class="featured-item">
+						<span class="item-type">Spotlight</span>
+						<img src="https://picsum.photos/400/180" />
+						<h3><a href="#">Center for Research on Open and Equitable Scholarship (CREOS)</a></h3>
+						<p>Learn how to access articles for free using library resources</p>
+						<a class="right-arrow" href="#">More details</a>
+					</div>
+					<div class="featured-item">
+						<span class="item-type">Spotlight</span>
+						<img src="https://picsum.photos/400/180" />
+						<h3><a href="#">Center for Research on Open and Equitable Scholarship (CREOS)</a></h3>
+						<p>Learn how to access articles for free using library resources</p>
+						<a class="right-arrow" href="#">More details</a>
+					</div>
+					<div class="featured-item">
+						<span class="item-type">Spotlight</span>
+						<img src="https://picsum.photos/400/180" />
+						<h3><a href="#">Center for Research on Open and Equitable Scholarship (CREOS)</a></h3>
+						<p>Learn how to access articles for free using library resources</p>
+						<a class="right-arrow" href="#">More details</a>
+					</div>
+					<div class="featured-item">
+						<span class="item-type">Spotlight</span>
+						<img src="https://picsum.photos/400/180" />
+						<h3><a href="#">Center for Research on Open and Equitable Scholarship (CREOS)</a></h3>
+						<p>Learn how to access articles for free using library resources</p>
+						<a class="right-arrow" href="#">More details</a>
+					</div>
+					<div class="featured-item">
+						<span class="item-type">Spotlight</span>
+						<img src="https://picsum.photos/400/180" />
+						<h3><a href="#">Center for Research on Open and Equitable Scholarship (CREOS)</a></h3>
+						<p>Learn how to access articles for free using library resources</p>
+						<a class="right-arrow" href="#">More details</a>
+					</div>
+					<div class="featured-item">
+						<span class="item-type">Spotlight</span>
+						<img src="https://picsum.photos/400/180" />
+						<h3><a href="#">Center for Research on Open and Equitable Scholarship (CREOS)</a></h3>
+						<p>Learn how to access articles for free using library resources</p>
+						<a class="right-arrow" href="#">More details</a>
+					</div>															
+				</div>
+			</div>
+			<div class="events">
+				<div class="events-header">
+					<div class="events-header-title-paragraph">
+					<h2>Events</h2>
+					<p>Check out upcoming events at the MIT Libraries</p>
+					</div>
+					<a class="button secondary" href="#">See all events</a>
+				</div>
+				<div class="event">
+					<div class="event-date">
+						<span class="event-month">Oct</span>
+						<span class="event-day">15</span>
+					</div>
+					<div class="event-details">
+						<h3><a href="#">Optimizing article access</a></h3>
+						<p>Learn how to access articles for free using library resources</p>
+						<div class="event-metadata">
+							<span class="event-time"><i class="fa-light fa-clock"></i>11:00 &#150; 11:30 am</span>
+							<span class="event-location"><i class="fa-light fa-map-pin"></i>Location Name</span>
+						</div>
+						<a class="right-arrow" href="#">More details</a>			
+					</div>			
+				</div>
+				<div class="event">
+					<div class="event-date">
+						<span class="event-month">Oct</span>
+						<span class="event-day">15</span>
+					</div>
+					<div class="event-details">
+						<h3><a href="#">I'm a longer event name that wraps to multiple lines</a></h3>
+						<p>Learn how to access articles for free using library resources</p>
+						<div class="event-metadata">
+							<span class="event-time"><i class="fa-light fa-clock"></i>11:00 &#150; 11:30 am</span>
+							<span class="event-location"><i class="fa-light fa-map-pin"></i>Location Name</span>
+						</div>
+						<a class="right-arrow" href="#">More details</a>			
+					</div>			
+				</div>
+			</div>			
 		</div>
 	</section>
 	<section id="featured-collection">
