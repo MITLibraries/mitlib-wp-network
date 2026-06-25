@@ -15,7 +15,7 @@
 	--actual-max-width: 1280px; /* What we want the max width to work out to, margins included */
 	--content-max-width: calc(var(--actual-max-width) - (var(--content-side-margins) * 2));
 	
-	--content-section-vertical-padding: 48px;
+	--content-section-vertical-padding: var(--sp-1600);
 }
 
 @media only screen and (max-width: 720px) {
