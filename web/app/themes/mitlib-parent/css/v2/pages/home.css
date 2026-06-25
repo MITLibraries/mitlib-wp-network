@@ -373,7 +373,7 @@ section#todays-hours {
   .content-wrapper {
     display: flex;
     flex-direction: column;
-    gap: var(--sp-1200);
+    gap: var(--sp-1600);
   }
 
   /* FEATURED SECTION */
@@ -381,6 +381,79 @@ section#todays-hours {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: var(--sp-600);
+
+    /* The count of this section can vary, so we have custom layouts and responsive behavior for each count 3 through 6 */
+    &.count-6 {
+      grid-template-columns: repeat(6, 1fr);
+
+      div {
+        grid-column: span 2;
+
+        &:first-child {
+          grid-row: span 2;
+          grid-column: span 3;
+        }
+
+        &:nth-child(2), &:nth-child(3) {
+          img {height: 60px;}
+          grid-column: span 3;
+        }
+      }
+
+      img {
+        width: 100%;
+      }
+
+      @media only screen and (max-width: 720px) {
+        grid-template-columns: repeat(1, 1fr);
+      }         
+    }
+
+    &.count-5 {
+      grid-template-columns: repeat(2, 1fr);
+
+      div {
+        &:first-child {
+          grid-row: span 2;
+        }
+
+        &:nth-child(2), &:nth-child(3) {
+          img {height: 60px;}
+        }
+      }
+
+      img {
+        width: 100%;
+      }
+
+      @media only screen and (max-width: 720px) {
+        grid-template-columns: repeat(1, 1fr);
+      }          
+    }
+
+    &.count-4 {
+      grid-template-columns: repeat(2, 1fr);
+
+      img {
+        width: 100%;
+      }
+
+      @media only screen and (max-width: 720px) {
+        grid-template-columns: repeat(1, 1fr);
+      }      
+    }
+
+    &.count-3 {
+      grid-template-columns: repeat(3, 1fr);
+
+      @media only screen and (max-width: 720px) {
+        grid-template-columns: repeat(1, 1fr);
+
+        img {
+          width: 100%;
+        }
+      }
+    }
   }
 
   .featured-item {
@@ -484,6 +557,14 @@ section#todays-hours {
     }
   }
 
+  @media only screen and (max-width: 600px) {
+    .events { 
+      .events-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  }
 }
 
 /* =================== */

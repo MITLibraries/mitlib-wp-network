@@ -131,7 +131,14 @@ if ( has_post_thumbnail() ) {
 		<div class="content-wrapper">
 			<div class="featured-content">
 				<h2>Featured</h2>
-				<div class="featured-items">
+				<div class="featured-items count-6">
+					<div class="featured-item">
+						<span class="item-type">Spotlight</span>
+						<img src="https://picsum.photos/400/180" />
+						<h3><a href="#">Center for Research on Open and Equitable Scholarship (CREOS)</a></h3>
+						<p>Learn how to access articles for free using library resources</p>
+						<a class="right-arrow" href="#">More details</a>
+					</div>					
 					<div class="featured-item">
 						<span class="item-type">Spotlight</span>
 						<img src="https://picsum.photos/400/180" />
@@ -145,7 +152,7 @@ if ( has_post_thumbnail() ) {
 						<h3><a href="#">Center for Research on Open and Equitable Scholarship (CREOS)</a></h3>
 						<p>Learn how to access articles for free using library resources</p>
 						<a class="right-arrow" href="#">More details</a>
-					</div>
+					</div>					
 					<div class="featured-item">
 						<span class="item-type">Spotlight</span>
 						<img src="https://picsum.photos/400/180" />
@@ -159,21 +166,14 @@ if ( has_post_thumbnail() ) {
 						<h3><a href="#">Center for Research on Open and Equitable Scholarship (CREOS)</a></h3>
 						<p>Learn how to access articles for free using library resources</p>
 						<a class="right-arrow" href="#">More details</a>
-					</div>
+					</div>										
 					<div class="featured-item">
 						<span class="item-type">Spotlight</span>
 						<img src="https://picsum.photos/400/180" />
 						<h3><a href="#">Center for Research on Open and Equitable Scholarship (CREOS)</a></h3>
 						<p>Learn how to access articles for free using library resources</p>
 						<a class="right-arrow" href="#">More details</a>
-					</div>
-					<div class="featured-item">
-						<span class="item-type">Spotlight</span>
-						<img src="https://picsum.photos/400/180" />
-						<h3><a href="#">Center for Research on Open and Equitable Scholarship (CREOS)</a></h3>
-						<p>Learn how to access articles for free using library resources</p>
-						<a class="right-arrow" href="#">More details</a>
-					</div>															
+					</div>										
 				</div>
 			</div>
 			<div class="events">
