@@ -406,6 +406,9 @@ section#todays-hours {
 
       @media only screen and (max-width: 720px) {
         grid-template-columns: repeat(1, 1fr);
+        div {
+          grid-column: span 3;
+        }
       }         
     }
 
