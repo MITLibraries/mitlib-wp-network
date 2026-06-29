@@ -27,7 +27,7 @@ if ( has_post_thumbnail() ) {
 		<div class="content-wrapper">
 				<div class="hero-content">
 					<h1>Welcome to the MIT Libraries</h1>
-					<form id="search-form" action="" method="" role="search">
+					<form id="search-form" action="https://search.libraries.mit.edu/results" method="" role="search">
 						<label for="basic-search-main">What can we help you find?</label>
 						<div class="form-wrapper">
 							<div class="search-input-wrapper">
