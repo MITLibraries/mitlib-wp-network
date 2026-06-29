@@ -123,7 +123,9 @@ if ( has_post_thumbnail() ) {
 					<div class="option-box-content">
 						<h3>Ask us</h3>
 						<p>Get help via email, chat and more.</p>
-						<a class="button secondary" href="#">See options</a>
+						<div class="ask-us-links">
+							<a class="button secondary" href="#">Chat now</a>
+							<a href="#">All help options</a>						
 					</div>
 			</div>
 		</div>

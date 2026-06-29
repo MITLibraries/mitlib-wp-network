@@ -381,6 +381,13 @@ section#todays-hours {
   .ask-us-box {
     border-top-color: var(--color-blue-400);
     flex-direction: column;
+
+    .ask-us-links {
+      display: flex;
+      flex-wrap: wrap; 
+      align-items: center;
+      gap: var(--sp-400) var(--sp-500);
+    }
   }
 
   /* Adjust layout to stack for smaller screens */
