@@ -101,6 +101,7 @@ body.v2-page {
     input, button {
       padding: 12px 20px;
       border-radius: 0;
+      box-shadow: 0 0 0 2px var(--color-gray-900);
       font-size: 1.8rem;
       font-weight: var(--font-weight-medium);
 
@@ -166,10 +167,19 @@ body.v2-page {
     button {
       background-color: var(--color-red-600);
       border: none;
+
+      &:hover {
+        background-image: none;
+      }
     }
 
-    @media (max-width: var(--bp-xs)) {
+    @media (max-width: 568px) {
       flex-direction: column;
+
+      button {
+        flex: 1 1 100%;
+        max-width: 100%;
+      }
     }
 
   }
