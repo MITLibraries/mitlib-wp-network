@@ -39,6 +39,7 @@ body.v2-page {
 /* ================ */
 #content > #hero {
   padding: 0;
+  position: relative;
   background-size: cover;
   background-position: center center;
   color: var(--color-text-on-color);
@@ -51,6 +52,31 @@ body.v2-page {
 
   .hero-content {
     max-width: 800px;
+  }
+
+    /* Styling for hero image credit */
+  .hero-image-credit {
+    position: absolute;
+    display: inline-block;
+    right: 0;
+    bottom: var(--sp-600);
+    padding: var(--sp-200) var(--content-side-margins) var(--sp-200) var(--sp-300);
+    background-color: rgba(26, 26, 26, 0.75);
+    font-size: 1.2rem;
+    color: var(--color-gray-300);
+    margin-top: 8px;
+
+    a {
+      color: var(--color-gray-300);
+      text-decoration: underline;
+      text-decoration-color: var(--color-gray-700);
+      font-weight: var(--font-weight-regular);
+
+      &:hover {
+        color: var(--color-text-on-color);
+        text-decoration-color: var(--color-gray-400);
+      }
+    }
   }
 }
 
