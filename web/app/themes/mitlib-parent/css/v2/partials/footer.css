@@ -14,8 +14,6 @@
     max-width: var(--content-max-width);
   }
 
-  
-
   .links-all {
     gap: var(--sp-800);
 
@@ -26,7 +24,14 @@
 
   }
 
-  a {text-decoration: none;}
+  a {
+    text-decoration: none;
+    
+    &:hover {
+      color: var(--color-text-on-color);
+      text-decoration: underline;
+    }
+  }
 
   @media only screen and (min-width: 569px) {
     .footer-main .links-primary {margin-left: 184px;}
