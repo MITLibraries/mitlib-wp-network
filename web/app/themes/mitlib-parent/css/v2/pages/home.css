@@ -674,6 +674,8 @@ section#todays-hours {
     width: 100%;
     background-size: cover;
     background-position: center center; 
+    border-radius: 4px;
+    box-shadow: 0 12px 36px 0 rgba(0, 0, 0, 0.12);
   }  
 
     /* Adjust layout to stack for smaller screens */
@@ -686,7 +688,6 @@ section#todays-hours {
     .featured-collection-image {
       height: 240px;
       max-width: 100%;
-      
     }
   }  
 
