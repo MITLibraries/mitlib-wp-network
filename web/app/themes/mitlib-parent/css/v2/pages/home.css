@@ -518,10 +518,15 @@ section#todays-hours {
       text-transform: uppercase;
       font-size: var(--font-size-xs);
       padding: var(--sp-100) var(--sp-200);
-      background-color: var(--color-magenta-700);
+      background-color: var(--color-gray-700);
       color: var(--color-text-on-color);
       font-weight: var(--font-weight-medium);
       letter-spacing: 0.05em;
+
+      &.spotlight {background-color: var(--color-magenta-700);}
+      &.news {background-color: var(--color-green-800);}
+      &.resource {background-color: var(--color-cyan-800);}
+      &.service {background-color: var(--color-blue-700);}
     }
 
     p {
