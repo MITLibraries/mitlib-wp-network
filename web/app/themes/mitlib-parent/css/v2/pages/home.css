@@ -218,6 +218,8 @@ section#todays-hours {
 
     li {
       flex: 0 1 auto;
+      display: flex;
+      flex-direction: column;
       border-left: 1px solid var(--color-gray-800);
       padding-left: var(--sp-600);
       padding-right: var(--sp-600);
@@ -227,8 +229,6 @@ section#todays-hours {
       }
 
       span {
-        display: inline-block;
-        min-width: 120px;
 
         &.library-name {
           font-weight: var(--font-weight-medium);
@@ -254,19 +254,19 @@ section#todays-hours {
   }
 
   /* Responsive styles to progressively hide library hours, then stack */
-  @media only screen and (max-width: 1210px) {
+  @media only screen and (max-width: 1120px) {
     ol li.hour-lewis {
       display: none;
     }
   }
 
-  @media only screen and (max-width: 940px) {
+  @media only screen and (max-width: 910px) {
     ol li.hour-barker {
       display: none;
     }
   }
 
-  @media only screen and (max-width: 780px) {
+  @media only screen and (max-width: 760px) {
     padding-top: var(--sp-600);
     padding-bottom: var(--sp-600);    
 
@@ -290,6 +290,8 @@ section#todays-hours {
 
       li {
         border: none;
+        flex-direction: row;
+        gap: var(--sp-600);
         padding-left: 0;
         padding-right: 0;
 
@@ -298,7 +300,7 @@ section#todays-hours {
         }
 
         span.library-name {
-          width: 160px;
+          width: 140px;
 
           a {
             font-size: var(--font-size-sm);
@@ -308,7 +310,7 @@ section#todays-hours {
       }
 
       li.hour-lewis, li.hour-barker {
-        display: block;
+        display: flex;
       }
     }
 
