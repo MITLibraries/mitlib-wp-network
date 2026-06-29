@@ -43,6 +43,7 @@ if ( has_post_thumbnail() ) {
 						</div>
 					</form>
 				</div>
+				<span class="hero-image-credit">From the <a href="#">Collection Name</a> collection</span>
 			</div>
 		</div>
 	</section>
