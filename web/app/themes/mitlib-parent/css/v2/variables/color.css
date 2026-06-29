@@ -146,6 +146,8 @@
   --color-border-suggestion:  var(--color-magenta-800);
 
   /* ─── Icon ─── */
+  --color-icon-default:     var(--color-gray-800);
+  --color-icon-quiet:       var(--color-gray-700);
   --color-icon-information: var(--color-cyan-800);
   --color-icon-success:     var(--color-green-800);
   --color-icon-warning:     var(--color-black);
