@@ -119,6 +119,13 @@ class Multisearch_Widget extends \WP_Widget {
 
 		if ( $instance['targets'] == 'use' ) {
 		
+			// Determine whether to enable NLS based on widget settings and the user's cookie.
+			$nls_enabled = $this->readCookie( $instance['nls_default'] );
+
+			$nls_link_toggle = $this->setToggleValue( $nls_enabled );
+
+			$nls_included = $instance['nls_included'];
+
 			echo '<div id="search-all" class="r-tabs-panel r-tabs-state-active use" aria-labelledby="tab-all">';
 				include( $all_template );
 			echo '</div>';
@@ -162,6 +169,11 @@ class Multisearch_Widget extends \WP_Widget {
 		if ( '' == $instance['bento_url'] ) {
 			$bento_url = 'https://lib.mit.edu/';
 		}
+		$nls_default = $instance['nls_default'];
+		if ( '' == $instance['nls_default'] ) {
+			$nls_default = 'off';
+		}
+		$nls_included = $instance['nls_included'];
 		?>
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'banner_text' ) ); ?>">
@@ -233,6 +245,56 @@ class Multisearch_Widget extends \WP_Widget {
 				name="<?php echo esc_attr( $this->get_field_name( 'bento_url' ) ); ?>"
 				value="<?php echo esc_html( $bento_url ); ?>">
 		</p>
+		<h3>Natural language search</h3>
+		<p>
+			Should the natural language option be shown?<br>
+			<label>
+				<input
+					type="checkbox"
+					name="<?php echo esc_attr( $this->get_field_name( 'nls_included' ) ); ?>"
+					value="included"
+						<?php
+						if ( 'included' == $nls_included ) {
+							echo "checked='checked'";
+						}
+						?>
+				>
+				Yes, include this feature.
+			</label>
+		</p>
+		<p>Which is the default query mode?</p>
+		<ul>
+			<li>
+				<label>
+					<input
+					  type="radio"
+						name="<?php echo esc_attr( $this->get_field_name( 'nls_default' ) ); ?>"
+						value="off"
+						<?php
+						if ( 'off' == $nls_default ) {
+							echo "checked='checked'";
+						}
+						?>
+					>
+					Keyword
+				</label>
+			</li>
+			<li>
+				<label>
+					<input
+					  type="radio"
+						name="<?php echo esc_attr( $this->get_field_name( 'nls_default' ) ); ?>"
+						value="on"
+						<?php
+						if ( 'on' == $nls_default ) {
+							echo "checked='checked'";
+						}
+						?>
+					>
+					Natural Language
+				</label>
+			</li>
+		</ul>
 		<?php
 	}
 
@@ -249,7 +311,42 @@ class Multisearch_Widget extends \WP_Widget {
 		$instance['banner_text'] = $new_instance['banner_text'];
 		$instance['targets'] = $new_instance['targets'];
 		$instance['bento_url'] = $new_instance['bento_url'];
+		$instance['nls_default'] = $new_instance['nls_default'];
+		$instance['nls_included'] = $new_instance['nls_included'];
 		return $instance;
+	}
+
+	/**
+	 * ReadCookie looks for the 'nls_enabled' domain cookie in the $_COOKIE
+	 * superglobal. If no value is found, it returns the default value - which is
+	 * defined via the widget settings form.
+	 *
+	 * @param string $nls_enabled Either 'on' (for hybrid) or 'off' (for keyword) - defined in widget settings form.
+	 */
+	private function readCookie( $nls_enabled ) {
+		if ( array_key_exists( 'STYXKEY_nls_enabled', $_COOKIE ) ) {
+			if ( 'true' == $_COOKIE['STYXKEY_nls_enabled'] ) {
+				$nls_enabled = 'on';
+			} else {
+				$nls_enabled = 'off';
+			}
+		}
+
+		return $nls_enabled;
+	}
+
+	/**
+	 * SetToggleValue determines what the state of the toggle value should be if the user decides to activate (or
+	 * deactivate) the natural language feature.
+	 *
+	 * @param string $nls_enabled Either 'on' (for hybrid) or 'off' (for keyword) - by this point defined by readCookie.
+	 */
+	private function setToggleValue( $nls_enabled ) {
+		if ( 'on' == $nls_enabled ) {
+			return 'false';
+		}
+
+		return 'true';
 	}
 
 	/**
