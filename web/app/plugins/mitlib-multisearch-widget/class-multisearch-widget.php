@@ -317,9 +317,11 @@ class Multisearch_Widget extends \WP_Widget {
 	}
 
 	/**
-	 * ReadCookie looks for the 'nls_enabled' domain cookie in the $_COOKIE
-	 * superglobal. If no value is found, it returns the default value - which is
-	 * defined via the widget settings form.
+	 * ReadCookie looks for the 'STYXKEY_nls_enabled' domain cookie in the $_COOKIE superglobal. If no value is found, it
+	 * returns the default value - which is defined via the widget settings form. (We use the STYXKEY prefix in the cookie
+	 * name because this is what Pantheon allows to pass through its caching layers).
+	 *
+	 * @see https://docs.pantheon.io/cookies#cache-varying-cookies
 	 *
 	 * @param string $nls_enabled Either 'on' (for hybrid) or 'off' (for keyword) - defined in widget settings form.
 	 */
