@@ -7,6 +7,7 @@
  */
 
 ?>
+<!-- nls state: _<?php echo esc_attr( $nls_enabled ); ?>_ -->
 <form
 	class="form search-bento"
 	action="https://search.libraries.mit.edu/results"
@@ -31,8 +32,10 @@
 	<div>
 		<a href="/search-advanced/">Advanced search</a> | <a href="/search/">More ways to search</a>
 	</div>
-	<div class="nls-toggle">
-		<a class="toggle on" href="#">Try natural language search</a>
-		<a class="learn-more" href="https://search.libraries.mit.edu/about-natural-language-search">Learn more</a>
-	</div>
+	<?php if ( 'included' == $nls_included ) { ?>
+		<div class="nls-toggle">
+			<a class="toggle <?php echo esc_attr( $nls_enabled ); ?>" href="<?php echo esc_url( 'https://search.libraries.mit.edu/natural_language_search_optin?natural_language_search_optin=' . $nls_link_toggle . '&return_to=/' ); ?>">Natural language search</a>
+			<a class="learn-more" href="https://search.libraries.mit.edu/about-natural-language-search">Learn more</a>
+		</div>
+	<?php } ?>
 </div>

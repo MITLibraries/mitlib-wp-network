@@ -2,7 +2,7 @@
 /**
  * Plugin Name: MITlib Multisearch Widget
  * Description: This plugin provides a widget that provides searches against multiple targets.
- * Version: 1.6.0
+ * Version: 1.7.0
  * Author: MIT Libraries
  * License: GPL2
  *
