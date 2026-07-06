@@ -524,7 +524,7 @@ section#todays-hours {
       letter-spacing: 0.05em;
 
       &.spotlight {background-color: var(--color-magenta-700);}
-      &.news {background-color: var(--color-green-800);}
+      &.news {background-color: var(--color-green-900);}
       &.resource {background-color: var(--color-cyan-800);}
       &.service {background-color: var(--color-blue-700);}
     }

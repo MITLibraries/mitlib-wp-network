@@ -52,7 +52,7 @@ if ( has_post_thumbnail() ) {
 			<h2>Today's hours</h2>
 			<ol class="hours-list">
 				<li>
-					<span class="library-name"><a class="link-no-underline" href="#">Hayden Library</a></span>
+					<span class="library-name"><a class="link-no-underline" href="/hayden">Hayden Library</a></span>
 					<span class="library-hours">9am &#150; 9pm</span>
 					<span class="library-study">
 						<i class="fa-light fa-moon"></i>
@@ -60,7 +60,7 @@ if ( has_post_thumbnail() ) {
 					</span>
 				</li>
 				<li class="hour-rotch">
-					<span class="library-name"><a class="link-no-underline" href="#">Rotch Library</a></span>
+					<span class="library-name"><a class="link-no-underline" href="/rotch">Rotch Library</a></span>
 					<span class="library-hours">9am &#150; 9pm</span>
 					<span class="library-study">
 						<i class="fa-light fa-moon"></i>
@@ -68,7 +68,7 @@ if ( has_post_thumbnail() ) {
 					</span>
 				</li>				
 				<li class="hour-barker">
-					<span class="library-name"><a class="link-no-underline" href="#">Barker Library</a></span>
+					<span class="library-name"><a class="link-no-underline" href="/barker">Barker Library</a></span>
 					<span class="library-hours">9am &#150; 9pm</span>
 					<span class="library-study">
 						<i class="fa-light fa-moon"></i>
@@ -76,12 +76,12 @@ if ( has_post_thumbnail() ) {
 					</span>
 				</li>
 				<li class="hour-lewis">
-					<span class="library-name"><a class="link-no-underline" href="#">Lewis Music Library</a></span>
+					<span class="library-name"><a class="link-no-underline" href="/music">Lewis Music Library</a></span>
 					<span class="library-hours">9am &#150; 9pm</span>
 					<span class="library-study"></span>
 				</li>						
 			</ol>
-			<a href="#" class="link-on-dark">See all locations and hours</a>
+			<a href="/hours" class="link-on-dark">See all locations and hours</a>
 		</div>
 	</section>	
 	<section id="using-the-libraries">
@@ -125,7 +125,7 @@ if ( has_post_thumbnail() ) {
 						<p>Get help via email, chat and more.</p>
 						<div class="ask-us-links">
 							<a class="button secondary" href="#">Chat now</a>
-							<a href="#">All help options</a>						
+							<a href="/ask">All help options</a>						
 					</div>
 			</div>
 		</div>
@@ -185,7 +185,7 @@ if ( has_post_thumbnail() ) {
 					<h2>Events</h2>
 					<p>Check out upcoming events at the MIT Libraries</p>
 					</div>
-					<a class="button secondary" href="#">See all events</a>
+					<a class="button secondary" href="https://calendar.mit.edu/department/mit_libraries">See all events</a>
 				</div>
 				<div class="event">
 					<div class="event-date">
@@ -229,7 +229,7 @@ if ( has_post_thumbnail() ) {
 				<p class="eyebrow">Maihaugen Gallery Exhibit</p>
 				<h2>Ink, Stone, and Silver Light</h2>
 				<p>This exhibition draws on archival materials from the Aga Khan Documentation Center at MIT (AKDC) to explore a century of cultural heritage preservation in Aleppo, Syria. </p>
-				<a class="button secondary" href="#">Check it out</a>
+				<a class="button secondary" href="/exhibits/exhibit/ink-stone-and-silver-light/">Check it out</a>
 			</div>
 		</div>
 	</section>
