@@ -92,29 +92,29 @@ if ( has_post_thumbnail() ) {
 				<div>
 					<i class="fa-light fa-lightbulb"></i>
 					<div class="option-box-content">
-						<h3><a href="#">Find a study space</a></h3>
-						<p>Quiet and group spaces - many available 24/7</p>
+						<h3><a href="/study">Find a study space</a></h3>
+						<p>Quiet and group spaces—many available 24/7</p>
 					</div>
 				</div>
 				<div>
 					<i class="fa-light fa-file-alt"></i>
 					<div class="option-box-content">
-						<h3><a href="#">Get materials</a></h3>
+						<h3><a href="/get-materials">Get materials</a></h3>
 						<p>Learn how to access articles, books, and more</p>
 					</div>
 				</div>
 				<div>
 					<i class="fa-light fa-book"></i>
 					<div class="option-box-content">
-						<h3><a href="#">Explore research guides & librarians</a></h3>
-						<p>Guides and librarians for every research interest.</p>
+						<h3><a href="/experts">Explore research guides & librarians</a></h3>
+						<p>Guides and librarians for every research interest</p>
 					</div>
 				</div>
 				<div>
 					<i class="fa-light fa-calendar"></i>
 					<div class="option-box-content">
-						<h3><a href="#">Schedule a research consultation</a></h3>
-						<p>For complex research questions</p>
+						<h3><a href="/data-services">Find and manage data</a></h3>
+						<p>Get support from creating and visualizing to using and sharing data</p>
 					</div>
 				</div>												
 			</div>
