@@ -143,7 +143,6 @@ if ( has_post_thumbnail() ) {
 								<h3><a href="https://libraries.mit.edu/news/future-of-rotch-library-begins-to-take-shape/44423/">Future of Rotch Library begins to take shape</a></h3>
 								<p>Exploring how Rotch can evolve to meet the changing needs of its communities</p>
 							</hgroup>
-							<a class="right-arrow" href="https://libraries.mit.edu/news/future-of-rotch-library-begins-to-take-shape/44423/">More details</a>
 						</div>
 					</article>					
 					<article class="featured-item side-by-side">
@@ -154,7 +153,6 @@ if ( has_post_thumbnail() ) {
 								<h3><a href="https://libguides.mit.edu/profiles/smbrown1">Sabrina Brown</a></h3>
 								<p>Biosciences Librarian<br />Liaison, Instruction, and Reference Services</p>
 							</hgroup>
-							<a class="right-arrow" href="https://libguides.mit.edu/profiles/smbrown1">How can Sabrina help you?</a>
 						</div>
 					</article>
 					<article class="featured-item side-by-side">
@@ -165,7 +163,6 @@ if ( has_post_thumbnail() ) {
 								<h3><a href="https://libraries.mit.edu/news/summer-2026-recommended-reading/44435/">Summer 2026 recommended reading</a></h3>
 								<p>Featuring recent books published by MIT faculty and staff</p>
 							</hgroup>
-							<a class="right-arrow" href="https://libraries.mit.edu/news/summer-2026-recommended-reading/44435/">More details</a>
 						</div>
 					</article>
 					<article class="featured-item">
@@ -175,7 +172,6 @@ if ( has_post_thumbnail() ) {
 								<h3><a href="https://libraries.mit.edu/news/streamline-your-access-to-full-text/39807/">Streamline your access to full text</a></h3>
 								<p>The LibKey Nomad browser extension instantly checks for full text access to articles as you browse the web</p>
 							</hgroup>
-							<a class="right-arrow" href="https://libraries.mit.edu/news/streamline-your-access-to-full-text/39807/">More details</a>
 						</div>
 					</article>
 					<article class="featured-item">
@@ -183,7 +179,6 @@ if ( has_post_thumbnail() ) {
 						<div class="featured-item-content">
 							<h3><a href="https://libraries.mit.edu/news/nyt">Access the New York Times</a></h3>
 							<p>A personal digital edition subscription is available to all MIT students, faculty, and staff</p>
-							<a class="right-arrow" href="https://libraries.mit.edu/news/nyt">More details</a>
 						</div>
 					</article>																		
 					<article class="featured-item">
@@ -193,7 +188,6 @@ if ( has_post_thumbnail() ) {
 								<h3><a href="https://libraries.mit.edu/scholarly/">Learn about your options and rights in scholarly publishing</a></h3>
 								<p>Including open access, copyright, and research funder requirements</p>
 							</hgroup>
-							<a class="right-arrow" href="https://libraries.mit.edu/scholarly/">More details</a>
 						</div>
 					</article>									
 				</div>
@@ -217,8 +211,7 @@ if ( has_post_thumbnail() ) {
 						<div class="event-metadata">
 							<span class="event-time"><i class="fa-light fa-clock"></i>9:00 am &#150; 4:00 pm</span>
 							<span class="event-location"><i class="fa-light fa-map-pin"></i>Virtual Event</span>
-						</div>
-						<a class="right-arrow" href="https://calendar.mit.edu/event/carpentriesmit-introduction-to-programming-with-python">More details</a>			
+						</div>		
 					</div>			
 				</div>
 				<div class="event">
@@ -232,8 +225,7 @@ if ( has_post_thumbnail() ) {
 						<div class="event-metadata">
 							<span class="event-time"><i class="fa-light fa-clock"></i>11:00 &#150; 11:30 am</span>
 							<span class="event-location"><i class="fa-light fa-map-pin"></i>Building 14, N-132 (DIRC)</span>
-						</div>
-						<a class="right-arrow" href="https://calendar.mit.edu/event/optimizing-article-access-5613">More details</a>			
+						</div>		
 					</div>			
 				</div>
 			</div>			
@@ -246,7 +238,7 @@ if ( has_post_thumbnail() ) {
 			</div>
 			<div class="featured-collection-content">
 				<p class="eyebrow">Maihaugen Gallery Exhibit</p>
-				<h2><a href="https://libraries.mit.edu/exhibits/exhibit/ink-stone-and-silver-light/">Ink, Stone, and Silver Light</a></h2>
+				<h2>Ink, Stone, and Silver Light</h2>
 				<p>This exhibition draws on archival materials from the Aga Khan Documentation Center at MIT (AKDC) to explore a century of cultural heritage preservation in Aleppo, Syria. </p>
 				<a class="button secondary" href="https://libraries.mit.edu/exhibits/exhibit/ink-stone-and-silver-light/">Check it out</a>
 			</div>
