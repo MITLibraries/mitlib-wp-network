@@ -201,12 +201,18 @@ body.v2-page {
     padding-bottom: 8px;
     display: flex;
     justify-content: space-between;
-    gap: 24px;
+    gap: var(--sp-600);
+
+    @media (max-width: 568px) {
+      flex-direction: column;
+      gap: var(--sp-300);
+    }
   }
 
   .semantic-search-toggle {
     display: flex;
-    gap: 6px;
+    gap: var(--sp-150);
+    align-items: center;
 
     button {
       background-color: transparent;
@@ -234,7 +240,7 @@ body.v2-page {
         padding: 5px 8px;
         border-radius: 4px;
         display: inline-block;
-        margin-right: 8px;
+        margin-right: var(--sp-200);
     }
     }
     
@@ -242,6 +248,7 @@ body.v2-page {
       color: var(--color-gray-300);
       font-weight: var(--font-weight-normal);
       text-decoration-color: var(--color-gray-700);
+      padding-bottom: var(--sp-050);
 
       &:hover {
         color: var(--color-gray-200);
