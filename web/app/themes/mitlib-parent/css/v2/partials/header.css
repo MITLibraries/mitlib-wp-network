@@ -55,6 +55,12 @@ header.header-main {
     }
 
     .link-primary.small a {padding-top: 30px;}
+
+    .link-primary.chat #collapsible--1 {
+      width: 150px;
+
+      a {font-size: var(--font-size-xs);}
+    }
   }
 
   
