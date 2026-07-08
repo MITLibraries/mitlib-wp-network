@@ -153,6 +153,7 @@ if ( has_post_thumbnail() ) {
 								<h3><a href="https://libguides.mit.edu/profiles/smbrown1">Sabrina Brown</a></h3>
 								<p>Biosciences Librarian<br />Liaison, Instruction, and Reference Services</p>
 							</hgroup>
+							<a class="arrow-right" href="https://libguides.mit.edu/profiles/smbrown1">How can Sabrina help you?</a>
 						</div>
 					</article>
 					<article class="featured-item side-by-side">
