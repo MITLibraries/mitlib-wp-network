@@ -138,46 +138,42 @@ if ( has_post_thumbnail() ) {
 					<div class="featured-item">
 						<span class="item-type news">News</span>
 						<img src="https://libraries.mit.edu/app/uploads/sites/4/2026/06/Rotch_Ext-Night-Hzntl-300x232.jpg" />
-						<h3><a href="/news/future-of-rotch-library-begins-to-take-shape/44423/">Future of Rotch Library begins to take shape</a></h3>
+						<h3><a href="https://libraries.mit.edu/news/future-of-rotch-library-begins-to-take-shape/44423/">Future of Rotch Library begins to take shape</a></h3>
 						<p>Exploring how Rotch can evolve to meet the changing needs of its communities</p>
-						<a class="right-arrow" href="/news/future-of-rotch-library-begins-to-take-shape/44423/">More details</a>
+						<a class="right-arrow" href="https://libraries.mit.edu/news/future-of-rotch-library-begins-to-take-shape/44423/">More details</a>
 					</div>					
 					<div class="featured-item">
 						<span class="item-type spotlight">Spotlight</span>
 						<img src="https://picsum.photos/400/180" />
-						<h3><a href="/experts/sabrina-brown/">Sabrina Brown</a></h3>
+						<h3><a href="https://libraries.mit.edu/experts/sabrina-brown/">Sabrina Brown</a></h3>
 						<p>Biosciences Librarian<br />Liaison, Instruction, and Reference Services</p>
-						<a class="right-arrow" href="/experts/sabrina-brown/">How can Sabrina help you?</a>
+						<a class="right-arrow" href="https://libraries.mit.edu/experts/sabrina-brown/">How can Sabrina help you?</a>
 					</div>
 					<div class="featured-item">
 						<span class="item-type news">News</span>
-						<img src="https://picsum.photos/400/180" />
-						<h3><a href="#">From the Director</a></h3>
-						<p>Spring 2023</p>
-						<p>May 14, 2026</p>
-						<a class="right-arrow" href="#">More details</a>
-					</div>					
-					<div class="featured-item">
-						<span class="item-type service">Service</span>
-						<img src="https://picsum.photos/400/180" />
-						<h3><a href="#">Learn your publishing rights</a></h3>
-						<p>We help students, staff, and faculty learn about thier rights in scholarly publishing</p>
-						<a class="right-arrow" href="#">More details</a>
+						<img src="https://libraries.mit.edu/app/uploads/sites/4/2026/06/MIT_Summer-Books-2026-01_0-300x200.jpg" />
+						<h3><a href="https://libraries.mit.edu/news/summer-2026-recommended-reading/44435/">Summer 2026 recommended reading</a></h3>
+						<p>Featuring recent books published by MIT faculty and staff</p>
+						<a class="right-arrow" href="https://libraries.mit.edu/news/summer-2026-recommended-reading/44435/">More details</a>
 					</div>
 					<div class="featured-item">
 						<span class="item-type resource">Resource</span>
-						<img src="https://picsum.photos/400/180" />
-						<h3><a href="#">Thesis specifications</a></h3>
-						<p>Use this guide to learn about formatting your thesis, making changes, and reviewing copyright </p>
-						<a class="right-arrow" href="#">More details</a>
-					</div>										
+						<h3><a href="https://libraries.mit.edu/news/streamline-your-access-to-full-text/39807/">Streamline your access to full text</a></h3>
+						<p>The LibKey Nomad browser extension instantly checks for full text access to articles as you browse the web</p>
+						<a class="right-arrow" href="https://libraries.mit.edu/news/streamline-your-access-to-full-text/39807/">More details</a>
+					</div>
 					<div class="featured-item">
-						<span class="item-type news">News</span>
-						<img src="https://picsum.photos/400/180" />
-						<h3><a href="#">Geospatial Data Visualization Contest winners announced</a></h3>
-						<p>June 11, 2026</p>
-						<a class="right-arrow" href="#">More details</a>
-					</div>										
+						<span class="item-type resource">Resource</span>
+						<h3><a href="https://libraries.mit.edu/news/nyt">Access the New York Times</a></h3>
+						<p>A personal digital edition subscription is available to all MIT students, faculty, and staff</p>
+						<a class="right-arrow" href="https://libraries.mit.edu/news/nyt">More details</a>
+					</div>																		
+					<div class="featured-item">
+						<span class="item-type service">Service</span>
+						<h3><a href="https://libraries.mit.edu/scholarly/">Learn about your options and rights in scholarly publishing</a></h3>
+						<p>Including open access, copyright, and research funder requirements</p>
+						<a class="right-arrow" href="https://libraries.mit.edu/scholarly/">More details</a>
+					</div>									
 				</div>
 			</div>
 			<div class="events">
