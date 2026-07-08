@@ -196,7 +196,7 @@ if ( has_post_thumbnail() ) {
 				<div class="events-header">
 					<div class="events-header-title-paragraph">
 					<h2>Events &amp; Workshops</h2>
-					<p>We're regularly running classes, workshops, and speaker events</p>
+					<p>We regularly run classes, workshops, and speaker events</p>
 					</div>
 					<a class="button secondary" href="https://libraries.mit.edu/news/events/">See all events</a>
 				</div>
