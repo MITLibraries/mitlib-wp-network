@@ -100,14 +100,14 @@ if ( has_post_thumbnail() ) {
 					<i class="fa-light fa-file-alt"></i>
 					<div class="option-box-content">
 						<h3><a href="/get-materials">Get materials</a></h3>
-						<p>Learn how to access articles, books, and more</p>
+						<p>Learn how to find, request and get the materials you need</p>
 					</div>
 				</div>
 				<div>
 					<i class="fa-light fa-book"></i>
 					<div class="option-box-content">
-						<h3><a href="/experts">Explore research guides & librarians</a></h3>
-						<p>Guides and librarians for every research interest</p>
+						<h3><a href="/experts">Discover subject guides &amp; librarians</a></h3>
+						<p>Resources and expertise for every research interest</p>
 					</div>
 				</div>
 				<div>
@@ -121,8 +121,8 @@ if ( has_post_thumbnail() ) {
 			<div class="ask-us-box">
 					<i class="fa-light fa-messages-question"></i>
 					<div class="option-box-content">
-						<h3>Ask us</h3>
-						<p>Get help via email, chat and more.</p>
+						<h3>Ask Us</h3>
+						<p>Get help via email, chat and consultations</p>
 						<div class="ask-us-links">
 							<a class="button secondary" href="#">Chat now</a>
 							<a href="/ask">All help options</a>						
@@ -201,8 +201,8 @@ if ( has_post_thumbnail() ) {
 			<div class="events">
 				<div class="events-header">
 					<div class="events-header-title-paragraph">
-					<h2>Events</h2>
-					<p>Check out upcoming events at the MIT Libraries</p>
+					<h2>Events &amp; Workshops</h2>
+					<p>We're regularly running classes, workshops, and speaker events</p>
 					</div>
 					<a class="button secondary" href="https://calendar.mit.edu/department/mit_libraries">See all events</a>
 				</div>
@@ -242,7 +242,7 @@ if ( has_post_thumbnail() ) {
 	<section id="featured-collection">
 		<div class="content-wrapper">
 			<div class="featured-collection-image" style="background-image: url('https://libraries.mit.edu/app/uploads/sites/13/2025/10/Digital_Display_InkStone-2-624x886.jpg');">
-				<span class="featured-collection-tag">Featured Exhibit</span>
+				<span class="featured-collection-tag">Exhibit</span>
 			</div>
 			<div class="featured-collection-content">
 				<p class="eyebrow">Maihaugen Gallery Exhibit</p>
