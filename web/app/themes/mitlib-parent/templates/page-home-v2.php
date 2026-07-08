@@ -135,45 +135,67 @@ if ( has_post_thumbnail() ) {
 			<div class="featured-content">
 				<h2>Featured</h2>
 				<div class="featured-items count-6">
-					<div class="featured-item">
+					<article class="featured-item">
 						<span class="item-type news">News</span>
 						<img src="https://libraries.mit.edu/app/uploads/sites/4/2026/06/Rotch_Ext-Night-Hzntl-300x232.jpg" />
-						<h3><a href="https://libraries.mit.edu/news/future-of-rotch-library-begins-to-take-shape/44423/">Future of Rotch Library begins to take shape</a></h3>
-						<p>Exploring how Rotch can evolve to meet the changing needs of its communities</p>
-						<a class="right-arrow" href="https://libraries.mit.edu/news/future-of-rotch-library-begins-to-take-shape/44423/">More details</a>
-					</div>					
-					<div class="featured-item">
+						<div class="featured-item-content">
+							<hgroup>
+								<h3><a href="https://libraries.mit.edu/news/future-of-rotch-library-begins-to-take-shape/44423/">Future of Rotch Library begins to take shape</a></h3>
+								<p>Exploring how Rotch can evolve to meet the changing needs of its communities</p>
+							</hgroup>
+							<a class="right-arrow" href="https://libraries.mit.edu/news/future-of-rotch-library-begins-to-take-shape/44423/">More details</a>
+						</div>
+					</article>					
+					<article class="featured-item side-by-side">
 						<span class="item-type spotlight">Spotlight</span>
-						<img src="https://picsum.photos/400/180" />
-						<h3><a href="https://libraries.mit.edu/experts/sabrina-brown/">Sabrina Brown</a></h3>
-						<p>Biosciences Librarian<br />Liaison, Instruction, and Reference Services</p>
-						<a class="right-arrow" href="https://libraries.mit.edu/experts/sabrina-brown/">How can Sabrina help you?</a>
-					</div>
-					<div class="featured-item">
+						<img src="https://d2jv02qf7xgjwx.cloudfront.net/accounts/353/images/smbrown1-100x100.jpg" />
+						<div class="featured-item-content">
+							<hgroup>
+								<h3><a href="https://libguides.mit.edu/profiles/smbrown1">Sabrina Brown</a></h3>
+								<p>Biosciences Librarian<br />Liaison, Instruction, and Reference Services</p>
+							</hgroup>
+							<a class="right-arrow" href="https://libguides.mit.edu/profiles/smbrown1">How can Sabrina help you?</a>
+						</div>
+					</article>
+					<article class="featured-item side-by-side">
 						<span class="item-type news">News</span>
 						<img src="https://libraries.mit.edu/app/uploads/sites/4/2026/06/MIT_Summer-Books-2026-01_0-300x200.jpg" />
-						<h3><a href="https://libraries.mit.edu/news/summer-2026-recommended-reading/44435/">Summer 2026 recommended reading</a></h3>
-						<p>Featuring recent books published by MIT faculty and staff</p>
-						<a class="right-arrow" href="https://libraries.mit.edu/news/summer-2026-recommended-reading/44435/">More details</a>
-					</div>
-					<div class="featured-item">
+						<div class="featured-item-content">
+							<hgroup>
+								<h3><a href="https://libraries.mit.edu/news/summer-2026-recommended-reading/44435/">Summer 2026 recommended reading</a></h3>
+								<p>Featuring recent books published by MIT faculty and staff</p>
+							</hgroup>
+							<a class="right-arrow" href="https://libraries.mit.edu/news/summer-2026-recommended-reading/44435/">More details</a>
+						</div>
+					</article>
+					<article class="featured-item">
 						<span class="item-type resource">Resource</span>
-						<h3><a href="https://libraries.mit.edu/news/streamline-your-access-to-full-text/39807/">Streamline your access to full text</a></h3>
-						<p>The LibKey Nomad browser extension instantly checks for full text access to articles as you browse the web</p>
-						<a class="right-arrow" href="https://libraries.mit.edu/news/streamline-your-access-to-full-text/39807/">More details</a>
-					</div>
-					<div class="featured-item">
+						<div class="featured-item-content">
+							<hgroup>
+								<h3><a href="https://libraries.mit.edu/news/streamline-your-access-to-full-text/39807/">Streamline your access to full text</a></h3>
+								<p>The LibKey Nomad browser extension instantly checks for full text access to articles as you browse the web</p>
+							</hgroup>
+							<a class="right-arrow" href="https://libraries.mit.edu/news/streamline-your-access-to-full-text/39807/">More details</a>
+						</div>
+					</article>
+					<article class="featured-item">
 						<span class="item-type resource">Resource</span>
-						<h3><a href="https://libraries.mit.edu/news/nyt">Access the New York Times</a></h3>
-						<p>A personal digital edition subscription is available to all MIT students, faculty, and staff</p>
-						<a class="right-arrow" href="https://libraries.mit.edu/news/nyt">More details</a>
-					</div>																		
-					<div class="featured-item">
+						<div class="featured-item-content">
+							<h3><a href="https://libraries.mit.edu/news/nyt">Access the New York Times</a></h3>
+							<p>A personal digital edition subscription is available to all MIT students, faculty, and staff</p>
+							<a class="right-arrow" href="https://libraries.mit.edu/news/nyt">More details</a>
+						</div>
+					</article>																		
+					<article class="featured-item">
 						<span class="item-type service">Service</span>
-						<h3><a href="https://libraries.mit.edu/scholarly/">Learn about your options and rights in scholarly publishing</a></h3>
-						<p>Including open access, copyright, and research funder requirements</p>
-						<a class="right-arrow" href="https://libraries.mit.edu/scholarly/">More details</a>
-					</div>									
+						<div class="featured-item-content">
+							<hgroup>
+								<h3><a href="https://libraries.mit.edu/scholarly/">Learn about your options and rights in scholarly publishing</a></h3>
+								<p>Including open access, copyright, and research funder requirements</p>
+							</hgroup>
+							<a class="right-arrow" href="https://libraries.mit.edu/scholarly/">More details</a>
+						</div>
+					</article>									
 				</div>
 			</div>
 			<div class="events">
@@ -190,13 +212,13 @@ if ( has_post_thumbnail() ) {
 						<span class="event-day">21</span>
 					</div>
 					<div class="event-details">
-						<h3><a href="#">Programming with Python</a></h3>
+						<h3><a href="https://calendar.mit.edu/event/carpentriesmit-introduction-to-programming-with-python">Programming with Python</a></h3>
 						<p>Register for a beginner-friendly workshop that combines short tutorials with hands-on exercises</p>
 						<div class="event-metadata">
 							<span class="event-time"><i class="fa-light fa-clock"></i>9:00 am &#150; 4:00 pm</span>
 							<span class="event-location"><i class="fa-light fa-map-pin"></i>Virtual Event</span>
 						</div>
-						<a class="right-arrow" href="#">More details</a>			
+						<a class="right-arrow" href="https://calendar.mit.edu/event/carpentriesmit-introduction-to-programming-with-python">More details</a>			
 					</div>			
 				</div>
 				<div class="event">
@@ -205,13 +227,13 @@ if ( has_post_thumbnail() ) {
 						<span class="event-day">22</span>
 					</div>
 					<div class="event-details">
-						<h3><a href="#">Optimizing article access</a></h3>
+						<h3><a href="https://calendar.mit.edu/event/optimizing-article-access-5613">Optimizing article access</a></h3>
 						<p>Learn how to access articles for free using library resources </p>
 						<div class="event-metadata">
 							<span class="event-time"><i class="fa-light fa-clock"></i>11:00 &#150; 11:30 am</span>
 							<span class="event-location"><i class="fa-light fa-map-pin"></i>Building 14, N-132 (DIRC)</span>
 						</div>
-						<a class="right-arrow" href="#">More details</a>			
+						<a class="right-arrow" href="https://calendar.mit.edu/event/optimizing-article-access-5613">More details</a>			
 					</div>			
 				</div>
 			</div>			
@@ -220,13 +242,13 @@ if ( has_post_thumbnail() ) {
 	<section id="featured-collection">
 		<div class="content-wrapper">
 			<div class="featured-collection-image" style="background-image: url('https://libraries.mit.edu/app/uploads/sites/13/2025/10/Digital_Display_InkStone-2-624x886.jpg');">
-				<!--<img src="https://libraries.mit.edu/app/uploads/sites/13/2025/10/Digital_Display_InkStone-2-624x886.jpg" alt="Image from the Maihaugen Gallery exhibit, Ink, Stone, and Silver Light. It shows a display case with an open book, a stone object, and a silver object, all on a red background.">-->
+				<span class="featured-collection-tag">Featured Exhibit</span>
 			</div>
 			<div class="featured-collection-content">
 				<p class="eyebrow">Maihaugen Gallery Exhibit</p>
-				<h2>Ink, Stone, and Silver Light</h2>
+				<h2><a href="https://libraries.mit.edu/exhibits/exhibit/ink-stone-and-silver-light/">Ink, Stone, and Silver Light</a></h2>
 				<p>This exhibition draws on archival materials from the Aga Khan Documentation Center at MIT (AKDC) to explore a century of cultural heritage preservation in Aleppo, Syria. </p>
-				<a class="button secondary" href="/exhibits/exhibit/ink-stone-and-silver-light/">Check it out</a>
+				<a class="button secondary" href="https://libraries.mit.edu/exhibits/exhibit/ink-stone-and-silver-light/">Check it out</a>
 			</div>
 		</div>
 	</section>

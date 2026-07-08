@@ -431,16 +431,17 @@ section#todays-hours {
     &.count-6 {
       grid-template-columns: repeat(6, 1fr);
 
-      div {
+      article {
         grid-column: span 2;
 
         &:first-child {
           grid-row: span 2;
           grid-column: span 3;
+
+          img {max-height: 280px;}
         }
 
         &:nth-child(2), &:nth-child(3) {
-          img {height: 60px;}
           grid-column: span 3;
         }
       }
@@ -451,7 +452,8 @@ section#todays-hours {
 
       @media only screen and (max-width: 720px) {
         grid-template-columns: repeat(1, 1fr);
-        div {
+
+        article {
           grid-column: span 3;
         }
       }         
@@ -460,7 +462,7 @@ section#todays-hours {
     &.count-5 {
       grid-template-columns: repeat(2, 1fr);
 
-      div {
+      article {
         &:first-child {
           grid-row: span 2;
         }
@@ -511,8 +513,9 @@ section#todays-hours {
     gap: var(--sp-400);
     background: var(--color-bg-default);
     box-shadow: 0 12px 36px 0 rgba(0, 0, 0, 0.12);
-    padding: 0 var(--sp-600) var(--sp-600) var(--sp-600);
+    padding: var(--sp-1000) var(--sp-600) var(--sp-600) var(--sp-600);
     margin-bottom: var(--sp-100);
+    position: relative;
 
     .item-type {
       text-transform: uppercase;
@@ -522,11 +525,26 @@ section#todays-hours {
       color: var(--color-text-on-color);
       font-weight: var(--font-weight-medium);
       letter-spacing: 0.05em;
+      position: absolute;
+      top: 0;
+      left: var(--sp-600);      
 
       &.spotlight {background-color: var(--color-magenta-700);}
       &.news {background-color: var(--color-green-900);}
       &.resource {background-color: var(--color-cyan-800);}
       &.service {background-color: var(--color-blue-700);}
+    }
+
+    .featured-item-content {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-400);
+    }
+
+    hgroup {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-200);
     }
 
     p {
@@ -537,6 +555,16 @@ section#todays-hours {
     img {
       display: block;
       border-radius: var(--radius-sm);
+    }
+  }
+
+  .featured-item.side-by-side {
+    flex-direction: row;
+    gap: var(--sp-600);
+
+    img {
+      width: 120px;
+      height: 120px;
     }
   }
 
@@ -667,7 +695,6 @@ section#todays-hours {
     }
   }
 
-
   .featured-collection-image {
     height: 320px;
     max-width: 620px;
@@ -676,6 +703,21 @@ section#todays-hours {
     background-position: center center; 
     border-radius: 4px;
     box-shadow: 0 12px 36px 0 rgba(0, 0, 0, 0.12);
+    position: relative;
+
+    .featured-collection-tag {
+      text-transform: uppercase;
+      font-size: var(--font-size-xs);
+      padding: var(--sp-100) var(--sp-200);
+      background-color: var(--color-gray-700);
+      color: var(--color-text-on-color);
+      font-weight: var(--font-weight-medium);
+      letter-spacing: 0.05em;
+      background-color: var(--color-magenta-700);
+      position: absolute;
+      top: 0;
+      left: var(--sp-600);
+    }    
   }  
 
     /* Adjust layout to stack for smaller screens */
