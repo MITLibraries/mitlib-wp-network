@@ -43,7 +43,7 @@ if ( has_post_thumbnail() ) {
 						</div>
 					</form>
 				</div>
-				<span class="hero-image-credit">From the <a href="#">Collection Name</a> collection</span>
+				<span class="hero-image-credit">from the <a href="https://archivesspace.mit.edu/repositories/2/resources/1">Connick Stained Glass</a> Collection</span>
 			</div>
 		</div>
 	</section>
@@ -136,45 +136,46 @@ if ( has_post_thumbnail() ) {
 				<h2>Featured</h2>
 				<div class="featured-items count-6">
 					<div class="featured-item">
+						<span class="item-type news">News</span>
+						<img src="https://libraries.mit.edu/app/uploads/sites/4/2026/06/Rotch_Ext-Night-Hzntl-300x232.jpg" />
+						<h3><a href="/news/future-of-rotch-library-begins-to-take-shape/44423/">Future of Rotch Library begins to take shape</a></h3>
+						<p>Exploring how Rotch can evolve to meet the changing needs of its communities</p>
+						<a class="right-arrow" href="/news/future-of-rotch-library-begins-to-take-shape/44423/">More details</a>
+					</div>					
+					<div class="featured-item">
 						<span class="item-type spotlight">Spotlight</span>
 						<img src="https://picsum.photos/400/180" />
-						<h3><a href="#">Center for Research on Open and Equitable Scholarship (CREOS)</a></h3>
-						<p>Learn how to access articles for free using library resources</p>
-						<a class="right-arrow" href="#">More details</a>
-					</div>					
+						<h3><a href="/experts/sabrina-brown/">Sabrina Brown</a></h3>
+						<p>Biosciences Librarian<br />Liaison, Instruction, and Reference Services</p>
+						<a class="right-arrow" href="/experts/sabrina-brown/">How can Sabrina help you?</a>
+					</div>
 					<div class="featured-item">
 						<span class="item-type news">News</span>
 						<img src="https://picsum.photos/400/180" />
-						<h3><a href="#">Center for Research on Open and Equitable Scholarship (CREOS)</a></h3>
-						<p>Learn how to access articles for free using library resources</p>
+						<h3><a href="#">From the Director</a></h3>
+						<p>Spring 2023</p>
+						<p>May 14, 2026</p>
+						<a class="right-arrow" href="#">More details</a>
+					</div>					
+					<div class="featured-item">
+						<span class="item-type service">Service</span>
+						<img src="https://picsum.photos/400/180" />
+						<h3><a href="#">Learn your publishing rights</a></h3>
+						<p>We help students, staff, and faculty learn about thier rights in scholarly publishing</p>
 						<a class="right-arrow" href="#">More details</a>
 					</div>
 					<div class="featured-item">
 						<span class="item-type resource">Resource</span>
 						<img src="https://picsum.photos/400/180" />
-						<h3><a href="#">Center for Research on Open and Equitable Scholarship (CREOS)</a></h3>
-						<p>Learn how to access articles for free using library resources</p>
-						<a class="right-arrow" href="#">More details</a>
-					</div>					
-					<div class="featured-item">
-						<span class="item-type news">News</span>
-						<img src="https://picsum.photos/400/180" />
-						<h3><a href="#">Center for Research on Open and Equitable Scholarship (CREOS)</a></h3>
-						<p>Learn how to access articles for free using library resources</p>
-						<a class="right-arrow" href="#">More details</a>
-					</div>
-					<div class="featured-item">
-						<span class="item-type service">Service</span>
-						<img src="https://picsum.photos/400/180" />
-						<h3><a href="#">Center for Research on Open and Equitable Scholarship (CREOS)</a></h3>
-						<p>Learn how to access articles for free using library resources</p>
+						<h3><a href="#">Thesis specifications</a></h3>
+						<p>Use this guide to learn about formatting your thesis, making changes, and reviewing copyright </p>
 						<a class="right-arrow" href="#">More details</a>
 					</div>										
 					<div class="featured-item">
-						<span class="item-type spotlight">Spotlight</span>
+						<span class="item-type news">News</span>
 						<img src="https://picsum.photos/400/180" />
-						<h3><a href="#">Center for Research on Open and Equitable Scholarship (CREOS)</a></h3>
-						<p>Learn how to access articles for free using library resources</p>
+						<h3><a href="#">Geospatial Data Visualization Contest winners announced</a></h3>
+						<p>June 11, 2026</p>
 						<a class="right-arrow" href="#">More details</a>
 					</div>										
 				</div>
@@ -189,30 +190,30 @@ if ( has_post_thumbnail() ) {
 				</div>
 				<div class="event">
 					<div class="event-date">
-						<span class="event-month">Oct</span>
-						<span class="event-day">15</span>
+						<span class="event-month">Aug</span>
+						<span class="event-day">21</span>
 					</div>
 					<div class="event-details">
-						<h3><a href="#">Optimizing article access</a></h3>
-						<p>Learn how to access articles for free using library resources</p>
+						<h3><a href="#">Programming with Python</a></h3>
+						<p>Register for a beginner-friendly workshop that combines short tutorials with hands-on exercises</p>
 						<div class="event-metadata">
-							<span class="event-time"><i class="fa-light fa-clock"></i>11:00 &#150; 11:30 am</span>
-							<span class="event-location"><i class="fa-light fa-map-pin"></i>Location Name</span>
+							<span class="event-time"><i class="fa-light fa-clock"></i>9:00 am &#150; 4:00 pm</span>
+							<span class="event-location"><i class="fa-light fa-map-pin"></i>Virtual Event</span>
 						</div>
 						<a class="right-arrow" href="#">More details</a>			
 					</div>			
 				</div>
 				<div class="event">
 					<div class="event-date">
-						<span class="event-month">Oct</span>
-						<span class="event-day">15</span>
+						<span class="event-month">Aug</span>
+						<span class="event-day">22</span>
 					</div>
 					<div class="event-details">
-						<h3><a href="#">I'm a longer event name that wraps to multiple lines</a></h3>
-						<p>Learn how to access articles for free using library resources</p>
+						<h3><a href="#">Optimizing article access</a></h3>
+						<p>Learn how to access articles for free using library resources </p>
 						<div class="event-metadata">
 							<span class="event-time"><i class="fa-light fa-clock"></i>11:00 &#150; 11:30 am</span>
-							<span class="event-location"><i class="fa-light fa-map-pin"></i>Location Name</span>
+							<span class="event-location"><i class="fa-light fa-map-pin"></i>Building 14, N-132 (DIRC)</span>
 						</div>
 						<a class="right-arrow" href="#">More details</a>			
 					</div>			
