@@ -266,6 +266,9 @@ function setup_scripts_styles() {
 	if (is_page_template( 'templates/page-home-v2.php' )) {
 		wp_enqueue_style( 'v2' );
 		wp_enqueue_style( 'fontawesome' );
+		wp_enqueue_script( 'moment' );
+		wp_enqueue_script( 'underscore' );
+		wp_enqueue_script( 'hours-loader-theme' );
 	}
 
 	/**
