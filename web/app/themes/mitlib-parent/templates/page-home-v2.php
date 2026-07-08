@@ -40,6 +40,10 @@ if ( has_post_thumbnail() ) {
 						</div>
 						<div class="search-actions">
 							<a class="link-on-dark" href="https://libraries.mit.edu/search-advanced">Advanced search</a>
+							<div class="semantic-search-toggle toggled-off">
+								<button type="button">Natural language search</button>
+								<a href="#">Learn more</a>
+							</div>							
 						</div>
 					</form>
 				</div>

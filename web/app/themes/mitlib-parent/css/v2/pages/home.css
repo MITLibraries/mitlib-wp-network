@@ -203,6 +203,65 @@ body.v2-page {
     justify-content: space-between;
     gap: 24px;
   }
+
+  .semantic-search-toggle {
+    display: flex;
+    gap: 6px;
+
+    button {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      color: var(--color-white);
+      text-decoration: underline;
+      text-underline-offset: 0.5rem;
+      text-decoration-color: var(--color-red-500);
+      font-size: 1.6rem;
+      font-weight: var(--font-weight-medium);
+      line-height: 1;
+
+      &:hover {
+        background-image: none;
+        color: var(--color-red-500);
+      }
+
+      &::before {
+        background-color: var(--color-gray-800);
+        color: var(--color-text-on-color);
+        font-size: 1.1rem;
+        font-weight: var(--font-weight-bold);
+        letter-spacing: 0.08em;
+        padding: 5px 8px;
+        border-radius: 4px;
+        display: inline-block;
+        margin-right: 8px;
+    }
+    }
+    
+    a {
+      color: var(--color-gray-300);
+      font-weight: var(--font-weight-normal);
+      text-decoration-color: var(--color-gray-700);
+
+      &:hover {
+        color: var(--color-gray-200);
+        text-decoration-color: var(--color-gray-400);
+      }
+    }
+
+    &.toggled-on {
+      button::before {
+        background-color: var(--color-magenta-700);
+        content: "ON";
+      }
+    }
+
+    &.toggled-off {
+      button::before {
+        content: "OFF";
+      }
+    }       
+  }
 }
 
 /* ============= */
