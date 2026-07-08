@@ -43,7 +43,7 @@ if ( has_post_thumbnail() ) {
 						</div>
 					</form>
 				</div>
-				<span class="hero-image-credit">from the <a href="https://archivesspace.mit.edu/repositories/2/resources/1">Connick Stained Glass</a> Collection</span>
+				<span class="hero-image-credit">from the <a href="https://archivesspace.mit.edu/repositories/2/resources/1">Connick Stained Glass Collection</a></span>
 			</div>
 		</div>
 	</section>
@@ -177,7 +177,7 @@ if ( has_post_thumbnail() ) {
 					<article class="featured-item">
 						<span class="item-type resource">Resource</span>
 						<div class="featured-item-content">
-							<h3><a href="https://libraries.mit.edu/news/nyt">Access the New York Times</a></h3>
+							<h3><a href="https://libguides.mit.edu/news/NYT">Access the New York Times</a></h3>
 							<p>A personal digital edition subscription is available to all MIT students, faculty, and staff</p>
 						</div>
 					</article>																		
@@ -198,7 +198,7 @@ if ( has_post_thumbnail() ) {
 					<h2>Events &amp; Workshops</h2>
 					<p>We're regularly running classes, workshops, and speaker events</p>
 					</div>
-					<a class="button secondary" href="https://calendar.mit.edu/department/mit_libraries">See all events</a>
+					<a class="button secondary" href="https://libraries.mit.edu/news/events/">See all events</a>
 				</div>
 				<div class="event">
 					<div class="event-date">
