@@ -18,6 +18,7 @@
   --sp-400:  calc(var(--sp-base) * 4);    /* 16px */
   --sp-500:  calc(var(--sp-base) * 5);    /* 20px */
   --sp-600:  calc(var(--sp-base) * 6);    /* 24px */
+  --sp-700:  calc(var(--sp-base) * 7);    /* 28px */
   --sp-800:  calc(var(--sp-base) * 8);    /* 32px */
   --sp-1000: calc(var(--sp-base) * 10);   /* 40px */
   --sp-1200: calc(var(--sp-base) * 12);   /* 48px */

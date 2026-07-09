@@ -22,16 +22,15 @@ body.v2-page {
 #content > section {
 	padding-top: var(--content-section-vertical-padding);
 	padding-bottom: var(--content-section-vertical-padding);
+}
 
-	.content-wrapper {
-		max-width: var(--content-max-width);
-		text-align: left;
-		justify-content: flex-start;
+.content-wrapper {
+  max-width: var(--content-max-width);
+  text-align: left;
+  justify-content: flex-start;
 
-		padding-left: var(--content-side-margins);
-		padding-right: var(--content-side-margins);
-	}
-
+  padding-left: var(--content-side-margins);
+  padding-right: var(--content-side-margins);
 }
 
 /* ================ */

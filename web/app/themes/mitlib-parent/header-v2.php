@@ -45,6 +45,9 @@ if ( 'slim' === get_option( 'menu_style_setting' ) ) {
 	<div id="skip"><a href="#content">Skip to Main Content</a></div>
 
 	<div class="wrap-page full-width">
+		
+		<?php // get_template_part( 'inc/alert-global' ); ?>
+
 		<section class="header-wrapper">
 			<header class="header-main flex-container flex-end">
 				<div class="header-left">	

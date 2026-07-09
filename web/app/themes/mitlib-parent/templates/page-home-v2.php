@@ -51,6 +51,9 @@ if ( has_post_thumbnail() ) {
 			</div>
 		</div>
 	</section>
+
+	<?php //get_template_part( 'inc/alert-local' ); ?>
+
 	<section id="todays-hours">
 		<div class="content-wrapper">
 			<h2>Today's hours</h2>
@@ -128,7 +131,7 @@ if ( has_post_thumbnail() ) {
 						<h3>Ask Us</h3>
 						<p>Get help via email, chat and consultations</p>
 						<div class="ask-us-links">
-							<a class="button secondary" href="#">Chat now</a>
+							<a class="button secondary" href="https://libanswers.mit.edu/chat/widget/be2c654b63dd43f31c56295ee5d78d88" target="_blank">Chat now</a>
 							<a href="/ask">All help options</a>						
 					</div>
 			</div>

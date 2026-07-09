@@ -186,4 +186,9 @@
 --color-button-hover-border-secondary: var(--color-blue-500);
 --color-button-hover-text-secondary: var(--color-blue-500);
 
+/* ─────── */
+/* Alerts */
+/* ─────── */
+--color-alert-bg: var(--color-yellow-500);
+
 }
