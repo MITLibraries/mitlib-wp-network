@@ -208,15 +208,12 @@ body.v2-page {
     }
   }
 
-  .semantic-search-toggle {
+  .nls-toggle {
     display: flex;
     gap: var(--sp-150);
     align-items: center;
 
-    button {
-      background-color: transparent;
-      border: none;
-      cursor: pointer;
+    a.toggle {
       color: var(--color-white);
       text-decoration: underline;
       text-underline-offset: 0.5rem;
@@ -226,8 +223,8 @@ body.v2-page {
       line-height: 1;
 
       &:hover {
-        background-image: none;
         color: var(--color-red-500);
+        text-decoration-color: var(--color-red-500);
       }
 
       &::before {
@@ -241,6 +238,19 @@ body.v2-page {
         display: inline-block;
         margin-right: var(--sp-200);
       }
+
+      &.toggle.on {
+        &::before {
+          background-color: var(--color-magenta-700);
+          content: "ON";
+        }
+      }
+
+      &.toggle.off {
+        &::before {
+          content: "OFF";
+        }
+      }         
     }
     
     a {
@@ -253,20 +263,7 @@ body.v2-page {
         color: var(--color-gray-200);
         text-decoration-color: var(--color-gray-400);
       }
-    }
-
-    &.toggled-on {
-      button::before {
-        background-color: var(--color-magenta-700);
-        content: "ON";
-      }
-    }
-
-    &.toggled-off {
-      button::before {
-        content: "OFF";
-      }
-    }       
+    }    
   }
 }
 

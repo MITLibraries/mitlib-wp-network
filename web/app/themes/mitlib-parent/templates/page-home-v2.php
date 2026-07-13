@@ -15,37 +15,25 @@ get_header( 'v2' ); ?>
 
 <main id="content">
 
-<?php
-// Gets the featured image for the hero section.
-if ( has_post_thumbnail() ) {
-    $image_url = get_the_post_thumbnail_url( get_the_ID(), 'full' );
-}
-?>
+	<?php
+	// Gets the featured image for the hero section.
+	if ( has_post_thumbnail() ) {
+			$image_url = get_the_post_thumbnail_url( get_the_ID(), 'full' );
+	}
+	?>
 
 	<section id="hero" style="background-image: url(<?php echo esc_url( $image_url ); ?>);">
 	<div class="overlay">	
 		<div class="content-wrapper">
 				<div class="hero-content">
 					<h1>Welcome to the MIT Libraries</h1>
-					<form id="search-form" action="https://search.libraries.mit.edu/results" method="" role="search">
-						<label for="basic-search-main">What can we help you find?</label>
-						<div class="form-wrapper">
-							<div class="search-input-wrapper">
-								<i class="fa-regular fa-magnifying-glass"></i>
-								<input id="basic-search-main" type="search" class="field field-text basic-search-input" name="q" title="Keyword anywhere" value="" required="">
-								<button title="Clear search" aria-label="Clear search" type="button" id="clear-search" style="display: none;">Clear search</button>
-							</div>
-							<input id="tab-to-target" type="hidden" name="tab" value="all">
-							<button type="submit" class="btn button-primary">Search</button>
-						</div>
-						<div class="search-actions">
-							<a class="link-on-dark" href="https://libraries.mit.edu/search-advanced">Advanced search</a>
-							<div class="semantic-search-toggle toggled-off">
-								<button type="button">Natural language search</button>
-								<a href="#">Learn more</a>
-							</div>							
-						</div>
-					</form>
+
+					<?php
+						if ( is_active_sidebar( 'sidebar-search' ) ) :
+							dynamic_sidebar( 'sidebar-search' );					
+						endif; 
+					?>
+					
 				</div>
 				<span class="hero-image-credit">from the <a href="https://archivesspace.mit.edu/repositories/2/resources/1">Connick Stained Glass Collection</a></span>
 			</div>

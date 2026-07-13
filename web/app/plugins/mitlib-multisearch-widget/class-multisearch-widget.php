@@ -82,16 +82,16 @@ class Multisearch_Widget extends \WP_Widget {
 		);
 		wp_enqueue_style( 'multisearch-tabs' );
 
-		// Render markup.
-		echo '<noscript><p>It appears that your browser does not support javascript.</p>';
-		include( 'templates/form_nojs.html' );
-		echo '</noscript>';
-		echo '<div id="multisearch" class="' . esc_attr( $this->widgetClasses( $instance ) ) . ' nojs">';
-		echo '<h2 id="searchtabsheader" class="sr">Search the MIT libraries</h2>';
-
 		// Render the search tabs only when "Unified Search" option is not selected
 		if ( $instance['targets'] != 'use' ) {
 		
+			// Render markup.
+			echo '<noscript><p>It appears that your browser does not support javascript.</p>';
+			include( 'templates/form_nojs.html' );
+			echo '</noscript>';
+			echo '<div id="multisearch" class="' . esc_attr( $this->widgetClasses( $instance ) ) . ' nojs">';
+			echo '<h2 id="searchtabsheader" class="sr">Search the MIT libraries</h2>';
+
 			echo '<ul id="search_tabs_nav" aria-labelledby="searchtabsheader">
 				<li><a id="tab-all" href="#search-all"><span>All</span></a></li>
 				<li><a id="tab-books" href="#search-books"><span>Books + media</span></a></li>
@@ -115,23 +115,6 @@ class Multisearch_Widget extends \WP_Widget {
 				include( $more_template );
 			echo '</div>';
 
-		};
-
-		if ( $instance['targets'] == 'use' ) {
-		
-			// Determine whether to enable NLS based on widget settings and the user's cookie.
-			$nls_enabled = $this->readCookie( $instance['nls_default'] );
-
-			$nls_link_toggle = $this->setToggleValue( $nls_enabled );
-
-			$nls_included = $instance['nls_included'];
-
-			echo '<div id="search-all" class="r-tabs-panel r-tabs-state-active use" aria-labelledby="tab-all">';
-				include( $all_template );
-			echo '</div>';
-
-		};
-
 		if ( $instance['banner_text'] ) {
 			$allowed = array(
 				'a' => array(
@@ -150,6 +133,23 @@ class Multisearch_Widget extends \WP_Widget {
 			echo '</div>';
 		}
 		echo '</div>';
+
+		};
+
+		if ( $instance['targets'] == 'use' ) {
+		
+			// Determine whether to enable NLS based on widget settings and the user's cookie.
+			$nls_enabled = $this->readCookie( $instance['nls_default'] );
+
+			$nls_link_toggle = $this->setToggleValue( $nls_enabled );
+
+			$nls_included = $instance['nls_included'];
+
+			
+				include( $all_template );
+			
+
+		};
 	}
 
 	/**
