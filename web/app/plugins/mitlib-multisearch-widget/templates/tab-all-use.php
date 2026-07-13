@@ -22,13 +22,7 @@
 		<button type="submit" class="btn button-primary">Search</button>
 	</div>
 	<div class="search-actions">
-		<a class="link-on-dark" href="https://libraries.mit.edu/search-advanced">Advanced search</a>
-		
-		<!--
-		<div class="semantic-search-toggle toggled-off">
-			<button type="button">Natural language search</button>
-			<a href="#">Learn more</a>		
-		</div>		-->					
+		<a class="link-on-dark" href="https://libraries.mit.edu/search-advanced">Advanced search</a>			
 
 		<?php if ( 'included' == $nls_included ) { ?>
 			<div class="nls-toggle">
