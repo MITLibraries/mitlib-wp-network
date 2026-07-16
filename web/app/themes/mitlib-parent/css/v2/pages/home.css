@@ -450,6 +450,10 @@ section#todays-hours {
       align-items: center;
       gap: var(--sp-400) var(--sp-500);
     }
+
+    p {
+      margin-bottom: var(--sp-400) !important;
+    }
   }
 
   /* Adjust layout to stack for smaller screens */

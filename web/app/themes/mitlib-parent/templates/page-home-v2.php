@@ -119,7 +119,7 @@ get_header( 'v2' ); ?>
 						<h3>Ask Us</h3>
 						<p>Get help via email, chat and consultations</p>
 						<div class="ask-us-links">
-							<a class="button secondary" href="https://libanswers.mit.edu/chat/widget/be2c654b63dd43f31c56295ee5d78d88" target="_blank">Chat now</a>
+							<div id="libchat_fa6edc50fe81603743870ca1772bc5b2e7e121436b62ba7da331b9dcabf289c0"></div>
 							<a href="/ask">All help options</a>						
 					</div>
 			</div>

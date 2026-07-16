@@ -35,7 +35,8 @@ if ( 'slim' === get_option( 'menu_style_setting' ) ) {
 	<link rel="icon" href="https://cdn.libraries.mit.edu/files/branding/favicons/favicon.svg" type="image/svg+xml">
 	<link rel="apple-touch-icon" href="https://cdn.libraries.mit.edu/files/branding/favicons/apple-touch-icon.png"><!-- 180×180 -->
 	<link rel="manifest" href="https://cdn.libraries.mit.edu/files/branding/favicons/manifest.json">
-	<?php wp_head(); ?>
+	<script src="https://libanswers.mit.edu/load_chat.php?hash=fa6edc50fe81603743870ca1772bc5b2e7e121436b62ba7da331b9dcabf289c0" async></script>
+		<?php wp_head(); ?>
 	<script>
 		todayDate="";
 	</script>
