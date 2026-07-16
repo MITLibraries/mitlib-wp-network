@@ -35,7 +35,7 @@ get_header( 'v2' ); ?>
 					?>
 					
 				</div>
-				<span class="hero-image-credit">from the <a href="https://archivesspace.mit.edu/repositories/2/resources/1">Connick Stained Glass Collection</a></span>
+				<span class="hero-image-credit">from the <a href="https://archivesspace.mit.edu/repositories/2/resources/603">Harold E. Edgerton papers</a></span>
 			</div>
 		</div>
 	</section>
@@ -76,7 +76,7 @@ get_header( 'v2' ); ?>
 					<span class="library-study"></span>
 				</li>						
 			</ol>
-			<a href="/hours" class="link-on-dark">See all locations and hours</a>
+			<a href="/hours" class="link-on-dark">See more locations and hours</a>
 		</div>
 	</section>	
 	<section id="using-the-libraries">
