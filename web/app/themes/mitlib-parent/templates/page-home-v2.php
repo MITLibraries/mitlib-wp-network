@@ -146,7 +146,10 @@ get_header( 'v2' ); ?>
 						<div class="featured-item-content">
 							<hgroup>
 								<h3><a href="https://libguides.mit.edu/profiles/smbrown1">Sabrina Brown</a></h3>
-								<p>Biosciences Librarian<br />Liaison, Instruction, and Reference Services</p>
+								<div>
+									<p>Biosciences Librarian</p>
+									<p>Liaison, Instruction, and Reference Services</p>
+								</div>
 							</hgroup>
 							<a class="arrow-right" href="https://libguides.mit.edu/profiles/smbrown1">How can Sabrina help you?</a>
 						</div>
@@ -233,10 +236,11 @@ get_header( 'v2' ); ?>
 				<span class="featured-collection-tag">Exhibit</span>
 			</div>
 			<div class="featured-collection-content">
+				<h2 class="sr">Featured Exhibit</h2>
 				<p class="eyebrow">Maihaugen Gallery Exhibit</p>
-				<h2>Ink, Stone, and Silver Light</h2>
+				<h3>Ink, Stone, and Silver Light</h3>
 				<p>This exhibition draws on archival materials from the Aga Khan Documentation Center at MIT (AKDC) to explore a century of cultural heritage preservation in Aleppo, Syria. </p>
-				<a class="button secondary" href="https://libraries.mit.edu/exhibits/exhibit/ink-stone-and-silver-light/">Check it out</a>
+				<a class="button secondary" title="Read more about the Ink, Stone, and Silver Light exhibit" href="https://libraries.mit.edu/exhibits/exhibit/ink-stone-and-silver-light/">Check it out</a>
 			</div>
 		</div>
 	</section>

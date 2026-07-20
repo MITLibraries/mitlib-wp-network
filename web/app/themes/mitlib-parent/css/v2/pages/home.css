@@ -751,7 +751,11 @@ section#todays-hours {
     align-items: center;
   }
 
-  h2 {margin-bottom: var(--sp-200);}
+  h3 {
+    margin-bottom: var(--sp-200);
+    font-size: var(--font-size-2xl); /* Sets visually to match h2. Using hidden h2 for screen readers */
+  }
+
   p {
     color: var(--color-text-secondary);
     margin-bottom: var(--sp-500) !important;
