@@ -14,21 +14,14 @@ namespace Mitlib\Parent;
 get_header( 'v2' ); ?>
 
 <main id="content">
-
-	<?php
-	// Gets the featured image for the hero section.
-	if ( has_post_thumbnail() ) {
-			$image_url = get_the_post_thumbnail_url( get_the_ID(), 'full' );
-	}
-	?>
-
-	<section id="hero" style="background-image: url(<?php echo esc_url( $image_url ); ?>);">
+	<section id="hero" role="img" aria-label="Two notebooks opened to show yellow graph paper; the top one has a black and white photo of a boat crew, and the bottom one shows handwritten text." style="background-image: url(https://libraries.mit.edu/app/uploads/2026/07/hero-image-edgerton.png);">
 	<div class="overlay">	
 		<div class="content-wrapper">
 				<div class="hero-content">
 					<h1>Welcome to the MIT Libraries</h1>
 
 					<?php
+						// Search widget area for homepage. Uses Unified Search v2 for this page's search form.
 						if ( is_active_sidebar( 'sidebar-search' ) ) :
 							dynamic_sidebar( 'sidebar-search' );					
 						endif; 
@@ -85,28 +78,28 @@ get_header( 'v2' ); ?>
 			<div class="box-wrapper">
 			<div class="option-boxes">
 				<div>
-					<i class="fa-light fa-lightbulb"></i>
+					<i class="fa-light fa-lightbulb" aria-hidden="true"></i>
 					<div class="option-box-content">
 						<h3><a href="/study">Find a study space</a></h3>
 						<p>Quiet and group spaces—many available 24/7</p>
 					</div>
 				</div>
 				<div>
-					<i class="fa-light fa-file-alt"></i>
+					<i class="fa-light fa-file-alt" aria-hidden="true"></i>
 					<div class="option-box-content">
 						<h3><a href="/get-materials">Get materials</a></h3>
 						<p>Learn how to find, request and get the materials you need</p>
 					</div>
 				</div>
 				<div>
-					<i class="fa-light fa-book"></i>
+					<i class="fa-light fa-book" aria-hidden="true"></i>
 					<div class="option-box-content">
 						<h3><a href="/experts">Discover subject guides &amp; librarians</a></h3>
 						<p>Resources and expertise for every research interest</p>
 					</div>
 				</div>
 				<div>
-					<i class="fa-light fa-calendar"></i>
+					<i class="fa-light fa-database" aria-hidden="true"></i>
 					<div class="option-box-content">
 						<h3><a href="/data-services">Find and manage data</a></h3>
 						<p>Get support from creating and visualizing to using and sharing data</p>
@@ -241,7 +234,7 @@ get_header( 'v2' ); ?>
 				<h2 class="sr">Featured Exhibit</h2>
 				<p class="eyebrow">Howe, Manning & Almy Exhibit</p>
 				<h3>Boston's First All-Woman Firm and the Changing Face of Architecture</h3>
-				<p>Learn about the role MIT’s architecture program played in supporting women in the field since the 1890s, Howe, Manning & Almy’s influence on the built environment of Cambridge, and the firm’s ecofriendly approaches to renovation.</p>
+				<p>Learn about the role MIT's architecture program played in supporting women in the field since the 1890s, Howe, Manning & Almy's influence on the built environment of Cambridge, and the firms ecofriendly approaches to renovation.</p>
 				<a class="button secondary" title="Read more about the Howe, Manning & Almy exhibit" href="https://libraries.mit.edu/exhibits/exhibit/howe-manning-almy/">Check it out</a>
 			</div>
 		</div>
