@@ -131,12 +131,12 @@ get_header( 'v2' ); ?>
 				<h2>Featured</h2>
 				<div class="featured-items count-6">
 					<article class="featured-item">
-						<span class="item-type news">News</span>
-						<img src="https://libraries.mit.edu/app/uploads/sites/4/2026/06/Rotch_Ext-Night-Hzntl-300x232.jpg" />
+						<span class="item-type spotlight">Spotlight</span>
+						<img src="https://libraries.mit.edu/app/uploads/2026/07/0fBLLWk0.jpeg" alt="A seated audience watches a man and a woman standing at a podium; a slide on the wall behind them reads, 'Democratizing Access to Climate Data.'" />
 						<div class="featured-item-content">
 							<hgroup>
-								<h3><a href="https://libraries.mit.edu/news/future-of-rotch-library-begins-to-take-shape/44423/">Future of Rotch Library begins to take shape</a></h3>
-								<p>Exploring how Rotch can evolve to meet the changing needs of its communities</p>
+								<h3><a href="https://libraries.mit.edu/opendata/open-data-mit-home/mit-prize/">2026 MIT Prize for Open Data</a></h3>
+								<p>Nominate an MIT researcher for the $2,500 prize</p>
 							</hgroup>
 						</div>
 					</article>					
@@ -155,37 +155,39 @@ get_header( 'v2' ); ?>
 						</div>
 					</article>
 					<article class="featured-item side-by-side">
-						<span class="item-type news">News</span>
-						<img src="https://libraries.mit.edu/app/uploads/sites/4/2026/06/MIT_Summer-Books-2026-01_0-300x200.jpg" />
+						<span class="item-type spotlight">Spotlight</span>
+						<img src="https://libraries.mit.edu/app/uploads/2026/07/YpeVtugQ.png" alt="A black book cover featuring light blue type reads “National Bestseller, Ted Chiang, Exhalation, Stories, By the author of Stories of Your Life and Others.”"/>
 						<div class="featured-item-content">
 							<hgroup>
-								<h3><a href="https://libraries.mit.edu/news/summer-2026-recommended-reading/44435/">Summer 2026 recommended reading</a></h3>
-								<p>Featuring recent books published by MIT faculty and staff</p>
+								<h3><a href="https://libraries.mit.edu/mit-reads/">MIT Reads: <em>Exhalation</em></a></h3>
+								<p>Ted Chiang's science fiction story collection selected by President Sally Kornbluth</p>
 							</hgroup>
 						</div>
 					</article>
-					<article class="featured-item">
-						<span class="item-type resource">Resource</span>
-						<div class="featured-item-content">
-							<hgroup>
-								<h3><a href="https://libraries.mit.edu/news/streamline-your-access-to-full-text/39807/">Streamline your access to full text</a></h3>
-								<p>The LibKey Nomad browser extension instantly checks for full text access to articles as you browse the web</p>
-							</hgroup>
-						</div>
-					</article>
-					<article class="featured-item">
-						<span class="item-type resource">Resource</span>
-						<div class="featured-item-content">
-							<h3><a href="https://libguides.mit.edu/news/NYT">Access the New York Times</a></h3>
-							<p>A personal digital edition subscription is available to all MIT students, faculty, and staff</p>
-						</div>
-					</article>																		
 					<article class="featured-item">
 						<span class="item-type service">Service</span>
 						<div class="featured-item-content">
 							<hgroup>
-								<h3><a href="https://libraries.mit.edu/scholarly/">Learn about your options and rights in scholarly publishing</a></h3>
-								<p>Including open access, copyright, and research funder requirements</p>
+								<h3><a href="https://libraries.mit.edu/about/service-updates/">Service updates</a></h3>
+								<p>The latest information about access to library collections, spaces, and services</p>
+							</hgroup>
+						</div>
+					</article>
+					<article class="featured-item">
+						<span class="item-type news">News</span>
+						<div class="featured-item-content">
+							<hgroup>
+								<h3><a href="https://libraries.mit.edu/news/future-of-rotch-library-begins-to-take-shape/44423/">Future of Rotch Library begins to take shape</a></h3>
+								<p>Reimagining spaces for teaching, studying, and data services</p>
+							</hgroup>
+						</div>
+					</article>																		
+					<article class="featured-item">
+						<span class="item-type resource">Resource</span>
+						<div class="featured-item-content">
+							<hgroup>
+								<h3><a href="https://libguides.mit.edu/libkey/nomad">Quicker access to journal articles</a></h3>
+								<p>The LibKey Nomad browser extension instantly checks for full-text access to articles as you browse the web</p>
 							</hgroup>
 						</div>
 					</article>									
@@ -202,28 +204,28 @@ get_header( 'v2' ); ?>
 				<div class="event">
 					<div class="event-date">
 						<span class="event-month">Aug</span>
-						<span class="event-day">21</span>
+						<span class="event-day">24</span>
 					</div>
 					<div class="event-details">
-						<h3><a href="https://calendar.mit.edu/event/carpentriesmit-introduction-to-programming-with-python">Programming with Python</a></h3>
-						<p>Register for a beginner-friendly workshop that combines short tutorials with hands-on exercises</p>
+						<h3><a href="https://calendar.mit.edu/event/carpentriesmit-introduction-to-programming-with-python">Carpentries@MIT Introduction to Programming with Python</a></h3>
+						<p>A beginner-friendly workshop combining short tutorials with hands-on exercises</p>
 						<div class="event-metadata">
-							<span class="event-time"><i class="fa-light fa-clock"></i>9:00 am &#150; 4:00 pm</span>
+							<span class="event-time"><i class="fa-light fa-clock"></i>10:00 am &#150; 4:00 pm</span>
 							<span class="event-location"><i class="fa-light fa-map-pin"></i>Virtual Event</span>
 						</div>		
 					</div>			
 				</div>
 				<div class="event">
 					<div class="event-date">
-						<span class="event-month">Aug</span>
-						<span class="event-day">22</span>
+						<span class="event-month">Sep</span>
+						<span class="event-day">2</span>
 					</div>
 					<div class="event-details">
-						<h3><a href="https://calendar.mit.edu/event/optimizing-article-access-5613">Optimizing article access</a></h3>
-						<p>Learn how to access articles for free using library resources </p>
+						<h3><a href="https://calendar.mit.edu/event/mit-libraries-resources-and-services-for-graduate-students-6074">MIT Libraries: Resources and Services for Graduate Students</a></h3>
+						<p>How to find the information and data you'll need</p>
 						<div class="event-metadata">
-							<span class="event-time"><i class="fa-light fa-clock"></i>11:00 &#150; 11:30 am</span>
-							<span class="event-location"><i class="fa-light fa-map-pin"></i>Building 14, N-132 (DIRC)</span>
+							<span class="event-time"><i class="fa-light fa-clock"></i>10:45 &#150; 11:45 am</span>
+							<span class="event-location"><i class="fa-light fa-map-pin"></i>Building 14, S-130 (The Nexus)</span>
 						</div>		
 					</div>			
 				</div>
@@ -232,15 +234,15 @@ get_header( 'v2' ); ?>
 	</section>
 	<section id="featured-collection">
 		<div class="content-wrapper">
-			<div class="featured-collection-image" style="background-image: url('https://libraries.mit.edu/app/uploads/sites/13/2025/10/Digital_Display_InkStone-2-624x886.jpg');">
+			<div class="featured-collection-image" role="img" aria-label="Architectural elevation of a house with two gables and two chimneys by Howe, Manning and Almy Architects, dated 1927." style="background-image: url('https://libraries.mit.edu/app/uploads/2026/07/Howe-Manning-Almy-1.jpg');">
 				<span class="featured-collection-tag">Exhibit</span>
 			</div>
 			<div class="featured-collection-content">
 				<h2 class="sr">Featured Exhibit</h2>
-				<p class="eyebrow">Maihaugen Gallery Exhibit</p>
-				<h3>Ink, Stone, and Silver Light</h3>
-				<p>This exhibition draws on archival materials from the Aga Khan Documentation Center at MIT (AKDC) to explore a century of cultural heritage preservation in Aleppo, Syria. </p>
-				<a class="button secondary" title="Read more about the Ink, Stone, and Silver Light exhibit" href="https://libraries.mit.edu/exhibits/exhibit/ink-stone-and-silver-light/">Check it out</a>
+				<p class="eyebrow">Howe, Manning & Almy Exhibit</p>
+				<h3>Boston's First All-Woman Firm and the Changing Face of Architecture</h3>
+				<p>Learn about the role MIT’s architecture program played in supporting women in the field since the 1890s, Howe, Manning & Almy’s influence on the built environment of Cambridge, and the firm’s ecofriendly approaches to renovation.</p>
+				<a class="button secondary" title="Read more about the Howe, Manning & Almy exhibit" href="https://libraries.mit.edu/exhibits/exhibit/howe-manning-almy/">Check it out</a>
 			</div>
 		</div>
 	</section>
