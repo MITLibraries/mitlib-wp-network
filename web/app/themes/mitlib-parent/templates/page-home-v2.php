@@ -43,7 +43,7 @@ get_header( 'v2' ); ?>
 					<span class="library-name"><a class="link-no-underline" href="/hayden">Hayden Library</a></span>
 					<span class="library-hours"><span data-location-hours="Hayden Library"></span></span>
 					<span class="library-study">
-						<i class="fa-light fa-moon"></i>
+						<i class="fa-light fa-moon" aria-hidden="true" role="img"></i>
 						24/7 study
 					</span>
 				</li>
@@ -51,7 +51,7 @@ get_header( 'v2' ); ?>
 					<span class="library-name"><a class="link-no-underline" href="/rotch">Rotch Library</a></span>
 					<span class="library-hours"><span data-location-hours="Rotch Library"></span></span>
 					<span class="library-study">
-						<i class="fa-light fa-moon"></i>
+						<i class="fa-light fa-moon" aria-hidden="true" role="img"></i>
 						24/7 study
 					</span>
 				</li>				
@@ -59,7 +59,7 @@ get_header( 'v2' ); ?>
 					<span class="library-name"><a class="link-no-underline" href="/barker">Barker Library</a></span>
 					<span class="library-hours"><span data-location-hours="Barker Library"></span></span>
 					<span class="library-study">
-						<i class="fa-light fa-moon"></i>
+						<i class="fa-light fa-moon" aria-hidden="true" role="img"></i>
 						24/7 study
 					</span>
 				</li>
@@ -78,28 +78,28 @@ get_header( 'v2' ); ?>
 			<div class="box-wrapper">
 			<div class="option-boxes">
 				<div>
-					<i class="fa-light fa-lightbulb" aria-hidden="true"></i>
+					<i class="fa-light fa-lightbulb" aria-hidden="true" role="img"></i>
 					<div class="option-box-content">
 						<h3><a href="/study">Find a study space</a></h3>
 						<p>Quiet and group spaces—many available 24/7</p>
 					</div>
 				</div>
 				<div>
-					<i class="fa-light fa-file-alt" aria-hidden="true"></i>
+					<i class="fa-light fa-file-alt" aria-hidden="true" role="img"></i>
 					<div class="option-box-content">
 						<h3><a href="/get-materials">Get materials</a></h3>
 						<p>Learn how to find, request and get the materials you need</p>
 					</div>
 				</div>
 				<div>
-					<i class="fa-light fa-book" aria-hidden="true"></i>
+					<i class="fa-light fa-book" aria-hidden="true" role="img"></i>
 					<div class="option-box-content">
 						<h3><a href="/experts">Discover subject guides &amp; librarians</a></h3>
 						<p>Resources and expertise for every research interest</p>
 					</div>
 				</div>
 				<div>
-					<i class="fa-light fa-database" aria-hidden="true"></i>
+					<i class="fa-light fa-database" aria-hidden="true" role="img"></i>
 					<div class="option-box-content">
 						<h3><a href="/data-services">Find and manage data</a></h3>
 						<p>Get support from creating and visualizing to using and sharing data</p>
@@ -107,7 +107,7 @@ get_header( 'v2' ); ?>
 				</div>												
 			</div>
 			<div class="ask-us-box">
-					<i class="fa-light fa-messages-question"></i>
+					<i class="fa-light fa-messages-question" aria-hidden="true" role="img"></i>
 					<div class="option-box-content">
 						<h3>Ask Us</h3>
 						<p>Get help via email, chat and consultations</p>
@@ -135,7 +135,7 @@ get_header( 'v2' ); ?>
 					</article>					
 					<article class="featured-item side-by-side">
 						<span class="item-type spotlight">Spotlight</span>
-						<img src="https://d2jv02qf7xgjwx.cloudfront.net/accounts/353/images/smbrown1-100x100.jpg" />
+						<img src="https://d2jv02qf7xgjwx.cloudfront.net/accounts/353/images/smbrown1-100x100.jpg" alt="Headshot of Sabrina Brown" />
 						<div class="featured-item-content">
 							<hgroup>
 								<h3><a href="https://libguides.mit.edu/profiles/smbrown1">Sabrina Brown</a></h3>
@@ -203,8 +203,8 @@ get_header( 'v2' ); ?>
 						<h3><a href="https://calendar.mit.edu/event/carpentriesmit-introduction-to-programming-with-python">Carpentries@MIT Introduction to Programming with Python</a></h3>
 						<p>A beginner-friendly workshop combining short tutorials with hands-on exercises</p>
 						<div class="event-metadata">
-							<span class="event-time"><i class="fa-light fa-clock"></i>10:00 am &#150; 4:00 pm</span>
-							<span class="event-location"><i class="fa-light fa-map-pin"></i>Virtual Event</span>
+							<span class="event-time"><i class="fa-light fa-clock" role="img" aria-label="Event time"></i>10:00 am &#150; 4:00 pm</span>
+							<span class="event-location"><i class="fa-light fa-map-pin" role="img" aria-label="Event location"></i>Virtual Event</span>
 						</div>		
 					</div>			
 				</div>
@@ -217,8 +217,8 @@ get_header( 'v2' ); ?>
 						<h3><a href="https://calendar.mit.edu/event/mit-libraries-resources-and-services-for-graduate-students-6074">MIT Libraries: Resources and Services for Graduate Students</a></h3>
 						<p>How to find the information and data you'll need</p>
 						<div class="event-metadata">
-							<span class="event-time"><i class="fa-light fa-clock"></i>10:45 &#150; 11:45 am</span>
-							<span class="event-location"><i class="fa-light fa-map-pin"></i>Building 14, S-130 (The Nexus)</span>
+							<span class="event-time"><i class="fa-light fa-clock" role="img" aria-label="Event time"></i>10:45 &#150; 11:45 am</span>
+							<span class="event-location"><i class="fa-light fa-map-pin" role="img" aria-label="Event location"></i>Building 14, S-130 (The Nexus)</span>
 						</div>		
 					</div>			
 				</div>
