@@ -379,6 +379,11 @@ section#todays-hours {
             font-weight: var(--font-weight-bold);
           }
         }
+
+        span.library-hours {
+          width: 80px;
+        }
+
       }
 
       li.hour-lewis, li.hour-barker {
