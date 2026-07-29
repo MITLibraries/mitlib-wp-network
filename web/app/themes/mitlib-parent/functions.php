@@ -171,13 +171,13 @@ function setup_scripts_styles() {
 
 	wp_register_style( 'super-admin', get_template_directory_uri() . '/css/super-admin.css', array(), $theme_version, false );
 
-	wp_register_style( 'v2', get_template_directory_uri() . '/css/v2/v2.css', array(), $theme_version );
-
-
 	wp_register_style( 'adobe-fonts', '//use.typekit.net/ixd2vgq.css', array(), $theme_version );
 
 	wp_register_style( 'fontawesome', '//cdn.libraries.mit.edu/files/fontawesome/7.1.0/css/all.min.css', array(), $theme_version );
 
+	wp_register_style( 'v2', get_template_directory_uri() . '/css/v2/v2.css', array('fontawesome'), $theme_version );
+
+	
 	/**
 	 * Register javascript.
 	 */
@@ -265,7 +265,6 @@ function setup_scripts_styles() {
 	// Conditonally load v2 styles for only pages with the v2 header
 	if (is_page_template( 'templates/page-home-v2.php' )) {
 		wp_enqueue_style( 'v2' );
-		wp_enqueue_style( 'fontawesome' );
 		wp_enqueue_script( 'moment' );
 		wp_enqueue_script( 'underscore' );
 		wp_enqueue_script( 'hours-loader-theme' );
