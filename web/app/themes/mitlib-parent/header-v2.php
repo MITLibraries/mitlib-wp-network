@@ -55,7 +55,6 @@ if ( 'slim' === get_option( 'menu_style_setting' ) ) {
 					<?php get_template_part( 'inc/liblogo' ); ?>
 				</div>
 				<div class="header-right">
-						<?php get_template_part( 'inc/search', 'main' ); ?>
 					<?php if ( 'full' === $menu ) { ?>
 						<?php get_template_part( 'inc/nav', 'main' ); ?>
 					<?php } ?>
