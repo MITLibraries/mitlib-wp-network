@@ -7,6 +7,7 @@
     <!-- Exclude non-security sniffs -->
     <exclude name="Generic" />
     <exclude name="Modernize" />
+    <exclude name="NormalizedArrays" />
     <exclude name="PEAR" />
     <exclude name="PSR2" />
     <exclude name="Squiz" />
