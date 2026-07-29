@@ -1,10 +1,7 @@
 <?php
-/*
- * Template Name: Header V2
- */
 /**
  *
- * Updated header template originating during the homepage redesign project.
+ * Updated header template originating during the homepage redesign project in 2026.
  * 
  * @package MITlib_Parent
  * @since 0.0.1

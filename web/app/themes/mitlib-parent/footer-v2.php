@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying the footer.
+ * Updated footer template originating during the homepage redesign project in 2026.
  *
  * @package MITlib_Parent
  * @since 0.0.1
