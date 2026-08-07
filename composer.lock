@@ -1906,7 +1906,7 @@
         },
         {
             "name": "roots/wordpress",
-            "version": "6.8.6",
+            "version": "6.8.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/roots/wordpress.git",
@@ -2016,23 +2016,23 @@
         },
         {
             "name": "roots/wordpress-no-content",
-            "version": "6.8.6",
+            "version": "6.8.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WordPress/WordPress.git",
-                "reference": "6.8.6"
+                "reference": "6.8.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.w.org/release/wordpress-6.8.6-no-content.zip",
-                "reference": "6.8.6",
-                "shasum": "071228f38e95a0fa8056ea8262fda338783256f9"
+                "url": "https://downloads.w.org/release/wordpress-6.8.7-no-content.zip",
+                "reference": "6.8.7",
+                "shasum": "1eda95cc516375ca3c106cf056ef16550f642676"
             },
             "require": {
                 "php": ">= 7.2.24"
             },
             "provide": {
-                "wordpress/core-implementation": "6.8.6"
+                "wordpress/core-implementation": "6.8.7"
             },
             "suggest": {
                 "ext-curl": "Performs remote request operations.",
@@ -2083,7 +2083,7 @@
                     "type": "other"
                 }
             ],
-            "time": "2026-07-17T18:39:01+00:00"
+            "time": "2026-08-06T21:41:47+00:00"
         },
         {
             "name": "roots/wp-config",
