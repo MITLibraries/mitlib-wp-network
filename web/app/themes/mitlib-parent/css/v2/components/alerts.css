@@ -1,0 +1,121 @@
+#global-alert, #local-alerts {
+  background-color: var(--color-alert-bg);
+  color: var(--color-text-primary);
+
+  padding-top: var(--sp-400);
+  padding-bottom: var(--sp-400);
+
+  .content-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  h2 {
+    font-size: var(--font-size-lg);
+    margin-bottom: 0;
+  }
+}
+
+#global-alert {
+  position: relative;
+
+  .content-wrapper {
+    gap: var(--sp-400);
+  }
+
+  .global-alert-message {
+    display: flex;
+    gap: var(--sp-200);
+    flex-grow: 1;
+    
+    i {
+      margin-top: var(--sp-100);
+      flex-shrink: 0;
+      flex-grow: 0;
+    }
+
+    p {
+      font-size: var(--font-size-md);
+      font-weight: var(--font-weight-regular);
+      margin-bottom: 0 !important; /* Overriding global style from old theme */
+    }
+
+    a {
+      text-decoration-color: var(--color-yellow-800);
+
+      &:hover {
+        color: var(--color-text-primary);
+        text-decoration-color: var(--color-text-primary);
+      }
+    }
+  }
+
+  .global-alert-actions {
+    display: flex;
+    gap: var(--sp-600);
+    align-items: center;
+    padding-left: var(--sp-700);
+
+    @media only screen and (max-width: 1324px) {
+      padding-right: var(--sp-800);
+    }
+  }
+
+  .dismiss {
+    position: absolute;
+    top: 50%;
+    right: var(--sp-600);    
+    transform: translateY(-50%);
+    padding-left: var(--sp-400);
+
+     i {
+      font-size: var(--font-size-xl);
+      color: var(--color-yellow-800);
+    }
+
+    &:hover, &:hover i {
+      color: var(--color-text-primary);
+    }
+  }
+}
+
+#local-alerts {
+
+  .content-wrapper {
+    gap: var(--sp-200);
+    flex-wrap: nowrap;
+    align-items: start;
+  }
+
+  i {
+    margin-top: var(--sp-100);
+    flex-shrink: 0;
+    flex-grow: 0;    
+  }
+
+  .local-alert-message {
+    display: flex;
+    flex-direction: row;
+    gap: var(--sp-100);
+    flex-grow: 1;
+    align-items: center;
+    flex-wrap: wrap;
+
+    h2, p {
+    margin-bottom: 0 !important; /* Overriding global style from old theme */
+    }
+
+    h2 {
+      flex-shrink: 0;
+      flex-grow: 0;
+      margin-right: var(--sp-400);
+    }
+
+    p {
+      flex-grow: 1;
+    }
+  }
+
+}
