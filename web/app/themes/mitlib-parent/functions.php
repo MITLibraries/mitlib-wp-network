@@ -139,6 +139,8 @@ function override_cache_default_max_age() {
 		return 1 * HOUR_IN_SECONDS;
 	} elseif ( '/exhibits' == $site && is_page( 'current-upcoming-past-exhibits' ) ) { // The exhibits site composite listing.
 		return 1 * HOUR_IN_SECONDS;
+	} elseif ( is_page_template( 'templates/page-location.php' ) || is_page_template( 'templates/page-location-2021.php' ) ) {
+		return 1 * HOUR_IN_SECONDS;
 	} else { // All other content should be cached for a week.
 		return 1 * WEEK_IN_SECONDS;
 	}
