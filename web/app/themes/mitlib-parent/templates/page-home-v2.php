@@ -87,15 +87,15 @@ get_header( 'v2' ); ?>
 				<div>
 					<i class="fa-light fa-file-alt" aria-hidden="true" role="img"></i>
 					<div class="option-box-content">
-						<h3><a href="/get-materials">Get materials</a></h3>
-						<p>Learn how to find, request and get the materials you need</p>
+						<h3><a href="/get-materials">Learn how to get materials</a></h3>
+						<p>Find, request and get articles, books, and more</p>
 					</div>
 				</div>
 				<div>
 					<i class="fa-light fa-book" aria-hidden="true" role="img"></i>
 					<div class="option-box-content">
-						<h3><a href="/experts">Discover subject guides &amp; librarians</a></h3>
-						<p>Resources and expertise for every research interest</p>
+						<h3><a href="/experts">Discover guides &amp; librarians</a></h3>
+						<p>Resource and class guides with experts for every subject</p>
 					</div>
 				</div>
 				<div>
@@ -110,7 +110,7 @@ get_header( 'v2' ); ?>
 					<i class="fa-light fa-messages-question" aria-hidden="true" role="img"></i>
 					<div class="option-box-content">
 						<h3>Ask Us</h3>
-						<p>Get help via email, chat and consultations</p>
+						<p>Get help via email, live chat with staff, and appointments</p>
 						<div class="ask-us-links">
 							<div id="libchat_fa6edc50fe81603743870ca1772bc5b2e7e121436b62ba7da331b9dcabf289c0"></div>
 							<a href="/ask">All help options</a>						
@@ -190,7 +190,7 @@ get_header( 'v2' ); ?>
 				<div class="events-header">
 					<div class="events-header-title-paragraph">
 					<h2>Events &amp; Workshops</h2>
-					<p>We regularly run classes, workshops, and speaker events</p>
+					<p>Featured classes, workshops, and speakers events.</p>
 					</div>
 					<a class="button secondary" href="https://libraries.mit.edu/news/events/">See all events</a>
 				</div>
