@@ -148,15 +148,15 @@ get_header( 'v2' ); ?>
 						</div>
 					</article>
 					<article class="featured-item side-by-side">
-						<span class="item-type spotlight">Spotlight</span>
-						<img src="https://libraries.mit.edu/app/uploads/2026/07/YpeVtugQ.png" alt="A black book cover featuring light blue type reads “National Bestseller, Ted Chiang, Exhalation, Stories, By the author of Stories of Your Life and Others.”"/>
+						<span class="item-type news">News</span>
+						<img src="https://libraries.mit.edu/app/uploads/sites/4/2026/06/Rotch_Ext-Night-Hzntl-624x483.jpg" alt="The exterior of Rotch Library at dusk bathed in purple light. Book stacks are visible on multiple floors through the windows."/>
 						<div class="featured-item-content">
 							<hgroup>
-								<h3><a href="https://libraries.mit.edu/mit-reads/">MIT Reads: <em>Exhalation</em></a></h3>
-								<p>Ted Chiang's science fiction story collection selected by President Sally Kornbluth</p>
+								<h3><a href="https://libraries.mit.edu/news/future-of-rotch-library-begins-to-take-shape/44423/">Future of Rotch Library begins to take shape</a></h3>
+								<p>Reimagining spaces for teaching, studying, and data services</p>
 							</hgroup>
 						</div>
-					</article>
+					</article>						
 					<article class="featured-item">
 						<span class="item-type service">Service</span>
 						<div class="featured-item-content">
@@ -167,14 +167,14 @@ get_header( 'v2' ); ?>
 						</div>
 					</article>
 					<article class="featured-item">
-						<span class="item-type news">News</span>
+						<span class="item-type spotlight">Spotlight</span>
 						<div class="featured-item-content">
 							<hgroup>
-								<h3><a href="https://libraries.mit.edu/news/future-of-rotch-library-begins-to-take-shape/44423/">Future of Rotch Library begins to take shape</a></h3>
-								<p>Reimagining spaces for teaching, studying, and data services</p>
+								<h3><a href="https://libraries.mit.edu/mit-reads/">MIT Reads: <em>Exhalation</em></a></h3>
+								<p>Ted Chiang's science fiction story collection selected by President Sally Kornbluth</p>
 							</hgroup>
 						</div>
-					</article>																		
+					</article>																	
 					<article class="featured-item">
 						<span class="item-type resource">Resource</span>
 						<div class="featured-item-content">
