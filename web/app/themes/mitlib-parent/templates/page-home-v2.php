@@ -74,7 +74,7 @@ get_header( 'v2' ); ?>
 	</section>	
 	<section id="using-the-libraries">
 		<div class="content-wrapper">
-			<h2>This is a content test</h2>
+			<h2>Using the Libraries</h2>
 			<div class="box-wrapper">
 			<div class="option-boxes">
 				<div>
