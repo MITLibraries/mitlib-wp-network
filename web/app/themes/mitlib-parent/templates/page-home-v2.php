@@ -167,11 +167,11 @@ get_header( 'v2' ); ?>
 						</div>
 					</article>
 					<article class="featured-item">
-						<span class="item-type spotlight">Spotlight</span>
+						<span class="item-type service">Service</span>
 						<div class="featured-item-content">
 							<hgroup>
-								<h3><a href="https://libraries.mit.edu/mit-reads/">MIT Reads: <em>Exhalation</em></a></h3>
-								<p>Ted Chiang's science fiction story collection selected by President Sally Kornbluth</p>
+								<h3><a href="hhttps://libraries.mit.edu/scholarly/">Learn about your options and rights in scholarly publishing</a></h3>
+								<p>Including open access, copyright, and research funder requirements</p>
 							</hgroup>
 						</div>
 					</article>																	
