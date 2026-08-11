@@ -50,7 +50,7 @@ body.v2-page {
   }
 
   .hero-content {
-    max-width: 800px;
+    max-width: 860px;
   }
 
     /* Styling for hero image credit */
@@ -131,6 +131,7 @@ body.v2-page {
         width: 100%;
         padding-left: 46px;
         padding-right: 48px;
+        text-overflow: ellipsis;
 
         &::placeholder {
           font-weight: var(--font-weight-regular);
