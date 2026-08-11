@@ -87,15 +87,15 @@ get_header( 'v2' ); ?>
 				<div>
 					<i class="fa-light fa-file-alt" aria-hidden="true" role="img"></i>
 					<div class="option-box-content">
-						<h3><a href="/get-materials">Get materials</a></h3>
-						<p>Learn how to find, request and get the materials you need</p>
+						<h3><a href="/get-materials">Learn how to get materials</a></h3>
+						<p>Find, request and get articles, books, and more</p>
 					</div>
 				</div>
 				<div>
 					<i class="fa-light fa-book" aria-hidden="true" role="img"></i>
 					<div class="option-box-content">
-						<h3><a href="/experts">Discover subject guides &amp; librarians</a></h3>
-						<p>Resources and expertise for every research interest</p>
+						<h3><a href="/experts">Discover guides &amp; librarians</a></h3>
+						<p>Resource and class guides with experts for every subject</p>
 					</div>
 				</div>
 				<div>
@@ -110,7 +110,7 @@ get_header( 'v2' ); ?>
 					<i class="fa-light fa-messages-question" aria-hidden="true" role="img"></i>
 					<div class="option-box-content">
 						<h3>Ask Us</h3>
-						<p>Get help via email, chat and consultations</p>
+						<p>Get help via email, live chat with staff, and appointments</p>
 						<div class="ask-us-links">
 							<div id="libchat_fa6edc50fe81603743870ca1772bc5b2e7e121436b62ba7da331b9dcabf289c0"></div>
 							<a href="/ask">All help options</a>						
@@ -148,15 +148,15 @@ get_header( 'v2' ); ?>
 						</div>
 					</article>
 					<article class="featured-item side-by-side">
-						<span class="item-type spotlight">Spotlight</span>
-						<img src="https://libraries.mit.edu/app/uploads/2026/07/YpeVtugQ.png" alt="A black book cover featuring light blue type reads “National Bestseller, Ted Chiang, Exhalation, Stories, By the author of Stories of Your Life and Others.”"/>
+						<span class="item-type news">News</span>
+						<img src="https://libraries.mit.edu/app/uploads/sites/4/2026/06/Rotch_Ext-Night-Hzntl-624x483.jpg" alt="The exterior of Rotch Library at dusk bathed in purple light. Book stacks are visible on multiple floors through the windows."/>
 						<div class="featured-item-content">
 							<hgroup>
-								<h3><a href="https://libraries.mit.edu/mit-reads/">MIT Reads: <em>Exhalation</em></a></h3>
-								<p>Ted Chiang's science fiction story collection selected by President Sally Kornbluth</p>
+								<h3><a href="https://libraries.mit.edu/news/future-of-rotch-library-begins-to-take-shape/44423/">Future of Rotch Library begins to take shape</a></h3>
+								<p>Reimagining spaces for teaching, studying, and data services</p>
 							</hgroup>
 						</div>
-					</article>
+					</article>						
 					<article class="featured-item">
 						<span class="item-type service">Service</span>
 						<div class="featured-item-content">
@@ -167,14 +167,14 @@ get_header( 'v2' ); ?>
 						</div>
 					</article>
 					<article class="featured-item">
-						<span class="item-type news">News</span>
+						<span class="item-type service">Service</span>
 						<div class="featured-item-content">
 							<hgroup>
-								<h3><a href="https://libraries.mit.edu/news/future-of-rotch-library-begins-to-take-shape/44423/">Future of Rotch Library begins to take shape</a></h3>
-								<p>Reimagining spaces for teaching, studying, and data services</p>
+								<h3><a href="https://libraries.mit.edu/scholarly/">Learn about your options and rights in scholarly publishing</a></h3>
+								<p>Including open access, copyright, and research funder requirements</p>
 							</hgroup>
 						</div>
-					</article>																		
+					</article>																	
 					<article class="featured-item">
 						<span class="item-type resource">Resource</span>
 						<div class="featured-item-content">
@@ -190,7 +190,7 @@ get_header( 'v2' ); ?>
 				<div class="events-header">
 					<div class="events-header-title-paragraph">
 					<h2>Events &amp; Workshops</h2>
-					<p>We regularly run classes, workshops, and speaker events</p>
+					<p>Featured classes, workshops, and speakers events.</p>
 					</div>
 					<a class="button secondary" href="https://libraries.mit.edu/news/events/">See all events</a>
 				</div>

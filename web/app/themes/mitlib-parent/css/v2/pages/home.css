@@ -131,6 +131,12 @@ body.v2-page {
         width: 100%;
         padding-left: 46px;
         padding-right: 48px;
+        text-overflow: ellipsis;
+
+        &::placeholder {
+          font-weight: var(--font-weight-regular);
+          color: var(--color-text-disabled);
+        }
       }
 
       #clear-search {

@@ -1,6 +1,7 @@
 <?php
 /**
  * The "Unified Search" of the search tab for all content - which will search "Search MIT Libraries" (USE).
+ * This version is designed to trim away surrounding markup so it can be embedded on the new homepage hero. 
  *
  * @package Multisearch Widget
  * @since 1.5.0
@@ -9,11 +10,11 @@
 ?>
 <!-- nls state: _<?php echo esc_attr( $nls_enabled ); ?>_ -->
 <form id="search-form" action="https://search.libraries.mit.edu/results" method="get" role="search">
-	<label for="basic-search-main">What can we help you find?</label>
+	<label for="basic-search-main">Search for books, articles, library services, and more</label>
 	<div class="form-wrapper">
 		<div class="search-input-wrapper">
 			<i class="fa-regular fa-magnifying-glass"></i>
-			<input id="basic-search-main" type="search" class="field field-text basic-search-input" name="q" title="Keyword anywhere" value="" required="">
+			<input id="basic-search-main" placeholder="Try a citation, topic, database, etc." type="search" class="field field-text basic-search-input" name="q" title="Keyword anywhere" value="" required="">
 			<button title="Clear search" aria-label="Clear search" type="button" id="clear-search" style="display: none;">Clear search</button>
 		</div>
 		<input id="tab-to-target" type="hidden" name="tab" value="all">
