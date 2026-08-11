@@ -170,7 +170,7 @@ get_header( 'v2' ); ?>
 						<span class="item-type service">Service</span>
 						<div class="featured-item-content">
 							<hgroup>
-								<h3><a href="hhttps://libraries.mit.edu/scholarly/">Learn about your options and rights in scholarly publishing</a></h3>
+								<h3><a href="https://libraries.mit.edu/scholarly/">Learn about your options and rights in scholarly publishing</a></h3>
 								<p>Including open access, copyright, and research funder requirements</p>
 							</hgroup>
 						</div>
