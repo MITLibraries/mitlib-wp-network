@@ -21,6 +21,8 @@
 #global-alert {
   position: relative;
 
+  &.hidden {display: none;}
+
   .content-wrapper {
     gap: var(--sp-400);
   }

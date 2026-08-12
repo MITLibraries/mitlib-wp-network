@@ -1,3 +1,6 @@
+// Check to see if the current page is a v2 page. If it is, we'll use v2 alert markup and load a v2 close button in the respective functions. If not, we'll use v1.
+var isV2page = document.body.classList.contains('v2-page');
+
 // Loads alert-level posts on the top of all pages
 function filterAlerts(posts) {
 	// This processes an array of posts for valid, confirmed, alerts
@@ -56,12 +59,26 @@ function renderAlert(markup,id) {
 }
 
 function setClosable(alert_ID) {
-	// Add a Close icon/svg/button
-	$('.posts--preview--alerts .post').append('<a href="#0" id="close" class="action-close"><span class="sr">Dismiss</span><i class="fa fa-circle-xmark" aria-hidden="true"></i></a>');
-	// On click
+	// Add a Close button. We use v2 markup only for pages that are v2 pages. Otherwise, we'll use v1 markup.
+	if(isV2page) { 
+		// v2 close button markup
+		$('#global-alert').append('<a id="close" href="#" class="dismiss"><i class="fa-sharp fa-light fa-xmark"></i></a>');
+	} else {
+		// v1 close button markup
+		$('.posts--preview--alerts .post').append('<a href="#0" id="close" class="action-close"><span class="sr">Dismiss</span><i class="fa fa-circle-xmark" aria-hidden="true"></i></a>');
+	}
+
+	// On click of the link with the close id
 	$('#close').click(function(){
-		// Add the necessary transition hide class
-		$(this).closest('.posts--preview--alerts').addClass('transition-vertical--hide');
+		
+		// Apply relevant logic based on v1 or v2 alert. Add relevant class to hide the alert.
+		if(isV2page) { 
+			// v2
+			$(this).closest('#global-alert').addClass('hidden');
+		} else {
+			// v1
+			$(this).closest('.posts--preview--alerts').addClass('transition-vertical--hide');
+		}
 		// Bump the hours calendar down, if it is present.
 		moveCalendar(-152);
 		// If localStorage
@@ -92,15 +109,32 @@ function showAlerts(json) {
 		// Check for empty title
 		alert_title = ('' === alert_posts_arr[i].title.rendered) ? 'Alert!' : alert_posts_arr[i].title.rendered;
 
-		// Alert HTML template
-		alert_template = '<div class="posts--preview--alerts transition-vertical transition-vertical--hide">' +
-			'<div class="post alert--critical flex-container">' +
-				'<i class="fa fa-circle-exclamation" aria-hidden="true"></i>' +
-				'<div class="content-post alertText">' +
-					'<h3>' + alert_title + '</h3> ' + alert_posts_arr[i].content.rendered +
+		// If this is a v2 page, use the v2 alert markup. Otherwise, use the v1 markup.
+		if (isV2page) {
+			// Alert HTML template (v2)
+			alert_template = '<section id="global-alert">' + 
+				'<div class="content-wrapper">' + 
+					'<div class="global-alert-message">' + 
+						'<i class="fa-solid fa-triangle-exclamation"></i>' +
+						'<header>' +
+							'<h2>' + alert_title + '</h2>' +
+							'<p>' + alert_posts_arr[i].content.rendered + '</p>' +
+						'</header>' +
+					'</div>' +
+				'</div>'
+			'</section>';						
+
+		} else {
+			// Alert HTML template (v1)
+			alert_template = '<div class="posts--preview--alerts transition-vertical transition-vertical--hide">' +
+				'<div class="post alert--critical flex-container">' +
+					'<i class="fa fa-circle-exclamation" aria-hidden="true"></i>' +
+					'<div class="content-post alertText">' +
+						'<h3>' + alert_title + '</h3> ' + alert_posts_arr[i].content.rendered +
+					'</div>' +
 				'</div>' +
-			'</div>' +
-		'</div>';
+			'</div>';
+		}
 
 		renderAlert(alert_template,alert_ID);
 
