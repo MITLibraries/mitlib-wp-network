@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ad12b68caa4cbca755b590c98898fa06",
+    "content-hash": "6e9de2a03ec2353ebe946ee1feae3f49",
     "packages": [
         {
             "name": "ConnectThink/WP-SCSS",
@@ -4645,7 +4645,7 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=7.4"
+        "php": ">=8.4"
     },
     "platform-dev": {},
     "plugin-api-version": "2.6.0"
