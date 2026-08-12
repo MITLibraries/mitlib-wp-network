@@ -11,7 +11,7 @@ php_version: 8.2
 
 # See https://pantheon.io/docs/pantheon-yml#specify-a-version-of-mariadb
 database:
-  version: 10.4
+  version: 10.6
 
 build_step: true
 
