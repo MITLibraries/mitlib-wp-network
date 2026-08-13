@@ -730,10 +730,22 @@ section#todays-hours {
         }
 
         .event-day {
-          padding: var(--sp-200) var(--sp-300);
+          padding: 0 var(--sp-300) 0;
           font-size: var(--font-size-2xl);
           font-weight: var(--font-weight-bold);
+          border-bottom: 1px solid var(--color-gray-300);
+          width: 100%;
+          text-align: center;
         }
+
+        .event-weekday {
+          padding: var(--sp-100) 0;
+          text-transform: uppercase;
+          font-size: var(--font-size-xs);
+          font-weight: var(--font-weight-medium);
+          letter-spacing: 0.05em;          
+        }
+
       }
     }
   }
