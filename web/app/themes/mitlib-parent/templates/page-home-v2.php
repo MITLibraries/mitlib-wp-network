@@ -195,14 +195,18 @@ get_header( 'v2' ); ?>
 					<a class="button secondary" href="https://libraries.mit.edu/news/events/">See all events</a>
 				</div>
 
-				<?php 
-					// Get the News Site blog ID
+				<?php
+					/* 
+					*  EVENTS LOGIC
+					*  This logic pulls the next two upcoming events from the News site and displays them on the homepage.
+					*  This respects the "Featured on homepage" radio button, making sure those posts are prioritized.
+					*/
+				
+					// Switch to the News site (blog 4) to query event posts.
 					$news_site_id = 4;
-
-					// Switch to the News Site
 					switch_to_blog( $news_site_id );
 
-					// Get today's date in the format ACF uses
+					// Query upcoming posts that have an event_date, sorted soonest-first.
 					$today = date( 'Ymd' );
 
 					$events_args = array(
@@ -212,11 +216,11 @@ get_header( 'v2' ); ?>
 						'orderby'             => 'meta_value',
 						'meta_key'            => 'event_date',
 						'order'               => 'ASC',
-						'ignore_sticky_posts' => 1,
+						'ignore_sticky_posts' => 1, // Exclude sticky news posts
 						'meta_query'          => array(
 							array(
-								'key'     => 'event_date',
-								'value'   => $today,
+								'key'     => 'event_date', // Checks for the "Is event" checkbox being true
+								'value'   => $today, // Ensures that the event date is today or later
 								'compare' => '>=',
 							),
 						),
@@ -224,7 +228,7 @@ get_header( 'v2' ); ?>
 
 					$events_query = new \WP_Query( $events_args );
 
-					// Separate upcoming events into featured and non-featured
+					// Loop through results, filter to is_event posts, and bucket into featured vs regular.
 					$featured_events = array();
 					$regular_events  = array();
 
@@ -233,15 +237,18 @@ get_header( 'v2' ); ?>
 							$events_query->the_post();
 							$custom = get_post_custom();
 
+							// Skip non-event posts (is_event checkbox unchecked).
 							if ( ! isset( $custom['is_event'][0] ) || $custom['is_event'][0] !== '1' ) {
 								continue;
 							}
 
+							// Skip events with no date or a past date.
 							$event_date_raw = isset( $custom['event_date'][0] ) ? $custom['event_date'][0] : '';
 							if ( ! $event_date_raw || $event_date_raw < $today ) {
 								continue;
 							}
 
+							// Build event data array, preferring homepage overrides for title and URL.
 							$event_data = array(
 								'title'      => ! empty( $custom['homepage_post_title'][0] ) ? $custom['homepage_post_title'][0] : get_the_title(),
 								'url'        => ! empty( $custom['calendar_url'][0] ) ? $custom['calendar_url'][0] : get_the_permalink(),
@@ -250,6 +257,7 @@ get_header( 'v2' ); ?>
 								'end_time'   => isset( $custom['event_end_time'][0] ) ? $custom['event_end_time'][0] : '',										'location'   => isset( $custom['event_location'][0] ) ? $custom['event_location'][0] : '',								'excerpt'    => get_the_excerpt(),
 							);
 
+							// Bucket into featured (featuredArticle = True) vs regular.
 							if ( ! empty( $custom['featuredArticle'][0] ) && $custom['featuredArticle'][0] === 'True' ) {
 								$featured_events[] = $event_data;
 							} else {
@@ -259,7 +267,7 @@ get_header( 'v2' ); ?>
 						wp_reset_postdata();
 					endif;
 
-					// Pick display set: featured priority, fill with regular
+					// Pick 2 events to display: prefer featured, backfill with regular, keep date order.
 					if ( count( $featured_events ) >= 2 ) {
 						$display_events = array_slice( $featured_events, 0, 2 );
 					} elseif ( count( $featured_events ) === 1 ) {
@@ -271,6 +279,7 @@ get_header( 'v2' ); ?>
 						$display_events = array_slice( $regular_events, 0, 2 );
 					}
 
+					// Render each event card with date, title, excerpt, time, and location.
 					foreach ( $display_events as $event ) :
 						$event_dt = \DateTime::createFromFormat( 'Ymd', $event['event_date'] );
 						$event_month = $event_dt ? $event_dt->format( 'M' ) : '';
@@ -308,7 +317,7 @@ get_header( 'v2' ); ?>
 						<?php
 					endforeach;
 
-					restore_current_blog();
+					restore_current_blog(); // returns from the News site to current for future queries
 				?>
 			</div>			
 		</div>
