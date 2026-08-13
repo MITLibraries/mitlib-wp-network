@@ -101,6 +101,33 @@
             "maxlength": 8
         },
         {
+            "key": "field_66bc0a1e2f4d1",
+            "label": "Event Location",
+            "name": "event_location",
+            "type": "text",
+            "instructions": "Enter the event location.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_53ecc2067d32f",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_5a2a9ca90a81c",
             "label": "Calendar URL",
             "name": "calendar_url",

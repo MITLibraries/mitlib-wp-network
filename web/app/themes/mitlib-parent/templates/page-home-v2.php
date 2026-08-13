@@ -247,8 +247,7 @@ get_header( 'v2' ); ?>
 								'url'        => ! empty( $custom['calendar_url'][0] ) ? $custom['calendar_url'][0] : get_the_permalink(),
 								'event_date' => $event_date_raw,
 								'start_time' => isset( $custom['event_start_time'][0] ) ? $custom['event_start_time'][0] : '',
-								'end_time'   => isset( $custom['event_end_time'][0] ) ? $custom['event_end_time'][0] : '',
-								'excerpt'    => get_the_excerpt(),
+								'end_time'   => isset( $custom['event_end_time'][0] ) ? $custom['event_end_time'][0] : '',										'location'   => isset( $custom['event_location'][0] ) ? $custom['event_location'][0] : '',								'excerpt'    => get_the_excerpt(),
 							);
 
 							if ( ! empty( $custom['featuredArticle'][0] ) && $custom['featuredArticle'][0] === 'True' ) {
@@ -294,9 +293,14 @@ get_header( 'v2' ); ?>
 							<div class="event-details">
 								<h3><a href="<?php echo esc_url( $event['url'] ); ?>"><?php echo esc_html( $event['title'] ); ?></a></h3>
 								<p><?php echo esc_html( $event['excerpt'] ); ?></p>
-								<?php if ( $time_display ) : ?>
+								<?php if ( $time_display || $event['location'] ) : ?>
 								<div class="event-metadata">
+									<?php if ( $time_display ) : ?>
 									<span class="event-time"><i class="fa-light fa-clock" role="img" aria-label="Event time"></i><?php echo $time_display; ?></span>
+									<?php endif; ?>
+									<?php if ( $event['location'] ) : ?>
+									<span class="event-location"><i class="fa-light fa-map-pin" role="img" aria-label="Event location"></i><?php echo esc_html( $event['location'] ); ?></span>
+									<?php endif; ?>
 								</div>
 								<?php endif; ?>
 							</div>

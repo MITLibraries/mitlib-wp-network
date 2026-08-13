@@ -135,6 +135,15 @@ class Pull_Events_Plugin {
 				if ( isset( $val['event']['photo_url'] ) ) {
 					$photo_url = $val['event']['photo_url'];
 				}
+				$event_location = '';
+				if ( ! empty( $val['event']['location_name'] ) ) {
+					$event_location = $val['event']['location_name'];
+					if ( ! empty( $val['event']['room_number'] ) ) {
+						$event_location .= ', ' . $val['event']['room_number'];
+					}
+				} elseif ( isset( $val['event']['experience'] ) && in_array( $val['event']['experience'], array( 'virtual', 'hybrid' ), true ) ) {
+					$event_location = 'Virtual Event';
+				}
 				$category = 43;  // TODO: Make this user-configurable. This is the Category ID value in the News site for the "All News" value.
 
 				if ( isset( $calendar_id ) ) {
@@ -209,6 +218,7 @@ class Pull_Events_Plugin {
 					self::wrap_update_post_meta( $post_id, 'calendar_url', $calendar_url );
 					self::wrap_update_post_meta( $post_id, 'calendar_id', $calendar_id );
 					self::wrap_update_post_meta( $post_id, 'calendar_image', $photo_url );
+					self::wrap_update_post_meta( $post_id, 'event_location', $event_location );
 
 				}
 			}
