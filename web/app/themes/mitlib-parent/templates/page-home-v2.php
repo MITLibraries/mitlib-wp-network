@@ -217,10 +217,10 @@ get_header( 'v2' ); ?>
 						'meta_key'            => 'event_date',
 						'order'               => 'ASC',
 						'ignore_sticky_posts' => 1, // Exclude sticky news posts
-						'meta_query'          => array(
+						'meta_query'          => array( // Ensures that the event date is today or later
 							array(
-								'key'     => 'event_date', // Checks for the "Is event" checkbox being true
-								'value'   => $today, // Ensures that the event date is today or later
+								'key'     => 'event_date', 
+								'value'   => $today, 
 								'compare' => '>=',
 							),
 						),
@@ -235,7 +235,7 @@ get_header( 'v2' ); ?>
 					if ( $events_query->have_posts() ) :
 						while ( $events_query->have_posts() ) :
 							$events_query->the_post();
-							$custom = get_post_custom();
+							$custom = get_post_custom(); // store custom fields for this post in an array
 
 							// Skip non-event posts (is_event checkbox unchecked).
 							if ( ! isset( $custom['is_event'][0] ) || $custom['is_event'][0] !== '1' ) {
@@ -257,8 +257,8 @@ get_header( 'v2' ); ?>
 								'end_time'   => isset( $custom['event_end_time'][0] ) ? $custom['event_end_time'][0] : '',										'location'   => isset( $custom['event_location'][0] ) ? $custom['event_location'][0] : '',								'excerpt'    => get_the_excerpt(),
 							);
 
-							// Bucket into featured (featuredArticle = True) vs regular.
-							if ( ! empty( $custom['featuredArticle'][0] ) && $custom['featuredArticle'][0] === 'True' ) {
+							// Bucket into pinned (pin_event_on_homepage) vs regular.
+							if ( ! empty( $custom['pin_event_on_homepage'][0] ) && $custom['pin_event_on_homepage'][0] === '1' ) {
 								$featured_events[] = $event_data;
 							} else {
 								$regular_events[] = $event_data;
@@ -300,7 +300,7 @@ get_header( 'v2' ); ?>
 								<span class="event-weekday"><?php echo esc_html( $event_dt ? $event_dt->format( 'D' ) : '' ); ?></span>
 							</div>
 							<div class="event-details">
-								<h3><a href="<?php echo esc_url( $event['url'] ); ?>"><?php echo esc_html( $event['title'] ); ?></a></h3>
+								<h3><a href="<?php echo esc_url( $event['url'] ); ?>"><?php echo esc_html( mb_strimwidth( $event['title'], 0, 75, '…' ) ); ?></a></h3>
 								<p><?php echo esc_html( $event['excerpt'] ); ?></p>
 								<?php if ( $time_display || $event['location'] ) : ?>
 								<div class="event-metadata">
