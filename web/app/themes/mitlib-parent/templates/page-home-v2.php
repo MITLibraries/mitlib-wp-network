@@ -305,7 +305,7 @@ get_header( 'v2' ); ?>
 								<?php if ( $time_display || $event['location'] ) : ?>
 								<div class="event-metadata">
 									<?php if ( $time_display ) : ?>
-									<span class="event-time"><i class="fa-light fa-clock" role="img" aria-label="Event time"></i><?php echo $time_display; ?></span>
+									<span class="event-time"><i class="fa-light fa-clock" role="img" aria-label="Event time"></i><?php echo wp_kses_post( $time_display ); ?></span>
 									<?php endif; ?>
 									<?php if ( $event['location'] ) : ?>
 									<span class="event-location"><i class="fa-light fa-map-pin" role="img" aria-label="Event location"></i><?php echo esc_html( $event['location'] ); ?></span>
