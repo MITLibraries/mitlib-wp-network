@@ -281,43 +281,60 @@ get_header( 'v2' ); ?>
 						$display_events = array_slice( $regular_events, 0, 2 );
 					}
 
-					// Render each event card with date, title, excerpt, time, and location.
-					foreach ( $display_events as $event ) :
-						$event_dt = \DateTime::createFromFormat( 'Ymd', $event['event_date'] );
-						$event_month = $event_dt ? $event_dt->format( 'M' ) : '';
-						$event_day   = $event_dt ? $event_dt->format( 'j' ) : '';
+					// Check if there are events to display. If there are, display them. If not, show the empty state.
+					if (count($display_events) > 0) {
 
-						$time_display = '';
-						if ( $event['start_time'] ) {
-							$time_display = $event['start_time'];
-							if ( $event['end_time'] ) {
-								$time_display .= ' &#150; ' . $event['end_time'];
+						// Render each event card with date, title, excerpt, time, and location.
+						foreach ( $display_events as $event ) :
+							$event_dt = \DateTime::createFromFormat( 'Ymd', $event['event_date'] );
+							$event_month = $event_dt ? $event_dt->format( 'M' ) : '';
+							$event_day   = $event_dt ? $event_dt->format( 'j' ) : '';
+
+							$time_display = '';
+							if ( $event['start_time'] ) {
+								$time_display = $event['start_time'];
+								if ( $event['end_time'] ) {
+									$time_display .= ' &#150; ' . $event['end_time'];
+								}
 							}
-						}
-						?>
-						<div class="event">
-							<div class="event-date">
-								<span class="event-month"><?php echo esc_html( $event_month ); ?></span>
-								<span class="event-day"><?php echo esc_html( $event_day ); ?></span>
-								<span class="event-weekday"><?php echo esc_html( $event_dt ? $event_dt->format( 'D' ) : '' ); ?></span>
-							</div>
-							<div class="event-details">
-								<h3><a href="<?php echo esc_url( $event['url'] ); ?>"><?php echo esc_html( mb_strimwidth( $event['title'], 0, 75, '…' ) ); ?></a></h3>
-								<p><?php echo esc_html( $event['excerpt'] ); ?></p>
-								<?php if ( $time_display || $event['location'] ) : ?>
-								<div class="event-metadata">
-									<?php if ( $time_display ) : ?>
-									<span class="event-time"><i class="fa-light fa-clock" role="img" aria-label="Event time"></i><?php echo wp_kses( $time_display, array() ); ?></span>
-									<?php endif; ?>
-									<?php if ( $event['location'] ) : ?>
-									<span class="event-location"><i class="fa-light fa-map-pin" role="img" aria-label="Event location"></i><?php echo esc_html( $event['location'] ); ?></span>
+							?>
+							
+							<div class="event">
+								<div class="event-date">
+									<span class="event-month"><?php echo esc_html( $event_month ); ?></span>
+									<span class="event-day"><?php echo esc_html( $event_day ); ?></span>
+									<span class="event-weekday"><?php echo esc_html( $event_dt ? $event_dt->format( 'D' ) : '' ); ?></span>
+								</div>
+								<div class="event-details">
+									<h3><a href="<?php echo esc_url( $event['url'] ); ?>"><?php echo esc_html( mb_strimwidth( $event['title'], 0, 75, '…' ) ); ?></a></h3>
+									<p><?php echo esc_html( $event['excerpt'] ); ?></p>
+									<?php if ( $time_display || $event['location'] ) : ?>
+									<div class="event-metadata">
+										<?php if ( $time_display ) : ?>
+										<span class="event-time"><i class="fa-light fa-clock" role="img" aria-label="Event time"></i><?php echo wp_kses( $time_display, array() ); ?></span>
+										<?php endif; ?>
+										<?php if ( $event['location'] ) : ?>
+										<span class="event-location"><i class="fa-light fa-map-pin" role="img" aria-label="Event location"></i><?php echo esc_html( $event['location'] ); ?></span>
+										<?php endif; ?>
+									</div>
 									<?php endif; ?>
 								</div>
-								<?php endif; ?>
 							</div>
+
+							<?php
+						endforeach;
+
+					} else { 
+						
+						// Render the empty state template
+						?>	
+																
+						<div class="no-events">
+							<h3>Nothing scheduled at the moment</h3>
+							<p>Check back later or <a href="/news/subscribe">sign up for our newsletter</a> to stay on top of new events.</p>
 						</div>
-						<?php
-					endforeach;
+
+					<?php }
 
 					restore_current_blog(); // returns from the News site to current for future queries
 				?>
