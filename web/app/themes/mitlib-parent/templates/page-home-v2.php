@@ -88,7 +88,7 @@ get_header( 'v2' ); ?>
 					<i class="fa-light fa-file-alt" aria-hidden="true" role="img"></i>
 					<div class="option-box-content">
 						<h3><a href="/get-materials">Learn how to get materials</a></h3>
-						<p>Find, request and get articles, books, and more</p>
+						<p>Find, request, and get articles, books, and more</p>
 					</div>
 				</div>
 				<div>
@@ -110,7 +110,7 @@ get_header( 'v2' ); ?>
 					<i class="fa-light fa-messages-question" aria-hidden="true" role="img"></i>
 					<div class="option-box-content">
 						<h3>Ask Us</h3>
-						<p>Get help via email, live chat with staff, and appointments</p>
+						<p>Get help via email, live chat with staff, and book appointments</p>
 						<div class="ask-us-links">
 							<div id="libchat_fa6edc50fe81603743870ca1772bc5b2e7e121436b62ba7da331b9dcabf289c0"></div>
 							<a href="/ask">All help options</a>						
@@ -141,7 +141,6 @@ get_header( 'v2' ); ?>
 								<h3><a href="https://libguides.mit.edu/profiles/smbrown1">Sabrina Brown</a></h3>
 								<div>
 									<p>Biosciences Librarian</p>
-									<p>Liaison, Instruction, and Reference Services</p>
 								</div>
 							</hgroup>
 							<a class="arrow-right" href="https://libguides.mit.edu/profiles/smbrown1">How can Sabrina help you?</a>
@@ -190,7 +189,7 @@ get_header( 'v2' ); ?>
 				<div class="events-header">
 					<div class="events-header-title-paragraph">
 					<h2>Events &amp; Workshops</h2>
-					<p>Featured classes, workshops, and speakers events.</p>
+					<p>Featured classes, workshops, and speaker events</p>
 					</div>
 					<a class="button secondary" href="https://libraries.mit.edu/news/events/">See all events</a>
 				</div>
@@ -281,43 +280,60 @@ get_header( 'v2' ); ?>
 						$display_events = array_slice( $regular_events, 0, 2 );
 					}
 
-					// Render each event card with date, title, excerpt, time, and location.
-					foreach ( $display_events as $event ) :
-						$event_dt = \DateTime::createFromFormat( 'Ymd', $event['event_date'] );
-						$event_month = $event_dt ? $event_dt->format( 'M' ) : '';
-						$event_day   = $event_dt ? $event_dt->format( 'j' ) : '';
+					// Check if there are events to display. If there are, display them. If not, show the empty state.
+					if (count($display_events) > 0) {
 
-						$time_display = '';
-						if ( $event['start_time'] ) {
-							$time_display = $event['start_time'];
-							if ( $event['end_time'] ) {
-								$time_display .= ' &#150; ' . $event['end_time'];
+						// Render each event card with date, title, excerpt, time, and location.
+						foreach ( $display_events as $event ) :
+							$event_dt = \DateTime::createFromFormat( 'Ymd', $event['event_date'] );
+							$event_month = $event_dt ? $event_dt->format( 'M' ) : '';
+							$event_day   = $event_dt ? $event_dt->format( 'j' ) : '';
+
+							$time_display = '';
+							if ( $event['start_time'] ) {
+								$time_display = $event['start_time'];
+								if ( $event['end_time'] ) {
+									$time_display .= ' &#150; ' . $event['end_time'];
+								}
 							}
-						}
-						?>
-						<div class="event">
-							<div class="event-date">
-								<span class="event-month"><?php echo esc_html( $event_month ); ?></span>
-								<span class="event-day"><?php echo esc_html( $event_day ); ?></span>
-								<span class="event-weekday"><?php echo esc_html( $event_dt ? $event_dt->format( 'D' ) : '' ); ?></span>
-							</div>
-							<div class="event-details">
-								<h3><a href="<?php echo esc_url( $event['url'] ); ?>"><?php echo esc_html( mb_strimwidth( $event['title'], 0, 75, '…' ) ); ?></a></h3>
-								<p><?php echo esc_html( $event['excerpt'] ); ?></p>
-								<?php if ( $time_display || $event['location'] ) : ?>
-								<div class="event-metadata">
-									<?php if ( $time_display ) : ?>
-									<span class="event-time"><i class="fa-light fa-clock" role="img" aria-label="Event time"></i><?php echo wp_kses( $time_display, array() ); ?></span>
-									<?php endif; ?>
-									<?php if ( $event['location'] ) : ?>
-									<span class="event-location"><i class="fa-light fa-map-pin" role="img" aria-label="Event location"></i><?php echo esc_html( $event['location'] ); ?></span>
+							?>
+							
+							<div class="event">
+								<div class="event-date">
+									<span class="event-month"><?php echo esc_html( $event_month ); ?></span>
+									<span class="event-day"><?php echo esc_html( $event_day ); ?></span>
+									<span class="event-weekday"><?php echo esc_html( $event_dt ? $event_dt->format( 'D' ) : '' ); ?></span>
+								</div>
+								<div class="event-details">
+									<h3><a href="<?php echo esc_url( $event['url'] ); ?>"><?php echo esc_html( mb_strimwidth( $event['title'], 0, 75, '…' ) ); ?></a></h3>
+									<p><?php echo esc_html( $event['excerpt'] ); ?></p>
+									<?php if ( $time_display || $event['location'] ) : ?>
+									<div class="event-metadata">
+										<?php if ( $time_display ) : ?>
+										<span class="event-time"><i class="fa-light fa-clock" role="img" aria-label="Event time"></i><?php echo wp_kses( $time_display, array() ); ?></span>
+										<?php endif; ?>
+										<?php if ( $event['location'] ) : ?>
+										<span class="event-location"><i class="fa-light fa-map-pin" role="img" aria-label="Event location"></i><?php echo esc_html( $event['location'] ); ?></span>
+										<?php endif; ?>
+									</div>
 									<?php endif; ?>
 								</div>
-								<?php endif; ?>
 							</div>
+
+							<?php
+						endforeach;
+
+					} else { 
+						
+						// Render the empty state template
+						?>	
+
+						<div class="no-events">
+							<h3>Nothing scheduled at the moment</h3>
+							<p>Check back later or <a href="/news/subscribe">sign up for our newsletter</a> to stay on top of new events</p>
 						</div>
-						<?php
-					endforeach;
+
+					<?php }
 
 					restore_current_blog(); // returns from the News site to current for future queries
 				?>
@@ -331,9 +347,9 @@ get_header( 'v2' ); ?>
 			</div>
 			<div class="featured-collection-content">
 				<h2 class="sr">Featured Exhibit</h2>
-				<p class="eyebrow">Howe, Manning & Almy Exhibit</p>
+				<p class="eyebrow">Howe, Manning & Almy</p>
 				<h3>Boston's First All-Woman Firm and the Changing Face of Architecture</h3>
-				<p>Learn about the role MIT's architecture program played in supporting women in the field since the 1890s, Howe, Manning & Almy's influence on the built environment of Cambridge, and the firms ecofriendly approaches to renovation.</p>
+				<p>Learn about the role MIT's architecture program played in supporting women in the field since the 1890s, Howe, Manning & Almy's influence on the built environment of Cambridge, and the firm's ecofriendly approaches to renovation.</p>
 				<a class="button secondary" title="Read more about the Howe, Manning & Almy exhibit" href="https://libraries.mit.edu/exhibits/exhibit/howe-manning-almy/">Check it out</a>
 			</div>
 		</div>

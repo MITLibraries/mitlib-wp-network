@@ -139,6 +139,7 @@
   --color-bg-disabled: var(--color-gray-400);
 
   /* ─── Border ─── */
+  --color-border-default:     var(--color-gray-200);
   --color-border-information: var(--color-cyan-800);
   --color-border-success:     var(--color-green-800);
   --color-border-warning:     var(--color-yellow-500);
