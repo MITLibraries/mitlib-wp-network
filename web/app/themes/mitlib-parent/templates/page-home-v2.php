@@ -190,7 +190,7 @@ get_header( 'v2' ); ?>
 				<div class="events-header">
 					<div class="events-header-title-paragraph">
 					<h2>Events &amp; Workshops</h2>
-					<p>Featured classes, workshops, and speakers events.</p>
+					<p>Featured classes, workshops, and speaker events</p>
 					</div>
 					<a class="button secondary" href="https://libraries.mit.edu/news/events/">See all events</a>
 				</div>
@@ -328,10 +328,10 @@ get_header( 'v2' ); ?>
 						
 						// Render the empty state template
 						?>	
-																
+
 						<div class="no-events">
 							<h3>Nothing scheduled at the moment</h3>
-							<p>Check back later or <a href="/news/subscribe">sign up for our newsletter</a> to stay on top of new events.</p>
+							<p>Check back later or <a href="/news/subscribe">sign up for our newsletter</a> to stay on top of new events</p>
 						</div>
 
 					<?php }

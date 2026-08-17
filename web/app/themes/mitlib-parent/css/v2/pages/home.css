@@ -688,7 +688,6 @@ section#todays-hours {
       justify-content: center;
       grid-column: span 2;
       padding: var(--sp-800);
-      text-align: center;
     }
 
     .event {
