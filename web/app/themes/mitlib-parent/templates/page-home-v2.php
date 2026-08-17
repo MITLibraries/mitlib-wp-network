@@ -88,7 +88,7 @@ get_header( 'v2' ); ?>
 					<i class="fa-light fa-file-alt" aria-hidden="true" role="img"></i>
 					<div class="option-box-content">
 						<h3><a href="/get-materials">Learn how to get materials</a></h3>
-						<p>Find, request and get articles, books, and more</p>
+						<p>Find, request, and get articles, books, and more</p>
 					</div>
 				</div>
 				<div>
