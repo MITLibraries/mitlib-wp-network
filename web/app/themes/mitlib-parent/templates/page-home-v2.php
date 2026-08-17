@@ -110,7 +110,7 @@ get_header( 'v2' ); ?>
 					<i class="fa-light fa-messages-question" aria-hidden="true" role="img"></i>
 					<div class="option-box-content">
 						<h3>Ask Us</h3>
-						<p>Get help via email, live chat with staff, and appointments</p>
+						<p>Get help via email, live chat with staff, and book appointments</p>
 						<div class="ask-us-links">
 							<div id="libchat_fa6edc50fe81603743870ca1772bc5b2e7e121436b62ba7da331b9dcabf289c0"></div>
 							<a href="/ask">All help options</a>						
@@ -141,7 +141,6 @@ get_header( 'v2' ); ?>
 								<h3><a href="https://libguides.mit.edu/profiles/smbrown1">Sabrina Brown</a></h3>
 								<div>
 									<p>Biosciences Librarian</p>
-									<p>Liaison, Instruction, and Reference Services</p>
 								</div>
 							</hgroup>
 							<a class="arrow-right" href="https://libguides.mit.edu/profiles/smbrown1">How can Sabrina help you?</a>
@@ -348,9 +347,9 @@ get_header( 'v2' ); ?>
 			</div>
 			<div class="featured-collection-content">
 				<h2 class="sr">Featured Exhibit</h2>
-				<p class="eyebrow">Howe, Manning & Almy Exhibit</p>
+				<p class="eyebrow">Howe, Manning & Almy</p>
 				<h3>Boston's First All-Woman Firm and the Changing Face of Architecture</h3>
-				<p>Learn about the role MIT's architecture program played in supporting women in the field since the 1890s, Howe, Manning & Almy's influence on the built environment of Cambridge, and the firms ecofriendly approaches to renovation.</p>
+				<p>Learn about the role MIT's architecture program played in supporting women in the field since the 1890s, Howe, Manning & Almy's influence on the built environment of Cambridge, and the firm's ecofriendly approaches to renovation.</p>
 				<a class="button secondary" title="Read more about the Howe, Manning & Almy exhibit" href="https://libraries.mit.edu/exhibits/exhibit/howe-manning-almy/">Check it out</a>
 			</div>
 		</div>
