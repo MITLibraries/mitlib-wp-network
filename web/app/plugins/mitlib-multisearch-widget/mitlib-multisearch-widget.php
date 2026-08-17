@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Include the necessary classes.
-include_once( 'class-multisearch-widget.php' );
+include_once 'class-multisearch-widget.php';
 
 /**
  * Registers base widget.
