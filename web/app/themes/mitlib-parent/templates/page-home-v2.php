@@ -216,7 +216,7 @@ get_header( 'v2' ); ?>
 						'orderby'             => 'meta_value',
 						'meta_key'            => 'event_date',
 						'order'               => 'ASC',
-						'ignore_sticky_posts' => 1, // Exclude sticky news posts
+						'ignore_sticky_posts' => 1, // Prevents sticky posts from being pushed to the top of the order
 						'meta_query'          => array( // Ensures that the event date is today or later
 							array(
 								'key'     => 'event_date', 
@@ -254,7 +254,9 @@ get_header( 'v2' ); ?>
 								'url'        => ! empty( $custom['calendar_url'][0] ) ? $custom['calendar_url'][0] : get_the_permalink(),
 								'event_date' => $event_date_raw,
 								'start_time' => isset( $custom['event_start_time'][0] ) ? $custom['event_start_time'][0] : '',
-								'end_time'   => isset( $custom['event_end_time'][0] ) ? $custom['event_end_time'][0] : '',										'location'   => isset( $custom['event_location'][0] ) ? $custom['event_location'][0] : '',								'excerpt'    => get_the_excerpt(),
+								'end_time'   => isset( $custom['event_end_time'][0] ) ? $custom['event_end_time'][0] : '',										
+								'location'   => isset( $custom['event_location'][0] ) ? $custom['event_location'][0] : '',								
+								'excerpt'    => get_the_excerpt(),
 							);
 
 							// Bucket into pinned (pin_event_on_homepage) vs regular.
