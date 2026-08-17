@@ -194,34 +194,133 @@ get_header( 'v2' ); ?>
 					</div>
 					<a class="button secondary" href="https://libraries.mit.edu/news/events/">See all events</a>
 				</div>
-				<div class="event">
-					<div class="event-date">
-						<span class="event-month">Aug</span>
-						<span class="event-day">24</span>
-					</div>
-					<div class="event-details">
-						<h3><a href="https://calendar.mit.edu/event/carpentriesmit-introduction-to-programming-with-python">Carpentries@MIT Introduction to Programming with Python</a></h3>
-						<p>A beginner-friendly workshop combining short tutorials with hands-on exercises</p>
-						<div class="event-metadata">
-							<span class="event-time"><i class="fa-light fa-clock" role="img" aria-label="Event time"></i>10:00 am &#150; 4:00 pm</span>
-							<span class="event-location"><i class="fa-light fa-map-pin" role="img" aria-label="Event location"></i>Virtual Event</span>
-						</div>		
-					</div>			
-				</div>
-				<div class="event">
-					<div class="event-date">
-						<span class="event-month">Sep</span>
-						<span class="event-day">2</span>
-					</div>
-					<div class="event-details">
-						<h3><a href="https://calendar.mit.edu/event/mit-libraries-resources-and-services-for-graduate-students-6074">MIT Libraries: Resources and Services for Graduate Students</a></h3>
-						<p>How to find the information and data you'll need</p>
-						<div class="event-metadata">
-							<span class="event-time"><i class="fa-light fa-clock" role="img" aria-label="Event time"></i>10:45 &#150; 11:45 am</span>
-							<span class="event-location"><i class="fa-light fa-map-pin" role="img" aria-label="Event location"></i>Building 14, S-130 (The Nexus)</span>
-						</div>		
-					</div>			
-				</div>
+
+				<?php
+					/* 
+					*  EVENTS LOGIC
+					*  This logic pulls the next two upcoming events from the News site and displays them on the homepage.
+					*  This respects the "Featured on homepage" radio button, making sure those posts are prioritized.
+					*/
+				
+					// Switch to the News site (blog 4) to query event posts.
+					$news_site_id = 4;
+					switch_to_blog( $news_site_id );
+
+					// Query upcoming posts that have an event_date, sorted soonest-first.
+					$today = date( 'Ymd' );
+
+					$events_args = array(
+						'posts_per_page'      => 20,
+						'post_type'           => 'post',
+						'post_status'         => 'publish',
+						'orderby'             => 'meta_value',
+						'meta_key'            => 'event_date',
+						'order'               => 'ASC',
+						'ignore_sticky_posts' => 1, // Prevents sticky posts from being pushed to the top of the order
+						'meta_query'          => array( // Ensures that the event date is today or later
+							array(
+								'key'     => 'event_date', 
+								'value'   => $today, 
+								'compare' => '>=',
+							),
+						),
+					);
+
+					$events_query = new \WP_Query( $events_args );
+
+					// Loop through results, filter to is_event posts, and bucket into featured vs regular.
+					$featured_events = array();
+					$regular_events  = array();
+
+					if ( $events_query->have_posts() ) :
+						while ( $events_query->have_posts() ) :
+							$events_query->the_post();
+							$custom = get_post_custom(); // store custom fields for this post in an array
+
+							// Skip non-event posts (is_event checkbox unchecked).
+							if ( ! isset( $custom['is_event'][0] ) || $custom['is_event'][0] !== '1' ) {
+								continue;
+							}
+
+							// Skip events with no date or a past date.
+							$event_date_raw = isset( $custom['event_date'][0] ) ? $custom['event_date'][0] : '';
+							if ( ! $event_date_raw || $event_date_raw < $today ) {
+								continue;
+							}
+
+							// Build event data array, preferring homepage overrides for title and URL.
+							$event_data = array(
+								'title'      => ! empty( $custom['homepage_post_title'][0] ) ? $custom['homepage_post_title'][0] : get_the_title(),
+								'url'        => ! empty( $custom['calendar_url'][0] ) ? $custom['calendar_url'][0] : get_the_permalink(),
+								'event_date' => $event_date_raw,
+								'start_time' => isset( $custom['event_start_time'][0] ) ? $custom['event_start_time'][0] : '',
+								'end_time'   => isset( $custom['event_end_time'][0] ) ? $custom['event_end_time'][0] : '',										
+								'location'   => isset( $custom['event_location'][0] ) ? $custom['event_location'][0] : '',								
+								'excerpt'    => get_the_excerpt(),
+							);
+
+							// Bucket into pinned (pin_event_on_homepage) vs regular.
+							if ( ! empty( $custom['pin_event_on_homepage'][0] ) && $custom['pin_event_on_homepage'][0] === '1' ) {
+								$featured_events[] = $event_data;
+							} else {
+								$regular_events[] = $event_data;
+							}
+						endwhile;
+						wp_reset_postdata();
+					endif;
+
+					// Pick 2 events to display: prefer featured, backfill with regular, keep date order.
+					if ( count( $featured_events ) >= 2 ) {
+						$display_events = array_slice( $featured_events, 0, 2 );
+					} elseif ( count( $featured_events ) === 1 ) {
+						$display_events = array_merge( $featured_events, array_slice( $regular_events, 0, 1 ) );
+						usort( $display_events, function( $a, $b ) {
+							return strcmp( $a['event_date'], $b['event_date'] );
+						} );
+					} else {
+						$display_events = array_slice( $regular_events, 0, 2 );
+					}
+
+					// Render each event card with date, title, excerpt, time, and location.
+					foreach ( $display_events as $event ) :
+						$event_dt = \DateTime::createFromFormat( 'Ymd', $event['event_date'] );
+						$event_month = $event_dt ? $event_dt->format( 'M' ) : '';
+						$event_day   = $event_dt ? $event_dt->format( 'j' ) : '';
+
+						$time_display = '';
+						if ( $event['start_time'] ) {
+							$time_display = $event['start_time'];
+							if ( $event['end_time'] ) {
+								$time_display .= ' &#150; ' . $event['end_time'];
+							}
+						}
+						?>
+						<div class="event">
+							<div class="event-date">
+								<span class="event-month"><?php echo esc_html( $event_month ); ?></span>
+								<span class="event-day"><?php echo esc_html( $event_day ); ?></span>
+								<span class="event-weekday"><?php echo esc_html( $event_dt ? $event_dt->format( 'D' ) : '' ); ?></span>
+							</div>
+							<div class="event-details">
+								<h3><a href="<?php echo esc_url( $event['url'] ); ?>"><?php echo esc_html( mb_strimwidth( $event['title'], 0, 75, '…' ) ); ?></a></h3>
+								<p><?php echo esc_html( $event['excerpt'] ); ?></p>
+								<?php if ( $time_display || $event['location'] ) : ?>
+								<div class="event-metadata">
+									<?php if ( $time_display ) : ?>
+									<span class="event-time"><i class="fa-light fa-clock" role="img" aria-label="Event time"></i><?php echo wp_kses( $time_display, array() ); ?></span>
+									<?php endif; ?>
+									<?php if ( $event['location'] ) : ?>
+									<span class="event-location"><i class="fa-light fa-map-pin" role="img" aria-label="Event location"></i><?php echo esc_html( $event['location'] ); ?></span>
+									<?php endif; ?>
+								</div>
+								<?php endif; ?>
+							</div>
+						</div>
+						<?php
+					endforeach;
+
+					restore_current_blog(); // returns from the News site to current for future queries
+				?>
 			</div>			
 		</div>
 	</section>
