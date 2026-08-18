@@ -53,8 +53,6 @@ jQuery( document ).ready(function() {
 
 	preventSearch( '#searchinput-bookslocal', 'form#booksearch .button-search');
 
-	preventSearch( '#searchinput-article', 'form#edssearch .button-search');
-
 	preventSearch( '#searchinput-site', '.search-site .button-search');
 
 

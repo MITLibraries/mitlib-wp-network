@@ -33,18 +33,11 @@ class Multisearch_Widget extends \WP_Widget {
 	 */
 	public function widget( $args, $instance ) {
 		// Identify which templates are needed based on instance variable.
-		$all_template = 'templates/tab-all-eds.php';
-		$books_template = 'templates/tab-books-eds.php';
-		$articles_template = 'templates/tab-articles-eds.php';
-		$articles_tab_name = 'Journals + articles';
-		$more_template = 'templates/tab-more-eds.php';
-		if ( 'alma' == $instance['targets'] ) {
-			$all_template = 'templates/tab-all-alma.php';
-			$books_template = 'templates/tab-books-alma.php';
-			$articles_template = 'templates/tab-articles-alma.php';
-			$articles_tab_name = 'Articles + chapters';
-			$more_template = 'templates/tab-more-alma.php';
-		}
+		$all_template = 'templates/tab-all-alma.php';
+		$books_template = 'templates/tab-books-alma.php';
+		$articles_template = 'templates/tab-articles-alma.php';
+		$articles_tab_name = 'Articles + chapters';
+		$more_template = 'templates/tab-more-alma.php';
 		if ( 'use' == $instance['targets'] ) {
 			$all_template = 'templates/tab-all-use.php';
 		}
@@ -183,7 +176,7 @@ class Multisearch_Widget extends \WP_Widget {
 		$banner_text = $instance['banner_text'];
 		$targets = $instance['targets'];
 		if ( '' == $instance['targets'] ) {
-			$targets = 'eds';
+			$targets = 'alma';
 		}
 		$bento_url = $instance['bento_url'];
 		if ( '' == $instance['bento_url'] ) {
@@ -208,21 +201,6 @@ class Multisearch_Widget extends \WP_Widget {
 		</p>
 		<p>Which set of search targets should be shown?</p>
 		<ul>
-			<li>
-				<label>
-					<input
-						type="radio"
-						name="<?php echo esc_attr( $this->get_field_name( 'targets' ) ); ?>"
-						value="eds"
-						<?php
-						if ( 'eds' == $targets ) {
-							echo "checked='checked'";
-						}
-						?>
-					>
-					EDS and Barton
-				</label>
-			</li>
 			<li>
 				<label>
 					<input
