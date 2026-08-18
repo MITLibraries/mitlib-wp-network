@@ -8,7 +8,6 @@
  */
 
 ?>
-<!-- nls state: _<?php echo esc_attr( $nls_enabled ); ?>_ -->
 <form id="search-form" action="https://search.libraries.mit.edu/results" method="get" role="search">
 	<label for="basic-search-main">Search for books, articles, library services, and more</label>
 	<div class="form-wrapper">
