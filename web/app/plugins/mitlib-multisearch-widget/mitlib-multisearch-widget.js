@@ -16,9 +16,7 @@ function preventSearch(textField,button) {
 		    $( button ).prop('disabled', true);
 		    e.preventDefault();
 		}
-		
 	});
-
 }
 
 
@@ -28,33 +26,10 @@ jQuery( document ).ready(function() {
 	// If javascript is present, we disable the nojs class.
 	$tabs.removeClass("nojs");
 
-	// Check if this is the USE form and does not need tabs.
-	if ( $('#search-all').hasClass("use") ) {
-		// add r-tabs class to force styling of the form to be consistent with the other tabs.
-		$tabs.addClass("r-tabs");
-	} else {
-		// Call Responsive Tabs plugin.
-		$tabs.responsiveTabs({
-			rotate: false,
-			startCollapsed: false,
-			collapsible: false,
-			setHash: true
-		});
-
-		$( '#search_tabs_nav a' ).click( function(e) {
-			$( '#search_tabs_nav a' ).removeAttr( "aria-expanded" );
-			$( '#search_tabs_nav a .current' ).remove();
-			$(this).attr( "aria-expanded", "true" ).prepend( "<span class='sr current'>Current: </span>" );
-		});
-	}
+	// add r-tabs class to force styling of the form to be consistent with the other tabs.
+	$tabs.addClass("r-tabs");
 
 	// prevent submission until text field is not empty 
 	preventSearch( '#searchinput-bento', '.search-bento .button-search');
-
-	preventSearch( '#searchinput-bookslocal', 'form#booksearch .button-search');
-
-	preventSearch( '#searchinput-site', '.search-site .button-search');
-
-
 });
 
