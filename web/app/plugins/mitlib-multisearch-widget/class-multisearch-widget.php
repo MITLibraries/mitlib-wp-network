@@ -64,7 +64,7 @@ class Multisearch_Widget extends \WP_Widget {
 		);
 		wp_enqueue_style( 'multisearch-tabs' );
 
-		if ( $instance['targets'] != 'use-v2' ) {
+		if ( 'use-v2' != $instance['targets'] ) {
 
 			// Render markup.
 			echo '<noscript><p>It appears that your browser does not support javascript.</p>';
@@ -75,7 +75,7 @@ class Multisearch_Widget extends \WP_Widget {
 
 		};
 
-		if ( $instance['targets'] == 'use' ) {
+		if ( 'use' == $instance['targets'] ) {
 
 			// Determine whether to enable NLS based on widget settings and the user's cookie.
 			$nls_enabled = $this->readCookie( $instance['nls_default'] );
@@ -90,7 +90,7 @@ class Multisearch_Widget extends \WP_Widget {
 
 		};
 
-		if ( $instance['targets'] == 'use-v2' ) {
+		if ( 'use-v2' == $instance['targets'] ) {
 			// Determine whether to enable NLS based on widget settings and the user's cookie.
 			$nls_enabled = $this->readCookie( $instance['nls_default'] );
 
@@ -119,7 +119,7 @@ class Multisearch_Widget extends \WP_Widget {
 			echo '</div>';
 		}
 
-		if ( $instance['targets'] != 'use-v2' ) {
+		if ( 'use-v2' != $instance['targets'] ) {
 			echo '</div>';
 		};
 	}
