@@ -136,10 +136,6 @@ class Multisearch_Widget extends \WP_Widget {
 		if ( '' == $instance['targets'] ) {
 			$targets = 'use-v2';
 		}
-		$bento_url = $instance['bento_url'];
-		if ( '' == $instance['bento_url'] ) {
-			$bento_url = 'https://lib.mit.edu/';
-		}
 		$nls_default = $instance['nls_default'];
 		if ( '' == $instance['nls_default'] ) {
 			$nls_default = 'off';
@@ -190,18 +186,6 @@ class Multisearch_Widget extends \WP_Widget {
 				</label>
 			</li>					
 		</ul>
-		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'bento_url' ) ); ?>">
-				<?php esc_attr_e( 'Bento URL' ); ?> (formatted like "https://lib.mit.edu/")
-			</label>
-			<input
-				class="widefat"
-				id="<?php echo esc_attr( $this->get_field_id( 'bento_url' ) ); ?>"
-				type="text"
-				name="<?php echo esc_attr( $this->get_field_name( 'bento_url' ) ); ?>"
-				value="<?php echo esc_html( $bento_url ); ?>">
-		</p>
-		<h3>Natural language search</h3>
 		<p>
 			Should the natural language option be shown?<br>
 			<label>
@@ -266,7 +250,6 @@ class Multisearch_Widget extends \WP_Widget {
 		$instance = $old_instance;
 		$instance['banner_text'] = $new_instance['banner_text'];
 		$instance['targets'] = $new_instance['targets'];
-		$instance['bento_url'] = $new_instance['bento_url'];
 		$instance['nls_default'] = $new_instance['nls_default'];
 		$instance['nls_included'] = $new_instance['nls_included'];
 		return $instance;
