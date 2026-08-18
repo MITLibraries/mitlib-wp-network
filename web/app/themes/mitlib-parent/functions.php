@@ -225,10 +225,6 @@ function setup_scripts_styles() {
 	wp_register_script( 'hours-loader-theme', get_template_directory_uri() . '../../../plugins/mitlib-pull-hours/js/hours-loader.js', array(), $theme_version, true );
 	wp_register_script( 'parent-hours', get_template_directory_uri() . '/js/make.datepicker.js', array( 'jquery', 'gldatepickerJS', 'hours-scrollStick', 'hours-stickyMenu', 'underscore', 'moment', 'hours-loader-theme' ), $theme_version, true );
 
-	// Search bundle.
-	wp_register_script( 'search-ie', get_template_directory_uri() . '/js/search-ie.js', array(), $theme_version, false );
-	wp_register_script( 'parent-search', get_template_directory_uri() . '/js/search.js', array( 'jquery', 'modernizr', 'search-ie' ), $theme_version, false );
-
 	// Map bundle.
 	wp_register_script( 'parent-map', get_template_directory_uri() . '/js/map.js', array( 'googleMapsAPI', 'infobox', 'jquery' ), $theme_version, true );
 
@@ -249,7 +245,6 @@ function setup_scripts_styles() {
 		wp_enqueue_script( 'parent-experts-home' );
 		wp_enqueue_script( 'parent-guides-home' );
 		wp_enqueue_script( 'parent-hours-home' );
-		wp_enqueue_script( 'parent-search' );
 		wp_enqueue_script( 'parent-hours' );
 	}
 
@@ -299,10 +294,6 @@ function setup_scripts_styles() {
 
 	if ( is_page( 'locations' ) ) {
 		wp_enqueue_script( 'parent-map' );
-	}
-
-	if ( is_page( 'search' ) ) {
-		wp_enqueue_script( 'parent-search' );
 	}
 
 	if ( in_category( 'has-menu' ) ) {

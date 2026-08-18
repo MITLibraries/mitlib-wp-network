@@ -1,14 +1,13 @@
 <?php
 /**
  * The "Unified Search" of the search tab for all content - which will search "Search MIT Libraries" (USE).
- * This version is designed to trim away surrounding markup so it can be embedded on the new homepage hero. 
+ * This version is designed to trim away surrounding markup so it can be embedded on the new homepage hero.
  *
  * @package Multisearch Widget
  * @since 1.5.0
  */
 
 ?>
-<!-- nls state: _<?php echo esc_attr( $nls_enabled ); ?>_ -->
 <form id="search-form" action="https://search.libraries.mit.edu/results" method="get" role="search">
 	<label for="basic-search-main">Search for books, articles, library services, and more</label>
 	<div class="form-wrapper">

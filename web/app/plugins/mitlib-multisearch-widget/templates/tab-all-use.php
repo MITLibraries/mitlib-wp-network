@@ -7,7 +7,6 @@
  */
 
 ?>
-<!-- nls state: _<?php echo esc_attr( $nls_enabled ); ?>_ -->
 <form
 	class="form search-bento"
 	action="https://search.libraries.mit.edu/results"
