@@ -64,41 +64,27 @@ class Multisearch_Widget extends \WP_Widget {
 		);
 		wp_enqueue_style( 'multisearch-tabs' );
 
-		if ( 'use-v2' != $instance['targets'] ) {
+		// Determine whether to enable NLS based on widget settings and the user's cookie.
+		$nls_enabled = $this->readCookie( $instance['nls_default'] );
 
+		$nls_link_toggle = $this->setToggleValue( $nls_enabled );
+
+		$nls_included = $instance['nls_included'];
+
+		if ( 'use' == $instance['targets'] ) {
 			// Render markup.
 			echo '<noscript><p>It appears that your browser does not support javascript.</p>';
 			include 'templates/form_nojs.html';
 			echo '</noscript>';
 			echo '<div id="multisearch" class="' . esc_attr( $this->widgetClasses( $instance ) ) . ' nojs">';
 			echo '<h2 id="searchtabsheader" class="sr">Search the MIT libraries</h2>';
-
+			echo '<div id="search-all" class="r-tabs-panel r-tabs-state-active use" aria-labelledby="tab-all">';
 		};
+
+		include $all_template;
 
 		if ( 'use' == $instance['targets'] ) {
-
-			// Determine whether to enable NLS based on widget settings and the user's cookie.
-			$nls_enabled = $this->readCookie( $instance['nls_default'] );
-
-			$nls_link_toggle = $this->setToggleValue( $nls_enabled );
-
-			$nls_included = $instance['nls_included'];
-
-			echo '<div id="search-all" class="r-tabs-panel r-tabs-state-active use" aria-labelledby="tab-all">';
-				include $all_template;
-			echo '</div>';
-
-		};
-
-		if ( 'use-v2' == $instance['targets'] ) {
-			// Determine whether to enable NLS based on widget settings and the user's cookie.
-			$nls_enabled = $this->readCookie( $instance['nls_default'] );
-
-			$nls_link_toggle = $this->setToggleValue( $nls_enabled );
-
-			$nls_included = $instance['nls_included'];
-
-			include $all_template;
+			echo '</div>'; // This closes the div#search-all.
 		};
 
 		if ( $instance['banner_text'] ) {
@@ -119,8 +105,8 @@ class Multisearch_Widget extends \WP_Widget {
 			echo '</div>';
 		}
 
-		if ( 'use-v2' != $instance['targets'] ) {
-			echo '</div>';
+		if ( 'use' == $instance['targets'] ) {
+			echo '</div>'; // This closes the div#multisearch.
 		};
 	}
 
