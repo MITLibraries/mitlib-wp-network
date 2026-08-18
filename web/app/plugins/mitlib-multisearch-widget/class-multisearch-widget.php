@@ -32,14 +32,15 @@ class Multisearch_Widget extends \WP_Widget {
 	 * @link https://developer.wordpress.org/reference/classes/wp_widget/
 	 */
 	public function widget( $args, $instance ) {
+		// Strip initial arguments.
+		$args = null;
+
 		// By default, we use the v2 template (suitable for v2 page layouts).
 		$all_template = 'templates/tab-all-use-v2.php';
 		if ( 'use' == $instance['targets'] ) {
 			// Alternatively, we use the v1 template (for old page layouts).
 			$all_template = 'templates/tab-all-use.php';
 		}
-		// Strip initial arguments.
-		$args = null;
 
 		// Register / enqueue javascript.
 		// Second, we add this plugin's javascript.
