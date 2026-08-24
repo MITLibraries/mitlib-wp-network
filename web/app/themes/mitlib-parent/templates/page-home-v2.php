@@ -135,24 +135,24 @@ get_header( 'v2' ); ?>
 					</article>					
 					<article class="featured-item side-by-side">
 						<span class="item-type spotlight">Spotlight</span>
-						<img src="https://d2jv02qf7xgjwx.cloudfront.net/accounts/353/images/smbrown1-100x100.jpg" alt="Headshot of Sabrina Brown" />
+						<img src="https://libapps.s3.amazonaws.com/customers/68/images/cberman-100x100.jpg" alt="Headshot of Claire Berman" />
 						<div class="featured-item-content">
 							<hgroup>
-								<h3><a href="https://libguides.mit.edu/profiles/smbrown1">Sabrina Brown</a></h3>
+								<h3><a href="https://libguides.mit.edu/profiles/cberman">Claire Berman</a></h3>
 								<div>
-									<p>Biosciences Librarian</p>
+									<p>Engineering Librarian</p>
 								</div>
 							</hgroup>
-							<a class="arrow-right" href="https://libguides.mit.edu/profiles/smbrown1">How can Sabrina help you?</a>
+							<a class="arrow-right" href="https://libguides.mit.edu/profiles/cberman">How can Claire help you?</a>
 						</div>
 					</article>
 					<article class="featured-item side-by-side">
 						<span class="item-type news">News</span>
-						<img src="https://libraries.mit.edu/app/uploads/sites/4/2026/06/Rotch_Ext-Night-Hzntl-624x483.jpg" alt="The exterior of Rotch Library at dusk bathed in purple light. Book stacks are visible on multiple floors through the windows."/>
+						<img src="https://libraries.mit.edu/app/uploads/2026/08/XKQoSUbi-1.png" alt="A white, two-column locker with a digital screen and text reading &quot;MIT Libraries, Pickup Locker&quot;"/>
 						<div class="featured-item-content">
 							<hgroup>
-								<h3><a href="https://libraries.mit.edu/news/future-of-rotch-library-begins-to-take-shape/44423/">Future of Rotch Library begins to take shape</a></h3>
-								<p>Reimagining spaces for teaching, studying, and data services</p>
+								<h3><a href="https://libraries.mit.edu/news/coming-soon-self-service-lockers/44582/">Coming soon: Self-service lockers</a></h3>
+								<p>Pick up and drop off library items 24 hours a day, seven days a week</p>
 							</hgroup>
 						</div>
 					</article>						
