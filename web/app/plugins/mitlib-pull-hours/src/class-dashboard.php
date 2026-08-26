@@ -58,7 +58,7 @@ class Dashboard {
 		}
 
 		// Otherwise, we render the dashboard page.
-		require_once( plugin_dir_path( __FILE__ ) . '../templates/dashboard.php' );
+		require_once plugin_dir_path( __FILE__ ) . '../templates/dashboard.php';
 	}
 
 	/**
