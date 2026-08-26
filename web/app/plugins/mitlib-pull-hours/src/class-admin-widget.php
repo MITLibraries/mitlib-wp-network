@@ -68,6 +68,6 @@ class Admin_Widget {
 		}
 
 		// Use the template to render widget output.
-		require_once( plugin_dir_path( __FILE__ ) . '../templates/admin-widget.php' );
+		require_once plugin_dir_path( __FILE__ ) . '../templates/admin-widget.php';
 	}
 }
