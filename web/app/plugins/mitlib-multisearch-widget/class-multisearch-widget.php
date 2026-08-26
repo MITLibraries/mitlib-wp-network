@@ -32,124 +32,58 @@ class Multisearch_Widget extends \WP_Widget {
 	 * @link https://developer.wordpress.org/reference/classes/wp_widget/
 	 */
 	public function widget( $args, $instance ) {
-		// Identify which templates are needed based on instance variable.
-		$all_template = 'templates/tab-all-eds.php';
-		$books_template = 'templates/tab-books-eds.php';
-		$articles_template = 'templates/tab-articles-eds.php';
-		$articles_tab_name = 'Journals + articles';
-		$more_template = 'templates/tab-more-eds.php';
-		if ( 'alma' == $instance['targets'] ) {
-			$all_template = 'templates/tab-all-alma.php';
-			$books_template = 'templates/tab-books-alma.php';
-			$articles_template = 'templates/tab-articles-alma.php';
-			$articles_tab_name = 'Articles + chapters';
-			$more_template = 'templates/tab-more-alma.php';
-		}
-		if ( 'use' == $instance['targets'] ) {
-			$all_template = 'templates/tab-all-use.php';
-		}
-		if ( 'use-v2' == $instance['targets'] ) {
-			$all_template = 'templates/tab-all-use-v2.php';
-		}
 		// Strip initial arguments.
 		$args = null;
 
+		// By default, we use the v2 template (suitable for v2 page layouts).
+		$all_template = 'templates/tab-all-use-v2.php';
+		if ( 'use' == $instance['targets'] ) {
+			// Alternatively, we use the v1 template (for old page layouts).
+			$all_template = 'templates/tab-all-use.php';
+		}
+
 		// Register / enqueue javascript.
-		// First we add the responsive tabs plugin.
-		wp_register_script(
-			'responsivetabs-js',
-			plugin_dir_url( __FILE__ ) . 'libs/jquery.responsiveTabs.min.js',
-			array( 'jquery' ),
-			'1.6.1',
-			false
-		);
 		// Second, we add this plugin's javascript.
 		wp_register_script(
 			'multisearch-js',
 			plugin_dir_url( __FILE__ ) . 'mitlib-multisearch-widget.js',
-			array( 'responsivetabs-js' ),
-			'1.4.1',
+			array(),
+			'1.8.0',
 			false
 		);
 		// Finally, we enquey only this plugin's javascript (which brings everything else in).
 		wp_enqueue_script( 'multisearch-js' );
 
 		// Register / enqueue styles.
-		wp_register_style( 'responsivetabs-css', plugin_dir_url( __FILE__ ) . 'libs/responsive-tabs.css', '', '1.6.1' );
 		wp_register_style(
 			'multisearch-tabs',
 			plugin_dir_url( __FILE__ ) . 'mitlib-multisearch-widget.css',
-			array( 'responsivetabs-css' ),
-			'1.3.0'
+			array(),
+			'1.8.0'
 		);
 		wp_enqueue_style( 'multisearch-tabs' );
 
-		if ( $instance['targets'] != 'use-v2' ) { 
+		// Determine whether to enable NLS based on widget settings and the user's cookie.
+		$nls_enabled = $this->readCookie( $instance['nls_default'] );
 
+		$nls_link_toggle = $this->setToggleValue( $nls_enabled );
+
+		$nls_included = $instance['nls_included'];
+
+		if ( 'use' == $instance['targets'] ) {
 			// Render markup.
 			echo '<noscript><p>It appears that your browser does not support javascript.</p>';
-			include( 'templates/form_nojs.html' );
+			include 'templates/form_nojs.html';
 			echo '</noscript>';
 			echo '<div id="multisearch" class="' . esc_attr( $this->widgetClasses( $instance ) ) . ' nojs">';
 			echo '<h2 id="searchtabsheader" class="sr">Search the MIT libraries</h2>';
-
-		};
-
-		// Render the search tabs only when "Unified Search" option is not selected
-		if ( $instance['targets'] != 'use' && $instance['targets'] != 'use-v2' ) {
-		
-			echo '<ul id="search_tabs_nav" aria-labelledby="searchtabsheader">
-				<li><a id="tab-all" href="#search-all"><span>All</span></a></li>
-				<li><a id="tab-books" href="#search-books"><span>Books + media</span></a></li>
-				<li><a id="tab-articles" href="#search-articles"><span>'
-				. esc_html( $articles_tab_name )
-				. '</span></a></li>
-				<li><a id="tab-more" href="#search-more"><span>More...</span></a></li>
-			</ul>';			
-
-			// Render the individual tab panes
-			echo '<div id="search-all" aria-labelledby="tab-all">';
-				include( $all_template );
-			echo '</div>';
-			echo '<div id="search-books" aria-labelledby="tab-books">';
-				include( $books_template );
-			echo '</div>';
-			echo '<div id="search-articles" aria-labelledby="tab-articles">';
-				include( $articles_template );
-			echo '</div>';
-			echo '<div id="search-more" aria-labelledby="tab-more">';
-				include( $more_template );
-			echo '</div>';
-
-		};
-
-		if ( $instance['targets'] == 'use' ) {
-		
-			// Determine whether to enable NLS based on widget settings and the user's cookie.
-			$nls_enabled = $this->readCookie( $instance['nls_default'] );
-
-			$nls_link_toggle = $this->setToggleValue( $nls_enabled );
-
-			$nls_included = $instance['nls_included'];
-
 			echo '<div id="search-all" class="r-tabs-panel r-tabs-state-active use" aria-labelledby="tab-all">';
-				include( $all_template );
-			echo '</div>';
-
 		};
 
-		if ( $instance['targets'] == 'use-v2' ) {
-		
-			// Determine whether to enable NLS based on widget settings and the user's cookie.
-			$nls_enabled = $this->readCookie( $instance['nls_default'] );
+		include $all_template;
 
-			$nls_link_toggle = $this->setToggleValue( $nls_enabled );
-
-			$nls_included = $instance['nls_included'];
-
-			include( $all_template );
-
-
+		if ( 'use' == $instance['targets'] ) {
+			echo '</div>'; // This closes the div#search-all.
 		};
 
 		if ( $instance['banner_text'] ) {
@@ -170,8 +104,8 @@ class Multisearch_Widget extends \WP_Widget {
 			echo '</div>';
 		}
 
-		if ( $instance['targets'] != 'use-v2' ) { 
-			echo '</div>';
+		if ( 'use' == $instance['targets'] ) {
+			echo '</div>'; // This closes the div#multisearch.
 		};
 	}
 
@@ -186,11 +120,7 @@ class Multisearch_Widget extends \WP_Widget {
 		$banner_text = $instance['banner_text'];
 		$targets = $instance['targets'];
 		if ( '' == $instance['targets'] ) {
-			$targets = 'eds';
-		}
-		$bento_url = $instance['bento_url'];
-		if ( '' == $instance['bento_url'] ) {
-			$bento_url = 'https://lib.mit.edu/';
+			$targets = 'use-v2';
 		}
 		$nls_default = $instance['nls_default'];
 		if ( '' == $instance['nls_default'] ) {
@@ -211,36 +141,6 @@ class Multisearch_Widget extends \WP_Widget {
 		</p>
 		<p>Which set of search targets should be shown?</p>
 		<ul>
-			<li>
-				<label>
-					<input
-						type="radio"
-						name="<?php echo esc_attr( $this->get_field_name( 'targets' ) ); ?>"
-						value="eds"
-						<?php
-						if ( 'eds' == $targets ) {
-							echo "checked='checked'";
-						}
-						?>
-					>
-					EDS and Barton
-				</label>
-			</li>
-			<li>
-				<label>
-					<input
-						type="radio"
-						name="<?php echo esc_attr( $this->get_field_name( 'targets' ) ); ?>"
-						value="alma"
-						<?php
-						if ( 'alma' == $targets ) {
-							echo "checked='checked'";
-						}
-						?>
-					>
-					Alma and Primo
-				</label>
-			</li>
 			<li>
 				<label>
 					<input
@@ -272,18 +172,6 @@ class Multisearch_Widget extends \WP_Widget {
 				</label>
 			</li>					
 		</ul>
-		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'bento_url' ) ); ?>">
-				<?php esc_attr_e( 'Bento URL' ); ?> (formatted like "https://lib.mit.edu/")
-			</label>
-			<input
-				class="widefat"
-				id="<?php echo esc_attr( $this->get_field_id( 'bento_url' ) ); ?>"
-				type="text"
-				name="<?php echo esc_attr( $this->get_field_name( 'bento_url' ) ); ?>"
-				value="<?php echo esc_html( $bento_url ); ?>">
-		</p>
-		<h3>Natural language search</h3>
 		<p>
 			Should the natural language option be shown?<br>
 			<label>
@@ -348,7 +236,6 @@ class Multisearch_Widget extends \WP_Widget {
 		$instance = $old_instance;
 		$instance['banner_text'] = $new_instance['banner_text'];
 		$instance['targets'] = $new_instance['targets'];
-		$instance['bento_url'] = $new_instance['bento_url'];
 		$instance['nls_default'] = $new_instance['nls_default'];
 		$instance['nls_included'] = $new_instance['nls_included'];
 		return $instance;
