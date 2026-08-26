@@ -59,7 +59,7 @@ class Multisearch_Widget extends \WP_Widget {
 			'multisearch-tabs',
 			plugin_dir_url( __FILE__ ) . 'mitlib-multisearch-widget.css',
 			array(),
-			'1.8.0'
+			'1.9.0'
 		);
 		wp_enqueue_style( 'multisearch-tabs' );
 

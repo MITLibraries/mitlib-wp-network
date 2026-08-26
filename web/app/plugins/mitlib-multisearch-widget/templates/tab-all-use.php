@@ -12,7 +12,7 @@
 	action="https://search.libraries.mit.edu/results"
 	method="get"
 	data-target="bento">
-	<label for="searchinput-bento">Search the MIT Libraries</label>
+	<label for="searchinput-bento">Search for books, articles, library services, and more</label>
 	<div class="wrap-flex">
 		<div class="flex-left">
 			<input
@@ -20,7 +20,7 @@
 				type="text"
 				id="searchinput-bento"
 				name="q"
-				placeholder="Search across collections, services, and website content">
+				placeholder="Try a citation, topic, database, etc.">
 		</div>
 		<div class="flex-right">
 			<input class="button button-search" type="submit" value="Search">
@@ -29,7 +29,7 @@
 </form>
 <div class="search-option-links">
 	<div>
-		<a href="/search-advanced/">Advanced search</a> | <a href="/search/">More ways to search</a>
+		<a href="/search-advanced/">Advanced search</a>
 	</div>
 	<?php if ( 'included' == $nls_included ) { ?>
 		<div class="nls-toggle">
