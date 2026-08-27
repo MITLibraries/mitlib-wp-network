@@ -86,6 +86,7 @@ web/app/plugins/*
 !web/app/plugins/mitlib-analytics
 !web/app/plugins/mitlib-block-hero-section
 !web/app/plugins/mitlib-block-hours-section
+!web/app/plugins/mitlib-block-using-the-libraries-section
 !web/app/plugins/mitlib-cf7-elements
 !web/app/plugins/mitlib-home-page-news
 !web/app/plugins/mitlib-multisearch-widget

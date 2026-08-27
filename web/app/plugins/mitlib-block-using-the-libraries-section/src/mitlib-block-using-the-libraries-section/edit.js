@@ -31,8 +31,8 @@ export default function Edit() {
 	return (
 		<p { ...useBlockProps() }>
 			{ __(
-				'Hours feed is displayed here',
-				'mitlib-block-hours-section'
+				'Mitlib Block Using The Libraries Section – hello from the editor!',
+				'mitlib-block-using-the-libraries-section'
 			) }
 		</p>
 	);
