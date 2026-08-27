@@ -84,6 +84,7 @@ web/app/mu-plugins/*/
 web/app/plugins/*
 !web/app/plugins/.gitkeep
 !web/app/plugins/mitlib-analytics
+!web/app/plugins/mitlib-block-hero-section
 !web/app/plugins/mitlib-cf7-elements
 !web/app/plugins/mitlib-home-page-news
 !web/app/plugins/mitlib-multisearch-widget
