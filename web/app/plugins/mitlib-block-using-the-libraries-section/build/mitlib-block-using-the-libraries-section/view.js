@@ -1,7 +1,7 @@
 /******/ (() => { // webpackBootstrap
-/*!************************************************!*\
-  !*** ./src/mitlib-block-hours-section/view.js ***!
-  \************************************************/
+/*!**************************************************************!*\
+  !*** ./src/mitlib-block-using-the-libraries-section/view.js ***!
+  \**************************************************************/
 /**
  * Use this file for JavaScript code that you want to run in the front-end
  * on posts/pages that contain this block.
@@ -25,7 +25,7 @@
  */
 
 /* eslint-disable no-console */
-console.log('Hello World! (from create-block-mitlib-block-hours-section block)');
+console.log('Hello World! (from create-block-mitlib-block-using-the-libraries-section block)');
 /* eslint-enable no-console */
 /******/ })()
 ;
