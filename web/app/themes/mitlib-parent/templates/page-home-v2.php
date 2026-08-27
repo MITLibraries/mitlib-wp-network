@@ -13,10 +13,24 @@ namespace Mitlib\Parent;
 
 get_header( 'v2' ); ?>
 
+<main id="content" class="block-editor">
+
+<?php
+while ( have_posts() ) :
+	the_post();
+
+	// This function pulls in whatever blocks you design in the admin dashboard
+	the_content(); 
+
+endwhile;
+?>
+
+</main>
+
 <main id="content">
 	<section id="hero" role="img" aria-label="Two notebooks opened to show yellow graph paper; the top one has a black and white photo of a boat crew, and the bottom one shows handwritten text." style="background-image: url(https://libraries.mit.edu/app/uploads/2026/07/hero-image-edgerton.png);">
-	<div class="overlay">	
-		<div class="content-wrapper">
+		<div class="overlay">	
+			<div class="content-wrapper">
 				<div class="hero-content">
 					<h1>Welcome to the MIT Libraries</h1>
 
