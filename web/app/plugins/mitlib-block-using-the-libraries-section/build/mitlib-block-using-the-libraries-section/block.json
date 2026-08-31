@@ -8,6 +8,28 @@
   "icon": "smiley",
   "description": "Example block scaffolded with Create Block tool.",
   "example": {},
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "default": "Using the Libraries"
+    },
+    "askUsTitle": {
+      "type": "string",
+      "default": "Ask Us"
+    },
+    "askUsDescription": {
+      "type": "string",
+      "default": "Get help via email, live chat with staff, and book appointments"
+    },
+    "askUsLinkText": {
+      "type": "string",
+      "default": "All help options"
+    },
+    "askUsLinkUrl": {
+      "type": "string",
+      "default": "/ask"
+    }
+  },
   "supports": {
     "html": false
   },

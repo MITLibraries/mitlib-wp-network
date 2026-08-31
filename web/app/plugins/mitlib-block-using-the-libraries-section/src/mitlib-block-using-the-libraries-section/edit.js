@@ -4,36 +4,51 @@
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/
  */
 import { __ } from '@wordpress/i18n';
-/**
- * React hook that is used to mark the block wrapper element.
- * It provides all the necessary props like the class name.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
- */
-import { useBlockProps } from '@wordpress/block-editor';
-/**
- * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
- * Those files can contain any CSS code that gets applied to the editor.
- *
- * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
- */
+import { useBlockProps, RichText, InspectorControls } from '@wordpress/block-editor';
+import { PanelBody, TextControl, TextareaControl } from '@wordpress/components';
 import './editor.scss';
 
-/**
- * The edit function describes the structure of your block in the context of the
- * editor. This represents what the editor will render when the block is used.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#edit
- *
- * @return {Element} Element to render.
- */
-export default function Edit() {
+export default function Edit( { attributes, setAttributes } ) {
+	const { heading, askUsTitle, askUsDescription, askUsLinkText, askUsLinkUrl } = attributes;
+
 	return (
-		<p { ...useBlockProps() }>
-			{ __(
-				'Using the libraries section (renders on frontend)',
-				'mitlib-block-using-the-libraries-section'
-			) }
-		</p>
+		<>
+		<InspectorControls>
+			<PanelBody title={ __( 'Ask Us Box', 'mitlib-block-using-the-libraries-section' ) }>
+				<TextControl
+					label={ __( 'Title', 'mitlib-block-using-the-libraries-section' ) }
+					value={ askUsTitle }
+					onChange={ ( value ) => setAttributes( { askUsTitle: value } ) }
+				/>
+				<TextareaControl
+					label={ __( 'Description', 'mitlib-block-using-the-libraries-section' ) }
+					value={ askUsDescription }
+					onChange={ ( value ) => setAttributes( { askUsDescription: value } ) }
+				/>
+				<TextControl
+					label={ __( 'Link text', 'mitlib-block-using-the-libraries-section' ) }
+					value={ askUsLinkText }
+					onChange={ ( value ) => setAttributes( { askUsLinkText: value } ) }
+				/>
+				<TextControl
+					label={ __( 'Link URL', 'mitlib-block-using-the-libraries-section' ) }
+					value={ askUsLinkUrl }
+					onChange={ ( value ) => setAttributes( { askUsLinkUrl: value } ) }
+					type="url"
+				/>
+			</PanelBody>
+		</InspectorControls>
+		<section { ...useBlockProps() } id="using-the-libraries">
+			<div class="content-wrapper">
+				<RichText
+					tagName="h2"
+					value={ heading }
+					onChange={ ( value ) => setAttributes( { heading: value } ) }
+					placeholder={ __( 'Using the Libraries', 'mitlib-block-using-the-libraries-section' ) }
+					allowedFormats={ [] }
+				/>
+			</div>
+		</section>
+		</>
 	);
 }
