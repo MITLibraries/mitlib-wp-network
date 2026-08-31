@@ -1,0 +1,28 @@
+name: Ensure block build artifacts are current
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+
+    steps:
+    - uses: actions/checkout@v7
+
+    - name: Setup Node
+      uses: actions/setup-node@v7
+      with:
+        node-version: '22'
+        cache: 'npm'
+
+    - run: npm ci
+
+    - run: npm list
+
+    - run: npm run build --workspaces
+
+    - uses: CatChen/check-git-status-action@v1
+      with:
+        fail-if-not-clean: true
