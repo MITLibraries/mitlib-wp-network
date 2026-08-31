@@ -4,22 +4,15 @@
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { useBlockProps } from '@wordpress/block-editor';
+import { useBlockProps, RichText } from '@wordpress/block-editor';
 
-/**
- * The save function defines the way in which the different attributes should
- * be combined into the final markup, which is then serialized by the block
- * editor into `post_content`.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#save
- *
- * @return {Element} Element to render.
- */
-export default function save() {
+export default function save( { attributes } ) {
+	const { heading, linkText, linkUrl } = attributes;
+
 	return (
 		<section id="todays-hours">
 			<div class="content-wrapper">
-				<h2>Today's hours</h2>
+				<RichText.Content tagName="h2" value={ heading } />
 				<ol class="hours-list">
 					<li>
 						<span class="library-name"><a class="link-no-underline" href="/hayden">Hayden Library</a></span>
@@ -51,7 +44,7 @@ export default function save() {
 						<span class="library-study"></span>
 					</li>						
 				</ol>
-				<a href="/hours" class="link-on-dark">See more locations and hours</a>
+				<a href={ linkUrl } className="link-on-dark">{ linkText }</a>
 			</div>
 		</section>	
 	);

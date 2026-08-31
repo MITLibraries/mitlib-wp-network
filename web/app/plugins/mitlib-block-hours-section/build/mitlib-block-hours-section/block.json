@@ -8,6 +8,20 @@
   "icon": "smiley",
   "description": "Static block for displaying library hours",
   "example": {},
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "default": "Today's hours"
+    },
+    "linkText": {
+      "type": "string",
+      "default": "See more locations and hours"
+    },
+    "linkUrl": {
+      "type": "string",
+      "default": "/hours"
+    }
+  },
   "supports": {
     "html": false
   },
