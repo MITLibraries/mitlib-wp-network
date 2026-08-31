@@ -31,7 +31,7 @@ export default function Edit() {
 	return (
 		<p { ...useBlockProps() }>
 			{ __(
-				'Mitlib Block Using The Libraries Section – hello from the editor!',
+				'Using the libraries section (renders on frontend)',
 				'mitlib-block-using-the-libraries-section'
 			) }
 		</p>

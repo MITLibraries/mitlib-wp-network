@@ -6,10 +6,10 @@ return array(
 		'apiVersion' => 3,
 		'name' => 'create-block/mitlib-block-featured-and-events-section',
 		'version' => '0.1.0',
-		'title' => 'Mitlib Block Featured And Events Section',
+		'title' => 'MITLIB - Featured and Events Section',
 		'category' => 'widgets',
 		'icon' => 'smiley',
-		'description' => 'Example block scaffolded with Create Block tool.',
+		'description' => 'Displays featured content and upcoming events feed.',
 		'example' => array(
 			
 		),
@@ -20,6 +20,7 @@ return array(
 		'editorScript' => 'file:./index.js',
 		'editorStyle' => 'file:./index.css',
 		'style' => 'file:./style-index.css',
-		'viewScript' => 'file:./view.js'
+		'viewScript' => 'file:./view.js',
+		'render' => 'file:./render.php'
 	)
 );
