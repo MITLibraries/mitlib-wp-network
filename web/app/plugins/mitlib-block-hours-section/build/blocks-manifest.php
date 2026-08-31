@@ -8,7 +8,7 @@ return array(
 		'version' => '0.1.0',
 		'title' => 'MITLIB - Hours Section',
 		'category' => 'widgets',
-		'icon' => 'smiley',
+		'icon' => 'block-default',
 		'description' => 'Static block for displaying library hours',
 		'example' => array(
 			

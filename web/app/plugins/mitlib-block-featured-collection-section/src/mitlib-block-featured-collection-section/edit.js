@@ -29,11 +29,8 @@ import './editor.scss';
  */
 export default function Edit() {
 	return (
-		<p { ...useBlockProps() }>
-			{ __(
-				'Featured collection section (renders on frontend)',
-				'mitlib-block-featured-collection-section'
-			) }
-		</p>
+		<div { ...useBlockProps() }>
+			<h2>Featured collection (No title to edit)</h2>
+		</div>		
 	);
 }

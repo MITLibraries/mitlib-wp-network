@@ -3,10 +3,10 @@
   "apiVersion": 3,
   "name": "create-block/mitlib-block-using-the-libraries-section",
   "version": "0.1.0",
-  "title": "Mitlib Block Using The Libraries Section",
+  "title": "MITLIB - Using The Libraries Section",
   "category": "widgets",
-  "icon": "smiley",
-  "description": "Example block scaffolded with Create Block tool.",
+  "icon": "block-default",
+  "description": "Displays library service links and an Ask Us help box.",
   "example": {},
   "attributes": {
     "heading": {

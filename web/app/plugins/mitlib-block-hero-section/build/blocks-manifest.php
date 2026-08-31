@@ -8,8 +8,8 @@ return array(
 		'version' => '0.1.0',
 		'title' => 'MITLIB - Hero Image Section (Full)',
 		'category' => 'widgets',
-		'icon' => 'smiley',
-		'description' => 'Adds a hero image with optional search',
+		'icon' => 'block-default',
+		'description' => 'Adds a hero image with optional search.',
 		'attributes' => array(
 			'heading' => array(
 				'type' => 'string',
