@@ -1,11 +1,11 @@
 <?php
 /**
  * Plugin Name:       Mitlib - Block - Featured Collection Section
- * Description:       Static block for displaying a single featured collection.
+ * Description:       Renders the featured collection section block.
  * Version:           0.1.0
  * Requires at least: 6.8
  * Requires PHP:      7.4
- * Author:            The WordPress Contributors
+ * Author:            MIT Libraries
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       mitlib-block-featured-collection-section

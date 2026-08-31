@@ -16,11 +16,5 @@ import { useBlockProps } from '@wordpress/block-editor';
  * @return {Element} Element to render.
  */
 export default function save() {
-	return (
-		<p { ...useBlockProps.save() }>
-			{
-				'Mitlib Block Featured And Events Section – hello from the saved content!'
-			}
-		</p>
-	);
+	return null;
 }
