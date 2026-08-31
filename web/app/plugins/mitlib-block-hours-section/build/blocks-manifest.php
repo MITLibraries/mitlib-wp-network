@@ -13,6 +13,20 @@ return array(
 		'example' => array(
 			
 		),
+		'attributes' => array(
+			'heading' => array(
+				'type' => 'string',
+				'default' => 'Today\'s hours'
+			),
+			'linkText' => array(
+				'type' => 'string',
+				'default' => 'See more locations and hours'
+			),
+			'linkUrl' => array(
+				'type' => 'string',
+				'default' => '/hours'
+			)
+		),
 		'supports' => array(
 			'html' => false
 		),
