@@ -1,0 +1,47 @@
+<?php
+// This file is generated. Do not modify it manually.
+return array(
+	'mitlib-block-using-the-libraries-section' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'create-block/mitlib-block-using-the-libraries-section',
+		'version' => '0.1.0',
+		'title' => 'MITLIB - Using The Libraries Section',
+		'category' => 'widgets',
+		'icon' => 'block-default',
+		'description' => 'Displays library service links and an Ask Us help box.',
+		'example' => array(
+			
+		),
+		'attributes' => array(
+			'heading' => array(
+				'type' => 'string',
+				'default' => 'Using the Libraries'
+			),
+			'askUsTitle' => array(
+				'type' => 'string',
+				'default' => 'Ask Us'
+			),
+			'askUsDescription' => array(
+				'type' => 'string',
+				'default' => 'Get help via email, live chat with staff, and book appointments'
+			),
+			'askUsLinkText' => array(
+				'type' => 'string',
+				'default' => 'All help options'
+			),
+			'askUsLinkUrl' => array(
+				'type' => 'string',
+				'default' => '/ask'
+			)
+		),
+		'supports' => array(
+			'html' => false
+		),
+		'textdomain' => 'mitlib-block-using-the-libraries-section',
+		'editorScript' => 'file:./index.js',
+		'editorStyle' => 'file:./index.css',
+		'style' => 'file:./style-index.css',
+		'viewScript' => 'file:./view.js'
+	)
+);
