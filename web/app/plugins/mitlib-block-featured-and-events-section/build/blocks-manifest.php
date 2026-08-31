@@ -8,10 +8,16 @@ return array(
 		'version' => '0.1.0',
 		'title' => 'MITLIB - Featured and Events Section',
 		'category' => 'widgets',
-		'icon' => 'smiley',
+		'icon' => 'block-default',
 		'description' => 'Displays featured content and upcoming events feed.',
 		'example' => array(
 			
+		),
+		'attributes' => array(
+			'heading' => array(
+				'type' => 'string',
+				'default' => 'Featured'
+			)
 		),
 		'supports' => array(
 			'html' => false

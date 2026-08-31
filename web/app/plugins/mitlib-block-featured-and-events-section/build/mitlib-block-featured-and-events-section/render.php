@@ -9,7 +9,7 @@
 ?><section id="featured-and-events">
 	<div class="content-wrapper">
 		<div class="featured-content">
-			<h2>Featured</h2>
+			<h2><?php echo esc_html( $attributes['heading'] ); ?></h2>
 			<div class="featured-items count-6">
 				<article class="featured-item">
 					<span class="item-type spotlight">Spotlight</span>

@@ -8,8 +8,8 @@ return array(
 		'version' => '0.1.0',
 		'title' => 'MITLIB - Featured Collection Section',
 		'category' => 'widgets',
-		'icon' => 'block',
-		'description' => 'Example block scaffolded with Create Block tool.',
+		'icon' => 'block-default',
+		'description' => 'Displays a curated featured collection section.',
 		'example' => array(
 			
 		),
