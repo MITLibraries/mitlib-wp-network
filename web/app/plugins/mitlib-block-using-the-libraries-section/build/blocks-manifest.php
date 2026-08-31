@@ -13,6 +13,28 @@ return array(
 		'example' => array(
 			
 		),
+		'attributes' => array(
+			'heading' => array(
+				'type' => 'string',
+				'default' => 'Using the Libraries'
+			),
+			'askUsTitle' => array(
+				'type' => 'string',
+				'default' => 'Ask Us'
+			),
+			'askUsDescription' => array(
+				'type' => 'string',
+				'default' => 'Get help via email, live chat with staff, and book appointments'
+			),
+			'askUsLinkText' => array(
+				'type' => 'string',
+				'default' => 'All help options'
+			),
+			'askUsLinkUrl' => array(
+				'type' => 'string',
+				'default' => '/ask'
+			)
+		),
 		'supports' => array(
 			'html' => false
 		),

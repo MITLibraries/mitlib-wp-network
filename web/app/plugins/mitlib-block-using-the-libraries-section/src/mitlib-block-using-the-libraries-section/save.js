@@ -4,22 +4,15 @@
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { useBlockProps } from '@wordpress/block-editor';
+import { useBlockProps, RichText } from '@wordpress/block-editor';
 
-/**
- * The save function defines the way in which the different attributes should
- * be combined into the final markup, which is then serialized by the block
- * editor into `post_content`.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#save
- *
- * @return {Element} Element to render.
- */
-export default function save() {
+export default function save( { attributes } ) {
+	const { heading, askUsTitle, askUsDescription, askUsLinkText, askUsLinkUrl } = attributes;
+
 	return (
 		<section id="using-the-libraries">
 			<div class="content-wrapper">
-				<h2>Using the Libraries</h2>
+				<RichText.Content tagName="h2" value={ heading } />
 				<div class="box-wrapper">
 				<div class="option-boxes">
 					<div>
@@ -54,11 +47,11 @@ export default function save() {
 				<div class="ask-us-box">
 						<i class="fa-light fa-messages-question" aria-hidden="true" role="img"></i>
 						<div class="option-box-content">
-							<h3>Ask Us</h3>
-							<p>Get help via email, live chat with staff, and book appointments</p>
+							<h3>{ askUsTitle }</h3>
+							<p>{ askUsDescription }</p>
 							<div class="ask-us-links">
 								<div id="libchat_fa6edc50fe81603743870ca1772bc5b2e7e121436b62ba7da331b9dcabf289c0"></div>
-								<a href="/ask">All help options</a>						
+								<a href={ askUsLinkUrl }>{ askUsLinkText }</a>
 							</div>
 						</div>
 					</div>
