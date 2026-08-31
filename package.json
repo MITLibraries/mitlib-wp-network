@@ -1,0 +1,34 @@
+{
+  "name": "mitlib-wp-network",
+  "version": "1.0.0",
+  "description": "WordPress application used by the MIT Libraries",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "build": "npm run build --workspaces",
+    "lint:css": "npm run lint:css --workspaces",
+    "lint:js": "npm run lint:js --workspaces"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MITLibraries/mitlib-wp-network.git"
+  },
+  "author": "MIT Libraries",
+  "license": "GPL-2.0-or-later",
+  "bugs": {
+    "url": "https://github.com/MITLibraries/mitlib-wp-network/issues"
+  },
+  "homepage": "https://github.com/MITLibraries/mitlib-wp-network#readme",
+  "private": true,
+  "workspaces": [
+    "web/app/plugins/mitlib-block-*"
+  ],
+  "engines": {
+    "node": ">=22.0.0",
+    "npm": ">=10.0.0"
+  },
+  "devDependencies": {
+    "@wordpress/scripts": "^34.2.0"
+  }
+}
