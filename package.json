@@ -22,7 +22,8 @@
   "homepage": "https://github.com/MITLibraries/mitlib-wp-network#readme",
   "private": true,
   "workspaces": [
-    "web/app/plugins/mitlib-block-*"
+    "web/app/plugins/mitlib-block-*",
+    "web/app/plugins/mitlib-pull-hours"
   ],
   "engines": {
     "node": ">=22.0.0",
