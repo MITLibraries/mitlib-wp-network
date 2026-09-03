@@ -84,6 +84,11 @@ web/app/mu-plugins/*/
 web/app/plugins/*
 !web/app/plugins/.gitkeep
 !web/app/plugins/mitlib-analytics
+!web/app/plugins/mitlib-block-hero-section
+!web/app/plugins/mitlib-block-hours-section
+!web/app/plugins/mitlib-block-using-the-libraries-section
+!web/app/plugins/mitlib-block-featured-and-events-section
+!web/app/plugins/mitlib-block-featured-collection-section
 !web/app/plugins/mitlib-cf7-elements
 !web/app/plugins/mitlib-home-page-news
 !web/app/plugins/mitlib-multisearch-widget
@@ -189,3 +194,32 @@ Thumbs.db
 ##########
 .vscode
 auth.json
+
+# NPM examples
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Coverage directory used by tools like istanbul
+coverage
+
+# Dependency directories
+node_modules/
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Output of `npm pack`
+*.tgz
+
+# Output of `wp-scripts plugin-zip`
+*.zip
+
+# dotenv environment variables file
+.env
