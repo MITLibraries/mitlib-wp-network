@@ -1,15 +1,15 @@
 <?php
 // This file is generated. Do not modify it manually.
 return array(
-	'mitlib-block-hours-section' => array(
+	'hours-section' => array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',
 		'apiVersion' => 3,
-		'name' => 'create-block/mitlib-block-hours-section',
+		'name' => 'mitlib/hours-section',
 		'version' => '0.1.0',
 		'title' => 'MITLIB - Hours Section',
 		'category' => 'widgets',
 		'icon' => 'block-default',
-		'description' => 'Static block for displaying library hours',
+		'description' => 'Locations and hours list for the homepage',
 		'example' => array(
 			
 		),
@@ -30,10 +30,9 @@ return array(
 		'supports' => array(
 			'html' => false
 		),
-		'textdomain' => 'mitlib-block-hours-section',
+		'textdomain' => 'mitlib-pull-hours',
 		'editorScript' => 'file:./index.js',
 		'editorStyle' => 'file:./index.css',
-		'style' => 'file:./style-index.css',
-		'viewScript' => 'file:./view.js'
+		'style' => 'file:./style-index.css'
 	)
 );

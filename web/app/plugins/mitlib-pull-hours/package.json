@@ -1,15 +1,14 @@
 {
-	"name": "mitlib-block-hours-section",
-	"version": "0.1.0",
-	"description": "Example block scaffolded with Create Block tool.",
-	"author": "The WordPress Contributors",
+	"name": "mitlib-pull-hours",
+	"version": "1.2.0",
+	"description": "A WordPress plugin that populates a local JSON cache from a Google spreadsheet.",
+	"author": "MIT Libraries",
 	"license": "GPL-2.0-or-later",
-	"main": "build/index.js",
 	"scripts": {
 		"build": "wp-scripts build --blocks-manifest --source-path=blocks",
 		"format": "wp-scripts format",
 		"lint:css": "wp-scripts lint-style",
-		"lint:js": "wp-scripts lint-js",
+		"lint:js": "wp-scripts lint-js ./blocks",
 		"packages-update": "wp-scripts packages-update",
 		"plugin-zip": "wp-scripts plugin-zip",
 		"start": "wp-scripts start --blocks-manifest --source-path=blocks"
