@@ -23,6 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 // Include the necesary classes.
 require_once( plugin_dir_path( __FILE__ ) . 'src/class-admin-widget.php' );
+require_once( plugin_dir_path( __FILE__ ) . 'src/class-blocks.php' );
 require_once( plugin_dir_path( __FILE__ ) . 'src/class-dashboard.php' );
 require_once( plugin_dir_path( __FILE__ ) . 'src/class-display-widget.php' );
 require_once( plugin_dir_path( __FILE__ ) . 'src/class-display-widget-frontpage.php' );
@@ -30,23 +31,9 @@ require_once( plugin_dir_path( __FILE__ ) . 'src/class-display-widget-slim.php' 
 require_once( plugin_dir_path( __FILE__ ) . 'src/class-harvester.php' );
 require_once( plugin_dir_path( __FILE__ ) . 'src/class-settings.php' );
 
-/**
- * Registers the block(s) metadata from the `blocks-manifest.php` and registers the block type(s)
- * based on the registered block metadata. Behind the scenes, it registers also all assets so they can be enqueued
- * through the block editor in the corresponding context.
- *
- * @see https://make.wordpress.org/core/2025/03/13/more-efficient-block-type-registration-in-6-8/
- * @see https://make.wordpress.org/core/2024/10/17/new-block-type-registration-apis-to-improve-performance-in-wordpress-6-7/
- */
-function register_blocks() {
-	wp_register_block_types_from_metadata_collection(
-		__DIR__ . '/build',
-		__DIR__ . '/build/blocks-manifest.php'
-	);
-}
-add_action( 'init', 'Mitlib\PullHours\register_blocks' );
-
 // Register classes with their hooks.
+// Register blocks provided by the plugin...
+add_action( 'init', array( 'Mitlib\PullHours\Blocks', 'init' ) );
 // The settings fields themselves as the admin side initializes...
 add_action( 'admin_init', array( 'Mitlib\PullHours\Settings', 'init' ) );
 // The settings dashboard gets included with the admin menu...
