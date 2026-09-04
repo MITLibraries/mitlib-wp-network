@@ -23,15 +23,15 @@
 				</article>
 				<article class="featured-item side-by-side">
 					<span class="item-type spotlight">Spotlight</span>
-					<img src="https://libapps.s3.amazonaws.com/customers/68/images/cberman-100x100.jpg" alt="Headshot of Claire Berman" />
+					<img src="https://libapps.s3.amazonaws.com/accounts/349/images/apaz-100x100.jpg" alt="Headshot of Alejandro Paz" />
 					<div class="featured-item-content">
 						<hgroup>
-							<h3><a href="https://libguides.mit.edu/profiles/cberman">Claire Berman</a></h3>
+							<h3><a href="https://libguides.mit.edu/profiles/apaz">Alejandro Paz</a></h3>
 							<div>
-								<p>Engineering Librarian</p>
+								<p>Librarian for Energy and Environment</p>
 							</div>
 						</hgroup>
-						<a class="arrow-right" href="https://libguides.mit.edu/profiles/cberman">How can Claire help you?</a>
+						<a class="arrow-right" href="https://libguides.mit.edu/profiles/apaz">How can Alejandro help you?</a>
 					</div>
 				</article>
 				<article class="featured-item side-by-side">
