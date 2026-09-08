@@ -1,1 +1,0 @@
-console.log("Hello World! (from mitlib-hero-section block)");

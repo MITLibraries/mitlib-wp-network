@@ -30,7 +30,6 @@ return array(
 		'editorScript' => 'file:./index.js',
 		'editorStyle' => 'file:./index.css',
 		'style' => 'file:./style-index.css',
-		'viewScript' => 'file:./view.js',
 		'render' => 'file:./render.php'
 	),
 	'featured-collection-section' => array(
@@ -51,8 +50,7 @@ return array(
 		'textdomain' => 'mitlib-blocks',
 		'editorScript' => 'file:./index.js',
 		'editorStyle' => 'file:./index.css',
-		'style' => 'file:./style-index.css',
-		'viewScript' => 'file:./view.js'
+		'style' => 'file:./style-index.css'
 	),
 	'hero-section' => array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',
@@ -79,7 +77,6 @@ return array(
 		'editorScript' => 'file:./index.js',
 		'editorStyle' => 'file:./index.css',
 		'style' => 'file:./style-index.css',
-		'viewScript' => 'file:./view.js',
 		'render' => 'file:./render.php'
 	),
 	'hours-section' => array(
@@ -156,7 +153,6 @@ return array(
 		'textdomain' => 'mitlib-blocks',
 		'editorScript' => 'file:./index.js',
 		'editorStyle' => 'file:./index.css',
-		'style' => 'file:./style-index.css',
-		'viewScript' => 'file:./view.js'
+		'style' => 'file:./style-index.css'
 	)
 );

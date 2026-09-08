@@ -1,1 +1,0 @@
-console.log("Hello World! (from mitlib-using-the-libraries-section block)");

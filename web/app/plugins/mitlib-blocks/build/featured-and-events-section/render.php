@@ -2,6 +2,7 @@
 /**
  * Server-side rendering for the featured and events section block.
  *
+ * @package MITlib Blocks
  * @var array    $attributes Block attributes.
  * @var string   $content    Block default content.
  * @var WP_Block $block      Block instance.
@@ -41,9 +42,9 @@ if ( $featured_expert ) {
 	$expert_excerpt    = $default_expert['excerpt'];
 }
 
-// Generate the strings for alt text and help link text
-$expert_alt_text       = "Headshot of " . $expert_name;
-$expert_help_link_text = "How can " . $expert_first_name . " help you?";
+// Generate the strings for alt text and help link text.
+$expert_alt_text       = 'Headshot of ' . $expert_name;
+$expert_help_link_text = 'How can ' . $expert_first_name . ' help you?';
 
 ?><section id="featured-and-events">
 	<div class="content-wrapper">
@@ -130,7 +131,7 @@ $expert_help_link_text = "How can " . $expert_first_name . " help you?";
 			$news_site_id = 4;
 			switch_to_blog( $news_site_id );
 
-			$today = date( 'Ymd' );
+			$today = gmdate( 'Ymd' );
 
 			$events_args = array(
 				'posts_per_page'      => 20,
@@ -159,7 +160,7 @@ $expert_help_link_text = "How can " . $expert_first_name . " help you?";
 					$events_query->the_post();
 					$custom = get_post_custom();
 
-					if ( ! isset( $custom['is_event'][0] ) || $custom['is_event'][0] !== '1' ) {
+					if ( ! isset( $custom['is_event'][0] ) || '1' !== $custom['is_event'][0] ) {
 						continue;
 					}
 
@@ -178,7 +179,7 @@ $expert_help_link_text = "How can " . $expert_first_name . " help you?";
 						'excerpt'    => get_the_excerpt(),
 					);
 
-					if ( ! empty( $custom['pin_event_on_homepage'][0] ) && $custom['pin_event_on_homepage'][0] === '1' ) {
+					if ( ! empty( $custom['pin_event_on_homepage'][0] ) && '1' === $custom['pin_event_on_homepage'][0] ) {
 						$featured_events[] = $event_data;
 					} else {
 						$regular_events[] = $event_data;
@@ -191,9 +192,12 @@ $expert_help_link_text = "How can " . $expert_first_name . " help you?";
 				$display_events = array_slice( $featured_events, 0, 2 );
 			} elseif ( count( $featured_events ) === 1 ) {
 				$display_events = array_merge( $featured_events, array_slice( $regular_events, 0, 1 ) );
-				usort( $display_events, function ( $a, $b ) {
-					return strcmp( $a['event_date'], $b['event_date'] );
-				} );
+				usort(
+					$display_events,
+					function ( $a, $b ) {
+						return strcmp( $a['event_date'], $b['event_date'] );
+					}
+				);
 			} else {
 				$display_events = array_slice( $regular_events, 0, 2 );
 			}
@@ -245,7 +249,7 @@ $expert_help_link_text = "How can " . $expert_first_name . " help you?";
 					<p>Check back later or <a href="/news/subscribe">sign up for our newsletter</a> to stay on top of new events</p>
 				</div>
 
-			<?php
+				<?php
 			}
 
 			restore_current_blog();
