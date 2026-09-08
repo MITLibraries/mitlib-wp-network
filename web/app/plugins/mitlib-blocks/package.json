@@ -13,13 +13,11 @@
 		"plugin-zip": "wp-scripts plugin-zip",
 		"start": "wp-scripts start --blocks-manifest --source-path=blocks"
 	},
-	"dependencies": {
-		"@wordpress/block-editor": "latest",
-		"@wordpress/blocks": "latest",
-		"@wordpress/components": "latest",
-		"@wordpress/i18n": "latest"
-	},
 	"devDependencies": {
+		"@wordpress/block-editor": "^17.0.0",
+		"@wordpress/blocks": "^15.27.0",
+		"@wordpress/components": "^40.0.0",
+		"@wordpress/i18n": "^6.27.0",
 		"@wordpress/scripts": "^34.2.0"
 	}
 }
