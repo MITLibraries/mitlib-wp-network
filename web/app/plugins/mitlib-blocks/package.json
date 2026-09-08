@@ -4,7 +4,6 @@
 	"description": "Custom MIT Libraries editor blocks.",
 	"author": "MIT Libraries",
 	"license": "GPL-2.0-or-later",
-	"main": "build/index.js",
 	"scripts": {
 		"build": "wp-scripts build --blocks-manifest --source-path=blocks",
 		"format": "wp-scripts format",
