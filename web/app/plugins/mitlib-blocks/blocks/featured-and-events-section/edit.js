@@ -4,7 +4,11 @@
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/
  */
 import { __ } from '@wordpress/i18n';
-import { useBlockProps, RichText, InspectorControls } from '@wordpress/block-editor';
+import {
+	useBlockProps,
+	RichText,
+	InspectorControls,
+} from '@wordpress/block-editor';
 import { PanelBody, SelectControl, Spinner } from '@wordpress/components';
 import { useSelect } from '@wordpress/data';
 import { store as coreStore } from '@wordpress/core-data';
@@ -14,10 +18,22 @@ export default function Edit( { attributes, setAttributes } ) {
 	const { heading, featuredExpertId } = attributes;
 
 	const { experts, hasResolvedExperts } = useSelect( ( select ) => {
-		const query = { per_page: -1, status: 'publish', orderby: 'title', order: 'asc' };
+		const query = {
+			per_page: -1,
+			status: 'publish',
+			orderby: 'title',
+			order: 'asc',
+		};
 		return {
-			experts: select( coreStore ).getEntityRecords( 'postType', 'experts', query ),
-			hasResolvedExperts: select( coreStore ).hasFinishedResolution( 'getEntityRecords', [ 'postType', 'experts', query ] ),
+			experts: select( coreStore ).getEntityRecords(
+				'postType',
+				'experts',
+				query
+			),
+			hasResolvedExperts: select( coreStore ).hasFinishedResolution(
+				'getEntityRecords',
+				[ 'postType', 'experts', query ]
+			),
 		};
 	}, [] );
 
@@ -38,7 +54,11 @@ export default function Edit( { attributes, setAttributes } ) {
 							label={ __( 'Featured expert', 'mitlib-blocks' ) }
 							value={ featuredExpertId }
 							options={ expertOptions }
-							onChange={ ( value ) => setAttributes( { featuredExpertId: Number( value ) } ) }
+							onChange={ ( value ) =>
+								setAttributes( {
+									featuredExpertId: Number( value ),
+								} )
+							}
 						/>
 					) : (
 						<Spinner />

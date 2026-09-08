@@ -31,6 +31,6 @@ export default function Edit() {
 	return (
 		<div { ...useBlockProps() }>
 			<h2>Featured collection (No title to edit)</h2>
-		</div>		
+		</div>
 	);
 }
