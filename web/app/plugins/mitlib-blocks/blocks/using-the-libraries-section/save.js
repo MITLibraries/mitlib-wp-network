@@ -15,8 +15,10 @@ export default function save( { attributes } ) {
 		askUsLinkUrl,
 	} = attributes;
 
+	const blockProps = useBlockProps.save();
+
 	return (
-		<section id="using-the-libraries">
+		<section id="using-the-libraries" { ...blockProps }>
 			<div className="content-wrapper">
 				<RichText.Content tagName="h2" value={ heading } />
 				<div className="box-wrapper">

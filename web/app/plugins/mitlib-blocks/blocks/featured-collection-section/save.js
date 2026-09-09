@@ -16,8 +16,10 @@ import { useBlockProps } from '@wordpress/block-editor';
  * @return {Element} Element to render.
  */
 export default function save() {
+	const blockProps = useBlockProps.save();
+
 	return (
-		<section id="featured-collection">
+		<section id="featured-collection" { ...blockProps }>
 			<div className="content-wrapper">
 				<div
 					className="featured-collection-image"

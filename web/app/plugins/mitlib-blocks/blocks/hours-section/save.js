@@ -9,8 +9,10 @@ import { useBlockProps, RichText } from '@wordpress/block-editor';
 export default function save( { attributes } ) {
 	const { heading, linkText, linkUrl } = attributes;
 
+	const blockProps = useBlockProps.save();
+
 	return (
-		<section id="todays-hours">
+		<section id="todays-hours" { ...blockProps }>
 			<div className="content-wrapper">
 				<RichText.Content tagName="h2" value={ heading } />
 				<ol className="hours-list">
