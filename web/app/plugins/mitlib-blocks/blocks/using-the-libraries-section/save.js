@@ -17,17 +17,17 @@ export default function save( { attributes } ) {
 
 	return (
 		<section id="using-the-libraries">
-			<div class="content-wrapper">
+			<div className="content-wrapper">
 				<RichText.Content tagName="h2" value={ heading } />
-				<div class="box-wrapper">
-					<div class="option-boxes">
+				<div className="box-wrapper">
+					<div className="option-boxes">
 						<div>
 							<i
-								class="fa-light fa-lightbulb"
+								className="fa-light fa-lightbulb"
 								aria-hidden="true"
 								role="img"
 							></i>
-							<div class="option-box-content">
+							<div className="option-box-content">
 								<h3>
 									<a href="/study">Find a study space</a>
 								</h3>
@@ -38,11 +38,11 @@ export default function save( { attributes } ) {
 						</div>
 						<div>
 							<i
-								class="fa-light fa-file-alt"
+								className="fa-light fa-file-alt"
 								aria-hidden="true"
 								role="img"
 							></i>
-							<div class="option-box-content">
+							<div className="option-box-content">
 								<h3>
 									<a href="/get-materials">
 										Learn how to get materials
@@ -56,11 +56,11 @@ export default function save( { attributes } ) {
 						</div>
 						<div>
 							<i
-								class="fa-light fa-book"
+								className="fa-light fa-book"
 								aria-hidden="true"
 								role="img"
 							></i>
-							<div class="option-box-content">
+							<div className="option-box-content">
 								<h3>
 									<a href="/experts">
 										Discover guides &amp; librarians
@@ -74,11 +74,11 @@ export default function save( { attributes } ) {
 						</div>
 						<div>
 							<i
-								class="fa-light fa-database"
+								className="fa-light fa-database"
 								aria-hidden="true"
 								role="img"
 							></i>
-							<div class="option-box-content">
+							<div className="option-box-content">
 								<h3>
 									<a href="/data-services">
 										Find and manage data
@@ -91,16 +91,16 @@ export default function save( { attributes } ) {
 							</div>
 						</div>
 					</div>
-					<div class="ask-us-box">
+					<div className="ask-us-box">
 						<i
-							class="fa-light fa-messages-question"
+							className="fa-light fa-messages-question"
 							aria-hidden="true"
 							role="img"
 						></i>
-						<div class="option-box-content">
+						<div className="option-box-content">
 							<h3>{ askUsTitle }</h3>
 							<p>{ askUsDescription }</p>
-							<div class="ask-us-links">
+							<div className="ask-us-links">
 								<div id="libchat_fa6edc50fe81603743870ca1772bc5b2e7e121436b62ba7da331b9dcabf289c0"></div>
 								<a href={ askUsLinkUrl }>{ askUsLinkText }</a>
 							</div>

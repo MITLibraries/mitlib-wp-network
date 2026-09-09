@@ -18,18 +18,18 @@ import { useBlockProps } from '@wordpress/block-editor';
 export default function save() {
 	return (
 		<section id="featured-collection">
-			<div class="content-wrapper">
+			<div className="content-wrapper">
 				<div
-					class="featured-collection-image"
+					className="featured-collection-image"
 					role="img"
 					aria-label="Architectural elevation of a house with two gables and two chimneys by Howe, Manning and Almy Architects, dated 1927."
 					style="background-image: url('https://libraries.mit.edu/app/uploads/2026/07/Howe-Manning-Almy-1.jpg');"
 				>
-					<span class="featured-collection-tag">Exhibit</span>
+					<span className="featured-collection-tag">Exhibit</span>
 				</div>
-				<div class="featured-collection-content">
-					<h2 class="sr">Featured Exhibit</h2>
-					<p class="eyebrow">Howe, Manning & Almy</p>
+				<div className="featured-collection-content">
+					<h2 className="sr">Featured Exhibit</h2>
+					<p className="eyebrow">Howe, Manning & Almy</p>
 					<h3>
 						Boston's First All-Woman Firm and the Changing Face of
 						Architecture
@@ -42,7 +42,7 @@ export default function save() {
 						renovation.
 					</p>
 					<a
-						class="button secondary"
+						className="button secondary"
 						title="Read more about the Howe, Manning & Almy exhibit"
 						href="https://libraries.mit.edu/exhibits/exhibit/howe-manning-almy/"
 					>

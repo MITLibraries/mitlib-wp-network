@@ -57,7 +57,7 @@ export default function Edit( { attributes, setAttributes } ) {
 				</PanelBody>
 			</InspectorControls>
 			<section { ...useBlockProps() } id="using-the-libraries">
-				<div class="content-wrapper">
+				<div className="content-wrapper">
 					<RichText
 						tagName="h2"
 						value={ heading }
