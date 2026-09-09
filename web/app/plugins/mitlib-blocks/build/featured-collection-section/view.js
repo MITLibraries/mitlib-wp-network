@@ -1,1 +1,0 @@
-console.log("Hello World! (from mitlib-featured-collection-section block)");
