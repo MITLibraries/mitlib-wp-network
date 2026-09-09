@@ -15,8 +15,8 @@ get_header( 'v2' ); ?>
 
 <main id="content">
 	<section id="hero" role="img" aria-label="Graphic illustration of a spiral in purple, black, and white." style="background-image: url(https://libraries.mit.edu/app/uploads/2026/09/hero-image-noise-reduction.jpg);">
-	<div class="overlay">	
-		<div class="content-wrapper">
+		<div class="overlay">	
+			<div class="content-wrapper">
 				<div class="hero-content">
 					<h1>Welcome to the MIT Libraries</h1>
 
