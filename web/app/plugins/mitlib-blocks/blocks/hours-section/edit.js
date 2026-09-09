@@ -14,14 +14,14 @@ export default function Edit( { attributes, setAttributes } ) {
 	return (
 		<>
 		<InspectorControls>
-			<PanelBody title={ __( 'Link Settings', 'mitlib-pull-hours' ) }>
+			<PanelBody title={ __( 'Link Settings', 'mitlib-blocks' ) }>
 				<TextControl
-					label={ __( 'Link text', 'mitlib-pull-hours' ) }
+					label={ __( 'Link text', 'mitlib-blocks' ) }
 					value={ linkText }
 					onChange={ ( value ) => setAttributes( { linkText: value } ) }
 				/>
 				<TextControl
-					label={ __( 'Link URL', 'mitlib-pull-hours' ) }
+					label={ __( 'Link URL', 'mitlib-blocks' ) }
 					value={ linkUrl }
 					onChange={ ( value ) => setAttributes( { linkUrl: value } ) }
 					type="url"
@@ -34,7 +34,7 @@ export default function Edit( { attributes, setAttributes } ) {
 					tagName="h2"
 					value={ heading }
 					onChange={ ( value ) => setAttributes( { heading: value } ) }
-					placeholder={ __( 'Today\'s hours', 'mitlib-pull-hours' ) }
+					placeholder={ __( 'Today\'s hours', 'mitlib-blocks' ) }
 					allowedFormats={ [] }
 				/>
 			</div>
