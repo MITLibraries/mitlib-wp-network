@@ -8,9 +8,10 @@
  */
 
 // Look up the librarian chosen in the block editor's "Featured Librarian" panel.
-$featured_expert = null;
-if ( ! empty( $attributes['featuredExpertId'] ) ) {
-	$maybe_expert = get_post( $attributes['featuredExpertId'] );
+$featured_expert    = null;
+$featured_expert_id = ! empty( $attributes['featuredExpertId'] ) ? absint( $attributes['featuredExpertId'] ) : 0;
+if ( $featured_expert_id ) {
+	$maybe_expert = get_post( $featured_expert_id );
 	if ( $maybe_expert && 'experts' === $maybe_expert->post_type && 'publish' === $maybe_expert->post_status ) {
 		$featured_expert = $maybe_expert;
 	}
