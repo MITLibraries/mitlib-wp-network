@@ -39,11 +39,20 @@ body.v2-page {
 #content > #hero {
   padding: 0;
   position: relative;
-  background-size: cover;
-  background-position: center center;
   color: var(--color-text-on-color);
 
+  /* Decorative background image, kept out of the focusable/overlay content so role="img" has no children */
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-size: cover;
+    background-position: center center;
+  }
+
   .overlay {
+    position: relative;
+    z-index: 1;
     padding-top: calc(var(--content-section-vertical-padding) + var(--sp-600));
     padding-bottom: var(--content-section-vertical-padding);
     background: linear-gradient(90deg, #1A1A1A 24.52%, rgba(26, 26, 26, 0.50) 70.67%, rgba(26, 26, 26, 0.00) 100%);

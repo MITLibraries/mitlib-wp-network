@@ -14,7 +14,8 @@ namespace Mitlib\Parent;
 get_header( 'v2' ); ?>
 
 <main id="content">
-	<section id="hero" role="img" aria-label="Graphic illustration of a spiral in purple, black, and white." style="background-image: url(https://libraries.mit.edu/app/uploads/2026/09/hero-image-noise-reduction.jpg);">
+	<section id="hero">
+		<div class="hero-bg" role="img" aria-label="Graphic illustration of a spiral in purple, black, and white." style="background-image: url(https://libraries.mit.edu/app/uploads/2026/09/hero-image-noise-reduction.jpg);"></div>
 		<div class="overlay">	
 			<div class="content-wrapper">
 				<div class="hero-content">
