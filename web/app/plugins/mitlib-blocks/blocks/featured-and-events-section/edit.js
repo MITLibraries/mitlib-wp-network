@@ -22,7 +22,7 @@ export default function Edit( { attributes, setAttributes } ) {
 	}, [] );
 
 	const expertOptions = [
-		{ label: __( 'Select a librarian…', 'mitlib-blocks' ), value: 0 },
+		{ label: __( 'Select an expert…', 'mitlib-blocks' ), value: 0 },
 		...( experts || [] ).map( ( expert ) => ( {
 			label: expert.title.rendered,
 			value: expert.id,
@@ -32,10 +32,10 @@ export default function Edit( { attributes, setAttributes } ) {
 	return (
 		<div { ...useBlockProps() }>
 			<InspectorControls>
-				<PanelBody title={ __( 'Featured Librarian', 'mitlib-blocks' ) }>
+				<PanelBody title={ __( 'Featured Expert', 'mitlib-blocks' ) }>
 					{ hasResolvedExperts ? (
 						<SelectControl
-							label={ __( 'Featured librarian', 'mitlib-blocks' ) }
+							label={ __( 'Featured expert', 'mitlib-blocks' ) }
 							value={ featuredExpertId }
 							options={ expertOptions }
 							onChange={ ( value ) => setAttributes( { featuredExpertId: Number( value ) } ) }
