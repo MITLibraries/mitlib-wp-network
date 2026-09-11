@@ -41,7 +41,8 @@ if ( $featured_expert ) {
 	$expert_excerpt    = $default_expert['excerpt'];
 }
 
-// Generate the string for the "How can NAME help you?" link text.
+// Generate the strings for alt text and help link text
+$expert_alt_text       = "Headshot of " . $expert_name;
 $expert_help_link_text = "How can " . $expert_first_name . " help you?";
 
 ?><section id="featured-and-events">
@@ -62,7 +63,7 @@ $expert_help_link_text = "How can " . $expert_first_name . " help you?";
 				<article class="featured-item side-by-side">
 					<span class="item-type spotlight">Spotlight</span>
 					<?php if ( $expert_image ) : ?>
-					<img src="<?php echo esc_url( $expert_image ); ?>" alt="<?php echo esc_attr( sprintf( /* translators: %s: librarian name */ __( 'Headshot of %s', 'mitlib-blocks' ), $expert_name ) ); ?>" />
+					<img src="<?php echo esc_url( $expert_image ); ?>" alt="<?php echo esc_attr( $expert_alt_text ); ?>" />
 					<?php endif; ?>
 					<div class="featured-item-content">
 						<hgroup>
