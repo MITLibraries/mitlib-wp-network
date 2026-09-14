@@ -53,14 +53,14 @@ $expert_help_link_text = 'How can ' . $expert_first_name . ' help you?';
 			<div class="featured-items count-6">
 				<article class="featured-item">
 					<span class="item-type spotlight">Spotlight</span>
-					<img src="https://libraries.mit.edu/app/uploads/2026/07/0fBLLWk0.jpeg" alt="A seated audience watches a man and a woman standing at a podium; a slide on the wall behind them reads, 'Democratizing Access to Climate Data.'" />
+					<img src="https://libraries.mit.edu/app/uploads/2026/09/mit-reads-highlight.png" alt="Exhalation book cover and MIT Reads logo; text reads Fall 2026 selection" />
 					<div class="featured-item-content">
 						<hgroup>
-							<h3><a href="https://libraries.mit.edu/opendata/open-data-mit-home/mit-prize/">2026 MIT Prize for Open Data</a></h3>
-							<p>Nominate an MIT researcher for the $2,500 prize</p>
+							<h3><a href="https://libraries.mit.edu/mit-reads/">Read <em>Exhalation</em> by Ted Chiang</a></h3>
+							<p>To celebrate 10 years of MIT Reads, President Sally Kornbluth has chosen our fall 2026 selection</p>
 						</hgroup>
 					</div>
-				</article>
+				</article>	
 				<article class="featured-item side-by-side">
 					<span class="item-type spotlight">Spotlight</span>
 					<?php if ( $expert_image ) : ?>
@@ -79,15 +79,15 @@ $expert_help_link_text = 'How can ' . $expert_first_name . ' help you?';
 					</div>
 				</article>
 				<article class="featured-item side-by-side">
-					<span class="item-type news">News</span>
+					<span class="item-type service">Service</span>
 					<img src="https://libraries.mit.edu/app/uploads/2026/08/XKQoSUbi-1.png" alt="A white, two-column locker with a digital screen and text reading &quot;MIT Libraries, Pickup Locker&quot;"/>
 					<div class="featured-item-content">
 						<hgroup>
-							<h3><a href="https://libraries.mit.edu/news/coming-soon-self-service-lockers/44582/">Coming soon: Self-service lockers</a></h3>
+							<h3><a href="https://libraries.mit.edu/locations/lockers/">New! Self-service lockers</a></h3>
 							<p>Pick up and drop off library items 24 hours a day, seven days a week</p>
 						</hgroup>
 					</div>
-				</article>
+				</article>						
 				<article class="featured-item">
 					<span class="item-type service">Service</span>
 					<div class="featured-item-content">
@@ -98,14 +98,14 @@ $expert_help_link_text = 'How can ' . $expert_first_name . ' help you?';
 					</div>
 				</article>
 				<article class="featured-item">
-					<span class="item-type service">Service</span>
+					<span class="item-type resource">Resource</span>
 					<div class="featured-item-content">
 						<hgroup>
-							<h3><a href="https://libraries.mit.edu/scholarly/">Learn about your options and rights in scholarly publishing</a></h3>
-							<p>Including open access, copyright, and research funder requirements</p>
+							<h3><a href="https://libguides.mit.edu/news/nyt">The New York Times</a></h3>
+							<p>A digital edition subscription is available to all MIT students, faculty, and staff.</p>
 						</hgroup>
 					</div>
-				</article>
+				</article>																	
 				<article class="featured-item">
 					<span class="item-type resource">Resource</span>
 					<div class="featured-item-content">
