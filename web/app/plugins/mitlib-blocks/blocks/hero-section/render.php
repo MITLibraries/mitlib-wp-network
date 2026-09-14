@@ -11,7 +11,7 @@
 	<div class="overlay">	
 		<div class="content-wrapper">
 			<div class="hero-content">
-				<h1>Welcome to the MIT Libraries</h1>
+				<h1><?php echo wp_kses_post( $attributes['heading'] ); ?></h1>
 
 				<?php
 					// Search widget area for homepage. Uses Unified Search v2 for this page's search form.
