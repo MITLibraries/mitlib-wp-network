@@ -1,10 +1,4 @@
 /**
- * Retrieves the translation of text.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/
- */
-import { __ } from '@wordpress/i18n';
-/**
  * React hook that is used to mark the block wrapper element.
  * It provides all the necessary props like the class name.
  *
@@ -31,6 +25,6 @@ export default function Edit() {
 	return (
 		<div { ...useBlockProps() }>
 			<h2>Featured collection (No title to edit)</h2>
-		</div>		
+		</div>
 	);
 }

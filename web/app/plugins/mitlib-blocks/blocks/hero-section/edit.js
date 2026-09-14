@@ -14,16 +14,16 @@ import { useBlockProps, RichText } from '@wordpress/block-editor';
 import './editor.scss';
 
 export default function Edit( { attributes, setAttributes } ) {
-    const blockProps = useBlockProps();
+	const blockProps = useBlockProps();
 
-    return (
-        <div { ...blockProps }>
-            <RichText
-                tagName="h1"
-                value={ attributes.heading }
-                onChange={ ( heading ) => setAttributes( { heading } ) }
-                placeholder={ __( 'Enter heading…', 'mitlib-blocks' ) }
-            />
-        </div>
-    );
+	return (
+		<div { ...blockProps }>
+			<RichText
+				tagName="h1"
+				value={ attributes.heading }
+				onChange={ ( heading ) => setAttributes( { heading } ) }
+				placeholder={ __( 'Enter heading…', 'mitlib-blocks' ) }
+			/>
+		</div>
+	);
 }
