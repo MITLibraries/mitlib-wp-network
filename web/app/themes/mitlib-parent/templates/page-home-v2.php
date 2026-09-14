@@ -28,81 +28,81 @@ get_header( 'v2' ); ?>
 			// If the page's content is empty, render the default static markup instead
 			?>
 
-			<div class="hero-bg" role="img" aria-label="Graphic illustration of a spiral in purple, black, and white." style="background-image: url(https://libraries.mit.edu/app/uploads/2026/09/hero-image-noise-reduction.jpg);"></div>
-			<div class="overlay">	
-				<div class="content-wrapper">
-						<div class="hero-content">
-							<h1>Welcome to the MIT Libraries</h1>
+		<div class="hero-bg" role="img" aria-label="Graphic illustration of a spiral in purple, black, and white." style="background-image: url(https://libraries.mit.edu/app/uploads/2026/09/hero-image-noise-reduction.jpg);"></div>
+		<div class="overlay">
+			<div class="content-wrapper">
+					<div class="hero-content">
+						<h1>Welcome to the MIT Libraries</h1>
 
-							<?php
-								// Search widget area for homepage. Uses Unified Search v2 for this page's search form.
-								if ( is_active_sidebar( 'sidebar-search' ) ) :
-									dynamic_sidebar( 'sidebar-search' );					
-								endif; 
-							?>
-							
-						</div>
-						<span class="hero-image-credit">from the <a href="https://archivesspace.mit.edu/repositories/2/resources/244">Muriel Cooper personal archives</a></span>
+						<?php
+							// Search widget area for homepage. Uses Unified Search v2 for this page's search form.
+							if ( is_active_sidebar( 'sidebar-search' ) ) :
+								dynamic_sidebar( 'sidebar-search' );
+							endif;
+						?>
+
 					</div>
+					<span class="hero-image-credit">from the <a href="https://archivesspace.mit.edu/repositories/2/resources/244">Muriel Cooper personal archives</a></span>
 				</div>
-			</section>
+			</div>
+		</section>
 
-			<?php //get_template_part( 'inc/alert-local' ); ?>
+		<?php //get_template_part( 'inc/alert-local' ); ?>
 
-			<section id="todays-hours">
-				<div class="content-wrapper">
-					<h2>Today's hours</h2>
-					<ol class="hours-list">
-						<li>
-							<span class="library-name"><a class="link-no-underline" href="/hayden">Hayden Library</a></span>
-							<span class="library-hours"><span data-location-hours="Hayden Library"></span></span>
-							<span class="library-study">
-								<i class="fa-light fa-moon" aria-hidden="true" role="img"></i>
-								24/7 study
-							</span>
-						</li>
-						<li class="hour-rotch">
-							<span class="library-name"><a class="link-no-underline" href="/rotch">Rotch Library</a></span>
-							<span class="library-hours"><span data-location-hours="Rotch Library"></span></span>
-							<span class="library-study">
-								<i class="fa-light fa-moon" aria-hidden="true" role="img"></i>
-								24/7 study
-							</span>
-						</li>				
-						<li class="hour-barker">
-							<span class="library-name"><a class="link-no-underline" href="/barker">Barker Library</a></span>
-							<span class="library-hours"><span data-location-hours="Barker Library"></span></span>
-							<span class="library-study">
-								<i class="fa-light fa-moon" aria-hidden="true" role="img"></i>
-								24/7 study
-							</span>
-						</li>
-						<li class="hour-lewis">
-							<span class="library-name"><a class="link-no-underline" href="/music">Lewis Music Library</a></span>
-							<span class="library-hours"><span data-location-hours="Lewis Music Library"></span></span>
-							<span class="library-study"></span>
-						</li>						
-					</ol>
-					<a href="/hours" class="link-on-dark">See more locations and hours</a>
-				</div>
-			</section>	
-			<section id="using-the-libraries">
-				<div class="content-wrapper">
-					<h2>Using the Libraries</h2>
-					<div class="box-wrapper">
-					<div class="option-boxes">
-						<div>
-							<i class="fa-light fa-lightbulb" aria-hidden="true" role="img"></i>
-							<div class="option-box-content">
-								<h3><a href="/study">Find a study space</a></h3>
-								<p>Quiet and group spaces—many available 24/7</p>
-							</div>
+		<section id="todays-hours">
+			<div class="content-wrapper">
+				<h2>Today's hours</h2>
+				<ol class="hours-list">
+					<li>
+						<span class="library-name"><a class="link-no-underline" href="/hayden">Hayden Library</a></span>
+						<span class="library-hours"><span data-location-hours="Hayden Library"></span></span>
+						<span class="library-study">
+							<i class="fa-light fa-moon" aria-hidden="true" role="img"></i>
+							24/7 study
+						</span>
+					</li>
+					<li class="hour-rotch">
+						<span class="library-name"><a class="link-no-underline" href="/rotch">Rotch Library</a></span>
+						<span class="library-hours"><span data-location-hours="Rotch Library"></span></span>
+						<span class="library-study">
+							<i class="fa-light fa-moon" aria-hidden="true" role="img"></i>
+							24/7 study
+						</span>
+					</li>
+					<li class="hour-barker">
+						<span class="library-name"><a class="link-no-underline" href="/barker">Barker Library</a></span>
+						<span class="library-hours"><span data-location-hours="Barker Library"></span></span>
+						<span class="library-study">
+							<i class="fa-light fa-moon" aria-hidden="true" role="img"></i>
+							24/7 study
+						</span>
+					</li>
+					<li class="hour-lewis">
+						<span class="library-name"><a class="link-no-underline" href="/music">Lewis Music Library</a></span>
+						<span class="library-hours"><span data-location-hours="Lewis Music Library"></span></span>
+						<span class="library-study"></span>
+					</li>
+				</ol>
+				<a href="/hours" class="link-on-dark">See more locations and hours</a>
+			</div>
+		</section>
+		<section id="using-the-libraries">
+			<div class="content-wrapper">
+				<h2>Using the Libraries</h2>
+				<div class="box-wrapper">
+				<div class="option-boxes">
+					<div>
+						<i class="fa-light fa-lightbulb" aria-hidden="true" role="img"></i>
+						<div class="option-box-content">
+							<h3><a href="/study">Find a study space</a></h3>
+							<p>Quiet and group spaces—many available 24/7</p>
 						</div>
-						<div>
-							<i class="fa-light fa-file-alt" aria-hidden="true" role="img"></i>
-							<div class="option-box-content">
-								<h3><a href="/get-materials">Learn how to get materials</a></h3>
-								<p>Find, request, and get articles, books, and more</p>
+					</div>
+					<div>
+						<i class="fa-light fa-file-alt" aria-hidden="true" role="img"></i>
+						<div class="option-box-content">
+							<h3><a href="/get-materials">Learn how to get materials</a></h3>
+							<p>Find, request, and get articles, books, and more</p>
 							</div>
 						</div>
 						<div>
