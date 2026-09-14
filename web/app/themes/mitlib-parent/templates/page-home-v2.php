@@ -27,9 +27,10 @@ get_header( 'v2' ); ?>
 			// If the page's content is empty, render the default static markup instead
 			?>
 
-			<section id="hero" role="img" aria-label="Two notebooks opened to show yellow graph paper; the top one has a black and white photo of a boat crew, and the bottom one shows handwritten text." style="background-image: url(https://libraries.mit.edu/app/uploads/2026/07/hero-image-edgerton.png);">
-			<div class="overlay">	
-				<div class="content-wrapper">
+			<section id="hero">
+				<div class="hero-bg" role="img" aria-label="Graphic illustration of a spiral in purple, black, and white." style="background-image: url(https://libraries.mit.edu/app/uploads/2026/09/hero-image-noise-reduction.jpg);"></div>
+				<div class="overlay">	
+					<div class="content-wrapper">
 						<div class="hero-content">
 							<h1>Welcome to the MIT Libraries</h1>
 
@@ -41,13 +42,10 @@ get_header( 'v2' ); ?>
 							?>
 							
 						</div>
-						<span class="hero-image-credit">from the <a href="https://archivesspace.mit.edu/repositories/2/resources/603">Harold E. Edgerton papers</a></span>
+						<span class="hero-image-credit">from the <a href="https://archivesspace.mit.edu/repositories/2/resources/244">Muriel Cooper personal archives</a></span>
 					</div>
 				</div>
 			</section>
-
-			<?php //get_template_part( 'inc/alert-local' ); ?>
-
 			<section id="todays-hours">
 				<div class="content-wrapper">
 					<h2>Today's hours</h2>
