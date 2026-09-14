@@ -17,6 +17,10 @@ return array(
 			'heading' => array(
 				'type' => 'string',
 				'default' => 'Featured'
+			),
+			'featuredExpertId' => array(
+				'type' => 'number',
+				'default' => 0
 			)
 		),
 		'supports' => array(
