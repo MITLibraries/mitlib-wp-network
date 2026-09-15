@@ -29,7 +29,6 @@ return array(
 		'textdomain' => 'mitlib-blocks',
 		'editorScript' => 'file:./index.js',
 		'editorStyle' => 'file:./index.css',
-		'style' => 'file:./style-index.css',
 		'render' => 'file:./render.php'
 	),
 	'featured-collection-section' => array(
@@ -49,8 +48,7 @@ return array(
 		),
 		'textdomain' => 'mitlib-blocks',
 		'editorScript' => 'file:./index.js',
-		'editorStyle' => 'file:./index.css',
-		'style' => 'file:./style-index.css'
+		'editorStyle' => 'file:./index.css'
 	),
 	'hero-section' => array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',
@@ -76,7 +74,6 @@ return array(
 		'textdomain' => 'mitlib-blocks',
 		'editorScript' => 'file:./index.js',
 		'editorStyle' => 'file:./index.css',
-		'style' => 'file:./style-index.css',
 		'render' => 'file:./render.php'
 	),
 	'hours-section' => array(
@@ -110,8 +107,7 @@ return array(
 		),
 		'textdomain' => 'mitlib-blocks',
 		'editorScript' => 'file:./index.js',
-		'editorStyle' => 'file:./index.css',
-		'style' => 'file:./style-index.css'
+		'editorStyle' => 'file:./index.css'
 	),
 	'using-the-libraries-section' => array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',
@@ -152,7 +148,6 @@ return array(
 		),
 		'textdomain' => 'mitlib-blocks',
 		'editorScript' => 'file:./index.js',
-		'editorStyle' => 'file:./index.css',
-		'style' => 'file:./style-index.css'
+		'editorStyle' => 'file:./index.css'
 	)
 );
