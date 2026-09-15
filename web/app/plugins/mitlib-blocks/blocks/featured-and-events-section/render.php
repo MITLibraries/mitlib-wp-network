@@ -1,0 +1,259 @@
+<?php
+/**
+ * Server-side rendering for the featured and events section block.
+ *
+ * @package MITlib Blocks
+ * @var array    $attributes Block attributes.
+ * @var string   $content    Block default content.
+ * @var WP_Block $block      Block instance.
+ */
+
+// Look up the librarian chosen in the block editor's "Featured Librarian" panel.
+$featured_expert    = null;
+$featured_expert_id = absint( $attributes['featuredExpertId'] ?? 0 );
+if ( $featured_expert_id ) {
+	$maybe_expert = get_post( $featured_expert_id );
+	if ( $maybe_expert && 'experts' === $maybe_expert->post_type && 'publish' === $maybe_expert->post_status ) {
+		$featured_expert = $maybe_expert;
+	}
+}
+
+// Fallback used when no librarian has been selected in the block editor.
+$default_expert = array(
+	'name'       => 'Alejandro Paz',
+	'first_name' => 'Alejandro',
+	'url'        => 'https://libguides.mit.edu/profiles/apaz',
+	'image'      => 'https://libapps.s3.amazonaws.com/accounts/349/images/apaz-100x100.jpg',
+	'excerpt'    => 'Librarian for Energy and Environment',
+);
+
+// If we have a valid expert, use those values. If not, use the fallback values.
+if ( $featured_expert ) {
+	$expert_name       = get_the_title( $featured_expert );
+	$expert_first_name = strtok( $expert_name, ' ' );
+	$expert_url        = get_post_meta( $featured_expert->ID, 'expert_url', true );
+	$expert_image      = get_the_post_thumbnail_url( $featured_expert, 'thumbnail' );
+	$expert_excerpt    = get_the_excerpt( $featured_expert );
+} else {
+	$expert_name       = $default_expert['name'];
+	$expert_first_name = $default_expert['first_name'];
+	$expert_url        = $default_expert['url'];
+	$expert_image      = $default_expert['image'];
+	$expert_excerpt    = $default_expert['excerpt'];
+}
+
+// Generate the strings for alt text and help link text.
+$expert_alt_text       = 'Headshot of ' . $expert_name;
+$expert_help_link_text = 'How can ' . $expert_first_name . ' help you?';
+
+?><section id="featured-and-events">
+	<div class="content-wrapper">
+		<div class="featured-content">
+			<h2><?php echo esc_html( $attributes['heading'] ); ?></h2>
+			<div class="featured-items count-6">
+				<article class="featured-item">
+					<span class="item-type spotlight">Spotlight</span>
+					<img src="https://libraries.mit.edu/app/uploads/2026/09/mit-reads-highlight.png" alt="Exhalation book cover and MIT Reads logo; text reads Fall 2026 selection" />
+					<div class="featured-item-content">
+						<hgroup>
+							<h3><a href="https://libraries.mit.edu/mit-reads/">Read <em>Exhalation</em> by Ted Chiang</a></h3>
+							<p>To celebrate 10 years of MIT Reads, President Sally Kornbluth has chosen our fall 2026 selection</p>
+						</hgroup>
+					</div>
+				</article>	
+				<article class="featured-item side-by-side">
+					<span class="item-type spotlight">Spotlight</span>
+					<?php if ( $expert_image ) : ?>
+					<img src="<?php echo esc_url( $expert_image ); ?>" alt="<?php echo esc_attr( $expert_alt_text ); ?>" />
+					<?php endif; ?>
+					<div class="featured-item-content">
+						<hgroup>
+							<h3><a href="<?php echo esc_url( $expert_url ); ?>"><?php echo esc_html( $expert_name ); ?></a></h3>
+							<div>
+								<p><?php echo esc_html( $expert_excerpt ); ?></p>
+							</div>
+						</hgroup>
+						<a class="arrow-right" href="<?php echo esc_url( $expert_url ); ?>">
+							<?php echo esc_html( $expert_help_link_text ); ?>
+						</a>
+					</div>
+				</article>
+				<article class="featured-item side-by-side">
+					<span class="item-type service">Service</span>
+					<img src="https://libraries.mit.edu/app/uploads/2026/08/XKQoSUbi-1.png" alt="A white, two-column locker with a digital screen and text reading &quot;MIT Libraries, Pickup Locker&quot;"/>
+					<div class="featured-item-content">
+						<hgroup>
+							<h3><a href="https://libraries.mit.edu/locations/lockers/">New! Self-service lockers</a></h3>
+							<p>Pick up and drop off library items 24 hours a day, seven days a week</p>
+						</hgroup>
+					</div>
+				</article>						
+				<article class="featured-item">
+					<span class="item-type service">Service</span>
+					<div class="featured-item-content">
+						<hgroup>
+							<h3><a href="https://libraries.mit.edu/about/service-updates/">Service updates</a></h3>
+							<p>The latest information about access to library collections, spaces, and services</p>
+						</hgroup>
+					</div>
+				</article>
+				<article class="featured-item">
+					<span class="item-type resource">Resource</span>
+					<div class="featured-item-content">
+						<hgroup>
+							<h3><a href="https://libguides.mit.edu/news/nyt">The New York Times</a></h3>
+							<p>A digital edition subscription is available to all MIT students, faculty, and staff.</p>
+						</hgroup>
+					</div>
+				</article>																	
+				<article class="featured-item">
+					<span class="item-type resource">Resource</span>
+					<div class="featured-item-content">
+						<hgroup>
+							<h3><a href="https://libguides.mit.edu/libkey/nomad">Quicker access to journal articles</a></h3>
+							<p>The LibKey Nomad browser extension instantly checks for full-text access to articles as you browse the web</p>
+						</hgroup>
+					</div>
+				</article>
+			</div>
+		</div>
+		<div class="events">
+			<div class="events-header">
+				<div class="events-header-title-paragraph">
+					<h2>Events &amp; Workshops</h2>
+					<p>Featured classes, workshops, and speaker events</p>
+				</div>
+				<a class="button secondary" href="https://libraries.mit.edu/news/events/">See all events</a>
+			</div>
+
+			<?php
+			// Pull upcoming events from the News site (blog 4), prioritizing pinned events.
+			$news_site_id = 4;
+			switch_to_blog( $news_site_id );
+
+			$today = gmdate( 'Ymd' );
+
+			$events_args = array(
+				'posts_per_page'      => 20,
+				'post_type'           => 'post',
+				'post_status'         => 'publish',
+				'orderby'             => 'meta_value',
+				'meta_key'            => 'event_date',
+				'order'               => 'ASC',
+				'ignore_sticky_posts' => 1,
+				'meta_query'          => array(
+					array(
+						'key'     => 'event_date',
+						'value'   => $today,
+						'compare' => '>=',
+					),
+				),
+			);
+
+			$events_query = new WP_Query( $events_args );
+
+			$featured_events = array();
+			$regular_events  = array();
+
+			if ( $events_query->have_posts() ) :
+				while ( $events_query->have_posts() ) :
+					$events_query->the_post();
+					$custom = get_post_custom();
+
+					if ( ! isset( $custom['is_event'][0] ) || '1' !== $custom['is_event'][0] ) {
+						continue;
+					}
+
+					$event_date_raw = isset( $custom['event_date'][0] ) ? $custom['event_date'][0] : '';
+					if ( ! $event_date_raw || $event_date_raw < $today ) {
+						continue;
+					}
+
+					$event_data = array(
+						'title'      => ! empty( $custom['homepage_post_title'][0] ) ? $custom['homepage_post_title'][0] : get_the_title(),
+						'url'        => ! empty( $custom['calendar_url'][0] ) ? $custom['calendar_url'][0] : get_the_permalink(),
+						'event_date' => $event_date_raw,
+						'start_time' => isset( $custom['event_start_time'][0] ) ? $custom['event_start_time'][0] : '',
+						'end_time'   => isset( $custom['event_end_time'][0] ) ? $custom['event_end_time'][0] : '',
+						'location'   => isset( $custom['event_location'][0] ) ? $custom['event_location'][0] : '',
+						'excerpt'    => get_the_excerpt(),
+					);
+
+					if ( ! empty( $custom['pin_event_on_homepage'][0] ) && '1' === $custom['pin_event_on_homepage'][0] ) {
+						$featured_events[] = $event_data;
+					} else {
+						$regular_events[] = $event_data;
+					}
+				endwhile;
+				wp_reset_postdata();
+			endif;
+
+			if ( count( $featured_events ) >= 2 ) {
+				$display_events = array_slice( $featured_events, 0, 2 );
+			} elseif ( count( $featured_events ) === 1 ) {
+				$display_events = array_merge( $featured_events, array_slice( $regular_events, 0, 1 ) );
+				usort(
+					$display_events,
+					function ( $a, $b ) {
+						return strcmp( $a['event_date'], $b['event_date'] );
+					}
+				);
+			} else {
+				$display_events = array_slice( $regular_events, 0, 2 );
+			}
+
+			if ( count( $display_events ) > 0 ) {
+				foreach ( $display_events as $event ) :
+					$event_dt    = DateTime::createFromFormat( 'Ymd', $event['event_date'] );
+					$event_month = $event_dt ? $event_dt->format( 'M' ) : '';
+					$event_day   = $event_dt ? $event_dt->format( 'j' ) : '';
+
+					$time_display = '';
+					if ( $event['start_time'] ) {
+						$time_display = $event['start_time'];
+						if ( $event['end_time'] ) {
+							$time_display .= ' &#150; ' . $event['end_time'];
+						}
+					}
+					?>
+
+					<div class="event">
+						<div class="event-date">
+							<span class="event-month"><?php echo esc_html( $event_month ); ?></span>
+							<span class="event-day"><?php echo esc_html( $event_day ); ?></span>
+							<span class="event-weekday"><?php echo esc_html( $event_dt ? $event_dt->format( 'D' ) : '' ); ?></span>
+						</div>
+						<div class="event-details">
+							<h3><a href="<?php echo esc_url( $event['url'] ); ?>"><?php echo esc_html( mb_strimwidth( $event['title'], 0, 75, '…' ) ); ?></a></h3>
+							<p><?php echo esc_html( $event['excerpt'] ); ?></p>
+							<?php if ( $time_display || $event['location'] ) : ?>
+							<div class="event-metadata">
+								<?php if ( $time_display ) : ?>
+								<span class="event-time"><i class="fa-light fa-clock" role="img" aria-label="Event time"></i><?php echo wp_kses( $time_display, array() ); ?></span>
+								<?php endif; ?>
+								<?php if ( $event['location'] ) : ?>
+								<span class="event-location"><i class="fa-light fa-map-pin" role="img" aria-label="Event location"></i><?php echo esc_html( $event['location'] ); ?></span>
+								<?php endif; ?>
+							</div>
+							<?php endif; ?>
+						</div>
+					</div>
+
+					<?php
+				endforeach;
+			} else {
+				?>
+
+				<div class="no-events">
+					<h3>Nothing scheduled at the moment</h3>
+					<p>Check back later or <a href="/news/subscribe">sign up for our newsletter</a> to stay on top of new events</p>
+				</div>
+
+				<?php
+			}
+
+			restore_current_blog();
+			?>
+		</div>
+	</div>
+</section>
