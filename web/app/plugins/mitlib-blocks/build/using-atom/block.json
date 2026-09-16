@@ -1,0 +1,35 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "mitlib/using-atom",
+  "version": "0.1.0",
+  "title": "Using Atom",
+  "category": "mitlib",
+  "icon": "block-default",
+  "description": "Using the Libraries blurb",
+  "example": false,
+  "attributes": {
+    "headline": {
+      "type": "string",
+      "default": "Find a study space"
+    },
+    "blurb": {
+      "type": "string",
+      "default": "Quiet and group spaces - many available 24/7"
+    },
+    "icon": {
+      "type": "string",
+      "default": "lightbulb"
+    },
+    "link": {
+      "type": "string",
+      "default": "/study"
+    }
+  },
+  "supports": {
+    "html": false
+  },
+  "textdomain": "mitlib-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css"
+}

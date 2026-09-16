@@ -1,0 +1,23 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "mitlib/location-atom",
+  "version": "0.1.0",
+  "title": "Location Atom",
+  "category": "mitlib",
+  "icon": "block-default",
+  "description": "Location information (with hours)",
+  "example": false,
+  "attributes": {
+    "locationName": {
+      "type": "string",
+      "default": "Hayden Library"
+    }
+  },
+  "supports": {
+    "html": false
+  },
+  "textdomain": "mitlib-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css"
+}
