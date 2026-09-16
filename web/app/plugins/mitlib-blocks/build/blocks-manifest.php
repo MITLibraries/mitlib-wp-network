@@ -83,6 +83,64 @@ return array(
 		'editorScript' => 'file:./index.js',
 		'editorStyle' => 'file:./index.css'
 	),
+	'location-atom' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'mitlib/location-atom',
+		'version' => '0.1.0',
+		'title' => 'Location Atom',
+		'category' => 'mitlib',
+		'icon' => 'block-default',
+		'description' => 'Location information (with hours)',
+		'example' => false,
+		'attributes' => array(
+			'locationName' => array(
+				'type' => 'string',
+				'default' => 'Hayden Library'
+			)
+		),
+		'supports' => array(
+			'html' => false
+		),
+		'textdomain' => 'mitlib-blocks',
+		'editorScript' => 'file:./index.js',
+		'editorStyle' => 'file:./index.css'
+	),
+	'using-atom' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'mitlib/using-atom',
+		'version' => '0.1.0',
+		'title' => 'Using Atom',
+		'category' => 'mitlib',
+		'icon' => 'block-default',
+		'description' => 'Using the Libraries blurb',
+		'example' => false,
+		'attributes' => array(
+			'headline' => array(
+				'type' => 'string',
+				'default' => 'Find a study space'
+			),
+			'blurb' => array(
+				'type' => 'string',
+				'default' => 'Quiet and group spaces - many available 24/7'
+			),
+			'icon' => array(
+				'type' => 'string',
+				'default' => 'lightbulb'
+			),
+			'link' => array(
+				'type' => 'string',
+				'default' => '/study'
+			)
+		),
+		'supports' => array(
+			'html' => false
+		),
+		'textdomain' => 'mitlib-blocks',
+		'editorScript' => 'file:./index.js',
+		'editorStyle' => 'file:./index.css'
+	),
 	'using-the-libraries-section' => array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',
 		'apiVersion' => 3,
