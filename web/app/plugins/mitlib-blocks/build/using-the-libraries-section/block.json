@@ -8,10 +8,17 @@
   "icon": "align-wide",
   "description": "Displays library service links and an Ask Us help box.",
   "example": {},
+  "allowedBlocks": [
+    "mitlib/using-item"
+  ],
   "attributes": {
     "heading": {
       "type": "string",
       "default": "Using the Libraries"
+    },
+    "showAskUs": {
+      "type": "boolean",
+      "default": true
     },
     "askUsTitle": {
       "type": "string",
@@ -35,5 +42,6 @@
   },
   "textdomain": "mitlib-blocks",
   "editorScript": "file:./index.js",
-  "editorStyle": "file:./index.css"
+  "editorStyle": "file:./index.css",
+  "render": "file:./render.php"
 }
