@@ -11,6 +11,7 @@
   <!-- Exclude files which should not be scanned by PHPCS -->
   <exclude-pattern>/web/app/themes/mitlib-child/navwalker.php</exclude-pattern>
   <exclude-pattern>/web/app/themes/mitlib-parent/navwalker.php</exclude-pattern>
+  <exclude-pattern>/web/app/plugins/**/build</exclude-pattern>
 
   <!-- Ignore WordPress and Composer dependencies -->
   <exclude-pattern>config/</exclude-pattern>

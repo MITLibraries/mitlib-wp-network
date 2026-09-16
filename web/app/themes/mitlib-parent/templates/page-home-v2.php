@@ -13,7 +13,20 @@ namespace Mitlib\Parent;
 
 get_header( 'v2' ); ?>
 
-<main id="content">
+<main id="content" class="block-editor">
+
+	<?php
+	while ( have_posts() ) :
+		the_post();
+
+		if ( ! empty( get_the_content() ) ) {
+			// Render the wordpress page content, including any blocks
+			the_content(); 
+		} else { 
+			
+			// If the page's content is empty, render the default static markup instead
+			?>
+
 	<section id="hero">
 		<div class="hero-bg" role="img" aria-label="Graphic illustration of a spiral in purple, black, and white." style="background-image: url(https://libraries.mit.edu/app/uploads/2026/09/hero-image-noise-reduction.jpg);"></div>
 		<div class="overlay">	
@@ -355,6 +368,11 @@ get_header( 'v2' ); ?>
 			</div>
 		</div>
 	</section>
+
+		<?php }
+
+	endwhile;
+	?>
 
 </main>
 
