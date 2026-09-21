@@ -146,6 +146,13 @@ body.v2-page {
           font-weight: var(--font-weight-regular);
           color: var(--color-text-disabled);
         }
+
+        /* Hide the default search clear icon for webkit browsers */
+        &[type="search"]::-webkit-search-cancel-button {
+          -webkit-appearance: none;
+          display: none;
+          opacity: 0;
+        }
       }
 
       #clear-search {
