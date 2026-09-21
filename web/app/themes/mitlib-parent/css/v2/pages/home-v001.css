@@ -156,11 +156,12 @@ body.v2-page {
         height: 32px;
         width: 32px;        
         background: none;
-        color: var(--color-icon-primary);
+        color: var(--color-icon-default);
         font-size: 0;
         padding: 2px;
         border-radius: 100%;
-        border: 1px solid var(--color-border-default);
+        border: 1px solid var(--color-border-louder);
+        box-shadow: none;
         cursor: pointer;
 
         &:hover {
@@ -184,6 +185,15 @@ body.v2-page {
 
       &:hover {
         background-image: none;
+      }
+
+      &[disabled] {
+        background-color: var(--color-bg-disabled);
+        color: var(--color-text-disabled);
+
+        &:hover {
+          outline: none;
+        }
       }
     }
 

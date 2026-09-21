@@ -14,7 +14,7 @@
 		<div class="search-input-wrapper">
 			<i class="fa-regular fa-magnifying-glass"></i>
 			<input id="basic-search-main" placeholder="Try a citation, topic, database, etc." type="search" class="field field-text basic-search-input" name="q" title="Keyword anywhere" value="" required="">
-			<button title="Clear search" aria-label="Clear search" type="button" id="clear-search" style="display: none;">Clear search</button>
+			<button title="Clear search" aria-label="Clear search" type="button" id="clear-search">Clear search</button>
 		</div>
 		<input id="tab-to-target" type="hidden" name="tab" value="all">
 		<button type="submit" class="btn button-primary">Search</button>
