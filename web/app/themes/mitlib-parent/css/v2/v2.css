@@ -2,7 +2,7 @@
 /* DESIGN SYSTEM TOKENS */
 /* ==================== */
 
-@import url('variables/color.css');
+@import url('variables/color-v001.css');
 @import url('variables/corners.css');
 @import url('variables/effects.css');
 @import url('variables/shadows.css');
@@ -26,4 +26,4 @@
 @import url('partials/footer.css');
 
 /* Page-level styles */
-@import url('pages/home-v001.css');
+@import url('pages/home-v002.css');
