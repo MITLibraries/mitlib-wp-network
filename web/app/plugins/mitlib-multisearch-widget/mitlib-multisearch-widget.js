@@ -6,8 +6,7 @@ function setupClearSearch(textField,clearButton) {
 	}
 
 	// scope clear/submit lookups to the field's own form, since their selectors aren't guaranteed unique page-wide
-	var scope = field.closest('form') || document;
-	var clear = scope.querySelector( clearButton );
+	var clear = field.closest('form').querySelector( clearButton ) || document;
 	if ( ! clear ) {
 		return;
 	}
