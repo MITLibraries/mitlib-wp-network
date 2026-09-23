@@ -20,7 +20,8 @@
 				type="text"
 				id="searchinput-bento"
 				name="q"
-				placeholder="Try a citation, topic, database, etc.">
+				placeholder="Try a citation, topic, database, etc."
+				required>
 		</div>
 		<div class="flex-right">
 			<input class="button button-search" type="submit" value="Search">

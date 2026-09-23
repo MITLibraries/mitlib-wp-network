@@ -136,10 +136,11 @@
   --color-bg-default:  var(--color-white);
   --color-bg-subtle:  var(--color-gray-25); 
   --color-bg-secondary:  var(--color-gray-100); 
-  --color-bg-disabled: var(--color-gray-400);
+  --color-bg-disabled: var(--color-gray-200);
 
   /* ─── Border ─── */
   --color-border-default:     var(--color-gray-200);
+  --color-border-louder:      var(--color-gray-400);
   --color-border-information: var(--color-cyan-800);
   --color-border-success:     var(--color-green-800);
   --color-border-warning:     var(--color-yellow-500);
