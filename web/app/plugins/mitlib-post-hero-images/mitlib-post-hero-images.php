@@ -5,6 +5,7 @@
  * Version: 1.0.0
  * Author: MIT Libraries
  * License: GPL2
+ * Text Domain: mitlib-post-hero-images
  *
  * @package MITlib Post Hero Images
  * @author MIT Libraries

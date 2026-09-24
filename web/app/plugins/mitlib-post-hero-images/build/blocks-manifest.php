@@ -14,6 +14,10 @@ return array(
 			'heading' => array(
 				'type' => 'string',
 				'default' => 'Welcome to the MIT Libraries'
+			),
+			'heroImageId' => array(
+				'type' => 'number',
+				'default' => 0
 			)
 		),
 		'example' => array(
@@ -22,7 +26,7 @@ return array(
 		'supports' => array(
 			'html' => false
 		),
-		'textdomain' => 'mitlib-blocks',
+		'textdomain' => 'mitlib-post-hero-images',
 		'editorScript' => 'file:./index.js',
 		'editorStyle' => 'file:./index.css',
 		'render' => 'file:./render.php'
