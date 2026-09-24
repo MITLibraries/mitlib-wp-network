@@ -32,7 +32,7 @@ if ( $hero_image ) {
 	$hero_image_url    = get_the_post_thumbnail_url( $hero_image, 'full' );
 	$hero_alt_text     = get_post_meta( $hero_image->ID, 'alt_text', true );
 	$hero_citation     = get_post_meta( $hero_image->ID, 'citation', true );
-	$hero_link_text    = get_post_meta( $hero_image->ID, 'citation_link_text', true );
+	$hero_link_text    = trim( get_post_meta( $hero_image->ID, 'citation_link_text', true ) );
 	$hero_citation_url = get_post_meta( $hero_image->ID, 'citation_url', true );
 } else {
 	$hero_image_url    = $default_hero_image['image_url'];
@@ -63,9 +63,9 @@ if ( $hero_citation_url && $hero_link_text && false !== strpos( $hero_citation, 
 
 				<?php
 					// Search widget area for homepage. Uses Unified Search v2 for this page's search form.
-					if ( is_active_sidebar( 'sidebar-search' ) ) :
-						dynamic_sidebar( 'sidebar-search' );					
-					endif; 
+				if ( is_active_sidebar( 'sidebar-search' ) ) :
+					dynamic_sidebar( 'sidebar-search' );
+					endif;
 				?>
 				
 			</div>
