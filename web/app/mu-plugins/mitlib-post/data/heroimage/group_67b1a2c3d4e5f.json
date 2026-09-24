@@ -1,0 +1,106 @@
+{
+    "key": "group_67b1a2c3d4e5f",
+    "title": "Hero Image Citation",
+    "fields": [
+        {
+            "key": "field_67b1a2c3d4e62",
+            "label": "Alt Text",
+            "name": "alt_text",
+            "type": "text",
+            "instructions": "Alternative text describing the hero image, for accessibility.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_67b1a2c3d4e60",
+            "label": "Citation",
+            "name": "citation",
+            "type": "text",
+            "instructions": "The text used to credit the source of the hero image, e.g. \"Muriel Cooper personal archives\".",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_67b1a2c3d4e63",
+            "label": "Citation Link Text",
+            "name": "citation_link_text",
+            "type": "text",
+            "instructions": "The exact substring within the Citation text that should be wrapped in the link, e.g. \"Muriel Cooper personal archives\". Leave blank to link the entire citation.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_67b1a2c3d4e61",
+            "label": "Citation Link URL",
+            "name": "citation_url",
+            "type": "url",
+            "instructions": "A URL that the Citation Link Text (or the full citation, if no link text is set) should link to, if any.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "hero_images"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "permalink",
+        "the_content",
+        "excerpt",
+        "discussion",
+        "comments",
+        "slug",
+        "author",
+        "send-trackbacks"
+    ],
+    "active": true,
+    "description": "",
+    "show_in_rest": false
+}
