@@ -95,6 +95,7 @@ web/app/plugins/*
 !web/app/plugins/mitlib-post-events
 !web/app/plugins/mitlib-post-exhibits
 !web/app/plugins/mitlib-post-experts
+!web/app/plugins/mitlib-post-hero-images
 !web/app/plugins/mitlib-post-interviewees
 !web/app/plugins/mitlib-post-interviews
 !web/app/plugins/mitlib-post-locations
