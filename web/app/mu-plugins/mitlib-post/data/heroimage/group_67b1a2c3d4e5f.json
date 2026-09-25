@@ -3,25 +3,6 @@
     "title": "Hero Image Citation",
     "fields": [
         {
-            "key": "field_67b1a2c3d4e62",
-            "label": "Alt Text",
-            "name": "alt_text",
-            "type": "text",
-            "instructions": "Alternative text describing the hero image, for accessibility.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
             "key": "field_67b1a2c3d4e60",
             "label": "Citation",
             "name": "citation",
