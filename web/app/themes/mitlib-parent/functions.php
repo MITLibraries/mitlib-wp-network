@@ -200,11 +200,10 @@ function setup_scripts_styles() {
 	wp_register_style( 'v2-header', get_template_directory_uri() . '/css/v2/partials/header.css', array( 'v2-color', 'v2-layout', 'v2-spacing', 'v2-typography' ), $theme_version );
 	wp_register_style( 'v2-footer', get_template_directory_uri() . '/css/v2/partials/footer.css', array( 'v2-color', 'v2-layout', 'v2-spacing' ), $theme_version );
 
-	// PAGES
-	wp_register_style( 'v2-home', get_template_directory_uri() . '/css/v2/pages/home.css', array( 'v2-color', 'v2-corners', 'v2-effects', 'v2-layout', 'v2-shadows', 'v2-spacing', 'v2-typography', 'v2-alerts', 'v2-buttons', 'v2-header', 'v2-footer', 'fontawesome' ), $theme_version );
+	// Register the pages where we're using these individual pieces. These will get enqueued below and contain the above as dependencies.
 
-	// Register the final combined style sheet together. This will eventually be extracted and the only sheet to include
-	wp_register_style( 'v2', get_template_directory_uri() . '/css/v2/v2.css', array( 'v2-color', 'v2-corners', 'v2-effects', 'v2-layout', 'v2-shadows', 'v2-spacing', 'v2-typography', 'v2-alerts', 'v2-buttons', 'v2-header', 'v2-footer', 'v2-home' ), $theme_version );
+	// PAGES 
+	wp_register_style( 'v2-home', get_template_directory_uri() . '/css/v2/pages/home.css', array( 'v2-color', 'v2-corners', 'v2-effects', 'v2-layout', 'v2-shadows', 'v2-spacing', 'v2-typography', 'v2-alerts', 'v2-buttons', 'v2-header', 'v2-footer', 'fontawesome' ), $theme_version );
 
 	
 	/**
@@ -288,7 +287,7 @@ function setup_scripts_styles() {
 	
 	// Conditonally load v2 styles for only pages with the v2 header
 	if (is_page_template( 'templates/page-home-v2.php' )) {
-		wp_enqueue_style( 'v2' );
+		wp_enqueue_style( 'v2-home' );
 		wp_enqueue_script( 'moment' );
 		wp_enqueue_script( 'underscore' );
 		wp_enqueue_script( 'hours-loader-theme' );
