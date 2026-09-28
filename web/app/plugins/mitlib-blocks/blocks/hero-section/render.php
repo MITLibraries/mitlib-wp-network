@@ -9,7 +9,7 @@
  */
 
 ?><section id="hero">
-	<div class="hero-bg" role="img" aria-label="Graphic illustration of a spiral in purple, black, and white." style="background-image: url(https://libraries.mit.edu/app/uploads/2026/09/hero-image-noise-reduction.jpg);"></div>
+	<div class="hero-bg" role="img" aria-label="Illustration of a woman from the early 1900s holding onto a strap on a subway car." style="background-image: url(https://libraries.mit.edu/app/uploads/2026/09/hero-image-subway-glide1.jpg);"></div>
 	<div class="overlay">	
 		<div class="content-wrapper">
 			<div class="hero-content">
@@ -23,7 +23,7 @@
 				?>
 				
 			</div>
-			<span class="hero-image-credit">from the <a href="https://archivesspace.mit.edu/repositories/2/resources/244">Muriel Cooper personal archives</a></span>
+			<span class="hero-image-credit">from the <a href="https://dome.mit.edu/handle/1721.3/188939">Inventions of Note Sheet Music Collection</a></span>
 		</div>
 	</div>
 </section>
