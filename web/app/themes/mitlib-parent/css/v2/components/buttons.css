@@ -2,7 +2,7 @@ a.button {
   border: 1px solid var(--color-button-base-border-primary);
   background-color: var(--color-button-base-bg-primary);
   color: var(--color-button-base-text-primary);
-  border-radius: var(--border-radius-none);
+  border-radius: var(--radius-none);
   display: inline-block;
   padding: var(--sp-150) var(--sp-300);
   text-decoration: none;
