@@ -107,11 +107,11 @@ $expert_help_link_text = 'How can ' . $expert_first_name . ' help you?';
 					</div>
 				</article>																	
 				<article class="featured-item">
-					<span class="item-type resource">Resource</span>
+					<span class="item-type service">Service</span>
 					<div class="featured-item-content">
 						<hgroup>
-							<h3><a href="https://libguides.mit.edu/libkey/nomad">Quicker access to journal articles</a></h3>
-							<p>The LibKey Nomad browser extension instantly checks for full-text access to articles as you browse the web</p>
+							<h3><a href="https://libguides.mit.edu/gis">Geographic Information Systems (GIS)</a></h3>
+							<p>Our experts can help you use GIS software, find data, teach GIS concepts, and more.</p>
 						</hgroup>
 					</div>
 				</article>
