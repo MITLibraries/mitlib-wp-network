@@ -34,6 +34,7 @@ export default function Edit( { attributes, setAttributes } ) {
 		title,
 		description,
 		linkUrl,
+		imageId,
 		imageUrl,
 		imageAlt,
 		imagePosition,
@@ -109,26 +110,44 @@ export default function Edit( { attributes, setAttributes } ) {
 							setAttributes( { imagePosition: value } )
 						}
 					/>
-					{ imageUrl && (
-						<img
-							className="mitlib-featured-item-image-preview"
-							src={ imageUrl }
-							alt={ imageAlt }
-						/>
-					) }
 					<MediaUploadCheck>
 						<MediaUpload
 							onSelect={ onSelectImage }
 							allowedTypes={ [ 'image' ] }
+							value={ imageId }
 							render={ ( { open } ) => (
-								<Button variant="secondary" onClick={ open }>
-									{ imageUrl
-										? __( 'Replace image', 'mitlib-blocks' )
-										: __(
-												'Select image',
+								<>
+									{ imageUrl && (
+										<Button
+											className="mitlib-featured-item-image-preview"
+											onClick={ open }
+											label={ __(
+												'Edit image details',
 												'mitlib-blocks'
 											) }
-								</Button>
+											showTooltip
+										>
+											<img
+												src={ imageUrl }
+												alt={ imageAlt }
+											/>
+										</Button>
+									) }
+									<Button
+										variant="secondary"
+										onClick={ open }
+									>
+										{ imageUrl
+											? __(
+													'Replace image',
+													'mitlib-blocks'
+												)
+											: __(
+													'Select image',
+													'mitlib-blocks'
+												) }
+									</Button>
+								</>
 							) }
 						/>
 						{ imageUrl && (
