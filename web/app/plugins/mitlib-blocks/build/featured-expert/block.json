@@ -14,6 +14,10 @@
     "expertId": {
       "type": "number",
       "default": 0
+    },
+    "imagePosition": {
+      "type": "string",
+      "default": "left"
     }
   },
   "supports": {

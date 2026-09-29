@@ -15,8 +15,14 @@ const DEFAULT_EXPERT = {
 
 const stripTags = ( value ) => ( value || '' ).replace( /<[^>]*>/g, '' ).trim();
 
+const IMAGE_POSITIONS = [
+	{ label: __( 'None', 'mitlib-blocks' ), value: 'none' },
+	{ label: __( 'Above', 'mitlib-blocks' ), value: 'above' },
+	{ label: __( 'Left', 'mitlib-blocks' ), value: 'left' },
+];
+
 export default function Edit( { attributes, setAttributes } ) {
-	const { expertId } = attributes;
+	const { expertId, imagePosition } = attributes;
 
 	const { experts, hasResolvedExperts } = useSelect( ( select ) => {
 		const query = {
@@ -62,10 +68,14 @@ export default function Edit( { attributes, setAttributes } ) {
 		: DEFAULT_EXPERT.image;
 	const expertFirstName = expertName.split( ' ' )[ 0 ];
 
+	const showThumb = 'none' !== imagePosition && expertImage;
+
+	const blockProps = useBlockProps( {
+		className: `mitlib-featured-expert-card is-image-${ imagePosition }`,
+	} );
+
 	return (
-		<div
-			{ ...useBlockProps( { className: 'mitlib-featured-expert-card' } ) }
-		>
+		<div { ...blockProps }>
 			<InspectorControls>
 				<PanelBody title={ __( 'Featured Expert', 'mitlib-blocks' ) }>
 					{ hasResolvedExperts ? (
@@ -80,9 +90,17 @@ export default function Edit( { attributes, setAttributes } ) {
 					) : (
 						<Spinner />
 					) }
+					<SelectControl
+						label={ __( 'Image position', 'mitlib-blocks' ) }
+						value={ imagePosition }
+						options={ IMAGE_POSITIONS }
+						onChange={ ( value ) =>
+							setAttributes( { imagePosition: value } )
+						}
+					/>
 				</PanelBody>
 			</InspectorControls>
-			{ expertImage && (
+			{ showThumb && (
 				<img
 					className="mitlib-featured-expert-card__thumb"
 					src={ expertImage }

@@ -46,10 +46,14 @@ if ( $featured_expert ) {
 $expert_alt_text       = 'Headshot of ' . $expert_name;
 $expert_help_link_text = 'How can ' . $expert_first_name . ' help you?';
 
+$expert_image_pos = $attributes['imagePosition'] ?? 'left';
+$expert_has_image = 'none' !== $expert_image_pos && $expert_image;
+$expert_classes   = 'featured-item' . ( $expert_has_image && 'left' === $expert_image_pos ? ' side-by-side' : '' );
+
 ?>
-<article class="featured-item side-by-side">
+<article class="<?php echo esc_attr( $expert_classes ); ?>">
 	<span class="item-type spotlight">Spotlight</span>
-	<?php if ( $expert_image ) : ?>
+	<?php if ( $expert_has_image ) : ?>
 	<img src="<?php echo esc_url( $expert_image ); ?>" alt="<?php echo esc_attr( $expert_alt_text ); ?>" />
 	<?php endif; ?>
 	<div class="featured-item-content">

@@ -66,6 +66,10 @@ return array(
 			'expertId' => array(
 				'type' => 'number',
 				'default' => 0
+			),
+			'imagePosition' => array(
+				'type' => 'string',
+				'default' => 'left'
 			)
 		),
 		'supports' => array(
