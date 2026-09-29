@@ -46,18 +46,63 @@ if ( $featured_expert ) {
 $expert_alt_text       = 'Headshot of ' . $expert_name;
 $expert_help_link_text = 'How can ' . $expert_first_name . ' help you?';
 
+// The editor-controlled "Large Spotlight" item.
+$spotlight_type_labels = array(
+	'spotlight' => 'Spotlight',
+	'service'   => 'Service',
+	'resource'  => 'Resource',
+	'news'      => 'News',
+);
+$spotlight_type        = $attributes['spotlightItemType'] ?? 'spotlight';
+if ( ! isset( $spotlight_type_labels[ $spotlight_type ] ) ) {
+	$spotlight_type = 'spotlight';
+}
+$spotlight_title       = $attributes['spotlightTitle'] ?? '';
+$spotlight_description = $attributes['spotlightDescription'] ?? '';
+$spotlight_link_url    = $attributes['spotlightLinkUrl'] ?? '';
+$spotlight_image_id     = absint( $attributes['spotlightImageId'] ?? 0 );
+$spotlight_image_url    = $attributes['spotlightImageUrl'] ?? '';
+$spotlight_image_alt    = $attributes['spotlightImageAlt'] ?? '';
+$spotlight_image_pos    = $attributes['spotlightImagePosition'] ?? 'above';
+$spotlight_has_image    = 'none' !== $spotlight_image_pos && ( $spotlight_image_id || $spotlight_image_url );
+$spotlight_item_classes = 'featured-item' . ( $spotlight_has_image && 'left' === $spotlight_image_pos ? ' side-by-side' : '' );
+
+// Titles may carry light emphasis markup from the editor.
+$spotlight_allowed_html = array(
+	'em'     => array(),
+	'i'      => array(),
+	'strong' => array(),
+	'b'      => array(),
+);
+
 ?><section id="featured-and-events">
 	<div class="content-wrapper">
 		<div class="featured-content">
 			<h2><?php echo esc_html( $attributes['heading'] ); ?></h2>
 			<div class="featured-items count-6">
-				<article class="featured-item">
-					<span class="item-type spotlight">Spotlight</span>
-					<img src="https://libraries.mit.edu/app/uploads/2026/09/mit-reads-highlight.png" alt="Exhalation book cover and MIT Reads logo; text reads Fall 2026 selection" />
+				<article class="<?php echo esc_attr( $spotlight_item_classes ); ?>">
+					<span class="item-type <?php echo esc_attr( $spotlight_type ); ?>"><?php echo esc_html( $spotlight_type_labels[ $spotlight_type ] ); ?></span>
+					<?php
+					if ( $spotlight_has_image ) {
+						if ( $spotlight_image_id ) {
+							echo wp_get_attachment_image( $spotlight_image_id, 'full' );
+						} else {
+							?>
+					<img src="<?php echo esc_url( $spotlight_image_url ); ?>" alt="<?php echo esc_attr( $spotlight_image_alt ); ?>" />
+							<?php
+						}
+					}
+					?>
 					<div class="featured-item-content">
 						<hgroup>
-							<h3><a href="https://libraries.mit.edu/mit-reads/">Read <em>Exhalation</em> by Ted Chiang</a></h3>
-							<p>To celebrate 10 years of MIT Reads, President Sally Kornbluth has chosen our fall 2026 selection</p>
+							<h3>
+							<?php if ( $spotlight_link_url ) : ?>
+								<a href="<?php echo esc_url( $spotlight_link_url ); ?>"><?php echo wp_kses( $spotlight_title, $spotlight_allowed_html ); ?></a>
+							<?php else : ?>
+								<?php echo wp_kses( $spotlight_title, $spotlight_allowed_html ); ?>
+							<?php endif; ?>
+							</h3>
+							<p><?php echo esc_html( $spotlight_description ); ?></p>
 						</hgroup>
 					</div>
 				</article>	
