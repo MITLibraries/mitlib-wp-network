@@ -6,185 +6,119 @@
 import { __ } from '@wordpress/i18n';
 import {
 	useBlockProps,
+	useInnerBlocksProps,
 	RichText,
+	InnerBlocks,
 	InspectorControls,
-	MediaUpload,
-	MediaUploadCheck,
+	store as blockEditorStore,
 } from '@wordpress/block-editor';
-import {
-	PanelBody,
-	SelectControl,
-	Spinner,
-	TextControl,
-	TextareaControl,
-	Button,
-} from '@wordpress/components';
+import { Notice, PanelBody, ToggleControl } from '@wordpress/components';
 import { useSelect } from '@wordpress/data';
-import { store as coreStore } from '@wordpress/core-data';
 import './editor.scss';
 
-const ITEM_TYPES = [
-	{ label: __( 'Spotlight', 'mitlib-blocks' ), value: 'spotlight' },
-	{ label: __( 'Service', 'mitlib-blocks' ), value: 'service' },
-	{ label: __( 'Resource', 'mitlib-blocks' ), value: 'resource' },
-	{ label: __( 'News', 'mitlib-blocks' ), value: 'news' },
+const MIN_ITEMS = 3;
+const MAX_ITEMS = 6;
+
+const ALLOWED_BLOCKS = [ 'mitlib/featured-item', 'mitlib/featured-expert' ];
+
+const TEMPLATE = [
+	[
+		'mitlib/featured-item',
+		{
+			itemType: 'spotlight',
+			title: 'Read <em>Exhalation</em> by Ted Chiang',
+			description:
+				'To celebrate 10 years of MIT Reads, President Sally Kornbluth has chosen our fall 2026 selection',
+			linkUrl: 'https://libraries.mit.edu/mit-reads/',
+			imageUrl:
+				'https://libraries.mit.edu/app/uploads/2026/09/mit-reads-highlight.png',
+			imageAlt:
+				'Exhalation book cover and MIT Reads logo; text reads Fall 2026 selection',
+			imagePosition: 'above',
+		},
+	],
+	[ 'mitlib/featured-expert' ],
+	[
+		'mitlib/featured-item',
+		{
+			itemType: 'service',
+			title: 'New! Self-service lockers',
+			description:
+				'Pick up and drop off library items 24 hours a day, seven days a week',
+			linkUrl: 'https://libraries.mit.edu/locations/lockers/',
+			imageUrl:
+				'https://libraries.mit.edu/app/uploads/2026/08/XKQoSUbi-1.png',
+			imageAlt:
+				'A white, two-column locker with a digital screen and text reading "MIT Libraries, Pickup Locker"',
+			imagePosition: 'left',
+		},
+	],
+	[
+		'mitlib/featured-item',
+		{
+			itemType: 'service',
+			title: 'Service updates',
+			description:
+				'The latest information about access to library collections, spaces, and services',
+			linkUrl: 'https://libraries.mit.edu/about/service-updates/',
+			imagePosition: 'none',
+		},
+	],
+	[
+		'mitlib/featured-item',
+		{
+			itemType: 'resource',
+			title: 'The New York Times',
+			description:
+				'A digital edition subscription is available to all MIT students, faculty, and staff.',
+			linkUrl: 'https://libguides.mit.edu/news/nyt',
+			imagePosition: 'none',
+		},
+	],
+	[
+		'mitlib/featured-item',
+		{
+			itemType: 'service',
+			title: 'Geographic Information Systems (GIS)',
+			description:
+				'Our experts can help you use GIS software, find data, teach GIS concepts, and more.',
+			linkUrl: 'https://libguides.mit.edu/gis',
+			imagePosition: 'none',
+		},
+	],
 ];
 
-const IMAGE_POSITIONS = [
-	{ label: __( 'None', 'mitlib-blocks' ), value: 'none' },
-	{ label: __( 'Above', 'mitlib-blocks' ), value: 'above' },
-	{ label: __( 'Left', 'mitlib-blocks' ), value: 'left' },
-];
+export default function Edit( { attributes, setAttributes, clientId } ) {
+	const { heading, showEvents } = attributes;
 
-export default function Edit( { attributes, setAttributes } ) {
-	const {
-		heading,
-		featuredExpertId,
-		spotlightItemType,
-		spotlightTitle,
-		spotlightDescription,
-		spotlightLinkUrl,
-		spotlightImageUrl,
-		spotlightImageAlt,
-		spotlightImagePosition,
-	} = attributes;
+	const itemCount = useSelect(
+		( select ) => select( blockEditorStore ).getBlockCount( clientId ),
+		[ clientId ]
+	);
 
-	const onSelectSpotlightImage = ( media ) =>
-		setAttributes( {
-			spotlightImageId: media.id,
-			spotlightImageUrl: media.url,
-			spotlightImageAlt: media.alt || '',
-		} );
-
-	const clearSpotlightImage = () =>
-		setAttributes( {
-			spotlightImageId: 0,
-			spotlightImageUrl: '',
-			spotlightImageAlt: '',
-		} );
-
-	const { experts, hasResolvedExperts } = useSelect( ( select ) => {
-		const query = {
-			per_page: -1,
-			status: 'publish',
-			orderby: 'title',
-			order: 'asc',
-		};
-		return {
-			experts: select( coreStore ).getEntityRecords(
-				'postType',
-				'experts',
-				query
-			),
-			hasResolvedExperts: select( coreStore ).hasFinishedResolution(
-				'getEntityRecords',
-				[ 'postType', 'experts', query ]
-			),
-		};
-	}, [] );
-
-	const expertOptions = [
-		{ label: __( 'Select an expert…', 'mitlib-blocks' ), value: 0 },
-		...( experts || [] ).map( ( expert ) => ( {
-			label: expert.title.rendered,
-			value: expert.id,
-		} ) ),
-	];
+	const innerBlocksProps = useInnerBlocksProps(
+		{ className: 'featured-items' },
+		{
+			allowedBlocks: ALLOWED_BLOCKS,
+			template: TEMPLATE,
+			renderAppender:
+				itemCount >= MAX_ITEMS
+					? false
+					: InnerBlocks.ButtonBlockAppender,
+		}
+	);
 
 	return (
 		<div { ...useBlockProps() }>
 			<InspectorControls>
-				<PanelBody title={ __( 'Large Spotlight', 'mitlib-blocks' ) }>
-					<SelectControl
-						label={ __( 'Item type', 'mitlib-blocks' ) }
-						value={ spotlightItemType }
-						options={ ITEM_TYPES }
+				<PanelBody title={ __( 'Section Settings', 'mitlib-blocks' ) }>
+					<ToggleControl
+						label={ __( 'Show events feed', 'mitlib-blocks' ) }
+						checked={ showEvents }
 						onChange={ ( value ) =>
-							setAttributes( { spotlightItemType: value } )
+							setAttributes( { showEvents: value } )
 						}
 					/>
-					<TextControl
-						label={ __( 'Title', 'mitlib-blocks' ) }
-						value={ spotlightTitle }
-						onChange={ ( value ) =>
-							setAttributes( { spotlightTitle: value } )
-						}
-						help={ __(
-							'<em> and <strong> tags are allowed.',
-							'mitlib-blocks'
-						) }
-					/>
-					<TextareaControl
-						label={ __( 'Description', 'mitlib-blocks' ) }
-						value={ spotlightDescription }
-						onChange={ ( value ) =>
-							setAttributes( { spotlightDescription: value } )
-						}
-					/>
-					<TextControl
-						label={ __( 'Link URL', 'mitlib-blocks' ) }
-						value={ spotlightLinkUrl }
-						onChange={ ( value ) =>
-							setAttributes( { spotlightLinkUrl: value } )
-						}
-						type="url"
-					/>
-					<SelectControl
-						label={ __( 'Image position', 'mitlib-blocks' ) }
-						value={ spotlightImagePosition }
-						options={ IMAGE_POSITIONS }
-						onChange={ ( value ) =>
-							setAttributes( { spotlightImagePosition: value } )
-						}
-					/>
-					{ spotlightImageUrl && (
-						<img
-							className="mitlib-spotlight-image-preview"
-							src={ spotlightImageUrl }
-							alt={ spotlightImageAlt }
-						/>
-					) }
-					<MediaUploadCheck>
-						<MediaUpload
-							onSelect={ onSelectSpotlightImage }
-							allowedTypes={ [ 'image' ] }
-							render={ ( { open } ) => (
-								<Button variant="secondary" onClick={ open }>
-									{ spotlightImageUrl
-										? __( 'Replace image', 'mitlib-blocks' )
-										: __(
-												'Select image',
-												'mitlib-blocks'
-											) }
-								</Button>
-							) }
-						/>
-						{ spotlightImageUrl && (
-							<Button
-								variant="link"
-								isDestructive
-								onClick={ clearSpotlightImage }
-							>
-								{ __( 'Remove image', 'mitlib-blocks' ) }
-							</Button>
-						) }
-					</MediaUploadCheck>
-				</PanelBody>
-				<PanelBody title={ __( 'Featured Expert', 'mitlib-blocks' ) }>
-					{ hasResolvedExperts ? (
-						<SelectControl
-							label={ __( 'Featured expert', 'mitlib-blocks' ) }
-							value={ featuredExpertId }
-							options={ expertOptions }
-							onChange={ ( value ) =>
-								setAttributes( {
-									featuredExpertId: Number( value ),
-								} )
-							}
-						/>
-					) : (
-						<Spinner />
-					) }
 				</PanelBody>
 			</InspectorControls>
 			<RichText
@@ -194,6 +128,23 @@ export default function Edit( { attributes, setAttributes } ) {
 				placeholder={ __( 'Featured', 'mitlib-blocks' ) }
 				allowedFormats={ [] }
 			/>
+			{ itemCount < MIN_ITEMS && (
+				<Notice status="warning" isDismissible={ false }>
+					{ __(
+						'This section needs at least 3 featured items.',
+						'mitlib-blocks'
+					) }
+				</Notice>
+			) }
+			<div { ...innerBlocksProps } />
+			{ showEvents && (
+				<div className="mitlib-events-feed-placeholder">
+					{ __(
+						'Events & Workshops feed will be shown.',
+						'mitlib-blocks'
+					) }
+				</div>
+			) }
 		</div>
 	);
 }
