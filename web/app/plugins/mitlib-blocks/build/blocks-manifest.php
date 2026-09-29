@@ -21,6 +21,38 @@ return array(
 			'featuredExpertId' => array(
 				'type' => 'number',
 				'default' => 0
+			),
+			'spotlightItemType' => array(
+				'type' => 'string',
+				'default' => 'spotlight'
+			),
+			'spotlightTitle' => array(
+				'type' => 'string',
+				'default' => 'Read <em>Exhalation</em> by Ted Chiang'
+			),
+			'spotlightDescription' => array(
+				'type' => 'string',
+				'default' => 'To celebrate 10 years of MIT Reads, President Sally Kornbluth has chosen our fall 2026 selection'
+			),
+			'spotlightLinkUrl' => array(
+				'type' => 'string',
+				'default' => 'https://libraries.mit.edu/mit-reads/'
+			),
+			'spotlightImageId' => array(
+				'type' => 'number',
+				'default' => 0
+			),
+			'spotlightImageUrl' => array(
+				'type' => 'string',
+				'default' => 'https://libraries.mit.edu/app/uploads/2026/09/mit-reads-highlight.png'
+			),
+			'spotlightImageAlt' => array(
+				'type' => 'string',
+				'default' => 'Exhalation book cover and MIT Reads logo; text reads Fall 2026 selection'
+			),
+			'spotlightImagePosition' => array(
+				'type' => 'string',
+				'default' => 'above'
 			)
 		),
 		'supports' => array(
