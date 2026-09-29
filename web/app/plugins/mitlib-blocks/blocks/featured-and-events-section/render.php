@@ -8,160 +8,21 @@
  * @var WP_Block $block      Block instance.
  */
 
-// Look up the librarian chosen in the block editor's "Featured Librarian" panel.
-$featured_expert    = null;
-$featured_expert_id = absint( $attributes['featuredExpertId'] ?? 0 );
-if ( $featured_expert_id ) {
-	$maybe_expert = get_post( $featured_expert_id );
-	if ( $maybe_expert && 'experts' === $maybe_expert->post_type && 'publish' === $maybe_expert->post_status ) {
-		$featured_expert = $maybe_expert;
-	}
-}
+// The layout supports between three and six featured items.
+$featured_count = count( $block->parsed_block['innerBlocks'] ?? array() );
+$featured_count = max( 3, min( 6, $featured_count ) );
 
-// Fallback used when no librarian has been selected in the block editor.
-$default_expert = array(
-	'name'       => 'Alejandro Paz',
-	'first_name' => 'Alejandro',
-	'url'        => 'https://libguides.mit.edu/profiles/apaz',
-	'image'      => 'https://libapps.s3.amazonaws.com/accounts/349/images/apaz-100x100.jpg',
-	'excerpt'    => 'Librarian for Energy and Environment',
-);
-
-// If we have a valid expert, use those values. If not, use the fallback values.
-if ( $featured_expert ) {
-	$expert_name       = get_the_title( $featured_expert );
-	$expert_first_name = strtok( $expert_name, ' ' );
-	$expert_url        = get_post_meta( $featured_expert->ID, 'expert_url', true );
-	$expert_image      = get_the_post_thumbnail_url( $featured_expert, 'thumbnail' );
-	$expert_excerpt    = get_the_excerpt( $featured_expert );
-} else {
-	$expert_name       = $default_expert['name'];
-	$expert_first_name = $default_expert['first_name'];
-	$expert_url        = $default_expert['url'];
-	$expert_image      = $default_expert['image'];
-	$expert_excerpt    = $default_expert['excerpt'];
-}
-
-// Generate the strings for alt text and help link text.
-$expert_alt_text       = 'Headshot of ' . $expert_name;
-$expert_help_link_text = 'How can ' . $expert_first_name . ' help you?';
-
-// The editor-controlled "Large Spotlight" item.
-$spotlight_type_labels = array(
-	'spotlight' => 'Spotlight',
-	'service'   => 'Service',
-	'resource'  => 'Resource',
-	'news'      => 'News',
-);
-$spotlight_type        = $attributes['spotlightItemType'] ?? 'spotlight';
-if ( ! isset( $spotlight_type_labels[ $spotlight_type ] ) ) {
-	$spotlight_type = 'spotlight';
-}
-$spotlight_title       = $attributes['spotlightTitle'] ?? '';
-$spotlight_description = $attributes['spotlightDescription'] ?? '';
-$spotlight_link_url    = $attributes['spotlightLinkUrl'] ?? '';
-$spotlight_image_id     = absint( $attributes['spotlightImageId'] ?? 0 );
-$spotlight_image_url    = $attributes['spotlightImageUrl'] ?? '';
-$spotlight_image_alt    = $attributes['spotlightImageAlt'] ?? '';
-$spotlight_image_pos    = $attributes['spotlightImagePosition'] ?? 'above';
-$spotlight_has_image    = 'none' !== $spotlight_image_pos && ( $spotlight_image_id || $spotlight_image_url );
-$spotlight_item_classes = 'featured-item' . ( $spotlight_has_image && 'left' === $spotlight_image_pos ? ' side-by-side' : '' );
-
-// Titles may carry light emphasis markup from the editor.
-$spotlight_allowed_html = array(
-	'em'     => array(),
-	'i'      => array(),
-	'strong' => array(),
-	'b'      => array(),
-);
+$show_events = ! isset( $attributes['showEvents'] ) || $attributes['showEvents'];
 
 ?><section id="featured-and-events">
 	<div class="content-wrapper">
 		<div class="featured-content">
 			<h2><?php echo esc_html( $attributes['heading'] ); ?></h2>
-			<div class="featured-items count-6">
-				<article class="<?php echo esc_attr( $spotlight_item_classes ); ?>">
-					<span class="item-type <?php echo esc_attr( $spotlight_type ); ?>"><?php echo esc_html( $spotlight_type_labels[ $spotlight_type ] ); ?></span>
-					<?php
-					if ( $spotlight_has_image ) {
-						if ( $spotlight_image_id ) {
-							echo wp_get_attachment_image( $spotlight_image_id, 'full' );
-						} else {
-							?>
-					<img src="<?php echo esc_url( $spotlight_image_url ); ?>" alt="<?php echo esc_attr( $spotlight_image_alt ); ?>" />
-							<?php
-						}
-					}
-					?>
-					<div class="featured-item-content">
-						<hgroup>
-							<h3>
-							<?php if ( $spotlight_link_url ) : ?>
-								<a href="<?php echo esc_url( $spotlight_link_url ); ?>"><?php echo wp_kses( $spotlight_title, $spotlight_allowed_html ); ?></a>
-							<?php else : ?>
-								<?php echo wp_kses( $spotlight_title, $spotlight_allowed_html ); ?>
-							<?php endif; ?>
-							</h3>
-							<p><?php echo esc_html( $spotlight_description ); ?></p>
-						</hgroup>
-					</div>
-				</article>	
-				<article class="featured-item side-by-side">
-					<span class="item-type spotlight">Spotlight</span>
-					<?php if ( $expert_image ) : ?>
-					<img src="<?php echo esc_url( $expert_image ); ?>" alt="<?php echo esc_attr( $expert_alt_text ); ?>" />
-					<?php endif; ?>
-					<div class="featured-item-content">
-						<hgroup>
-							<h3><a href="<?php echo esc_url( $expert_url ); ?>"><?php echo esc_html( $expert_name ); ?></a></h3>
-							<div>
-								<p><?php echo esc_html( $expert_excerpt ); ?></p>
-							</div>
-						</hgroup>
-						<a class="arrow-right" href="<?php echo esc_url( $expert_url ); ?>">
-							<?php echo esc_html( $expert_help_link_text ); ?>
-						</a>
-					</div>
-				</article>
-				<article class="featured-item side-by-side">
-					<span class="item-type service">Service</span>
-					<img src="https://libraries.mit.edu/app/uploads/2026/08/XKQoSUbi-1.png" alt="A white, two-column locker with a digital screen and text reading &quot;MIT Libraries, Pickup Locker&quot;"/>
-					<div class="featured-item-content">
-						<hgroup>
-							<h3><a href="https://libraries.mit.edu/locations/lockers/">New! Self-service lockers</a></h3>
-							<p>Pick up and drop off library items 24 hours a day, seven days a week</p>
-						</hgroup>
-					</div>
-				</article>						
-				<article class="featured-item">
-					<span class="item-type service">Service</span>
-					<div class="featured-item-content">
-						<hgroup>
-							<h3><a href="https://libraries.mit.edu/about/service-updates/">Service updates</a></h3>
-							<p>The latest information about access to library collections, spaces, and services</p>
-						</hgroup>
-					</div>
-				</article>
-				<article class="featured-item">
-					<span class="item-type resource">Resource</span>
-					<div class="featured-item-content">
-						<hgroup>
-							<h3><a href="https://libguides.mit.edu/news/nyt">The New York Times</a></h3>
-							<p>A digital edition subscription is available to all MIT students, faculty, and staff.</p>
-						</hgroup>
-					</div>
-				</article>																	
-				<article class="featured-item">
-					<span class="item-type service">Service</span>
-					<div class="featured-item-content">
-						<hgroup>
-							<h3><a href="https://libguides.mit.edu/gis">Geographic Information Systems (GIS)</a></h3>
-							<p>Our experts can help you use GIS software, find data, teach GIS concepts, and more.</p>
-						</hgroup>
-					</div>
-				</article>
+			<div class="featured-items count-<?php echo esc_attr( $featured_count ); ?>">
+				<?php echo $content; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Inner block markup is already rendered and escaped. ?>
 			</div>
 		</div>
+		<?php if ( $show_events ) : ?>
 		<div class="events">
 			<div class="events-header">
 				<div class="events-header-title-paragraph">
@@ -300,5 +161,6 @@ $spotlight_allowed_html = array(
 			restore_current_blog();
 			?>
 		</div>
+		<?php endif; ?>
 	</div>
 </section>

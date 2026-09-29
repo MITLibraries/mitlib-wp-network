@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "mitlib/featured-expert",
+  "version": "0.1.0",
+  "title": "MITLIB - Featured Expert",
+  "category": "widgets",
+  "icon": "businessperson",
+  "description": "Highlights a librarian inside the Featured and Events section.",
+  "parent": [
+    "mitlib/featured-and-events-section"
+  ],
+  "attributes": {
+    "expertId": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "supports": {
+    "html": false,
+    "reusable": false
+  },
+  "textdomain": "mitlib-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "render": "file:./render.php"
+}

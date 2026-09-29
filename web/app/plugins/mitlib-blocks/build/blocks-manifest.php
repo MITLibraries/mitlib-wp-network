@@ -18,41 +18,9 @@ return array(
 				'type' => 'string',
 				'default' => 'Featured'
 			),
-			'featuredExpertId' => array(
-				'type' => 'number',
-				'default' => 0
-			),
-			'spotlightItemType' => array(
-				'type' => 'string',
-				'default' => 'spotlight'
-			),
-			'spotlightTitle' => array(
-				'type' => 'string',
-				'default' => 'Read <em>Exhalation</em> by Ted Chiang'
-			),
-			'spotlightDescription' => array(
-				'type' => 'string',
-				'default' => 'To celebrate 10 years of MIT Reads, President Sally Kornbluth has chosen our fall 2026 selection'
-			),
-			'spotlightLinkUrl' => array(
-				'type' => 'string',
-				'default' => 'https://libraries.mit.edu/mit-reads/'
-			),
-			'spotlightImageId' => array(
-				'type' => 'number',
-				'default' => 0
-			),
-			'spotlightImageUrl' => array(
-				'type' => 'string',
-				'default' => 'https://libraries.mit.edu/app/uploads/2026/09/mit-reads-highlight.png'
-			),
-			'spotlightImageAlt' => array(
-				'type' => 'string',
-				'default' => 'Exhalation book cover and MIT Reads logo; text reads Fall 2026 selection'
-			),
-			'spotlightImagePosition' => array(
-				'type' => 'string',
-				'default' => 'above'
+			'showEvents' => array(
+				'type' => 'boolean',
+				'default' => true
 			)
 		),
 		'supports' => array(
@@ -81,6 +49,114 @@ return array(
 		'textdomain' => 'mitlib-blocks',
 		'editorScript' => 'file:./index.js',
 		'editorStyle' => 'file:./index.css'
+	),
+	'featured-expert' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'mitlib/featured-expert',
+		'version' => '0.1.0',
+		'title' => 'MITLIB - Featured Expert',
+		'category' => 'widgets',
+		'icon' => 'businessperson',
+		'description' => 'Highlights a librarian inside the Featured and Events section.',
+		'parent' => array(
+			'mitlib/featured-and-events-section'
+		),
+		'attributes' => array(
+			'expertId' => array(
+				'type' => 'number',
+				'default' => 0
+			)
+		),
+		'supports' => array(
+			'html' => false,
+			'reusable' => false
+		),
+		'textdomain' => 'mitlib-blocks',
+		'editorScript' => 'file:./index.js',
+		'editorStyle' => 'file:./index.css',
+		'render' => 'file:./render.php'
+	),
+	'featured-item' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'mitlib/featured-item',
+		'version' => '0.1.0',
+		'title' => 'MITLIB - Featured Item',
+		'category' => 'widgets',
+		'icon' => 'star-filled',
+		'description' => 'A single item inside the Featured and Events section.',
+		'parent' => array(
+			'mitlib/featured-and-events-section'
+		),
+		'attributes' => array(
+			'itemType' => array(
+				'type' => 'string',
+				'default' => 'spotlight'
+			),
+			'title' => array(
+				'type' => 'string',
+				'default' => ''
+			),
+			'description' => array(
+				'type' => 'string',
+				'default' => ''
+			),
+			'linkUrl' => array(
+				'type' => 'string',
+				'default' => ''
+			),
+			'imageId' => array(
+				'type' => 'number',
+				'default' => 0
+			),
+			'imageUrl' => array(
+				'type' => 'string',
+				'default' => ''
+			),
+			'imageAlt' => array(
+				'type' => 'string',
+				'default' => ''
+			),
+			'imagePosition' => array(
+				'type' => 'string',
+				'default' => 'above'
+			)
+		),
+		'supports' => array(
+			'html' => false,
+			'reusable' => false
+		),
+		'textdomain' => 'mitlib-blocks',
+		'editorScript' => 'file:./index.js',
+		'editorStyle' => 'file:./index.css',
+		'render' => 'file:./render.php'
+	),
+	'hero-section' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'mitlib/hero-section',
+		'version' => '0.1.0',
+		'title' => 'MITLIB - Hero Image Section (Full)',
+		'category' => 'widgets',
+		'icon' => 'block-default',
+		'description' => 'Adds a hero image with optional search.',
+		'attributes' => array(
+			'heading' => array(
+				'type' => 'string',
+				'default' => 'Welcome to the MIT Libraries'
+			)
+		),
+		'example' => array(
+			
+		),
+		'supports' => array(
+			'html' => false
+		),
+		'textdomain' => 'mitlib-blocks',
+		'editorScript' => 'file:./index.js',
+		'editorStyle' => 'file:./index.css',
+		'render' => 'file:./render.php'
 	),
 	'hours-section' => array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',
