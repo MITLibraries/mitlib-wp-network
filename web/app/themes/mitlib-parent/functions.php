@@ -177,7 +177,33 @@ function setup_scripts_styles() {
 
 	wp_register_style( 'fontawesome', '//cdn.libraries.mit.edu/files/fontawesome/7.1.0/css/all.min.css', array(), $theme_version );
 
-	wp_register_style( 'v2', get_template_directory_uri() . '/css/v2/v2.css', array('fontawesome'), $theme_version );
+	// =============== //
+	// V2 STYLE SYSTEM //
+	// =============== //
+
+	// Register all the individual pieces of v2 style system to get versioning (for cache busting)
+
+	// VARIABLES
+	wp_register_style( 'v2-color', get_template_directory_uri() . '/css/v2/variables/color.css', array(), $theme_version );
+	wp_register_style( 'v2-corners', get_template_directory_uri() . '/css/v2/variables/corners.css', array(), $theme_version );
+	wp_register_style( 'v2-effects', get_template_directory_uri() . '/css/v2/variables/effects.css', array(), $theme_version );
+	wp_register_style( 'v2-layout', get_template_directory_uri() . '/css/v2/variables/layout.css', array(), $theme_version );
+	wp_register_style( 'v2-shadows', get_template_directory_uri() . '/css/v2/variables/shadows.css', array(), $theme_version );
+	wp_register_style( 'v2-spacing', get_template_directory_uri() . '/css/v2/variables/spacing.css', array(), $theme_version );
+	wp_register_style( 'v2-typography', get_template_directory_uri() . '/css/v2/variables/typography.css', array(), $theme_version );
+
+	// COMPONENTS
+	wp_register_style( 'v2-alerts', get_template_directory_uri() . '/css/v2/components/alerts.css', array( 'v2-color', 'v2-spacing', 'v2-typography' ), $theme_version );
+	wp_register_style( 'v2-buttons', get_template_directory_uri() . '/css/v2/components/buttons.css', array( 'v2-color', 'v2-corners', 'v2-spacing', 'v2-typography' ), $theme_version );
+
+	// TEMPLATES
+	wp_register_style( 'v2-header', get_template_directory_uri() . '/css/v2/partials/header.css', array( 'v2-color', 'v2-layout', 'v2-spacing', 'v2-typography' ), $theme_version );
+	wp_register_style( 'v2-footer', get_template_directory_uri() . '/css/v2/partials/footer.css', array( 'v2-color', 'v2-layout', 'v2-spacing' ), $theme_version );
+
+	// Register the pages where we're using these individual pieces. These will get enqueued below and contain the above as dependencies.
+
+	// PAGES 
+	wp_register_style( 'v2-home', get_template_directory_uri() . '/css/v2/pages/home.css', array( 'v2-color', 'v2-corners', 'v2-effects', 'v2-layout', 'v2-shadows', 'v2-spacing', 'v2-typography', 'v2-alerts', 'v2-buttons', 'v2-header', 'v2-footer', 'fontawesome' ), $theme_version );
 
 	
 	/**
@@ -261,7 +287,7 @@ function setup_scripts_styles() {
 	
 	// Conditonally load v2 styles for only pages with the v2 header
 	if (is_page_template( 'templates/page-home-v2.php' )) {
-		wp_enqueue_style( 'v2' );
+		wp_enqueue_style( 'v2-home' );
 		wp_enqueue_script( 'moment' );
 		wp_enqueue_script( 'underscore' );
 		wp_enqueue_script( 'hours-loader-theme' );
