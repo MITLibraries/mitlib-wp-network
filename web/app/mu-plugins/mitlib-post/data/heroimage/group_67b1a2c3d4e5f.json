@@ -7,7 +7,7 @@
             "label": "Citation",
             "name": "citation",
             "type": "text",
-            "instructions": "The text used to credit the source of the hero image, e.g. \"Muriel Cooper personal archives\".",
+            "instructions": "The complete text used to credit the source of the hero image, e.g. \"from the Muriel Cooper personal archives\".",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
