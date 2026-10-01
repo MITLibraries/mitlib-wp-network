@@ -14,29 +14,23 @@ export default function save() {
 				<div
 					className="featured-collection-image"
 					role="img"
-					aria-label="Architectural elevation of a house with two gables and two chimneys by Howe, Manning and Almy Architects, dated 1927."
-					style="background-image: url('https://libraries.mit.edu/app/uploads/2026/07/Howe-Manning-Almy-1.jpg');"
+					aria-label="A 1920s photograph of two men standing on a car and waving from the top of a building's roof."
+					style="background-image: url('https://libraries.mit.edu/app/uploads/2026/10/nyi_QvYE.jpeg');"
 				>
 					<span className="featured-collection-tag">Exhibit</span>
 				</div>
 				<div className="featured-collection-content">
 					<h2 className="sr">Featured Exhibit</h2>
-					<p className="eyebrow">Howe, Manning & Almy</p>
 					<h3>
-						Boston&apos;s First All-Woman Firm and the Changing Face
-						of Architecture
+						Spirits, Goblins, and Gnurds
 					</h3>
 					<p>
-						Learn about the role MIT&apos;s architecture program
-						played in supporting women in the field since the 1890s,
-						Howe, Manning & Almy&apos;s influence on the built
-						environment of Cambridge, and the firm&apos;s
-						ecofriendly approaches to renovation.
+						A celebration of the last 150 years of student life at MIT, this digital exhibit examines archival materials from Distinctive Collections focusing on three specific years – 1876, 1926, and 1976.
 					</p>
 					<a
 						className="button secondary"
-						title="Read more about the Howe, Manning & Almy exhibit"
-						href="https://libraries.mit.edu/exhibits/exhibit/howe-manning-almy/"
+						title="Read more about the Spirits, Goblins, and Gnurds exhibit"
+						href="https://digital-exhibits.libraries.mit.edu/s/MITin50s/page/Intro"
 					>
 						Check it out
 					</a>
