@@ -48,11 +48,11 @@ $escaped_citation = esc_html( $hero_citation );
 if ( $hero_citation_url && $hero_link_text && false !== strpos( $hero_citation, $hero_link_text ) ) {
 	$escaped_link_text = esc_html( $hero_link_text );
 	$anchor            = '<a href="' . esc_url( $hero_citation_url ) . '">' . $escaped_link_text . '</a>';
-	$hero_credit       = str_replace( $escaped_link_text, $anchor, $escaped_citation );
+	$escaped_hero_credit       = str_replace( $escaped_link_text, $anchor, $escaped_citation );
 } elseif ( $hero_citation_url ) {
-	$hero_credit = '<a href="' . esc_url( $hero_citation_url ) . '">' . $escaped_citation . '</a>';
+	$escaped_hero_credit = '<a href="' . esc_url( $hero_citation_url ) . '">' . $escaped_citation . '</a>';
 } else {
-	$hero_credit = $escaped_citation;
+	$escaped_hero_credit = $escaped_citation;
 }
 
 ?><section id="hero">
@@ -70,11 +70,11 @@ if ( $hero_citation_url && $hero_link_text && false !== strpos( $hero_citation, 
 				?>
 				
 			</div>
-			<?php if ( $hero_credit ) : ?>
+			<?php if ( $escaped_hero_credit ) : ?>
 			<span class="hero-image-credit">
 				<?php
 				// phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped -- built from esc_html()/esc_url() pieces above.
-				echo $hero_credit;
+				echo $escaped_hero_credit;
 				// phpcs:enable -- resume normal scanning.
 				?>
 			</span>
