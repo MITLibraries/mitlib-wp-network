@@ -55,6 +55,12 @@ if ( $hero_citation_url && $hero_link_text && false !== strpos( $hero_citation, 
 	$escaped_hero_credit = $escaped_citation;
 }
 
+$allowed_html = array(
+	'a' => array(
+		'href' => array(),
+	),
+);
+
 ?><section id="hero">
 	<div class="hero-bg" role="img" aria-label="<?php echo esc_attr( $hero_alt_text ); ?>" style="background-image: url(<?php echo esc_url( $hero_image_url ); ?>);"></div>
 	<div class="overlay">	
@@ -72,11 +78,7 @@ if ( $hero_citation_url && $hero_link_text && false !== strpos( $hero_citation, 
 			</div>
 			<?php if ( $escaped_hero_credit ) : ?>
 			<span class="hero-image-credit">
-				<?php
-				// phpcs:disable WordPress.Security.EscapeOutput.OutputNotEscaped -- built from esc_html()/esc_url() pieces above.
-				echo $escaped_hero_credit;
-				// phpcs:enable -- resume normal scanning.
-				?>
+				<?php echo wp_kses( $escaped_hero_credit, $allowed_html ); ?>
 			</span>
 			<?php endif; ?>
 		</div>
