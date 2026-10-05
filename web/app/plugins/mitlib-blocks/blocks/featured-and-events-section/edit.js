@@ -68,10 +68,10 @@ const TEMPLATE = [
 		'mitlib/featured-item',
 		{
 			itemType: 'resource',
-			title: 'The New York Times',
+			title: 'Citation management tools',
 			description:
-				'A digital edition subscription is available to all MIT students, faculty, and staff.',
-			linkUrl: 'https://libguides.mit.edu/news/nyt',
+				'Our guide to using Zotero, Mendeley, Overleaf, and more.',
+			linkUrl: 'https://libguides.mit.edu/cite-write',
 			imagePosition: 'none',
 		},
 	],
@@ -79,10 +79,10 @@ const TEMPLATE = [
 		'mitlib/featured-item',
 		{
 			itemType: 'service',
-			title: 'Geographic Information Systems (GIS)',
+			title: 'Data Management Services',
 			description:
-				'Our experts can help you use GIS software, find data, teach GIS concepts, and more.',
-			linkUrl: 'https://libguides.mit.edu/gis',
+				'We can help you manage, store, and share your research information, data, or code throughout its lifecycle.',
+			linkUrl: 'https://libraries.mit.edu/data-management/',
 			imagePosition: 'none',
 		},
 	],
