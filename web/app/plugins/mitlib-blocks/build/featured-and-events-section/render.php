@@ -101,8 +101,8 @@ $expert_help_link_text = 'How can ' . $expert_first_name . ' help you?';
 					<span class="item-type resource">Resource</span>
 					<div class="featured-item-content">
 						<hgroup>
-							<h3><a href="https://libguides.mit.edu/news/nyt">The New York Times</a></h3>
-							<p>A digital edition subscription is available to all MIT students, faculty, and staff.</p>
+							<h3><a href="https://libguides.mit.edu/cite-write">Citation management tools</a></h3>
+							<p>Our guide to using Zotero, Mendeley, Overleaf, and more.</p>
 						</hgroup>
 					</div>
 				</article>																	
@@ -110,8 +110,8 @@ $expert_help_link_text = 'How can ' . $expert_first_name . ' help you?';
 					<span class="item-type service">Service</span>
 					<div class="featured-item-content">
 						<hgroup>
-							<h3><a href="https://libguides.mit.edu/gis">Geographic Information Systems (GIS)</a></h3>
-							<p>Our experts can help you use GIS software, find data, teach GIS concepts, and more.</p>
+							<h3><a href="https://libraries.mit.edu/data-management/">Data Management Services</a></h3>
+							<p>We can help you manage, store, and share your research information, data, or code throughout its lifecycle.</p>
 						</hgroup>
 					</div>
 				</article>
