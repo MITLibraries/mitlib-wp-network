@@ -83,7 +83,7 @@ export default function Edit( { attributes, setAttributes } ) {
 							setAttributes( { title: value } )
 						}
 						help={ __(
-							'<em> and <strong> tags are allowed.',
+							'<em> and <i> tags are allowed.',
 							'mitlib-blocks'
 						) }
 					/>

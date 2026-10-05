@@ -34,8 +34,6 @@ $item_classes     = 'featured-item' . ( $item_has_image && 'left' === $item_imag
 $item_allowed_html = array(
 	'em'     => array(),
 	'i'      => array(),
-	'strong' => array(),
-	'b'      => array(),
 );
 
 ?>
