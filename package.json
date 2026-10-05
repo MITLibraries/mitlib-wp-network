@@ -22,7 +22,8 @@
   "homepage": "https://github.com/MITLibraries/mitlib-wp-network#readme",
   "private": true,
   "workspaces": [
-    "web/app/plugins/mitlib-blocks"
+    "web/app/plugins/mitlib-blocks",
+    "web/app/plugins/mitlib-post-hero-images"
   ],
   "engines": {
     "node": ">=22.0.0",
