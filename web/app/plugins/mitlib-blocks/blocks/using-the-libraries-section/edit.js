@@ -7,6 +7,7 @@ import { __ } from '@wordpress/i18n';
 import {
 	useBlockProps,
 	RichText,
+	InnerBlocks,
 	InspectorControls,
 } from '@wordpress/block-editor';
 import { PanelBody, TextControl, TextareaControl } from '@wordpress/components';
@@ -15,6 +16,7 @@ import './editor.scss';
 export default function Edit( { attributes, setAttributes } ) {
 	const {
 		heading,
+		allowedBlocks,
 		askUsTitle,
 		askUsDescription,
 		askUsLinkText,
@@ -71,6 +73,7 @@ export default function Edit( { attributes, setAttributes } ) {
 						allowedFormats={ [] }
 					/>
 				</div>
+				<InnerBlocks allowedBlocks={ allowedBlocks } />
 			</section>
 		</>
 	);

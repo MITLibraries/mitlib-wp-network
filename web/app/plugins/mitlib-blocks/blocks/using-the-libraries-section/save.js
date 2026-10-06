@@ -4,7 +4,10 @@
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { RichText } from '@wordpress/block-editor';
+import {
+	InnerBlocks,
+	RichText
+} from '@wordpress/block-editor';
 
 export default function save( { attributes } ) {
 	const {
@@ -21,6 +24,7 @@ export default function save( { attributes } ) {
 				<RichText.Content tagName="h2" value={ heading } />
 				<div className="box-wrapper">
 					<div className="option-boxes">
+						<InnerBlocks.Content />
 						<div>
 							<i
 								className="fa-light fa-lightbulb"
