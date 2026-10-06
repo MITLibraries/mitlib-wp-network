@@ -8,6 +8,9 @@
   "icon": "block-default",
   "description": "Displays library service links and an Ask Us help box.",
   "example": {},
+  "allowedBlocks": [
+    "mitlib/atom-using"
+  ],
   "attributes": {
     "heading": {
       "type": "string",

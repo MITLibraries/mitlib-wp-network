@@ -153,6 +153,9 @@ return array(
 		'example' => array(
 			
 		),
+		'allowedBlocks' => array(
+			'mitlib/atom-using'
+		),
 		'attributes' => array(
 			'heading' => array(
 				'type' => 'string',
