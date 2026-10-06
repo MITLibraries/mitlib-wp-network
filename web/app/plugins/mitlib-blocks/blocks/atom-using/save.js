@@ -4,25 +4,18 @@
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { RichText } from '@wordpress/block-editor';
-import { ExternalLink } from '@wordpress/components';
+import { useBlockProps, RichText } from '@wordpress/block-editor';
 
 export default function save( { attributes } ) {
 	const { headline, blurb, icon, link } = attributes;
+	const blockProps = useBlockProps.save();
 
 	return (
-		<div>
-			<RichText.Content
-				tagname="i"
-				className="fa-light fa-{ icon }"
-				aria-hidden="true"
-				role="img"
-			/>
+		<div { ...blockProps }>
+			<i className={ `fa-light fa-${ icon }`} aria-hidden="true" role="img"></i>
 			<div className="option-box-content">
-				<RichText.Content tagname="h3" value={ headline }>
-					<ExternalLink href={ link } />
-				</RichText.Content>
-				<RichText.Content tagname="p" value={ blurb } />
+				<h3><a href={ link }><RichText.Content value={ headline } /></a></h3>
+				<p>{ blurb }</p>
 			</div>
 		</div>
 	);
