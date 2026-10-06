@@ -1,9 +1,9 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
-  "name": "mitlib/location-atom",
+  "name": "mitlib/atom-location",
   "version": "0.1.0",
-  "title": "Location Atom",
+  "title": "Atom: Location",
   "category": "mitlib",
   "icon": "block-default",
   "description": "Location information (with hours)",
