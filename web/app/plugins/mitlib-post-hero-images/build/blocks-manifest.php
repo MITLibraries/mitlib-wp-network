@@ -6,8 +6,8 @@ return array(
 		'apiVersion' => 3,
 		'name' => 'mitlib/hero-section',
 		'version' => '0.1.0',
-		'title' => 'MITLIB - Hero Image Section (Full)',
-		'category' => 'widgets',
+		'title' => 'Section: Hero Image',
+		'category' => 'mitlib',
 		'icon' => 'block-default',
 		'description' => 'Adds a hero image with optional search.',
 		'attributes' => array(

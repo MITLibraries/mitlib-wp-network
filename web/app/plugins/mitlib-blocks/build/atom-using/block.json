@@ -1,9 +1,9 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
-  "name": "mitlib/using-atom",
+  "name": "mitlib/atom-using",
   "version": "0.1.0",
-  "title": "Using Atom",
+  "title": "Atom: Using the Libraries",
   "category": "mitlib",
   "icon": "block-default",
   "description": "Using the Libraries blurb",

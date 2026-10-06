@@ -1,94 +1,12 @@
 <?php
 // This file is generated. Do not modify it manually.
 return array(
-	'featured-and-events-section' => array(
+	'atom-location' => array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',
 		'apiVersion' => 3,
-		'name' => 'mitlib/featured-and-events-section',
+		'name' => 'mitlib/atom-location',
 		'version' => '0.1.0',
-		'title' => 'MITLIB - Featured and Events Section',
-		'category' => 'widgets',
-		'icon' => 'block-default',
-		'description' => 'Displays featured content and upcoming events feed.',
-		'example' => array(
-			
-		),
-		'attributes' => array(
-			'heading' => array(
-				'type' => 'string',
-				'default' => 'Featured'
-			),
-			'featuredExpertId' => array(
-				'type' => 'number',
-				'default' => 0
-			)
-		),
-		'supports' => array(
-			'html' => false
-		),
-		'textdomain' => 'mitlib-blocks',
-		'editorScript' => 'file:./index.js',
-		'editorStyle' => 'file:./index.css',
-		'render' => 'file:./render.php'
-	),
-	'featured-collection-section' => array(
-		'$schema' => 'https://schemas.wp.org/trunk/block.json',
-		'apiVersion' => 3,
-		'name' => 'mitlib/featured-collection-section',
-		'version' => '0.1.0',
-		'title' => 'MITLIB - Featured Collection Section',
-		'category' => 'widgets',
-		'icon' => 'block-default',
-		'description' => 'Displays a curated featured collection section.',
-		'example' => array(
-			
-		),
-		'supports' => array(
-			'html' => false
-		),
-		'textdomain' => 'mitlib-blocks',
-		'editorScript' => 'file:./index.js',
-		'editorStyle' => 'file:./index.css'
-	),
-	'hours-section' => array(
-		'$schema' => 'https://schemas.wp.org/trunk/block.json',
-		'apiVersion' => 3,
-		'name' => 'mitlib/hours-section',
-		'version' => '0.1.0',
-		'title' => 'MITLIB - Hours Section',
-		'category' => 'widgets',
-		'icon' => 'block-default',
-		'description' => 'Locations and hours list for the homepage',
-		'example' => array(
-			
-		),
-		'attributes' => array(
-			'heading' => array(
-				'type' => 'string',
-				'default' => 'Today\'s hours'
-			),
-			'linkText' => array(
-				'type' => 'string',
-				'default' => 'See more locations and hours'
-			),
-			'linkUrl' => array(
-				'type' => 'string',
-				'default' => '/hours'
-			)
-		),
-		'supports' => array(
-			'html' => false
-		),
-		'textdomain' => 'mitlib-blocks',
-		'editorScript' => 'file:./index.js',
-		'editorStyle' => 'file:./index.css'
-	),
-	'location-atom' => array(
-		'$schema' => 'https://schemas.wp.org/trunk/block.json',
-		'apiVersion' => 3,
-		'name' => 'mitlib/location-atom',
-		'version' => '0.1.0',
-		'title' => 'Location Atom',
+		'title' => 'Atom: Location',
 		'category' => 'mitlib',
 		'icon' => 'block-default',
 		'description' => 'Location information (with hours)',
@@ -106,12 +24,12 @@ return array(
 		'editorScript' => 'file:./index.js',
 		'editorStyle' => 'file:./index.css'
 	),
-	'using-atom' => array(
+	'atom-using' => array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',
 		'apiVersion' => 3,
-		'name' => 'mitlib/using-atom',
+		'name' => 'mitlib/atom-using',
 		'version' => '0.1.0',
-		'title' => 'Using Atom',
+		'title' => 'Atom: Using the Libraries',
 		'category' => 'mitlib',
 		'icon' => 'block-default',
 		'description' => 'Using the Libraries blurb',
@@ -141,13 +59,95 @@ return array(
 		'editorScript' => 'file:./index.js',
 		'editorStyle' => 'file:./index.css'
 	),
+	'featured-and-events-section' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'mitlib/featured-and-events-section',
+		'version' => '0.1.0',
+		'title' => 'Section: Featured and Events',
+		'category' => 'mitlib',
+		'icon' => 'block-default',
+		'description' => 'Displays featured content and upcoming events feed.',
+		'example' => array(
+			
+		),
+		'attributes' => array(
+			'heading' => array(
+				'type' => 'string',
+				'default' => 'Featured'
+			),
+			'featuredExpertId' => array(
+				'type' => 'number',
+				'default' => 0
+			)
+		),
+		'supports' => array(
+			'html' => false
+		),
+		'textdomain' => 'mitlib-blocks',
+		'editorScript' => 'file:./index.js',
+		'editorStyle' => 'file:./index.css',
+		'render' => 'file:./render.php'
+	),
+	'featured-collection-section' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'mitlib/featured-collection-section',
+		'version' => '0.1.0',
+		'title' => 'Section: Featured Collection',
+		'category' => 'mitlib',
+		'icon' => 'block-default',
+		'description' => 'Displays a curated featured collection section.',
+		'example' => array(
+			
+		),
+		'supports' => array(
+			'html' => false
+		),
+		'textdomain' => 'mitlib-blocks',
+		'editorScript' => 'file:./index.js',
+		'editorStyle' => 'file:./index.css'
+	),
+	'hours-section' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'mitlib/hours-section',
+		'version' => '0.1.0',
+		'title' => 'Section: Hours',
+		'category' => 'mitlib',
+		'icon' => 'block-default',
+		'description' => 'Locations and hours list for the homepage',
+		'example' => array(
+			
+		),
+		'attributes' => array(
+			'heading' => array(
+				'type' => 'string',
+				'default' => 'Today\'s hours'
+			),
+			'linkText' => array(
+				'type' => 'string',
+				'default' => 'See more locations and hours'
+			),
+			'linkUrl' => array(
+				'type' => 'string',
+				'default' => '/hours'
+			)
+		),
+		'supports' => array(
+			'html' => false
+		),
+		'textdomain' => 'mitlib-blocks',
+		'editorScript' => 'file:./index.js',
+		'editorStyle' => 'file:./index.css'
+	),
 	'using-the-libraries-section' => array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',
 		'apiVersion' => 3,
 		'name' => 'mitlib/using-the-libraries-section',
 		'version' => '0.1.0',
-		'title' => 'MITLIB - Using The Libraries Section',
-		'category' => 'widgets',
+		'title' => 'Section: Using The Libraries',
+		'category' => 'mitlib',
 		'icon' => 'block-default',
 		'description' => 'Displays library service links and an Ask Us help box.',
 		'example' => array(
