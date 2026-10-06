@@ -1,13 +1,19 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "mitlib/featured-collection-section",
+	"name": "mitlib/atom-location",
 	"version": "0.1.0",
-	"title": "Section: Featured Collection",
+	"title": "Atom: Location",
 	"category": "mitlib",
 	"icon": "block-default",
-	"description": "Displays a curated featured collection section.",
-	"example": {},
+	"description": "Location information (with hours)",
+	"example": false,
+	"attributes": {
+		"locationName": {
+			"type": "string",
+			"default": "Hayden Library"
+		}
+	},
 	"supports": {
 		"html": false
 	},

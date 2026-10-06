@@ -3,11 +3,14 @@
 	"apiVersion": 3,
 	"name": "mitlib/using-the-libraries-section",
 	"version": "0.1.0",
-	"title": "MITLIB - Using The Libraries Section",
-	"category": "widgets",
+	"title": "Section: Using The Libraries",
+	"category": "mitlib",
 	"icon": "block-default",
 	"description": "Displays library service links and an Ask Us help box.",
 	"example": {},
+	"allowedBlocks": [
+		"mitlib/atom-using"
+	],
 	"attributes": {
 		"heading": {
 			"type": "string",

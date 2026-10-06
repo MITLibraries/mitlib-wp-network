@@ -1,25 +1,29 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
-  "name": "mitlib/hours-section",
+  "name": "mitlib/atom-using",
   "version": "0.1.0",
-  "title": "Section: Hours",
+  "title": "Atom: Using the Libraries",
   "category": "mitlib",
   "icon": "block-default",
-  "description": "Locations and hours list for the homepage",
-  "example": {},
+  "description": "Using the Libraries blurb",
+  "example": false,
   "attributes": {
-    "heading": {
+    "headline": {
       "type": "string",
-      "default": "Today's hours"
+      "default": "Find a study space"
     },
-    "linkText": {
+    "blurb": {
       "type": "string",
-      "default": "See more locations and hours"
+      "default": "Quiet and group spaces - many available 24/7"
     },
-    "linkUrl": {
+    "icon": {
       "type": "string",
-      "default": "/hours"
+      "default": "lightbulb"
+    },
+    "link": {
+      "type": "string",
+      "default": "/study"
     }
   },
   "supports": {
