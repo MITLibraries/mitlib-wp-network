@@ -88,10 +88,13 @@ return array(
 		'apiVersion' => 3,
 		'name' => 'mitlib/using-the-libraries-section',
 		'version' => '0.1.0',
-		'title' => 'Using The Libraries',
+		'title' => 'Using the Libraries',
 		'category' => 'mitlib',
 		'icon' => 'align-wide',
 		'description' => 'Displays library service links and an Ask Us help box.',
+		'example' => array(
+			
+		),
 		'attributes' => array(
 			'heading' => array(
 				'type' => 'string',
