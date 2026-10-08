@@ -3,11 +3,10 @@
   "apiVersion": 3,
   "name": "mitlib/using-the-libraries-section",
   "version": "0.1.0",
-  "title": "MITLIB - Using The Libraries Section",
-  "category": "widgets",
-  "icon": "block-default",
+  "title": "Using The Libraries",
+  "category": "mitlib",
+  "icon": "align-wide",
   "description": "Displays library service links and an Ask Us help box.",
-  "example": {},
   "attributes": {
     "heading": {
       "type": "string",

@@ -6,9 +6,9 @@ return array(
 		'apiVersion' => 3,
 		'name' => 'mitlib/featured-and-events-section',
 		'version' => '0.1.0',
-		'title' => 'MITLIB - Featured and Events Section',
-		'category' => 'widgets',
-		'icon' => 'block-default',
+		'title' => 'Featured and Events',
+		'category' => 'mitlib',
+		'icon' => 'align-wide',
 		'description' => 'Displays featured content and upcoming events feed.',
 		'example' => array(
 			
@@ -36,9 +36,9 @@ return array(
 		'apiVersion' => 3,
 		'name' => 'mitlib/featured-collection-section',
 		'version' => '0.1.0',
-		'title' => 'MITLIB - Featured Collection Section',
-		'category' => 'widgets',
-		'icon' => 'block-default',
+		'title' => 'Featured Collection',
+		'category' => 'mitlib',
+		'icon' => 'align-wide',
 		'description' => 'Displays a curated featured collection section.',
 		'example' => array(
 			
@@ -55,9 +55,9 @@ return array(
 		'apiVersion' => 3,
 		'name' => 'mitlib/hours-section',
 		'version' => '0.1.0',
-		'title' => 'MITLIB - Hours Section',
-		'category' => 'widgets',
-		'icon' => 'block-default',
+		'title' => 'Hours',
+		'category' => 'mitlib',
+		'icon' => 'align-wide',
 		'description' => 'Locations and hours list for the homepage',
 		'example' => array(
 			
@@ -88,13 +88,10 @@ return array(
 		'apiVersion' => 3,
 		'name' => 'mitlib/using-the-libraries-section',
 		'version' => '0.1.0',
-		'title' => 'MITLIB - Using The Libraries Section',
-		'category' => 'widgets',
-		'icon' => 'block-default',
+		'title' => 'Using The Libraries',
+		'category' => 'mitlib',
+		'icon' => 'align-wide',
 		'description' => 'Displays library service links and an Ask Us help box.',
-		'example' => array(
-			
-		),
 		'attributes' => array(
 			'heading' => array(
 				'type' => 'string',
