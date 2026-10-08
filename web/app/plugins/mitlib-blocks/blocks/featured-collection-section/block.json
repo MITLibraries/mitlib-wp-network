@@ -3,9 +3,9 @@
 	"apiVersion": 3,
 	"name": "mitlib/featured-collection-section",
 	"version": "0.1.0",
-	"title": "MITLIB - Featured Collection Section",
-	"category": "widgets",
-	"icon": "block-default",
+	"title": "Featured Collection",
+	"category": "mitlib",
+	"icon": "align-wide",
 	"description": "Displays a curated featured collection section.",
 	"example": {},
 	"supports": {
