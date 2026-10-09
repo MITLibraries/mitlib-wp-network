@@ -3,9 +3,9 @@
   "apiVersion": 3,
   "name": "mitlib/featured-and-events-section",
   "version": "0.1.0",
-  "title": "MITLIB - Featured and Events Section",
-  "category": "widgets",
-  "icon": "block-default",
+  "title": "Featured and Events",
+  "category": "mitlib",
+  "icon": "align-wide",
   "description": "Displays featured content and upcoming events feed.",
   "example": {},
   "attributes": {

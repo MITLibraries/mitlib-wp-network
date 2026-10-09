@@ -34,3 +34,22 @@ function register_blocks() {
 	);
 }
 add_action( 'init', 'Mitlib\Blocks\register_blocks' );
+
+/**
+ * Registers a new category that will contain the Libraries' custom blocks.
+ *
+ * @param array $categories Array of categories for block types.
+ */
+function register_category( $categories ) {
+	return array_merge(
+		array(
+			array(
+				'slug' => 'mitlib',
+				'title' => 'MIT Libraries',
+				'icon' => null,
+			),
+		),
+		$categories
+	);
+}
+add_filter( 'block_categories_all', 'Mitlib\Blocks\register_category' );
