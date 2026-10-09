@@ -156,7 +156,7 @@ class Display_Widget_Frontpage extends \WP_Widget {
 
 		// Render markup.
 		echo wp_kses( $args['before_widget'], $allowed );
-		require( plugin_dir_path( __FILE__ ) . '../templates/display-widget-frontpage.php' );
+		require plugin_dir_path( __FILE__ ) . '../templates/display-widget-frontpage.php';
 		echo wp_kses( $args['after_widget'], $allowed );
 	}
 }

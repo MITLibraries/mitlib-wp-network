@@ -58,11 +58,16 @@ class Admin_Widget {
 			$cache_timestamp = time();
 			update_option( 'cache_timestamp', $cache_timestamp );
 
-			echo( '<div class="updated"><p>Harvester activated...</p></div>' );
+			add_settings_error(
+				'mitlib_pull_hours',
+				'settings_updated',
+				__( 'Harvester activated...', 'mitlib-pull-hours' ),
+				'info'
+			);
 
 		}
 
 		// Use the template to render widget output.
-		require_once( plugin_dir_path( __FILE__ ) . '../templates/admin-widget.php' );
+		require_once plugin_dir_path( __FILE__ ) . '../templates/admin-widget.php';
 	}
 }
