@@ -79,12 +79,12 @@ $expert_help_link_text = 'How can ' . $expert_first_name . ' help you?';
 					</div>
 				</article>
 				<article class="featured-item side-by-side">
-					<span class="item-type service">Service</span>
-					<img src="https://libraries.mit.edu/app/uploads/2026/08/XKQoSUbi-1.png" alt="A white, two-column locker with a digital screen and text reading &quot;MIT Libraries, Pickup Locker&quot;"/>
+					<span class="item-type news">News</span>
+					<img src="https://libraries.mit.edu/app/uploads/2026/10/razYj9Rc.jpeg" alt="Open Data @ MIT"/>
 					<div class="featured-item-content">
 						<hgroup>
-							<h3><a href="https://libraries.mit.edu/locations/lockers/">New! Self-service lockers</a></h3>
-							<p>Pick up and drop off library items 24 hours a day, seven days a week</p>
+							<h3><a href="https://libraries.mit.edu/opendata/open-data-mit-home/mit-prize/">2026 MIT Prize for Open Data</a></h3>
+							<p>Read about the winning projects, and join us on Oct. 20 to celebrate the researchers</p>
 						</hgroup>
 					</div>
 				</article>						
@@ -102,7 +102,7 @@ $expert_help_link_text = 'How can ' . $expert_first_name . ' help you?';
 					<div class="featured-item-content">
 						<hgroup>
 							<h3><a href="https://libguides.mit.edu/cite-write">Citation management tools</a></h3>
-							<p>Our guide to using Zotero, Mendeley, Overleaf, and more.</p>
+							<p>Our guide to using Zotero, Mendeley, Overleaf, and more</p>
 						</hgroup>
 					</div>
 				</article>																	
@@ -111,7 +111,7 @@ $expert_help_link_text = 'How can ' . $expert_first_name . ' help you?';
 					<div class="featured-item-content">
 						<hgroup>
 							<h3><a href="https://libraries.mit.edu/data-management/">Data Management Services</a></h3>
-							<p>We can help you manage, store, and share your research information, data, or code throughout its lifecycle.</p>
+							<p>We can help you manage, store, and share your research information, data, or code throughout its lifecycle</p>
 						</hgroup>
 					</div>
 				</article>
