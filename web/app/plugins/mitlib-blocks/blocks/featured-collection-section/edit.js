@@ -17,7 +17,6 @@ import {
 	TextareaControl,
 	TextControl,
 } from '@wordpress/components';
-import { __ } from '@wordpress/i18n';
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
  * Those files can contain any CSS code that gets applied to the editor.
@@ -52,17 +51,17 @@ export default function Edit( props ) {
 	return (
 		<div { ...useBlockProps() }>
 			<InspectorControls>
-				<PanelBody title={ __( 'Featured Item', 'mitlib-blocks' ) }>
+				<PanelBody title="Featured Item">
 					<SelectControl
-						label={ __( 'Featured Item Type', 'mitlib-blocks' ) }
+						label="Featured Item Type"
 						value={ featuredItemType }
 						options={ [
 							{
-								label: __( 'Exhibit', 'mitlib-blocks' ),
+								label: 'Exhibit',
 								value: 'Exhibit',
 							},
 							{
-								label: __( 'Collection', 'mitlib-blocks' ),
+								label: 'Collection',
 								value: 'Collection',
 							},
 						] }
@@ -71,21 +70,21 @@ export default function Edit( props ) {
 						}
 					/>
 					<TextControl
-						label={ __( 'Title', 'mitlib-blocks' ) }
+						label="Title"
 						value={ title }
 						onChange={ ( value ) =>
 							setAttributes( { title: value } )
 						}
 					/>
 					<TextareaControl
-						label={ __( 'Description', 'mitlib-blocks' ) }
+						label="Description"
 						value={ description }
 						onChange={ ( value ) =>
 							setAttributes( { description: value } )
 						}
 					/>
 					<TextControl
-						label={ __( 'Link URL', 'mitlib-blocks' ) }
+						label="Link URL"
 						type="url"
 						value={ linkUrl }
 						onChange={ ( value ) =>
@@ -93,14 +92,14 @@ export default function Edit( props ) {
 						}
 					/>
 					<TextControl
-						label={ __( 'Link Text', 'mitlib-blocks' ) }
+						label="Link Text"
 						value={ linkText }
 						onChange={ ( value ) =>
 							setAttributes( { linkText: value } )
 						}
 					/>
 				</PanelBody>
-				<PanelBody title={ __( 'Image', 'mitlib-blocks' ) }>
+				<PanelBody title="Image">
 					<MediaUploadCheck>
 						<MediaUpload
 							allowedTypes={ [ 'image' ] }
@@ -114,11 +113,8 @@ export default function Edit( props ) {
 							render={ ( { open } ) => (
 								<Button variant="secondary" onClick={ open }>
 									{ imageUrl
-										? __( 'Replace image', 'mitlib-blocks' )
-										: __(
-												'Select image',
-												'mitlib-blocks'
-											) }
+										? 'Replace image'
+										: 'Select image' }
 								</Button>
 							) }
 						/>
@@ -131,12 +127,12 @@ export default function Edit( props ) {
 								setAttributes( { imageId: 0, imageUrl: '' } )
 							}
 						>
-							{ __( 'Remove image', 'mitlib-blocks' ) }
+							Remove image
 						</Button>
 					) }
 				</PanelBody>
 			</InspectorControls>
-			<h2>{ `${ __( 'Featured', 'mitlib-blocks' ) } ${ featuredItemType }` }</h2>
+			<h2>Featured { featuredItemType }</h2>
 			{ imageUrl && (
 				<div
 					style={ {
