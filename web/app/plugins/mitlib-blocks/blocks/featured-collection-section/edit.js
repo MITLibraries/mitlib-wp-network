@@ -132,20 +132,38 @@ export default function Edit( props ) {
 					) }
 				</PanelBody>
 			</InspectorControls>
-			<h2>Featured { featuredItemType }</h2>
-			{ imageUrl && (
-				<div
-					style={ {
-						backgroundImage: `url("${ imageUrl }")`,
-						backgroundSize: 'cover',
-						backgroundPosition: 'center',
-						aspectRatio: '16 / 9',
-					} }
-				/>
-			) }
-			<h3>{ title }</h3>
-			<p>{ description }</p>
-			<span>{ linkText }</span>
+			<section className="featured-collection-preview">
+				<div className="content-wrapper">
+					<div
+						className="featured-collection-image"
+						style={
+							imageUrl
+								? { backgroundImage: `url("${ imageUrl }")` }
+								: undefined
+						}
+					>
+						<span className="featured-collection-tag">
+							{ featuredItemType }
+						</span>
+					</div>
+					<div className="featured-collection-content">
+						<h2 className="screen-reader-text">
+							Featured { featuredItemType }
+						</h2>
+						<h3>{ title }</h3>
+						<p>{ description }</p>
+						{ linkUrl && (
+							<a
+								className="button secondary"
+								href={ linkUrl }
+								onClick={ ( event ) => event.preventDefault() }
+							>
+								{ linkText }
+							</a>
+						) }
+					</div>
+				</div>
+			</section>
 		</div>
 	);
 }
