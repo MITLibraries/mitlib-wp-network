@@ -8,6 +8,40 @@
   "icon": "align-wide",
   "description": "Displays a curated featured collection section.",
   "example": {},
+  "attributes": {
+    "featuredItemType": {
+      "type": "string",
+      "default": "Exhibit",
+      "enum": [
+        "Exhibit",
+        "Collection"
+      ]
+    },
+    "title": {
+      "type": "string",
+      "default": "Spirits, Goblins, and Gnurds"
+    },
+    "description": {
+      "type": "string",
+      "default": "A celebration of the last 150 years of student life at MIT, this digital exhibit examines archival materials from Distinctive Collections focusing on three specific years – 1876, 1926, and 1976."
+    },
+    "linkUrl": {
+      "type": "string",
+      "default": "https://digital-exhibits.libraries.mit.edu/s/MITin50s/page/Intro"
+    },
+    "linkText": {
+      "type": "string",
+      "default": "Check it out"
+    },
+    "imageId": {
+      "type": "number",
+      "default": 0
+    },
+    "imageUrl": {
+      "type": "string",
+      "default": "https://libraries.mit.edu/app/uploads/2026/10/nyi_QvYE.jpeg"
+    }
+  },
   "supports": {
     "html": false
   },
