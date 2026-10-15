@@ -48,7 +48,8 @@ return array(
 		),
 		'textdomain' => 'mitlib-blocks',
 		'editorScript' => 'file:./index.js',
-		'editorStyle' => 'file:./index.css'
+		'editorStyle' => 'file:./index.css',
+		'render' => 'file:./render.php'
 	),
 	'featured-expert' => array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',
