@@ -96,6 +96,7 @@ class Harvester {
 			return true;
 
 		} catch ( \Google\Service\Exception $e ) {
+			error_log( $e->getMessage() );
 			$raw     = json_decode( $e->getMessage(), true );
 			$code    = $raw['error']['code'] ?? 'unknown';
 			$message = $raw['error']['message'] ?? 'Unknown Google API error - check logs for details.';
@@ -109,6 +110,7 @@ class Harvester {
 			return false;
 
 		} catch ( \Exception $e ) {
+			error_log( $e->getMessage() );
 			add_settings_error(
 				'mitlib_pull_hours',
 				'unexpected_error',
@@ -217,11 +219,11 @@ class Harvester {
 			'success'
 		);
 		if ( ! wp_mkdir_p( $this->path ) ) {
-			error_log( "Failed to create cache directory: {$basedir}" );
+			error_log( "Failed to create cache directory: {$this->path}" );
 			add_settings_error(
 				'mitlib_pull_hours',
 				'invalid_cache_location',
-				"Failed to create cache directory: {$basedir}",
+				"Failed to create cache directory: {$this->path}",
 				'error'
 			);
 		}
