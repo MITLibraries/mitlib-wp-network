@@ -10,7 +10,6 @@
 
 // The layout supports between three and six featured items.
 $featured_count = count( $block->parsed_block['innerBlocks'] ?? array() );
-$featured_count = max( 3, min( 6, $featured_count ) );
 
 $show_events = ! isset( $attributes['showEvents'] ) || $attributes['showEvents'];
 
