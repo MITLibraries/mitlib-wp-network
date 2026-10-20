@@ -7,9 +7,7 @@ user feedback, and silent failure modes.
 The broader context for this work is a shift toward using the WordPress
 Settings Errors API (`add_settings_error()` / `settings_errors()`) to collect
 and display status messages after operations complete, rather than scattering
-`echo()` calls throughout the business logic. That pattern is already in place
-in `class-harvester.php` and `class-dashboard.php` as of the `skunkworks`
-branch.
+`echo()` calls throughout the business logic.
 
 ---
 
@@ -47,30 +45,7 @@ contacting the API.
 
 ---
 
-## 2. `write()` silently discards failures
-
-**File:** `src/class-harvester.php` — `write()`
-
-`file_put_contents()` returns `false` on failure (wrong permissions, disk
-full, etc.), but the return value is currently discarded. If a file cannot be
-written, the harvest will complete and report success even though some or all
-cache files are stale or missing.
-
-This is probably the most operationally dangerous silent failure in the plugin,
-because it is the kind of thing that could happen subtly in a production
-environment — a permissions change, a full disk — without producing any visible
-error.
-
-**Suggested fix:** Check the return value of `file_put_contents()`. On
-failure, queue an error via `add_settings_error()`. Consider whether a single
-failed file write should abort the entire harvest or continue and report a
-partial success. The simplest approach is to track a `$write_errors` counter
-in `fetch()` and have `fetch()` return a boolean that `harvest()` can include
-in its own success/failure determination.
-
----
-
-## 3. Per-sheet fetch errors are indistinguishable from step-3 errors
+## 2. Per-sheet fetch errors are indistinguishable from step-3 errors
 
 **File:** `src/class-harvester.php` — `fetch()`
 
@@ -89,7 +64,7 @@ acceptable for now.
 
 ---
 
-## 4. `Admin_Widget` never calls the Harvester
+## 3. `Admin_Widget` never calls the Harvester
 
 **File:** `src/class-admin-widget.php` — `widget()`
 
@@ -112,7 +87,7 @@ page.
 
 ---
 
-## 5. `admin-widget.php` template is fragile with an unset timestamp
+## 4. `admin-widget.php` template is fragile with an unset timestamp
 
 **File:** `templates/admin-widget.php`
 
@@ -140,7 +115,6 @@ comparisons on its properties (`$ago->y`, `$ago->m`, etc.).
 |---|---|---|---|
 | 1a | `class-harvester.php` | `wp_upload_dir()` error key ignored | Wrong path used silently |
 | 1b | `class-harvester.php` | `wp_mkdir_p()` failure doesn't stop `harvest()` | False success reported |
-| 2 | `class-harvester.php` | `file_put_contents()` return value ignored | Cache silently not written |
-| 3 | `class-harvester.php` | Per-sheet errors indistinguishable from index errors | Unhelpful error messages |
-| 4 | `class-admin-widget.php` | `Harvester` never called | Timestamp updated, cache stale |
-| 5 | `templates/admin-widget.php` | Unguarded timestamp and fragile switch | Misleading display on fresh install |
+| 2 | `class-harvester.php` | Per-sheet errors indistinguishable from index errors | Unhelpful error messages |
+| 3 | `class-admin-widget.php` | `Harvester` never called | Timestamp updated, cache stale |
+| 4 | `templates/admin-widget.php` | Unguarded timestamp and fragile switch | Misleading display on fresh install |
