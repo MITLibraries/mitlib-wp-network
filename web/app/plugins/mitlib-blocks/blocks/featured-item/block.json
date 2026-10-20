@@ -44,7 +44,8 @@
 	},
 	"supports": {
 		"html": false,
-		"reusable": false
+		"reusable": false,
+		"customClassName": true
 	},
 	"textdomain": "mitlib-blocks",
 	"editorScript": "file:./index.js",

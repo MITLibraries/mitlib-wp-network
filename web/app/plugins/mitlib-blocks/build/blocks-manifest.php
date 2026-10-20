@@ -129,7 +129,8 @@ return array(
 		),
 		'supports' => array(
 			'html' => false,
-			'reusable' => false
+			'reusable' => false,
+			'customClassName' => true
 		),
 		'textdomain' => 'mitlib-blocks',
 		'editorScript' => 'file:./index.js',
