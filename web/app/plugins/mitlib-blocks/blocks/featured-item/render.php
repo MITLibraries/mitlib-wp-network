@@ -37,7 +37,7 @@ $item_allowed_html = array(
 );
 
 ?>
-<article <?php echo get_block_wrapper_attributes( array( 'class' => $item_classes ) ); ?>>
+<article <?php echo get_block_wrapper_attributes( array( 'class' => $item_classes ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- get_block_wrapper_attributes() escapes the generated attributes. ?> >
 	<span class="item-type <?php echo esc_attr( $item_type ); ?>"><?php echo esc_html( $item_type_labels[ $item_type ] ); ?></span>
 	<?php
 	if ( $item_has_image ) {
