@@ -41,13 +41,7 @@ $item_allowed_html = array(
 	<span class="item-type <?php echo esc_attr( $item_type ); ?>"><?php echo esc_html( $item_type_labels[ $item_type ] ); ?></span>
 	<?php
 	if ( $item_has_image ) {
-		if ( $item_image_id ) {
-			echo wp_get_attachment_image( $item_image_id, 'full' );
-		} else {
-			?>
-	<img src="<?php echo esc_url( $item_image_url ); ?>" alt="<?php echo esc_attr( $item_image_alt ); ?>" />
-			<?php
-		}
+		echo wp_get_attachment_image( $item_image_id, 'full' );
 	}
 	?>
 	<div class="featured-item-content">
