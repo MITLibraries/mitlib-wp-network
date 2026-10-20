@@ -18,9 +18,9 @@ return array(
 				'type' => 'string',
 				'default' => 'Featured'
 			),
-			'featuredExpertId' => array(
-				'type' => 'number',
-				'default' => 0
+			'showEvents' => array(
+				'type' => 'boolean',
+				'default' => true
 			)
 		),
 		'supports' => array(
@@ -49,6 +49,93 @@ return array(
 		'textdomain' => 'mitlib-blocks',
 		'editorScript' => 'file:./index.js',
 		'editorStyle' => 'file:./index.css'
+	),
+	'featured-expert' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'mitlib/featured-expert',
+		'version' => '0.1.0',
+		'title' => 'Featured Expert',
+		'category' => 'mitlib',
+		'icon' => 'businessperson',
+		'description' => 'Highlights a librarian inside the Featured and Events section.',
+		'parent' => array(
+			'mitlib/featured-and-events-section'
+		),
+		'attributes' => array(
+			'expertId' => array(
+				'type' => 'number',
+				'default' => 0
+			),
+			'imagePosition' => array(
+				'type' => 'string',
+				'default' => 'left'
+			)
+		),
+		'supports' => array(
+			'html' => false,
+			'reusable' => false
+		),
+		'textdomain' => 'mitlib-blocks',
+		'editorScript' => 'file:./index.js',
+		'editorStyle' => 'file:./index.css',
+		'render' => 'file:./render.php'
+	),
+	'featured-item' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'mitlib/featured-item',
+		'version' => '0.1.0',
+		'title' => 'Featured Item',
+		'category' => 'mitlib',
+		'icon' => 'star-filled',
+		'description' => 'A single item inside the Featured and Events section.',
+		'parent' => array(
+			'mitlib/featured-and-events-section'
+		),
+		'attributes' => array(
+			'itemType' => array(
+				'type' => 'string',
+				'default' => 'spotlight'
+			),
+			'title' => array(
+				'type' => 'string',
+				'default' => ''
+			),
+			'description' => array(
+				'type' => 'string',
+				'default' => ''
+			),
+			'linkUrl' => array(
+				'type' => 'string',
+				'default' => ''
+			),
+			'imageId' => array(
+				'type' => 'number',
+				'default' => 0
+			),
+			'imageUrl' => array(
+				'type' => 'string',
+				'default' => ''
+			),
+			'imageAlt' => array(
+				'type' => 'string',
+				'default' => ''
+			),
+			'imagePosition' => array(
+				'type' => 'string',
+				'default' => 'above'
+			)
+		),
+		'supports' => array(
+			'html' => false,
+			'reusable' => false,
+			'customClassName' => true
+		),
+		'textdomain' => 'mitlib-blocks',
+		'editorScript' => 'file:./index.js',
+		'editorStyle' => 'file:./index.css',
+		'render' => 'file:./render.php'
 	),
 	'hours-section' => array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',

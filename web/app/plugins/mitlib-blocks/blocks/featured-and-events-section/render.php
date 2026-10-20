@@ -8,115 +8,20 @@
  * @var WP_Block $block      Block instance.
  */
 
-// Look up the librarian chosen in the block editor's "Featured Librarian" panel.
-$featured_expert    = null;
-$featured_expert_id = absint( $attributes['featuredExpertId'] ?? 0 );
-if ( $featured_expert_id ) {
-	$maybe_expert = get_post( $featured_expert_id );
-	if ( $maybe_expert && 'experts' === $maybe_expert->post_type && 'publish' === $maybe_expert->post_status ) {
-		$featured_expert = $maybe_expert;
-	}
-}
+// The layout supports between three and six featured items.
+$featured_count = count( $block->parsed_block['innerBlocks'] ?? array() );
 
-// Fallback used when no librarian has been selected in the block editor.
-$default_expert = array(
-	'name'       => 'Alejandro Paz',
-	'first_name' => 'Alejandro',
-	'url'        => 'https://libguides.mit.edu/profiles/apaz',
-	'image'      => 'https://libapps.s3.amazonaws.com/accounts/349/images/apaz-100x100.jpg',
-	'excerpt'    => 'Librarian for Energy and Environment',
-);
-
-// If we have a valid expert, use those values. If not, use the fallback values.
-if ( $featured_expert ) {
-	$expert_name       = get_the_title( $featured_expert );
-	$expert_first_name = strtok( $expert_name, ' ' );
-	$expert_url        = get_post_meta( $featured_expert->ID, 'expert_url', true );
-	$expert_image      = get_the_post_thumbnail_url( $featured_expert, 'thumbnail' );
-	$expert_excerpt    = get_the_excerpt( $featured_expert );
-} else {
-	$expert_name       = $default_expert['name'];
-	$expert_first_name = $default_expert['first_name'];
-	$expert_url        = $default_expert['url'];
-	$expert_image      = $default_expert['image'];
-	$expert_excerpt    = $default_expert['excerpt'];
-}
-
-// Generate the strings for alt text and help link text.
-$expert_alt_text       = 'Headshot of ' . $expert_name;
-$expert_help_link_text = 'How can ' . $expert_first_name . ' help you?';
+$show_events = ! isset( $attributes['showEvents'] ) || $attributes['showEvents'];
 
 ?><section id="featured-and-events">
 	<div class="content-wrapper">
 		<div class="featured-content">
 			<h2><?php echo esc_html( $attributes['heading'] ); ?></h2>
-			<div class="featured-items count-6">
-				<article class="featured-item">
-					<span class="item-type spotlight">Spotlight</span>
-					<img src="https://libraries.mit.edu/app/uploads/2026/09/mit-reads-highlight.png" alt="Exhalation book cover and MIT Reads logo; text reads Fall 2026 selection" />
-					<div class="featured-item-content">
-						<hgroup>
-							<h3><a href="https://libraries.mit.edu/mit-reads/">Read <em>Exhalation</em> by Ted Chiang</a></h3>
-							<p>To celebrate 10 years of MIT Reads, President Sally Kornbluth has chosen our fall 2026 selection</p>
-						</hgroup>
-					</div>
-				</article>	
-				<article class="featured-item side-by-side">
-					<span class="item-type spotlight">Spotlight</span>
-					<?php if ( $expert_image ) : ?>
-					<img src="<?php echo esc_url( $expert_image ); ?>" alt="<?php echo esc_attr( $expert_alt_text ); ?>" />
-					<?php endif; ?>
-					<div class="featured-item-content">
-						<hgroup>
-							<h3><a href="<?php echo esc_url( $expert_url ); ?>"><?php echo esc_html( $expert_name ); ?></a></h3>
-							<div>
-								<p><?php echo esc_html( $expert_excerpt ); ?></p>
-							</div>
-						</hgroup>
-						<a class="arrow-right" href="<?php echo esc_url( $expert_url ); ?>">
-							<?php echo esc_html( $expert_help_link_text ); ?>
-						</a>
-					</div>
-				</article>
-				<article class="featured-item side-by-side">
-					<span class="item-type news">News</span>
-					<img src="https://libraries.mit.edu/app/uploads/2026/10/razYj9Rc.jpeg" alt="Open Data @ MIT"/>
-					<div class="featured-item-content">
-						<hgroup>
-							<h3><a href="https://libraries.mit.edu/opendata/open-data-mit-home/mit-prize/">2026 MIT Prize for Open Data</a></h3>
-							<p>Read about the winning projects, and join us on Oct. 20 to celebrate the researchers</p>
-						</hgroup>
-					</div>
-				</article>						
-				<article class="featured-item">
-					<span class="item-type service">Service</span>
-					<div class="featured-item-content">
-						<hgroup>
-							<h3><a href="https://libraries.mit.edu/about/service-updates/">Service updates</a></h3>
-							<p>The latest information about access to library collections, spaces, and services</p>
-						</hgroup>
-					</div>
-				</article>
-				<article class="featured-item">
-					<span class="item-type resource">Resource</span>
-					<div class="featured-item-content">
-						<hgroup>
-							<h3><a href="https://libguides.mit.edu/cite-write">Citation management tools</a></h3>
-							<p>Our guide to using Zotero, Mendeley, Overleaf, and more</p>
-						</hgroup>
-					</div>
-				</article>																	
-				<article class="featured-item">
-					<span class="item-type service">Service</span>
-					<div class="featured-item-content">
-						<hgroup>
-							<h3><a href="https://libraries.mit.edu/data-management/">Data Management Services</a></h3>
-							<p>We can help you manage, store, and share your research information, data, or code throughout its lifecycle</p>
-						</hgroup>
-					</div>
-				</article>
+			<div class="featured-items count-<?php echo esc_attr( $featured_count ); ?>">
+				<?php echo $content; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Inner block markup is already rendered and escaped. ?>
 			</div>
 		</div>
+		<?php if ( $show_events ) : ?>
 		<div class="events">
 			<div class="events-header">
 				<div class="events-header-title-paragraph">
@@ -255,5 +160,6 @@ $expert_help_link_text = 'How can ' . $expert_first_name . ' help you?';
 			restore_current_blog();
 			?>
 		</div>
+		<?php endif; ?>
 	</div>
 </section>
