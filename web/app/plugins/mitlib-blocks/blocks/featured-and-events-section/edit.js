@@ -4,6 +4,8 @@
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/
  */
 import { __ } from '@wordpress/i18n';
+import { useEffect } from '@wordpress/element';
+import { useDispatch, useSelect } from '@wordpress/data';
 import {
 	useBlockProps,
 	useInnerBlocksProps,
@@ -13,7 +15,6 @@ import {
 	store as blockEditorStore,
 } from '@wordpress/block-editor';
 import { Notice, PanelBody, ToggleControl } from '@wordpress/components';
-import { useSelect } from '@wordpress/data';
 import './editor.scss';
 
 const MIN_ITEMS = 3;
@@ -90,11 +91,36 @@ const TEMPLATE = [
 
 export default function Edit( { attributes, setAttributes, clientId } ) {
 	const { heading, showEvents } = attributes;
+	const { updateBlockAttributes } = useDispatch( blockEditorStore );
 
-	const itemCount = useSelect(
-		( select ) => select( blockEditorStore ).getBlockCount( clientId ),
+	const innerBlocks = useSelect(
+		( select ) => select( blockEditorStore ).getBlocks( clientId ),
 		[ clientId ]
 	);
+	const itemCount = innerBlocks.length;
+
+	useEffect( () => {
+		const shouldLockRemoval = itemCount <= MIN_ITEMS;
+
+		innerBlocks.forEach( ( block ) => {
+			const {
+				clientId: innerBlockClientId,
+				attributes: blockAttributes,
+			} = block;
+			const lock = blockAttributes.lock || {};
+
+			if ( shouldLockRemoval && ! lock.remove ) {
+				updateBlockAttributes( innerBlockClientId, {
+					lock: { ...lock, remove: true },
+				} );
+			} else if ( ! shouldLockRemoval && lock.remove ) {
+				const { remove, ...remainingLock } = lock;
+				updateBlockAttributes( innerBlockClientId, {
+					lock: remainingLock,
+				} );
+			}
+		} );
+	}, [ innerBlocks, itemCount, updateBlockAttributes ] );
 
 	const innerBlocksProps = useInnerBlocksProps(
 		{ className: 'featured-items' },
