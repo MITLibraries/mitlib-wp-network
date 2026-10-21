@@ -1,4 +1,10 @@
 <?php
+/**
+ * Render the featured collection section.
+ *
+ * @package MITLibBlocks
+ */
+
 $featured_item_type = 'Collection' === $attributes['featuredItemType'] ? 'Collection' : 'Exhibit';
 $image_id           = absint( $attributes['imageId'] );
 $image_url          = $attributes['imageUrl'];
@@ -9,7 +15,8 @@ if ( ! $image_id && $image_url ) {
 
 $image_alt = '';
 if ( $image_id ) {
-	$image_url = wp_get_attachment_image_url( $image_id, 'full' ) ?: $image_url;
+	$attachment_image_url = wp_get_attachment_image_url( $image_id, 'full' );
+	$image_url             = $attachment_image_url ? $attachment_image_url : $image_url;
 	$image_alt = get_post_meta( $image_id, '_wp_attachment_image_alt', true );
 } elseif ( 'https://libraries.mit.edu/app/uploads/2026/10/nyi_QvYE.jpeg' === $image_url ) {
 	$image_alt = "A 1920s photograph of two men standing on a car and waving from the top of a building's roof.";
