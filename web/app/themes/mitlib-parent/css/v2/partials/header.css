@@ -1,4 +1,7 @@
-/* Global styles that should apply to all pages using a v2 header */
+/* ================================================== */
+/* Global page styles for all pages using this header */
+/* ================================================== */
+
 body.v2-page {
 	background-color: var(--color-white);
   color: var(--color-text-default);
@@ -32,22 +35,127 @@ body.v2-page {
   padding-right: var(--content-side-margins);
 }  
 
+
+/* ====================== */
 /* Header specific styles */
+/* ====================== */
+
+/* Institute Bar */
+div.institute-bar {
+  background-color: var(--color-gray-900);
+  display: flex;
+  justify-content: center;
+
+  .institute-wrapper {
+    width: 100%;
+    max-width: var(--content-max-width);
+    padding-left: var(--content-side-margins);
+    padding-right: var(--content-side-margins);  
+    padding-top: var(--sp-300);
+    padding-bottom: var(--sp-300);    
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    > nav ul {
+      display: flex;
+      gap: var(--sp-800);
+      justify-content: flex-end;
+
+      li::before {
+        color: var(--color-gray-400);
+        display: inline-block;
+        font-family: "Font Awesome 6 Free";
+        font-size: 12px;
+        font-weight: 900;
+        padding-right: var(--sp-200);
+      }
+
+      li a {
+        color: var(--color-gray-300);
+        font-size: 15px;
+        font-weight: 400;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+/* Libraries Navigation Bar */
 section.header-wrapper {
   background-color: var(--color-gray-975);
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .header-main {
-  height: 101px; /* Temporary to debug layout issues */
   max-width: var(--content-max-width);
   background-color: transparent;
   padding-left: var(--content-side-margins);
   padding-right: var(--content-side-margins);  
+  padding-top: var(--sp-500);
+  padding-bottom: var(--sp-500);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  div.logo-lockup {
+    display: block;
+    width: 99px;
+    height: 40px;
+  }
+
+  /* Navigation styles */
+  > nav {
+
+    /* Top level menu items */
+    > ul {
+      display: flex;
+
+      > li {
+        font-size: 18px;
+        padding: var(--sp-400) var(--sp-500);
+
+        &.menu-item-has-children a {
+          &::after {
+            color: var(--color-gray-400);
+            content: "\f078";
+            font-family: "Font Awesome 6 Free";
+            font-size: 12px;
+            font-weight: 900;
+            padding-left: var(--sp-200);
+          }
+        }
+      }
+
+      /* Sub-menu styles */
+      > li ul.sub-menu {
+        border: 1px solid red;
+        display: none;
+      }
+    }
+
+    /* Global menu link styles */
+    li, a {
+      color: var(--color-text-on-color);
+      text-decoration: none;
+    }    
+    
+  }
 }
 
-/* Styles for the page content container for pages not fully on v2 */
+
+/* ================== */
+/* Old page overrides */
+/* ================== */
+
 #stage {
   max-width: var(--content-max-width);
   margin: 0 auto;
