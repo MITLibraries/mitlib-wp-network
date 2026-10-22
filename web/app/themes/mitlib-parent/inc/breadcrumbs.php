@@ -10,6 +10,8 @@ namespace Mitlib\Parent;
 
 ?>
 <div class="breadcrumbs--better hidden-phone group" role="navigation" aria-label="breadcrumbs">
-	<span><a href="/">Libraries home</a></span>
-	<?php better_breadcrumbs(); ?>
+	<div class="breadcrumbs-inner"> 
+		<span><a href="/">Libraries home</a></span>
+		<?php better_breadcrumbs(); ?>
+	</div>
 </div>

@@ -26,7 +26,7 @@ if ( ! $_GET['d'] ) {
 }
 // phpcs:enable
 
-get_header();
+get_header( 'v2');
 
 $nextMon = 'next monday';
 

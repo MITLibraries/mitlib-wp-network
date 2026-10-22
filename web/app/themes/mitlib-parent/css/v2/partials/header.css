@@ -1,110 +1,62 @@
-/* Adjustments to existing navigation */
-header.header-main {
-  > nav:first-child {
-      display: none;
-
-      @media only screen and (max-width: 569px) {
-        display: block;
-      }
-
-    }
-
-  .header-left, .header-right {
-    display: flex;
-  }
-
-  .header-right {
-    gap: var(--sp-800);
-
-    @media only screen and (max-width: 569px) {
-      gap: var(--sp-400);
-
-      a.hidden-non-mobile {
-        margin-left: 0;
-        margin-right: 0;
-      }
-    }
-
-    nav h2 {
-      margin-bottom: 0;
-    }
-  }
-
-  h1.name-site {
-    margin-left: 0;
-  }
-
-  a {text-decoration: none;}
-
-
-  /* Desktop style fixes */
-  @media only screen and (min-width: 569px) {
-    /* Style fixes to override old logo sizing for desktop sizes */
-    .link-logo-mit {
-      max-width: 74px; 
-    }
-
-    .name-site {max-width: 104px;}
-    .logo-mit-lib svg {max-height: 44px;}
-
-    /* Adjust navigation item sizing to new base font size */
-    .nav-main .main-nav-link {
-      padding-left: var(--sp-200);
-      padding-right: var(--sp-200);
-      padding-bottom: var(--sp-500);
-    }
-
-    .link-primary.small a {padding-top: 30px;}
-
-    .link-primary.chat #collapsible--1 {
-      width: 150px;
-
-      a {font-size: var(--font-size-xs);}
-    }
-  }
-
-  
-  /* Mobile style fixes */
-  @media only screen and (max-width: 568px) {
-    
-    padding-left: 0 !important;
-    
-    button.menu--toggle {
-      width: 51px;
-      padding: 14.85px;
-    }
-    
-    .logo-mit-lib {
-      padding: 26px 8px 8px 8px;
-    }
-    .logo-mit-lib svg {max-height: 28px;}
-
-    a.hidden-non-mobile {
-      font-size: 12px;
-      font-weight: 400;
-      padding: 6.4px;
-
-      i {width: 100%;}
-    }
-  }
-
+/* Global styles that should apply to all pages using a v2 header */
+body.v2-page {
+	background-color: var(--color-white);
+  color: var(--color-text-default);
 }
 
-.header-wrapper {
-  background-color: var(--color-black);
+#content {
+  background-color: var(--color-white);
+}
+
+.wrap-page.full-width {
+  width: 100%;
+  max-width: 100%;
+}
+
+.content-wrapper, main#content > section {
+  margin: 0 auto;
+  width: 100%;
+}
+
+#content > section {
+  padding-top: var(--content-section-vertical-padding);
+  padding-bottom: var(--content-section-vertical-padding);
+}
+
+.content-wrapper {
+  max-width: var(--content-max-width);
+  text-align: left;
+  justify-content: flex-start;
+
+  padding-left: var(--content-side-margins);
+  padding-right: var(--content-side-margins);
+}  
+
+/* Header specific styles */
+section.header-wrapper {
+  background-color: var(--color-gray-975);
   display: flex;
   justify-content: center;
-  width: 100%;
+}
 
-  > header {
-    max-width: var(--content-max-width);
-    padding-left: calc(var(--content-side-margins) - 8px);
-    padding-right: calc(var(--content-side-margins) - 8px);		
-  }
+.header-main {
+  height: 101px; /* Temporary to debug layout issues */
+  max-width: var(--content-max-width);
+  background-color: transparent;
+  padding-left: var(--content-side-margins);
+  padding-right: var(--content-side-margins);  
+}
 
-  .header-right {
-    justify-content: flex-end;
-    flex-grow: 1;
-  }
+/* Styles for the page content container for pages not fully on v2 */
+#stage {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+}
 
+.breadcrumbs-inner {
+	overflow: hidden;
+  max-width: var(--content-max-width);
+  padding-left: var(--content-side-margins);
+  padding-right: var(--content-side-margins);  
+  margin: 0 auto;
 }

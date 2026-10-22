@@ -20,7 +20,8 @@ if ( 'map' == $v ) {
 
 $gStudy24Url = '/study/24x7/';
 
-get_header(); ?>
+get_header( 'v2' ); ?>
+
 	<script>
 		var showMap = <?php echo esc_js( $show_map ); ?>;
 	</script>	

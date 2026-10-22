@@ -16,7 +16,8 @@
 
 namespace Mitlib\Parent;
 
-get_header(); ?>
+get_header( 'v2' ); ?>
+
 		<style>
 			.guide-style > article {
 				margin-bottom: 2em;

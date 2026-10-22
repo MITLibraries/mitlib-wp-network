@@ -16,8 +16,7 @@
 
 namespace Mitlib\Parent;
 
-get_header();
-?>
+get_header( 'v2'); ?>
 
 <div class="col-2 flex-item ">
 	<div id="home-posts-news" class="posts--preview news-events">

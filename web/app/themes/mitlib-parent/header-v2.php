@@ -43,26 +43,9 @@ if ( 'slim' === get_option( 'menu_style_setting' ) ) {
 	<div id="skip"><a href="#content">Skip to Main Content</a></div>
 
 	<div class="wrap-page full-width">
-		
-		<?php // get_template_part( 'inc/alert-global' ); ?>
-
+			
 		<section class="header-wrapper">
 			<header class="header-main flex-container flex-end">
-				<div class="header-left">	
-					<?php if ( 'full' === $menu ) { ?>
-						<?php get_template_part( 'inc/nav', 'hamburger' ); ?>
-					<?php } ?>
-					<?php get_template_part( 'inc/liblogo' ); ?>
-				</div>
-				<div class="header-right">
-					<?php if ( 'full' === $menu ) { ?>
-						<?php get_template_part( 'inc/nav', 'main' ); ?>
-					<?php } ?>
-					<a class="link-logo-mit" href="http://www.mit.edu"><img src="https://cdn.libraries.mit.edu/files/branding/local/mit_logo_std_rgb_white.svg" height="32" alt="MIT logo" >
-					</a><!-- End MIT Logo -->
-					<?php if ( 'full' === $menu ) { ?>
-						<?php get_template_part( 'inc/nav', 'smalldisplays' ); ?>
-					<?php } ?>
-				</div>
+				<p style="color:white;">NEW NAVIGATION HERE</p>
 			</header>
 		</section>
