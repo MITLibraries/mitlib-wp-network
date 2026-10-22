@@ -63,7 +63,7 @@ if ( 'slim' === get_option( 'menu_style_setting' ) ) {
 				</nav>
 			</div>
 		</div>		
-		<section class="header-wrapper">	
+		<section class="header-wrapper library-navigation-bar">	
 			<header class="header-main flex-container flex-end">
 				
 				<div class="logo-lockup">

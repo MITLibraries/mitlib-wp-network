@@ -58,7 +58,11 @@ div.institute-bar {
     align-items: center;
     justify-content: space-between;
 
-    > nav ul {
+    a.link-logo-mit {
+      height: 20px;
+    }
+
+    > nav > ul {
       display: flex;
       gap: var(--sp-800);
       justify-content: flex-end;
@@ -121,6 +125,7 @@ section.header-wrapper {
 
       > li {
         font-size: 18px;
+        position: relative;
 
         a {
           display: inline-block;
@@ -130,7 +135,7 @@ section.header-wrapper {
           &:hover {background-color: var(--color-gray-925);}
         }
 
-        &.menu-item-has-children a {
+        &.menu-item-has-children > a {
           &::after {
             color: var(--color-gray-400);
             content: "\f078";
@@ -153,10 +158,41 @@ section.header-wrapper {
         }
       }
 
-      /* Sub-menu styles */
-      > li ul.sub-menu {
-        border: 1px solid red;
+      > li > ul.sub-menu {
         display: none;
+        position: absolute;
+        top: calc(100% + 4px);
+        right: 0;
+        z-index: 10;
+        min-width: max-content;
+        flex-direction: column;
+        gap: 0;
+        padding: var(--sp-200) 0;
+        background-color: var(--color-gray-975);
+        border: 2px solid var(--color-gray-800);
+
+        > li a {
+          border-radius: var(--radius-none);
+          width: 100%;
+          padding: var(--sp-300) var(--sp-400);
+
+          &:hover {
+            text-decoration: underline;
+            text-decoration-color: var(--color-red-500);
+          }
+        }
+      }
+
+      > li.is-open {
+
+        > a {
+          background-color: var(--color-gray-900);
+        }
+
+        > ul.sub-menu {
+          display: flex;
+        }
+
       }
     }
 
