@@ -61,7 +61,7 @@ class Admin_Widget {
 			add_settings_error(
 				'mitlib_pull_hours',
 				'settings_updated',
-				__( 'Harvester activated...', 'mitlib-pull-hours' ),
+				'Harvester activated...',
 				'info'
 			);
 

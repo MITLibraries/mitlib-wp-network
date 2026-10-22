@@ -100,7 +100,7 @@ class Dashboard {
 				add_settings_error(
 					'mitlib_pull_hours',
 					'harvester_success',
-					__( 'The library hours settings have been updated. Please <a href="/hours">check the public hours page</a> to verify success.', 'mitlib-pull-hours' ),
+					'The library hours settings have been updated. Please <a href="/hours">check the public hours page</a> to verify success.',
 					'success'
 				);
 			} else {
@@ -108,7 +108,7 @@ class Dashboard {
 				add_settings_error(
 					'mitlib_pull_hours',
 					'harvester_error',
-					__( 'Harvesting of library hours failed. Please <a href="/hours">inspect the public hours page closely</a>, and check the application logs for details about what happened.', 'mitlib-pull-hours' ),
+					'Harvesting of library hours failed. Please <a href="/hours">inspect the public hours page closely</a>, and check the application logs for details about what happened.',
 					'error'
 				);
 			}
