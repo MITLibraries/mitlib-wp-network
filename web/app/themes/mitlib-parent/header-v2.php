@@ -43,9 +43,24 @@ if ( 'slim' === get_option( 'menu_style_setting' ) ) {
 	<div id="skip"><a href="#content">Skip to Main Content</a></div>
 
 	<div class="wrap-page full-width">
-			
+
 		<section class="header-wrapper">
 			<header class="header-main flex-container flex-end">
-				<p style="color:white;">NEW NAVIGATION HERE</p>
+
+			<?php if ( has_nav_menu( 'main-header-navigation' ) ) : ?>
+				<nav class="main-header-navigation" aria-label="Main Header Navigation">
+					<?php
+					wp_nav_menu(
+						array(
+							'theme_location' => 'main-header-navigation',
+							'container'      => false,
+							'menu_class'     => 'main-header-navigation__menu',
+							'fallback_cb'    => false,
+						)
+					);
+					?>
+				</nav>
+			<?php endif; ?>
+
 			</header>
 		</section>

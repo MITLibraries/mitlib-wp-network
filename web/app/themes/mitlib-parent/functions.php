@@ -72,6 +72,7 @@ function theme_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menu( 'primary', 'Primary Menu' );
 	register_nav_menu( 'secondary', 'Secondary Menu' );
+	register_nav_menu( 'main-header-navigation', 'Main Header Navigation' );
 	register_nav_menu( 'footer', 'Footer Menu' );
 
 	/**
