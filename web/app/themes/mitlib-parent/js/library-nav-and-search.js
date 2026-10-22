@@ -67,7 +67,9 @@ document.addEventListener('DOMContentLoaded', function () {
 		searchTrigger.addEventListener('click', function (event) {
 			event.preventDefault();
 
-			const heroSearchInput = document.querySelector('#hero #search-form input[type="search"]');
+			const heroSearchInput = document.querySelector(
+				'#hero #search-form input[type="search"], #hero form.search-bento input[name="q"], form.search-bento input[name="q"]'
+			);
 			if (heroSearchInput) {
 				heroSearchInput.focus();
 				return;
