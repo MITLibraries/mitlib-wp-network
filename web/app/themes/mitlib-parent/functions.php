@@ -507,6 +507,18 @@ function mitlib_sidebars_init() {
 
 	register_sidebar(
 		array(
+			'name'          => __( 'Global Navigation Search', 'mitlib' ),
+			'id'            => 'global-navigation-search',
+			'description'   => __( 'Appears in the expandable search area in the global navigation', 'mitlib' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+
+	register_sidebar(
+		array(
 			'name'          => __( 'Front Page Hours Area', 'mitlib' ),
 			'id'            => 'sidebar-hours',
 			'description'   => __( 'Appears on the front page template to display hours information', 'mitlib' ),

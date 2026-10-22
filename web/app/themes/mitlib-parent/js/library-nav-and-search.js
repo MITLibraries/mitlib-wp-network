@@ -7,6 +7,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	const rootMenu = navigation.querySelector('ul.main-header-navigation__menu');
 	const triggers = navigation.querySelectorAll('li.menu-item-has-children > a');
+	const searchItem = navigation.querySelector('li.global-search-trigger');
+	const searchTrigger = searchItem && searchItem.querySelector(':scope > a');
+	const searchSection = document.querySelector('.global-expanding-search');
+	const searchContent = searchSection && searchSection.querySelector('.global-expanding-search__inner');
 
 	function closeMenus(exceptItem) {
 		triggers.forEach(function (trigger) {
@@ -47,6 +51,56 @@ document.addEventListener('DOMContentLoaded', function () {
 		});
 	});
 
+	if (searchTrigger && searchSection && searchContent) {
+		const labelNode = Array.from(searchTrigger.childNodes).find(function (node) {
+			return node.nodeType === Node.TEXT_NODE && node.nodeValue.trim();
+		});
+		const originalLabel = labelNode ? labelNode.nodeValue.trim() : 'Search';
+		const originalWidth = searchTrigger.getBoundingClientRect().width;
+		searchTrigger.style.minWidth = originalWidth + 'px';
+
+		searchTrigger.setAttribute('aria-controls', 'global-expanding-search');
+		searchTrigger.setAttribute('aria-expanded', 'false');
+		searchSection.id = 'global-expanding-search';
+		searchSection.setAttribute('aria-hidden', 'true');
+
+		searchTrigger.addEventListener('click', function (event) {
+			event.preventDefault();
+			closeMenus();
+
+			const willOpen = !searchItem.classList.contains('is-open');
+
+			if (willOpen) {
+				searchItem.classList.add('is-open');
+				searchTrigger.setAttribute('aria-expanded', 'true');
+				searchSection.classList.add('is-open');
+				searchSection.setAttribute('aria-hidden', 'false');
+				searchSection.style.height = '0px';
+				requestAnimationFrame(function () {
+					searchSection.style.height = searchContent.scrollHeight + 'px';
+				});
+			} else {
+				searchSection.style.height = searchSection.getBoundingClientRect().height + 'px';
+				searchSection.offsetHeight;
+				searchItem.classList.remove('is-open');
+				searchTrigger.setAttribute('aria-expanded', 'false');
+				searchSection.classList.remove('is-open');
+				searchSection.setAttribute('aria-hidden', 'true');
+				searchSection.style.height = '0px';
+			}
+
+			if (labelNode) {
+				labelNode.nodeValue = willOpen ? 'Close' : originalLabel;
+			}
+		});
+
+		searchSection.addEventListener('transitionend', function (event) {
+			if (event.propertyName === 'height' && searchSection.classList.contains('is-open')) {
+				searchSection.style.height = 'auto';
+			}
+		});
+	}
+
 	if (rootMenu) {
 		rootMenu.addEventListener('click', function (event) {
 			const link = event.target.closest('a');
@@ -55,9 +109,11 @@ document.addEventListener('DOMContentLoaded', function () {
 			if (
 				menuItem &&
 				menuItem.parentElement === rootMenu &&
-				!menuItem.classList.contains('menu-item-has-children')
+				menuItem !== searchItem
 			) {
-				closeMenus();
+				if (!menuItem.classList.contains('menu-item-has-children')) {
+					closeMenus();
+				}
 			}
 		});
 	}
