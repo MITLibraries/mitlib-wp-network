@@ -121,7 +121,14 @@ section.header-wrapper {
 
       > li {
         font-size: 18px;
-        padding: var(--sp-400) var(--sp-500);
+
+        a {
+          display: inline-block;
+          border-radius: var(--radius-sm);
+          padding: var(--sp-400) var(--sp-400);
+
+          &:hover {background-color: var(--color-gray-925);}
+        }
 
         &.menu-item-has-children a {
           &::after {
@@ -131,6 +138,17 @@ section.header-wrapper {
             font-size: 12px;
             font-weight: 900;
             padding-left: var(--sp-200);
+          }
+        }
+
+        &.global-search-trigger a{
+          &::before {
+            color: var(--color-gray-400);
+            content: "\f002";
+            font-family: "Font Awesome 6 Free";
+            font-size: 16px;
+            font-weight: 900;
+            padding-right: var(--sp-200);
           }
         }
       }
