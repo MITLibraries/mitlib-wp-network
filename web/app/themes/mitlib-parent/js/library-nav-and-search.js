@@ -66,6 +66,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
 		searchTrigger.addEventListener('click', function (event) {
 			event.preventDefault();
+
+			const heroSearchInput = document.querySelector('#hero #search-form input[type="search"]');
+			if (heroSearchInput) {
+				heroSearchInput.focus();
+				return;
+			}
+
 			closeMenus();
 
 			const willOpen = !searchItem.classList.contains('is-open');
