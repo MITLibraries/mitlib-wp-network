@@ -125,7 +125,7 @@ section.header-wrapper {
         a {
           display: inline-block;
           border-radius: var(--radius-sm);
-          padding: var(--sp-400) var(--sp-400);
+          padding: var(--sp-400) var(--sp-500);
 
           &:hover {background-color: var(--color-gray-925);}
         }
@@ -164,6 +164,7 @@ section.header-wrapper {
     li, a {
       color: var(--color-text-on-color);
       text-decoration: none;
+      font-weight: 500;
     }    
     
   }
