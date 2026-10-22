@@ -78,7 +78,7 @@ class Settings {
 	 */
 	public static function google_api_key_callback() {
 		$google_api_key = get_option( 'google_api_key' );
-		require_once( plugin_dir_path( __FILE__ ) . '../templates/forms/google-api-key.php' );
+		require_once plugin_dir_path( __FILE__ ) . '../templates/forms/google-api-key.php';
 	}
 
 	/**
@@ -86,7 +86,7 @@ class Settings {
 	 */
 	public static function spreadsheet_callback() {
 		$spreadsheet_key = get_option( 'spreadsheet_key' );
-		require_once( plugin_dir_path( __FILE__ ) . '../templates/forms/spreadsheet-key.php' );
+		require_once plugin_dir_path( __FILE__ ) . '../templates/forms/spreadsheet-key.php';
 	}
 
 	/**
@@ -94,6 +94,6 @@ class Settings {
 	 */
 	public static function timestamp_callback() {
 		$cache_timestamp = get_option( 'cache_timestamp' );
-		require_once( plugin_dir_path( __FILE__ ) . '../templates/forms/cache-timestamp.php' );
+		require_once plugin_dir_path( __FILE__ ) . '../templates/forms/cache-timestamp.php';
 	}
 }

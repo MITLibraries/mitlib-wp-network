@@ -81,21 +81,46 @@ class Harvester {
 		// - key => filename in cache
 		// - value => url that will be polled.
 
-		// Third, we populate an array of sheet names within our spreadsheet.
-		// This array will then comprise the "shopping list" of values that
-		// are harvested to populate the local cache.
-		$response = $api_service->spreadsheets->get( $this->spreadsheet_key );
-		$sheet_array = array_map( array( $this, 'pluck_sheet_name' ), $response->sheets );
+		try {
+			// Third, we populate an array of sheet names within our spreadsheet.
+			// This array will then comprise the "shopping list" of values that
+			// are harvested to populate the local cache.
+			$response = $api_service->spreadsheets->get( $this->spreadsheet_key ); // Need to catch Google\Service\Exception.
+			$sheet_array = array_map( array( $this, 'pluck_sheet_name' ), $response->sheets );
 
-		// Fourth, we iterates over the associative array that was built in the
-		// last step, reading each URL (in the value) and saving the contents
-		// to the cache (named in the key).
-		$this->fetch( $api_service, $sheet_array );
+			// Fourth, we iterates over the associative array that was built in the
+			// last step, reading each URL (in the value) and saving the contents
+			// to the cache (named in the key).
+			$this->fetch( $api_service, $sheet_array );
 
-		// Finally, we echo an updated message about the number of records
-		// that were updated.
-		echo( '<div class="updated"><p>Local hours cache has been harvested with information from ' . esc_html( count( $sheet_array ) ) . ' sheets .</p></div>' );
+			return true;
 
+		} catch ( \Google\Service\Exception $e ) {
+			error_log( $e->getMessage() );
+			$raw     = json_decode( $e->getMessage(), true );
+			$code    = $raw['error']['code'] ?? 'unknown';
+			$message = $raw['error']['message'] ?? 'Unknown Google API error - check logs for details.';
+			add_settings_error(
+				'mitlib_pull_hours',
+				'google_api_error',
+				"Error {$code}: {$message}",
+				'error'
+			);
+
+			return false;
+
+		} catch ( \Exception $e ) {
+			error_log( $e->getMessage() );
+			add_settings_error(
+				'mitlib_pull_hours',
+				'unexpected_error',
+				'Something truly unexpected happened. Please check the application logs for details.',
+				'error'
+			);
+
+			return false;
+
+		}
 	}
 
 	/**
@@ -103,14 +128,37 @@ class Harvester {
 	 * fetches each item (in the $value) and writes it to the filename defined
 	 * by $target (which has been sanitized with dashes).
 	 *
+	 * The method keeps track of how many errors are reported by the write()
+	 * method, and creates a status message based on whether everything succeeds
+	 * or if errors are encountered.
+	 *
 	 * @param Object $service A representation of the Google Sheets API.
 	 * @param Array  $array An associative array of filenames and URLs.
 	 */
 	private function fetch( $service, $array ) {
+		$error_count = 0;
+		$file_count  = count( $array );
 		foreach ( $array as $target ) {
-			$data = $service->spreadsheets_values->get( $this->spreadsheet_key, $target );
+			$data     = $service->spreadsheets_values->get( $this->spreadsheet_key, $target );
 			$filename = sanitize_file_name( $target ) . '.json';
-			$this->write( $filename, json_encode( $data['values'] ) );
+			if ( ! $this->write( $filename, json_encode( $data['values'] ) ) ) {
+				$error_count++;
+			}
+		}
+		if ( $error_count > 0 ) {
+			add_settings_error(
+				'mitlib_pull_hours',
+				'fetch_errors',
+				"Errors encountered while fetching {$error_count} of {$file_count} files.",
+				'error'
+			);
+		} else {
+			add_settings_error(
+				'mitlib_pull_hours',
+				'fetch_success',
+				"{$file_count} files retrieved successfully.",
+				'success'
+			);
 		}
 	}
 
@@ -164,19 +212,33 @@ class Harvester {
 
 		// Define cache directory, ensure it exists.
 		$this->path = wp_upload_dir()['basedir'] . '/pull-hours';
+		add_settings_error(
+			'mitlib_pull_hours',
+			'settings_updated',
+			"Confirming cache directory: _{$this->path}_",
+			'success'
+		);
 		if ( ! wp_mkdir_p( $this->path ) ) {
-			error_log( 'Failed to create cache directory: ' . $basedir );
+			error_log( "Failed to create cache directory: {$this->path}" );
+			add_settings_error(
+				'mitlib_pull_hours',
+				'invalid_cache_location',
+				"Failed to create cache directory: {$this->path}",
+				'error'
+			);
 		}
 	}
 
 	/**
 	 * This method writes a provided piece of data to the specified filename,
-	 * in a directory defined by $this->data_folder.
+	 * in a directory defined by $this->data_folder. It returns a boolean that
+	 * indicates whether the operation succeeded.
 	 *
 	 * @param string $filename The name of the file to be written.
 	 * @param string $data The contents of the file to be written.
+	 * @return boolean
 	 */
 	private function write( $filename, $data ) {
-		file_put_contents( $this->path . '/' . $filename, $data );
+		return file_put_contents( $this->path . '/' . $filename, $data ) !== false;
 	}
 }

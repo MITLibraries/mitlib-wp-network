@@ -10,6 +10,9 @@
 
 <div class="wrap">
 	<h1>Library hours cache settings</h1>
+
+	<?php settings_errors( 'mitlib_pull_hours' ); ?>
+
 	<p>This form will update the local cache of library hours based on the Google spreadsheet identified below. For more complete documentation about our practices around library hours, <a href="https://wikis.mit.edu/confluence/display/UXWS/Hours">please consult the UX wiki</a>.</p>
 	<form method="post" action="">
 		<?php
