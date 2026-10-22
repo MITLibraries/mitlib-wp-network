@@ -47,7 +47,7 @@ if ( 'slim' === get_option( 'menu_style_setting' ) ) {
 			<div class="institute-wrapper">
 				<a class="link-logo-mit" href="https://www.mit.edu" >
 					<span class="sr">MIT Logo</span>
-					<img src="https://cdn.libraries.mit.edu/files/branding/local/mit_logo_std_rgb_white.svg" height="22" alt="MIT logo" >
+					<img src="https://cdn.libraries.mit.edu/files/branding/local/mit_logo_std_rgb_white.svg" height="20" alt="MIT logo" >
 				</a>
 				<nav class="institute-bar-navigation" aria-label="Institute Bar Navigation">
 					<?php

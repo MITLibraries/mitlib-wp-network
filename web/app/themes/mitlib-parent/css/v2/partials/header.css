@@ -74,7 +74,7 @@ div.institute-bar {
 
       li a {
         color: var(--color-gray-300);
-        font-size: 15px;
+        font-size: 14px;
         font-weight: 400;
         text-decoration: none;
 
@@ -108,8 +108,8 @@ section.header-wrapper {
 
   div.logo-lockup {
     display: block;
-    width: 99px;
-    height: 40px;
+    width: 110px;
+    height: 44px;
   }
 
   /* Navigation styles */
