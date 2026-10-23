@@ -170,6 +170,52 @@ return array(
 		'editorScript' => 'file:./index.js',
 		'editorStyle' => 'file:./index.css'
 	),
+	'using-item' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'mitlib/using-item',
+		'version' => '0.1.0',
+		'title' => 'Using the Libraries Item',
+		'category' => 'mitlib',
+		'icon' => 'block-default',
+		'description' => 'A single item inside the Using the Libraries section.',
+		'parent' => array(
+			'mitlib/using-the-libraries-section'
+		),
+		'example' => array(
+			
+		),
+		'attributes' => array(
+			'title' => array(
+				'type' => 'string',
+				'default' => 'Find a study space'
+			),
+			'description' => array(
+				'type' => 'string',
+				'default' => 'Quiet and group spaces - many available 24/7'
+			),
+			'linkUrl' => array(
+				'type' => 'string',
+				'default' => '/study'
+			),
+			'icon' => array(
+				'type' => 'string',
+				'default' => 'lightbulb'
+			)
+		),
+		'supports' => array(
+			'html' => false,
+			'resuable' => false,
+			'customClassName' => true
+		),
+		'textdomain' => 'mitlib-blocks',
+		'editorScript' => 'file:./index.js',
+		'editorStyle' => array(
+			'file:./index.css',
+			'fontawesome'
+		),
+		'render' => 'file:./render.php'
+	),
 	'using-the-libraries-section' => array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',
 		'apiVersion' => 3,
@@ -182,10 +228,17 @@ return array(
 		'example' => array(
 			
 		),
+		'allowedBlocks' => array(
+			'mitlib/using-item'
+		),
 		'attributes' => array(
 			'heading' => array(
 				'type' => 'string',
 				'default' => 'Using the Libraries'
+			),
+			'showAskUs' => array(
+				'type' => 'boolean',
+				'default' => true
 			),
 			'askUsTitle' => array(
 				'type' => 'string',
@@ -209,6 +262,7 @@ return array(
 		),
 		'textdomain' => 'mitlib-blocks',
 		'editorScript' => 'file:./index.js',
-		'editorStyle' => 'file:./index.css'
+		'editorStyle' => 'file:./index.css',
+		'render' => 'file:./render.php'
 	)
 );

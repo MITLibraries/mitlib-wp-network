@@ -3,51 +3,87 @@
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/
  */
-import { __ } from '@wordpress/i18n';
 import {
 	useBlockProps,
-	RichText,
+	useInnerBlocksProps,
 	InspectorControls,
+	store as blockEditorStore,
 } from '@wordpress/block-editor';
-import { PanelBody, TextControl, TextareaControl } from '@wordpress/components';
+import {
+	PanelBody,
+	TextControl,
+	TextareaControl,
+	ToggleControl,
+} from '@wordpress/components';
+import { useSelect } from '@wordpress/data';
 import './editor.scss';
 
-export default function Edit( { attributes, setAttributes } ) {
+export default function Edit( { attributes, setAttributes, clientId } ) {
 	const {
 		heading,
+		allowedBlocks,
+		showAskUs,
 		askUsTitle,
 		askUsDescription,
 		askUsLinkText,
 		askUsLinkUrl,
 	} = attributes;
 
+	const hasInnerBlocks = useSelect(
+		( select ) =>
+			select( blockEditorStore ).getBlockOrder( clientId ).length > 0,
+		[ clientId ]
+	);
+
+	const innerBlocksProps = useInnerBlocksProps(
+		{ className: 'using-the-libraries' },
+		{ allowedBlocks }
+	);
+
 	return (
 		<>
 			<InspectorControls>
-				<PanelBody title={ __( 'Ask Us Box', 'mitlib-blocks' ) }>
+				<PanelBody title={ 'Section' }>
 					<TextControl
-						label={ __( 'Title', 'mitlib-blocks' ) }
+						label={ 'Section heading' }
+						placeholder={ 'Using the Libraries' }
+						value={ heading }
+						onChange={ ( value ) =>
+							setAttributes( { heading: value } )
+						}
+					/>
+				</PanelBody>
+				<PanelBody title={ 'Ask Us Box' }>
+					<ToggleControl
+						label={ 'Show "Ask Us" panel' }
+						checked={ showAskUs }
+						onChange={ ( value ) =>
+							setAttributes( { showAskUs: value } )
+						}
+					/>
+					<TextControl
+						label={ 'Title' }
 						value={ askUsTitle }
 						onChange={ ( value ) =>
 							setAttributes( { askUsTitle: value } )
 						}
 					/>
 					<TextareaControl
-						label={ __( 'Description', 'mitlib-blocks' ) }
+						label={ 'Description' }
 						value={ askUsDescription }
 						onChange={ ( value ) =>
 							setAttributes( { askUsDescription: value } )
 						}
 					/>
 					<TextControl
-						label={ __( 'Link text', 'mitlib-blocks' ) }
+						label={ 'Link text' }
 						value={ askUsLinkText }
 						onChange={ ( value ) =>
 							setAttributes( { askUsLinkText: value } )
 						}
 					/>
 					<TextControl
-						label={ __( 'Link URL', 'mitlib-blocks' ) }
+						label={ 'Link URL' }
 						value={ askUsLinkUrl }
 						onChange={ ( value ) =>
 							setAttributes( { askUsLinkUrl: value } )
@@ -58,18 +94,22 @@ export default function Edit( { attributes, setAttributes } ) {
 			</InspectorControls>
 			<section { ...useBlockProps() } id="using-the-libraries">
 				<div className="content-wrapper">
-					<RichText
-						tagName="h2"
-						value={ heading }
-						onChange={ ( value ) =>
-							setAttributes( { heading: value } )
-						}
-						placeholder={ __(
-							'Using the Libraries',
-							'mitlib-blocks'
+					<h2>{ heading }</h2>
+					<div className="box-wrapper">
+						<div { ...innerBlocksProps } />
+						{ ! hasInnerBlocks && (
+							<div className="mitlib-placeholder">
+								{
+									' Showing default content until a using-item block is added.'
+								}
+							</div>
 						) }
-						allowedFormats={ [] }
-					/>
+						{ showAskUs && (
+							<div className="mitlib-placeholder">
+								{ 'Ask Us widget will be shown.' }
+							</div>
+						) }
+					</div>
 				</div>
 			</section>
 		</>

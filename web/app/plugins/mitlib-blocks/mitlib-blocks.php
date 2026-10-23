@@ -20,6 +20,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
+ * Registers external assets for use by blocks defined in this plugin.
+ */
+function register_assets() {
+	$plugin_version = get_plugin_data( __FILE__ )['Version'];
+	wp_register_style(
+		'fontawesome',
+		'//cdn.libraries.mit.edu/files/fontawesome/7.1.0/css/all.min.css',
+		array(),
+		$plugin_version
+	);
+}
+add_action( 'init', 'Mitlib\Blocks\register_assets' );
+
+/**
  * Registers the block(s) metadata from the `blocks-manifest.php` and registers the block type(s)
  * based on the registered block metadata. Behind the scenes, it registers also all assets so they can be enqueued
  * through the block editor in the corresponding context.
