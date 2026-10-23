@@ -770,3 +770,31 @@ function is_child_page() {
 		return false;
 	}
 }
+
+/* If a description on a menu item exists, display it in the UI */
+add_filter( 'walker_nav_menu_start_el', 'Mitlib\\Parent\\add_menu_description', 10, 4 );
+function add_menu_description( $item_output, $item, $depth, $args ) {
+    if ( ! empty( $item->description ) ) {
+        // This inserts the description right before the closing anchor tag
+        $item_output = str_replace( '</a>', '<span class="menu-item-description">' . esc_html( $item->description ) . '</span></a>', $item_output );
+    }
+    return $item_output;
+}
+
+/**
+ * Wrap submenu labels in the main navigation so hover styling excludes descriptions.
+ *
+ * @param string $title Menu item title.
+ * @param object $item Menu item object.
+ * @param object $args Menu arguments.
+ * @param int    $depth Menu item depth.
+ * @return string Filtered menu item title.
+ */
+function wrap_main_navigation_item_title( $title, $item, $args, $depth ) {
+	if ( isset( $args->theme_location ) && 'main-header-navigation' === $args->theme_location && $depth > 0 ) {
+		return '<span class="menu-item-label">' . $title . '</span>';
+	}
+
+	return $title;
+}
+add_filter( 'nav_menu_item_title', 'Mitlib\\Parent\\wrap_main_navigation_item_title', 10, 4 );

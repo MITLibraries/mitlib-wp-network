@@ -186,8 +186,18 @@ section.header-wrapper {
           padding: var(--sp-300) var(--sp-400);
 
           &:hover {
-            text-decoration: underline;
-            text-decoration-color: var(--color-red-500);
+            .menu-item-label {
+              text-decoration: underline;
+              text-decoration-color: var(--color-red-500);
+            }
+          }
+
+          .menu-item-description {
+            display: block;
+            font-size: 16px;
+            font-weight: 400;
+            color: var(--color-gray-300);
+            margin-top: var(--sp-050);
           }
         }
       }
