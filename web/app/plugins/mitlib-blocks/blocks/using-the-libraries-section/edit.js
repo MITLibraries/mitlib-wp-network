@@ -35,6 +35,8 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 		[ clientId ]
 	);
 
+	const blockProps = useBlockProps();
+
 	const innerBlocksProps = useInnerBlocksProps(
 		{ className: 'using-the-libraries' },
 		{ allowedBlocks }
@@ -92,7 +94,7 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 					/>
 				</PanelBody>
 			</InspectorControls>
-			<section { ...useBlockProps() } id="using-the-libraries">
+			<section { ...blockProps } id="using-the-libraries">
 				<div className="content-wrapper">
 					<h2>{ heading }</h2>
 					<div className="box-wrapper">

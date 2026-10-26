@@ -205,7 +205,6 @@ return array(
 		),
 		'supports' => array(
 			'html' => false,
-			'resuable' => false,
 			'customClassName' => true
 		),
 		'textdomain' => 'mitlib-blocks',

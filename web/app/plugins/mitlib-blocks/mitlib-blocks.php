@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       Mitlib - Blocks
  * Description:       Registers the custom MIT Libraries editor blocks.
- * Version:           1.0.0
+ * Version:           1.1.0
  * Requires at least: 6.8
  * Requires PHP:      7.4
  * Author:            MIT Libraries
@@ -23,7 +23,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Registers external assets for use by blocks defined in this plugin.
  */
 function register_assets() {
-	$plugin_version = get_plugin_data( __FILE__ )['Version'];
+	$plugin_version = get_file_data( __FILE__, array( 'Version' => 'Version' ) )['Version'];
 	wp_register_style(
 		'fontawesome',
 		'//cdn.libraries.mit.edu/files/fontawesome/7.1.0/css/all.min.css',

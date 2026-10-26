@@ -15,7 +15,7 @@ $show_askus = ! isset( $attributes['showAskUs'] ) || $attributes['showAskUs'];
 		<h2><?php echo esc_html( $attributes['heading'] ); ?></h2>
 		<div class="box-wrapper">
 			<div class="option-boxes">
-				<?php if ( $content ) : ?>
+				<?php if ( ! empty( $block->parsed_block['innerBlocks'] ) ) : ?>
 					<?php echo $content; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Inner block markup is already rendered and escaped. ?>
 				<?php else : ?>
 					<div>

@@ -21,7 +21,7 @@ $item_allowed_html = array();
 		aria-hidden="true"
 		role="img"
 	></i>
-	<div className="option-box-content">
+	<div class="option-box-content">
 		<h3>
 			<?php if ( $item_link_url ) : ?>
 				<a href="<?php echo esc_url( $item_link_url ); ?>"><?php echo wp_kses( $item_title, $item_allowed_html ); ?></a>
