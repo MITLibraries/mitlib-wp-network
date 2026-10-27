@@ -13,7 +13,7 @@
 
 namespace Mitlib\Parent;
 
-get_header();
+get_header( 'v2' );
 ?>
 
 <?php if ( is_active_sidebar( 'sidebar-search' ) ) : ?>

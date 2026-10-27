@@ -285,6 +285,9 @@ function setup_scripts_styles() {
 	
 	wp_enqueue_style( 'adobe-fonts' );
 	
+	// Temporarily load v2 header styles for all pages
+	wp_enqueue_style( 'v2-header' );
+
 	// Conditonally load v2 styles for only pages with the v2 header
 	if (is_page_template( 'templates/page-home-v2.php' )) {
 		wp_enqueue_style( 'v2-home' );
