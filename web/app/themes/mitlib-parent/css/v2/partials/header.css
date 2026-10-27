@@ -271,3 +271,12 @@ section.global-expanding-search {
   padding-right: var(--content-side-margins);  
   margin: 0 auto;
 }
+
+#multisearch {
+  #search-all {
+    max-width: var(--content-max-width);
+    padding-left: var(--content-side-margins);
+    padding-right: var(--content-side-margins);  
+    margin: 0 auto;    
+  }
+}
