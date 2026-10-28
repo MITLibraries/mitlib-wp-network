@@ -13,7 +13,7 @@
 
 namespace Mitlib\Parent;
 
-get_header( 'v2' );
+get_header();
 ?>
 
 <?php if ( is_active_sidebar( 'sidebar-search' ) ) : ?>
@@ -64,4 +64,4 @@ while ( have_posts() ) : // Start of the loop.
 
 <?php endwhile; // End of the loop. ?>
 
-<?php get_footer('v2'); ?>
+<?php get_footer(); ?>
