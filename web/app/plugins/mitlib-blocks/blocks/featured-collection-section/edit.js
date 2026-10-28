@@ -12,11 +12,14 @@ import {
 } from '@wordpress/block-editor';
 import {
 	Button,
+	Notice,
 	PanelBody,
 	SelectControl,
 	TextareaControl,
 	TextControl,
 } from '@wordpress/components';
+import { useDispatch } from '@wordpress/data';
+import { useEffect } from '@wordpress/element';
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
  * Those files can contain any CSS code that gets applied to the editor.
@@ -33,11 +36,12 @@ import './editor.scss';
  *
  * @param {Object}   props               Block properties.
  * @param {Object}   props.attributes    Saved block attributes.
+ * @param {string}   props.clientId      Unique block instance ID.
  * @param {Function} props.setAttributes Updates block attributes.
  * @return {Element} Element to render.
  */
 export default function Edit( props ) {
-	const { attributes, setAttributes } = props;
+	const { attributes, clientId, setAttributes } = props;
 	const {
 		featuredItemType,
 		title,
@@ -47,9 +51,25 @@ export default function Edit( props ) {
 		imageId,
 		imageUrl,
 	} = attributes;
+	const hasImage = Boolean( imageUrl?.trim() );
+	const saveLock = `mitlib/featured-collection-section/${ clientId }`;
+	const { lockPostSaving, unlockPostSaving } = useDispatch( 'core/editor' );
+
+	useEffect( () => {
+		if ( ! hasImage ) {
+			lockPostSaving( saveLock );
+		}
+
+		return () => unlockPostSaving( saveLock );
+	}, [ hasImage, saveLock, lockPostSaving, unlockPostSaving ] );
 
 	return (
 		<div { ...useBlockProps() }>
+			{ ! hasImage && (
+				<Notice status="error" isDismissible={ false }>
+					Featured Collection requires an image before saving.
+				</Notice>
+			) }
 			<InspectorControls>
 				<PanelBody title="Featured Item">
 					<SelectControl
