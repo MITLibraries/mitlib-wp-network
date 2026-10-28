@@ -34,6 +34,7 @@ export default function Edit( { attributes, setAttributes } ) {
 							setAttributes( { icon: value } )
 						}
 						placeholder={ 'lightbulb' }
+						help={ 'Enter the FontAwesome icon name, e.g. "book" or "file-alt".' }
 					/>
 					<TextControl
 						label={ 'Link' }
