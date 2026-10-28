@@ -29,6 +29,8 @@ if ( $image_id ) {
 			<?php if ( $image_url && $image_alt ) : ?>
 				role="img"
 				aria-label="<?php echo esc_attr( $image_alt ); ?>"
+			<?php else : ?>
+				role="none presentation"
 			<?php endif; ?>
 			<?php if ( $image_url ) : ?>
 				style="<?php echo esc_attr( 'background-image: url("' . esc_url( $image_url ) . '");' ); ?>"
