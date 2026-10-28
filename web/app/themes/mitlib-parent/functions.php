@@ -195,15 +195,16 @@ function setup_scripts_styles() {
 	// COMPONENTS
 	wp_register_style( 'v2-alerts', get_template_directory_uri() . '/css/v2/components/alerts.css', array( 'v2-color', 'v2-spacing', 'v2-typography' ), $theme_version );
 	wp_register_style( 'v2-buttons', get_template_directory_uri() . '/css/v2/components/buttons.css', array( 'v2-color', 'v2-corners', 'v2-spacing', 'v2-typography' ), $theme_version );
+	wp_register_style( 'v2-type-scale', get_template_directory_uri() . '/css/v2/components/type-scale.css', array( 'v2-typography' ), $theme_version );
 
 	// TEMPLATES
 	wp_register_style( 'v2-header', get_template_directory_uri() . '/css/v2/partials/header.css', array( 'v2-color', 'v2-layout', 'v2-spacing', 'v2-typography' ), $theme_version );
-	wp_register_style( 'v2-footer', get_template_directory_uri() . '/css/v2/partials/footer.css', array( 'v2-color', 'v2-layout', 'v2-spacing' ), $theme_version );
+	wp_register_style( 'v2-footer', get_template_directory_uri() . '/css/v2/partials/footer.css', array( 'v2-color', 'v2-layout', 'v2-spacing', 'v2-typography' ), $theme_version );
 
 	// Register the pages where we're using these individual pieces. These will get enqueued below and contain the above as dependencies.
 
 	// PAGES 
-	wp_register_style( 'v2-home', get_template_directory_uri() . '/css/v2/pages/home.css', array( 'v2-color', 'v2-corners', 'v2-effects', 'v2-layout', 'v2-shadows', 'v2-spacing', 'v2-typography', 'v2-alerts', 'v2-buttons', 'v2-header', 'v2-footer', 'fontawesome' ), $theme_version );
+	wp_register_style( 'v2-home', get_template_directory_uri() . '/css/v2/pages/home.css', array( 'v2-color', 'v2-corners', 'v2-effects', 'v2-layout', 'v2-shadows', 'v2-spacing', 'v2-typography', 'v2-alerts', 'v2-buttons', 'v2-header', 'v2-footer', 'v2-type-scale', 'fontawesome' ), $theme_version );
 
 	
 	/**
@@ -284,7 +285,7 @@ function setup_scripts_styles() {
 	wp_style_add_data( 'parent-ie', 'conditional', 'lt IE 9' );
 	
 	wp_enqueue_style( 'adobe-fonts' );
-	
+
 	// Conditonally load v2 styles for only pages with the v2 header
 	if (is_page_template( 'templates/page-home-v2.php' )) {
 		wp_enqueue_style( 'v2-home' );

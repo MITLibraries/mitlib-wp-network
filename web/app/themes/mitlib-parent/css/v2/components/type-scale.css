@@ -1,0 +1,89 @@
+/* ======================================================== */
+/* Applies a new base font size for easier rem calculations */
+/* Then, resets our type scale to the new v2 scale          */
+/* ======================================================== */
+
+:root {
+  font-size: 62.5%; /* Sets 1rem to equal 10px, making it easier to calculate sizes based on a 10px base */
+}
+
+body {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+}
+
+/* Baseline Heading Styles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-heading);
+  font-weight: 600;
+  line-height: 1.25
+}
+
+h1 {
+  font-size: var(--font-size-3xl); /* 40px */
+}
+
+h2 {
+  font-size: var(--font-size-2xl); /* 32px */
+  margin-bottom: var(--sp-600);
+}
+
+h3 {
+  font-size: var(--font-size-xl); /* 24px */
+}
+
+h4 {
+  font-size: var(--font-size-lg); /* 20px */
+}
+
+h5 {
+  font-size: var(--font-size-md); /* 16px */
+}
+
+h6 {
+  font-size: var(--font-size-sm); /* 14px */
+}
+
+p {
+  line-height: 1.35;
+}
+
+
+/* Link styles */
+a {
+  text-decoration: underline;
+  text-decoration-color: var(--color-blue-500);
+  text-underline-offset: 0.4rem;
+  font-weight: var(--font-weight-medium);
+
+  &:hover {
+    color: var(--color-blue-500);
+  }
+}
+
+a.link-no-underline {
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--color-gray-500);
+  }
+}
+
+a.link-on-dark {
+  color: var(--color-text-on-color);
+  text-decoration-color: var(--color-red-500);
+
+  &:hover {
+    color: var(--color-red-500);
+  }
+}
+
+.eyebrow {
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.05em;
+}
