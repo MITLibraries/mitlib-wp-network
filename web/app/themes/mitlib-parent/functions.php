@@ -290,7 +290,11 @@ function setup_scripts_styles() {
 	
 	wp_enqueue_style( 'adobe-fonts' );
 
-	// Conditonally load v2 styles for only pages with the v2 header
+	// Load v2 styles for header and footer, allowing all pages to have v2 variables
+	wp_enqueue_style( 'v2-header' );
+	wp_enqueue_style( 'v2-footer' );
+
+	// Conditonally load full v2 styles for pages with the v2 header (currently homepage)
 	if (is_page_template( 'templates/page-home-v2.php' )) {
 		wp_enqueue_style( 'v2-home' );
 		wp_enqueue_script( 'moment' );
