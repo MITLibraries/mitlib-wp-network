@@ -1,0 +1,141 @@
+// v0 of this block was a static collection of markup.
+import { RichText } from '@wordpress/block-editor';
+
+const v0 = {
+	apiVersion: 3,
+	attributes: {
+		heading: { type: 'string', default: 'Using the Libraries' },
+		askUsTitle: { type: 'string', default: 'Ask Us' },
+		askUsDescription: {
+			type: 'string',
+			default:
+				'Get help via email, live chat with staff, and book appointments',
+		},
+		askUsLinkText: { type: 'string', default: 'All help options' },
+		askUsLinkUrl: { type: 'string', default: '/ask' },
+	},
+
+	migrate( oldAttributes ) {
+		return {
+			heading: oldAttributes.heading,
+			showAskUs: true,
+			askUsTitle: oldAttributes.askUsTitle,
+			askUsDescription: oldAttributes.askUsDescription,
+			askUsLinkText: oldAttributes.askUsLinkText,
+			askUsLinkUrl: oldAttributes.askUsLinkUrl,
+		};
+	},
+
+	save( { attributes } ) {
+		const {
+			heading,
+			askUsTitle,
+			askUsDescription,
+			askUsLinkText,
+			askUsLinkUrl,
+		} = attributes;
+
+		return (
+			<section id="using-the-libraries">
+				<div className="content-wrapper">
+					<RichText.Content tagName="h2" value={ heading } />
+					<div className="box-wrapper">
+						<div className="option-boxes">
+							<div>
+								<i
+									className="fa-light fa-lightbulb"
+									aria-hidden="true"
+									role="img"
+								></i>
+								<div className="option-box-content">
+									<h3>
+										<a href="/study">Find a study space</a>
+									</h3>
+									<p>
+										Quiet and group spaces—many available
+										24/7
+									</p>
+								</div>
+							</div>
+							<div>
+								<i
+									className="fa-light fa-file-alt"
+									aria-hidden="true"
+									role="img"
+								></i>
+								<div className="option-box-content">
+									<h3>
+										<a href="/get-materials">
+											Learn how to get materials
+										</a>
+									</h3>
+									<p>
+										Find, request, and get articles, books,
+										and more
+									</p>
+								</div>
+							</div>
+							<div>
+								<i
+									className="fa-light fa-book"
+									aria-hidden="true"
+									role="img"
+								></i>
+								<div className="option-box-content">
+									<h3>
+										<a href="/experts">
+											Discover guides &amp; librarians
+										</a>
+									</h3>
+									<p>
+										Resource and class guides with experts
+										for every subject
+									</p>
+								</div>
+							</div>
+							<div>
+								<i
+									className="fa-light fa-database"
+									aria-hidden="true"
+									role="img"
+								></i>
+								<div className="option-box-content">
+									<h3>
+										<a href="/data-services">
+											Find and manage data
+										</a>
+									</h3>
+									<p>
+										Get support from creating and
+										visualizing to using and sharing data
+									</p>
+								</div>
+							</div>
+						</div>
+						<div className="ask-us-box">
+							<i
+								className="fa-light fa-messages-question"
+								aria-hidden="true"
+								role="img"
+							></i>
+							<div className="option-box-content">
+								<h3>{ askUsTitle }</h3>
+								<p>{ askUsDescription }</p>
+								<div className="ask-us-links">
+									<div id="libchat_fa6edc50fe81603743870ca1772bc5b2e7e121436b62ba7da331b9dcabf289c0"></div>
+									<a href={ askUsLinkUrl }>
+										{ askUsLinkText }
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		);
+	},
+};
+
+// Regardless of the structure of the file above, the order of deprecated
+// versions in this export should be newest-first.
+export default [ v0 ];

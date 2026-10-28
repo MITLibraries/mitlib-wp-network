@@ -1,0 +1,43 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "mitlib/using-item",
+  "version": "0.1.0",
+  "title": "Using the Libraries Item",
+  "category": "mitlib",
+  "icon": "block-default",
+  "description": "A single item inside the Using the Libraries section.",
+  "parent": [
+    "mitlib/using-the-libraries-section"
+  ],
+  "example": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Find a study space"
+    },
+    "description": {
+      "type": "string",
+      "default": "Quiet and group spaces - many available 24/7"
+    },
+    "linkUrl": {
+      "type": "string",
+      "default": "/study"
+    },
+    "icon": {
+      "type": "string",
+      "default": "lightbulb"
+    }
+  },
+  "supports": {
+    "html": false,
+    "customClassName": true
+  },
+  "textdomain": "mitlib-blocks",
+  "editorScript": "file:./index.js",
+  "editorStyle": [
+    "file:./index.css",
+    "fontawesome"
+  ],
+  "render": "file:./render.php"
+}
