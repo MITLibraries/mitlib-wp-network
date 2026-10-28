@@ -26,7 +26,7 @@ if ( ! $_GET['d'] ) {
 }
 // phpcs:enable
 
-get_header();
+get_header('v2');
 
 $nextMon = 'next monday';
 
@@ -419,4 +419,4 @@ endwhile;
 	</div> <!-- end .content-page -->
 </div> <!-- end #content -->
 
-<?php get_footer(); ?>
+<?php get_footer('v2'); ?>

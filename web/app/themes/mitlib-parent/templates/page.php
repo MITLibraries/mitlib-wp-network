@@ -64,4 +64,4 @@ while ( have_posts() ) : // Start of the loop.
 
 <?php endwhile; // End of the loop. ?>
 
-<?php get_footer(); ?>
+<?php get_footer('v2'); ?>
