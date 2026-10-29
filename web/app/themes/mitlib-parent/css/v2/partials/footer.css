@@ -1,61 +1,76 @@
-.footer-wrapper {
-  background-color: var(--color-black);
-  display: flex;
-  justify-content: center;
+.wrap-page > footer {
   width: 100%;
 
-  > footer {
-    //max-width: var(--content-max-width);
-  }
-
-  .footer-main, .footer-info-institute {
+  > .libraries-footer .footer-wrapper, > .institute-bar .institute-wrapper {
+    width: 100%;
+    max-width: var(--content-max-width);
     padding-left: var(--content-side-margins);
     padding-right: var(--content-side-margins);
-    max-width: var(--content-max-width);
+    margin: 0 auto;
   }
 
-  .links-all {
-    gap: var(--sp-800);
+}
 
-    div.flex-item {
-      margin-right: 0;
-      flex-grow: 1;
+footer .libraries-footer {
+  display: flex;
+  justify-content: center;   
+  background: var(--color-gray-975) url("https://mitlib-wp-network.lndo.site/app/themes/mitlib-parent/images/vi-shape7-tp.png") no-repeat;
+
+  .footer-wrapper {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-1200);
+    padding-top: var(--sp-600);
+    padding-bottom: var(--sp-600);       
+
+    .logo-lockup svg {
+      width: 100px;
+      height: 40px;
     }
 
-  }
-
-  a {
-    text-decoration: none;
-    
-    &:hover {
-      color: var(--color-text-on-color);
-      text-decoration: underline;
-    }
-  }
-
-  @media only screen and (min-width: 569px) {
-    .footer-main .links-primary {margin-left: 184px;}
-  }
-
-  @media only screen and (max-width: 569px) {
-    footer {width: 100%;}
-    
-    .footer-main.flex-container {
-      padding-left: 0;
-      padding-right: 0;
-    }
-
-    .footer-main > div {
+    .navigation-menus {
+      display: flex;
+      justify-content: space-between;
       width: 100%;
+
+      ul {
+        display: block;
+        line-height: 1.6;
+
+        li {
+          display: inline;
+        }
+
+        li:not(.line-wrap):not(:last-child)::after {
+          content: "•";
+          display: inline-block;
+          color: var(--color-gray-800);
+          padding-inline: var(--sp-300) var(--sp-200);
+        }
+
+        li.line-wrap::after {
+          content: "\A";
+          white-space: pre;
+        }
+
+      }
+
+      a {
+        display: inline-block;
+        color: var(--color-gray-300);
+        text-decoration: none;
+        font-weight: var(--font-weight-regular);
+        font-size: 1.4rem;
+
+        &:hover {
+          text-decoration: underline;
+          text-decoration-color: var(--color-gray-500);
+        }
+      }
     }
-    
-    .links-primary.flex-container {
-      margin-top: var(--sp-600);
-      padding-top: var(--sp-800);
-      padding-bottom: var(--sp-800);
-      padding-left: var(--sp-500);
-    }
+
   }
 
+/* TODO Responsive: 800px stack both lists, XYZpx stack into single list */
 
 }

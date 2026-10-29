@@ -74,7 +74,8 @@ function theme_setup() {
 	register_nav_menu( 'secondary', 'Secondary Menu' );
 	register_nav_menu( 'main-header-navigation', 'Main Header Navigation' );
 	register_nav_menu( 'institute-bar-navigation', 'Institute Bar Navigation' );
-	register_nav_menu( 'footer', 'Footer Menu' );
+	register_nav_menu( 'footer', 'Footer Left Menu' );
+	register_nav_menu( 'footer-right-navigation', 'Footer Right Menu' );
 
 	/**
 	 * This theme uses a custom image size for featured images, displayed on
