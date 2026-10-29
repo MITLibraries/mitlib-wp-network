@@ -524,8 +524,8 @@
 
   .nls-toggle {
     display: flex;
-    gap: var(--sp-150);
-    align-items: center;
+    gap: var(--sp-200);
+    align-items: baseline;
 
     a.toggle {
       color: var(--color-white);
@@ -581,4 +581,32 @@
   }
 }
 
-/* Adjustments for search form when NOT inside the hero block (currently not using v2 typography) */
+/* Adjustments for search form when NOT inside the hero block (currently not using v2 typography). This scales down to v1 font-size values */
+section:not(#hero) #search-form {
+	& label, & input, & button {font-size: 1.125rem;}
+
+	.search-actions a, .nls-toggle a {
+		color: var(--color-text-on-color);
+		font-size: 1rem;
+		font-weight: var(--font-weight-medium);
+		text-decoration: underline;
+		text-underline-offset: 4px;
+		text-decoration-color: var(--color-red-500);
+
+		&:hover {
+			color: var(--color-red-500);
+		}
+	}
+
+	.nls-toggle .toggle::before {font-size: 0.6875rem;}
+
+	.nls-toggle a.learn-more {
+		color: var(--color-gray-300);		
+		font-weight: var(--font-weight-normal);
+		text-decoration-color: var(--color-gray-700);
+
+		&:hover {
+			text-decoration-color: var(--color-gray-400);
+		}
+	}
+}
