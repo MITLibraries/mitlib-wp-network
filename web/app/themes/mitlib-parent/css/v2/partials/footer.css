@@ -39,6 +39,7 @@ footer .libraries-footer {
 
         li {
           display: inline;
+          
         }
 
         li:not(.line-wrap):not(:last-child)::after {
@@ -55,6 +56,20 @@ footer .libraries-footer {
 
       }
 
+      /* Stack the two separate lists */
+      @media (max-width: 768px) {
+        
+        ul {
+          display: flex;
+          flex-direction: column;
+          gap: var(--sp-150);
+
+          li {display: block;}
+          li:not(.line-wrap):not(:last-child)::after {display: none;}
+
+        }
+      }   
+
       a {
         display: inline-block;
         color: var(--color-gray-300);
@@ -67,10 +82,24 @@ footer .libraries-footer {
           text-decoration-color: var(--color-gray-500);
         }
       }
+
+   
+    }
+
+    /* Stack the the two lists into a single list */
+    @media (max-width: 568px) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--sp-300);
+
+      .navigation-menus {
+        flex-direction: column;
+        gap: var(--sp-150);
+      }
     }
 
   }
 
-/* TODO Responsive: 800px stack both lists, XYZpx stack into single list */
+
 
 }
