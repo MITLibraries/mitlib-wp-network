@@ -263,16 +263,42 @@ section.global-expanding-search {
   display: none;
   margin-left: auto;
   align-items: center;
-  gap: var(--sp-200);
 
   button {
+    background: none;
+    border: 1px solid transparent;
+    border-radius: var(--radius-none);
+    color: var(--color-text-on-color);
     display: inline-flex;
+    font-weight: 500;
+    font-size: 16px;
     align-items: center;
     gap: var(--sp-200);
+
+    i {
+      color: var(--color-gray-400);
+    }
+
+    &:hover {
+      background-color: var(--color-gray-925);
+    }
+
+    &:active {
+      box-shadow: none;
+    }
 
     &:focus-visible {
       outline: 2px solid currentColor;
       outline-offset: 2px;
+    }
+
+    &[aria-expanded="true"] {
+      background-color: var(--color-gray-975);
+      border: 1px solid var(--color-gray-800);
+
+      &:hover {
+        background-color: var(--color-gray-925);
+      }
     }
   }
 
@@ -300,7 +326,6 @@ section.global-expanding-search {
 
 .mobile-header-controls button,
 .mobile-menu-dialog button {
-  font: inherit;
   min-height: 44px;
   padding: var(--sp-300);
 }

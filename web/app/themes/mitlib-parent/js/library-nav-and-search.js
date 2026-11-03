@@ -193,16 +193,12 @@ document.addEventListener('DOMContentLoaded', function () {
 			return node.nodeType === Node.TEXT_NODE && node.nodeValue.trim();
 		});
 		const originalLabel = labelNode ? labelNode.nodeValue.trim() : 'Search';
-		// Measure the visible desktop link once to limit shifts when Search becomes Close.
-		if (searchTrigger && !mobileBreakpoint.matches) {
-			searchTrigger.style.minWidth = searchTrigger.getBoundingClientRect().width + 'px';
-		}
-		if (searchTrigger) {
-			// Discard the initial measurement on resize so responsive CSS can size the link.
-			window.addEventListener('resize', function () {
-				searchTrigger.style.removeProperty('min-width');
+		// Discard measured widths on resize so responsive CSS can size both controls.
+		window.addEventListener('resize', function () {
+			searchControls.forEach(function (control) {
+				control.style.removeProperty('min-width');
 			});
-		}
+		});
 
 		// Associate the search control with its initially hidden panel.
 		searchControls.forEach(function (control) {
@@ -216,6 +212,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
 		// Update both triggers and the panel together, including the animated height target.
 		function setSearchOpen(willOpen) {
+			// Measure visible controls before their Search labels and icons change to Close.
+			if (willOpen) {
+				searchControls.forEach(function (control) {
+					const controlWidth = control.getBoundingClientRect().width;
+					if (controlWidth > 0) {
+						control.style.minWidth = controlWidth + 'px';
+					}
+				});
+			}
 			// Freeze the current rendered height, including when it was previously set to auto.
 			searchSection.style.height = searchSection.getBoundingClientRect().height + 'px';
 			// Force layout so the browser transitions from that height to the new pixel target.
@@ -233,6 +238,20 @@ document.addEventListener('DOMContentLoaded', function () {
 			searchSection.style.height = willOpen ? searchContent.scrollHeight + 'px' : '0px';
 			if (labelNode) {
 				labelNode.nodeValue = willOpen ? 'Close' : originalLabel;
+			}
+			// Mirror the desktop search state in the mobile button's label, icon, and tooltip.
+			if (mobileSearchTrigger) {
+				const mobileLabel = mobileSearchTrigger.querySelector('span');
+				const mobileIcon = mobileSearchTrigger.querySelector('i');
+				const mobileText = willOpen ? 'Close' : 'Search';
+				if (mobileLabel) {
+					mobileLabel.textContent = mobileText;
+				}
+				if (mobileIcon) {
+					mobileIcon.classList.toggle('fa-magnifying-glass', !willOpen);
+					mobileIcon.classList.toggle('fa-xmark', willOpen);
+				}
+				mobileSearchTrigger.setAttribute('title', mobileText);
 			}
 		}
 		// Supply the real close action to the mobile-menu handler registered earlier.
