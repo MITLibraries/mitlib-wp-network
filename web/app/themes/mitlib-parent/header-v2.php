@@ -87,8 +87,29 @@ if ( 'slim' === get_option( 'menu_style_setting' ) ) {
 				</nav>
 			<?php endif; ?>
 
+				<div class="mobile-header-controls" hidden>
+					<button class="mobile-search-toggle" type="button" aria-controls="global-expanding-search" aria-expanded="false" title="Search">
+						<i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+						<span>Search</span>
+					</button>
+					<?php if ( has_nav_menu( 'main-header-navigation' ) ) : ?>
+						<button class="mobile-menu-toggle" type="button" aria-controls="mobile-menu-dialog" aria-expanded="false" aria-haspopup="dialog">
+							<i class="fa-solid fa-bars" aria-hidden="true"></i>
+							<span>Menu</span>
+						</button>
+					<?php endif; ?>
+				</div>
 			</header>
 		</section>
+		<dialog class="mobile-menu-dialog" id="mobile-menu-dialog" aria-labelledby="mobile-menu-title">
+			<div class="mobile-menu-dialog__header">
+				<h2 id="mobile-menu-title">Menu</h2>
+				<button class="mobile-menu-close" type="button" aria-label="Close menu" autofocus>
+					<i class="fa-solid fa-xmark" aria-hidden="true"></i>
+				</button>
+			</div>
+			<nav class="mobile-menu-navigation" aria-label="Mobile Main Navigation"></nav>
+		</dialog>
 		<section class="global-expanding-search">
 			<div class="global-expanding-search__inner">
 

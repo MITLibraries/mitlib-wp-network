@@ -13,6 +13,92 @@ document.addEventListener('DOMContentLoaded', function () {
 	const searchTrigger = searchItem && searchItem.querySelector(':scope > a');
 	const searchSection = document.querySelector('.global-expanding-search');
 	const searchContent = searchSection && searchSection.querySelector('.global-expanding-search__inner');
+	const mobileControls = navigation.querySelector('.mobile-header-controls');
+	const mobileSearchTrigger = navigation.querySelector('.mobile-search-toggle');
+	const mobileMenuTrigger = navigation.querySelector('.mobile-menu-toggle');
+	const mobileDialog = document.querySelector('#mobile-menu-dialog');
+	const mobileBreakpoint = window.matchMedia('(max-width: 64rem)');
+	const searchControls = [searchTrigger, mobileSearchTrigger].filter(Boolean);
+	let closeSearch = function () {};
+
+	if (mobileDialog && mobileMenuTrigger && rootMenu && typeof mobileDialog.showModal === 'function') {
+		const mobileMenu = rootMenu.cloneNode(true);
+		mobileMenu.removeAttribute('id');
+		mobileMenu.className = 'mobile-menu-navigation__menu';
+		mobileMenu.querySelectorAll('[id]').forEach(function (element) {
+			element.removeAttribute('id');
+		});
+		mobileMenu.querySelectorAll('.global-search-trigger').forEach(function (item) {
+			item.remove();
+		});
+		Array.from(mobileMenu.children).forEach(function (menuItem, index) {
+			const link = menuItem.querySelector(':scope > a');
+			const submenu = menuItem.querySelector(':scope > ul.sub-menu');
+			if (!link || !submenu) {
+				return;
+			}
+			const button = document.createElement('button');
+			const panel = document.createElement('div');
+			const panelId = 'mobile-menu-panel-' + index;
+			button.type = 'button';
+			button.className = 'mobile-menu-accordion-toggle';
+			button.innerHTML = link.innerHTML;
+			button.setAttribute('aria-expanded', 'false');
+			button.setAttribute('aria-controls', panelId);
+			panel.id = panelId;
+			panel.className = 'mobile-menu-accordion-panel';
+			panel.inert = true;
+			const href = link.getAttribute('href');
+			if (href && href !== '#') {
+				const overview = document.createElement('li');
+				overview.appendChild(link.cloneNode(true));
+				submenu.prepend(overview);
+			}
+			link.replaceWith(button);
+			submenu.replaceWith(panel);
+			panel.appendChild(submenu);
+			button.addEventListener('click', function () {
+				const willOpen = button.getAttribute('aria-expanded') !== 'true';
+				button.setAttribute('aria-expanded', String(willOpen));
+				menuItem.classList.toggle('is-open', willOpen);
+				panel.inert = !willOpen;
+			});
+		});
+		mobileDialog.querySelector('.mobile-menu-navigation').appendChild(mobileMenu);
+		mobileMenuTrigger.addEventListener('click', function () {
+			if (mobileDialog.open) {
+				mobileDialog.close();
+				return;
+			}
+			closeMenus();
+			closeSearch();
+			mobileDialog.showModal();
+			mobileMenuTrigger.setAttribute('aria-expanded', 'true');
+			document.body.classList.add('mobile-menu-open');
+		});
+		mobileDialog.querySelector('.mobile-menu-close').addEventListener('click', function () {
+			mobileDialog.close();
+		});
+		mobileDialog.addEventListener('close', function () {
+			mobileMenuTrigger.setAttribute('aria-expanded', 'false');
+			document.body.classList.remove('mobile-menu-open');
+			if (mobileBreakpoint.matches) {
+				mobileMenuTrigger.focus();
+			}
+		});
+		mobileBreakpoint.addEventListener('change', function (event) {
+			closeMenus();
+			if (!event.matches && mobileDialog.open) {
+				mobileDialog.close();
+				const desktopLink = rootMenu.querySelector('a');
+				if (desktopLink) {
+					desktopLink.focus();
+				}
+			}
+		});
+		navigation.classList.add('has-mobile-navigation');
+		mobileControls.hidden = false;
+	}
 
 	// Keep visual and ARIA states in sync, optionally preserving the item being toggled.
 	function closeMenus(exceptItem) {
@@ -56,62 +142,64 @@ document.addEventListener('DOMContentLoaded', function () {
 		});
 	});
 
-	if (searchTrigger && searchSection && searchContent) {
+	if (searchControls.length && searchSection && searchContent) {
 		// Change only the text node to preserve icons; reserve width to avoid label shifts.
-		const labelNode = Array.from(searchTrigger.childNodes).find(function (node) {
+		const labelNode = searchTrigger && Array.from(searchTrigger.childNodes).find(function (node) {
 			return node.nodeType === Node.TEXT_NODE && node.nodeValue.trim();
 		});
 		const originalLabel = labelNode ? labelNode.nodeValue.trim() : 'Search';
-		const originalWidth = searchTrigger.getBoundingClientRect().width;
-		searchTrigger.style.minWidth = originalWidth + 'px';
+		if (searchTrigger && !mobileBreakpoint.matches) {
+			searchTrigger.style.minWidth = searchTrigger.getBoundingClientRect().width + 'px';
+		}
 
 		// Associate the search control with its initially hidden panel.
-		searchTrigger.setAttribute('aria-controls', 'global-expanding-search');
-		searchTrigger.setAttribute('aria-expanded', 'false');
+		searchControls.forEach(function (control) {
+			control.setAttribute('aria-controls', 'global-expanding-search');
+			control.setAttribute('aria-expanded', 'false');
+		});
 		searchSection.id = 'global-expanding-search';
 		searchSection.setAttribute('aria-hidden', 'true');
+		searchSection.inert = true;
 
-		searchTrigger.addEventListener('click', function (event) {
-			event.preventDefault();
-
-			// Reuse an existing hero/bento search field instead of opening a second search UI.
-			const heroSearchInput = document.querySelector(
-				'#hero #search-form input[type="search"], #hero form.search-bento input[name="q"], form.search-bento input[name="q"]'
-			);
-			if (heroSearchInput) {
-				heroSearchInput.focus();
-				return;
+		function setSearchOpen(willOpen) {
+			searchSection.style.height = searchSection.getBoundingClientRect().height + 'px';
+			searchSection.offsetHeight;
+			if (searchItem) {
+				searchItem.classList.toggle('is-open', willOpen);
 			}
-
-			// Clear dropdowns before toggling the separate search panel.
-			closeMenus();
-
-			const willOpen = !searchItem.classList.contains('is-open');
-
-			if (willOpen) {
-				// Animate to a measured height; CSS cannot transition directly to auto.
-				searchItem.classList.add('is-open');
-				searchTrigger.setAttribute('aria-expanded', 'true');
-				searchSection.classList.add('is-open');
-				searchSection.setAttribute('aria-hidden', 'false');
-				searchSection.style.height = '0px';
-				requestAnimationFrame(function () {
-					searchSection.style.height = searchContent.scrollHeight + 'px';
-				});
-			} else {
-				// Freeze the current height and force layout before animating back to zero.
-				searchSection.style.height = searchSection.getBoundingClientRect().height + 'px';
-				searchSection.offsetHeight;
-				searchItem.classList.remove('is-open');
-				searchTrigger.setAttribute('aria-expanded', 'false');
-				searchSection.classList.remove('is-open');
-				searchSection.setAttribute('aria-hidden', 'true');
-				searchSection.style.height = '0px';
-			}
-
+			searchControls.forEach(function (control) {
+				control.setAttribute('aria-expanded', String(willOpen));
+			});
+			searchSection.classList.toggle('is-open', willOpen);
+			searchSection.setAttribute('aria-hidden', String(!willOpen));
+			searchSection.inert = !willOpen;
+			searchSection.style.height = willOpen ? searchContent.scrollHeight + 'px' : '0px';
 			if (labelNode) {
 				labelNode.nodeValue = willOpen ? 'Close' : originalLabel;
 			}
+		}
+		closeSearch = function () {
+			setSearchOpen(false);
+		};
+
+		searchControls.forEach(function (control) {
+			control.addEventListener('click', function (event) {
+				event.preventDefault();
+
+				// Reuse an existing hero/bento search field instead of opening a second search UI.
+				const heroSearchInput = document.querySelector(
+					'#hero #search-form input[type="search"], #hero form.search-bento input[name="q"], form.search-bento input[name="q"]'
+				);
+				if (heroSearchInput) {
+					heroSearchInput.focus();
+					return;
+				}
+
+				// Clear dropdowns before toggling the separate search panel.
+				closeMenus();
+
+				setSearchOpen(!searchSection.classList.contains('is-open'));
+			});
 		});
 
 		// Restore natural sizing after expansion so the open panel can adapt to its content.
@@ -151,6 +239,10 @@ document.addEventListener('DOMContentLoaded', function () {
 	document.addEventListener('keydown', function (event) {
 		if (event.key === 'Escape') {
 			closeMenus();
+			if (mobileDialog && mobileDialog.open) {
+				event.preventDefault();
+				mobileDialog.close();
+			}
 		}
 	});
 });
