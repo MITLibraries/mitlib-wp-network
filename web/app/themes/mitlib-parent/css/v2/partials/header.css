@@ -297,6 +297,7 @@ section.global-expanding-search {
 /* ============================= */
 /* Mobile Navigation Menu Dialog */
 /* ============================= */
+
 .mobile-header-controls button,
 .mobile-menu-dialog button {
   font: inherit;
@@ -400,26 +401,42 @@ dialog.mobile-menu-dialog {
   }
 }
 
-@media (max-width: 64rem) {
-  .wrap-page:has(> .has-mobile-navigation) > .institute-bar {
-    display: none;
+/* ============================== */
+/* Navigation responsive behavior */
+/* ============================== */
+@media (max-width: 965px) {
+  nav.main-header-navigation {
+    ul li a {
+      font-size: 16px; 
+      padding: var(--sp-300) var(--sp-300);
+    }
+  }
+}
+
+@media (max-width: 820px) {
+  .wrap-page:has(> .has-mobile-navigation) {
+    > .institute-bar {
+      display: none;
+    }
   }
 
-  .has-mobile-navigation .main-header-navigation {
-    display: none;
-  }
+  .has-mobile-navigation {
+    .main-header-navigation {
+      display: none;
+    }
 
-  .has-mobile-navigation .mobile-header-controls:not([hidden]) {
-    display: flex;
-  }
+    .mobile-header-controls:not([hidden]) {
+      display: flex;
+    }
 
-  .has-mobile-navigation .header-main {
-    width: 100%;
-    gap: var(--sp-300);
-  }
+    .header-main {
+      width: 100%;
+      gap: var(--sp-300);
+    }
 
-  .has-mobile-navigation .logo-lockup {
-    flex-shrink: 0;
+    .logo-lockup {
+      flex-shrink: 0;
+    }
   }
 }
 
