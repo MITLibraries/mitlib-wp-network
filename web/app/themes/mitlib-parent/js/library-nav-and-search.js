@@ -54,8 +54,11 @@ document.addEventListener('DOMContentLoaded', function () {
 			const panelId = 'mobile-menu-panel-' + index;
 			button.type = 'button';
 			button.className = 'mobile-menu-accordion-toggle';
-			// Preserve the existing label markup, including any icons or descriptive spans.
-			button.innerHTML = link.innerHTML;
+			// Isolate label decoration from the chevron while preserving existing label markup.
+			const label = document.createElement('span');
+			label.className = 'mobile-menu-label';
+			label.innerHTML = link.innerHTML;
+			button.appendChild(label);
 			button.setAttribute('aria-expanded', 'false');
 			button.setAttribute('aria-controls', panelId);
 			panel.id = panelId;
