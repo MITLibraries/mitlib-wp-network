@@ -7,12 +7,12 @@ document.addEventListener('DOMContentLoaded', function () {
 	}
 
 	// Collect dropdown controls and the optional expanding search panel.
-	const rootMenu = navigation.querySelector('ul.main-header-navigation__menu');
+	const rootMenu = navigation.querySelector('ul.main-header-menu');
 	const triggers = navigation.querySelectorAll('li.menu-item-has-children > a');
 	const searchItem = navigation.querySelector('li.global-search-trigger');
 	const searchTrigger = searchItem && searchItem.querySelector(':scope > a');
 	const searchSection = document.querySelector('.global-expanding-search');
-	const searchContent = searchSection && searchSection.querySelector('.global-expanding-search__inner');
+	const searchContent = searchSection && searchSection.querySelector('.global-search-wrapper');
 	const mobileControls = navigation.querySelector('.mobile-header-controls');
 	const mobileSearchTrigger = navigation.querySelector('.mobile-search-toggle');
 	const mobileMenuTrigger = navigation.querySelector('.mobile-menu-toggle');
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	if (mobileDialog && mobileMenuTrigger && rootMenu && typeof mobileDialog.showModal === 'function') {
 		const mobileMenu = rootMenu.cloneNode(true);
 		mobileMenu.removeAttribute('id');
-		mobileMenu.className = 'mobile-menu-navigation__menu';
+		mobileMenu.className = 'mobile-main-menu';
 		mobileMenu.querySelectorAll('[id]').forEach(function (element) {
 			element.removeAttribute('id');
 		});
@@ -65,6 +65,19 @@ document.addEventListener('DOMContentLoaded', function () {
 			});
 		});
 		mobileDialog.querySelector('.mobile-menu-navigation').appendChild(mobileMenu);
+		const instituteMenu = document.querySelector('.wrap-page > .institute-bar .institute-bar-menu');
+		if (instituteMenu) {
+			const mobileInstituteNavigation = document.createElement('nav');
+			const mobileInstituteMenu = instituteMenu.cloneNode(true);
+			mobileInstituteNavigation.className = 'mobile-menu-institute-navigation';
+			mobileInstituteNavigation.setAttribute('aria-label', 'Mobile Institute Navigation');
+			mobileInstituteMenu.removeAttribute('id');
+			mobileInstituteMenu.querySelectorAll('[id]').forEach(function (element) {
+				element.removeAttribute('id');
+			});
+			mobileInstituteNavigation.appendChild(mobileInstituteMenu);
+			mobileDialog.appendChild(mobileInstituteNavigation);
+		}
 		mobileMenuTrigger.addEventListener('click', function () {
 			if (mobileDialog.open) {
 				mobileDialog.close();

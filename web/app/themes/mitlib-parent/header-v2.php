@@ -55,7 +55,7 @@ if ( 'slim' === get_option( 'menu_style_setting' ) ) {
 						array(
 							'theme_location' => 'institute-bar-navigation',
 							'container'      => false,
-							'menu_class'     => 'institute-bar-navigation__menu',
+							'menu_class'     => 'institute-bar-menu',
 							'fallback_cb'    => false,
 						)
 					);
@@ -79,7 +79,7 @@ if ( 'slim' === get_option( 'menu_style_setting' ) ) {
 						array(
 							'theme_location' => 'main-header-navigation',
 							'container'      => false,
-							'menu_class'     => 'main-header-navigation__menu',
+							'menu_class'     => 'main-header-menu',
 							'fallback_cb'    => false,
 						)
 					);
@@ -102,7 +102,7 @@ if ( 'slim' === get_option( 'menu_style_setting' ) ) {
 			</header>
 		</section>
 		<dialog class="mobile-menu-dialog" id="mobile-menu-dialog" aria-labelledby="mobile-menu-title">
-			<div class="mobile-menu-dialog__header">
+			<div class="mobile-menu-header">
 				<h2 id="mobile-menu-title">Menu</h2>
 				<button class="mobile-menu-close" type="button" aria-label="Close menu" autofocus>
 					<i class="fa-solid fa-xmark" aria-hidden="true"></i>
@@ -111,7 +111,7 @@ if ( 'slim' === get_option( 'menu_style_setting' ) ) {
 			<nav class="mobile-menu-navigation" aria-label="Mobile Main Navigation"></nav>
 		</dialog>
 		<section class="global-expanding-search">
-			<div class="global-expanding-search__inner">
+			<div class="global-search-wrapper">
 
 				<?php if ( is_active_sidebar( 'global-navigation-search' ) ) : ?>
 					<?php dynamic_sidebar( 'global-navigation-search' ); ?>

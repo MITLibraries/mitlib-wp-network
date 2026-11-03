@@ -238,7 +238,7 @@ section.global-expanding-search {
   transition: height 250ms ease;
   justify-content: center;
 
-  .global-expanding-search__inner {
+  .global-search-wrapper {
     flex: 0 0 auto;
     overflow: hidden;
     max-width: var(--content-max-width);
@@ -253,39 +253,55 @@ section.global-expanding-search {
     padding-bottom: 0;
   }
 }
+  
 
+/* ========================== */
+/* Mobile Navigation Controls */
+/* ========================== */
 
 .mobile-header-controls {
   display: none;
   margin-left: auto;
   align-items: center;
   gap: var(--sp-200);
+
+  button {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--sp-200);
+
+    &:focus-visible {
+      outline: 2px solid currentColor;
+      outline-offset: 2px;
+    }
+  }
+
+  @media (max-width: 24rem) {
+    .mobile-search-toggle {
+      justify-content: center;
+      width: 44px;
+      gap: 0;
+
+      span {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip-path: inset(50%);
+        white-space: nowrap;
+      }
+    }
+  }
 }
 
+/* ============================= */
+/* Mobile Navigation Menu Dialog */
+/* ============================= */
 .mobile-header-controls button,
 .mobile-menu-dialog button {
-  appearance: none;
-  background: transparent;
-  border: 0;
-  border-radius: var(--radius-xs);
-  color: inherit;
-  cursor: pointer;
   font: inherit;
   min-height: 44px;
   padding: var(--sp-300);
-}
-
-.mobile-header-controls button {
-  color: var(--color-text-on-color);
-  display: inline-flex;
-  align-items: center;
-  gap: var(--sp-200);
-}
-
-.mobile-header-controls button:focus-visible,
-.mobile-menu-dialog :focus-visible {
-  outline: 2px solid var(--color-focus-light);
-  outline-offset: 2px;
 }
 
 body.mobile-menu-open {
@@ -293,8 +309,6 @@ body.mobile-menu-open {
 }
 
 dialog.mobile-menu-dialog {
-  background: var(--color-gray-975);
-  color: var(--color-text-on-color);
   border: 0;
   box-sizing: border-box;
   inset: 0;
@@ -302,104 +316,95 @@ dialog.mobile-menu-dialog {
   max-width: none;
   max-height: none;
   width: 100%;
-  height: 100%;
   height: 100dvh;
   overflow-y: auto;
   overscroll-behavior: contain;
   padding: var(--sp-500) var(--content-side-margins);
-}
 
-.mobile-menu-dialog::backdrop {
-  background: var(--color-gray-975);
-}
+  :focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+  }
 
-.mobile-menu-dialog__header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--sp-400);
-  margin-bottom: var(--sp-500);
-}
+  .mobile-menu-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 
-.mobile-menu-dialog__header h2 {
-  color: inherit;
-  font-size: 24px;
-  margin: 0;
-}
+  nav {
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
 
-.mobile-menu-close {
-  width: 44px;
-  flex-shrink: 0;
-}
+    a {
+      color: inherit;
+      display: block;
+      min-height: 44px;
+      padding: var(--sp-300);
+      overflow-wrap: anywhere;
+    }
+  }
 
-.mobile-menu-navigation ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
+  .mobile-menu-navigation {
+    .mobile-menu-accordion-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--sp-300);
+      width: 100%;
+      text-align: left;
+      overflow-wrap: anywhere;
 
-.mobile-menu-navigation a {
-  color: inherit;
-  display: block;
-  padding: var(--sp-300);
-  text-decoration: none;
-  overflow-wrap: anywhere;
-}
+      &::after {
+        content: "\f078";
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        flex-shrink: 0;
+      }
 
-.mobile-menu-navigation__menu > li {
-  border-bottom: 1px solid var(--color-gray-800);
-}
+      &[aria-expanded="true"]::after {
+        transform: rotate(180deg);
+      }
+    }
 
-.mobile-menu-navigation .mobile-menu-accordion-toggle {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--sp-300);
-  width: 100%;
-  text-align: left;
-  overflow-wrap: anywhere;
-}
+    .mobile-menu-accordion-panel {
+      display: none;
+    }
 
-.mobile-menu-accordion-toggle::after {
-  content: "\f078";
-  font-family: "Font Awesome 6 Free";
-  font-weight: 900;
-  flex-shrink: 0;
-  transition: transform 250ms ease;
-}
+    .is-open > .mobile-menu-accordion-panel {
+      display: block;
+    }
 
-.mobile-menu-accordion-toggle[aria-expanded="true"]::after {
-  transform: rotate(180deg);
-}
+    .menu-item-description {
+      display: block;
+    }
+  }
 
-.mobile-menu-accordion-panel {
-  display: grid;
-  grid-template-rows: 0fr;
-  visibility: hidden;
-  transition: grid-template-rows 250ms ease, visibility 250ms;
-}
+  .mobile-menu-institute-navigation {
+    li {
+      display: flex;
+      align-items: baseline;
+      gap: var(--sp-200);
 
-.mobile-menu-accordion-panel > ul {
-  min-height: 0;
-  overflow: hidden;
-}
-
-.is-open > .mobile-menu-accordion-panel {
-  grid-template-rows: 1fr;
-  visibility: visible;
-}
-
-.mobile-menu-navigation .sub-menu a {
-  padding-left: var(--sp-600);
-}
-
-.mobile-menu-navigation .menu-item-description {
-  display: block;
-  color: var(--color-gray-300);
-  font-size: 16px;
+      &::before {
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        flex-shrink: 0;
+        text-align: center;
+        width: 24px;
+      }
+    }
+  }
 }
 
 @media (max-width: 64rem) {
+  .wrap-page:has(> .has-mobile-navigation) > .institute-bar {
+    display: none;
+  }
+
   .has-mobile-navigation .main-header-navigation {
     display: none;
   }
@@ -418,26 +423,7 @@ dialog.mobile-menu-dialog {
   }
 }
 
-@media (max-width: 24rem) {
-  .mobile-header-controls .mobile-search-toggle {
-    justify-content: center;
-    width: 44px;
-    gap: 0;
-  }
-
-  .mobile-search-toggle span {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip-path: inset(50%);
-    white-space: nowrap;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .mobile-menu-accordion-panel,
-  .mobile-menu-accordion-toggle::after,
   section.global-expanding-search {
     transition: none;
   }
