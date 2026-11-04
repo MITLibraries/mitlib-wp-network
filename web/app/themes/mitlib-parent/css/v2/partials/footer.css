@@ -75,7 +75,7 @@ footer .libraries-footer {
         color: var(--color-gray-300);
         text-decoration: none;
         font-weight: var(--font-weight-regular);
-        font-size: 1.4rem;
+        font-size: 14px;
 
         &:hover {
           text-decoration: underline;

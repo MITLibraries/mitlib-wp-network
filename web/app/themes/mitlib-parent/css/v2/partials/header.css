@@ -600,6 +600,11 @@ section.global-expanding-search {
   margin: 0 auto;
 }
 
+.betterBreadcrumbs {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
 .breadcrumbs-inner {
 	overflow: hidden;
   max-width: var(--content-max-width);
