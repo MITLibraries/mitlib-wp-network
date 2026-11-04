@@ -172,4 +172,4 @@ get_header( 'v2' ); ?>
 			</div><!-- end div.content.has-sidebar -->		
 		</div><!-- end div#stage -->	
 
-<?php get_footer(); ?>
+<?php get_footer( 'v2' ); ?>

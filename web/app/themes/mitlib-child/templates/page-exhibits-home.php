@@ -9,7 +9,7 @@
 
 namespace Mitlib\Child;
 
-get_header(); ?>
+get_header( 'v2' ); ?>
 
 <?php
 // Get today's date in the right format.
@@ -75,4 +75,4 @@ $todaysDate = date( 'm/d/Y H:i:s' );
 
 
 
-<?php get_footer(); ?>
+<?php get_footer( 'v2' ); ?>

@@ -242,4 +242,4 @@ get_header( 'v2' ); ?>
 					<?php get_sidebar(); ?>
 		</div>		
 	</div>
-<?php get_footer(); ?>
+<?php get_footer( 'v2' ); ?>

@@ -149,5 +149,5 @@ get_header( 'v2'); ?>
 }
 </style>
 
-<?php get_footer(); ?>
+<?php get_footer( 'v2' ); ?>
 

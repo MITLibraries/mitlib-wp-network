@@ -9,6 +9,54 @@
 namespace Mitlib\Parent;
 
 /**
+ * Get menu markup for a location, falling back to the main site's menu.
+ *
+ * @param string $location The registered menu location.
+ * @param array  $args     Arguments passed to wp_nav_menu().
+ * @return string Menu markup, or an empty string when no menu is assigned.
+ */
+function get_v2_menu_markup( $location, $args ) {
+	$menu_locations = get_nav_menu_locations();
+	$menu_id = isset( $menu_locations[ $location ] ) ? absint( $menu_locations[ $location ] ) : 0;
+	$current_blog_id = get_current_blog_id();
+	$menu_blog_id = $current_blog_id;
+
+	if ( ! $menu_id ) {
+		$menu_blog_id = get_main_site_id();
+		$main_stylesheet = get_blog_option( $menu_blog_id, 'stylesheet' );
+		$main_theme_mods = get_blog_option( $menu_blog_id, 'theme_mods_' . $main_stylesheet, array() );
+		$main_menu_locations = isset( $main_theme_mods['nav_menu_locations'] ) ? $main_theme_mods['nav_menu_locations'] : array();
+		$menu_id = isset( $main_menu_locations[ $location ] ) ? absint( $main_menu_locations[ $location ] ) : 0;
+	}
+
+	if ( ! $menu_id ) {
+		return '';
+	}
+
+	$switched_blog = $current_blog_id !== $menu_blog_id;
+	if ( $switched_blog ) {
+		switch_to_blog( $menu_blog_id );
+	}
+
+	$markup = wp_nav_menu(
+		array_merge(
+			$args,
+			array(
+				'menu'        => $menu_id,
+				'fallback_cb' => false,
+				'echo'        => false,
+			)
+		)
+	);
+
+	if ( $switched_blog ) {
+		restore_current_blog();
+	}
+
+	return $markup;
+}
+
+/**
  * We use Navwalker to render custom secondary menus in a mobile-friendly way,
  * via the menu-secondary.php partial.
  *

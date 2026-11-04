@@ -44,4 +44,4 @@ get_header( 'v2'); ?>
 		
 		</div>
 
-<?php get_footer(); ?>
+<?php get_footer( 'v2' ); ?>

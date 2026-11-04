@@ -9,6 +9,21 @@
 
 namespace Mitlib\Parent;
 
+$institute_bar_menu = get_v2_menu_markup(
+	'institute-bar-navigation',
+	array(
+		'container'  => false,
+		'menu_class' => 'institute-bar-menu',
+	)
+);
+$main_header_menu = get_v2_menu_markup(
+	'main-header-navigation',
+	array(
+		'container'  => false,
+		'menu_class' => 'main-header-menu',
+	)
+);
+
 $menu = 'full';
 if ( 'slim' === get_option( 'menu_style_setting' ) ) {
 	$menu = 'slim';
@@ -49,18 +64,11 @@ if ( 'slim' === get_option( 'menu_style_setting' ) ) {
 					<span class="sr">MIT Logo</span>
 					<img src="https://cdn.libraries.mit.edu/files/branding/local/mit_logo_std_rgb_white.svg" height="20" alt="MIT logo" >
 				</a>
-				<nav class="institute-bar-navigation" aria-label="Institute Bar Navigation">
-					<?php
-					wp_nav_menu(
-						array(
-							'theme_location' => 'institute-bar-navigation',
-							'container'      => false,
-							'menu_class'     => 'institute-bar-menu',
-							'fallback_cb'    => false,
-						)
-					);
-					?>
-				</nav>
+				<?php if ( $institute_bar_menu ) : ?>
+					<nav class="institute-bar-navigation" aria-label="Institute Bar Navigation">
+						<?php echo $institute_bar_menu; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+					</nav>
+				<?php endif; ?>
 			</div>
 		</div>		
 		<section class="header-wrapper library-navigation-bar">	
@@ -72,18 +80,9 @@ if ( 'slim' === get_option( 'menu_style_setting' ) ) {
 					</a>
 				</div>
 
-			<?php if ( has_nav_menu( 'main-header-navigation' ) ) : ?>
+			<?php if ( $main_header_menu ) : ?>
 				<nav class="main-header-navigation" aria-label="Main Header Navigation">
-					<?php
-					wp_nav_menu(
-						array(
-							'theme_location' => 'main-header-navigation',
-							'container'      => false,
-							'menu_class'     => 'main-header-menu',
-							'fallback_cb'    => false,
-						)
-					);
-					?>
+					<?php echo $main_header_menu; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 				</nav>
 			<?php endif; ?>
 
@@ -92,7 +91,7 @@ if ( 'slim' === get_option( 'menu_style_setting' ) ) {
 						<i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
 						<span>Search</span>
 					</button>
-					<?php if ( has_nav_menu( 'main-header-navigation' ) ) : ?>
+					<?php if ( $main_header_menu ) : ?>
 						<button class="mobile-menu-toggle" type="button" aria-controls="mobile-menu-dialog" aria-expanded="false" aria-haspopup="dialog">
 							<i class="fa-solid fa-bars" aria-hidden="true"></i>
 							<span>Menu</span>

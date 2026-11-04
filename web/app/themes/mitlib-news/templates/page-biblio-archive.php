@@ -11,7 +11,7 @@
 
 namespace Mitlib\News;
 
-get_header();
+get_header( 'v2' );
 get_template_part( 'inc/sub-header' );
 get_template_part( 'inc/bib-header' );
 ?>
@@ -79,4 +79,4 @@ if ( have_posts() ) {
 	</div><!-- container -->
 </div><!--close biblio about-->
 <div class="container">
-<?php get_footer(); ?>
+<?php get_footer( 'v2' ); ?>

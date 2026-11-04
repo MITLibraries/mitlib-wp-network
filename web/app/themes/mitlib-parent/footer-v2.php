@@ -8,6 +8,21 @@
 
 namespace Mitlib\Parent;
 
+$footer_menu = get_v2_menu_markup(
+	'footer',
+	array(
+		'container'  => false,
+		'menu_class' => 'footer-left-navigation__menu',
+	)
+);
+$footer_right_menu = get_v2_menu_markup(
+	'footer-right-navigation',
+	array(
+		'container'  => false,
+		'menu_class' => 'footer-right-navigation__menu',
+	)
+);
+
 ?>
 	<footer>
 		<div class="libraries-footer">
@@ -18,32 +33,14 @@ namespace Mitlib\Parent;
 					</a>
 				</div>
 				<div class="navigation-menus">
-					<?php if ( has_nav_menu( 'footer' ) ) : ?>
+					<?php if ( $footer_menu ) : ?>
 						<nav class="footer-left-navigation" aria-label="Footer Left Navigation">
-							<?php
-							wp_nav_menu(
-								array(
-									'theme_location' => 'footer',
-									'container'      => false,
-									'menu_class'     => 'footer-left-navigation__menu',
-									'fallback_cb'    => false,
-								)
-							);
-							?>
+							<?php echo $footer_menu; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 						</nav>
 					<?php endif; ?>
-					<?php if ( has_nav_menu( 'footer-right-navigation' ) ) : ?>
+					<?php if ( $footer_right_menu ) : ?>
 						<nav class="footer-right-navigation" aria-label="Footer Right Navigation">
-							<?php
-							wp_nav_menu(
-								array(
-									'theme_location' => 'footer-right-navigation',
-									'container'      => false,
-									'menu_class'     => 'footer-right-navigation__menu',
-									'fallback_cb'    => false,
-								)
-							);
-							?>
+							<?php echo $footer_right_menu; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 						</nav>
 					<?php endif; ?>
 				</div>

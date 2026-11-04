@@ -515,4 +515,4 @@ get_header( 'v2' ); ?>
 
 		</div>
 		<?php endwhile; // end of the loop. ?>
-<?php get_footer(); ?>
+<?php get_footer( 'v2' ); ?>

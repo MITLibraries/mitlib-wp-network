@@ -11,7 +11,7 @@
 
 namespace Mitlib\Parent;
 
-get_header(); ?>
+get_header( 'v2' ); ?>
 
 <div id="content">
 <?php
@@ -70,5 +70,5 @@ endif;
 </div><!-- end div.content -->
 
 <?php
-	get_footer();
+	get_footer( 'v2' );
 ?>

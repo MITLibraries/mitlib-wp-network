@@ -21,7 +21,7 @@ if ( is_active_sidebar( 'sidebar' ) ) {
 }
 ?>
 
-<?php get_header(); ?>
+<?php get_header( 'v2' ); ?>
 
 <?php
 if ( is_front_page() ) {
@@ -53,4 +53,4 @@ if ( is_front_page() ) {
 
 </div><!-- end div#stage -->
 
-<?php get_footer(); ?>
+<?php get_footer( 'v2' ); ?>

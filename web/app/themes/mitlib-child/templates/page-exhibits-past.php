@@ -8,7 +8,7 @@
 
 namespace Mitlib\Child;
 
-	get_header();
+	get_header( 'v2' );
 ?>
 
 	<?php get_template_part( 'inc/breadcrumbs', 'child' ); ?>
@@ -79,4 +79,4 @@ namespace Mitlib\Child;
 			
 	</div>   <!-- stage --> 
 	 
-<?php get_footer(); ?>
+<?php get_footer( 'v2' ); ?>
