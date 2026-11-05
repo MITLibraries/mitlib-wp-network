@@ -1670,3 +1670,12 @@ p.search {
  span.bg-image svg path {
 	fill: #B85102;
  }
+
+ /* Fix for new v2 footer width */
+ footer .libraries-footer .footer-wrapper {
+	margin: 0 auto;
+	max-width: var(--content-max-width);
+	width: 100%;
+	padding-left: var(--content-side-margins);
+	padding-right: var(--content-side-margins);  
+ }

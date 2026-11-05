@@ -159,5 +159,4 @@ $(document).ready(function() {
 });
 </script>
 
-<div class="container container-fluid">
 <?php get_footer('v2'); ?>
