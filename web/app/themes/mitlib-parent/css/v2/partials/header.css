@@ -53,6 +53,11 @@ div.logo-lockup {
 /* Header specific styles */
 /* ====================== */
 
+div.institute-bar *:focus-visible, .header-wrapper *:focus-visible {
+  outline: 2px solid var(--color-focus-light) !important;
+  outline-offset: 2px;
+}
+
 /* Institute Bar */
 div.institute-bar {
   background-color: var(--color-gray-900);
@@ -138,7 +143,6 @@ section.header-wrapper {
 
         a {
           display: inline-block;
-          border-radius: var(--radius-xs);
           padding: var(--sp-400) var(--sp-500);
 
           &:hover { background-color: var(--color-gray-925); }
