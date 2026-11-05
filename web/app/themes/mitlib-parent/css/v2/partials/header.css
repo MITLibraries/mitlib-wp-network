@@ -39,6 +39,14 @@ div.logo-lockup {
   display: block;
   width: 110px;
   height: 44px;
+
+  > a {
+    display: block;
+  }
+
+  svg {
+    width: 100%;
+  }
 }
 
 /* ====================== */
