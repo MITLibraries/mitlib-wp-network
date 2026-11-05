@@ -193,9 +193,13 @@ section.header-wrapper {
           padding: var(--sp-300) var(--sp-400);
 
           &:hover {
+            background-color: var(--color-gray-900);
+            text-decoration: none;
+
             .menu-item-label {
               text-decoration: underline;
               text-decoration-color: var(--color-red-500);
+              text-underline-offset: 4px;
             }
           }
 

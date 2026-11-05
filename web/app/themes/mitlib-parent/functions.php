@@ -42,9 +42,10 @@ function get_v2_menu_markup( $location, $args ) {
 		array_merge(
 			$args,
 			array(
-				'menu'        => $menu_id,
-				'fallback_cb' => false,
-				'echo'        => false,
+				'menu'           => $menu_id,
+				'theme_location' => $location,
+				'fallback_cb'    => false,
+				'echo'           => false,
 			)
 		)
 	);
