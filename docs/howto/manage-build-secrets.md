@@ -1,6 +1,38 @@
-# How to manage secret values for automated builds and deploys
+# How to rotate the secrets necessary for builds and deploys
 
-This document describes how we manage secret values for use in automated builds.
+This document describes the workflow necessary to generate and store the secret values necessary for our automated
+site builds.
+
+## Github deploy token
+
+1. Generate new token within our shared deploy account
+
+   We create the deploy token from a shared Github account, rather than from one individual's personal account. This
+   token can be found by going to Settings -> Developer Settings -> Personal access tokens -> [Tokens (classic)](https://github.com/settings/tokens).
+
+   The token should have only the complete `repo` scope, and be created with an expiration of 90 days.
+
+   The credentials for the shared Github account can be found in LastPass, in the `Shared-Product-Pantheon` folder.
+
+2. Store new token value in LastPass
+
+   After creating a new token, the next step is to store the new value in LastPass for later retrieval if needed. Github
+   itself will only disclose the token value once.
+
+   The token gets added to a `COMPOSER_AUTH` entry, which is a JSON object holding both this token and the Libraries'
+   credentials for Advanced Custom Fields.
+
+3. Submit new token value where needed
+
+   a. `COMPOSER_AUTH`
+
+   c. Terminus
+
+## Advanced Custom Fields credentials
+
+1. Authenticate
+---
+_Materials below this line need to be moved or updated_
 
 ## Tooling required
 
