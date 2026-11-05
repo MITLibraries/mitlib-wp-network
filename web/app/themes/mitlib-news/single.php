@@ -8,7 +8,7 @@
 
 namespace Mitlib\News;
 
-get_header();
+get_header('v2');
 $category = get_the_category();
 	$type_post = get_post_type();
 	$subtitle;
@@ -230,5 +230,4 @@ wp_reset_postdata();
 
 </div><!--greybackground 100% width-->
 	<div style="background-color:rgb(233, 233, 233);">
-<div class="container">
-<?php get_footer(); ?>
+<?php get_footer('v2'); ?>

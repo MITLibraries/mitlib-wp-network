@@ -1679,12 +1679,22 @@ p.search {
 	padding-left: var(--content-side-margins);
 	padding-right: var(--content-side-margins);  
  }
- 
- /* Overriding container width to match new nav and footer */ 
- .container.container-fluid {
+
+/* ================================================== */
+/* Container Width Overrides for v2 Header and Footer */
+/* ================================================== */
+
+/* News index */ 
+.container.container-fluid, body.page-in-the-media #content, body.single .newsBackGround .container{
 	margin: 0 auto;
 	max-width: var(--content-max-width);
 	width: 100% !important;
 	padding-left: var(--content-side-margins);
 	padding-right: var(--content-side-margins);  	
- }
+}
+
+body.page-in-the-media #content {
+	.main-content {
+		padding-left: 0;
+	}
+}
