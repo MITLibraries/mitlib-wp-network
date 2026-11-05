@@ -8,7 +8,8 @@
   "scripts": {
     "build": "npm run build --workspaces",
     "lint:css": "npm run lint:css --workspaces",
-    "lint:js": "npm run lint:js --workspaces"
+    "lint:js": "npm run lint:js --workspaces",
+    "packages-update": "wp-scripts packages-update"
   },
   "repository": {
     "type": "git",
@@ -30,6 +31,6 @@
     "npm": ">=10.0.0"
   },
   "devDependencies": {
-    "@wordpress/scripts": "^34.2.0"
+    "@wordpress/scripts": "^37.1.0"
   }
 }
