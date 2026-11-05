@@ -23,6 +23,12 @@
     background: linear-gradient(90deg, #1A1A1A 24.52%, rgba(26, 26, 26, 0.50) 70.67%, rgba(26, 26, 26, 0.00) 100%);
   }
 
+  @media (max-width: 568px) {
+    .overlay {
+      padding-bottom: calc(var(--content-section-vertical-padding) + var(--sp-800));
+    }
+  }
+
   .hero-content {
     max-width: 800px;
   }
