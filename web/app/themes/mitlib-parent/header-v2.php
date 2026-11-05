@@ -119,9 +119,7 @@ if ( 'slim' === get_option( 'menu_style_setting' ) ) {
 		<section class="global-expanding-search">
 			<div class="global-search-wrapper">
 
-				<?php if ( is_active_sidebar( 'global-navigation-search' ) ) : ?>
-					<?php dynamic_sidebar( 'global-navigation-search' ); ?>
-				<?php endif; ?>
+				<?php render_global_navigation_search(); ?>
 				
 			</div>
 		</section>

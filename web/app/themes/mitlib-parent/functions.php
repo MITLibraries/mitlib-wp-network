@@ -9,6 +9,52 @@
 namespace Mitlib\Parent;
 
 /**
+ * Render the main site's shared navigation search widgets.
+ */
+function render_global_navigation_search() {
+	global $_wp_sidebars_widgets, $sidebars_widgets, $wp_registered_widgets, $wp_widget_factory;
+
+	$switched_blog = get_current_blog_id() !== get_main_site_id();
+	if ( ! $switched_blog ) {
+		dynamic_sidebar( 'global-navigation-search' );
+		return;
+	}
+
+	$saved_sidebar_cache = $_wp_sidebars_widgets;
+	$saved_sidebars = $sidebars_widgets;
+	$saved_widgets = $wp_registered_widgets;
+	switch_to_blog( get_main_site_id() );
+	try {
+		$main_sidebars = get_option( 'sidebars_widgets', array() );
+		$_wp_sidebars_widgets = $main_sidebars;
+		$search_widgets = $_wp_sidebars_widgets['global-navigation-search'] ?? array();
+		$multisearch_file = WP_PLUGIN_DIR . '/mitlib-multisearch-widget/class-multisearch-widget.php';
+		if ( preg_grep( '/^multisearch-/', $search_widgets ) && ! class_exists( '\mitlib\Multisearch_Widget' ) && is_readable( $multisearch_file ) ) {
+			require_once $multisearch_file;
+			register_widget( '\mitlib\Multisearch_Widget' );
+		}
+		foreach ( $wp_widget_factory->widgets as $widget ) {
+			$widget->_register();
+		}
+		$_wp_sidebars_widgets = $main_sidebars;
+		$main_sidebar_filter = static function () use ( $main_sidebars ) {
+			return $main_sidebars;
+		};
+		add_filter( 'sidebars_widgets', $main_sidebar_filter, PHP_INT_MAX );
+		try {
+			dynamic_sidebar( 'global-navigation-search' );
+		} finally {
+			remove_filter( 'sidebars_widgets', $main_sidebar_filter, PHP_INT_MAX );
+		}
+	} finally {
+		$wp_registered_widgets = $saved_widgets;
+		$_wp_sidebars_widgets = $saved_sidebar_cache;
+		$sidebars_widgets = $saved_sidebars;
+		restore_current_blog();
+	}
+}
+
+/**
  * Get menu markup for a location, falling back to the main site's menu.
  *
  * @param string $location The registered menu location.
