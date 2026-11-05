@@ -1679,3 +1679,12 @@ p.search {
 	padding-left: var(--content-side-margins);
 	padding-right: var(--content-side-margins);  
  }
+ 
+ /* Overriding container width to match new nav and footer */ 
+ .container.container-fluid {
+	margin: 0 auto;
+	max-width: var(--content-max-width);
+	width: 100% !important;
+	padding-left: var(--content-side-margins);
+	padding-right: var(--content-side-margins);  	
+ }
