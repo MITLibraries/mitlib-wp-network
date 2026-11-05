@@ -211,6 +211,9 @@ section.header-wrapper {
             margin-top: var(--sp-050);
           }
         }
+
+        > li .navigation-chat-slot a {display: inline-flex;}
+
       }
 
       > li.is-open {
@@ -502,6 +505,18 @@ dialog.mobile-menu-dialog {
     .menu-item-description {
       display: block;
     }
+
+    .navigation-chat-slot #libchat_2449ef77b8e3d25d5a4e3d55dda5f54c6243c3fe4d169d2da65b2c6003dfd65b {
+      a {
+        display: inline-flex;
+        width: 100%;
+      }
+      img {
+        width: 132px;
+        height: 24px;
+      }
+    }
+
   }
 
   .mobile-menu-institute-navigation {

@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	const mobileMenuTrigger = navigation.querySelector('.mobile-menu-toggle');
 	const mobileDialog = document.querySelector('#mobile-menu-dialog');
 	// This media query governs JavaScript focus and dialog cleanup when crossing layouts.
-	const mobileBreakpoint = window.matchMedia('(max-width: 64rem)');
+	const mobileBreakpoint = window.matchMedia('(max-width: 820px)');
 	// Either search trigger may be absent on a particular header layout.
 	const searchControls = [searchTrigger, mobileSearchTrigger].filter(Boolean);
 	// Menu handlers can call this even when no search panel exists; search setup replaces it.
@@ -32,6 +32,12 @@ document.addEventListener('DOMContentLoaded', function () {
 		const mobileMenu = rootMenu.cloneNode(true);
 		mobileMenu.removeAttribute('id');
 		mobileMenu.className = 'mobile-main-menu';
+		const desktopChatSlot = rootMenu.querySelector('.navigation-chat-slot');
+		const mobileChatSlot = mobileMenu.querySelector('.navigation-chat-slot');
+		const chatWidget = desktopChatSlot && desktopChatSlot.firstElementChild;
+		if (mobileChatSlot) {
+			mobileChatSlot.replaceChildren();
+		}
 		// WordPress assigns IDs to menu items; a second copy must not duplicate those IDs.
 		mobileMenu.querySelectorAll('[id]').forEach(function (element) {
 			element.removeAttribute('id');
@@ -109,6 +115,9 @@ document.addEventListener('DOMContentLoaded', function () {
 			}
 			closeMenus();
 			closeSearch();
+			if (chatWidget && mobileChatSlot) {
+				mobileChatSlot.appendChild(chatWidget);
+			}
 			// The native dialog handles modal focus containment and makes the page outside inert.
 			mobileDialog.showModal();
 			mobileMenuTrigger.setAttribute('aria-expanded', 'true');
@@ -120,6 +129,9 @@ document.addEventListener('DOMContentLoaded', function () {
 		});
 		// Centralize cleanup for every closing path, including the button and Escape key.
 		mobileDialog.addEventListener('close', function () {
+			if (chatWidget && desktopChatSlot) {
+				desktopChatSlot.appendChild(chatWidget);
+			}
 			mobileMenuTrigger.setAttribute('aria-expanded', 'false');
 			document.body.classList.remove('mobile-menu-open');
 			// Do not restore focus to a mobile trigger when the layout has switched to desktop.

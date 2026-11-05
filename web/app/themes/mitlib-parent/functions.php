@@ -852,3 +852,29 @@ function wrap_main_navigation_item_title( $title, $item, $args, $depth ) {
 	return $title;
 }
 add_filter( 'nav_menu_item_title', 'Mitlib\\Parent\\wrap_main_navigation_item_title', 10, 4 );
+
+/**
+ * Replace the navigation chat placeholder with its LibChat widget.
+ *
+ * @param string $item_output Menu item markup.
+ * @param object $item Menu item object.
+ * @param int    $depth Menu item depth.
+ * @param object $args Menu arguments.
+ * @return string Filtered menu item markup.
+ */
+function render_navigation_chat_widget( $item_output, $item, $depth, $args ) {
+	if ( ! isset( $args->theme_location ) || 'main-header-navigation' !== $args->theme_location || ! in_array( 'chat-widget-trigger', (array) $item->classes, true ) ) {
+		return $item_output;
+	}
+
+	wp_enqueue_script(
+		'navigation-libchat',
+		'https://libanswers.mit.edu/load_chat.php?hash=2449ef77b8e3d25d5a4e3d55dda5f54c6243c3fe4d169d2da65b2c6003dfd65b',
+		array( 'library-nav-and-search' ),
+		null,
+		true
+	);
+
+	return '<div class="navigation-chat-slot"><div id="libchat_2449ef77b8e3d25d5a4e3d55dda5f54c6243c3fe4d169d2da65b2c6003dfd65b"></div></div>';
+}
+add_filter( 'walker_nav_menu_start_el', 'Mitlib\\Parent\\render_navigation_chat_widget', 20, 4 );
