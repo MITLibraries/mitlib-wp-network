@@ -1684,8 +1684,11 @@ p.search {
 /* Container Width Overrides for v2 Header and Footer */
 /* ================================================== */
 
-/* News index */ 
-.container.container-fluid, body.page-in-the-media #content, body.single .newsBackGround .container{
+
+.container.container-fluid, /* News index */ 
+body.page-in-the-media #content, /* In the media */
+body.single .newsBackGround .container /* Single news article */
+{
 	margin: 0 auto;
 	max-width: var(--content-max-width);
 	width: 100% !important;
