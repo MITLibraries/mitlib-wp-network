@@ -1,7 +1,7 @@
 /*
 Theme Name: MITlib News
 Author: MIT Libraries
-Version: 0.6
+Version: 0.7
 Description: A child theme of the MIT Libraries' parent, focused on News features and content.
 Template: mitlib-parent
 
@@ -770,6 +770,19 @@ select#bibMenu {
 	background-color: rgb(255,255,255);
 	width: 100%;
 	margin-bottom: 3px;
+
+	.innerPadding {
+		margin: 0 auto;
+		max-width: var(--content-max-width);
+		width: 100%;
+		padding-left: var(--content-side-margins);
+		padding-right: var(--content-side-margins);  
+
+		.row {
+			margin-left: 0 !important;
+			margin-right: 0 !important;
+		}
+	}
 }
 .mySinglePic {
 	width: 451px;
