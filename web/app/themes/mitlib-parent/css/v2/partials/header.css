@@ -74,6 +74,7 @@ div.institute-bar {
 
       li::before {
         color: var(--color-gray-400);
+        content: var(--fa, "");
         display: inline-block;
         font-family: "Font Awesome 6 Free";
         font-size: 12px;
