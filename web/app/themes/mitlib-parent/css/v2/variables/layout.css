@@ -1,4 +1,7 @@
 :root {
+	/* Z-index value declarations */
+	--z-global-navigation: 1020;
+	--z-navigation-dropdown: 10;
 
 	/* Breakpoints (note these can not be used inside media query definitions) */
 	--bp-2xs: 375px;

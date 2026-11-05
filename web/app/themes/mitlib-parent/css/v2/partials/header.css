@@ -112,6 +112,11 @@ section.header-wrapper {
   align-items: center;
 }
 
+section.library-navigation-bar {
+  position: relative;
+  z-index: var(--z-global-navigation);
+}
+
 .header-main {
   max-width: var(--content-max-width);
   background-color: transparent;
@@ -179,7 +184,7 @@ section.header-wrapper {
         position: absolute;
         top: calc(100% + 4px);
         right: 0;
-        z-index: 10;
+        z-index: var(--z-navigation-dropdown);
         min-width: max-content;
         flex-direction: column;
         gap: 0;
