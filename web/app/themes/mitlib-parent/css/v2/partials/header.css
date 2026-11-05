@@ -53,11 +53,6 @@ div.logo-lockup {
 /* Header specific styles */
 /* ====================== */
 
-div.institute-bar *:focus-visible, .header-wrapper *:focus-visible {
-  outline: 2px solid var(--color-focus-light) !important;
-  outline-offset: 2px;
-}
-
 /* Institute Bar */
 div.institute-bar {
   background-color: var(--color-gray-900);
