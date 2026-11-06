@@ -633,7 +633,7 @@ section.global-expanding-search {
 /* Old page overrides */
 /* ================== */
 
-#stage {
+#stage, body.page-template-page-hours #content {
   max-width: var(--content-max-width);
   margin: 0 auto;
 }
@@ -659,3 +659,4 @@ section.global-expanding-search {
     margin: 0 auto;    
   }
 }
+
