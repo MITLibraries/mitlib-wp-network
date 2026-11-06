@@ -1387,7 +1387,6 @@ a.px14 {
 		line-height: 42px;
 		text-align: center;
 		width: 42px;
-		z-index: -1 !important;
 		font-size: 24px;
 		font-weight: 300;
 		position: relative;
