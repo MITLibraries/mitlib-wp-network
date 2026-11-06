@@ -284,7 +284,12 @@ document.addEventListener('DOMContentLoaded', function () {
 					'#hero #search-form input[type="search"], #hero form.search-bento input[name="q"], form.search-bento input[name="q"]'
 				);
 				if (heroSearchInput) {
-					heroSearchInput.focus();
+					heroSearchInput.focus({ preventScroll: true });
+					const heroSearchForm = heroSearchInput.closest('form') || heroSearchInput;
+					window.scrollTo({
+						top: window.scrollY + heroSearchForm.getBoundingClientRect().top - 64,
+						behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth',
+					});
 					return;
 				}
 
