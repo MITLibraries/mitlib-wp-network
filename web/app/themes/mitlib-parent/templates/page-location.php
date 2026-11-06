@@ -43,5 +43,5 @@ get_header( 'v2'); ?>
 		<?php endwhile; // end of the loop. ?>
 		
 		</div>
-
+	</div>
 <?php get_footer( 'v2' ); ?>
