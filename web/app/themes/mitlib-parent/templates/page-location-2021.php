@@ -42,5 +42,5 @@ $location_posts = new \WP_Query( $args );
 	<?php endwhile; // end of the loop. ?>
 
 </div>
-
+</div>
 <?php get_footer( 'v2' ); ?>
