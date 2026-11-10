@@ -8,6 +8,10 @@
 		padding: 0 1em;
 	}
 
+	.nav-main.hidden-mobile li:not(.small) a {
+		font-size: 16px;
+	}
+
 	.name-site {
 		order: 2;
 		@include rem-first(min-width, 4.8125);
