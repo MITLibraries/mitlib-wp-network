@@ -43,7 +43,7 @@ if ( 'slim' === get_option( 'menu_style_setting' ) ) {
 	<div id="skip"><a href="#content">Skip to Main Content</a></div>
 
 	<div class="wrap-page">
-		<header class="header-main flex-container flex-end">
+		<header class="header-main flex-container flex-end old-header">
 			<?php if ( 'full' === $menu ) { ?>
 				<?php get_template_part( 'inc/nav', 'hamburger' ); ?>
 			<?php } ?>
