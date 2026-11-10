@@ -11,7 +11,8 @@
 
 namespace Mitlib\Parent;
 
-get_header( 'v2' ); ?>
+$menu_variant = \Mitlib\MenuVersion\get_header_footer_variant() ?: 'v1';
+get_header( $menu_variant ); ?>
 
 <main id="content" class="block-editor">
 
@@ -377,5 +378,5 @@ get_header( 'v2' ); ?>
 </main>
 
 <?php
-	get_footer( 'v2' );
+	get_footer( $menu_variant );
 ?>

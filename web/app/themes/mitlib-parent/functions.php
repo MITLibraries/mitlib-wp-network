@@ -9,6 +9,101 @@
 namespace Mitlib\Parent;
 
 /**
+ * Render the main site's shared navigation search widgets.
+ */
+function render_global_navigation_search() {
+	global $_wp_sidebars_widgets, $sidebars_widgets, $wp_registered_widgets, $wp_widget_factory;
+
+	$switched_blog = get_current_blog_id() !== get_main_site_id();
+	if ( ! $switched_blog ) {
+		dynamic_sidebar( 'global-navigation-search' );
+		return;
+	}
+
+	$saved_sidebar_cache = $_wp_sidebars_widgets;
+	$saved_sidebars = $sidebars_widgets;
+	$saved_widgets = $wp_registered_widgets;
+	switch_to_blog( get_main_site_id() );
+	try {
+		$main_sidebars = get_option( 'sidebars_widgets', array() );
+		$_wp_sidebars_widgets = $main_sidebars;
+		$search_widgets = $_wp_sidebars_widgets['global-navigation-search'] ?? array();
+		$multisearch_file = WP_PLUGIN_DIR . '/mitlib-multisearch-widget/class-multisearch-widget.php';
+		if ( preg_grep( '/^multisearch-/', $search_widgets ) && ! class_exists( '\mitlib\Multisearch_Widget' ) && is_readable( $multisearch_file ) ) {
+			require_once $multisearch_file;
+			register_widget( '\mitlib\Multisearch_Widget' );
+		}
+		foreach ( $wp_widget_factory->widgets as $widget ) {
+			$widget->_register();
+		}
+		$_wp_sidebars_widgets = $main_sidebars;
+		$main_sidebar_filter = static function () use ( $main_sidebars ) {
+			return $main_sidebars;
+		};
+		add_filter( 'sidebars_widgets', $main_sidebar_filter, PHP_INT_MAX );
+		try {
+			dynamic_sidebar( 'global-navigation-search' );
+		} finally {
+			remove_filter( 'sidebars_widgets', $main_sidebar_filter, PHP_INT_MAX );
+		}
+	} finally {
+		$wp_registered_widgets = $saved_widgets;
+		$_wp_sidebars_widgets = $saved_sidebar_cache;
+		$sidebars_widgets = $saved_sidebars;
+		restore_current_blog();
+	}
+}
+
+/**
+ * Get menu markup for a location, falling back to the main site's menu.
+ *
+ * @param string $location The registered menu location.
+ * @param array  $args     Arguments passed to wp_nav_menu().
+ * @return string Menu markup, or an empty string when no menu is assigned.
+ */
+function get_v2_menu_markup( $location, $args ) {
+	$menu_locations = get_nav_menu_locations();
+	$menu_id = isset( $menu_locations[ $location ] ) ? absint( $menu_locations[ $location ] ) : 0;
+	$current_blog_id = get_current_blog_id();
+	$menu_blog_id = $current_blog_id;
+
+	if ( ! $menu_id ) {
+		$menu_blog_id = get_main_site_id();
+		$main_stylesheet = get_blog_option( $menu_blog_id, 'stylesheet' );
+		$main_theme_mods = get_blog_option( $menu_blog_id, 'theme_mods_' . $main_stylesheet, array() );
+		$main_menu_locations = isset( $main_theme_mods['nav_menu_locations'] ) ? $main_theme_mods['nav_menu_locations'] : array();
+		$menu_id = isset( $main_menu_locations[ $location ] ) ? absint( $main_menu_locations[ $location ] ) : 0;
+	}
+
+	if ( ! $menu_id ) {
+		return '';
+	}
+
+	$switched_blog = $current_blog_id !== $menu_blog_id;
+	if ( $switched_blog ) {
+		switch_to_blog( $menu_blog_id );
+	}
+
+	$markup = wp_nav_menu(
+		array_merge(
+			$args,
+			array(
+				'menu'           => $menu_id,
+				'theme_location' => $location,
+				'fallback_cb'    => false,
+				'echo'           => false,
+			)
+		)
+	);
+
+	if ( $switched_blog ) {
+		restore_current_blog();
+	}
+
+	return $markup;
+}
+
+/**
  * We use Navwalker to render custom secondary menus in a mobile-friendly way,
  * via the menu-secondary.php partial.
  *
@@ -72,7 +167,10 @@ function theme_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menu( 'primary', 'Primary Menu' );
 	register_nav_menu( 'secondary', 'Secondary Menu' );
-	register_nav_menu( 'footer', 'Footer Menu' );
+	register_nav_menu( 'main-header-navigation', 'Main Header Navigation' );
+	register_nav_menu( 'institute-bar-navigation', 'Institute Bar Navigation' );
+	register_nav_menu( 'footer', 'Footer Left Menu' );
+	register_nav_menu( 'footer-right-navigation', 'Footer Right Menu' );
 
 	/**
 	 * This theme uses a custom image size for featured images, displayed on
@@ -198,8 +296,8 @@ function setup_scripts_styles() {
 	wp_register_style( 'v2-type-scale', get_template_directory_uri() . '/css/v2/components/type-scale.css', array( 'v2-typography' ), $theme_version );
 
 	// TEMPLATES
-	wp_register_style( 'v2-header', get_template_directory_uri() . '/css/v2/partials/header.css', array( 'v2-color', 'v2-layout', 'v2-spacing', 'v2-typography' ), $theme_version );
-	wp_register_style( 'v2-footer', get_template_directory_uri() . '/css/v2/partials/footer.css', array( 'v2-color', 'v2-layout', 'v2-spacing', 'v2-typography' ), $theme_version );
+	wp_register_style( 'v2-header', get_template_directory_uri() . '/css/v2/partials/header.css', array( 'v2-color', 'v2-layout', 'v2-spacing', 'v2-typography', 'v2-corners', 'v2-effects', 'fontawesome' ), $theme_version );
+	wp_register_style( 'v2-footer', get_template_directory_uri() . '/css/v2/partials/footer.css', array( 'v2-color', 'v2-layout', 'v2-spacing', 'v2-effects', 'v2-typography' ), $theme_version );
 
 	// Register the pages where we're using these individual pieces. These will get enqueued below and contain the above as dependencies.
 
@@ -234,6 +332,7 @@ function setup_scripts_styles() {
 	wp_register_script( 'dev', get_template_directory_uri() . '/js/dev.js', array(), $theme_version, true );
 	wp_register_script( 'libchat', get_template_directory_uri() . '/js/libchat.js', array( 'jquery' ), $theme_version, true );
 	wp_register_script( 'menu-toggle', get_template_directory_uri() . '/js/menu.toggle.js', array(), $theme_version, true );
+	wp_register_script( 'library-nav-and-search', get_template_directory_uri() . '/js/library-nav-and-search.js', array(), $theme_version, true );
 	wp_register_script( 'parent-production', get_template_directory_uri() . '/js/alerts.js', array( 'dev', 'jquery', 'libchat', 'menu-toggle' ), $theme_version, true );
 
 	// Interior bundle.
@@ -257,6 +356,7 @@ function setup_scripts_styles() {
 
 	/* All-site JS */
 	wp_enqueue_script( 'modernizr' );
+	wp_enqueue_script( 'library-nav-and-search' );
 	wp_enqueue_script( 'parent-production' );
 	wp_add_inline_script( 'parent-production', 'const THEME_ROOT = "' . esc_js( get_template_directory_uri() ) . '";', 'before' );
 
@@ -286,7 +386,11 @@ function setup_scripts_styles() {
 	
 	wp_enqueue_style( 'adobe-fonts' );
 
-	// Conditonally load v2 styles for only pages with the v2 header
+	// Load v2 styles for header and footer, allowing all pages to have v2 variables
+	wp_enqueue_style( 'v2-header' );
+	wp_enqueue_style( 'v2-footer' );
+
+	// Conditonally load full v2 styles for pages with the v2 header (currently homepage)
 	if (is_page_template( 'templates/page-home-v2.php' )) {
 		wp_enqueue_style( 'v2-home' );
 		wp_enqueue_script( 'moment' );
@@ -498,6 +602,18 @@ function mitlib_sidebars_init() {
 			'before_title' => '<h3 class="widget-title">',
 			'after_title' => '</h3>',
 			'class' => '',
+		)
+	);
+
+	register_sidebar(
+		array(
+			'name'          => __( 'Global Navigation Search', 'mitlib' ),
+			'id'            => 'global-navigation-search',
+			'description'   => __( 'Appears in the expandable search area in the global navigation', 'mitlib' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
 		)
 	);
 
@@ -754,3 +870,57 @@ function is_child_page() {
 		return false;
 	}
 }
+
+/* If a description on a menu item exists, display it in the UI */
+add_filter( 'walker_nav_menu_start_el', 'Mitlib\\Parent\\add_menu_description', 10, 4 );
+function add_menu_description( $item_output, $item, $depth, $args ) {
+    if ( ! empty( $item->description ) ) {
+        // This inserts the description right before the closing anchor tag
+        $item_output = str_replace( '</a>', '<span class="menu-item-description">' . esc_html( $item->description ) . '</span></a>', $item_output );
+    }
+    return $item_output;
+}
+
+/**
+ * Wrap submenu labels in the main navigation so hover styling excludes descriptions.
+ *
+ * @param string $title Menu item title.
+ * @param object $item Menu item object.
+ * @param object $args Menu arguments.
+ * @param int    $depth Menu item depth.
+ * @return string Filtered menu item title.
+ */
+function wrap_main_navigation_item_title( $title, $item, $args, $depth ) {
+	if ( isset( $args->theme_location ) && 'main-header-navigation' === $args->theme_location && $depth > 0 ) {
+		return '<span class="menu-item-label">' . $title . '</span>';
+	}
+
+	return $title;
+}
+add_filter( 'nav_menu_item_title', 'Mitlib\\Parent\\wrap_main_navigation_item_title', 10, 4 );
+
+/**
+ * Replace the navigation chat placeholder with its LibChat widget.
+ *
+ * @param string $item_output Menu item markup.
+ * @param object $item Menu item object.
+ * @param int    $depth Menu item depth.
+ * @param object $args Menu arguments.
+ * @return string Filtered menu item markup.
+ */
+function render_navigation_chat_widget( $item_output, $item, $depth, $args ) {
+	if ( ! isset( $args->theme_location ) || 'main-header-navigation' !== $args->theme_location || ! in_array( 'chat-widget-trigger', (array) $item->classes, true ) ) {
+		return $item_output;
+	}
+
+	wp_enqueue_script(
+		'navigation-libchat',
+		'https://libanswers.mit.edu/load_chat.php?hash=2449ef77b8e3d25d5a4e3d55dda5f54c6243c3fe4d169d2da65b2c6003dfd65b',
+		array( 'library-nav-and-search' ),
+		null,
+		true
+	);
+
+	return '<div class="navigation-chat-slot"><div id="libchat_2449ef77b8e3d25d5a4e3d55dda5f54c6243c3fe4d169d2da65b2c6003dfd65b"></div></div>';
+}
+add_filter( 'walker_nav_menu_start_el', 'Mitlib\\Parent\\render_navigation_chat_widget', 20, 4 );

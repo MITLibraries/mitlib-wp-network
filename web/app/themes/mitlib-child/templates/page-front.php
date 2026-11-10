@@ -20,7 +20,7 @@ if ( is_active_sidebar( 'sidebar' ) ) {
 }
 ?>
 
-<?php get_header(); ?>
+<?php get_header( \Mitlib\MenuVersion\get_header_footer_variant() ); ?>
 
 <?php
 if ( is_front_page() ) {
@@ -52,4 +52,4 @@ if ( is_front_page() ) {
 
 </div><!-- end div#stage -->
 
-<?php get_footer(); ?>
+<?php get_footer( \Mitlib\MenuVersion\get_header_footer_variant() ); ?>

@@ -18,7 +18,7 @@ namespace Mitlib\News;
  */
 $post_count = 0;
 
-get_header();
+get_header( \Mitlib\MenuVersion\get_header_footer_variant() );
 
 get_template_part( 'inc/sub-header' );
 
@@ -159,5 +159,4 @@ $(document).ready(function() {
 });
 </script>
 
-<div class="container container-fluid">
-<?php get_footer(); ?>
+<?php get_footer( \Mitlib\MenuVersion\get_header_footer_variant() ); ?>

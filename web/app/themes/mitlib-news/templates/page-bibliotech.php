@@ -14,7 +14,7 @@ namespace Mitlib\News;
 // $pageRoot = getRoot( $post );
 // $section = get_post( $pageRoot );
 // $isRoot = $section->ID == $post->ID;
-get_header(); ?>
+get_header( \Mitlib\MenuVersion\get_header_footer_variant() ); ?>
 <?php get_template_part( 'inc/sub-header' ); ?>
 <?php get_template_part( 'inc/bib-header' ); ?>
 
@@ -127,4 +127,4 @@ $(document).ready(function() {
 });
 </script>
 <div class="container">
-<?php get_footer(); ?>
+<?php get_footer( \Mitlib\MenuVersion\get_header_footer_variant() ); ?>

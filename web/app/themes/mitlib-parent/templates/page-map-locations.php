@@ -20,7 +20,8 @@ if ( 'map' == $v ) {
 
 $gStudy24Url = '/study/24x7/';
 
-get_header(); ?>
+get_header( \Mitlib\MenuVersion\get_header_footer_variant() ); ?>
+
 	<script>
 		var showMap = <?php echo esc_js( $show_map ); ?>;
 	</script>	
@@ -241,4 +242,4 @@ get_header(); ?>
 					<?php get_sidebar(); ?>
 		</div>		
 	</div>
-<?php get_footer(); ?>
+<?php get_footer( \Mitlib\MenuVersion\get_header_footer_variant() ); ?>

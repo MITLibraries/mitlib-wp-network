@@ -1,4 +1,108 @@
-.footer-wrapper {
+.wrap-page > footer {
+  width: 100%;
+
+  > .libraries-footer .footer-wrapper, > .institute-bar .institute-wrapper {
+    width: 100%;
+    max-width: var(--content-max-width);
+    padding-left: var(--content-side-margins);
+    padding-right: var(--content-side-margins);
+    margin: 0 auto;
+  }
+
+}
+
+footer .libraries-footer {
+  display: flex;
+  justify-content: center;   
+  background: var(--color-gray-975) url("https://mitlib-wp-network.lndo.site/app/themes/mitlib-parent/images/vi-shape7-tp.png") no-repeat;
+
+  .footer-wrapper {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-1200);
+    padding-top: var(--sp-600);
+    padding-bottom: var(--sp-600);       
+
+    .logo-lockup {
+      width: 100px;
+      height: 45px;
+    }
+
+    .navigation-menus {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+
+      ul {
+        display: block;
+        line-height: 1.6;
+
+        li {
+          display: inline;
+          
+        }
+
+        li:not(.line-wrap):not(:last-child)::after {
+          content: "•";
+          display: inline-block;
+          color: var(--color-gray-800);
+          padding-inline: var(--sp-300) var(--sp-200);
+        }
+
+        li.line-wrap::after {
+          content: "\A";
+          white-space: pre;
+        }
+
+      }
+
+      /* Stack the two separate lists */
+      @media (max-width: 768px) {
+        
+        ul {
+          display: flex;
+          flex-direction: column;
+          gap: var(--sp-150);
+
+          li {display: block;}
+          li:not(.line-wrap):not(:last-child)::after {display: none;}
+
+        }
+      }   
+
+      a {
+        display: inline-block;
+        color: var(--color-gray-300);
+        text-decoration: none;
+        font-weight: var(--font-weight-regular);
+        font-size: 14px;
+
+        &:hover {
+          text-decoration: underline;
+          text-decoration-color: var(--color-gray-500);
+        }
+      }
+
+   
+    }
+
+    /* Stack the the two lists into a single list */
+    @media (max-width: 568px) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--sp-400);
+
+      .navigation-menus {
+        flex-direction: column;
+        gap: var(--sp-150);
+      }
+    }
+
+  }
+}
+
+
+.footer-wrapper.homepage-footer {
   background-color: var(--color-black);
   display: flex;
   justify-content: center;
@@ -56,6 +160,4 @@
       padding-left: var(--sp-500);
     }
   }
-
-
 }

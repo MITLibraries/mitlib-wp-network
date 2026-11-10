@@ -21,7 +21,7 @@
 
 namespace Mitlib\Child;
 
-get_header();
+get_header( \Mitlib\MenuVersion\get_header_footer_variant() );
 
 // Pages using this template should have one and only one category value. If
 // the page is placed in multiple categories, then the first term returned here
@@ -203,4 +203,4 @@ $location_name = $categories[0]->name;
 
 	</div>   <!-- stage --> 
 
-<?php get_footer(); ?>
+<?php get_footer( \Mitlib\MenuVersion\get_header_footer_variant() ); ?>

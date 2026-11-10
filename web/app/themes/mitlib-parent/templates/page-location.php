@@ -12,8 +12,8 @@
 
 namespace Mitlib\Parent;
 
-get_header();
-?>
+get_header( \Mitlib\MenuVersion\get_header_footer_variant() ); ?>
+
 		<!-- Version 1.9 -->
 		<?php get_template_part( 'inc/breadcrumbs' ); ?>
 
@@ -43,5 +43,5 @@ get_header();
 		<?php endwhile; // end of the loop. ?>
 		
 		</div>
-
-<?php get_footer(); ?>
+	</div>
+<?php get_footer( \Mitlib\MenuVersion\get_header_footer_variant() ); ?>

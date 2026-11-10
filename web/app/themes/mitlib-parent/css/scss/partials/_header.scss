@@ -1,4 +1,4 @@
-.header-main {
+.header-main.old-header {
 	position: relative;
 	background: #000 url(#{$imagesPath}/vi-shape7-tp.png) no-repeat 0 65%;
 	@include span-12-12;
@@ -6,6 +6,10 @@
 	@include bp-tablet--portrait {
 		justify-content: space-between;
 		padding: 0 1em;
+	}
+
+	.nav-main.hidden-mobile li:not(.small) a {
+		font-size: 16px;
 	}
 
 	.name-site {

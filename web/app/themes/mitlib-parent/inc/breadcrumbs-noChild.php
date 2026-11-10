@@ -10,5 +10,5 @@ namespace Mitlib\Parent;
 
 ?>
 <div id="betterBreadcrumbs" class="betterBreadcrumbs" role="navigation" aria-label="breadcrumbs">
-	<span><a href="/">Libraries home</a></span><span><?php the_title(); ?></span>
+	<div class="breadcrumbs-inner"><span><a href="/">Libraries home</a></span><span><?php the_title(); ?></span></div>
 </div>

@@ -16,7 +16,8 @@
 
 namespace Mitlib\Parent;
 
-get_header(); ?>
+get_header( \Mitlib\MenuVersion\get_header_footer_variant() ); ?>
+
 		<style>
 			.guide-style > article {
 				margin-bottom: 2em;
@@ -514,4 +515,4 @@ get_header(); ?>
 
 		</div>
 		<?php endwhile; // end of the loop. ?>
-<?php get_footer(); ?>
+<?php get_footer( \Mitlib\MenuVersion\get_header_footer_variant() ); ?>

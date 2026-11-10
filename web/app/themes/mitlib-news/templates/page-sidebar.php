@@ -11,7 +11,7 @@
 
 namespace Mitlib\News;
 
-get_header(); ?>
+get_header( \Mitlib\MenuVersion\get_header_footer_variant() ); ?>
 
 <?php get_template_part( 'inc/subheader-exception' ); ?>
 
@@ -51,4 +51,4 @@ get_header(); ?>
 
 </main><!-- end #main -->
 </div><!-- end #primary -->
-<?php get_footer(); ?>
+<?php get_footer( \Mitlib\MenuVersion\get_header_footer_variant() ); ?>

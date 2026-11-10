@@ -9,7 +9,7 @@
 namespace Mitlib\Parent;
 
 ?>
-	<footer>
+	<footer class="old-footer">
 
 		<?php get_template_part( 'inc/footer', 'main' ); ?>
 

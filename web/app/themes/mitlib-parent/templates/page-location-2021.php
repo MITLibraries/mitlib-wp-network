@@ -15,7 +15,7 @@
 
 namespace Mitlib\Parent;
 
-get_header(); ?>
+get_header( \Mitlib\MenuVersion\get_header_footer_variant() ); ?>
 
 <?php get_template_part( 'inc/breadcrumbs' ); ?>
 
@@ -42,5 +42,5 @@ $location_posts = new \WP_Query( $args );
 	<?php endwhile; // end of the loop. ?>
 
 </div>
-
-<?php get_footer(); ?>
+</div>
+<?php get_footer( \Mitlib\MenuVersion\get_header_footer_variant() ); ?>
