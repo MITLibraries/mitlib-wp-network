@@ -16,7 +16,7 @@
 
 namespace Mitlib\Parent;
 
-get_header( 'v2'); ?>
+get_header( \Mitlib\MenuVersion\get_header_footer_variant() ); ?>
 
 <div class="col-2 flex-item ">
 	<div id="home-posts-news" class="posts--preview news-events">
@@ -149,5 +149,5 @@ get_header( 'v2'); ?>
 }
 </style>
 
-<?php get_footer( 'v2' ); ?>
+<?php get_footer( \Mitlib\MenuVersion\get_header_footer_variant() ); ?>
 

@@ -16,7 +16,7 @@ namespace Mitlib\Parent;
 
 $gStudy24Url = '/study/24x7/';
 
-get_header( 'v2' ); ?>
+get_header( \Mitlib\MenuVersion\get_header_footer_variant() ); ?>
 
 		<?php get_template_part( 'inc/breadcrumbs' ); ?>
 
@@ -172,4 +172,4 @@ get_header( 'v2' ); ?>
 			</div><!-- end div.content.has-sidebar -->		
 		</div><!-- end div#stage -->	
 
-<?php get_footer( 'v2' ); ?>
+<?php get_footer( \Mitlib\MenuVersion\get_header_footer_variant() ); ?>

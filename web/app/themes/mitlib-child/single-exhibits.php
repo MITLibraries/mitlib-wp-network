@@ -9,7 +9,7 @@
 
 namespace Mitlib\Child;
 
-get_header('v2');
+get_header( \Mitlib\MenuVersion\get_header_footer_variant() );
 
 get_template_part( 'inc/breadcrumbs', 'child' );
 
@@ -62,4 +62,4 @@ $location_info = get_exhibit_location();
 
 </div><!-- end div#stage -->
 
-<?php get_footer('v2'); ?>
+<?php get_footer( \Mitlib\MenuVersion\get_header_footer_variant() ); ?>

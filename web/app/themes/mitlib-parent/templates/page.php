@@ -13,7 +13,9 @@
 
 namespace Mitlib\Parent;
 
-get_header( 'v2' ); ?>
+
+$menu_variant = \Mitlib\MenuVersion\get_header_footer_variant();
+get_header( $menu_variant ); ?>
 
 <?php if ( is_active_sidebar( 'sidebar-search' ) ) : ?>
 	<div id="sidebar-search" class="widget-area" role="complementary">
@@ -63,4 +65,4 @@ while ( have_posts() ) : // Start of the loop.
 
 <?php endwhile; // End of the loop. ?>
 
-<?php get_footer( 'v2' ); ?>
+<?php get_footer( $menu_variant ); ?>

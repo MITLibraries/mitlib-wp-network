@@ -14,7 +14,7 @@ namespace Mitlib\News;
 // $pageRoot = getRoot( $post );
 // $section = get_post( $pageRoot );
 // $isRoot = $section->ID == $post->ID;
-get_header( 'v2' ); ?>
+get_header( \Mitlib\MenuVersion\get_header_footer_variant() ); ?>
 <?php get_template_part( 'inc/sub-header' ); ?>
 
 
@@ -182,5 +182,5 @@ $(document).ready(function() {
 </script>
 <div class="container container-fluid">
 <?php
-	get_footer( 'v2' );
+	get_footer( \Mitlib\MenuVersion\get_header_footer_variant() );
 

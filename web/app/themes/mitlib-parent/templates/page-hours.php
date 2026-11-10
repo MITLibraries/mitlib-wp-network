@@ -26,7 +26,7 @@ if ( ! $_GET['d'] ) {
 }
 // phpcs:enable
 
-get_header( 'v2');
+get_header( \Mitlib\MenuVersion\get_header_footer_variant() );
 
 $nextMon = 'next monday';
 
@@ -419,4 +419,4 @@ endwhile;
 	</div> <!-- end .content-page -->
 </div> <!-- end #content -->
 
-<?php get_footer( 'v2' ); ?>
+<?php get_footer( \Mitlib\MenuVersion\get_header_footer_variant() ); ?>
