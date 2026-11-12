@@ -1,8 +1,7 @@
 /* Applies MIT Libraries button styles for primary and secondary buttons */
 /* Applies both globaly buttons and gutenberg block editor buttons */
 
-a.button,
-.wp-block-button .wp-block-button__link {
+a.button {
   border: 1px solid var(--color-button-base-border-primary);
   background-color: var(--color-button-base-bg-primary);
   color: var(--color-button-base-text-primary);
@@ -19,16 +18,16 @@ a.button,
     border-color: var(--color-button-hover-border-primary);
     color: var(--color-button-hover-text-primary);
   }  
-}
 
-a.button.secondary,
-.wp-block-button.is-style-secondary .wp-block-button__link {
-  border: 1px solid var(--color-button-base-border-secondary);
-  background-color: var(--color-button-base-bg-secondary);
-  color: var(--color-button-base-text-secondary);
+  &.secondary {
+    border: 1px solid var(--color-button-base-border-secondary);
+    background-color: var(--color-button-base-bg-secondary);
+    color: var(--color-button-base-text-secondary);
 
-  &:hover {
-    background-color: var(--color-button-hover-bg-secondary);
-    color: var(--color-button-hover-text-secondary);
-  }  
+    &:hover {
+      background-color: var(--color-button-hover-bg-secondary);
+      color: var(--color-button-hover-text-secondary);
+    }  
+  }
+
 }
