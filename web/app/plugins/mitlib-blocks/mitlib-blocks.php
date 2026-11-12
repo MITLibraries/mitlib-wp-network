@@ -50,6 +50,34 @@ function register_blocks() {
 add_action( 'init', 'Mitlib\Blocks\register_blocks' );
 
 /**
+ * Replaces the core button styles with MIT Libraries button styles.
+ *
+ * @param array  $args      Block registration arguments.
+ * @param string $block_name Block type name.
+ * @return array
+ */
+function filter_button_styles( $args, $block_name ) {
+	if ( 'core/button' !== $block_name ) {
+		return $args;
+	}
+
+	$args['styles'] = array(
+		array(
+			'name'      => 'primary',
+			'label'     => __( 'Primary', 'mitlib-blocks' ),
+			'isDefault' => true,
+		),
+		array(
+			'name'  => 'secondary',
+			'label' => __( 'Secondary', 'mitlib-blocks' ),
+		),
+	);
+
+	return $args;
+}
+add_filter( 'register_block_type_args', 'Mitlib\Blocks\filter_button_styles', 10, 2 );
+
+/**
  * Registers a new category that will contain the Libraries' custom blocks.
  *
  * @param array $categories Array of categories for block types.
