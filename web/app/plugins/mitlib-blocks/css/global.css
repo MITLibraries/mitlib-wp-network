@@ -1,3 +1,6 @@
+/* Global styles for MIT Libraries blocks */
+
+/* Buttons */
 .wp-block-button .wp-block-button__link {
     background-color: var(--color-button-base-bg-primary);
     border-radius: 0;
@@ -23,4 +26,12 @@
         background-color: var(--color-button-hover-bg-secondary);
         color: var(--color-button-hover-text-secondary);
     }
+}
+
+/* Add the custom class "callout-background" to give an element a gray background and padding */
+.callout-background {
+    background-color: var(--color-bg-secondary);
+    padding: var(--sp-800);
+    margin-top: var(--sp-800);
+    margin-bottom: var(--sp-800);
 }
