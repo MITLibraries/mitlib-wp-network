@@ -115,7 +115,42 @@ a.link-on-dark {
     margin-top: 1em;
   }
 
-
   p {margin-bottom: 1em !important;}
+
+  ul, ol {
+    margin-left: 1.75em;
+
+    li {
+      padding-left: 0.25em;
+      margin-bottom: 0.75em;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      > ul, > ol {
+        margin-top: 0.5em;
+        padding-bottom: 0.5em;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+    }
+
+    & + p {
+      margin-top: 1em;
+    }
+
+  }
+
+  ul {
+    list-style: disc outside;
+  }
+
+  ol {
+    list-style: decimal outside;
+  }
 
 }
