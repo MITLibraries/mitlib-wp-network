@@ -200,6 +200,7 @@ function setup_scripts_styles() {
 	// TEMPLATES
 	wp_register_style( 'v2-header', get_template_directory_uri() . '/css/v2/partials/header.css', array( 'v2-color', 'v2-layout', 'v2-spacing', 'v2-typography' ), $theme_version );
 	wp_register_style( 'v2-footer', get_template_directory_uri() . '/css/v2/partials/footer.css', array( 'v2-color', 'v2-layout', 'v2-spacing', 'v2-typography' ), $theme_version );
+	wp_register_style( 'v2-templates', get_template_directory_uri() . '/css/v2/pages/templates.css', array( 'v2-color', 'v2-layout', 'v2-spacing', 'v2-typography' ), $theme_version );
 
 	// Register the pages where we're using these individual pieces. These will get enqueued below and contain the above as dependencies.
 
@@ -287,7 +288,8 @@ function setup_scripts_styles() {
 	wp_enqueue_style( 'adobe-fonts' );
 
 	// Conditonally load v2 styles for only pages with the v2 header
-	if (is_page_template( 'templates/page-home-v2.php' )) {
+	if ( is_page_template( array( 'templates/page-home-v2.php', 'templates/page-with-header.php' ) ) ) {
+		wp_enqueue_style( 'v2-templates' );	
 		wp_enqueue_style( 'v2-home' );
 		wp_enqueue_script( 'moment' );
 		wp_enqueue_script( 'underscore' );
@@ -754,3 +756,4 @@ function is_child_page() {
 		return false;
 	}
 }
+

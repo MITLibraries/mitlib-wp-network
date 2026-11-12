@@ -1,0 +1,62 @@
+/* ========================== */
+/* Template-level page styles */
+/* ========================== */
+
+/* NOTE: this template styling contains some custom new typesetting values that eventually will need to be centralized when all pages can use the new type scale from v2. */
+
+/* Page Template: page-with-header.php */
+.styled-header {
+    background-color: var(--color-bg-secondary);
+    background-position: center center;
+    background-size: cover;
+
+    .styled-header__content {
+        padding: var(--content-section-vertical-padding) var(--content-side-margins);
+        margin: 0 auto;
+        max-width: var(--content-max-width);
+        width: 100%;
+
+        h1 {
+            font-size: 48px;
+        }
+
+        p {
+            margin-bottom: 0 !important;
+            font-family: var(--font-family-heading);
+            font-size: 24px;
+            font-weight: 400;
+            color: var(--color-text-secondary);
+            letter-spacing: 0.01em;
+            
+            &::after {
+                content: '';
+                display: block;
+                height: 4px;
+                width: 64px;
+                background-color: var(--color-magenta-500);
+                margin-top: 16px;
+            }            
+        }
+    }
+
+    &.has-image {
+
+        .styled-header__headergroup {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.85);
+            padding: 32px;
+            margin-left: -32px;
+        }
+
+        p::after {display: none;}
+    }
+
+}
+
+#content.page-template {
+
+    .content-wrapper {
+        padding: var(--content-section-vertical-padding) var(--content-side-margins);       
+    }
+
+}
