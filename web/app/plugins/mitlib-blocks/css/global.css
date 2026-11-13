@@ -1,0 +1,37 @@
+/* Global styles for MIT Libraries blocks */
+
+/* Buttons */
+.wp-block-button .wp-block-button__link {
+    background-color: var(--color-button-base-bg-primary);
+    border-radius: 0;
+    border: 1px solid var(--color-button-base-border-primary);
+    color: var(--color-button-base-text-primary);
+    font-size: 16px;
+    padding: var(--sp-200) var(--sp-400);
+    transition: all .25s ease-in-out 0s;
+
+    &:hover {
+        background-color: var(--color-button-hover-bg-primary);
+        color: var(--color-button-hover-text-primary);
+        text-decoration: none;
+    }
+}
+
+.wp-block-button.is-style-secondary .wp-block-button__link {
+    background-color: var(--color-button-base-bg-secondary);
+    border: 1px solid var(--color-button-base-border-secondary);
+    color: var(--color-button-base-text-secondary);
+
+    &:hover {
+        background-color: var(--color-button-hover-bg-secondary);
+        color: var(--color-button-hover-text-secondary);
+    }
+}
+
+/* Add the custom class "callout-background" to give an element a gray background and padding */
+.callout-background {
+    background-color: var(--color-bg-secondary);
+    padding: var(--sp-800);
+    margin-top: var(--sp-800);
+    margin-bottom: var(--sp-800);
+}

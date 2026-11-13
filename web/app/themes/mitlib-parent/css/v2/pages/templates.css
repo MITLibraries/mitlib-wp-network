@@ -1,0 +1,84 @@
+/* ========================== */
+/* Template-level page styles */
+/* ========================== */
+
+/* NOTE: this template styling contains some custom new typesetting values that eventually will need to be centralized when all pages can use the new type scale from v2. */
+
+/* Page Template: page-with-header.php */
+.styled-header {
+    position: relative;
+    background-color: var(--color-bg-secondary);
+
+    .styled-header__image,
+    .styled-header__overlay {
+        position: absolute;
+        inset: 0;
+    }
+
+    .styled-header__image {
+        z-index: 0;
+        background-position: center center;
+        background-size: cover;
+    }
+
+    .styled-header__overlay {
+        z-index: 1;
+        background: linear-gradient(90deg, #1A1A1A 24.52%, rgba(26, 26, 26, 0.50) 70.67%, rgba(26, 26, 26, 0.00) 100%);
+        opacity: 0.75;
+    }
+
+    .styled-header__content {
+        position: relative;
+        z-index: 2;
+        padding: var(--content-section-vertical-padding) var(--content-side-margins);
+        margin: 0 auto;
+        max-width: var(--content-max-width);
+        width: 100%;
+
+        h1 {
+            font-size: 48px;
+        }
+
+        p {
+            margin-bottom: 0 !important;
+            font-family: var(--font-family-heading);
+            font-size: 24px;
+            font-weight: 400;
+            color: var(--color-text-secondary);
+            letter-spacing: 0.01em;
+            
+            &::after {
+                content: '';
+                display: block;
+                height: 4px;
+                width: 64px;
+                background-color: var(--color-magenta-500);
+                margin-top: 16px;
+            }            
+        }
+    }
+
+    &.has-image {        
+
+        .styled-header__content {
+            h1 {
+                color: var(--color-text-on-color);
+            }
+
+            p {
+                color: var(--color-gray-300);
+            }
+        }
+
+        p::after {display: none;}
+    }
+
+}
+
+#content.page-template {
+
+    .content-wrapper {
+        padding: var(--content-section-vertical-padding) var(--content-side-margins);       
+    }
+
+}
