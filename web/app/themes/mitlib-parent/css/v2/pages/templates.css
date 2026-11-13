@@ -24,7 +24,7 @@
     .styled-header__overlay {
         z-index: 1;
         background: linear-gradient(90deg, #1A1A1A 24.52%, rgba(26, 26, 26, 0.50) 70.67%, rgba(26, 26, 26, 0.00) 100%);
-        opacity: 0.9;
+        opacity: 0.75;
     }
 
     .styled-header__content {
