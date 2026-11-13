@@ -6,11 +6,30 @@
 
 /* Page Template: page-with-header.php */
 .styled-header {
+    position: relative;
     background-color: var(--color-bg-secondary);
-    background-position: center center;
-    background-size: cover;
+
+    .styled-header__image,
+    .styled-header__overlay {
+        position: absolute;
+        inset: 0;
+    }
+
+    .styled-header__image {
+        z-index: 0;
+        background-position: center center;
+        background-size: cover;
+    }
+
+    .styled-header__overlay {
+        z-index: 1;
+        background: linear-gradient(90deg, #1A1A1A 24.52%, rgba(26, 26, 26, 0.50) 70.67%, rgba(26, 26, 26, 0.00) 100%);
+        opacity: 0.9;
+    }
 
     .styled-header__content {
+        position: relative;
+        z-index: 2;
         padding: var(--content-section-vertical-padding) var(--content-side-margins);
         margin: 0 auto;
         max-width: var(--content-max-width);
@@ -39,13 +58,16 @@
         }
     }
 
-    &.has-image {
+    &.has-image {        
 
-        .styled-header__headergroup {
-            display: inline-block;
-            background-color: rgba(255, 255, 255, 0.85);
-            padding: 32px;
-            margin-left: -32px;
+        .styled-header__content {
+            h1 {
+                color: var(--color-text-on-color);
+            }
+
+            p {
+                color: var(--color-gray-300);
+            }
         }
 
         p::after {display: none;}
