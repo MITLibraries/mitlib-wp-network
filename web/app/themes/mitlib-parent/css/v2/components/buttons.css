@@ -1,5 +1,4 @@
 /* Applies MIT Libraries button styles for primary and secondary buttons */
-/* Applies both globaly buttons and gutenberg block editor buttons */
 
 a.button {
   border: 1px solid var(--color-button-base-border-primary);
