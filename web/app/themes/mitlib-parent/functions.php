@@ -84,6 +84,34 @@ function theme_setup() {
 add_action( 'after_setup_theme', 'Mitlib\Parent\theme_setup' );
 
 /**
+ * Replaces the core button styles with MIT Libraries button styles.
+ *
+ * @param array  $args       Block registration arguments.
+ * @param string $block_name Block type name.
+ * @return array
+ */
+function filter_button_styles( $args, $block_name ) {
+	if ( 'core/button' !== $block_name ) {
+		return $args;
+	}
+
+	$args['styles'] = array(
+		array(
+			'name'      => 'primary',
+			'label'     => __( 'Primary', 'mitlib-parent' ),
+			'isDefault' => true,
+		),
+		array(
+			'name'  => 'secondary',
+			'label' => __( 'Secondary', 'mitlib-parent' ),
+		),
+	);
+
+	return $args;
+}
+add_filter( 'register_block_type_args', 'Mitlib\Parent\filter_button_styles', 10, 2 );
+
+/**
  * Ensure that the directories expected by SCSS compiler exist.
  *
  * The WP-SCSS plugin that we rely on to compile theme stylesheets requires that
