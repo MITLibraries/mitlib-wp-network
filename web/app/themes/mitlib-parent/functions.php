@@ -194,6 +194,7 @@ function setup_scripts_styles() {
 
 	// COMPONENTS
 	wp_register_style( 'v2-alerts', get_template_directory_uri() . '/css/v2/components/alerts.css', array( 'v2-color', 'v2-spacing', 'v2-typography' ), $theme_version );
+	wp_register_style( 'v2-blocks', get_template_directory_uri() . '/css/v2/components/blocks.css', array( 'v2-color', 'v2-spacing' ), $theme_version );
 	wp_register_style( 'v2-buttons', get_template_directory_uri() . '/css/v2/components/buttons.css', array( 'v2-color', 'v2-corners', 'v2-spacing', 'v2-typography' ), $theme_version );
 	wp_register_style( 'v2-type-scale', get_template_directory_uri() . '/css/v2/components/type-scale.css', array( 'v2-typography' ), $theme_version );
 
@@ -282,6 +283,7 @@ function setup_scripts_styles() {
 	 * (in their own conditional) on every page.
 	 */
 	wp_enqueue_style( 'parent-global' );
+	wp_enqueue_style( 'v2-blocks' );
 	wp_enqueue_style( 'parent-ie', get_template_directory_uri() . '/css/ie.css', array( 'parent-styles' ), '20121010' );
 	wp_style_add_data( 'parent-ie', 'conditional', 'lt IE 9' );
 	
