@@ -1659,7 +1659,7 @@
         },
         {
             "name": "roots/wordpress",
-            "version": "6.8.7",
+            "version": "6.8.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/roots/wordpress.git",
@@ -1690,7 +1690,7 @@
             ],
             "support": {
                 "issues": "https://github.com/roots/wordpress/issues",
-                "source": "https://github.com/roots/wordpress/tree/7.0.2"
+                "source": "https://github.com/roots/wordpress/tree/7.1.4"
             },
             "funding": [
                 {
@@ -1769,23 +1769,23 @@
         },
         {
             "name": "roots/wordpress-no-content",
-            "version": "6.8.7",
+            "version": "6.8.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WordPress/WordPress.git",
-                "reference": "6.8.7"
+                "reference": "6.8.13"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.w.org/release/wordpress-6.8.7-no-content.zip",
-                "reference": "6.8.7",
-                "shasum": "1eda95cc516375ca3c106cf056ef16550f642676"
+                "url": "https://downloads.w.org/release/wordpress-6.8.13-no-content.zip",
+                "reference": "6.8.13",
+                "shasum": "0c8c271934b455c452b67e938e77000920f689e5"
             },
             "require": {
                 "php": ">= 7.2.24"
             },
             "provide": {
-                "wordpress/core-implementation": "6.8.7"
+                "wordpress/core-implementation": "6.8.13"
             },
             "suggest": {
                 "ext-curl": "Performs remote request operations.",
@@ -1836,7 +1836,7 @@
                     "type": "other"
                 }
             ],
-            "time": "2026-08-06T21:41:47+00:00"
+            "time": "2026-11-18T17:13:34+00:00"
         },
         {
             "name": "roots/wp-config",
