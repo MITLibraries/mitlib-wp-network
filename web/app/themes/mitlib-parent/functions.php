@@ -176,35 +176,10 @@ function override_cache_default_max_age() {
 add_filter( 'pantheon_cache_default_max_age', 'Mitlib\Parent\override_cache_default_max_age' );
 
 /**
- * Registers shared block presentation and its variables for front-end and editor requests.
+ * Registers theme styles for front-end and editor requests.
  */
-function register_block_styles() {
-	$theme_version = wp_get_theme()->get( 'Version' );
-
-	wp_register_style( 'v2-color', get_template_directory_uri() . '/css/v2/variables/color.css', array(), $theme_version );
-	wp_register_style( 'v2-spacing', get_template_directory_uri() . '/css/v2/variables/spacing.css', array(), $theme_version );
-	wp_register_style( 'v2-blocks', get_template_directory_uri() . '/css/v2/components/blocks.css', array( 'v2-color', 'v2-spacing' ), $theme_version );
-}
-add_action( 'init', 'Mitlib\Parent\register_block_styles' );
-
-/**
- * Loads theme block presentation inside the editor canvas, including the iframe.
- */
-function enqueue_editor_block_styles() {
-	if ( is_admin() ) {
-		wp_enqueue_style( 'v2-blocks' );
-	}
-}
-add_action( 'enqueue_block_assets', 'Mitlib\Parent\enqueue_editor_block_styles' );
-
- /**
-  * Register and selectively enqueue the scripts and stylesheets needed for this
-  * page.
-  */
-function setup_scripts_styles() {
-	// This allows us to cache-bust these assets without needing to remember to
-	// increment the theme version here.
-	$theme_version = wp_get_theme()->get( 'Version' );
+function register_styles() {
+	$theme_version = wp_get_theme()->get( 'Version' );	
 
 	/**
 	 * Register stylesheets.
@@ -214,6 +189,7 @@ function setup_scripts_styles() {
 	wp_register_style( 'parent-global', get_template_directory_uri() . '/css/build/global.css', array( 'parent-styles' ), $theme_version );
 
 	wp_register_style( 'parent-forms', get_template_directory_uri() . '/css/build/forms.css', array( 'parent-global' ), $theme_version );
+	wp_register_style( 'parent-ie', get_template_directory_uri() . '/css/ie.css', array( 'parent-styles' ), '20121010' );
 
 	wp_register_style( 'hours-mobile', get_template_directory_uri() . '/css/hours-mobile.css', array(), $theme_version, 'all' );
 	wp_register_style( 'hours-gldatepicker', get_template_directory_uri() . '/libs/datepicker/styles/glDatePicker.default.css', array(), $theme_version, 'all' );
@@ -234,14 +210,17 @@ function setup_scripts_styles() {
 	// Register all the individual pieces of v2 style system to get versioning (for cache busting)
 
 	// VARIABLES
+	wp_register_style( 'v2-color', get_template_directory_uri() . '/css/v2/variables/color.css', array(), $theme_version );
 	wp_register_style( 'v2-corners', get_template_directory_uri() . '/css/v2/variables/corners.css', array(), $theme_version );
 	wp_register_style( 'v2-effects', get_template_directory_uri() . '/css/v2/variables/effects.css', array(), $theme_version );
 	wp_register_style( 'v2-layout', get_template_directory_uri() . '/css/v2/variables/layout.css', array(), $theme_version );
 	wp_register_style( 'v2-shadows', get_template_directory_uri() . '/css/v2/variables/shadows.css', array(), $theme_version );
+	wp_register_style( 'v2-spacing', get_template_directory_uri() . '/css/v2/variables/spacing.css', array(), $theme_version );
 	wp_register_style( 'v2-typography', get_template_directory_uri() . '/css/v2/variables/typography.css', array(), $theme_version );
 
 	// COMPONENTS
 	wp_register_style( 'v2-alerts', get_template_directory_uri() . '/css/v2/components/alerts.css', array( 'v2-color', 'v2-spacing', 'v2-typography' ), $theme_version );
+	wp_register_style( 'v2-blocks', get_template_directory_uri() . '/css/v2/components/blocks.css', array( 'v2-color', 'v2-spacing' ), $theme_version );
 	wp_register_style( 'v2-buttons', get_template_directory_uri() . '/css/v2/components/buttons.css', array( 'v2-color', 'v2-corners', 'v2-spacing', 'v2-typography' ), $theme_version );
 	wp_register_style( 'v2-type-scale', get_template_directory_uri() . '/css/v2/components/type-scale.css', array( 'v2-typography' ), $theme_version );
 
@@ -254,6 +233,26 @@ function setup_scripts_styles() {
 
 	// PAGES 
 	wp_register_style( 'v2-home', get_template_directory_uri() . '/css/v2/pages/home.css', array( 'v2-color', 'v2-corners', 'v2-effects', 'v2-layout', 'v2-shadows', 'v2-spacing', 'v2-typography', 'v2-alerts', 'v2-buttons', 'v2-header', 'v2-footer', 'v2-type-scale', 'fontawesome' ), $theme_version );
+}
+add_action( 'init', 'Mitlib\Parent\register_styles' );
+
+/**
+ * Loads theme block presentation inside the editor canvas, including the iframe.
+ */
+function enqueue_editor_block_styles() {
+	if ( is_admin() ) {
+		wp_enqueue_style( 'v2-blocks' );
+	}
+}
+add_action( 'enqueue_block_assets', 'Mitlib\Parent\enqueue_editor_block_styles' );
+
+/**
+ * Register and selectively enqueue the scripts and stylesheets needed for this page.
+ */
+function setup_scripts_styles() {
+	// This allows us to cache-bust these assets without needing to remember to
+	// increment the theme version here.
+	$theme_version = wp_get_theme()->get( 'Version' );
 
 	
 	/**
@@ -331,7 +330,7 @@ function setup_scripts_styles() {
 	 */
 	wp_enqueue_style( 'parent-global' );
 	wp_enqueue_style( 'v2-blocks' );
-	wp_enqueue_style( 'parent-ie', get_template_directory_uri() . '/css/ie.css', array( 'parent-styles' ), '20121010' );
+	wp_enqueue_style( 'parent-ie' );
 	wp_style_add_data( 'parent-ie', 'conditional', 'lt IE 9' );
 	
 	wp_enqueue_style( 'adobe-fonts' );
