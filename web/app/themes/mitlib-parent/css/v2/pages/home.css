@@ -1,11 +1,13 @@
-body.v2-page {
+body.home {
 	background-color: var(--color-black);
   color: var(--color-text-default);
 
 	#content {
 		background-color: var(--color-white);
+
 	}
 
+  h2 {margin-bottom: var(--sp-600);}
   
 }
 
