@@ -3,7 +3,7 @@
 /* Buttons */
 .wp-block-button .wp-block-button__link {
     background-color: var(--color-button-base-bg-primary);
-    border-radius: 0;
+    border-radius: var(--radius-none);
     border: 1px solid var(--color-button-base-border-primary);
     color: var(--color-button-base-text-primary);
     font-size: 16px;
